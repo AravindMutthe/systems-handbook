@@ -67,7 +67,7 @@ function render() {
     total += pages.length;
     const section = document.createElement('section'); section.className = 'domain reveal in';
     const art = DOMAIN_ART[cat.id] || {emoji: cat.emoji || '📄', art: ''};
-    section.innerHTML = `<div class="domain-head"><div class="domain-emoji" aria-hidden="true">${art.emoji}</div><div><h3>${cat.title}</h3><p>${cat.description}</p></div><button type="button" class="domain-action">${cat.action || 'Explore domain'} →</button></div><div class="domain-art" aria-hidden="true">${art.art}</div>`;
+    section.innerHTML = `<div class="domain-head"><div class="domain-emoji" aria-hidden="true">${art.emoji}</div><h3>${cat.title}</h3></div><p class="domain-desc">${cat.description}</p><button type="button" class="domain-action">${cat.action || 'Explore domain'} →</button><div class="domain-art" aria-hidden="true">${art.art}</div>`;
     // Integration: tapping a domain's action filters the whole homepage to that domain.
     section.querySelector('.domain-action').onclick = () => { activeDomain = cat.id; renderTopics(); render(); document.getElementById('domains').scrollIntoView({behavior:'smooth'}); };
     const row = document.createElement('div'); row.className = 'row';

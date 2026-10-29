@@ -69,10 +69,13 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:
 .section-head h2,.how h2{font-family:var(--font-display);font-size:30px;margin:16px 0 8px}
 .domains-note{color:var(--muted);max-width:760px}
 .domain{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 20px;min-width:0;overflow:hidden}
-/* Domain head uses the FULL card width: text flexes, action never squeezes it */
-.domain-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;width:100%}
-.domain-head>div{flex:1 1 auto;min-width:0}
-.domain-emoji{flex:0 0 auto!important;font-size:40px;line-height:1;margin-right:4px;animation:floatY 5s ease-in-out infinite}
+/* Domain head rule: logo + domain name = ONE horizontal line, any mobile width.
+   Headline row never wraps, title never wraps, font shrinks fluidly to fit;
+   description and action sit on later rows and never squeeze the title. */
+.domain-head{display:flex;align-items:center;gap:10px;flex-wrap:nowrap;width:100%;min-width:0}
+.domain-emoji{flex:none;font-size:clamp(28px,8vw,40px);line-height:1;animation:floatY 5s ease-in-out infinite}
+.domain-head h3{flex:1 1 auto;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.domain-desc{margin:8px 0 0;color:var(--muted)}
 .domain-art{margin-top:12px;border-radius:12px;background:linear-gradient(90deg,var(--accent-soft),#fff);overflow:hidden}
 .domain-art svg{width:100%;height:64px;display:block}
 .domain-art .bar{transform-box:fill-box;transform-origin:bottom;animation:pulseBar 2.4s ease-in-out infinite}
@@ -81,9 +84,8 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:
 .paper-emoji{display:block;font-size:36px;animation:floatY 5s ease-in-out infinite}
 @keyframes pulseBar{0%,100%{transform:scaleY(.85)}50%{transform:scaleY(1)}}
 @keyframes spin{to{transform:rotate(360deg)}}
-.domain-head h3{font-family:var(--font-display);font-size:24px;margin:0 0 6px}
-.domain-head p{margin:0;color:var(--muted)}
-.domain-action{flex:0 0 auto;color:var(--accent);font-weight:700;white-space:nowrap;background:none;border:0;cursor:pointer;font-size:15px;padding:0}
+.domain-head h3{font-family:var(--font-display);font-size:clamp(15px,4.6vw,24px);margin:0}
+.domain-action{display:block;text-align:right;width:100%;color:var(--accent);font-weight:700;white-space:nowrap;background:none;border:0;cursor:pointer;font-size:15px;padding:0;margin-top:8px}
 /* Sub-cards, ADAPTIVE + FLEXIBLE + INTEGRATED:
    Desktop / wide: grid that FITS the domain width — cards stretch to fill, no blank right.
    Mobile / narrow: horizontal scroll row — cards flex to viewport width, swipe left ↔ right.
@@ -95,8 +97,7 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:
   .row::-webkit-scrollbar{height:8px}
   .row::-webkit-scrollbar-thumb{background:var(--line);border-radius:999px}
   .row .card{flex:0 0 clamp(230px,78vw,280px);scroll-snap-align:start}
-  .domain-head{flex-wrap:wrap}
-  .domain-action{margin-left:auto}
+  .domain-head{flex-wrap:nowrap}
 }
 .row-empty{color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
