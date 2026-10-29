@@ -764,3 +764,24 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   yet meet this rule. Revising them to these five arrow
   styles and labels is pending work, not claimed done by
   adding this rule.
+
+## Original headlines live in Original images + (R15) (2026-10-29)
+
+- Original headline(s) first, exactly as written, spelling
+  preserved, are shown INSIDE the "Original images +" section
+  on every card page, before the original images themselves,
+  wherever that page lives (Batch 1 on main, Batch 2 on its
+  branch, and every future batch on its branch).
+- No separate original-headline block outside that section —
+  one place, first in the original evidence, not duplicated.
+- The enhanced headline stays on the page, labelled [Added],
+  and does not replace the original. On Batch 1 pages the
+  enhanced title is the card title; the original headlines
+  inside Original images + are the owner's words first, in
+  evidence order.
+- Batch 1 original headlines, from batch1-cards.json audit:
+  A Before Agencies of Networks / why needed / why needed /
+  Comm to Business; B Market rules / Phone book / DNS;
+  C Sillicon product / Market Vendors; D NIC / N/W Device /
+  HW + SW / OEM / NIC chain; E Product Dev / why needed /
+  why needed / Comm to Business.
