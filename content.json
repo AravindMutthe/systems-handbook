@@ -13,7 +13,7 @@
       "topic": "Systems evolution",
       "caption": "Networks did not start with computers. A deal is only as fast as the information behind it.",
       "keys": [
-        "Networks did not start with computers \u2014 they started with people signalling, long before any device.",
+        "Networks did not start with computers — they started with people signalling, long before any device.",
         "Human, mechanical, then electronic signalling were used by people, communities, and companies to send a message farther and faster.",
         "Business = exchange of information: a deal is only as fast as the information behind it."
       ],
@@ -27,7 +27,22 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-a.svg"
+      "poster": "assets/posters/card-a.svg",
+      "uniqueTag": "network-origins",
+      "tags": [
+        "network-origins",
+        "systems-evolution",
+        "institutions-markets",
+        "industrial-business-networks",
+        "network",
+        "trading",
+        "company",
+        "business",
+        "coordination",
+        "market",
+        "regulation",
+        "signalling"
+      ]
     },
     {
       "id": "card-b",
@@ -49,7 +64,21 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-b.svg"
+      "poster": "assets/posters/card-b.svg",
+      "uniqueTag": "directory-to-dns",
+      "tags": [
+        "directory-to-dns",
+        "institutions-markets",
+        "infrastructure-operations",
+        "company",
+        "directory",
+        "regulation",
+        "internet",
+        "business",
+        "network",
+        "networks",
+        "allocation"
+      ]
     },
     {
       "id": "card-c",
@@ -71,7 +100,21 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-c.svg"
+      "poster": "assets/posters/card-c.svg",
+      "uniqueTag": "nic-endpoint",
+      "tags": [
+        "nic-endpoint",
+        "hardware-computing",
+        "industrial-business-networks",
+        "network",
+        "company",
+        "silicon",
+        "vendor",
+        "business",
+        "product",
+        "customer",
+        "market"
+      ]
     },
     {
       "id": "card-d",
@@ -93,7 +136,21 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-d.svg"
+      "poster": "assets/posters/card-d.svg",
+      "uniqueTag": "nic-kernel-stack",
+      "tags": [
+        "nic-kernel-stack",
+        "infrastructure-operations",
+        "hardware-computing",
+        "network",
+        "customer",
+        "business",
+        "company",
+        "stack",
+        "data-lane",
+        "product",
+        "lane"
+      ]
     },
     {
       "id": "card-e",
@@ -104,7 +161,7 @@
       "keys": [
         "A product is built by engineering and operations, tested, sold to customers, and bought through vendors who buy silicon.",
         "FCC approval is the gate: equipment certification for routers and phones, and a broadband speed report, before market entry.",
-        "That gate depends on every card before it \u2014 origins, naming, hardware, and the NIC stack."
+        "That gate depends on every card before it — origins, naming, hardware, and the NIC stack."
       ],
       "page": "batch1/card-e.html",
       "relatedDomains": [
@@ -116,7 +173,21 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-e.svg"
+      "poster": "assets/posters/card-e.svg",
+      "uniqueTag": "product-approval",
+      "tags": [
+        "product-approval",
+        "industrial-business-networks",
+        "institutions-markets",
+        "hardware-computing",
+        "product",
+        "company",
+        "silicon",
+        "network",
+        "approval",
+        "business",
+        "vendor"
+      ]
     },
     {
       "id": "card-f",
@@ -128,7 +199,7 @@
       "poster": "assets/posters/card-f.svg",
       "keys": [
         "A universal product is a spectrum: tech, manufacturing, software, and business together, carrying four things in parallel.",
-        "Four parallel flows (communication): communication \u2192 trade \u2192 speed \u2192 Tech, and that speed is itself a technology advantage.",
+        "Four parallel flows (communication): communication → trade → speed → Tech, and that speed is itself a technology advantage.",
         "Cross Flow (physical, informational, financial, rules) plus Tech Integration across the flow turns a good into a full value chain, connected."
       ],
       "relatedDomains": [
@@ -140,7 +211,17 @@
       "publication": {
         "status": "published"
       },
-      "reviewStatus": "published"
+      "reviewStatus": "published",
+      "uniqueTag": "universal-product",
+      "tags": [
+        "universal-product",
+        "systems-evolution",
+        "industrial-business-networks",
+        "infrastructure-operations",
+        "institutions-markets",
+        "business",
+        "network"
+      ]
     },
     {
       "id": "card-g",
@@ -152,7 +233,7 @@
       "poster": "assets/posters/card-g.svg",
       "keys": [
         "Government is added as a unifying layer across all flows, from source to consumer, to control the public.",
-        "Global Oversight \u2192 International standard bodies \u2192 Regional Regulation \u2192 National Enforcement \u2192 Industry Standards \u2192 market flow, with bodies that have different legal powers, not one hierarchy (R14).",
+        "Global Oversight → International standard bodies → Regional Regulation → National Enforcement → Industry Standards → market flow, with bodies that have different legal powers, not one hierarchy (R14).",
         "Government networks are built like the market in reverse: series, manufacturers, vendors, implementers, buyers, public, with government controllers closing the loop."
       ],
       "relatedDomains": [
@@ -165,7 +246,18 @@
       "publication": {
         "status": "published"
       },
-      "reviewStatus": "published"
+      "reviewStatus": "published",
+      "uniqueTag": "government-layer",
+      "tags": [
+        "government-layer",
+        "systems-evolution",
+        "institutions-markets",
+        "industrial-business-networks",
+        "infrastructure-operations",
+        "hardware-computing",
+        "business",
+        "regulation"
+      ]
     },
     {
       "id": "card-h",
@@ -178,7 +270,7 @@
       "keys": [
         "The interface is the same question in every era: medium, public vs private frameworks, architecture, and what it feels like to use.",
         "From hardware only, to punch cards and CLI, to GUI desktops, to browsers, to mobile apps and cloud backends, to real-time XR and AI interfaces.",
-        "Frameworks belong to different categories \u2014 Bootstrap is CSS, React/AngularJS are UI frameworks, X11/Motif are windowing systems \u2014 and REST/GraphQL/gRPC are API styles, not UI frameworks."
+        "Frameworks belong to different categories — Bootstrap is CSS, React/AngularJS are UI frameworks, X11/Motif are windowing systems — and REST/GraphQL/gRPC are API styles, not UI frameworks."
       ],
       "relatedDomains": [
         "software-engineering-development",
@@ -189,18 +281,27 @@
       "publication": {
         "status": "published"
       },
-      "reviewStatus": "published"
+      "reviewStatus": "published",
+      "uniqueTag": "ui-frameworks-evolution",
+      "tags": [
+        "ui-frameworks-evolution",
+        "systems-evolution",
+        "software-engineering-development",
+        "hardware-computing",
+        "infrastructure-operations",
+        "network"
+      ]
     },
     {
       "id": "card-i",
       "title": "Tech leadership Era",
       "domain": "systems-evolution",
       "topic": "Systems evolution",
-      "caption": "Who leads each era: org structure, tech strategy, and leadership mindset \u2014 telegraph to 5G & AI, with the post-2000 completion labelled [Added].",
+      "caption": "Who leads each era: org structure, tech strategy, and leadership mindset — telegraph to 5G & AI, with the post-2000 completion labelled [Added].",
       "keys": [
         "Leadership is three questions in each era: org structure, tech strategy, and leadership mindset.",
         "Telegraph: centralised, protocols, link state. Distribution: a centralised team managing decentralisation, interoperability protocols.",
-        "The original page stops at 2000, at hypergrowth \u2014 Eras 3\u20135 on this card are labelled [Added] completion, proposed where interpretation."
+        "The original page stops at 2000, at hypergrowth — Eras 3–5 on this card are labelled [Added] completion, proposed where interpretation."
       ],
       "page": "batch3/card-i.html",
       "relatedDomains": [
@@ -213,18 +314,32 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-i.svg"
+      "poster": "assets/posters/card-i.svg",
+      "uniqueTag": "tech-leadership-eras",
+      "tags": [
+        "tech-leadership-eras",
+        "systems-evolution",
+        "industrial-business-networks",
+        "institutions-markets",
+        "infrastructure-operations",
+        "business",
+        "connectivity",
+        "coordination",
+        "network",
+        "new"
+      ],
+      "isNew": true
     },
     {
       "id": "card-j",
       "title": "Eras UI Frameworks + Hardware controlled / SW",
       "domain": "systems-evolution",
       "topic": "Systems evolution",
-      "caption": "The same six eras, three lenses: interface, control, and how it is paid for \u2014 from PTT duration to API Token.",
+      "caption": "The same six eras, three lenses: interface, control, and how it is paid for — from PTT duration to API Token.",
       "keys": [
         "The same six eras read three ways: interface/hardware control, private business controller, and payment model.",
         "Payment moves from duration, to chargeback, to licence, to advertising/subscription, to SaaS + usage, to API Token.",
-        "ICANN, IETF and W3C are distinguished: allocation, Internet standards, and web standards \u2014 not one body."
+        "ICANN, IETF and W3C are distinguished: allocation, Internet standards, and web standards — not one body."
       ],
       "page": "batch3/card-j.html",
       "relatedDomains": [
@@ -238,16 +353,30 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-j.svg"
+      "poster": "assets/posters/card-j.svg",
+      "uniqueTag": "six-eras-three-lenses",
+      "tags": [
+        "six-eras-three-lenses",
+        "systems-evolution",
+        "software-engineering-development",
+        "hardware-computing",
+        "infrastructure-operations",
+        "industrial-business-networks",
+        "allocation",
+        "business",
+        "network",
+        "new"
+      ],
+      "isNew": true
     },
     {
       "id": "card-k",
       "title": "Project scheduler",
       "domain": "systems-evolution",
       "topic": "Systems evolution",
-      "caption": "One scheduler model: tasks, resources, and who allocates them fairly \u2014 electricity, networking, and business projects.",
+      "caption": "One scheduler model: tasks, resources, and who allocates them fairly — electricity, networking, and business projects.",
       "keys": [
-        "A scheduler allocates resources fairly and efficiently \u2014 it is not just a timetable.",
+        "A scheduler allocates resources fairly and efficiently — it is not just a timetable.",
         "The same model holds for electricity (ISO), networking (ISP), and business projects (agency, company, banks, consortia).",
         "Schedulers are distinguished by function: ISO/RTO, ICANN, ISP, and VISA/SWIFT do different allocation work."
       ],
@@ -262,7 +391,20 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-k.svg"
+      "poster": "assets/posters/card-k.svg",
+      "uniqueTag": "project-scheduler",
+      "tags": [
+        "project-scheduler",
+        "systems-evolution",
+        "infrastructure-operations",
+        "institutions-markets",
+        "industrial-business-networks",
+        "allocation",
+        "network",
+        "business",
+        "new"
+      ],
+      "isNew": true
     }
   ],
   "relationships": [],

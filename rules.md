@@ -977,3 +977,28 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   "Bussiness", "Coorporate"): spelling is preserved as
   written; only truncation at the page edge is corrected,
   as above.
+
+## Tags — unique tag, related tags, and New (2026-10-29)
+
+- Every card carries one unique tag, related to that card only:
+  A #network-origins, B #directory-to-dns, C #nic-endpoint,
+  D #nic-kernel-stack, E #product-approval, F #universal-product,
+  G #government-layer, H #ui-frameworks-evolution,
+  I #tech-leadership-eras, J #six-eras-three-lenses,
+  K #project-scheduler. A unique tag is never reused for another card.
+- Related tags on a card are its domains plus the shared
+  cross-domain vocabulary actually used on that card. Related tags
+  link cards together; the unique tag identifies one card.
+- Tags live in two places, kept in sync: the card page's Tags
+  section (after Related topics) and content.json (uniqueTag +
+  tags per note). Homepage cards show the unique tag; explore
+  pages stay headline-only, with only the New badge added.
+- New tag: the newest batch's cards carry "New" — currently
+  Batch 3, Cards I/J/K — until the next batch arrives. When a
+  new batch is published, New moves to that batch's cards only
+  and is removed from the previous batch. New is a time tag, not
+  a permanent tag, and it never stays on two batches at once.
+- Audit fixes (R13/R11 styling pass, Batch 1 original-first
+  titles, relationship-kind arrow rendering, clarification
+  tables) are PARKED for later, per owner's 2026-10-29 word
+  ("fix can be later"). Tags + New were done first, on their own.
