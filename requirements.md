@@ -143,6 +143,23 @@ A batch is complete only when all of these are true:
   only. The learning sequence, nested-card order, and reader
   Previous/Next order are the decided sequence, not the receipt order.
 
+## R9. Domain terminology and technology/telecom analogies
+
+- Requirement: every delivered page must use the terminology and
+  vocabulary of its own domain, so a reader learns that domain's
+  language from the page itself, not generic language.
+- Requirement: every analogy in an enhanced explanation or enhanced
+  diagram must map to the technology and telecom industry. A reader
+  must be able to follow the analogy through technology and telecom
+  examples — signalling, networks, DNS, hardware, spectrum, and
+  related industry examples — not through analogies from unrelated
+  fields.
+- This applies to the enhanced layer only. Original notes stay
+  verbatim, as in R3. How this is handled when writing — including
+  what to do when an original uses a non-technology analogy — is
+  in `rules.md`, under "Domain terminology, technology and telecom
+  analogies", and is not restated here beyond this requirement.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.

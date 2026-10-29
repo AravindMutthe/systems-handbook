@@ -447,6 +447,26 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Domain terminology, technology and telecom analogies (2026-10-29)
+
+- Content, terminology, and vocabulary on a page must belong to
+  that page's domain — the domain's own terms, not generic terms
+  swapped in from another field.
+- Every analogy in an enhanced explanation or enhanced diagram must
+  map to the technology and telecom industry: signalling, telegraph
+  and telephone, DNS and directories, NIC and PCI, kernel and network
+  stacks, spectrum and regulation, vendors and silicon, and the like.
+  Analogies from unrelated fields (cooking, sports, everyday
+  household examples, and similar) are not used in the enhanced layer.
+- If an original note itself uses a non-technology analogy, the
+  original stays verbatim in Key points and in the archive — it is
+  never rewritten. The enhanced layer re-maps the idea to a
+  technology/telecom analogy, as an enhancement, not as a correction
+  to the original.
+- Check this per card before it is built: domain terms correct,
+  analogy maps to technology/telecom, no generic analogy left in
+  the enhanced text or diagrams.
+
 ## Related topics in related domains, as cards (2026-10-29)
 
 - A related topic must go into its related domain, presented as a
