@@ -1029,3 +1029,21 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   the new content notes with the stale local main copy. Main
   changes ride on the next merge tap. Production deploy is
   pending the owner's tap in the development chat.
+
+## Rebuild Card I research dimensions, 2026-10-30 (branch only, no deploy)
+
+- Pulled main batch3-notes.md, head c575b9e5, blob
+  9ef60870984da20015ed53c884ddadd75941ad4d (32,681 bytes).
+  Diff vs branch notes proved a single insertion only:
+  lines 166–472, the Research dimensions section; original
+  Card I notes untouched.
+- Card I page: new h3 3 "Research dimensions — expanded
+  comparison [Added, not original]" inserted after the
+  Future completion section (h3 2); the previous R14
+  section renumbered to h3 4. Subsections: five actors,
+  terms clarified, six-dimension comparison, central
+  contradiction — all [Added], all examples from Cards
+  A–K, link-state networking vs leadership metaphor kept
+  separate. Key points, Tags, toggle, header unchanged.
+- Main NOT pushed; production NOT deployed — both pending
+  the owner's tap in the development chat.
