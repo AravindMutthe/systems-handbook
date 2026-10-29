@@ -447,6 +447,28 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Proper nouns italic bold, across the site (2026-10-29)
+
+- Any identity, name, or proper noun used on a page must be shown
+  in italic bold — for example ***Nvidia***, ***Broadcom***,
+  ***Intel***, ***India***, ***USA***.
+- Covered: company names, country names, person names,
+  organisation names, product names, and standard-body names
+  (Intel, Broadcom, Nvidia, Dell, HPE, Lenovo, Cisco, AT&T,
+  Verizon, Jio, AWS, GCP, DARPA, ARPANET, IETF, IEEE, 3GPP, FCC,
+  TRAI, ICANN, ARIN, RIPE, APNIC, DRDO, NASA, India, USA,
+  Internet, Nginx, Apache, and any other named identity that
+  appears in a future batch).
+- Markup: `<strong><em>Name</em></strong>` in normal text, or
+  `<em>Name</em>` inside an already-bold lead-in, with CSS
+  `strong em, em strong{font-style:italic;font-weight:800}`.
+  Homepage key points apply the same rule in `app.js`
+  (`italicBold`, after `boldLead`).
+- This is proper nouns only. Common nouns (computer, network,
+  business, message) are not wrapped — wrapping every noun would
+  make nothing stand out. If the owner wants a technical term
+  treated as a proper noun, it is added to the list above.
+
 ## Bullet lead-ins dark bold, across the site (2026-10-29)
 
 - In every bullet, across the site, the headline words at the start

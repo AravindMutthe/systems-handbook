@@ -172,6 +172,20 @@ A batch is complete only when all of these are true:
   themes, is in `rules.md`, under "Bullet lead-ins dark bold, across
   the site", and is not restated here beyond this requirement.
 
+## R11. Proper nouns italic bold, across the site
+
+- Requirement: every identity, name, or proper noun on every
+  delivered page must be shown in italic bold — for example
+  ***Nvidia***, ***Broadcom***, ***Intel***, ***India***,
+  ***USA*** — so named companies, countries, organisations,
+  products, and standard bodies stand out from common text.
+- This applies to detailed bullets, summary bullets, horizontal-link
+  bullets, Key points styling, homepage key points, and related-topic
+  captions, across all cards and pages.
+- How the markup is done, and which names are covered, is in
+  `rules.md`, under "Proper nouns italic bold, across the site",
+  and is not restated here beyond this requirement.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
