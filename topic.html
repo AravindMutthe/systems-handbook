@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topic · Systems Evolution</title>
+<link rel="icon" href="assets/logo-mark.svg">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="chapter.css">
+</head>
+<body>
+<a class="skip-link" href="#topic-main">Skip to topic</a>
+<header class="topbar">
+  <a class="brand" href="./"><svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="6" width="108" height="108" rx="24" fill="#1f2a33"/><path d="M28 88 Q44 80 60 88 Q76 80 92 88 L92 100 Q76 92 60 100 Q44 92 28 100 Z" fill="#fdfbf7"/><line x1="60" y1="88" x2="60" y2="100" stroke="#d9a441" stroke-width="3"/><polyline points="32,68 60,50 88,32" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="68" r="6" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/><circle cx="60" cy="50" r="9" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/><circle cx="88" cy="32" r="12" fill="#d9a441" stroke="#fdfbf7" stroke-width="3"/><path d="M88 16 L102 28 L88 30 Z" fill="#d9a441"/></svg><span class="brand-text"><strong>Systems <span class="brand-evo">Evolution</span></strong><small>Networks · Business · Technology</small></span></a>
+  <form class="search top-search" role="search" action="./" method="get"><span class="search-icon" aria-hidden="true">🔍</span><input type="search" name="q" placeholder="Search notes" aria-label="Search notes"></form>
+</header>
+
+<main class="chapter" id="topic-main">
+  <a class="chapter-back" href="./">← Back to homepage</a>
+  <p class="chapter-banner" id="topic-banner"><strong>TOPIC PAGE.</strong> This page is about one topic or concept from a nested card. Its content comes from the domain list and the note that card pointed to — nothing is invented here.</p>
+
+  <div class="chapter-heading">
+    <span class="chapter-emoji" id="topic-emoji" aria-hidden="true">📄</span>
+    <div>
+      <p class="chapter-eyebrow" id="topic-eyebrow">Topic</p>
+      <h1 id="topic-title">Topic</h1>
+    </div>
+  </div>
+
+  <p class="chapter-lede" id="topic-desc"></p>
+  <p id="topic-caption"></p>
+
+  <figure id="topic-figure" hidden>
+    <img id="topic-img" alt="" style="width:100%;height:auto;border-radius:14px;border:1px solid var(--line)">
+    <figcaption>Original page image for this topic, untouched.</figcaption>
+  </figure>
+
+  <h2>Original note for this topic</h2>
+  <p id="topic-original-text">No real original note is linked to this card yet — this is a sample layout, not real content.</p>
+  <p id="topic-original-link-wrap" hidden><a class="original-button" href="original-note.html">📄 Open original note</a></p>
+  <p id="topic-chapter-link-wrap" hidden><a class="original-button" href="chapter.html">📖 Read the sample chapter for this domain</a></p>
+
+  <p><a class="home-button" href="./" aria-label="Home"><svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="6" width="108" height="108" rx="24" fill="#1f2a33"/><path d="M28 88 Q44 80 60 88 Q76 80 92 88 L92 100 Q76 92 60 100 Q44 92 28 100 Z" fill="#fdfbf7"/><line x1="60" y1="88" x2="60" y2="100" stroke="#d9a441" stroke-width="3"/><polyline points="32,68 60,50 88,32" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="68" r="6" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/><circle cx="60" cy="50" r="9" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/><circle cx="88" cy="32" r="12" fill="#d9a441" stroke="#fdfbf7" stroke-width="3"/><path d="M88 16 L102 28 L88 30 Z" fill="#d9a441"/></svg><span>Systems <span class="brand-evo">Evolution</span></span></a></p>
+</main>
+
+<button id="theme-toggle" aria-label="Toggle dark and light theme">☀️</button>
+<script>
+(function(){
+  var t='dark'; try{t=localStorage.getItem('theme')||'dark';}catch(e){}
+  document.documentElement.dataset.theme=t==='light'?'light':'dark';
+  var b=document.getElementById('theme-toggle'); if(b){b.textContent=document.documentElement.dataset.theme==='dark'?'☀️':'🌙'; b.onclick=function(){var n=document.documentElement.dataset.theme==='dark'?'light':'dark'; document.documentElement.dataset.theme=n; try{localStorage.setItem('theme',n);}catch(e){} b.textContent=n==='dark'?'☀️':'🌙';};}
+  var q=new URLSearchParams(location.search);
+  function safeFile(f){ if(!f) return ''; if(f.indexOf('..')>=0||/^[a-z]+:/i.test(f)||/["'\s]/.test(f)) return ''; return f; }
+  var domain=q.get('domain')||'', topic=q.get('topic')||'', title=q.get('title')||topic, id=q.get('id')||'', file=safeFile(q.get('file')||''), caption=q.get('caption')||'';
+  document.getElementById('topic-title').textContent=title;
+  document.getElementById('topic-eyebrow').textContent=domain ? 'Topic · '+domain : 'Topic';
+  document.title=title+' · Systems Evolution';
+  if(caption){ document.getElementById('topic-caption').textContent=caption; }
+  if(file){ var fig=document.getElementById('topic-figure'); fig.hidden=false; document.getElementById('topic-img').src=file; document.getElementById('topic-img').alt=title; }
+  if(id){ document.getElementById('topic-original-text').textContent='This topic is linked to original note '+id+'.'; document.getElementById('topic-original-link-wrap').hidden=false; }
+  if(domain==='institutions-markets'){ document.getElementById('topic-chapter-link-wrap').hidden=false; }
+  fetch('categories.json').then(function(r){return r.json();}).then(function(cats){
+    var cat=cats.filter(function(c){return c.id===domain||c.title===topic;})[0];
+    if(cat){ document.getElementById('topic-emoji').textContent=cat.emoji||'📄'; document.getElementById('topic-desc').textContent=cat.description||''; document.getElementById('topic-eyebrow').textContent='Topic · '+cat.title; }
+  }).catch(function(){});
+})();
+</script>
+</body>
+</html>

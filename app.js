@@ -124,7 +124,15 @@ function render() {
         const pubHtml = (n.reviewStatus || (n.publication && n.publication.status)) && (n.reviewStatus || n.publication.status) !== 'published' ? `<span class="pub pub-${esc(n.reviewStatus || n.publication.status)}">${esc(n.reviewStatus || n.publication.status)}</span>` : '';
         const num = String(i + 1).padStart(2, '0');
         card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.subject, n.topic || cat.title, n.sourceDate || n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${keyHtml}</div>`;
-        card.onclick = () => { if (file) openViewer({...n, file}); };
+        // Every nested card is a button that navigates to a page about
+        // that topic/concept — samples included, not only notes with a file.
+        card.onclick = () => {
+          const q = new URLSearchParams({domain: cat.id, topic: showingSamples ? cat.title : (n.topic || cat.title), title: showingSamples ? cat.title : (n.title || cat.title)});
+          if (n.id) q.set('id', n.id);
+          if (file) q.set('file', file);
+          if (n.caption) q.set('caption', n.caption);
+          location.href = 'topic.html?' + q.toString();
+        };
         row.appendChild(card);
       });
     }
