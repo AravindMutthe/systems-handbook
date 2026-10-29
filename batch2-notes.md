@@ -1,3 +1,5 @@
+Build note for card pages: transcription bracket markers ([cut off], [unclear], [no value...], etc.) and truncated-word corrections live ONLY inside "Original images +" dropdown, never in Detailed explanation or Key points. Main page shows corrected / as-written words, clean. Full marked transcription is in the batch intake file (archive, local). [crossed out] is kept where it is original state on the page, not a fill-in label.
+
 # Batch 2 notes — HELD, not published
 
 Status: privacy = private, reviewStatus = draft, publication NOT
@@ -54,7 +56,7 @@ infrastructure-operations, institutions-markets.
   - mapping → IOT (Devices) across flow
   - Blockchain, AI/ML, APIs
 - ④ Abstraction from goods of Spectrum
-  - TO full Value chain is connec [cut off at page edge]
+  - TO full Value chain is connec
 
 ### [Added] explanation
 A universal product is not one thing. It is a spectrum — tech,
