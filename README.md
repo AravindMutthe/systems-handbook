@@ -1,6 +1,6 @@
 # Systems Evolution: Networks, Business & Technology
 
-My handwritten notes, readable anywhere. Homepage template first — content only after the owner approves the UI, design and theme. Repo name stays `handwritten-notes`; this is the site title.
+My handwritten notes, readable anywhere. Homepage template first — content only after the owner approves the UI, design and theme. Repo name is now `systems-handbook`; site title is still Systems Evolution.
 
 ## What this is now (static, Phase 1)
 
@@ -28,6 +28,6 @@ My handwritten notes, readable anywhere. Homepage template first — content onl
 
 ## Status
 
-- Repo: AravindMutthe/handwritten-notes (private, template only)
+- Repo: AravindMutthe/systems-handbook (private, template only) — renamed from handwritten-notes 2026-10-29; live at https://systems-handbook.vercel.app
 - Content: none yet — awaiting UI/design/theme approval, then the owner sends raw notes batch by batch.
 - Deploy: nothing deployed. A preview/production link needs the owner's separate tap.
