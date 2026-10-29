@@ -39,6 +39,55 @@ My handwritten notes, readable anywhere. Homepage template first — content onl
 - Content: none yet — awaiting UI/design/theme approval, then the owner sends raw notes batch by batch.
 - Deploy: nothing deployed. A preview/production link needs the owner's separate tap.
 
+## Legend — for reference only, not on the homepage
+
+Owner direction, 2026-10-29: the Legend is for reference while
+building, not for the reader. It lives here, in the README, and
+must NOT be put on the homepage (`index.html`).
+
+### How to read a page — style legend
+
+- **Dark bold headline:** the headline words at the start of a
+  bullet, before the colon — for example, **Human to human:**
+  oral language, signals, and written text.
+- **Italic bold proper noun:** any identity or name — a company,
+  country, organisation, product, or standard body — for example,
+  ***Intel***, ***Nvidia***, ***Broadcom***, ***India***,
+  ***USA***.
+- **Yellow bold cross-domain vocabulary:** words, terms, and
+  vocabulary used across domains — network, signalling, directory,
+  endpoint, stack, lane, gate, hierarchy, allocation, regulation,
+  trading speed, customer, vendor, market, approval — so the same
+  systems vocabulary stands out wherever it appears, in every
+  domain.
+- **Flow chart / hierarchical diagram:** used wherever a
+  relationship across domains and their cards is easier to
+  understand visually than in text alone — learning sequence,
+  cross-domain links, hierarchies, two-lane flows, loops,
+  timelines. The system-wide diagram is at
+  `assets/flow/system-flow.svg`, shown on the Learning sequence
+  page (`batch1/batch1.html`); each card page keeps its own
+  Horizontal links flow chart.
+
+### All requirements, under this legend
+
+- **R1.** Detailed, not abstract — digital core resources, interlinked, ground-up from computer science and IT.
+- **R2.** Learning sequence, ground-up, in order — base first, then hardware, then systems, then industry uses.
+- **R3.** Each batch delivers archive, exact transcription, placement, enhanced explanation, enhanced diagram, and a per-batch report.
+- **R4.** Study attractiveness — rich, diagram-led pages, original never hidden or replaced.
+- **R5.** Content model v3 in content.json, domains from categories.json, nothing invented.
+- **R6.** Acceptance — every image archived, every transcription traceable, held notes reported, never shown.
+- **R7.** Leo decides interlinks, topic, and domain from the notes themselves — not publication, storage, deploy, or privacy.
+- **R8.** Input order is random — sequence is decided, not received, and revised as later batches arrive.
+- **R9.** Domain terminology, and every analogy maps to technology and telecom.
+- **R10.** Bullet lead-ins dark bold, across the site.
+- **R11.** Proper nouns italic bold, across the site.
+- **R12.** Systems across domains, not isolated system evaluation — business vocabulary, terminology, and analogies used across domains, with cross-domain links on every page.
+- **R13.** Cross-domain vocabulary yellow bold, across the site.
+- **Card page order (2026-10-29):** header → Original images + → Detailed explanation → Key points → Horizontal links → Related topics → Previous / Next. Original notes first, before the detailed explanation.
+
+Full requirement text is in `requirements.md`; handling rules are in `rules.md`.
+
 ## Standing recommendation — Systems Handbook stays independent
 
 My recommendation remains to keep the new Systems Handbook as your independent personal knowledge platform, with Atlas research as a source of content — not automatically merge the two projects.

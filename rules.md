@@ -447,6 +447,13 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Legend lives in README, not on the homepage (2026-10-29)
+
+- The Legend (style legend + all requirements R1–R13) is for
+  reference while building, not for the reader. It lives in
+  `README.md` only, and must NOT be put on the homepage
+  (`index.html`).
+
 ## Card page order — original notes first (2026-10-29)
 
 - On every card page, the order is: header (poster, domain and
