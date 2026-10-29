@@ -1,3 +1,5 @@
+Build note for card pages: transcription bracket markers ([cut off], [unclear], [no value...], etc.) and truncated-word corrections live ONLY inside "Original images +" dropdown, never in Detailed explanation or Key points. Main page shows corrected / as-written words, clean. Full marked transcription is in the batch intake file (archive, local). [crossed out] is kept where it is original state on the page, not a fill-in label.
+
 # Handbook — Batch 1 Study Notes
 ## From the 10 pics you sent (sample first batch)
 
@@ -71,7 +73,7 @@ From 008:
 
 From 006:
 - "why needed" / "speed of trade"
-- Business = exchange (money, [cut off]) / Visionary / profit-seeking /
+- Business = exchange (money / Visionary / profit-seeking /
   risk tolerant (models)
 - Business → ownership / founders / shareholders / Board of Dir /
   investors / Executive team / C-suite (CEO, CFO, CTO, CMO, COO) /
@@ -151,13 +153,13 @@ addressed and regulated.
 
 From 003:
 - "Market rules" → Antitrust (EU v google, US vs ms) →
-  Net neutral- [cut off]
+  Net neutrality
 - Network Device menu → government / can do
 - Protocols / Language / "Govt Telephone Dir" (options) /
   IETF / IEEE / 3GPP Standard
-  - writing up (type- [unclear])
+  - writing up (type
   - Directory management (ICANN, RIR)
-  - key pad (switchboard) controls the communication [cut off]
+  - key pad (switchboard) controls the communication
   - privacy lock (Data + communication) ([crossed out]) (mac + IP)
 - "Assign IP" / Link way / FCC / GDPR / ISO / laws (boxed)
 - Device: Telegraph / phone → [crossed out] infrastructure /
@@ -178,7 +180,7 @@ From 002:
 - Web access / Coordination
 - Telecom regulation (ICANN / IETF / RIR) / DNS / TRAI / FCC
 - RIR / ISP Amazon / TCP/IP / IETF / Identity / IP
-- Network / Public [unclear] / MAC / ICANN / Country code / TLD /
+- Network / Public / MAC / ICANN / Country code / TLD /
   DNSSEC (ARIN) / Business
 - Registration / DNSSEC / Owner / Trust / Key and Security / Pin lock /
   GDPR / CCPA / NIST / ISO / Infrastructure → Physical switches / DNS
@@ -265,17 +267,17 @@ From 001:
   manufacture (HPE, DELL, Lenovo) / Jio / AT&T / TCP/IP
 - Lower diagram: NIC — line to — PCI — "visible via [crossed out] interface"
 - "govt (18)" / arrow to "FCC" / arrow to "NIC" / NASA /
-  "End point to global market" / www [unclear]
+  "End point to global market" / www
 - "NIC contains" / "Sell to customers" / "who follows govt rules"
-- Under "Sell to customers": PCI Device / Driver custom (kernel [unclear]) /
-  User tools / workload / OS / STD / N/W [unclear, vertical]
+- Under "Sell to customers": PCI Device / Driver custom (kernel) /
+  User tools / workload / OS / STD / N/W
 
 From 004, top part:
 - "Market Vendors" / Intel / Broadcom / Nvidia /
   "→ They supply" / Hardware controlled by [crossed out] /
   All public (Emulators) / Hardware controlled by S/W
 - [private — digit string on page, NOT reproduced — privacy review]
-- NIC + SNICs [unclear] / Direct buyers → Cloud (AWS, GCP) /
+- NIC + SNICs / Direct buyers → Cloud (AWS, GCP) /
   OEMs → (Dell, HPE, Lenovo, Cisco) / Telcos and ISP → AT&T, Verizon, Jio /
   Govt Labs / Virtual / Customers / (Assemblers ← NIC integrated into Devices)
 - DARPA / TCP/IP / Device options / Remotes / connections / [crossed out]
@@ -342,7 +344,7 @@ From 009:
 - Device Emulation → Core functions / Business → ASIC Hardware /
   Shared Component / Kernel [crossed out] / Libraries (Firmware) /
   Port → Business → Network → customer
-- NICs / Drivers / Kernel [unclear] / Net device
+- NICs / Drivers / Kernel / Net device
 - Network / OOB / BMC / CLI
 - Root → OOB / sbin / init → BMC (Power) → CLI Admin /
   IP / route / Device / Config files to start / etc config / startup.config
@@ -418,7 +420,7 @@ gated by approval.
 
 From 007:
 - [crossed out] Product Dev / C-suite / Admin / Deploy service /
-  Kernel / middle managers / CPM's [unclear]
+  Kernel / middle managers / CPM's
 - Engineering / Operation Dev / Marketing
 - Supervisors / handles projects / Team lead / Testing /
   RF exposure limits / tower siting
@@ -426,9 +428,9 @@ From 007:
   Switches / Routers / Network / FCC / Customers / Vendors / NTC /
   Silicon / Intel / Broadcom / Nvidia
 - FCC Approval: Equipment certification (routers / phones must) /
-  Broadband speed report (communication [cut off])
+  Broadband speed report (communication)
 - Right / bottom margin: [private — personal names list, NOT
-  reproduced — privacy review] / Pizza [unclear]
+  reproduced — privacy review] / Pizza
 
 From 006 and 005, governance parts (see Card A for full original):
 - Business organisation: ownership, board, executives, C-suite,
