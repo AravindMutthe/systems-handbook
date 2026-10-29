@@ -68,7 +68,17 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:
 .section-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;min-width:0}
 .section-head h2,.how h2{font-family:var(--font-display);font-size:30px;margin:16px 0 8px}
 .domains-note{color:var(--muted);max-width:760px}
-.domain{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 20px;min-width:0;overflow:hidden}
+/* Style 2 — Dark ink (chosen 2026-10-29): domain cards are dark, gold accents.
+   Hero, topbar, footer stay paper — only the main domain card goes dark. */
+.domain{width:100%;background:var(--dark);color:#fdfbf7;border:1px solid var(--dark);border-radius:16px;padding:20px;margin:0 0 20px;min-width:0;overflow:hidden}
+.domain .domain-desc{color:#cbd5e1}
+.domain .domain-art{background:#2b3a47}
+.domain .row .card{background:#26343f;border-color:#3a4a57;color:#fdfbf7}
+.domain .row .card .paper{background:repeating-linear-gradient(#2b3a47,#2b3a47 27px,#33424e 28px);color:#cbd5e1}
+.domain .row .card h4{color:#fdfbf7}
+.domain .row .card p{color:#cbd5e1}
+.domain .row .card .badge{background:#3a4a57;color:#d9a441}
+.domain .domain-action{color:#d9a441}
 /* Domain head rule: logo + domain name = ONE horizontal line, any mobile width.
    Headline row never wraps, title never wraps, font shrinks fluidly to fit;
    description and action sit on later rows and never squeeze the title. */
