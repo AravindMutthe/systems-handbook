@@ -447,6 +447,26 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Related topics in related domains, as cards (2026-10-29)
+
+- A related topic must go into its related domain, presented as a
+  card — not only as a text link or a flow-chart arrow.
+- On a card page, related topics appear in a Related topics section,
+  grouped by domain, as cards linking to the related card's primary
+  page. The related card is a pointer, not a second copy of the
+  content — the content lives once, on its primary card.
+- On an index or homepage grouping, each domain shows its primary
+  cards plus its related cards, as cards, labelled primary vs
+  related, linking back to the primary card.
+- Which topics are related is decided from the batch content itself:
+  the domains a card also touches, and its horizontal links to other
+  cards. No related topic is invented, and no related card is created
+  for a domain the content does not actually touch.
+- This does not change primary placement or learning order. A card's
+  primary domain and its position in the learning sequence stay as
+  decided; related-domain cards are additional entry points to that
+  same card.
+
 ## When content is pushed, development builds automatically (2026-10-29)
 
 - When content is pushed to GitHub, development (the website chat) automatically starts development: pull the pushed content, integrate it, and build the pages or cards it calls for — nested cards in learning sequence, topic/chapter pages, and reader sequence — from that content, in its decided order.
