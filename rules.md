@@ -446,3 +446,10 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - This gate sits on top of the push-only / push-and-pull models
   above; it does not replace them. Local preparation in a chat
   is not a sync.
+
+## When content is pushed, development builds automatically (2026-10-29)
+
+- When content is pushed to GitHub, development (the website chat) automatically starts development: pull the pushed content, integrate it, and build the pages or cards it calls for — nested cards in learning sequence, topic/chapter pages, and reader sequence — from that content, in its decided order.
+- Automatic building means building and preparing, not automatic publishing and not automatic deploying. The privacy and publication gates still apply in full: held notes (not public + published) get no public page or card, and original images stay out of the public repo until the storage decision is made.
+- Deploy to live prod still happens only on the owner's separate tap. Building automatically does not deploy automatically.
+- This rule does not cancel the sync gate for other actions: a push, pull, deploy, update or send for any other purpose still happens only after the owner's call. The automatic step here is specifically: content push → development pulls and starts building pages/cards.
