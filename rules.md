@@ -278,3 +278,10 @@ when present. No real notes exist yet to use these fields.
   Authentication, all deployments). That distinction matters once real
   notes arrive: public repo + private site is not the same as private
   notes.
+
+
+## Chapter heading and original-note button (2026-10-29)
+
+- Chapter heading uses the site logo mark beside it, with the logo wordmark treatment: first word in ink/paper, rest in gold italic gradient (like "Systems" + "Evolution").
+- Chapter detail chips (domain, subject, source date, privacy, review, evidence) sit in ONE horizontal scrolling banner row — swipe left/right on a phone — never stacked vertically.
+- The chapter page does NOT list original-note details inline. It shows a single button ("Open original note — <id>") that opens an archived original page (`original-note.html`) containing the original image (untouched), its transcription, and its note details.
