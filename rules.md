@@ -447,6 +447,28 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Standards, resource coordination, implementation, regulation — distinguished, not one hierarchy (2026-10-29)
+
+- The following roles must be kept distinct, in wording and in
+  diagrams, never lumped as a single "telecom regulation" list:
+  - RIRs administer regional Internet number-resource allocation.
+  - IETF develops Internet technical standards.
+  - IEEE develops standards across electrical, electronics and
+    computing fields.
+  - 3GPP develops mobile telecommunications specifications.
+  - FCC and TRAI have national regulatory roles in their
+    respective jurisdictions.
+- The chapter should distinguish standards development, resource
+  coordination, technical implementation and government regulation
+  rather than presenting them as a single regulatory hierarchy.
+- Handling: label each body with its function (standards
+  development, resource coordination, technical implementation,
+  or government regulation) wherever it appears; a diagram with
+  all of them must show four lanes / functions, not one
+  hierarchy box. Original notes that list them together stay
+  verbatim in Key points and in the archive — the distinction
+  is made in the enhanced layer, not by rewriting the original.
+
 ## Explore domain — flat sequenced grid, not nested cards (2026-10-29)
 
 - When exploring a domain, cards are shown in learning order

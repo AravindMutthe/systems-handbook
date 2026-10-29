@@ -84,6 +84,7 @@ must NOT be put on the homepage (`index.html`).
 - **R11.** Proper nouns italic bold, across the site.
 - **R12.** Systems across domains, not isolated system evaluation — business vocabulary, terminology, and analogies used across domains, with cross-domain links on every page.
 - **R13.** Cross-domain vocabulary yellow bold, across the site.
+- **R14.** Standards, resource coordination, implementation, regulation — distinguished, not a single regulatory hierarchy (RIRs, IETF, IEEE, 3GPP, FCC, TRAI, each with its own role).
 - **Card page order (2026-10-29):** header → Original images + → Detailed explanation → Key points → Horizontal links → Related topics → Previous / Next. Original notes first, before the detailed explanation.
 
 Full requirement text is in `requirements.md`; handling rules are in `rules.md`.

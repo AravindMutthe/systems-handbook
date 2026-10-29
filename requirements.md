@@ -268,6 +268,28 @@ A batch is complete only when all of these are true:
   vocabulary yellow bold, across the site", and is not restated
   here beyond this requirement.
 
+## R14. Standards, resource coordination, implementation, regulation — distinguished
+
+- Requirement: the chapter must state, and keep distinct:
+  - RIRs administer regional Internet number-resource allocation.
+  - IETF develops Internet technical standards.
+  - IEEE develops standards across electrical, electronics and
+    computing fields.
+  - 3GPP develops mobile telecommunications specifications.
+  - FCC and TRAI have national regulatory roles in their
+    respective jurisdictions.
+- Requirement: the chapter should distinguish standards
+  development, resource coordination, technical implementation
+  and government regulation rather than presenting them as a
+  single regulatory hierarchy. A page that lists IETF, IEEE,
+  3GPP, FCC, TRAI, RIRs, and ICANN together under one
+  "regulation" heading, without those four functions labelled,
+  does not meet this requirement.
+- How this distinction is labelled in text and diagrams is in
+  `rules.md`, under "Standards, resource coordination,
+  implementation, regulation — distinguished, not one
+  hierarchy", and is not restated here beyond this requirement.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
