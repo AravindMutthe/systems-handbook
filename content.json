@@ -26,7 +26,8 @@
       "publication": {
         "status": "published"
       },
-      "reviewStatus": "published"
+      "reviewStatus": "published",
+      "poster": "assets/posters/card-a.svg"
     },
     {
       "id": "card-b",
@@ -47,7 +48,8 @@
       "publication": {
         "status": "published"
       },
-      "reviewStatus": "published"
+      "reviewStatus": "published",
+      "poster": "assets/posters/card-b.svg"
     },
     {
       "id": "card-c",
@@ -68,7 +70,8 @@
       "publication": {
         "status": "published"
       },
-      "reviewStatus": "published"
+      "reviewStatus": "published",
+      "poster": "assets/posters/card-c.svg"
     },
     {
       "id": "card-d",
@@ -89,7 +92,8 @@
       "publication": {
         "status": "published"
       },
-      "reviewStatus": "published"
+      "reviewStatus": "published",
+      "poster": "assets/posters/card-d.svg"
     },
     {
       "id": "card-e",
@@ -111,7 +115,8 @@
       "publication": {
         "status": "published"
       },
-      "reviewStatus": "published"
+      "reviewStatus": "published",
+      "poster": "assets/posters/card-e.svg"
     }
   ],
   "relationships": [],

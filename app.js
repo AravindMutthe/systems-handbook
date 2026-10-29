@@ -132,7 +132,10 @@ function render() {
         // never invented note content. For real notes, key points come from the caption.
         const artForCard = DOMAIN_ART[cat.id] || {emoji: cat.emoji || '📄', art: ''};
         const file = safeFile(n.file);
-        const cover = file
+        const poster = safeFile(n.poster);
+        const cover = poster
+          ? `<img class="cover-img" src="${esc(poster)}" alt="" loading="lazy">`
+          : file
           ? `<img class="cover-img" src="${esc(file)}" alt="" loading="lazy">`
           : `<div class="cover-art" aria-hidden="true">${artForCard.art}<span class="cover-emoji">${esc(artForCard.emoji)}</span></div>`;
         const keySource = showingSamples ? cat.description : (n.caption || n.title || '');
