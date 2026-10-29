@@ -85,6 +85,9 @@ must NOT be put on the homepage (`index.html`).
 - **R12.** Systems across domains, not isolated system evaluation — business vocabulary, terminology, and analogies used across domains, with cross-domain links on every page.
 - **R13.** Cross-domain vocabulary yellow bold, across the site.
 - **R14.** Standards, resource coordination, implementation, regulation — distinguished, not a single regulatory hierarchy (RIRs, IETF, IEEE, 3GPP, FCC, TRAI, each with its own role).
+- **R15.** Headlines and topic names — original first, enhanced second, related only.
+- **R16.** Future domains — based on later notes images only (devops, infrastructure/production, software engineering/development as examples).
+- **R17.** Real history and story — categorization as technical perspective, not separation; one continuous story spine, mostly systems-evolution.
 - **Card page order (2026-10-29):** header → Original images + → Detailed explanation → Key points → Horizontal links → Related topics → Previous / Next. Original notes first, before the detailed explanation.
 
 Full requirement text is in `requirements.md`; handling rules are in `rules.md`.

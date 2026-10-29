@@ -29,6 +29,10 @@ follows below, under the same numbers.
 - **R11.** Proper nouns italic bold, across the site.
 - **R12.** Systems across domains, not isolated system evaluation — business vocabulary, terminology, analogies across domains.
 - **R13.** Cross-domain vocabulary yellow bold, across the site.
+- **R14.** Standards, resource coordination, implementation, regulation — distinguished, not a single regulatory hierarchy.
+- **R15.** Headlines and topic names — original first, enhanced second, related only.
+- **R16.** Future domains — based on later notes images only (devops, infrastructure/production, software engineering/development as examples).
+- **R17.** Real history and story — categorization as technical perspective, not separation; one continuous story spine, mostly systems-evolution.
 
 ## Rules are different from requirements — kept separate
 
