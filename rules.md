@@ -326,3 +326,11 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - Sequence position is shown (for example, "3 of 12 in this domain"), and Previous is disabled at the first note and Next at the last note in that domain.
 - The reader keeps the chapter-reader rules: deep, readable, illustrated explanations on public-facing pages, free of internal processing commentary; a single button to the archived original page for the original image + transcription; only Prerequisites and Depends on in Related concepts, then the logo + name home button.
 - When no real notes have been shared yet for a domain, the reader shows the sample layout only, labelled SAMPLE, with no invented sequence or content.
+
+## Systems-evolution timeline (2026-10-29)
+
+- The Systems Handbook carries a systems-evolution timeline: one chronological timeline that connects, across historical periods, telecommunications, computing, networking, industries, governance, cloud and AI — not seven separate timelines.
+- Each timeline entry is placed in its historical period, in date order, and is labelled with which strands it connects (for example, a computing change that also changes networking, or a governance change that shapes an industry). Cross-strand connections are shown explicitly, not left implied.
+- Every timeline entry traces to the evidence register (source ID, original note ID, source date — unknown shown as unknown, never guessed — evidence status, privacy and review status). No timeline entry without a register entry.
+- No invented periods, dates, events, technologies or connections. Period boundaries, dates and strand connections come only from supplied or verified sources; anything unverified is labelled sample/unverified, or not shown as history.
+- The timeline is a public-facing explanation, so it follows the public-facing rule: deep, readable and illustrated, free of internal processing commentary. The evidence register remains the audit view behind it.
