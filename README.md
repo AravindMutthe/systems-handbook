@@ -1,0 +1,27 @@
+# handwritten-notes
+
+My handwritten notes, readable anywhere. Homepage template first — content only after the owner approves the UI, design and theme.
+
+## What this is now (static, Phase 1)
+
+- Static HTML/CSS/JS only. No backend, no database, no build step.
+- `index.html` — homepage template: hero, search, topic filter, page grid, full-page viewer.
+- `styles.css` — theme lives in `:root` variables (`--paper`, `--ink`, `--accent`, …). Re-theming = editing those variables.
+- `app.js` — components (Hero / Search / Topics / Gallery / Viewer / Motion) rendering pages from `notes.json`. Sample layout cards show only while `notes.json` is empty, and are labelled SAMPLE.
+- Frontend, advanced but local-only: animated hero with a hand-coded SVG illustration (stacked pages, pen, floating/sparkle motion), gradient headline, scroll-reveal, staggered card entrance, hover lift, animated blobs, `prefers-reduced-motion` support. No external fonts, images, scripts or CDN code — all art and animation is in-repo, so the site stays fast, private and CDN-cacheable.
+- Framework architecture: the component split + `notes.json` contract above is deliberately framework-shaped, so a later port to Next.js (App Router, static export) + Tailwind + Framer Motion reuses the same components and data — it is a port, not a rebuild or data migration. That port is NOT built now; the static template is the Phase 1 deliverable for UI approval.
+- `notes/` — original page images, kept untouched.
+- `notes.json` — the data contract (v1): one entry per page: `id, title, topic, date, file, caption`. Titles/captions come from the owner or from the page itself — never invented.
+
+## How it scales without a rebuild
+
+- **Horizontal (more pages, more readers):** pages are stateless files, served by any static host / CDN. No server to scale. When the index gets large, split it: `notes/<collection>.json`, same schema, one manifest per collection, loaded on demand. Images get responsive sizes + lazy loading (already in the template).
+- **Vertical (bigger pages, richer reading):** the same static shell can carry larger images, a client-side search index, and reading controls — no architecture change, just assets and the index.
+- **Adaptable:** theme, layout and topics are data/variables, not hardcoded pages. A new topic is a new `topic` value; a new theme is a new `:root` block.
+- **Integrable later:** `notes.json` is the integration point. A search index, sign-in, an API, or a CMS can read/write that same contract later, behind an adapter — none of that is built now, and no backend is assumed.
+
+## Status
+
+- Repo: AravindMutthe/handwritten-notes (private, template only)
+- Content: none yet — awaiting UI/design/theme approval, then the owner sends raw notes batch by batch.
+- Deploy: nothing deployed. A preview/production link needs the owner's separate tap.
