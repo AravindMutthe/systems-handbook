@@ -342,6 +342,37 @@ A batch is complete only when all of these are true:
   updated to include it, and the per-batch report must state
   which image(s) justify it, so the owner can check and overrule it.
 
+## R17. Real history and story — categorization as technical perspective, not separation
+
+- Requirement: the notes are real history, story, and facts,
+  whatever the owner has shared. They cannot be separated just
+  to fit categories, and must not be cut into separate domain
+  boxes that break the story.
+- Requirement: keep one continuous story spine, mostly in the
+  systems-evolution domain, in learning order. The story is
+  followed straight through — for example, origins, then
+  business need, then organisation, then regulation, then
+  directory, then DNS, then silicon, then vendors, then NIC,
+  then kernel, then product approval — because each step only
+  makes sense after the step before it.
+- Requirement: categories are technical perspectives, or
+  lenses, on the same story — not containers that split a
+  note. A card stays in its story place, and carries secondary
+  technical domain tags for what it is technically about:
+  regulation as institutions-markets, NIC / silicon as
+  hardware-computing, kernel / TCP/IP as infrastructure-
+  operations, business / product as industrial-business-
+  networks, and so on, as the page itself shows.
+- Requirement: a technical perspective is shown as a labelled
+  cross-link on the same card, not as a duplicate card in
+  another domain. A reader can follow the history straight
+  through in systems-evolution, and can also filter by
+  technical perspective, without the story being broken apart.
+- This requirement does not replace the primary-domain rule
+  in R5 / R7 — it explains how that rule works for story
+  notes: primary placement is the story place, secondary
+  placements are technical perspectives on that same place.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
