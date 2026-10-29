@@ -447,6 +447,32 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Flow charts and hierarchical diagrams, wherever really needed (2026-10-29)
+
+- Use a flow chart or a hierarchical diagram wherever it is really
+  needed — wherever a relationship across domains and their cards
+  is easier to understand visually than in text alone.
+- Use them for: the learning sequence and system hierarchy
+  (A → B → C → D → E), cross-domain links (prerequisite,
+  successor, cross-domain, conceptual), hierarchies (naming tree,
+  organisation layers, network hierarchy), two-lane / parallel
+  flows, loops (information → trading → business, product loop),
+  and timelines (signalling steps).
+- Do NOT add a diagram for decoration, and do NOT replace text
+  with a diagram: every flow chart or hierarchical diagram must
+  match the bullets on its page, with the same links, in the same
+  order, and the text must still stand on its own without it.
+- Format: local SVG only, in site style (dark #1f2a33, gold
+  #d9a441, light text), labelled, with a caption explaining solid
+  vs dashed arrows where both are used. The system-wide flow /
+  hierarchy diagram lives at `assets/flow/system-flow.svg` and is
+  shown on the homepage Legend section and on the Learning
+  sequence page (`batch1.html`); each card page keeps its own
+  Horizontal links flow chart.
+- Choose flow chart for a sequence or a process, and hierarchical
+  diagram for a tree or a layered hierarchy — either is allowed,
+  whichever makes that relationship clearer.
+
 ## Cross-domain vocabulary yellow bold, across the site (2026-10-29)
 
 - Words, terms, and vocabulary used across domains must be shown

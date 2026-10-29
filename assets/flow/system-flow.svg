@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 720" role="img" aria-label="System flow and hierarchy: five cards in learning order, with cross-domain links">
+<rect width="600" height="720" fill="#1f2a33"/>
+<text x="300" y="36" text-anchor="middle" fill="#d9a441" font-size="20" font-family="Georgia,serif" font-weight="700">Systems Evolution — one system</text>
+<text x="300" y="60" text-anchor="middle" fill="#fdfbf7" font-size="13" font-family="system-ui,sans-serif">Learning order, top to bottom. Solid = next step. Dashed = cross-domain link.</text>
+<g font-family="system-ui,sans-serif">
+<rect x="150" y="80" width="300" height="64" rx="12" fill="#d9a441"/><text x="300" y="106" text-anchor="middle" fill="#1a2027" font-size="15" font-weight="700">Card A — Why networks exist</text><text x="300" y="128" text-anchor="middle" fill="#1a2027" font-size="12">Systems Evolution · ground base</text>
+<path d="M300 144 L300 168" stroke="#d9a441" stroke-width="3"/><text x="312" y="162" fill="#d9a441" font-size="11">why, before what</text>
+<rect x="150" y="170" width="300" height="64" rx="12" fill="#fdfbf7"/><text x="300" y="196" text-anchor="middle" fill="#1a2027" font-size="15" font-weight="700">Card B — Naming &amp; regulation</text><text x="300" y="218" text-anchor="middle" fill="#555" font-size="12">Institutions &amp; Markets · directory to DNS</text>
+<path d="M300 234 L300 258" stroke="#d9a441" stroke-width="3"/><text x="312" y="252" fill="#d9a441" font-size="11">names &amp; addresses</text>
+<rect x="150" y="260" width="300" height="64" rx="12" fill="#fdfbf7"/><text x="300" y="286" text-anchor="middle" fill="#1a2027" font-size="15" font-weight="700">Card C — Hardware &amp; NIC endpoint</text><text x="300" y="308" text-anchor="middle" fill="#555" font-size="12">Hardware &amp; Computing · silicon to NIC</text>
+<path d="M300 324 L300 348" stroke="#d9a441" stroke-width="3"/><text x="312" y="342" fill="#d9a441" font-size="11">endpoint runs here</text>
+<rect x="150" y="350" width="300" height="64" rx="12" fill="#fdfbf7"/><text x="300" y="376" text-anchor="middle" fill="#1a2027" font-size="15" font-weight="700">Card D — NIC &amp; kernel stack</text><text x="300" y="398" text-anchor="middle" fill="#555" font-size="12">Infrastructure &amp; Operations · two lanes</text>
+<path d="M300 414 L300 438" stroke="#d9a441" stroke-width="3"/><text x="312" y="432" fill="#d9a441" font-size="11">product uses this</text>
+<rect x="150" y="440" width="300" height="64" rx="12" fill="#fdfbf7"/><text x="300" y="466" text-anchor="middle" fill="#1a2027" font-size="15" font-weight="700">Card E — Build, operate, approve</text><text x="300" y="488" text-anchor="middle" fill="#555" font-size="12">Industrial &amp; Business Networks · approval gate</text>
+<path d="M450 112 C520 200, 520 380, 450 472" fill="none" stroke="#fdfbf7" stroke-width="2" stroke-dasharray="6 5"/><text x="500" y="300" fill="#fdfbf7" font-size="11" text-anchor="middle">A → E: business /</text><text x="500" y="316" fill="#fdfbf7" font-size="11" text-anchor="middle">trading speed</text>
+<path d="M150 112 C80 180, 80 240, 150 292" fill="none" stroke="#fdfbf7" stroke-width="2" stroke-dasharray="6 5"/><text x="75" y="205" fill="#fdfbf7" font-size="11" text-anchor="middle">A → C:</text><text x="75" y="221" fill="#fdfbf7" font-size="11" text-anchor="middle">DARPA research</text>
+<path d="M150 202 C80 280, 80 340, 150 382" fill="none" stroke="#fdfbf7" stroke-width="2" stroke-dasharray="6 5"/><text x="75" y="295" fill="#fdfbf7" font-size="11" text-anchor="middle">B → D: DNS → stack</text>
+<path d="M450 292 C520 350, 520 410, 450 472" fill="none" stroke="#fdfbf7" stroke-width="2" stroke-dasharray="6 5"/><text x="505" y="385" fill="#fdfbf7" font-size="11" text-anchor="middle">C → E: vendors →</text><text x="505" y="401" fill="#fdfbf7" font-size="11" text-anchor="middle">product</text>
+<text x="300" y="540" text-anchor="middle" fill="#d9a441" font-size="14" font-weight="700">Hierarchy, not five separate evaluations</text>
+<text x="300" y="565" text-anchor="middle" fill="#fdfbf7" font-size="13">Why → naming → hardware → stack → product.</text>
+<text x="300" y="585" text-anchor="middle" fill="#fdfbf7" font-size="13">Each card builds on the one before it, and links back</text>
+<text x="300" y="605" text-anchor="middle" fill="#fdfbf7" font-size="13">across domains — regulation, vendors, approval.</text>
+<text x="300" y="640" text-anchor="middle" fill="#cbd5e1" font-size="12">Same flow as the bullets on each card page.</text>
+<text x="300" y="660" text-anchor="middle" fill="#cbd5e1" font-size="12">The diagram does not replace the text — it shows it.</text>
+</g>
+</svg>
