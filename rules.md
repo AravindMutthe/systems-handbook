@@ -670,3 +670,25 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   - Card D: Customer → NIC → Driver → Kernel stack
   - Card E: C-suite → Engineering → Testing → Customers
 - Explore page stays headline-only — no illustrations there.
+- Not only the Human → Telecom → Networks → Cloud illustration
+  (2026-10-29, his "create or download them and put them in
+  appropriate places, not only this"): illustrations are created
+  AND downloaded, both placed locally, never hotlinked — a
+  downloaded image is saved in `assets/wiki/` with its
+  attribution.txt file, then referenced locally, so the site
+  does not depend on an external host.
+- Created, second circle illustration per card, before Key
+  points: A Human signalling → Fire beacons → Telegraph →
+  DARPA; B ICANN → RIRs → ISP → User; C Silicon → Supplier →
+  Vendor device → Customer; D two lanes, data above and
+  management below, separate; E Silicon → Vendors → Engineering
+  → Customers.
+- Downloaded, each card's own topic illustration at the start
+  of Detailed, not only as a related image on other cards:
+  A ARPANET map + Edison at the telegraph key; B DNS diagram +
+  night telephone operator 1960; C NIC photo + silicon wafer
+  spinner; D network switches; E cell tower. Each caption
+  names what it shows and its Wikimedia Commons licence.
+- Learning sequence page (`batch1/batch1.html`) now has an
+  "Illustrations, in learning order" gallery: one illustration
+  per card, A → E, each tapping through to its card page.
