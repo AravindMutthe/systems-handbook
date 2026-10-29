@@ -163,6 +163,313 @@ batch3-tech-leadership-completion.md.
 
 ---
 
+## Research dimensions — expanded comparison [Added, not original]
+
+This section expands Card I only. It is not on the owner's
+original page, and it does not replace the original eras.
+Every example below comes from Cards A–K or from Batch 1–2
+notes; every interpretation is labelled [Added]. Sources
+used to check the definitions (link-state, decentralization
+vs distributed, interoperability) are kept for the future
+content references page, not in this main text, per the
+verification presentation rule.
+
+### 1. Who decides what — five kinds of actor, not one hierarchy
+
+[Added, labelled distinction, under R14, expanded:]
+- Standards organizations decide HOW systems talk, not
+  who may sell or operate them. IETF = Internet technical
+  standards (TCP/IP). IEEE = electrical, electronics, and
+  computing standards. 3GPP = mobile telecom specifications.
+  W3C = web standards. ISO/IEC = international standards
+  across sectors. ICANN and RIRs are not standards bodies
+  in the same sense: ICANN allocates names, RIRs allocate
+  regional number resources. Example from notes: web era
+  lists ICANN, IETF, W3C together (Card J) — together on
+  the page, different functions in fact.
+- Regulators decide WHETHER a system may operate in a
+  market, and under what public rules. FCC (USA) and TRAI
+  (India) are national regulators. Example: FCC approval
+  gates market entry for routers and phones (Card E);
+  FCC 1934 is an era mention on Card B, not a source date.
+  A regulator does not write TCP/IP, and a standards
+  body does not grant a licence.
+- Corporations decide WHAT to build, sell, and charge for,
+  under company rules. Examples: Intel, Broadcom, Nvidia
+  (silicon, Card C); Cisco, Juniper, Arista, Fortinet,
+  Dell EMC, Huawei, ZTE (government network vendors,
+  Card G); vendors and manufacturers in general (Cards
+  C, G); app-store owners and cloud providers (Card J).
+  Their private rule is the "Bussiness Controller
+  (Private) (company rules)" on Card J — a private
+  gate, distinct from a public regulator's gate.
+- Infrastructure operators decide HOW traffic actually
+  runs, day to day. Examples: ISPs (carrier) scheduling
+  bandwidth (Card K); ISO/RTO scheduling electricity
+  (Card K); telco-ISPs and cloud/ISP operators (Cards
+  C, D); government agencies operating government
+  networks (Card G). An operator may be public, private,
+  or semi-public (ICANN semi, ISPs private, on Card K).
+- Technology communities decide WHAT is shared, in
+  public, without a single owner. Examples from notes:
+  Apache and MySQL in the web stack (Cards I, J);
+  browsers and web servers as shared infrastructure;
+  open protocols (TCP/IP) that any vendor can implement.
+  A community does not regulate a market, and it does
+  not allocate names — it maintains a shared base that
+  corporations and operators then build on, privately
+  or publicly.
+
+Correlation: when these five agree, a system scales
+(web era: IETF/W3C standards + Apache/MySQL community
++ vendors + ISP operators + FCC/TRAI market rules).
+Contradiction: when they disagree, the same system
+can be technically open and economically closed —
+see §6 below.
+
+### 2. Terms clarified [Added]
+
+- Link-state — two meanings, do not merge them.
+  (a) In networking, link-state routing (e.g. OSPF):
+  each router advertises the state of its own links,
+  every router builds the same topology map, and each
+  computes its own shortest path. Control is distributed
+  in calculation, but the map is shared.
+  (b) In the original tech leadership page, "leadership
+  mindset (link state)" is a leadership metaphor, not
+  a routing claim: in the telegraph era, the leader's
+  focus is establishing one link, in one state, by one
+  protocol. The page does not claim OSPF. Keep (a) and
+  (b) separate; (b) is original wording, (a) is [Added]
+  explanation of the networking term it echoes.
+- Decentralization — authority and decision-making
+  spread away from a single centre, to multiple
+  authorities. It is about WHO decides, not where
+  machines sit.
+- Distributed systems — processing and data spread
+  across multiple nodes/machines, for scale, availability,
+  or geography. A distributed system CAN still have a
+  central authority (a cloud provider's distributed
+  data centres, run by one company, with one Cloud IAM
+  gate, Card J). Distributed ≠ decentralized.
+- Centralized systems — one authority controls
+  everything, one main location, one policy engine.
+  Example: Govt PTT in the telegraph era (Card J);
+  Corporate IT Dept in the mainframe era (Card J).
+- Organizational hierarchy — levels of decision in
+  an organisation, from the notes: C-suite → middle
+  managers → team lead → supervisors → employees /
+  workers, with engineering, operations, marketing,
+  and testing as functions (Cards A, E, I). Hierarchy
+  is not the same as centralization: a hierarchy can
+  delegate (distribution era: centralised team managing
+  heterogeneous, distributed systems), and a flat
+  network can still be centrally owned (a platform).
+- Interoperability — the ability of systems from
+  different vendors, eras, or organisations to work
+  together, because they share formats and protocols.
+  Syntactic interoperability = they can exchange data.
+  Semantic interoperability = they understand the
+  data the same way. Cross-domain interoperability =
+  organisations work together across boundaries.
+  Example: heterogeneous systems in Era 2 needing
+  interoperability protocols (Card I); browsers +
+  web servers + Apache + MySQL working together
+  because they share web standards (Card J).
+
+### 3. Comparison by research dimension [Added]
+
+Governance — central authority versus distributed
+decision-making.
+Connection: governance is who may decide, at what
+level. Central: Govt PTT, FCC approval gate, C-suite.
+Distributed: IETF/W3C standards processes, RIR
+allocation, app-store and Cloud IAM gates as private
+governance, AI/platform teams in Era 5.
+Correlation: central governance correlates with
+monopoly and with speed of a single decision (one
+PTT, one protocol, one link state).
+Contradiction: distributed decision-making does not
+mean no governance — it means governance moves to
+standards bodies, allocators, and private platform
+rules, which are harder to see than a single regulator.
+Example: the web has no single owner, yet ICANN,
+IETF, W3C, and app stores all govern parts of it.
+
+Network architecture — centralized, decentralized,
+and distributed systems.
+Connection: architecture is where nodes sit and how
+they connect. Centralized: one hub, one mainframe.
+Decentralized: multiple independent servers, each
+governing its own users, interoperating by standards.
+Distributed: nodes spread out, sharing workload/data,
+with control that may still be central.
+Correlation: centralized architecture correlates with
+centralized control (mainframe, Corporate IT Dept).
+Contradiction: a system can be distributed in
+architecture and centralized in control — cloud
+(microservices, Kub + Terra, Card J) run on many
+nodes, but are gated by one Cloud IAM and one
+company's rules. Conversely, a system can be
+decentralized in control and still depend on a
+central allocator (DNS: distributed resolvers,
+central ICANN/RIR allocation).
+
+Business structure — monopoly, regulated operator,
+competitive markets, platforms.
+Connection: business structure is who may sell, to
+whom, and on what terms. Monopoly: Govt PTT,
+telegraph era. Regulated operator: telco-ISP under
+FCC/TRAI, ISO/RTO for electricity. Competitive
+markets: vendors, manufacturers, direct buyers,
+cloud/AWS/GCP (Card C/D). Platforms: app stores,
+SaaS, API token (Card J) — a platform is a market
+with a private gatekeeper, not a free market.
+Correlation: open standards correlate with
+competitive markets (web: browsers, Apache, MySQL,
+many vendors). Proprietary control correlates with
+platform power (app store, Cloud IAM, API token).
+Contradiction: a platform can look like a market
+(many sellers, many buyers) while one gatekeeper
+decides entry, ranking, and payment — the business
+controller, private, company rules (Card J).
+
+Technology — mainframes → client-server → Internet
+→ cloud → AI.
+Connection: each era changes medium, framework,
+architecture, and payment together (Cards H, J).
+Mainframes: batch processing, Corporate IT Dept,
+accounting chargeback. Client-server: IT manager /
+LAN Admin, software licence → contracts. Internet /
+web: browsers + database, Apache/MySQL, Ad network /
+subscription. Mobile & cloud: app stores, Cloud IAM,
+APIs/microservices, SaaS + usage. 5G & AI: AI models
+(GPT, Claude), GPU/IoT/Edge, MEC orchestration,
+(Pytorch, Tensorflow) service mesh, API Token.
+Correlation: each technology shift correlates with
+a leadership shift (I) and a business-model shift (J).
+Contradiction: a new technology does not automatically
+decentralize power — cloud distributed the machines
+and centralized the platform; AI distributes the
+edge (IoT, Edge nodes) and centralizes the model
+(GPT, Claude) and the token billing.
+
+Standards — proprietary protocols versus open
+interoperability.
+Connection: proprietary = one vendor's protocol,
+licence, or platform rule controls use. Open =
+a shared standard any vendor can implement.
+Examples: proprietary — Corporate IT Dept systems,
+software licence, app-store rules, API token terms
+(company rules). Open — TCP/IP (IETF), web standards
+(W3C), Apache/MySQL, interoperability protocols for
+heterogeneous systems (Card I).
+Correlation: open interoperability correlates with
+more vendors, more competition, and slower, negotiated
+change. Proprietary correlates with faster, single-
+vendor change and with lock-in.
+Contradiction: open standards can be captured by a
+platform — a system can be built on open protocols
+and still be gated by a private app store, Cloud IAM,
+or API token. Open at the protocol layer does not
+guarantee open at the market layer.
+
+Leadership — control, coordination, scaling,
+platform governance, AI oversight.
+Connection: leadership is what the leader must do
+in each era, in Card I's three columns.
+Control (Era 1, telegraph): establish the link,
+the protocol, the state — one centre decides.
+Coordination (Era 2, distribution): a centralised
+team coordinates heterogeneous, distributed systems
+through interoperability protocols — control becomes
+coordination, not command.
+Scaling (Era 3, internet/web/cloud): hypergrowth —
+distributed product/platform teams + central standards
+bodies, leadership mindset = build for scale [Added —
+proposed].
+Platform governance (Era 4, mobile & cloud):
+small service teams + central platform / app-store /
+Cloud IAM gates, leadership mindset = product mindset
+[Added — proposed]. The leader now governs a platform,
+not just a team or a network.
+AI oversight (Era 5, 5G & AI, till 2026): AI/platform/
+data/edge teams + central company rules, leadership
+mindset = orchestration mindset [Added — proposed]:
+deciding what AI decides, what humans decide, and
+what the edge decides, under MEC orchestration and
+service mesh, with API token as the billing gate.
+Correlation: as technology distributes, leadership
+moves from control → coordination → scaling →
+platform governance → AI oversight. Each step adds
+a layer, it does not remove the earlier layer —
+a platform leader still controls, coordinates, and
+scales, and now also oversees AI.
+Contradiction: AI oversight is the hardest leadership
+layer, because the system it oversees is distributed
+(edge, IoT, service mesh) while the model, the
+training, and the token billing are centralized.
+Oversight therefore has to be both distributed
+(at the edge, in the pipeline) and central (in
+company rules, in regulation, in standards) at
+once — and no single actor in §1 owns all of it.
+
+### 4. The central contradiction [Added]
+
+Decentralized infrastructure alongside centralized
+economic power — this is the contradiction that runs
+through all five dimensions above, and it is the
+point of the whole comparison.
+
+Technically, the Internet is distributed: TCP/IP,
+DNS, web standards, and cloud microservices spread
+work across many nodes, and no single node owns the
+network. Economically, power concentrates: app
+stores decide market entry, Cloud IAM decides access,
+AI models (GPT, Claude) are trained and billed by a
+few providers, and API token billing turns use into
+a metered, centrally priced resource (Card J).
+
+Examples, all from the notes:
+- Telegraph: infrastructure centralized (Govt PTT)
+  and economic power centralized — no contradiction
+  yet, monopoly in both layers.
+- Web: infrastructure distributed (browsers, web
+  servers, Apache, MySQL, IETF/W3C standards) and
+  economic power more distributed (many vendors,
+  Ad network / subscription) — the open moment.
+- Mobile & cloud: infrastructure distributed
+  (microservices, Kub + Terra, many nodes) and
+  economic power centralized (app stores, Cloud IAM,
+  SaaS + usage) — the contradiction appears.
+- 5G & AI: infrastructure distributed further
+  (GPU, IoT, Edge nodes, MEC orchestration) and
+  economic power centralized further (AI models,
+  service mesh, API Token) — the contradiction sharpens.
+  The edge is everywhere; the model and the meter
+  are in few hands.
+
+Correlation that explains it: distribution of
+machines does not distribute ownership. Ownership
+follows the gate — the allocator (ICANN/RIR), the
+regulator (FCC/TRAI), the platform (app store /
+Cloud IAM), the model owner (AI provider) — and
+gates can centralize even when nodes distribute.
+Contradiction that follows: a system can be
+resilient in architecture (no single node failure)
+and fragile in governance (one gate failure, one
+policy change, one token price change).
+
+That is why the five actors in §1 must be kept
+distinct, and why R14 matters: if standards,
+regulators, corporations, operators, and communities
+are collapsed into "the system" or "the hierarchy",
+the contradiction disappears from view — and with
+it, the question Card I actually asks: who leads,
+who decides, and who pays, in each era.
+
+---
+
 ## Card J
 
 ### Original headline first
