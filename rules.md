@@ -309,3 +309,11 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - Public-facing explanations — on the homepage, chapter pages and topic pages — must be deep, readable and illustrated.
 - They must be free of internal processing commentary: no schema names, file names, build steps, pipeline talk, or how the site was processed. The reader sees the explanation, not the work behind it.
 - Archived original pages are different: they show the original image, untouched, plus its transcription and details. An archived original is evidence, not an explanation — it does not need to be deep, readable or illustrated, and it must not be rewritten into an explanation.
+
+## Historical research timeline and evidence register (2026-10-29)
+
+- Historical research timeline: a chronological record, in date order, of eras, dates, technology changes and institutional changes. Chronology is kept separate from conceptual relationships — time order is not the same as dependency.
+- Evidence register: a separate, auditable list of the evidence behind every timeline claim. Each register entry records: a stable source ID, the original note ID it traces to (if any), the source date (unknown shown as unknown, never guessed), what kind of change it evidences (technology and/or institutional), its cross-domain links, its evidence status (unverified | needs-review | verified), its privacy classification, and its review status.
+- No timeline entry without a register entry. A claim with no evidence is labelled sample/unverified, or it is not shown as history.
+- No invented eras, dates, events or sources. If a date, era or source is not supplied or verified, the timeline and register say so plainly.
+- The timeline is a reading view; the register is the audit view. The two must agree: every timeline entry points to its register entry, and every register entry used in the timeline appears there.
