@@ -1,6 +1,6 @@
-# handwritten-notes
+# Systems Evolution: Networks, Business & Technology
 
-My handwritten notes, readable anywhere. Homepage template first — content only after the owner approves the UI, design and theme.
+My handwritten notes, readable anywhere. Homepage template first — content only after the owner approves the UI, design and theme. Repo name stays `handwritten-notes`; this is the site title.
 
 ## What this is now (static, Phase 1)
 
