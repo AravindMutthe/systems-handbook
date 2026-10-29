@@ -58,6 +58,27 @@
   if(caption){ document.getElementById('topic-caption').textContent=caption; }
   if(file){ var fig=document.getElementById('topic-figure'); fig.hidden=false; document.getElementById('topic-img').src=file; document.getElementById('topic-img').alt=title; }
   if(id){ document.getElementById('topic-original-text').textContent='This topic is linked to original note '+id+'.'; document.getElementById('topic-original-link-wrap').hidden=false; }
+  // Privacy + publication gate for direct topic URLs: if the note ID
+  // exists in content.json and is NOT public+published, hide everything
+  // about it and show only a held notice — no image, caption or link.
+  if(id){
+    fetch('content.json').then(function(r){return r.json();}).then(function(c){
+      var all=(c.notes||[]).concat((c.collections&&c.collections.notes)||[]);
+      var note=all.filter(function(n){return n.id===id;})[0];
+      if(note){
+        var pub=(note.publication&&note.publication.status==='published')||note.reviewStatus==='published';
+        if(note.privacy!=='public'||!pub){
+          document.getElementById('topic-title').textContent='Held note';
+          document.getElementById('topic-desc').textContent='';
+          document.getElementById('topic-caption').textContent='';
+          document.getElementById('topic-figure').hidden=true;
+          document.getElementById('topic-original-text').textContent='This note is held back — not public and published, so it is not shown here.';
+          document.getElementById('topic-original-link-wrap').hidden=true;
+          document.getElementById('topic-chapter-link-wrap').hidden=true;
+        }
+      }
+    }).catch(function(){});
+  }
   if(domain==='institutions-markets'){ document.getElementById('topic-chapter-link-wrap').hidden=false; }
   fetch('categories.json').then(function(r){return r.json();}).then(function(cats){
     var cat=cats.filter(function(c){return c.id===domain||c.title===topic;})[0];

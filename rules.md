@@ -343,3 +343,11 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - Follow the ByteByteGo pattern for how relationships are explained: concise explanation first, then the relationship in context, with an original illustration only where it actually clarifies the connection — never a copied graphic, and never decoration for its own sake.
 - Add a visual graph only when justified: when the relationships are too tangled to follow as labelled links, and a graph would make them clearer. Until then, labelled links are the graph. A graph view is deferred, not built by default.
 - Every relationship traces to a source or a note, or is labelled sample/unverified. No invented prerequisites, dependencies, successors or standards.
+
+## Privacy and publication enforcement (2026-10-29)
+
+- Public view shows ONLY a note that meets BOTH gates: `privacy === 'public'` AND publication is `'published'` (`publication.status === 'published'`, or `reviewStatus === 'published'`). Approved is NOT published. Draft, in-review, or missing privacy/publication fields = NOT shown.
+- Enforcement is in code, not just in the schema: the homepage, search, suggestions and topic navigation all filter to public+published notes first. Held notes are counted only ("N notes held back") — their titles, captions, images and details are never listed on a public-facing page.
+- A direct URL does not bypass the gate: a topic page that loads a held note ID from `content.json` shows only a held notice, with no image, caption or original-note link.
+- Storage gate, separate from the code gate: code enforcement does NOT make a public repo private. Real original images must NOT be pushed to this public repo until (a) the note is public+published, AND (b) the owner has decided the storage for real originals — public repo, private storage, or a private repo. Until that decision, real originals stay in a private archive only, never in this repo. The site being Vercel-private does not change the repo being public.
+- Sample cards are not real notes and are exempt only while no real notes exist; once real notes exist, samples do not appear alongside them.

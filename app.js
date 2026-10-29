@@ -62,6 +62,14 @@ async function load() {
   if (content && Array.isArray(content.notes)) { notes = content.notes; }
   else if (content && content.collections && Array.isArray(content.collections.notes)) { notes = content.collections.notes; }
   else { const data = await loadJson('notes.json', []); notes = Array.isArray(data) ? data : (data.notes || []); }
+  // Privacy + publication enforcement (public view only):
+  // a note is shown ONLY if privacy === 'public' AND publication is
+  // 'published' (publication.status, or reviewStatus === 'published').
+  // Approved is NOT published. No privacy/publication fields = NOT shown.
+  // Held notes are counted only — never titled, captioned or listed here.
+  const allNotes = notes;
+  notes = allNotes.filter(isPubliclyVisible);
+  heldCount = allNotes.length - notes.length;
   document.getElementById('stat-pages').textContent = notes.length ? `${notes.length} page${notes.length === 1 ? '' : 's'} · ${categories.length} domains` : `${categories.length} core domains · 0 pages yet — template`;
   const qParam = new URLSearchParams(location.search).get('q');
   if (qParam) { const inp = document.getElementById('search'); if (inp) inp.value = qParam; }
@@ -80,9 +88,18 @@ function renderTopics() {
   });
 }
 function noteDomain(n) { return n.domain || n.topic || ''; }
+function isPubliclyVisible(n) {
+  if (!n || n.privacy !== 'public') return false;
+  if (n.publication && n.publication.status === 'published') return true;
+  if (n.reviewStatus === 'published') return true;
+  return false;
+}
+let heldCount = 0;
 function render() {
   const q = (document.getElementById('search').value || '').toLowerCase();
-  const showingSamples = notes.length === 0;
+  // Samples only when there are NO notes at all — not when notes exist
+  // but are all held back by privacy/publication enforcement.
+  const showingSamples = notes.length === 0 && heldCount === 0;
   // Real notes, filtered; or, while empty, 3 sample cards per domain so
   // every horizontal row is visible for design review.
   const list = document.getElementById('domain-list'); list.innerHTML = '';
@@ -141,6 +158,11 @@ function render() {
   document.getElementById('count').textContent = showingSamples ? 'Sample layout · core domains' : `${total} page${total === 1 ? '' : 's'}`;
   document.getElementById('empty').hidden = shownCats.length > 0;
   document.getElementById('sample-note').hidden = !showingSamples;
+  const heldEl = document.getElementById('held-note');
+  if (heldEl) {
+    heldEl.hidden = heldCount === 0;
+    if (heldCount > 0) heldEl.textContent = heldCount + ' note' + (heldCount === 1 ? '' : 's') + ' held back — not public and published, so ' + (heldCount === 1 ? 'it is' : 'they are') + ' not shown here. No titles or details are listed for held notes.';
+  }
 }
 function openViewer(n) {
   const v = document.getElementById('viewer'); v.hidden = false;
