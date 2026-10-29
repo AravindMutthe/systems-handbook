@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 200" role="img">
+<rect width="760" height="200" rx="16" fill="#1f2a33"/>
+<defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#d9a441"/></marker></defs>
+<circle cx="95" cy="80" r="58" fill="#eef2ff" stroke="#d9a441" stroke-width="2"/>
+<text x="95" y="95" text-anchor="middle" font-size="44">🗣️</text>
+<text x="95" y="160" text-anchor="middle" fill="#fdfbf7" font-size="16" font-weight="700">Human</text>
+<line x1="157" y1="80" x2="223" y2="80" stroke="#d9a441" stroke-width="3" marker-end="url(#a)"/>
+<circle cx="285" cy="80" r="58" fill="#e6f4ea" stroke="#d9a441" stroke-width="2"/>
+<text x="285" y="95" text-anchor="middle" font-size="44">☎️</text>
+<text x="285" y="160" text-anchor="middle" fill="#fdfbf7" font-size="16" font-weight="700">Telecom</text>
+<line x1="347" y1="80" x2="413" y2="80" stroke="#d9a441" stroke-width="3" marker-end="url(#a)"/>
+<circle cx="475" cy="80" r="58" fill="#fef3c7" stroke="#d9a441" stroke-width="2"/>
+<text x="475" y="95" text-anchor="middle" font-size="44">🌐</text>
+<text x="475" y="160" text-anchor="middle" fill="#fdfbf7" font-size="16" font-weight="700">Networks</text>
+<line x1="537" y1="80" x2="603" y2="80" stroke="#d9a441" stroke-width="3" marker-end="url(#a)"/>
+<circle cx="665" cy="80" r="58" fill="#e0f2fe" stroke="#d9a441" stroke-width="2"/>
+<text x="665" y="95" text-anchor="middle" font-size="44">☁️</text>
+<text x="665" y="160" text-anchor="middle" fill="#fdfbf7" font-size="16" font-weight="700">Cloud</text>
+</svg>

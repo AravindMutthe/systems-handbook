@@ -650,3 +650,23 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - Automatic building means building and preparing, not automatic publishing and not automatic deploying. The privacy and publication gates still apply in full: held notes (not public + published) get no public page or card, and original images stay out of the public repo until the storage decision is made.
 - Deploy to live prod still happens only on the owner's separate tap. Building automatically does not deploy automatically.
 - This rule does not cancel the sync gate for other actions: a push, pull, deploy, update or send for any other purpose still happens only after the owner's call. The automatic step here is specifically: content push → development pulls and starts building pages/cards.
+
+## Circle illustrations, wherever needed (2026-10-29)
+
+- Style, from the illustration he sent: circles with an icon
+  inside, a gold arrow between circles, and the label below the
+  circle, in sequence, left to right. Local SVG only, in
+  `assets/flow/`, never hotlinked, never a screenshot.
+- Labels are in light text on the dark figure background, so
+  they stay readable — the sent screenshot's labels were dark
+  on black and almost invisible, so that flaw is not copied.
+- Use such an illustration wherever a sequence or flow is
+  explained, at the start of that explanation, not as decoration,
+  and its nodes must match the bullets already on that page:
+  - Homepage + Card A: Human → Telecom → Networks → Cloud
+    (`human-telecom-networks-cloud.svg`)
+  - Card B: Telephone directory → DNS → ISP → User
+  - Card C: Silicon → Vendor → Customer → NIC
+  - Card D: Customer → NIC → Driver → Kernel stack
+  - Card E: C-suite → Engineering → Testing → Customers
+- Explore page stays headline-only — no illustrations there.
