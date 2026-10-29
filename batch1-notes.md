@@ -290,6 +290,16 @@ Selling that endpoint is not just a shipment — it is governed,
 which is why the NIC chain in your notes keeps returning to
 government rules and to FCC.
 
+[Added, labelled distinction, under R14 — not one hierarchy:]
+FCC / national regulators, IETF, IEEE, and ICANN / RIRs are
+different functions, not one chain. FCC and TRAI regulate a
+national market and approve equipment for that market. IETF
+sets Internet technical standards. IEEE sets standards across
+electrical, electronics, and computing. ICANN and RIRs allocate
+names and number resources. A vendor's NIC therefore passes
+four different gates — regulation, technical standards, hardware
+standards, and allocation — not one approval.
+
 ### Enhanced diagram [Added, redraw, arrows labelled by kind]
 
 [Organizational: manufactures / supplies] Silicon ═> Intel /
@@ -379,6 +389,15 @@ cloud and ISP companies, for fast trading, and the business
 that traffic serves is the reason the management lane exists:
 a device that cannot be managed cannot carry that business.
 
+[Added, business and cross-domain vocabulary, grounded in
+linked cards:] The same stack sits in a market. Vendors sell
+the endpoint (Card C), customers buy it and run traffic on it,
+regulation gates its market entry through FCC approval (Card E),
+and allocation decides which address it carries, through RIR /
+IP blocks (Card B). Market, vendor, customer, allocation, and
+regulation are therefore words on this card's story, not only
+links to other cards — the stack is not isolated from them.
+
 ### Enhanced diagram [Added, redraw, arrows labelled by kind]
 
 Two parallel lanes, never merged into one arrow.
@@ -397,6 +416,7 @@ to data flow in places, and is drawn separately for that reason.
 - NIC → Card C
 - OOB / BMC / CLI → Card C (conceptual)
 - TCP/IP → Card B (successor)
+- Product / approval / market → Card E (the product that uses this stack, gated by approval)
 
 ---
 
@@ -449,6 +469,15 @@ buy silicon, and it cannot enter the market until approval is
 granted. That approval gate is why this note comes last — it
 depends on every note before it, from origins to naming to the
 NIC stack.
+
+[Added, labelled distinction, under R14 — not one hierarchy:]
+Approval is not the same as standards or allocation. FCC
+approval (and TRAI, nationally) decides whether a product
+may enter a market. IETF and IEEE set the technical and
+hardware standards the product is built to. ICANN and RIRs
+allocate the names and number resources the product uses.
+A product must pass all three kinds, and passing one does
+not pass the others.
 
 ### Enhanced diagram [Added, redraw, arrows labelled by kind]
 
