@@ -123,6 +123,32 @@ when present. No real notes exist yet to use these fields.
 - Preserve reduced-motion support: `prefers-reduced-motion` turns off
   all animation and transition in both CSS files.
 
+## Educational pattern — ByteByteGo style, original illustrations only
+
+- Use the educational pattern, adapted for this handbook:
+  annotated diagram, concise explanation, step-by-step technical
+  flow, example, limitations, and deeper references.
+- Annotated diagram: every diagram carries numbered annotations and
+  a legend explaining each one, so a reader can follow it without
+  guessing.
+- Concise explanation: one short paragraph that says what the chapter
+  is about, before the detail.
+- Step-by-step flow: numbered steps, in order, that a reader can
+  pause and resume.
+- Example: a worked example (code or table) that shows the idea in
+  practice.
+- Limitations: what the chapter does not cover, what is unverified,
+  and what must not be used as a source yet.
+- Deeper references: further reading, added only from cited notes or
+  verified sources — never invented.
+- Create **original illustrations** for every diagram. Never copy
+  ByteByteGo's graphics, or any other site's graphics, even if the
+  pattern is borrowed. The pattern is the idea; the drawing is ours.
+- Status: pattern applied to the sample chapter (`chapter.html`:
+  annotated Figure 1, concise explanation, numbered flow,
+  limitations, deeper references). All sample content is labelled
+  sample.
+
 ## Content architecture — separate records, not interchangeable cards
 
 - Do **not** treat all original batch images as interchangeable image
