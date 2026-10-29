@@ -20,6 +20,16 @@ a deploy decision for the owner, not made here.
 
 Learning order, provisional: Card I → Card J → Card K.
 
+Build note for card pages: transcription bracket markers
+([cut off], [no value...], [bracket, left], [unclear],
+[crossed out], etc.) and truncated-word corrections live
+ONLY inside "Original images +" dropdown, never in Detailed
+explanation or Key points. Main page shows corrected words:
+"compute" (original "comput" cut off), "subscription"
+(original "Subsn" truncated), "schedule =" (no value on
+page), "Govt projects" (left bracket on page). Full marked
+transcription is in batch3-intake.md (archive, local).
+
 Arrow kinds in enhanced diagrams below, in text form (site SVG
 rendering is development's job; the kind for every arrow is given here):
 [Historical] → = what came before, with era/date.
@@ -52,7 +62,7 @@ Technical perspectives: industrial-business-networks (primary
 technical lens), institutions-markets, infrastructure-operations.
 
 ### Original notes — UNFINISHED, as the owner stated
-- "Centralized" [diagonal, crossed through, top of page — see intake note]
+- "Centralized"
 - "1940's Telegraph → connectivity. function. (dev)"
 - "Focus & core Business → Establishing comm protocols"
 - Boxes: Org Structure / Tech strategy / Leadership mindset
@@ -170,7 +180,7 @@ industrial-business-networks.
 - Bussiness controller: Software licence → contracts
 ④ web 1.0 / 2.0:
 - UI frameworks + hardware/SW control: browsers + Database (infra), web servers, Apache, MySQL, ICANN, IETF, W3C bodies
-- Bussiness controller: Ad N/w / Subsn [subscription, truncated on page]
+- Bussiness controller: Ad N/w / subscription
 ⑤ mobile & / cloud:
 - UI frameworks + hardware/SW control: APP stores, Cloud IAM, API + microservices, Cloud arch (Kub + Terra)
 - Bussiness controller: SaaS + usage
@@ -246,12 +256,12 @@ technical lens), institutions-markets, industrial-business-networks.
 ### Original notes
 - Tasks + Resources ⇒ schedule project
 - Tasks + resources = electric flows
-- schedule = [no value written after = on the page]
-- Govt projects [bracket, left]
+- schedule =
+- Govt projects
 - electricity = generators flows → ISO schedule → concern
 - networking = routers packets → ISP schedule bandwidth
 - Tasks = jobs, contracts, transactions
-- resource = money, labor, raw material, comput [cut off]
+- resource = money, labor, raw material, compute
 - schedulers = entity → allocates these resources fairly / efficiently
 - Who schedules / Scheduler owns
   - electricity – ISO / RTO (ISO) indepent / semi / public
