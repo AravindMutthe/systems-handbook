@@ -76,8 +76,21 @@ function render() {
     } else {
       pages.forEach((n, i) => {
         const card = document.createElement('button'); card.className = 'card'; card.style.animationDelay = `${i * 60}ms`;
-        const visual = n.file ? `<img src="${n.file}" alt="" loading="lazy">` : `<div class="paper"><span class="paper-emoji" aria-hidden="true">${(DOMAIN_ART[cat.id] || {}).emoji || cat.emoji || '📄'}</span>Your handwritten page<br>will appear here</div>`;
-        card.innerHTML = `${visual}<div>${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}<h4>${n.title}</h4><p>${[n.topic || cat.title, n.date].filter(Boolean).join(' · ')}</p></div>`;
+        // Subcard / nested card: related cover art as a LOW-OPACITY background image,
+        // NOT a hard half-split. The cover fades with a gradient into the text area,
+        // so image → text is soft. Text half = key points / short notes, not a wall.
+        // Cover source: for a real note, its own page image; for a sample, the domain's
+        // related local illustration (same art as the domain header, open/local SVG, no hotlink).
+        // Key points for samples come ONLY from the domain description (split on commas),
+        // never invented note content. For real notes, key points come from the caption.
+        const artForCard = DOMAIN_ART[cat.id] || {emoji: cat.emoji || '📄', art: ''};
+        const cover = n.file
+          ? `<img class="cover-img" src="${n.file}" alt="" loading="lazy">`
+          : `<div class="cover-art" aria-hidden="true">${artForCard.art}<span class="cover-emoji">${artForCard.emoji}</span></div>`;
+        const keySource = showingSamples ? cat.description : (n.caption || n.title || '');
+        const keys = keySource.split(/[,;]/).map(s => s.replace(/^\s*and\s+/i, '').trim()).filter(Boolean).slice(0, 3);
+        const keyHtml = keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${k}</li>`).join('')}</ul>` : '';
+        card.innerHTML = `<div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}<h4>${n.title}</h4><p>${[n.topic || cat.title, n.date].filter(Boolean).join(' · ')}</p>${keyHtml}</div>`;
         card.onclick = () => { if (n.file) openViewer(n); };
         row.appendChild(card);
       });

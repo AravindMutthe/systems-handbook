@@ -128,9 +128,23 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;text-align:left;padding:0;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s;animation:fadeUp .6s ease both}
 .card:hover{transform:translateY(-4px) rotate(-.3deg);box-shadow:0 14px 28px rgba(0,0,0,.10)}
+/* Subcard cover: related image/art as LOW-OPACITY background, soft gradient into text.
+   No hard half-split: .card-fade gradients from transparent to the card background,
+   so the image dissolves into the text area. Text area = key points / short notes. */
+.card-cover{position:relative;height:170px;overflow:hidden;background:var(--accent-soft)}
+.card-cover .cover-img{width:100%;height:100%;object-fit:cover;display:block;opacity:.45}
+.card-cover .cover-art{width:100%;height:100%;opacity:.35;display:flex;align-items:center;justify-content:center}
+.card-cover .cover-art svg{width:90%;height:90px}
+.card-cover .cover-emoji{position:absolute;top:12px;left:12px;font-size:32px;opacity:.9}
+.card-cover .card-fade{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 15%,var(--sample-bg) 88%)}
+.card-cover .cover-label{position:absolute;left:14px;right:14px;bottom:10px;font-family:var(--font-display);font-size:16px;color:var(--muted);text-align:center}
 .card .paper{height:200px;background:repeating-linear-gradient(var(--surface),var(--surface) 27px,#eef2f5 28px);display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:var(--font-display);font-size:18px;padding:16px;text-align:center}
 .card img{width:100%;height:200px;object-fit:cover;display:block}
-.card div{padding:14px}
+.card .card-body{padding:14px}
+.key-headline{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:12px 0 4px!important}
+.key-points{list-style:none;margin:0;padding:0}
+.key-points li{font-size:13px;color:var(--muted);padding-left:14px;position:relative;margin-bottom:4px}
+.key-points li::before{content:"•";position:absolute;left:0;color:var(--gold);font-weight:700}
 .card h3,.card h4{margin:0 0 4px;font-size:16px}
 .card p{margin:0;color:var(--muted);font-size:14px}
 .badge{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;margin-bottom:8px}
