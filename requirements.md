@@ -124,6 +124,25 @@ A batch is complete only when all of these are true:
   publication, storage, deploy, or privacy decisions — those remain
   owner decisions, as in `rules.md`.
 
+## R8. Input order is random — sequence is decided, not received
+
+- The owner sends batches in random order. Random sending order is
+  NOT the learning order, and must never be treated as the sequence.
+- Requirement: based on the notes themselves, Leo decides which note
+  comes in which sequence position — ground base first, then the
+  core hardware resources and systems that build on it, following
+  prerequisites and interlinks (see R2 and R7).
+- A note received early is not automatically early in the sequence,
+  and a note received late is not automatically late. Placement is
+  decided by what the note depends on and what depends on it, not by
+  batch number, upload order, or file order.
+- When a later batch reveals an earlier prerequisite, the sequence
+  is reordered and the change is reported in that batch's report —
+  earlier placements are provisional until all batches are seen.
+- The archive keeps the original batch/receipt order for traceability
+  only. The learning sequence, nested-card order, and reader
+  Previous/Next order are the decided sequence, not the receipt order.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
