@@ -116,7 +116,7 @@ function render() {
     const art = DOMAIN_ART[cat.id] || {emoji: cat.emoji || '📄', art: ''};
     section.innerHTML = `<div class="domain-head"><div class="domain-emoji" aria-hidden="true">${esc(art.emoji)}</div><h3>${esc(cat.title)}</h3></div><p class="domain-desc">${esc(cat.description)}</p><button type="button" class="domain-action">${esc(cat.action || 'Explore domain')} →</button><div class="domain-art" aria-hidden="true">${art.art}</div>`;
     // Integration: tapping a domain's action filters the whole homepage to that domain.
-    section.querySelector('.domain-action').onclick = () => { activeDomain = cat.id; renderTopics(); render(); document.getElementById('domains').scrollIntoView({behavior:'smooth'}); };
+    section.querySelector('.domain-action').onclick = () => { location.href = 'explore.html?domain=' + encodeURIComponent(cat.id); };
     const row = document.createElement('div'); row.className = 'row';
     if (pages.length === 0) {
       row.innerHTML = `<p class="row-empty">No pages in this domain yet — they will appear here as you send them.</p>`;

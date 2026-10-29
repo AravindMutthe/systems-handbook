@@ -472,13 +472,20 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 
 ## Explore domain layout — reverted, and homepage action is only Explore domain (2026-10-29)
 
-- Owner direction, 2026-10-29: the flat sequenced square-grid
-  explore layout (commit 192fc9fc) is NOT his requirement — it
+- Owner direction, 2026-10-29, clarified: the flat grid on the
+  homepage itself (commit 192fc9fc) was NOT his requirement — it
   was reverted in full. Homepage explore layout stays as it was
   before that change: domain sections with horizontal swipe rows
   on phones, filling grid on desktop, cards numbered by
-  domain-local position, related cards as cards in the domain
-  section.
+  domain-local position.
+- After clicking Explore domain, it must land in a NEW PAGE
+  (`explore.html?domain=<id>`), not filter the homepage in place.
+  That new page shows, in a grid, in learning order, ALL cards
+  for that domain — primary plus related, sorted Card A … Card E
+  — all visible at once, flat, not nested cards, each card a
+  rectangle with a square poster cover on top. Tapping a card
+  there opens its real card page. Homepage itself keeps only
+  the Explore domain action, never Start reading.
 - Homepage domain cards have only one action: "Explore domain".
   No domain card says "Start reading" — the Institutions &
   markets card, which previously said "Start reading" in
