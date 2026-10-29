@@ -785,3 +785,21 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   C Sillicon product / Market Vendors; D NIC / N/W Device /
   HW + SW / OEM / NIC chain; E Product Dev / why needed /
   why needed / Comm to Business.
+
+## Site is public, with original images (2026-10-29)
+
+- Site https://systems-handbook.vercel.app was private
+  (Vercel Authentication, ssoProtection deploymentType all)
+  from 2026-10-29 15:27 IST until 2026-10-29 20:22 IST.
+- On the owner's explicit tap "Make public with original
+  images" (20:22 IST, after a warning that all existing
+  deployments become unprotected), ssoProtection was set to
+  null via PATCH /v9/projects, verified by GET (null).
+- Public, verified unauthenticated: homepage 200, card
+  pages 200, and original images 200 image/jpeg — Batch 1
+  (10) and Batch 2 (7) original JPGs in batch1/ and batch2/
+  assets/originals/ are now publicly accessible, as he chose.
+  They are still NOT in the public GitHub repo — only in the
+  Vercel deploy.
+- To make the site private again, set ssoProtection back to
+  {"deploymentType": "all"} — that re-protects all deployments.
