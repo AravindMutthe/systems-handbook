@@ -101,6 +101,29 @@ A batch is complete only when all of these are true:
   on a public-facing page.
 - The per-batch report (R3.6) has been given to the owner.
 
+## R7. Decision authority — based on the notes, Leo decides
+
+- Decision authority (owner direction, 2026-10-29): based on the notes
+  themselves, Leo decides:
+  - Which notes are interlinked with each other
+  - Which topic each note comes under
+  - Which category / domain each note comes under
+  - How a note relates to other domains or topics, including
+    cross-domain and cross-topic relations
+- These decisions must be grounded in what the page actually shows —
+  its content, its diagram, and its links to other pages. No invented
+  topics, categories, domains, or relationships.
+- If a note fits more than one topic or domain, record its primary
+  placement plus its cross-links — do not force it into a single flat
+  tag, and flag the ambiguity in the per-batch report.
+- Every decision made under this authority is shown in the per-batch
+  report, with the reason for the placement or link, so the owner can
+  check and overrule it. An overrule is recorded and the sequence is
+  updated; a decision is not silently reverted later.
+- This authority covers content organization only. It does NOT cover
+  publication, storage, deploy, or privacy decisions — those remain
+  owner decisions, as in `rules.md`.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
