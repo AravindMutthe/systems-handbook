@@ -447,6 +447,26 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Cross-domain vocabulary yellow bold, across the site (2026-10-29)
+
+- Words, terms, and vocabulary used across domains must be shown
+  in yellow bold: `<span class="cross-term">term</span>`, with CSS
+  `.cross-term{font-weight:800;color:var(--accent)}` site-wide
+  (gold/yellow accent: #8a6d1b in light theme, #d9a441 in dark
+  theme) and `.cross-term{font-weight:800;color:#8a6d1b}` on
+  card pages, which are always light paper.
+- Covered terms: network, signalling, directory, endpoint, stack,
+  kernel stack, lane, data lane, management lane, gate, hierarchy,
+  hierarchical, allocation, regulation, coordination, trading,
+  trading speed, business, market, customer, vendor, company,
+  approval, product, silicon, chip, plus any term used in more
+  than one domain in a future batch (add it to this list).
+- Homepage key points apply the same rule in `app.js`
+  (`crossTerm`, after `boldLead` and `italicBold`).
+- Do not wrap a term that is already dark bold (bullet headline)
+  or italic bold (proper noun) — headline and proper-noun styles
+  take precedence in their own places.
+
 ## Proper nouns italic bold, across the site (2026-10-29)
 
 - Any identity, name, or proper noun used on a page must be shown

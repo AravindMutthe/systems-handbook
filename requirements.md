@@ -5,6 +5,31 @@ Status: Requirements only. Nothing here claims content is already built,
 published, or deployed. Real content arrives only in batches of original
 note images from the owner.
 
+## Legend — all requirements
+
+This legend section holds all requirements, in short form. Full text
+follows below, under the same numbers.
+
+- **Style legend:** dark bold = bullet headline words before the
+  colon; italic bold = proper noun (company, country, organisation,
+  product, standard body); yellow bold = cross-domain vocabulary
+  (network, signalling, directory, endpoint, stack, lane, gate,
+  hierarchy, allocation, regulation, trading speed, customer,
+  vendor, market, approval, and the other terms in R13).
+- **R1.** Detailed, not abstract — digital core resources, interlinked, ground-up.
+- **R2.** Learning sequence, ground-up, in order.
+- **R3.** Each batch: archive, exact transcription, placement, enhanced explanation, enhanced diagram, per-batch report.
+- **R4.** Study attractiveness — rich, diagram-led pages, original never hidden or replaced.
+- **R5.** Content model v3, domains from categories.json, nothing invented.
+- **R6.** Acceptance — archived, traceable, held notes reported, never shown.
+- **R7.** Leo decides interlinks, topic, and domain from the notes — not publication, storage, deploy, or privacy.
+- **R8.** Input order is random — sequence is decided, not received.
+- **R9.** Domain terminology, analogies map to technology and telecom.
+- **R10.** Bullet lead-ins dark bold, across the site.
+- **R11.** Proper nouns italic bold, across the site.
+- **R12.** Systems across domains, not isolated system evaluation — business vocabulary, terminology, analogies across domains.
+- **R13.** Cross-domain vocabulary yellow bold, across the site.
+
 ## Rules are different from requirements — kept separate
 
 - `rules.md` = RULES. How the work is handled: exact vs enhancement,
@@ -222,6 +247,26 @@ A batch is complete only when all of these are true:
   terminology and analogies are written is in `rules.md`, under
   "Domain terminology, technology and telecom analogies" and
   "Proper nouns italic bold, across the site".
+
+## R13. Cross-domain vocabulary yellow bold, across the site
+
+- Requirement: words, terms, and vocabulary used across domains
+  must be shown in yellow bold, across the site, so a reader can
+  see the shared systems vocabulary wherever it appears.
+- Covered terms include: network, signalling, directory, endpoint,
+  stack, kernel stack, lane, data lane, management lane, gate,
+  hierarchy, hierarchical, allocation, regulation, coordination,
+  trading, trading speed, business, market, customer, vendor,
+  company, approval, product, silicon, chip, and any other term
+  that is used in more than one domain in a future batch.
+- This applies to detailed bullets, summary bullets, horizontal-link
+  bullets, and homepage key points, across all cards and pages.
+  Terms already shown dark bold (bullet headline) or italic bold
+  (proper noun) keep that style — yellow bold is for cross-domain
+  vocabulary in normal text, not for headlines or proper nouns.
+- How the markup is done is in `rules.md`, under "Cross-domain
+  vocabulary yellow bold, across the site", and is not restated
+  here beyond this requirement.
 
 ## Still open — not decided by this file
 
