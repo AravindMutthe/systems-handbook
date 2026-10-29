@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card C — Hardware supply and the NIC endpoint · Systems Evolution</title>
+<style>body{font-family:system-ui,sans-serif;background:#1f2a33;color:#fdfbf7;margin:0;padding:16px}
+main{max-width:760px;margin:0 auto;background:#fdfbf7;color:#1a2027;border-radius:16px;padding:24px 20px}
+.eyebrow{color:#8a6d1b;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin:0 0 8px}
+h1{font-family:Georgia,serif;font-size:32px;line-height:1.15;margin:0 0 8px}
+.lede{color:#555;font-size:16px;line-height:1.6}
+h2{font-family:Georgia,serif;font-size:24px;margin:32px 0 12px;padding-top:16px;border-top:1px solid #e6ddd0}
+h3{font-size:18px;margin:24px 0 8px}
+p,li{font-size:16px;line-height:1.75}
+.added{border-left:4px solid #d9a441;padding-left:14px;background:#fdf8ec;border-radius:0 10px 10px 0}
+figure{margin:20px 0}
+figure svg{width:100%;height:auto;display:block;background:#1f2a33;border-radius:12px;padding:8px}
+figcaption{font-size:14px;color:#555;text-align:center;margin-top:8px;line-height:1.6}
+.original{border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;background:#fff}
+.meta{color:#555;font-size:14px}
+.home,.nav a{display:inline-flex;align-items:center;gap:10px;border:1px solid #e6ddd0;border-radius:999px;padding:8px 16px;text-decoration:none;color:#1a2027;font-weight:700;margin:8px 8px 0 0}
+.nav{margin-top:32px;padding-top:16px;border-top:1px solid #e6ddd0}
+.cardlist{list-style:none;padding:0}
+.cardlist li{border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;margin:14px 0;background:#fff}
+.cardlist a{color:#1a2027;font-weight:700}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}</style>
+</head>
+<body>
+<main>
+<p class="eyebrow">💻 Hardware &amp; Computing · Card C · 3 of 5</p>
+<h1>Hardware supply and the NIC endpoint</h1>
+<p class="lede">After naming: what physical thing carries those names and addresses.</p>
+<p class="meta">Hardware & Computing — After naming: what physical thing carries those names and addresses.</p>
+<h2>Detailed explanation</h2>
+<h3>1. Silicon to supplier</h3>
+<ul><li>Silicon becomes a chip, a chip becomes a vendor's device.</li><li>Silicon product, government device, business — to Intel, Broadcom, Nvidia as supplier, hardware.</li><li>Market vendors Intel / Broadcom / Nvidia supply hardware controlled by software.</li></ul>
+<figure><svg viewBox="0 0 600 240" role="img" aria-label="Stack diagram"><rect x="130" y="15" width="340" height="36" rx="8" fill="#d9a441"/><text x="300" y="38" text-anchor="middle" fill="#1a2027" font-size="13">Silicon</text><rect x="130" y="61" width="340" height="36" rx="8" fill="#fdfbf7"/><text x="300" y="84" text-anchor="middle" fill="#1a2027" font-size="13">Intel / Broadcom / Nvidia</text><rect x="130" y="107" width="340" height="36" rx="8" fill="#d9a441"/><text x="300" y="130" text-anchor="middle" fill="#1a2027" font-size="13">Vendor device</text></svg><figcaption>Figure 1 — Silicon → supplier → vendor device.</figcaption></figure>
+<h3>2. Who buys, and the NIC endpoint</h3>
+<ul><li>End customers: cloud, OEMs, telco / ISP, research by government (DRDO / NASA), C-suite, IoT.</li><li>Direct buyers: cloud (AWS, GCP), OEMs (Dell, HPE, Lenovo, Cisco), telcos and ISP (AT&T, Verizon, Jio), government labs, assemblers — NIC integrated into devices.</li><li>NIC to PCI, visible via interface; NIC contains; PCI device, driver, user tools, workload, OS.</li><li>That device only reaches a customer through an endpoint: the NIC.</li></ul>
+<figure><svg viewBox="0 0 600 150" role="img" aria-label="Flow diagram"><rect x="-16" y="50" width="170" height="50" rx="10" fill="#fdfbf7"/><text x="69" y="72" text-anchor="middle" fill="#1a2027" font-size="13">Silicon</text><text x="69" y="90" text-anchor="middle" fill="#555" font-size="11"></text><line x1="154" y1="75" x2="138" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="138" y="50" width="170" height="50" rx="10" fill="#d9a441"/><text x="223" y="72" text-anchor="middle" fill="#1a2027" font-size="13">Vendors</text><text x="223" y="90" text-anchor="middle" fill="#555" font-size="11">Intel / Broadcom / Nvidia</text><line x1="308" y1="75" x2="292" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="292" y="50" width="170" height="50" rx="10" fill="#fdfbf7"/><text x="377" y="72" text-anchor="middle" fill="#1a2027" font-size="13">Customers</text><text x="377" y="90" text-anchor="middle" fill="#555" font-size="11">cloud / OEM / telco</text><line x1="462" y1="75" x2="446" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="446" y="50" width="170" height="50" rx="10" fill="#d9a441"/><text x="531" y="72" text-anchor="middle" fill="#1a2027" font-size="13">NIC → PCI</text><text x="531" y="90" text-anchor="middle" fill="#555" font-size="11">endpoint</text></svg><figcaption>Figure 2 — Silicon → vendors → customers → NIC endpoint, connected by PCI.</figcaption></figure>
+<h3>3. Selling under rules</h3>
+<ul><li>Sell to customers who follow government rules.</li><li>Selling that endpoint is not just a shipment — it is governed, which is why the NIC chain keeps returning to government rules and to FCC.</li><li>DARPA, TCP/IP, device options, remotes, connections.</li></ul>
+<figure><svg viewBox="0 0 600 150" role="img" aria-label="Approval gate before the market"><rect x="20" y="50" width="140" height="50" rx="10" fill="#fdfbf7"/><text x="90" y="80" text-anchor="middle" fill="#1a2027" font-size="13">Vendors / Silicon</text><rect x="230" y="50" width="140" height="50" rx="10" fill="#d9a441"/><text x="300" y="80" text-anchor="middle" fill="#1a2027" font-size="13">FCC approval gate</text><rect x="440" y="50" width="140" height="50" rx="10" fill="#fdfbf7"/><text x="510" y="80" text-anchor="middle" fill="#1a2027" font-size="13">Market</text><line x1="160" y1="75" x2="230" y2="75" stroke="#d9a441" stroke-width="3"/><line x1="370" y1="75" x2="440" y2="75" stroke="#d9a441" stroke-width="3"/></svg><figcaption>Figure 3 — Government rules and FCC sit on the way from vendor to customer, as a gate, not just a step.</figcaption></figure>
+<div class="added"><p><strong>Summary:</strong></p><ul><li>Silicon becomes a chip, a chip becomes a vendor's device.</li><li>That device reaches a customer only through the NIC endpoint.</li><li>Selling that endpoint is governed, not just shipped.</li></ul></div>
+<h2>Key points</h2>
+<div class="original"><ul><li>Silicon product, government device, business — to Intel, Broadcom, Nvidia as supplier, hardware.</li><li>End customers: cloud, OEMs, telco / ISP, research by government (DRDO / NASA), C-suite, IoT.</li><li>NIC to PCI, visible via interface; NIC contains; sell to customers who follow government rules; PCI device, driver, user tools, workload, OS.</li><li>Market vendors Intel / Broadcom / Nvidia supply hardware controlled by software.</li><li>Direct buyers: cloud (AWS, GCP), OEMs (Dell, HPE, Lenovo, Cisco), telcos and ISP (AT&amp;T, Verizon, Jio), government labs, assemblers — NIC integrated into devices.</li><li>DARPA, TCP/IP, device options, remotes, connections, as written on the page.</li></ul><p class="meta">Key points above are the original points for this card. Original images are in the section below, untouched.</p></div>
+<details style="margin:32px 0 0;border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;background:#fff">
+<summary style="cursor:pointer;font-family:Georgia,serif;font-size:24px;font-weight:700;list-style:none">Original images +</summary>
+<p>Original pages behind this card, untouched.</p>
+<figure><img src="assets/originals/33_fpn0.jpg" alt="Original image: Silicon suppliers, customers, and the NIC endpoint" style="width:100%;height:auto;border-radius:12px;border:1px solid #e6ddd0"><figcaption>Silicon suppliers, customers, and the NIC endpoint</figcaption></figure>
+<figure><img src="assets/originals/36_zrrp.jpg" alt="Original image: Vendors, direct buyers, out-of-band / BMC / CLI" style="width:100%;height:auto;border-radius:12px;border:1px solid #e6ddd0"><figcaption>Vendors, direct buyers, out-of-band / BMC / CLI</figcaption></figure>
+</details>
+<h2>Horizontal links</h2>
+<figure><svg viewBox="0 0 600 270" role="img" aria-label="Flow chart: links from Card C"><rect x="20" y="105" width="150" height="60" rx="10" fill="#d9a441"/><text x="95" y="140" text-anchor="middle" fill="#1a2027" font-size="14">Card C</text><text x="95" y="158" text-anchor="middle" fill="#1a2027" font-size="11">Hardware & NIC</text><rect x="430" y="20" width="150" height="50" rx="10" fill="#fdfbf7"/><text x="505" y="40" text-anchor="middle" fill="#1a2027" font-size="14">Card D</text><text x="505" y="57" text-anchor="middle" fill="#555" font-size="11">NIC & kernel stack</text><path d="M170 135 L430 45" fill="none" stroke="#d9a441" stroke-width="3"/><rect x="430" y="90" width="150" height="50" rx="10" fill="#fdfbf7"/><text x="505" y="110" text-anchor="middle" fill="#1a2027" font-size="14">Card B</text><text x="505" y="127" text-anchor="middle" fill="#555" font-size="11">Naming & regulation</text><path d="M170 135 L430 115" fill="none" stroke="#d9a441" stroke-width="3"/><rect x="430" y="160" width="150" height="50" rx="10" fill="#fdfbf7"/><text x="505" y="180" text-anchor="middle" fill="#1a2027" font-size="14">Card E</text><text x="505" y="197" text-anchor="middle" fill="#555" font-size="11">Building & approving</text><path d="M170 135 L430 185" fill="none" stroke="#d9a441" stroke-width="3"/></svg><figcaption>Flow chart — Card C in the centre, with its links flowing out to the cards that use it.</figcaption></figure>
+<ul><li>NIC → Card D (cross-domain link).</li><li>FCC / government rules → Card B, Card E (cross-domain link).</li><li>Vendors to customers → Card E (prerequisite).</li></ul>
+<nav class="nav"><a href="card-b.html">← Previous: Card B</a> <a href="card-d.html">Next: Card D →</a></nav>
+<a class="home" href="batch1.html">Systems Evolution — Home</a>
+</main>
+</body>
+</html>

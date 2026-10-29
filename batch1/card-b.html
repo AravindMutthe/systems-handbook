@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card B — Naming, addressing and regulation: directory to DNS · Systems Evolution</title>
+<style>body{font-family:system-ui,sans-serif;background:#1f2a33;color:#fdfbf7;margin:0;padding:16px}
+main{max-width:760px;margin:0 auto;background:#fdfbf7;color:#1a2027;border-radius:16px;padding:24px 20px}
+.eyebrow{color:#8a6d1b;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin:0 0 8px}
+h1{font-family:Georgia,serif;font-size:32px;line-height:1.15;margin:0 0 8px}
+.lede{color:#555;font-size:16px;line-height:1.6}
+h2{font-family:Georgia,serif;font-size:24px;margin:32px 0 12px;padding-top:16px;border-top:1px solid #e6ddd0}
+h3{font-size:18px;margin:24px 0 8px}
+p,li{font-size:16px;line-height:1.75}
+.added{border-left:4px solid #d9a441;padding-left:14px;background:#fdf8ec;border-radius:0 10px 10px 0}
+figure{margin:20px 0}
+figure svg{width:100%;height:auto;display:block;background:#1f2a33;border-radius:12px;padding:8px}
+figcaption{font-size:14px;color:#555;text-align:center;margin-top:8px;line-height:1.6}
+.original{border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;background:#fff}
+.meta{color:#555;font-size:14px}
+.home,.nav a{display:inline-flex;align-items:center;gap:10px;border:1px solid #e6ddd0;border-radius:999px;padding:8px 16px;text-decoration:none;color:#1a2027;font-weight:700;margin:8px 8px 0 0}
+.nav{margin-top:32px;padding-top:16px;border-top:1px solid #e6ddd0}
+.cardlist{list-style:none;padding:0}
+.cardlist li{border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;margin:14px 0;background:#fff}
+.cardlist a{color:#1a2027;font-weight:700}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}</style>
+</head>
+<body>
+<main>
+<p class="eyebrow">🏛️ Institutions &amp; Markets · Card B · 2 of 5</p>
+<h1>Naming, addressing and regulation: directory to DNS</h1>
+<p class="lede">After the business frame: how things are named, addressed and regulated.</p>
+<p class="meta">Institutions & Markets — After the business frame: how things are named, addressed and regulated.</p>
+<h2>Detailed explanation</h2>
+<h3>1. From telephone book to DNS</h3>
+<ul><li>Before DNS, the directory was a telephone book run by government.</li><li>Government telephone directory, with options: writing up, directory management, keypad / switchboard controls, privacy lock (data and communication, MAC plus IP).</li><li>Replace the phone directory with DNS.</li><li>The internet kept the directory idea but changed who runs it and how it scales.</li><li>Names are delegated hierarchically, addresses are allocated in blocks by region, and both are wrapped in regulation and privacy rules.</li></ul>
+<figure><svg viewBox="0 0 600 150" role="img" aria-label="Flow diagram"><rect x="-16" y="50" width="170" height="50" rx="10" fill="#fdfbf7"/><text x="69" y="72" text-anchor="middle" fill="#1a2027" font-size="13">Telephone</text><text x="69" y="90" text-anchor="middle" fill="#555" font-size="11">directory</text><line x1="154" y1="75" x2="138" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="138" y="50" width="170" height="50" rx="10" fill="#d9a441"/><text x="223" y="72" text-anchor="middle" fill="#1a2027" font-size="13">DNS</text><text x="223" y="90" text-anchor="middle" fill="#555" font-size="11">centre</text><line x1="308" y1="75" x2="292" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="292" y="50" width="170" height="50" rx="10" fill="#fdfbf7"/><text x="377" y="72" text-anchor="middle" fill="#1a2027" font-size="13">ISP</text><text x="377" y="90" text-anchor="middle" fill="#555" font-size="11">provider</text><line x1="462" y1="75" x2="446" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="446" y="50" width="170" height="50" rx="10" fill="#d9a441"/><text x="531" y="72" text-anchor="middle" fill="#1a2027" font-size="13">User</text><text x="531" y="90" text-anchor="middle" fill="#555" font-size="11"></text></svg><figcaption>Figure 1 — Telephone directory → DNS → ISP → user.</figcaption></figure>
+<h3>2. Who runs names and addresses</h3>
+<ul><li>ICANN: non-profit, multi-stakeholder, domain (company names), hierarchical, country codes, area codes, TLDs, IP ranges.</li><li>RIRs: ARIN, RIPE, APNIC — IP blocks allocation.</li><li>IP as identity.</li><li>DNSSEC, registration, owner, trust, key and security.</li><li>That is why naming and regulation belong in one card, not in separate ones.</li></ul>
+<figure><svg viewBox="0 0 600 240" role="img" aria-label="Stack diagram"><rect x="130" y="15" width="340" height="36" rx="8" fill="#d9a441"/><text x="300" y="38" text-anchor="middle" fill="#1a2027" font-size="13">ICANN — non-profit, multi-stakeholder</text><rect x="130" y="61" width="340" height="36" rx="8" fill="#fdfbf7"/><text x="300" y="84" text-anchor="middle" fill="#1a2027" font-size="13">RIRs — ARIN / RIPE / APNIC</text><rect x="130" y="107" width="340" height="36" rx="8" fill="#d9a441"/><text x="300" y="130" text-anchor="middle" fill="#1a2027" font-size="13">ISP — allocates to users</text><rect x="130" y="153" width="340" height="36" rx="8" fill="#fdfbf7"/><text x="300" y="176" text-anchor="middle" fill="#1a2027" font-size="13">User — name and address</text></svg><figcaption>Figure 2 — Who runs names and addresses, from the top down.</figcaption></figure>
+<h3>3. Regulation, standards and market rules</h3>
+<ul><li>Telecom regulation: IETF, IEEE, 3GPP standards; FCC, TRAI; DNS owners, TLD, shareholders, board, executives.</li><li>FCC as telecom regulator over radio, TV, satellite, wireline, wireless, broadband and spectrum, through telecom companies to spectrum decisions.</li><li>Market rules: antitrust, net neutrality.</li><li>A regulator lane sits underneath the directory: FCC / TRAI, with standards bodies IETF / IEEE / 3GPP beside it.</li></ul>
+<figure><svg viewBox="0 0 600 150" role="img" aria-label="Flow diagram"><rect x="-16" y="50" width="170" height="50" rx="10" fill="#fdfbf7"/><text x="69" y="72" text-anchor="middle" fill="#1a2027" font-size="13">FCC / TRAI</text><text x="69" y="90" text-anchor="middle" fill="#555" font-size="11">regulators</text><line x1="154" y1="75" x2="138" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="138" y="50" width="170" height="50" rx="10" fill="#d9a441"/><text x="223" y="72" text-anchor="middle" fill="#1a2027" font-size="13">IETF / IEEE / 3GPP</text><text x="223" y="90" text-anchor="middle" fill="#555" font-size="11">standards</text><line x1="308" y1="75" x2="292" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="292" y="50" width="170" height="50" rx="10" fill="#fdfbf7"/><text x="377" y="72" text-anchor="middle" fill="#1a2027" font-size="13">Telecom companies</text><text x="377" y="90" text-anchor="middle" fill="#555" font-size="11"></text><line x1="462" y1="75" x2="446" y2="75" stroke="#d9a441" stroke-width="3"/><rect x="446" y="50" width="170" height="50" rx="10" fill="#d9a441"/><text x="531" y="72" text-anchor="middle" fill="#1a2027" font-size="13">Spectrum / services</text><text x="531" y="90" text-anchor="middle" fill="#555" font-size="11"></text></svg><figcaption>Figure 3 — Regulators and standards, through telecom companies, to spectrum and services.</figcaption></figure>
+<div class="added"><p><strong>Summary:</strong></p><ul><li>The directory idea was kept, but who runs it changed.</li><li>Names are delegated hierarchically, addresses are allocated in blocks by region.</li><li>Both are wrapped in regulation and privacy rules.</li></ul></div>
+<h2>Key points</h2>
+<div class="original"><ul><li>Market rules: antitrust, net neutrality, as written on the page.</li><li>Government telephone directory, with options: writing up, directory management (ICANN, RIR), keypad / switchboard controls, privacy lock (data and communication, MAC plus IP).</li><li>Replace phone directory with DNS.</li><li>ICANN: non-profit, multi-stakeholder, domain (company names), hierarchical, country codes, area codes, TLDs, IP ranges.</li><li>RIRs: ARIN, RIPE, APNIC — IP blocks allocation. IP as identity. DNSSEC, registration, owner, trust, key and security.</li><li>Telecom regulation: IETF, IEEE, 3GPP standards; FCC, TRAI; DNS owners, TLD, shareholders, board, executives.</li><li>FCC as telecom regulator (1934 as written on the page) over radio, TV, satellite, wireline, wireless, broadband and spectrum, through telecom companies to spectrum decisions.</li></ul><p class="meta">Key points above are the original points for this card. Original images are in the section below, untouched.</p></div>
+<details style="margin:32px 0 0;border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;background:#fff">
+<summary style="cursor:pointer;font-family:Georgia,serif;font-size:24px;font-weight:700;list-style:none">Original images +</summary>
+<p>Original pages behind this card, untouched.</p>
+<figure><img src="assets/originals/35_vkeb.jpg" alt="Original image: Market rules, government telephone directory, device" style="width:100%;height:auto;border-radius:12px;border:1px solid #e6ddd0"><figcaption>Market rules, government telephone directory, device</figcaption></figure>
+<figure><img src="assets/originals/34_nh3q.jpg" alt="Original image: Phone book, ICANN, IP, RIR, DNS, TCP/IP" style="width:100%;height:auto;border-radius:12px;border:1px solid #e6ddd0"><figcaption>Phone book, ICANN, IP, RIR, DNS, TCP/IP</figcaption></figure>
+<figure><img src="assets/originals/42_78ko.jpg" alt="Original image: DNS ownership, FCC 1934, telecom regulation" style="width:100%;height:auto;border-radius:12px;border:1px solid #e6ddd0"><figcaption>DNS ownership, FCC 1934, telecom regulation</figcaption></figure>
+</details>
+<h2>Horizontal links</h2>
+<figure><svg viewBox="0 0 600 270" role="img" aria-label="Flow chart: links from Card B"><rect x="20" y="105" width="150" height="60" rx="10" fill="#d9a441"/><text x="95" y="140" text-anchor="middle" fill="#1a2027" font-size="14">Card B</text><text x="95" y="158" text-anchor="middle" fill="#1a2027" font-size="11">Naming & regulation</text><rect x="430" y="20" width="150" height="50" rx="10" fill="#fdfbf7"/><text x="505" y="40" text-anchor="middle" fill="#1a2027" font-size="14">Card D</text><text x="505" y="57" text-anchor="middle" fill="#555" font-size="11">NIC & kernel stack</text><path d="M170 135 L430 45" fill="none" stroke="#d9a441" stroke-width="3"/><rect x="430" y="90" width="150" height="50" rx="10" fill="#fdfbf7"/><text x="505" y="110" text-anchor="middle" fill="#1a2027" font-size="14">Card C</text><text x="505" y="127" text-anchor="middle" fill="#555" font-size="11">Hardware & NIC</text><path d="M170 135 L430 115" fill="none" stroke="#d9a441" stroke-width="3"/><rect x="430" y="160" width="150" height="50" rx="10" fill="#fdfbf7"/><text x="505" y="180" text-anchor="middle" fill="#1a2027" font-size="14">Card E</text><text x="505" y="197" text-anchor="middle" fill="#555" font-size="11">Building & approving</text><path d="M170 135 L430 185" fill="none" stroke="#d9a441" stroke-width="3"/></svg><figcaption>Flow chart — Card B in the centre, with its links flowing out to the cards that use it.</figcaption></figure>
+<ul><li>DNS → Card D (cross-domain link).</li><li>FCC → Card C, Card E (cross-domain link).</li><li>TCP/IP → Card D (successor).</li></ul>
+<nav class="nav"><a href="card-a.html">← Previous: Card A</a> <a href="card-c.html">Next: Card C →</a></nav>
+<a class="home" href="batch1.html">Systems Evolution — Home</a>
+</main>
+</body>
+</html>
