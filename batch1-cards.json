@@ -240,6 +240,13 @@
             "hb-batch1-card-B"
           ],
           "type": "successor"
+        },
+        {
+          "concept": "Product / approval / market",
+          "to": [
+            "hb-batch1-card-E"
+          ],
+          "type": "cross-domain link"
         }
       ],
       "originalKeyPoints": [
