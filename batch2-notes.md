@@ -1,3 +1,5 @@
+Build note for card pages: transcription bracket markers ([cut off], [unclear], [no value...], etc.) and truncated-word corrections live ONLY inside "Original images +" dropdown, never in Detailed explanation or Key points. Main page shows corrected / as-written words, clean. Full marked transcription is in the batch intake file (archive, local). [crossed out] is kept where it is original state on the page, not a fill-in label.
+
 # Batch 2 notes — HELD, not published
 
 Status: privacy = private, reviewStatus = draft, publication NOT
@@ -54,7 +56,7 @@ infrastructure-operations, institutions-markets.
   - mapping → IOT (Devices) across flow
   - Blockchain, AI/ML, APIs
 - ④ Abstraction from goods of Spectrum
-  - TO full Value chain is connec [cut off at page edge]
+  - TO full Value chain is connec
 
 ### [Added] explanation
 A universal product is not one thing. It is a spectrum — tech,
@@ -66,6 +68,24 @@ itself a technology advantage. Then technology is integrated
 across that flow — devices on the network, ledgers, intelligence,
 and interfaces — until the product is no longer just a good, but
 a whole value chain, connected end to end.
+
+[Added, labelled distinction, under R14 — not one hierarchy:]
+Spectrum and standards are not one gate. FCC / TRAI regulate
+a national market and spectrum use. IETF sets Internet
+technical standards, IEEE sets electrical / electronics /
+computing standards, 3GPP sets mobile telecom specifications,
+and ICANN / RIRs allocate names and number resources. The
+universal product's spectrum therefore crosses regulation,
+standards, and allocation, each with a different owner.
+
+[Added, cross-domain vocabulary, grounded in Batch 1 cards:]
+Signalling is the control information that makes communication
+work — it travels on the network lane, separate from the
+physical goods lane. The endpoint is the device that sends
+and receives it (Card C, the NIC), and the stack is the layers
+that carry it (Card D: driver, kernel stack, TCP/IP). Trading
+speed (Card A, Card E) is what that signalling and that stack
+make possible in a market, not a separate product on its own.
 
 ### Enhanced diagram [Added, different style, never replacing the original, arrows labelled by kind]
 Spectrum (Tech + manufacturing + software + Business)
@@ -288,6 +308,24 @@ cloud backends built from reusable components, then real-time,
 low-latency, multi-device interfaces with XR and AI. The medium
 changes, the framework split — public standards versus private
 toolkits — stays, in every era.
+
+[Added, cross-domain vocabulary, grounded in linked cards:]
+Every era also has a market and a customer, a vendor who
+supplies it, and a regulator or allocator who gates it. The
+customer is the person using the interface; the vendor is the
+company that supplies the device, framework, or app store;
+allocation decides which address or number the device carries
+(Card B, RIR / ICANN); regulation decides whether it may be
+sold and used (Card E, FCC approval). Business, market,
+customer, vendor, allocation, and regulation are therefore
+part of the UI story, not only the hardware story.
+
+[Added, labelled distinction, under R14 — not one hierarchy:]
+W3C sets web standards, IETF sets Internet technical
+standards, ICANN allocates names and numbers, IEEE sets
+electrical / electronics / computing standards, and FCC /
+TRAI regulate nationally. The web era lists them together;
+their functions are distinct, as on Cards B, G, and J.
 
 [Added, labelled distinction:] Frameworks on the pages belong to
 different categories — Bootstrap is a CSS framework, React /

@@ -1002,3 +1002,30 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   titles, relationship-kind arrow rendering, clarification
   tables) are PARKED for later, per owner's 2026-10-29 word
   ("fix can be later"). Tags + New were done first, on their own.
+
+## Rebuild from cleaned notes, 2026-10-29 (branch only, no deploy)
+
+- Pulled latest main notes before rebuilding: batch1-notes
+  e224264c, batch2-notes 1725eaa7, batch3-notes 4c235e34,
+  batch1-cards c306f2c4. Branch notes/cards files synced to those.
+- Homepage stale "Template only" footer removed; domains
+  header now reads "38 card–domain associations · 11 unique
+  cards", and the footer explains the 11 vs 38 difference.
+- Card A (and B–E, same bug) Key points footer: "section
+  below" → "section above".
+- Batch 1 Horizontal links are now real hyperlinks, like
+  Batch 2/3, with the flow-chart figure kept above them.
+  Card D gains the new Product / approval / market → Card E link.
+- Batch 2 dropdowns: "private Vercel deploy" → "Vercel deploy
+  only, not in the public GitHub repo — the deploy itself is
+  public".
+- Rebuilt from cleaned notes: R14 distinctions on C, E, F, H, I;
+  market/vendor/allocation/regulation vocabulary on D; signalling/
+  endpoint/stack/trading vocabulary on F; market/customer/vendor/
+  allocation/regulation vocabulary on H, J, K; closing Synthesis
+  A to K [Added] on the Batch 3 sequence page, with a pointer
+  from Card K. No new facts in the synthesis.
+- Main was NOT pushed in this rebuild, to avoid overwriting
+  the new content notes with the stale local main copy. Main
+  changes ride on the next merge tap. Production deploy is
+  pending the owner's tap in the development chat.
