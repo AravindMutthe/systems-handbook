@@ -803,3 +803,45 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   Vercel deploy.
 - To make the site private again, set ssoProtection back to
   {"deploymentType": "all"} — that re-protects all deployments.
+
+## Content from Leo's side — inspect, audit, verify from wiki and trusted sources before adding (2026-10-29)
+
+- Owner's rule, 2026-10-29 20:52 IST: "before adding any content
+  from your side, you must inspect and audit and verify the
+  content source from wiki and trusted sources."
+- "From your side" means any content Leo adds that is not the
+  owner's original notes: enhanced explanations, enhanced
+  diagrams, [Added] completions, research, and any era, field,
+  date, or claim Leo proposes. It does NOT mean the owner's
+  original notes — originals are transcribed verbatim as the
+  source of truth, and are never rewritten to match Wikipedia
+  or any other source.
+- Before such content is added (to notes, cards, a card page,
+  or a push), Leo must: (1) inspect the source — read the
+  Wikipedia page and any trusted source it points to, not a
+  snippet or a summary alone; (2) audit the content against
+  that source — check each factual claim, date, name, and
+  relationship in the added content, claim by claim; (3)
+  verify — keep only claims the source supports, correct or
+  remove claims it does not support, and record the source
+  (page + trusted source) with the content so the owner can
+  check it.
+- Trusted sources, in order after Wikipedia: the primary
+  source Wikipedia cites where one exists, and standards /
+  institutional sources (for example IETF, IEEE, ITU, ICANN,
+  IANA, RIRs, and national regulators) for standards,
+  allocation, and regulation claims. A single Wikipedia
+  snippet, a model memory, or another assistant's summary is
+  not verification.
+- Unverified content is not added as fact. If it is shown to
+  the owner for check at all, it is labelled UNVERIFIED and
+  proposed, with the missing verification named, and it is
+  not pushed until verification is done or the owner
+  explicitly overrules the verification step for that item.
+- Status on this rule's adoption: the tech leadership eras
+  completion draft created 2026-10-29 20:44 IST
+  (batch3-tech-leadership-completion.md, Eras 3–5) was
+  grounded in the owner's own era pages only and was NOT
+  verified against Wikipedia or trusted sources. Under this
+  rule it is UNVERIFIED, held, and not to be added or pushed
+  until that verification is done and recorded.
