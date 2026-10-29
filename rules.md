@@ -334,3 +334,12 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - Every timeline entry traces to the evidence register (source ID, original note ID, source date — unknown shown as unknown, never guessed — evidence status, privacy and review status). No timeline entry without a register entry.
 - No invented periods, dates, events, technologies or connections. Period boundaries, dates and strand connections come only from supplied or verified sources; anything unverified is labelled sample/unverified, or not shown as history.
 - The timeline is a public-facing explanation, so it follows the public-facing rule: deep, readable and illustrated, free of internal processing commentary. The evidence register remains the audit view behind it.
+
+## Meaningful concept relationships (2026-10-29)
+
+- Build meaningful concept relationships, not a link list for its own sake. Each concept shows, with clearly labelled types: prerequisites, dependencies, historical successors, standards, and relationships across domains.
+- Start with useful links: a link is added only when it helps the reader understand the concept — what to learn first, what it depends on, what came after it historically, which standard shapes it, or which other domain it connects to. Links that do not help are not added.
+- Relationship types are never merged: a prerequisite is not a dependency, a historical successor is not a related concept, and a standard is its own type. Chronology (historical successors) stays separate from conceptual relationships (prerequisites, dependencies).
+- Follow the ByteByteGo pattern for how relationships are explained: concise explanation first, then the relationship in context, with an original illustration only where it actually clarifies the connection — never a copied graphic, and never decoration for its own sake.
+- Add a visual graph only when justified: when the relationships are too tangled to follow as labelled links, and a graph would make them clearer. Until then, labelled links are the graph. A graph view is deferred, not built by default.
+- Every relationship traces to a source or a note, or is labelled sample/unverified. No invented prerequisites, dependencies, successors or standards.
