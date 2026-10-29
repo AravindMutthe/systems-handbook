@@ -56,8 +56,12 @@ async function loadJson(path, fallback) {
 async function load() {
   const cats = await loadJson('categories.json', FALLBACK_CATEGORIES);
   categories = Array.isArray(cats) ? cats : (cats.categories || FALLBACK_CATEGORIES);
-  const data = await loadJson('notes.json', []);
-  notes = Array.isArray(data) ? data : (data.notes || []);
+  // Primary model is now content.json (v3, versioned, all collections).
+  // notes.json is only a backward-compatible fallback, not the model.
+  const content = await loadJson('content.json', null);
+  if (content && Array.isArray(content.notes)) { notes = content.notes; }
+  else if (content && content.collections && Array.isArray(content.collections.notes)) { notes = content.collections.notes; }
+  else { const data = await loadJson('notes.json', []); notes = Array.isArray(data) ? data : (data.notes || []); }
   document.getElementById('stat-pages').textContent = notes.length ? `${notes.length} page${notes.length === 1 ? '' : 's'} · ${categories.length} domains` : `${categories.length} core domains · 0 pages yet — template`;
   const qParam = new URLSearchParams(location.search).get('q');
   if (qParam) { const inp = document.getElementById('search'); if (inp) inp.value = qParam; }

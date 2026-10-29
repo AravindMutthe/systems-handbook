@@ -190,6 +190,22 @@ when present. No real notes exist yet to use these fields.
 - Status: concepts and labelled backlinks are in the schema and in
   the sample chapter's Related section; no graph view exists.
 
+## Content model — richer versioned model, not a single notes.json
+
+- The single `notes.json` model is **replaced** as the primary model.
+- The primary model is `content.json`, versioned:
+  - Top level: `modelVersion`, `contentRelease`, `status`,
+    `versionHistory: [{release, whatChanged, changes}]`.
+  - Collections in one file: `sources, transcriptions, chapters,
+    diagrams, tables, events, concepts, relationships, notes`.
+  - Each record keeps its own `version` and `revisions` where relevant.
+- `notes.json` is kept only as a backward-compatible fallback in code.
+  It is not the model, and new content must not be added to it as the
+  primary store.
+- A future split (one file per collection, loaded on demand) keeps the
+  same versioned shape — it is a split of `content.json`, not a new
+  model.
+
 ## Content architecture — separate records, not interchangeable cards
 
 - Do **not** treat all original batch images as interchangeable image
