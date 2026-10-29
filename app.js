@@ -90,7 +90,8 @@ function render() {
         const keySource = showingSamples ? cat.description : (n.caption || n.title || '');
         const keys = keySource.split(/[,;]/).map(s => s.replace(/^\s*and\s+/i, '').trim()).filter(Boolean).slice(0, 3);
         const keyHtml = keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${k}</li>`).join('')}</ul>` : '';
-        card.innerHTML = `<div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}<h4>${n.title}</h4><p>${[n.topic || cat.title, n.date].filter(Boolean).join(' · ')}</p>${keyHtml}</div>`;
+        const num = String(i + 1).padStart(2, '0');
+        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}<h4>${n.title}</h4><p>${[n.topic || cat.title, n.date].filter(Boolean).join(' · ')}</p>${keyHtml}</div>`;
         card.onclick = () => { if (n.file) openViewer(n); };
         row.appendChild(card);
       });
