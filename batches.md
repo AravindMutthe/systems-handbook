@@ -35,3 +35,11 @@ and learning order, with no batch labels and no source IDs.
   homepage no longer shows sample cards for domains that have
   real cards.
 - Content release for the site model: v3-batch1-001 in content.json.
+
+## Batch 2 — branch batch/b2publish only (main still held)
+
+- 7 images, source IDs hb-batch2-001 to hb-batch2-007, in receipt order (001, 002, 003, 004, 005, 006, 007 as listed in batch2-cards.json sources).
+- 3 cards, learning order F → G → H, story place systems-evolution for all, technical perspectives as lenses (R17), original headlines first (R15).
+- Card F: universal product (001). Card G: govt layer + global oversight + govt networks (002+005+003). Card H: UI evolution telegraph→mainframe→PC→internet/web→mobile/cloud→5G (007+006+004).
+- Original images: deploy-only on the private Vercel site, NOT in the GitHub branch, as with Batch 1. Batch2-intake.md: NOT pushed.
+- Categories on branch only: software-engineering-development added under R16, justified by Card H. Main categories.json unchanged.

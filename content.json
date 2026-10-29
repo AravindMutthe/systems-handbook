@@ -117,6 +117,79 @@
       },
       "reviewStatus": "published",
       "poster": "assets/posters/card-e.svg"
+    },
+    {
+      "id": "card-f",
+      "title": "Univescal product / Business (network / Standards",
+      "topic": "Systems evolution",
+      "domain": "systems-evolution",
+      "subject": "Systems evolution",
+      "page": "batch2/card-f.html",
+      "poster": "assets/posters/card-f.svg",
+      "keys": [
+        "A universal product is a spectrum: tech, manufacturing, software, and business together, carrying four things in parallel.",
+        "Four parallel flows (communication): communication \u2192 trade \u2192 speed \u2192 Tech, and that speed is itself a technology advantage.",
+        "Cross Flow (physical, informational, financial, rules) plus Tech Integration across the flow turns a good into a full value chain, connected."
+      ],
+      "relatedDomains": [
+        "industrial-business-networks",
+        "infrastructure-operations",
+        "institutions-markets"
+      ],
+      "privacy": "public",
+      "publication": {
+        "status": "published"
+      },
+      "reviewStatus": "published"
+    },
+    {
+      "id": "card-g",
+      "title": "Govt Layer (TO controll public",
+      "topic": "Systems evolution",
+      "domain": "systems-evolution",
+      "subject": "Systems evolution",
+      "page": "batch2/card-g.html",
+      "poster": "assets/posters/card-g.svg",
+      "keys": [
+        "Government is added as a unifying layer across all flows, from source to consumer, to control the public.",
+        "Global Oversight \u2192 International standard bodies \u2192 Regional Regulation \u2192 National Enforcement \u2192 Industry Standards \u2192 market flow, with bodies that have different legal powers, not one hierarchy (R14).",
+        "Government networks are built like the market in reverse: series, manufacturers, vendors, implementers, buyers, public, with government controllers closing the loop."
+      ],
+      "relatedDomains": [
+        "institutions-markets",
+        "industrial-business-networks",
+        "infrastructure-operations",
+        "hardware-computing"
+      ],
+      "privacy": "public",
+      "publication": {
+        "status": "published"
+      },
+      "reviewStatus": "published"
+    },
+    {
+      "id": "card-h",
+      "title": "UI frameworks Evolution",
+      "topic": "Systems evolution",
+      "domain": "systems-evolution",
+      "subject": "Systems evolution",
+      "page": "batch2/card-h.html",
+      "poster": "assets/posters/card-h.svg",
+      "keys": [
+        "The interface is the same question in every era: medium, public vs private frameworks, architecture, and what it feels like to use.",
+        "From hardware only, to punch cards and CLI, to GUI desktops, to browsers, to mobile apps and cloud backends, to real-time XR and AI interfaces.",
+        "Frameworks belong to different categories \u2014 Bootstrap is CSS, React/AngularJS are UI frameworks, X11/Motif are windowing systems \u2014 and REST/GraphQL/gRPC are API styles, not UI frameworks."
+      ],
+      "relatedDomains": [
+        "software-engineering-development",
+        "hardware-computing",
+        "infrastructure-operations"
+      ],
+      "privacy": "public",
+      "publication": {
+        "status": "published"
+      },
+      "reviewStatus": "published"
     }
   ],
   "relationships": [],
