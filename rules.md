@@ -317,3 +317,12 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - No timeline entry without a register entry. A claim with no evidence is labelled sample/unverified, or it is not shown as history.
 - No invented eras, dates, events or sources. If a date, era or source is not supplied or verified, the timeline and register say so plainly.
 - The timeline is a reading view; the register is the audit view. The two must agree: every timeline entry points to its register entry, and every register entry used in the timeline appears there.
+
+## Dynamic chapter reader for nested cards (2026-10-29)
+
+- Every nested card must open a proper chapter reader — not a fixed sample page, and not only the in-page viewer.
+- The reader is dynamic and data-driven: it renders from the shared notes in the versioned content model (`content.json`), in the order those notes carry — domain, then chapter, then section, then `order` within that section — never from hardcoded pages.
+- Back-and-forth sequence within a domain: from any card, the reader shows Previous and Next controls that move through that domain's sequence, in order, one step at a time. Previous goes to the previous note in the same domain; Next goes to the next note in the same domain. It never jumps to another domain.
+- Sequence position is shown (for example, "3 of 12 in this domain"), and Previous is disabled at the first note and Next at the last note in that domain.
+- The reader keeps the chapter-reader rules: deep, readable, illustrated explanations on public-facing pages, free of internal processing commentary; a single button to the archived original page for the original image + transcription; only Prerequisites and Depends on in Related concepts, then the logo + name home button.
+- When no real notes have been shared yet for a domain, the reader shows the sample layout only, labelled SAMPLE, with no invented sequence or content.
