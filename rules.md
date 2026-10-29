@@ -397,3 +397,33 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - Status: rule only, for real notes not yet received. Sample cards
   already on the homepage are layout placeholders only, labelled
   SAMPLE, and must not be quoted as content or as the sequence.
+
+## Every batch — cross-check first, then read (2026-10-29)
+
+- For every batch of images, before reading and understanding the
+  images, cross-check with BOTH specification files, as they stand
+  at that time: `rules.md` (how work is handled) and
+  `requirements.md` (what content must be and deliver). Read the
+  files themselves, not a summary or a memory of them.
+- Cross-check means, for that batch:
+  - What domain, topic, chapter and sequence do the specifications
+    require, and what do they forbid inventing?
+  - What is the card rule for this batch — cards decided from the
+    batch as a whole for vertical and horizontal integration, not
+    one card per image?
+  - What are the exact-vs-enhancement, archive, privacy,
+    publication and storage gates that apply to these images?
+  - Does this batch conflict with, or add to, any earlier batch,
+    sequence, card, or relationship already decided?
+- Only after that cross-check, read and understand the images:
+  transcribe exactly what is on each page, mark [unclear] /
+  [crossed out] / [scribbled out] where needed, assign topic,
+  domain, chapter/section/order, interlinks, and cards under the
+  specifications just checked.
+- If a specification is unclear, missing, or conflicts with the
+  batch, flag it in the per-batch report and do not proceed on a
+  guessed reading of the specification. Do not work from an outdated
+  summary when the files have changed since the last batch.
+- The per-batch report must state, briefly, that the cross-check
+  was done, which specification versions were checked, and any
+  conflict or gap found — or that none was found.
