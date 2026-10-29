@@ -109,14 +109,19 @@ function render() {
     // Real cards: primary card in its own domain, plus related
     // cards in every related domain, as cards — not samples, not links only.
     let pages = notes.filter(n => noteDomain(n) === cat.id || noteDomain(n) === cat.title || (Array.isArray(n.relatedDomains) && n.relatedDomains.includes(cat.id)));
+    // Ordered / sequenced: learning order is the notes array order (Card A=1 … Card E=5),
+    // not domain-local order, and not nested by primary/related. Flat grid, in sequence.
+    pages = pages.slice().sort((a, b) => notes.indexOf(a) - notes.indexOf(b));
     if (q) pages = pages.filter(n => searchable(n).toLowerCase().includes(q));
     if (showingSamples) pages = Array.from({length: 3}, () => ({title:'Sample page — layout only', topic:cat.title, domain:cat.id, caption:'A ruled-paper placeholder showing how a real page card will look. Not a real note.'}));
     total += pages.length;
     const section = document.createElement('section'); section.className = 'domain reveal in';
     const art = DOMAIN_ART[cat.id] || {emoji: cat.emoji || '📄', art: ''};
-    section.innerHTML = `<div class="domain-head"><div class="domain-emoji" aria-hidden="true">${esc(art.emoji)}</div><h3>${esc(cat.title)}</h3></div><p class="domain-desc">${esc(cat.description)}</p><button type="button" class="domain-action">${esc(cat.action || 'Explore domain')} →</button><div class="domain-art" aria-hidden="true">${art.art}</div>`;
+    section.innerHTML = activeDomain === 'All'
+      ? `<div class="domain-head"><div class="domain-emoji" aria-hidden="true">${esc(art.emoji)}</div><h3>${esc(cat.title)}</h3></div><p class="domain-desc">${esc(cat.description)}</p><button type="button" class="domain-action">${esc(cat.action || 'Explore domain')} →</button><div class="domain-art" aria-hidden="true">${art.art}</div>`
+      : `<div class="domain-head"><div class="domain-emoji" aria-hidden="true">${esc(art.emoji)}</div><h3>Exploring: ${esc(cat.title)}</h3></div><p class="domain-desc">Cards in learning order, flat grid — not nested cards.</p>`;
     // Integration: tapping a domain's action filters the whole homepage to that domain.
-    section.querySelector('.domain-action').onclick = () => { activeDomain = cat.id; renderTopics(); render(); document.getElementById('domains').scrollIntoView({behavior:'smooth'}); };
+    const _da = section.querySelector('.domain-action'); if (_da) _da.onclick = () => { activeDomain = cat.id; renderTopics(); render(); document.getElementById('domains').scrollIntoView({behavior:'smooth'}); };
     const row = document.createElement('div'); row.className = 'row';
     if (pages.length === 0) {
       row.innerHTML = `<p class="row-empty">No pages in this domain yet — they will appear here as you send them.</p>`;
@@ -147,7 +152,7 @@ function render() {
         const hierHtml = [n.chapter, n.section].filter(Boolean).length ? `<p class="card-hier">${esc([n.chapter, n.section].filter(Boolean).join(' · '))}</p>` : '';
         const evHtml = n.evidenceStatus && n.evidenceStatus !== 'unverified' ? `<span class="evidence evidence-${esc(n.evidenceStatus)}">${esc(n.evidenceStatus)}</span>` : '';
         const pubHtml = (n.reviewStatus || (n.publication && n.publication.status)) && (n.reviewStatus || n.publication.status) !== 'published' ? `<span class="pub pub-${esc(n.reviewStatus || n.publication.status)}">${esc(n.reviewStatus || n.publication.status)}</span>` : '';
-        const num = String(i + 1).padStart(2, '0');
+        const num = String(notes.indexOf(n) + 1 || i + 1).padStart(2, '0');
         const isRelated = Array.isArray(n.relatedDomains) && n.relatedDomains.includes(cat.id) && noteDomain(n) !== cat.id && noteDomain(n) !== cat.title;
         const relHtml = isRelated ? '<span class="badge">RELATED</span>' : '';
         card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${relHtml}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.subject, n.topic || cat.title, n.sourceDate || n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${keyHtml}</div>`;

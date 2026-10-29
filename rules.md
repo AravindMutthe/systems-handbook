@@ -447,6 +447,24 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Explore domain — flat sequenced grid, not nested cards (2026-10-29)
+
+- When exploring a domain, cards are shown in learning order
+  (Card A = 01 … Card E = 05), as a flat grid — not as nested
+  cards, not as a horizontal swipe row with cards cut off at the
+  edge.
+- Chosen layout (owner gave a choice, one chosen): grid in
+  square, with a poster / image — each card is a rectangle with
+  a square poster cover on top (`assets/posters/card-*.svg`),
+  title and key points below, in a 2-column grid on phones and
+  a filling grid on desktop. No horizontal scroll on any screen.
+- Cards in a domain are sorted by learning order, and numbered
+  by learning sequence, not by domain-local position. Related
+  cards are flat grid items in that same sequence, not subcards
+  inside a primary card or inside a domain box. In a single-domain
+  explore view, there is no domain art or nested section chrome
+  — just "Exploring: <domain>" and the flat grid.
+
 ## Legend lives in README, not on the homepage (2026-10-29)
 
 - The Legend (style legend + all requirements R1–R13) is for
