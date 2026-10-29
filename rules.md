@@ -447,6 +447,21 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Card page order — original notes first (2026-10-29)
+
+- On every card page, the order is: header (poster, domain and
+  card number, title, lede, meta) → Original images + → Detailed
+  explanation → Key points → Horizontal links → Related topics →
+  Previous / Next.
+- Original images + sits immediately after the header, before
+  Detailed explanation, so a reader goes through the original
+  notes first, before reading the detailed explanation. This
+  supersedes the earlier order (detailed first, originals after
+  Key points).
+- Original images + stays a collapsed `<details>` button — the
+  placement changes, not the collapse. The original images inside
+  it stay untouched, verbatim, as evidence.
+
 ## Flow charts and hierarchical diagrams, wherever really needed (2026-10-29)
 
 - Use a flow chart or a hierarchical diagram wherever it is really
