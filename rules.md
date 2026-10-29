@@ -123,6 +123,41 @@ when present. No real notes exist yet to use these fields.
 - Preserve reduced-motion support: `prefers-reduced-motion` turns off
   all animation and transition in both CSS files.
 
+## Content architecture — separate records, not interchangeable cards
+
+- Do **not** treat all original batch images as interchangeable image
+  cards. A batch image is one kind of record, not the whole content.
+- Design separate records, defined in `content.schema.json`, each with
+  its own stable ID and its own fields:
+  - **Original source assets** — `sources[]`: the untouched original
+    image, source date (null = unknown), privacy. This is the source
+    of truth.
+  - **Transcriptions** — `transcriptions[]`: text from one source
+    (`sourceId`), versioned with revisions and a review status. A
+    transcription is not the original, and is never presented as it.
+  - **Chapters** — `chapters[]`: title, domain, subject, order,
+    sections. A chapter renders by joining other records, not by
+    embedding anonymous cards.
+  - **Diagrams** — `diagrams[]`: title, caption, local SVG file, and
+    `sourceIds` it was drawn from.
+  - **Tables** — `tables[]`: title, caption, columns, rows, and
+    `sourceIds`. Every row comes from a note or cited source, or is
+    labelled sample.
+  - **Historical events** — `events[]`: era, date, technology change,
+    institutional change, `evidenceSourceIds`, cross-domain ids.
+    See also E.
+  - **Concepts** — `concepts[]`: title, definition, domain.
+  - **Relationships** — `relationships[]`: `fromId, toId, type,
+    relation, note`, with `type` split into `chronology` and
+    `conceptual` (see Third). Backlinks are derived from these
+    records, not hand-typed separately.
+- A card on the homepage is a *view* of a note/source, not the record
+  itself. The record lives in the schema above; the card must trace
+  back to it by ID.
+- Status: **design only — defined in `content.schema.json`, not
+  populated.** No real sources, transcriptions, chapters, diagrams,
+  tables, events or concepts exist yet, and none are invented here.
+
 ## Sixth — Preserve design flexibility
 
 - Keep the theme tokens (`styles.css` `:root`), reusable components
