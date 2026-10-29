@@ -3,12 +3,34 @@
 //  categories.json = [{id, title, description, action, core}] — CORE, STANDARD
 //    domains. Add an entry here and a new vertical domain section appears
 //    automatically; no code change. More domains will come as notes grow.
-//  notes.json = array, or {version, collections, notes}. A note's `domain`
-//    (or `topic`) must match a category id to appear in that domain's row.
-//    Splitting notes by collection is the horizontal-scaling path, same schema.
+//  notes.json = array, or {version, notes}. v1 fields: id, title, domain,
+//    topic, date, file, caption. v2 (backward compatible, all optional
+//    except id/title/domain): transcription (searchable full text from the
+//    page), chapter, section, parentId, order (hierarchy),
+//    related: [id] (relationships), tags: [string],
+//    revisions: [{version, date, change}], evidenceStatus:
+//    unverified|needs-review|verified, publication: {status:
+//    draft|in-review|approved|published, approvedBy, approvedAt}.
+//    A note's `domain` (or `topic`) must match a category id to appear
+//    in that domain's row. Splitting notes by collection is the
+//    horizontal-scaling path, same schema. See notes.schema.json.
 let notes = [];
 let categories = [];
 let activeDomain = 'All';
+// Safe rendering: ALL note/category data is untrusted once real or externally
+// supplied content arrives. esc() is applied to every data value interpolated
+// into innerHTML; internal DOMAIN_ART SVG is code, not data, and is the only
+// unescaped HTML. safeFile() allows only in-repo relative image paths.
+function esc(v) { return String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function safeFile(f) {
+  if (typeof f !== 'string') return '';
+  if (f.includes('..') || /["'<>\s]/.test(f) || /^[a-z][a-z0-9+.-]*:/i.test(f)) return '';
+  if (!/^(notes\/|assets\/)?[A-Za-z0-9._\/-]+$/.test(f)) return '';
+  return f;
+}
+function searchable(n) {
+  return [n.title, n.topic, n.domain, n.caption, n.transcription, n.chapter, n.section, (n.tags || []).join(' ')].join(' ');
+}
 // Fallback = the same core domains as categories.json, so a single-file
 // preview (where fetch fails) still shows the dynamic layout.
 const FALLBACK_CATEGORIES = [
@@ -62,12 +84,12 @@ function render() {
   let total = 0;
   shownCats.forEach(cat => {
     let pages = notes.filter(n => noteDomain(n) === cat.id || noteDomain(n) === cat.title);
-    if (q) pages = pages.filter(n => [n.title, n.topic, n.domain, n.caption].join(' ').toLowerCase().includes(q));
+    if (q) pages = pages.filter(n => searchable(n).toLowerCase().includes(q));
     if (showingSamples) pages = Array.from({length: 3}, () => ({title:'Sample page — layout only', topic:cat.title, domain:cat.id, caption:'A ruled-paper placeholder showing how a real page card will look. Not a real note.'}));
     total += pages.length;
     const section = document.createElement('section'); section.className = 'domain reveal in';
     const art = DOMAIN_ART[cat.id] || {emoji: cat.emoji || '📄', art: ''};
-    section.innerHTML = `<div class="domain-head"><div class="domain-emoji" aria-hidden="true">${art.emoji}</div><h3>${cat.title}</h3></div><p class="domain-desc">${cat.description}</p><button type="button" class="domain-action">${cat.action || 'Explore domain'} →</button><div class="domain-art" aria-hidden="true">${art.art}</div>`;
+    section.innerHTML = `<div class="domain-head"><div class="domain-emoji" aria-hidden="true">${esc(art.emoji)}</div><h3>${esc(cat.title)}</h3></div><p class="domain-desc">${esc(cat.description)}</p><button type="button" class="domain-action">${esc(cat.action || 'Explore domain')} →</button><div class="domain-art" aria-hidden="true">${art.art}</div>`;
     // Integration: tapping a domain's action filters the whole homepage to that domain.
     section.querySelector('.domain-action').onclick = () => { activeDomain = cat.id; renderTopics(); render(); document.getElementById('domains').scrollIntoView({behavior:'smooth'}); };
     const row = document.createElement('div'); row.className = 'row';
@@ -84,15 +106,19 @@ function render() {
         // Key points for samples come ONLY from the domain description (split on commas),
         // never invented note content. For real notes, key points come from the caption.
         const artForCard = DOMAIN_ART[cat.id] || {emoji: cat.emoji || '📄', art: ''};
-        const cover = n.file
-          ? `<img class="cover-img" src="${n.file}" alt="" loading="lazy">`
-          : `<div class="cover-art" aria-hidden="true">${artForCard.art}<span class="cover-emoji">${artForCard.emoji}</span></div>`;
+        const file = safeFile(n.file);
+        const cover = file
+          ? `<img class="cover-img" src="${esc(file)}" alt="" loading="lazy">`
+          : `<div class="cover-art" aria-hidden="true">${artForCard.art}<span class="cover-emoji">${esc(artForCard.emoji)}</span></div>`;
         const keySource = showingSamples ? cat.description : (n.caption || n.title || '');
         const keys = keySource.split(/[,;]/).map(s => s.replace(/^\s*and\s+/i, '').trim()).filter(Boolean).slice(0, 3);
-        const keyHtml = keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${k}</li>`).join('')}</ul>` : '';
+        const keyHtml = keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${esc(k)}</li>`).join('')}</ul>` : '';
+        const hierHtml = [n.chapter, n.section].filter(Boolean).length ? `<p class="card-hier">${esc([n.chapter, n.section].filter(Boolean).join(' · '))}</p>` : '';
+        const evHtml = n.evidenceStatus && n.evidenceStatus !== 'unverified' ? `<span class="evidence evidence-${esc(n.evidenceStatus)}">${esc(n.evidenceStatus)}</span>` : '';
+        const pubHtml = n.publication && n.publication.status && n.publication.status !== 'published' ? `<span class="pub pub-${esc(n.publication.status)}">${esc(n.publication.status)}</span>` : '';
         const num = String(i + 1).padStart(2, '0');
-        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}<h4>${n.title}</h4><p>${[n.topic || cat.title, n.date].filter(Boolean).join(' · ')}</p>${keyHtml}</div>`;
-        card.onclick = () => { if (n.file) openViewer(n); };
+        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.topic || cat.title, n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${keyHtml}</div>`;
+        card.onclick = () => { if (file) openViewer({...n, file}); };
         row.appendChild(card);
       });
     }
@@ -104,11 +130,16 @@ function render() {
 }
 function openViewer(n) {
   const v = document.getElementById('viewer'); v.hidden = false;
-  document.getElementById('viewer-img').src = n.file; document.getElementById('viewer-img').alt = n.title;
-  document.getElementById('viewer-title').textContent = n.title;
-  document.getElementById('viewer-meta').textContent = [n.topic || n.domain, n.date].filter(Boolean).join(' · ');
+  const file = safeFile(n.file);
+  const img = document.getElementById('viewer-img');
+  img.src = file; img.alt = n.title || '';
+  document.getElementById('viewer-title').textContent = n.title || '';
+  document.getElementById('viewer-meta').textContent = [n.topic || n.domain, n.date, n.chapter, n.section].filter(Boolean).join(' · ');
   document.getElementById('viewer-caption').textContent = n.caption || '';
-  document.getElementById('viewer-original').href = n.file;
+  const orig = document.getElementById('viewer-original');
+  if (file) { orig.href = file; orig.hidden = false; } else { orig.removeAttribute('href'); orig.hidden = true; }
+  const trans = document.getElementById('viewer-transcription');
+  if (trans) { trans.textContent = n.transcription || ''; trans.hidden = !n.transcription; }
 }
 function observeReveals() {
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .15});
@@ -128,7 +159,8 @@ function renderSuggestions() {
   box.hidden = false; box.innerHTML = '';
   hits.forEach(h => {
     const b = document.createElement('button'); b.type = 'button';
-    b.innerHTML = `${h.label}<small>${h.sub}</small>`;
+    b.textContent = h.label;
+    const sm = document.createElement('small'); sm.textContent = h.sub; b.appendChild(sm);
     b.onclick = () => { h.apply(); box.hidden = true; render(); input.focus(); };
     box.appendChild(b);
   });

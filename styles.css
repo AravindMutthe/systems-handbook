@@ -144,6 +144,12 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:
    of cards in a domain is clear at a glance. Text sits above it. */
 .card-number{position:absolute;top:8px;right:12px;z-index:2;font-family:var(--font-display);font-size:36px;font-weight:700;line-height:1;color:var(--ink);opacity:.18;pointer-events:none}
 .card .card-body{position:relative;z-index:1}
+.card-hier{font-size:13px;color:var(--muted)}
+.evidence,.pub{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:2px 8px;margin:0 6px 6px 0}
+.evidence-verified{color:#2e7d32;border-color:#2e7d32}
+.evidence-needs-review{color:#8a6d1b;border-color:#d9a441}
+.pub-draft,.pub-in-review{color:var(--muted)}
+#viewer-transcription{white-space:pre-wrap;font-size:15px;line-height:1.6}
 .card:hover{transform:translateY(-4px) rotate(-.3deg);box-shadow:0 14px 28px rgba(0,0,0,.10)}
 /* Subcard cover: related image/art as LOW-OPACITY background, soft gradient into text.
    No hard half-split: .card-fade gradients from transparent to the card background,

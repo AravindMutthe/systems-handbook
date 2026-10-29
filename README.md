@@ -17,7 +17,9 @@ My handwritten notes, readable anywhere. Homepage template first — content onl
 - Font: Fraunces for display headings, brand and sample cards — a distinctive old-style serif with character, not a default system serif. Local file `assets/fonts/fraunces-latin.woff2` (66 KB, SIL Open Font License, `assets/fonts/OFL.txt` included); body text stays system sans for readability. No font request leaves the site at runtime.
 - Framework architecture: the component split + `notes.json` contract above is deliberately framework-shaped, so a later port to Next.js (App Router, static export) + Tailwind + Framer Motion reuses the same components and data — it is a port, not a rebuild or data migration. That port is NOT built now; the static template is the Phase 1 deliverable for UI approval.
 - `notes/` — original page images, kept untouched.
-- `notes.json` — the data contract (v1): one entry per page: `id, title, domain, topic, date, file, caption`. `domain` must match a `categories.json` id to appear in that domain's row. Titles/captions come from the owner or from the page itself — never invented.
+- `notes.json` + `notes.schema.json` — the data contract (v2, backward compatible with v1): one entry per page. v1: `id, title, domain, topic, date, file, caption`. v2 adds, all optional: `transcription` (full text from the page, searched and shown in the viewer), `chapter, section, parentId, order` (hierarchy: domain > chapter > section > page), `related: [id]` (cross-references), `tags: [string]`, `revisions: [{version, date, change}]`, `evidenceStatus: unverified | needs-review | verified`, `publication: {status: draft | in-review | approved | published, approvedBy, approvedAt}`. `domain` must match a `categories.json` id to appear in that domain's row. Titles/captions/transcriptions come from the owner or from the page itself — never invented. Rendering: every note/category value is HTML-escaped before insertion (`esc()` in `app.js`), suggestions/viewer use `textContent`, and `file` must be an in-repo relative path (`notes/...` or `assets/...`, no `..`, no URL scheme, no quotes) — anything else renders as cover art, not an image, so externally supplied content cannot break out of the page.
+- Search: searches title, topic, domain, caption, transcription, chapter, section and tags — not just basic metadata. A query matching only the transcription still finds the page.
+- Samples are not content: while `notes.json` is empty, 3 sample cards per domain are generated for design review only. They carry a SAMPLE badge, the domains section shows a bold TEMPLATE PREVIEW — 0 real pages notice, and hero stats say 0 pages yet — template. A populated-looking homepage with samples must not be quoted as completed content.
 
 ## How it scales without a rebuild
 
@@ -28,6 +30,6 @@ My handwritten notes, readable anywhere. Homepage template first — content onl
 
 ## Status
 
-- Repo: AravindMutthe/systems-handbook (private, template only) — renamed from handwritten-notes 2026-10-29; live at https://systems-handbook.vercel.app
+- Repo: AravindMutthe/systems-handbook (public since 2026-10-29) — renamed from handwritten-notes 2026-10-29; site at https://systems-handbook.vercel.app is private (Vercel Authentication, all deployments, since 2026-10-29)
 - Content: none yet — awaiting UI/design/theme approval, then the owner sends raw notes batch by batch.
 - Deploy: nothing deployed. A preview/production link needs the owner's separate tap.

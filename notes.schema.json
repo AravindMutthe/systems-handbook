@@ -1,0 +1,148 @@
+{
+  "$defs": {
+    "note": {
+      "properties": {
+        "caption": {
+          "description": "Short caption from the owner or the page itself, never invented",
+          "type": "string"
+        },
+        "chapter": {
+          "description": "Chapter hierarchy: domain > chapter > section > page",
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "domain": {
+          "description": "Must match a categories.json id to appear in that domain's row",
+          "type": "string"
+        },
+        "evidenceStatus": {
+          "description": "Whether the transcription/content has been checked against the original page",
+          "enum": [
+            "unverified",
+            "needs-review",
+            "verified"
+          ],
+          "type": "string"
+        },
+        "file": {
+          "description": "In-repo relative image path, e.g. notes/institutions-markets/p001.jpg",
+          "type": "string"
+        },
+        "id": {
+          "description": "Stable page id, used by related[]",
+          "type": "string"
+        },
+        "order": {
+          "description": "Page order within its chapter/section",
+          "type": "number"
+        },
+        "parentId": {
+          "description": "Id of the parent page/section, for nested hierarchies",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "publication": {
+          "properties": {
+            "approvedAt": {
+              "type": "string"
+            },
+            "approvedBy": {
+              "type": "string"
+            },
+            "status": {
+              "enum": [
+                "draft",
+                "in-review",
+                "approved",
+                "published"
+              ],
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "related": {
+          "description": "Ids of related notes (cross-references, contradictions, follow-ups)",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "revisions": {
+          "items": {
+            "properties": {
+              "change": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "version"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "section": {
+          "type": "string"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "title": {
+          "type": "string"
+        },
+        "topic": {
+          "type": "string"
+        },
+        "transcription": {
+          "description": "Full text transcribed from the handwritten page; searched, shown in the viewer, never presented as the original image",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "domain"
+      ],
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "One entry per handwritten page. v1 fields (id, title, domain, topic, date, file, caption) still load; v2 fields are all optional. Rendering escapes every data value; file must be an in-repo relative path (notes/... or assets/...), no '..', no URL scheme, no quotes or spaces.",
+  "properties": {
+    "notes": {
+      "items": {
+        "$ref": "#/$defs/note"
+      },
+      "type": "array"
+    },
+    "version": {
+      "enum": [
+        "1",
+        "2"
+      ],
+      "type": "string"
+    }
+  },
+  "title": "Systems Handbook notes.json v2",
+  "type": [
+    "array",
+    "object"
+  ],
+  "items": {
+    "$ref": "#/$defs/note"
+  }
+}
