@@ -13,9 +13,9 @@
       "topic": "Systems evolution",
       "caption": "Networks did not start with computers. A deal is only as fast as the information behind it.",
       "keys": [
-        "Networks did not start with computers",
-        "Human, mechanical, then electronic signalling",
-        "Business = exchange of information"
+        "Networks did not start with computers \u2014 they started with people signalling, long before any device.",
+        "Human, mechanical, then electronic signalling were used by people, communities, and companies to send a message farther and faster.",
+        "Business = exchange of information: a deal is only as fast as the information behind it."
       ],
       "page": "batch1/card-a.html",
       "relatedDomains": [
@@ -36,9 +36,9 @@
       "topic": "Institutions & markets",
       "caption": "Before DNS, the directory was a telephone book run by government. Names are delegated, addresses allocated by region.",
       "keys": [
-        "Telephone directory to DNS",
-        "ICANN, RIRs, IP blocks",
-        "FCC, TRAI, IETF, IEEE, 3GPP"
+        "Before DNS, the directory was a telephone book run by government, used by telecom companies, businesses, and people.",
+        "ICANN, RIRs, and IP blocks: names are delegated hierarchically and addresses allocated by region, so networks can find each other.",
+        "FCC, TRAI, IETF, IEEE, and 3GPP regulate telecom companies, spectrum, and standards."
       ],
       "page": "batch1/card-b.html",
       "relatedDomains": [
@@ -58,9 +58,9 @@
       "topic": "Hardware & computing",
       "caption": "Silicon becomes a chip, a chip becomes a vendor's device, and that device reaches a customer through the NIC.",
       "keys": [
-        "Silicon to Intel, Broadcom, Nvidia",
-        "Cloud, OEMs, telcos, government labs",
-        "NIC to PCI, driver, user tools"
+        "Silicon becomes a chip, and a chip becomes a vendor's device that a telecom company or business can buy and use.",
+        "Intel, Broadcom, and Nvidia supply hardware controlled by software, for cloud, OEMs, telcos, and government labs.",
+        "That device only reaches a customer through the NIC endpoint, on PCI, with a driver and operating system."
       ],
       "page": "batch1/card-c.html",
       "relatedDomains": [
@@ -80,9 +80,9 @@
       "topic": "Infrastructure & operations",
       "caption": "Two lanes that must not be confused: the data lane and the management lane.",
       "keys": [
-        "Interface, driver, kernel, TCP/IP",
-        "Out-of-band to BMC",
-        "CLI, web, API \u2014 even when the data lane is down"
+        "A customer's traffic goes through the NIC interface, driver, kernel stack, net device, and TCP/IP.",
+        "Two lanes must not be confused: the data lane carries traffic, the management lane manages the device, even when it is down.",
+        "Out-of-band to BMC, then CLI, web, or API, lets a company manage a device while its data lane is down."
       ],
       "page": "batch1/card-d.html",
       "relatedDomains": [
@@ -102,9 +102,9 @@
       "topic": "Industrial & business networks",
       "caption": "A product closes the loop: built, tested, sold, bought from vendors, gated by approval.",
       "keys": [
-        "Engineering, operations, testing",
-        "Vendors to silicon",
-        "FCC approval gate"
+        "A product is built by engineering and operations, tested, sold to customers, and bought through vendors who buy silicon.",
+        "FCC approval is the gate: equipment certification for routers and phones, and a broadband speed report, before market entry.",
+        "That gate depends on every card before it \u2014 origins, naming, hardware, and the NIC stack."
       ],
       "page": "batch1/card-e.html",
       "relatedDomains": [
