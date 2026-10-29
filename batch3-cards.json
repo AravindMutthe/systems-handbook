@@ -1,0 +1,128 @@
+{
+  "cards": [
+    {
+      "diagramArrowKinds": [
+        "Historical",
+        "Organizational: structures",
+        "Depends on",
+        "Commands",
+        "Sequence"
+      ],
+      "enhancedHeadline": "Who leads each era: org structure, tech strategy, and leadership mindset",
+      "futureCompletionPending": "COMPLETED, pending owner check: see batch3-tech-leadership-completion.md \u2014 Eras 3-5 (Internet/web/cloud, Mobile & cloud, 5G & AI 2020-Now till 2026), labelled [Added], org/leadership fields for Eras 3-5 marked proposed, owner can overrule. NOT pushed yet.",
+      "id": "batch3-I",
+      "originalHeadline": "Tech leadership Era",
+      "privacy": "private",
+      "publication": "held",
+      "reviewStatus": "draft",
+      "sources": [
+        "hb-batch3-001"
+      ],
+      "storyPlace": "systems-evolution",
+      "technicalPerspectives": [
+        "industrial-business-networks",
+        "institutions-markets",
+        "infrastructure-operations"
+      ],
+      "unfinishedNote": "Page ends at 2000 Internet/web/cloud Era, Core focus = Building hypergrowth. Era 2 leadership/business fields and all Era 3 fields except core focus are missing on the page, flagged, not invented."
+    },
+    {
+      "diagramArrowKinds": [
+        "Historical",
+        "Organizational: controls",
+        "Organizational: charges",
+        "Depends on",
+        "Data"
+      ],
+      "enhancedHeadline": "The same six eras, three lenses: interface, control, and how it is paid for",
+      "id": "batch3-J",
+      "originalHeadline": "Eras UI Frameworks + Hardware controlled / SW",
+      "privacy": "private",
+      "publication": "held",
+      "reviewStatus": "draft",
+      "sources": [
+        "hb-batch3-002"
+      ],
+      "storyPlace": "systems-evolution",
+      "technicalPerspectives": [
+        "software-engineering-development",
+        "hardware-computing",
+        "infrastructure-operations",
+        "industrial-business-networks"
+      ]
+    },
+    {
+      "diagramArrowKinds": [
+        "Depends on",
+        "Organizational: allocates",
+        "Organizational: owns",
+        "Data"
+      ],
+      "enhancedHeadline": "One scheduler model: tasks, resources, and who allocates them fairly",
+      "id": "batch3-K",
+      "originalHeadline": "Project scheduler",
+      "privacy": "private",
+      "publication": "held",
+      "reviewStatus": "draft",
+      "sources": [
+        "hb-batch3-003"
+      ],
+      "storyPlace": "systems-evolution",
+      "technicalPerspectives": [
+        "infrastructure-operations",
+        "institutions-markets",
+        "industrial-business-networks"
+      ]
+    }
+  ],
+  "crossCheck": {
+    "conflict": "none blocking; public-site note carried forward (site public with Batch 1+2 originals via deploy, NOT in GitHub repo; Batch 3 originals NOT pushed here, future branch deploy is owner's call)",
+    "requirements": "R1-R17, 20810 bytes, repo SHA f349da2bcb43767e79ca81cbd333a9496a",
+    "rules": "50011 bytes, repo SHA 3322059fd4dfac5b80f601f164e1f76f19d88655, including Branch per batch publish, Relationship kinds, Original headlines live in Original images +, Site is public with original images"
+  },
+  "learningOrder": [
+    "batch3-I",
+    "batch3-J",
+    "batch3-K"
+  ],
+  "relationships": [
+    {
+      "from": "batch3-I",
+      "to": "batch3-J",
+      "type": "prerequisite-for"
+    },
+    {
+      "from": "batch3-J",
+      "to": "batch3-K",
+      "type": "prerequisite-for-reading-only"
+    },
+    {
+      "from": "batch3-K",
+      "to": "batch3-J",
+      "type": "related-to"
+    }
+  ],
+  "release": "hb-batch3-cards-001",
+  "sources": [
+    {
+      "file": "1000103113_65_jo8x.jpg",
+      "id": "hb-batch3-001",
+      "originalHeadline": "Tech leadership Era",
+      "sourceDate": null
+    },
+    {
+      "file": "1000103114_66_qz3e.jpg",
+      "id": "hb-batch3-002",
+      "originalHeadline": "Eras UI Frameworks + Hardware controlled / SW",
+      "sourceDate": null
+    },
+    {
+      "file": "1000103115_67_la1p.jpg",
+      "id": "hb-batch3-003",
+      "originalHeadline": "Project scheduler",
+      "sourceDate": null
+    }
+  ],
+  "status": "held",
+  "version": 3
+}
