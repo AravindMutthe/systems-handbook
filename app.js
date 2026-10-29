@@ -56,7 +56,9 @@ function render() {
     if (showingSamples) pages = Array.from({length: 3}, () => ({title:'Sample page — layout only', topic:cat.title, domain:cat.id, caption:'A ruled-paper placeholder showing how a real page card will look. Not a real note.'}));
     total += pages.length;
     const section = document.createElement('section'); section.className = 'domain reveal in';
-    section.innerHTML = `<div class="domain-head"><div><h3>${cat.title}</h3><p>${cat.description}</p></div><span class="domain-action">${cat.action || 'Explore domain'} →</span></div>`;
+    section.innerHTML = `<div class="domain-head"><div><h3>${cat.title}</h3><p>${cat.description}</p></div><button type="button" class="domain-action">${cat.action || 'Explore domain'} →</button></div>`;
+    // Integration: tapping a domain's action filters the whole homepage to that domain.
+    section.querySelector('.domain-action').onclick = () => { activeDomain = cat.id; renderTopics(); render(); document.getElementById('domains').scrollIntoView({behavior:'smooth'}); };
     const row = document.createElement('div'); row.className = 'row';
     if (pages.length === 0) {
       row.innerHTML = `<p class="row-empty">No pages in this domain yet — they will appear here as you send them.</p>`;
