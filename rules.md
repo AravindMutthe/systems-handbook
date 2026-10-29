@@ -286,3 +286,8 @@ when present. No real notes exist yet to use these fields.
 - Chapter detail chips (domain, subject, source date, privacy, review, evidence) sit in ONE horizontal scrolling banner row — swipe left/right on a phone — never stacked vertically.
 - The chapter page does NOT list original-note details inline. It shows a single button ("Open original note — <id>") that opens an archived original page (`original-note.html`) containing the original image (untouched), its transcription, and its note details.
 - Related concepts on a chapter page show ONLY Prerequisites and Depends on, then a home button/logo (logo mark + "Home — Systems Evolution", linking to the homepage). Related chapters and Backlinks are NOT shown there.
+
+
+## Home button (2026-10-29)
+
+- The logo and name ARE the home button: topbar brand (logo mark + "Systems Evolution") is styled as a pill button and links to the homepage, and the chapter-page home button is the same logo + name, linking home.
