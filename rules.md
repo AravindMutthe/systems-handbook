@@ -149,6 +149,28 @@ when present. No real notes exist yet to use these fields.
   limitations, deeper references). All sample content is labelled
   sample.
 
+## Connected knowledge — Obsidian concepts, graph view later
+
+- Borrow the concepts, not the product:
+  - **Backlinks** — every chapter/note shows which other
+    chapters/notes point back to it, derived from
+    `relationships.*`, not hand-typed separately.
+  - **Related notes** — notes that share a domain, subject, topic or
+    concept, shown with their relationship type labelled.
+  - **Topic relationships** — topics are not flat tags; a topic
+    relates to other topics by the same labelled types as concepts
+    (depends-on, prerequisite-for, related-to, contradicts).
+  - **Cross-domain navigation** — related concepts must be able to
+    cross domains (for example, an institutions chapter linking to a
+    hardware chapter), not stay trapped inside one domain's row.
+- A **graph view can come later.** It is explicitly deferred: do not
+  build a graph, a force layout, or a visual network now, and do not
+  describe one as built. The data for a future graph is already the
+  `relationships.*` records — the graph, when it comes, renders from
+  those, it does not need a new data model.
+- Status: concepts and labelled backlinks are in the schema and in
+  the sample chapter's Related section; no graph view exists.
+
 ## Content architecture — separate records, not interchangeable cards
 
 - Do **not** treat all original batch images as interchangeable image
