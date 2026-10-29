@@ -920,3 +920,60 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   (#10181e, cards #1f2a33). Original/wikin images keep
   their own colours; only page text/background/borders
   switch.
+
+## Main page clean — transcription bracket labels only in Original images + (2026-10-29)
+
+- The main card page reads clean, not archived: Detailed
+  explanation and Key points show the words as written,
+  with no transcription bracket label after them.
+- All transcription bracket labels move to "Original images +"
+  only, where the original headline and original image are:
+  [cut off], [cut off on the page], [cut off at page edge],
+  [no value written after = on the page], [bracket, left],
+  and any [unclear], [crossed out], [diagonal, crossed
+  through], [truncated] type markers. The full note about
+  why it is cut off, blank, or a bracket lives only there.
+- Examples, Card K: main page shows "compute", "schedule =",
+  "Govt projects" — no bracket note. The dropdown notes
+  that the original page shows "comput" cut off at the page
+  edge, corrected to "compute" in the main page; schedule =
+  has no value after it; and Govt projects is in a left
+  bracket, on the original page.
+- Original image is never changed. The [Added] label on the
+  enhanced headline stays on the main page, so readers can
+  tell enhanced from original.
+- Posters: no empty placeholder caption bars. Either a real
+  caption goes in them, or the bars are removed — on Card K
+  and all cards, the bars were removed.
+
+## Truncated words corrected in main, original form only in Original images + (2026-10-29)
+
+- Owner's rule, 2026-10-29 21:36 IST: "its compute not comput,
+  you have to correct all such in batches and you can include
+  them in archive."
+- When a word on an original page is truncated / cut off at
+  the page edge, but the intended word is clear from context
+  or the owner confirms it, correct it in the MAIN page and
+  in the main notes — do not leave the truncated form in
+  the main page. Example, Card K: original shows "comput"
+  cut off, main shows "compute".
+- The original truncated form, and the fact that it was
+  corrected, live ONLY in the archive: inside "Original
+  images +" dropdown on the card page (and in the intake
+  archive record, local, not pushed). Main page carries no
+  bracket note about the correction.
+- "All such in batches" means this applies to every batch,
+  not only Batch 3: every truncated word that is clear is
+  corrected in main the same way, with its original form
+  recorded only in Original images +.
+- If the intended word is NOT clear, do NOT guess it in
+  main. Leave the word out of the main explanation or
+  show it exactly as written without a bracket note, and
+  record the unclear / cut-off form only in Original
+  images +, flagged for the owner to confirm. Guessing an
+  unclear word is not a correction.
+- This does not change owner's spelling preservation for
+  words that are complete on the page (for example
+  "Bussiness", "Coorporate"): spelling is preserved as
+  written; only truncation at the page edge is corrected,
+  as above.
