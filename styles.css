@@ -69,6 +69,12 @@ a{color:var(--accent)}
 .suggestions{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.10);z-index:20;overflow:hidden}
 .suggestions button{display:block;width:100%;text-align:left;padding:12px 14px;border:0;border-bottom:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:15px}
 .suggestions button:last-child{border-bottom:0}
+/* Topbar search: small, right side, with a search icon — the hero searchbar moved here */
+.top-search{flex:0 1 280px;width:auto;max-width:280px;display:flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 12px}
+.top-search .search-icon{flex:none;font-size:15px;line-height:1}
+.top-search input{width:100%;min-width:0;padding:0;border:0;background:transparent;color:var(--ink);font-size:14px}
+.top-search input:focus{outline:none;border-color:transparent;box-shadow:none}
+.top-search .suggestions{left:auto;right:0;width:300px;max-width:90vw;text-align:left}
 .suggestions button:hover,.suggestions button:focus{background:var(--accent-soft)}
 .suggestions small{display:block;color:var(--muted);font-size:12px}
 .stats{color:var(--muted);font-size:14px}
@@ -167,8 +173,8 @@ footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var
 .viewer{position:fixed;inset:0;background:var(--surface);overflow:auto;padding:16px;z-index:10;animation:fadeUp .25s ease}
 .viewer img{max-width:100%;height:auto;display:block;margin:16px auto}
 .viewer button{font-size:16px;padding:8px 14px;cursor:pointer}
-@media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr);padding:28px 16px 24px;gap:20px}.hero-art{order:-1}.topbar{padding:12px 16px}.brand-text small{font-size:9px;letter-spacing:.08em;white-space:nowrap}.brand-text strong{font-size:17px}main{padding:16px 16px 32px}.domain{padding:16px}.how{padding:8px 16px 40px}}
-@media(max-width:480px){.hero{padding:24px 12px 20px}main{padding:12px 12px 24px}.domain{padding:14px}.domain-emoji{font-size:32px}}
+@media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr);padding:28px 16px 24px;gap:20px}.hero-art{order:-1}.topbar{padding:12px 16px}.brand-text small{font-size:9px;letter-spacing:.08em;white-space:nowrap}.brand-text strong{font-size:17px}.top-search{flex-basis:150px;max-width:150px;padding:6px 10px}.top-search input{font-size:13px}main{padding:16px 16px 32px}.domain{padding:16px}.how{padding:8px 16px 40px}}
+@media(max-width:480px){.hero{padding:24px 12px 20px}.topbar{padding:10px 12px;gap:8px}.logo-mark{width:34px;height:34px}.brand-text strong{font-size:15px}.brand-text small{font-size:8px}.top-search{flex-basis:110px;max-width:110px}main{padding:12px 12px 24px}.domain{padding:14px}.domain-emoji{font-size:32px}}
 /* Tagline must stay visible on mobile too: it is part of the brand, not decoration to hide */
 .brand-text small{white-space:nowrap}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}

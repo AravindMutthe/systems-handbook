@@ -13,6 +13,11 @@
 <div class="blob blob-b" aria-hidden="true"></div>
 <header class="topbar">
   <a class="brand" href="./"><svg class="logo-mark" viewBox="0 0 120 120" aria-hidden="true"><rect x="6" y="6" width="108" height="108" rx="24" fill="#1f2a33"/><path d="M28 88 Q44 80 60 88 Q76 80 92 88 L92 100 Q76 92 60 100 Q44 92 28 100 Z" fill="#fdfbf7"/><line x1="60" y1="88" x2="60" y2="100" stroke="#d9a441" stroke-width="3"/><polyline points="32,68 60,50 88,32" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="32" cy="68" r="6" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/><circle cx="60" cy="50" r="9" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/><circle cx="88" cy="32" r="12" fill="#d9a441" stroke="#fdfbf7" stroke-width="3"/><path d="M88 16 L102 28 L88 30 Z" fill="#d9a441"/></svg><span class="brand-text"><strong>Systems <span class="brand-evo">Evolution</span></strong><small>Networks · Business · Technology</small></span></a>
+  <form class="search top-search" role="search" onsubmit="return false">
+    <span class="search-icon" aria-hidden="true">🔍</span>
+    <input id="search" type="search" placeholder="Search notes" aria-label="Search notes" autocomplete="off">
+    <div id="suggestions" class="suggestions" hidden></div>
+  </form>
 </header>
 
 <section class="hero">
@@ -21,10 +26,6 @@
     <h1>Systems Evolution</h1>
     <p class="lede">My handwritten notes on how networks, business and technology grew together. Every page as written — no rewrites, no summaries standing in for the original. Open a page and read it full-size, on your phone or anywhere else.</p>
     <p class="hero-domains" aria-hidden="true">🏛️ Institutions · 💻 Hardware · 🌐 Infrastructure · 🧬 Evolution · 🏭 Business networks</p>
-    <form class="search" role="search" onsubmit="return false">
-      <input id="search" type="search" placeholder="Search notes by title, topic or words on the page…" aria-label="Search notes" autocomplete="off">
-      <div id="suggestions" class="suggestions" hidden></div>
-    </form>
     <p class="stats"><span id="stat-pages">0 pages</span> · <span>Topics appear as notes arrive</span></p>
     <div id="topics" aria-label="Filter by topic"></div>
   </div>
