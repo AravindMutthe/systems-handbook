@@ -351,3 +351,37 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - A direct URL does not bypass the gate: a topic page that loads a held note ID from `content.json` shows only a held notice, with no image, caption or original-note link.
 - Storage gate, separate from the code gate: code enforcement does NOT make a public repo private. Real original images must NOT be pushed to this public repo until (a) the note is public+published, AND (b) the owner has decided the storage for real originals — public repo, private storage, or a private repo. Until that decision, real originals stay in a private archive only, never in this repo. The site being Vercel-private does not change the repo being public.
 - Sample cards are not real notes and are exempt only while no real notes exist; once real notes exist, samples do not appear alongside them.
+
+## Nested cards in learning sequence (2026-10-29)
+
+- Based on the notes themselves, a nested card is created for each
+  note/topic, in the learning sequence decided from those notes —
+  not in batch-upload order, not alphabetically, and not from a
+  hardcoded list.
+- Card placement follows the decision made for that note (see
+  `requirements.md` R7, kept separate from this file): its topic,
+  its category/domain, and its chapter/section/order within that
+  domain. The card sits under that domain, in that sequence position.
+- One primary card per note/topic. Cross-domain and cross-topic
+  relations are shown ON that card as labelled links (prerequisite,
+  depends-on, successor, standard, cross-domain link) — they do not
+  create duplicate cards in the other domain or topic.
+- Card order inside a domain is the learning order: domain, then
+  chapter, then section, then `order` within the section. The
+  watermark number on a card is its position in that domain sequence
+  (for example, 03 in its domain), restarting per domain.
+- A card's headline, key points, and cover come only from that note
+  or from the owner — never invented. Enhanced text and enhanced
+  diagrams on a card stay labelled and in a different style/color
+  from the original, and the card links to the archived original
+  page for the untouched original image + transcription.
+- Every card is a button that opens its topic/chapter reader in
+  sequence (see "Nested cards navigate" and "Dynamic chapter reader
+  for nested cards" above), so a reader can move Previous/Next
+  through the sequence from any card.
+- A held note gets no public card: privacy/publication gates above
+  still apply. Held notes are counted only, with no title, caption,
+  image, or details on a public-facing page.
+- Status: rule only, for real notes not yet received. Sample cards
+  already on the homepage are layout placeholders only, labelled
+  SAMPLE, and must not be quoted as content or as the sequence.
