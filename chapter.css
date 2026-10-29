@@ -12,6 +12,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .chapter-eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700;margin:0 0 8px}
 .chapter-heading{display:flex;gap:14px;align-items:flex-start;margin:0 0 16px}
 .chapter-heading .logo-mark{width:56px;height:56px;flex:none;border-radius:14px}
+.chapter-emoji{font-size:48px;line-height:1;flex:none}
 .chapter-heading h1{margin:0}
 .chapter h1{font-family:var(--font-display);font-size:clamp(32px,7vw,48px);line-height:1.1;margin:0 0 12px}
 /* Chips as a scrolling banner: one row, swipe left/right on a phone, never stacked. */

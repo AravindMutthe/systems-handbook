@@ -282,7 +282,7 @@ when present. No real notes exist yet to use these fields.
 
 ## Chapter heading and original-note button (2026-10-29)
 
-- Chapter heading uses the site logo mark beside it, with the logo wordmark treatment: first word in ink/paper, rest in gold italic gradient (like "Systems" + "Evolution").
+- Chapter heading uses the DOMAIN EMOJI beside it, not the site logo mark (correction 2026-10-29: "not logo its emoji code" — e.g. 🏛️ for Institutions & markets), with the logo wordmark treatment: first word in ink/paper, rest in gold italic gradient (like "Systems" + "Evolution").
 - Chapter detail chips (domain, subject, source date, privacy, review, evidence) sit in ONE horizontal scrolling banner row — swipe left/right on a phone — never stacked vertically.
 - The chapter page does NOT list original-note details inline. It shows a single button ("Open original note — <id>") that opens an archived original page (`original-note.html`) containing the original image (untouched), its transcription, and its note details.
 - Related concepts on a chapter page show ONLY Prerequisites and Depends on, then a home button/logo (logo mark + "Home — Systems Evolution", linking to the homepage). Related chapters and Backlinks are NOT shown there.
