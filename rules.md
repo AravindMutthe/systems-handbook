@@ -904,3 +904,19 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   Original images + on the card page. Verification itself
   (done 2026-10-29, audit file) stands; only its
   presentation moves.
+
+## Dark/light toggle applies to all pages (2026-10-29)
+
+- Why it did not apply before: only homepage (styles.css +
+  app.js) and the template pages (chapter/topic/original-
+  note) used data-theme + localStorage 'theme'. Card,
+  explore and sequence pages were standalone inline-CSS
+  pages with hardcoded colours and no toggle button, so a
+  homepage choice was ignored there.
+- Now: every card, explore and sequence page carries the
+  same toggle — floating button bottom-right, same
+  localStorage 'theme' key, default dark (homepage
+  choice). Light = paper page, dark = whole page dark
+  (#10181e, cards #1f2a33). Original/wikin images keep
+  their own colours; only page text/background/borders
+  switch.
