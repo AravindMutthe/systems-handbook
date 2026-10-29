@@ -469,23 +469,21 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   verbatim in Key points and in the archive — the distinction
   is made in the enhanced layer, not by rewriting the original.
 
-## Explore domain — flat sequenced grid, not nested cards (2026-10-29)
 
-- When exploring a domain, cards are shown in learning order
-  (Card A = 01 … Card E = 05), as a flat grid — not as nested
-  cards, not as a horizontal swipe row with cards cut off at the
-  edge.
-- Chosen layout (owner gave a choice, one chosen): grid in
-  square, with a poster / image — each card is a rectangle with
-  a square poster cover on top (`assets/posters/card-*.svg`),
-  title and key points below, in a 2-column grid on phones and
-  a filling grid on desktop. No horizontal scroll on any screen.
-- Cards in a domain are sorted by learning order, and numbered
-  by learning sequence, not by domain-local position. Related
-  cards are flat grid items in that same sequence, not subcards
-  inside a primary card or inside a domain box. In a single-domain
-  explore view, there is no domain art or nested section chrome
-  — just "Exploring: <domain>" and the flat grid.
+## Explore domain layout — reverted, and homepage action is only Explore domain (2026-10-29)
+
+- Owner direction, 2026-10-29: the flat sequenced square-grid
+  explore layout (commit 192fc9fc) is NOT his requirement — it
+  was reverted in full. Homepage explore layout stays as it was
+  before that change: domain sections with horizontal swipe rows
+  on phones, filling grid on desktop, cards numbered by
+  domain-local position, related cards as cards in the domain
+  section.
+- Homepage domain cards have only one action: "Explore domain".
+  No domain card says "Start reading" — the Institutions &
+  markets card, which previously said "Start reading" in
+  `categories.json` and in `app.js`, now says "Explore domain"
+  like every other domain.
 
 ## Legend lives in README, not on the homepage (2026-10-29)
 
