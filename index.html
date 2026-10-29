@@ -22,7 +22,8 @@
     <h1>Systems Evolution</h1>
     <p class="lede">My handwritten notes on how networks, business and technology grew together. Every page as written — no rewrites, no summaries standing in for the original. Open a page and read it full-size, on your phone or anywhere else.</p>
     <form class="search" role="search" onsubmit="return false">
-      <input id="search" type="search" placeholder="Search notes by title, topic or words on the page…" aria-label="Search notes">
+      <input id="search" type="search" placeholder="Search notes by title, topic or words on the page…" aria-label="Search notes" autocomplete="off">
+      <div id="suggestions" class="suggestions" hidden></div>
     </form>
     <p class="stats"><span id="stat-pages">0 pages</span> · <span>Topics appear as notes arrive</span></p>
     <div id="topics" aria-label="Filter by topic"></div>

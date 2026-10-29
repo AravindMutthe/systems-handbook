@@ -87,6 +87,26 @@ function observeReveals() {
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold: .15});
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 }
+function renderSuggestions() {
+  const input = document.getElementById('search');
+  const box = document.getElementById('suggestions');
+  const q = (input.value || '').trim().toLowerCase();
+  if (!q) { box.hidden = true; box.innerHTML = ''; return; }
+  // Autocomplete: domain titles first, then page titles that match.
+  const domainHits = categories.filter(c => c.title.toLowerCase().includes(q)).map(c => ({label: c.title, sub: 'Domain', apply: () => { activeDomain = c.id; input.value = c.title; renderTopics(); }}));
+  const pageSource = notes.length ? notes : Array.from({length: 3}, () => ({title:'Sample page — layout only', topic:'Sample'}));
+  const pageHits = pageSource.filter(n => n.title.toLowerCase().includes(q)).slice(0, 4).map(n => ({label: n.title, sub: n.topic || 'Page', apply: () => { input.value = n.title; }}));
+  const hits = [...domainHits, ...pageHits].slice(0, 6);
+  if (!hits.length) { box.hidden = true; box.innerHTML = ''; return; }
+  box.hidden = false; box.innerHTML = '';
+  hits.forEach(h => {
+    const b = document.createElement('button'); b.type = 'button';
+    b.innerHTML = `${h.label}<small>${h.sub}</small>`;
+    b.onclick = () => { h.apply(); box.hidden = true; render(); input.focus(); };
+    box.appendChild(b);
+  });
+}
 document.getElementById('close').onclick = () => { document.getElementById('viewer').hidden = true; };
-document.getElementById('search').addEventListener('input', render);
+document.getElementById('search').addEventListener('input', () => { render(); renderSuggestions(); });
+document.addEventListener('click', e => { if (!e.target.closest('.search')) document.getElementById('suggestions').hidden = true; });
 load();

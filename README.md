@@ -5,7 +5,8 @@ My handwritten notes, readable anywhere. Homepage template first — content onl
 ## What this is now (static, Phase 1)
 
 - Static HTML/CSS/JS only. No backend, no database, no build step.
-- `index.html` — homepage template: hero, search, domain filter, dynamic domain sections, full-page viewer.
+- `index.html` — homepage template: hero, search with autocomplete (domain + page-title suggestions), domain filter, dynamic domain sections, full-page viewer.
+- Domain chips: ONE horizontal bar, `flex-wrap: nowrap` + horizontal scroll, on mobile and desktop — chips never wrap into stacked rows. Topbar nav is horizontal-scroll too, for the same reason.
 - `categories.json` — homepage domains, DATA-DRIVEN, not hardcoded. Core, standard domains (from the owner's screenshot): Institutions & markets, Hardware & computing, Infrastructure & operations, Systems evolution, Industrial & business networks. Each entry: `id, title, description, action, core`. Add a domain here later and it appears on the homepage automatically — vertical stacking of domains, horizontal swipe row of pages inside each domain. More domains will come as more notes come.
 - `styles.css` — theme lives in `:root` variables (`--paper`, `--ink`, `--accent`, …). Re-theming = editing those variables.
 - `app.js` — components (Hero / Search / Domains / Row / Viewer / Motion) rendering domains from `categories.json` and pages from `notes.json`. Sample layout cards (3 per domain) show only while `notes.json` is empty, and are labelled SAMPLE.
