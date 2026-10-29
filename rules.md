@@ -427,3 +427,22 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - The per-batch report must state, briefly, that the cross-check
   was done, which specification versions were checked, and any
   conflict or gap found — or that none was found.
+
+## Pipelines to GitHub — sync only after the owner's call (2026-10-29)
+
+- Both chats have their own pipeline to GitHub: the handbook
+  content chat runs a push-only pipeline, and the handbook
+  development (website) chat runs a push-and-pull pipeline.
+  The pipelines are separate — neither chat works inside the
+  other's pipeline.
+- The two pipelines get synchronized ONLY after the owner's call.
+  A push, a pull, or a deploy in either chat happens only when
+  the owner explicitly orders it in that chat. No automatic
+  push, pull, deploy, or background sync on any other word alone.
+- In particular: pushing content to GitHub does not by itself
+  sync it to the handbook site, and the development chat does
+  not pull content, integrate it, or deploy it until the owner
+  calls for that sync in the development chat.
+- This gate sits on top of the push-only / push-and-pull models
+  above; it does not replace them. Local preparation in a chat
+  is not a sync.
