@@ -709,3 +709,79 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   (for example an R16 future domain) are built and tested.
   The branch name, not a generic name, is the publish record
   for that batch.
+
+## Relationship kinds in enhanced diagrams — different arrows, different labels (2026-10-29)
+
+- The biggest challenge is not the number of topics. It is
+  distinguishing different kinds of relationships. An enhanced
+  diagram must never use one generic arrow for all of them.
+  Each kind below uses a different arrow style AND a different
+  label, so the kind is readable even in black and white, not
+  by colour alone.
+- Historical relationship — what came before something else.
+  Thin solid arrow, with the era or date on it, before → after.
+  Example: Telegraph (1850–1940) → main frame & early computing.
+  Chronology is NOT dependency: coming before does not mean
+  the later thing depends on the earlier thing.
+- Technical dependency — what component actually depends on
+  another. Thick solid arrow, from the dependent component to
+  the component it depends on, labelled "depends on".
+  Example: application → driver → kernel stack → network device.
+  Reading left to right must match the sentence "A depends on B".
+- Organizational relationship — who manufactures, regulates,
+  owns, or operates something. Double-line arrow, and the label
+  must be a verb, never just "related to": manufactures,
+  regulates, owns, operates, supplies, implements.
+  Example: Cisco manufactures the switch; FCC / TRAI regulate
+  the industry; government owns / operates the network;
+  vendors supply; implementers deploy. A manufacturer is not
+  automatically a dependency after deployment — do not conflate
+  the organizational arrow with the dependency arrow.
+- Data flow — where information travels. Dashed arrow, labelled
+  "data: …", direction = the direction information travels.
+  Example: customer data → NIC → network; market flow
+  source → consumer. The label must name the data, not just
+  "data flow".
+- Control flow — which component issues commands or makes
+  decisions. Bold arrow with a command head, labelled
+  "commands" or "decides", from controller to controlled.
+  Example: kernel / driver → NIC; BMC → device on the OOB
+  management lane; govt layer → market (control public).
+  Control flow and data flow often run in opposite directions —
+  draw them as separate arrows, never as one two-way arrow.
+- One pair of components can carry several kinds at once, and
+  each must be drawn separately. Example: kernel and NIC have
+  technical dependency (driver depends on kernel stack), data
+  flow (data through the NIC), and control flow (kernel
+  commands the NIC) — three arrows, not one arrow meaning
+  all three.
+- This rule applies to enhanced diagrams only. Original
+  diagrams are preserved as written, untouched, in the archive.
+  An enhanced diagram that reuses an original arrow without
+  re-labelling it by kind fails this rule.
+- Status note, honest: batch 1 and batch 2 enhanced diagrams
+  built before this rule use a single → style. They do NOT
+  yet meet this rule. Revising them to these five arrow
+  styles and labels is pending work, not claimed done by
+  adding this rule.
+
+## Original headlines live in Original images + (R15) (2026-10-29)
+
+- Original headline(s) first, exactly as written, spelling
+  preserved, are shown INSIDE the "Original images +" section
+  on every card page, before the original images themselves,
+  wherever that page lives (Batch 1 on main, Batch 2 on its
+  branch, and every future batch on its branch).
+- No separate original-headline block outside that section —
+  one place, first in the original evidence, not duplicated.
+- The enhanced headline stays on the page, labelled [Added],
+  and does not replace the original. On Batch 1 pages the
+  enhanced title is the card title; the original headlines
+  inside Original images + are the owner's words first, in
+  evidence order.
+- Batch 1 original headlines, from batch1-cards.json audit:
+  A Before Agencies of Networks / why needed / why needed /
+  Comm to Business; B Market rules / Phone book / DNS;
+  C Sillicon product / Market Vendors; D NIC / N/W Device /
+  HW + SW / OEM / NIC chain; E Product Dev / why needed /
+  why needed / Comm to Business.

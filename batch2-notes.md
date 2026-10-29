@@ -2,17 +2,29 @@
 
 Status: privacy = private, reviewStatus = draft, publication NOT
 published. Original images are NOT pushed to the public repo.
-These notes are built locally for the owner's check only. Do NOT
-push until the owner approves in this chat.
+Pushed to git 2026-10-29 (batch2-notes.md commit 7996b59b,
+batch2-cards.json commit e6b16a3f).
 
-Cross-check: requirements.md R1–R17 (20,810 bytes) and rules.md
-(42,847 bytes) were read in full as they stand, before reading the
-images. No conflict blocks this batch. Open items carried forward:
-R15 batch 1 titles still need the owner's call (revise batch 1, or
-R15 going forward only); R17 story spine vs the earlier related-cards
-rule is still awaiting the owner's call before any site change.
-Batch 2 below follows R15 and R17: original headlines first,
-enhanced headlines labelled, one story spine, no duplicate cards.
+Audit update 2026-10-29: this file was checked against current
+rules.md (48,049 bytes, repo SHA 6124e90c, including the new
+"Relationship kinds in enhanced diagrams" rule) and requirements.md
+R1–R17 (20,810 bytes, repo SHA f349da2b). Fixes made in this audit:
+relationship-kind labels on every enhanced diagram arrow below.
+R15 was already met in this batch (original headlines first).
+Open items carried forward: R15 batch 1 titles — fixed in batch 1
+in this same audit, see batch1-notes.md; R17 story spine vs the
+earlier related-cards rule is still awaiting the owner's call
+before any site change.
+
+Arrow kinds in enhanced diagrams below, in text form (site SVG
+rendering is development's job; the kind for every arrow is given here):
+[Historical] → = what came before, with era/date.
+[Depends on] ⇒ = dependent → dependency.
+[Organizational: verb] ═> = manufactures / regulates / owns / operates / supplies / implements / sets standards / enforces / certifies.
+[Data: …] - - > = information travels in that direction.
+[Commands] ▶▶ = controller → controlled, commands / decides.
+[Sequence] –> = learning order only, NOT a relationship claim.
+[Flow: physical goods] = goods flow, not data flow.
 
 Learning order, provisional: Card F → Card G → Card H.
 
@@ -55,12 +67,18 @@ across that flow — devices on the network, ledgers, intelligence,
 and interfaces — until the product is no longer just a good, but
 a whole value chain, connected end to end.
 
-### Enhanced diagram [Added, different style, never replacing the original]
+### Enhanced diagram [Added, different style, never replacing the original, arrows labelled by kind]
 Spectrum (Tech + manufacturing + software + Business)
-→ four parallel flows (communication → trade → speed)
-→ Cross Flow (physical / informational / financial / rules)
-→ Tech Integration (IoT devices, Blockchain, AI/ML, APIs, across the flow)
-→ Abstraction from goods → full value chain, connected.
+–[Sequence]–> four parallel flows.
+[Data: trade information] communication - - > trade - - > speed,
+with Tech as the outcome of that speed, not a separate data step.
+[Flow: physical goods] + [Data: information] + [Flow: money] +
+[Organizational: rules] = Cross Flow (physical / informational /
+financial / rules) — four flows, drawn as four separate flows, not one arrow.
+[Depends on] Tech Integration ⇒ the flow: IoT devices, Blockchain,
+AI/ML, APIs depend on the network flow to work across it.
+[Sequence] Abstraction from goods –> full value chain, connected.
+This last arrow is summary order, not a dependency claim.
 
 ### Horizontal links
 - Trade / speed thread → Batch 1, Card A (why networks exist)
@@ -153,19 +171,29 @@ regional-office example, VLAN deployment, and link-failure
 monitoring are NOT on the original page and are NOT used here
 as if they were.
 
-### Enhanced diagram [Added, different style, never replacing the original]
-Govt layer (control public, unifying layer across all flows)
-→ Global Oversight → International standard bodies
-→ Regional Regulation (TRAI, FCC, FDA, NHTSA, NIST)
-→ National Enforcement & certification
-→ Industry & Sector Standards (automotive, electronics, health,
-  cloud, food & agriculture)
-→ Market flow (suppliers → manufacturer → distributors →
-  retailers → consumers)
-→ Govt Network Series (routers, switches, firewalls, radio, video)
-→ Manufacturers → Vendors (contracts) → Suppliers → Implementers
-→ Buyers / Sellers → Customers / Public
-→ Management / public controllers from govt (loop back).
+### Enhanced diagram [Added, different style, never replacing the original, arrows labelled by kind]
+[Organizational: controls] Govt layer (control public, unifying
+layer across all flows) ═> Global Oversight.
+[Organizational: oversees] Global Oversight ═> International
+standard bodies.
+[Organizational: sets standards] International standard bodies
+═> Regional Regulation (TRAI, FCC, FDA, NHTSA, NIST).
+[Organizational: regulates] Regional Regulation ═> National
+Enforcement & certification.
+[Organizational: enforces / certifies] National Enforcement ═>
+Industry & Sector Standards (automotive, electronics, health,
+cloud, food & agriculture).
+[Organizational: supplies] Market flow: suppliers ═> manufacturer
+═> distributors ═> retailers ═> consumers. This is a supply chain,
+not a single hierarchy — each verb above is the specific
+organizational relationship at that step, under R14.
+[Organizational: manufactures] Govt Network Series (routers,
+switches, firewalls, radio, video) ═> Manufacturers ═> Vendors
+(contracts) ═> Suppliers ═> Implementers ═> Buyers / Sellers ═>
+Customers / Public.
+[Commands] Management / public controllers from govt ▶▶ the
+network and the market (loop back): control flow, drawn separately
+from the supply chain above.
 
 ### Horizontal links
 - FCC / TRAI thread → Batch 1, Card B (directory → DNS, FCC 1934)
@@ -272,15 +300,22 @@ distinction is added, labelled.
 this card, and voice / spatial interfaces not on these pages
 are not added as an era.
 
-### Enhanced diagram [Added, different style, never replacing the original]
+### Enhanced diagram [Added, different style, never replacing the original, arrows labelled by kind]
 Timeline, left to right, one row per era, four columns per era
-(UI mediums | Frameworks public/private | Arch | Attributes):
+(UI mediums | Frameworks public/private | Arch | Attributes).
+All arrows below are [Historical] only:
 Telegraph (1850–1940, hardware only)
 → Mainframe (punch cards, CLI, terminal)
 → PC & client-server (GUI desktops, monolithic UI)
 → Internet & web (1990–2001, browsers, HTML/CSS/JS)
 → Mobile & cloud (apps, SaaS, component-based, cloud native)
 → 5G & modern (2020–Now, real-time dashboards, XR, AI UI's).
+Explicitly NOT a dependency chain: a later era does not technically
+depend on the earlier era in the way a driver depends on a kernel.
+Dependency arrows, where they exist inside an era (for example,
+a mobile app depends on its framework and on cloud native backend),
+are drawn separately inside that era's Arch column, not as the
+timeline arrow.
 
 ### Horizontal links
 - Telegraph thread → Batch 1, Card A (origins, human → mechanical
