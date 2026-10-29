@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1"><script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark';}catch(e){}</script>
 <title>Explore domain — Systems Evolution</title>
-<style>body{font-family:system-ui,sans-serif;background:#1f2a33;color:#fdfbf7;margin:0;padding:16px}
-main{max-width:960px;margin:0 auto;background:#fdfbf7;color:#1a2027;border-radius:16px;padding:24px 18px}
+<style>body{font-family:system-ui,sans-serif;background:#fdfbf7;color:#1a2027;margin:0;padding:0}
+main{max-width:960px;margin:0 auto;background:#fdfbf7;color:#1a2027;border-radius:0;padding:0 18px 24px}
 .eyebrow{color:#8a6d1b;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin:0 0 8px}
 h1{font-family:Georgia,serif;font-size:32px;line-height:1.15;margin:0 0 8px}
 .lede{color:#555;font-size:16px;line-height:1.6}
@@ -28,6 +28,16 @@ strong em, em strong{font-style:italic;font-weight:800}
 .cross-term{font-weight:800;color:#8a6d1b}
 .badge{display:inline-block;background:#f5ecd4;color:#8a6d1b;font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;margin-bottom:8px}
 .empty{color:#555;border:1px dashed #e6ddd0;border-radius:12px;padding:20px}
+.theme-toggle{position:fixed;right:16px;bottom:16px;width:54px;height:54px;border-radius:50%;background:#ffffff;color:#1a2027;border:1px solid #e6ddd0;font-size:24px;cursor:pointer;z-index:30;box-shadow:0 8px 20px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center}
+[data-theme="dark"] body,[data-theme="dark"] main,[data-theme="dark"] .site-header{background:#10181e;color:#fdfbf7}
+[data-theme="dark"] .site-brand,[data-theme="dark"] .back,[data-theme="dark"] .home,[data-theme="dark"] .nav a,[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] li strong,[data-theme="dark"] .cardlist a,[data-theme="dark"] .card-body h4{color:#fdfbf7}
+[data-theme="dark"] .lede,[data-theme="dark"] .meta,[data-theme="dark"] figcaption,[data-theme="dark"] .site-brand small,[data-theme="dark"] .card-body p,[data-theme="dark"] .empty{color:#cbd5e1}
+[data-theme="dark"] .eyebrow,[data-theme="dark"] .cross-term,[data-theme="dark"] .key-headline,[data-theme="dark"] .badge{color:#d9a441}
+[data-theme="dark"] .added{background:#26343f}
+[data-theme="dark"] h2,[data-theme="dark"] .nav,[data-theme="dark"] details,[data-theme="dark"] .site-header{border-color:#33424e}
+[data-theme="dark"] .theme-toggle{background:#1f2a33;color:#fdfbf7;border-color:#33424e}
+[data-theme="dark"] .card{background:#1f2a33;border-color:#33424e}
+[data-theme="dark"] figure img{border-color:#33424e!important}
 </style>
 </head>
 <body>
@@ -73,5 +83,6 @@ const fmt = k => crossTerm(italicBold(boldLead(k)));
   });
 })();
 </script>
+<button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark and light theme">☀️</button><script>(function(){var b=document.getElementById('theme-toggle');function setBtn(){b.textContent=document.documentElement.dataset.theme==='dark'?'☀️':'🌙';}setBtn();b.onclick=function(){var n=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem('theme',n);}catch(e){}setBtn();};})();</script>
 </body>
 </html>
