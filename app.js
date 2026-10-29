@@ -106,7 +106,9 @@ function render() {
   const shownCats = categories.filter(c => activeDomain === 'All' || c.id === activeDomain);
   let total = 0;
   shownCats.forEach(cat => {
-    let pages = notes.filter(n => noteDomain(n) === cat.id || noteDomain(n) === cat.title);
+    // Real cards: primary card in its own domain, plus related
+    // cards in every related domain, as cards — not samples, not links only.
+    let pages = notes.filter(n => noteDomain(n) === cat.id || noteDomain(n) === cat.title || (Array.isArray(n.relatedDomains) && n.relatedDomains.includes(cat.id)));
     if (q) pages = pages.filter(n => searchable(n).toLowerCase().includes(q));
     if (showingSamples) pages = Array.from({length: 3}, () => ({title:'Sample page — layout only', topic:cat.title, domain:cat.id, caption:'A ruled-paper placeholder showing how a real page card will look. Not a real note.'}));
     total += pages.length;
@@ -134,16 +136,18 @@ function render() {
           ? `<img class="cover-img" src="${esc(file)}" alt="" loading="lazy">`
           : `<div class="cover-art" aria-hidden="true">${artForCard.art}<span class="cover-emoji">${esc(artForCard.emoji)}</span></div>`;
         const keySource = showingSamples ? cat.description : (n.caption || n.title || '');
-        const keys = keySource.split(/[,;]/).map(s => s.replace(/^\s*and\s+/i, '').trim()).filter(Boolean).slice(0, 3);
+        const keys = Array.isArray(n.keys) && n.keys.length ? n.keys.slice(0, 3) : keySource.split(/[,;]/).map(s => s.replace(/^\s*and\s+/i, '').trim()).filter(Boolean).slice(0, 3);
         const keyHtml = keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${esc(k)}</li>`).join('')}</ul>` : '';
         const hierHtml = [n.chapter, n.section].filter(Boolean).length ? `<p class="card-hier">${esc([n.chapter, n.section].filter(Boolean).join(' · '))}</p>` : '';
         const evHtml = n.evidenceStatus && n.evidenceStatus !== 'unverified' ? `<span class="evidence evidence-${esc(n.evidenceStatus)}">${esc(n.evidenceStatus)}</span>` : '';
         const pubHtml = (n.reviewStatus || (n.publication && n.publication.status)) && (n.reviewStatus || n.publication.status) !== 'published' ? `<span class="pub pub-${esc(n.reviewStatus || n.publication.status)}">${esc(n.reviewStatus || n.publication.status)}</span>` : '';
         const num = String(i + 1).padStart(2, '0');
-        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.subject, n.topic || cat.title, n.sourceDate || n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${keyHtml}</div>`;
-        // Every nested card is a button that navigates to a page about
-        // that topic/concept — samples included, not only notes with a file.
+        const isRelated = Array.isArray(n.relatedDomains) && n.relatedDomains.includes(cat.id) && noteDomain(n) !== cat.id && noteDomain(n) !== cat.title;
+        const relHtml = isRelated ? '<span class="badge">RELATED</span>' : '';
+        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${relHtml}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.subject, n.topic || cat.title, n.sourceDate || n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${keyHtml}</div>`;
+        // Real cards navigate to their real page, not to the sample topic page.
         card.onclick = () => {
+          if (n.page) { location.href = n.page; return; }
           const q = new URLSearchParams({domain: cat.id, topic: showingSamples ? cat.title : (n.topic || cat.title), title: showingSamples ? cat.title : (n.title || cat.title)});
           if (n.id) q.set('id', n.id);
           if (file) q.set('file', file);

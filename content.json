@@ -1,1 +1,151 @@
-{"chapters":[],"concepts":[],"contentRelease":"v3-template-001","diagrams":[],"events":[],"modelVersion":"3","notes":[],"relationships":[],"sources":[],"status":"template","tables":[],"transcriptions":[],"versionHistory":[{"changes":["Template homepage, sample cards only, no real notes","Single notes.json array (v1)"],"release":"v1-template","whatChanged":"Initial template"},{"changes":["notes.json v2 fields: transcription, chapter/section, related, tags, revisions, evidenceStatus, publication","Search extended to transcription/chapter/tags","HTML escaping and file-path validation"],"release":"v2-schema","whatChanged":"Handbook schema"},{"changes":["Single notes.json replaced as the primary model","One versioned content.json carrying all collections: sources, transcriptions, chapters, diagrams, tables, events, concepts, relationships, notes","Each record keeps its own version and revisions; the top level keeps modelVersion, contentRelease and versionHistory","notes.json kept locally for backward-compatible fallback only, not as the primary model"],"release":"v3-template-001","whatChanged":"Richer versioned content model"}]}
+{
+  "chapters": [],
+  "concepts": [],
+  "contentRelease": "v3-batch1-001",
+  "diagrams": [],
+  "events": [],
+  "modelVersion": "3",
+  "notes": [
+    {
+      "id": "card-a",
+      "title": "Why networks exist: origins and business need",
+      "domain": "systems-evolution",
+      "topic": "Systems evolution",
+      "caption": "Networks did not start with computers. A deal is only as fast as the information behind it.",
+      "keys": [
+        "Networks did not start with computers",
+        "Human, mechanical, then electronic signalling",
+        "Business = exchange of information"
+      ],
+      "page": "batch1/card-a.html",
+      "relatedDomains": [
+        "institutions-markets",
+        "industrial-business-networks"
+      ],
+      "privacy": "public",
+      "publication": {
+        "status": "published"
+      },
+      "reviewStatus": "published"
+    },
+    {
+      "id": "card-b",
+      "title": "Naming, addressing and regulation: directory to DNS",
+      "domain": "institutions-markets",
+      "topic": "Institutions & markets",
+      "caption": "Before DNS, the directory was a telephone book run by government. Names are delegated, addresses allocated by region.",
+      "keys": [
+        "Telephone directory to DNS",
+        "ICANN, RIRs, IP blocks",
+        "FCC, TRAI, IETF, IEEE, 3GPP"
+      ],
+      "page": "batch1/card-b.html",
+      "relatedDomains": [
+        "infrastructure-operations"
+      ],
+      "privacy": "public",
+      "publication": {
+        "status": "published"
+      },
+      "reviewStatus": "published"
+    },
+    {
+      "id": "card-c",
+      "title": "Hardware supply and the NIC endpoint",
+      "domain": "hardware-computing",
+      "topic": "Hardware & computing",
+      "caption": "Silicon becomes a chip, a chip becomes a vendor's device, and that device reaches a customer through the NIC.",
+      "keys": [
+        "Silicon to Intel, Broadcom, Nvidia",
+        "Cloud, OEMs, telcos, government labs",
+        "NIC to PCI, driver, user tools"
+      ],
+      "page": "batch1/card-c.html",
+      "relatedDomains": [
+        "industrial-business-networks"
+      ],
+      "privacy": "public",
+      "publication": {
+        "status": "published"
+      },
+      "reviewStatus": "published"
+    },
+    {
+      "id": "card-d",
+      "title": "The NIC and kernel stack, plus out-of-band management",
+      "domain": "infrastructure-operations",
+      "topic": "Infrastructure & operations",
+      "caption": "Two lanes that must not be confused: the data lane and the management lane.",
+      "keys": [
+        "Interface, driver, kernel, TCP/IP",
+        "Out-of-band to BMC",
+        "CLI, web, API \u2014 even when the data lane is down"
+      ],
+      "page": "batch1/card-d.html",
+      "relatedDomains": [
+        "hardware-computing"
+      ],
+      "privacy": "public",
+      "publication": {
+        "status": "published"
+      },
+      "reviewStatus": "published"
+    },
+    {
+      "id": "card-e",
+      "title": "Building, operating and approving a product",
+      "domain": "industrial-business-networks",
+      "topic": "Industrial & business networks",
+      "caption": "A product closes the loop: built, tested, sold, bought from vendors, gated by approval.",
+      "keys": [
+        "Engineering, operations, testing",
+        "Vendors to silicon",
+        "FCC approval gate"
+      ],
+      "page": "batch1/card-e.html",
+      "relatedDomains": [
+        "institutions-markets",
+        "hardware-computing"
+      ],
+      "privacy": "public",
+      "publication": {
+        "status": "published"
+      },
+      "reviewStatus": "published"
+    }
+  ],
+  "relationships": [],
+  "sources": [],
+  "status": "batch1",
+  "tables": [],
+  "transcriptions": [],
+  "versionHistory": [
+    {
+      "changes": [
+        "Template homepage, sample cards only, no real notes",
+        "Single notes.json array (v1)"
+      ],
+      "release": "v1-template",
+      "whatChanged": "Initial template"
+    },
+    {
+      "changes": [
+        "notes.json v2 fields: transcription, chapter/section, related, tags, revisions, evidenceStatus, publication",
+        "Search extended to transcription/chapter/tags",
+        "HTML escaping and file-path validation"
+      ],
+      "release": "v2-schema",
+      "whatChanged": "Handbook schema"
+    },
+    {
+      "changes": [
+        "Single notes.json replaced as the primary model",
+        "One versioned content.json carrying all collections: sources, transcriptions, chapters, diagrams, tables, events, concepts, relationships, notes",
+        "Each record keeps its own version and revisions; the top level keeps modelVersion, contentRelease and versionHistory",
+        "notes.json kept locally for backward-compatible fallback only, not as the primary model"
+      ],
+      "release": "v3-template-001",
+      "whatChanged": "Richer versioned content model"
+    }
+  ]
+}
