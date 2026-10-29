@@ -38,3 +38,9 @@ My handwritten notes, readable anywhere. Homepage template first — content onl
 - Repo: AravindMutthe/systems-handbook (public since 2026-10-29) — renamed from handwritten-notes 2026-10-29; site at https://systems-handbook.vercel.app is private (Vercel Authentication, all deployments, since 2026-10-29)
 - Content: none yet — awaiting UI/design/theme approval, then the owner sends raw notes batch by batch.
 - Deploy: nothing deployed. A preview/production link needs the owner's separate tap.
+
+## Standing recommendation — Systems Handbook stays independent
+
+My recommendation remains to keep the new Systems Handbook as your independent personal knowledge platform, with Atlas research as a source of content — not automatically merge the two projects.
+
+In practice: the Handbook keeps its own repo, Vercel project, design and content model. Atlas research may supply content to it, chapter by chapter, only when that content is chosen and checked for the Handbook — Atlas is a source, not a merge. The two projects are not merged automatically, and neither project's live site is changed by the other without a separate, explicit decision.

@@ -291,3 +291,9 @@ when present. No real notes exist yet to use these fields.
 ## Home button (2026-10-29)
 
 - The logo and name ARE the home button: topbar brand (logo mark + "Systems Evolution") is styled as a pill button and links to the homepage, and the chapter-page home button is the same logo + name, linking home.
+
+## Standing recommendation — Systems Handbook stays independent
+
+My recommendation remains to keep the new Systems Handbook as your independent personal knowledge platform, with Atlas research as a source of content — not automatically merge the two projects.
+
+In practice: the Handbook keeps its own repo, Vercel project, design and content model. Atlas research may supply content to it, chapter by chapter, only when that content is chosen and checked for the Handbook — Atlas is a source, not a merge. The two projects are not merged automatically, and neither project's live site is changed by the other without a separate, explicit decision.
