@@ -35,7 +35,8 @@ a{color:var(--accent)}
 .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--accent);font-weight:700;margin:0 0 12px}
 .hero h1{font-family:var(--font-display);font-size:54px;line-height:1.05;margin:0 0 16px;font-weight:700;letter-spacing:-.01em}
 .gradient{background:linear-gradient(90deg,var(--accent),var(--gold),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lede{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 24px}
+.lede{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 12px}
+.hero-domains{color:var(--muted);margin:0 0 20px;animation:fadeUp .7s ease .3s both}
 .search{position:relative;max-width:640px}
 .search input{width:100%;padding:14px 16px;font-size:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);transition:box-shadow .2s,border-color .2s}
 .search input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px var(--accent-soft)}
@@ -65,6 +66,15 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px}
 /* Domain head uses the FULL card width: text flexes, action never squeezes it */
 .domain-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;width:100%}
 .domain-head>div{flex:1 1 auto;min-width:0}
+.domain-emoji{flex:0 0 auto!important;font-size:40px;line-height:1;margin-right:4px;animation:floatY 5s ease-in-out infinite}
+.domain-art{margin-top:12px;border-radius:12px;background:linear-gradient(90deg,var(--accent-soft),#fff);overflow:hidden}
+.domain-art svg{width:100%;height:64px;display:block}
+.domain-art .bar{transform-box:fill-box;transform-origin:bottom;animation:pulseBar 2.4s ease-in-out infinite}
+.domain-art .pulse{animation:twinkle 2s ease-in-out infinite}
+.domain-art .spin{transform-box:fill-box;transform-origin:center;animation:spin 8s linear infinite}
+.paper-emoji{display:block;font-size:36px;animation:floatY 5s ease-in-out infinite}
+@keyframes pulseBar{0%,100%{transform:scaleY(.85)}50%{transform:scaleY(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
 .domain-head h3{font-family:var(--font-display);font-size:24px;margin:0 0 6px}
 .domain-head p{margin:0;color:var(--muted)}
 .domain-action{flex:0 0 auto;color:var(--accent);font-weight:700;white-space:nowrap;background:none;border:0;cursor:pointer;font-size:15px;padding:0}
