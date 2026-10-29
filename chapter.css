@@ -21,6 +21,8 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(-
 .original-button:hover,.original-button:focus-visible{text-decoration:underline}
 .original-hint{color:var(--muted);font-size:14px}
 .original-image-placeholder{background:var(--surface);border:1px dashed var(--line);border-radius:14px;padding:48px 20px;text-align:center;color:var(--muted);line-height:1.6}
+.home-button{display:inline-flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 18px 8px 8px;text-decoration:none;color:var(--ink);font-weight:700}
+.home-button .logo-mark{width:36px;height:36px;flex:none;border-radius:10px}
 .chapter-lede{font-size:17px;line-height:1.65;color:var(--muted);margin:0 0 28px}
 .chapter-toc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 32px}
 .chapter-toc h2{font-size:16px;margin:0 0 10px}
