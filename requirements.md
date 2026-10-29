@@ -316,6 +316,32 @@ A batch is complete only when all of these are true:
 - This requirement applies to headlines and topic names on cards,
   chapter pages, study notes, and homepage key points alike.
 
+## R16. Future domains — based on later notes images only
+
+- Requirement, for the future only: later on, based on the notes
+  images in a later batch, the following domains may be used:
+  - devops
+  - infrastructure / production
+  - software engineering / development
+- These are future domains, not current domains. The current
+  five domains in `categories.json` (see R5) stay in force for
+  batches received so far, including batch 1, until a later
+  batch's images actually show content that belongs in one of
+  these future domains.
+- A future domain may be used only when it is grounded in what
+  a later notes image actually shows — its content, diagram,
+  and links — not invented in advance, and not applied
+  retrospectively to earlier batches unless those batches
+  themselves show that content.
+- The word "like" in the owner's direction is recorded here as
+  examples of the kind of future domain, not as a closed list
+  that forbids another domain a later batch genuinely shows.
+  Any other future domain must meet the same grounding test,
+  and must be recorded in this file before it is used.
+- When a future domain is first used, `categories.json` must be
+  updated to include it, and the per-batch report must state
+  which image(s) justify it, so the owner can check and overrule it.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
