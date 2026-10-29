@@ -6,6 +6,25 @@ Labels (First, Third, Sixth, C, E, F, UX) are kept exactly as the owner
 gave them. Items the owner has not sent yet — for example Second, Fourth,
 Fifth, A, B, D — are **not** listed here and must not be invented.
 
+## Best fit templates — where each pattern belongs
+
+Each borrowed pattern is filed under the template it fits best, not
+left as a loose rule. Detail for each template is in its own section
+below; this table is the map.
+
+| Template | Best fit pattern | What it must contain | File / status |
+|---|---|---|---|
+| **Technical chapter** | ByteByteGo — visual explanations | Annotated diagram (numbered + legend), concise explanation, step-by-step technical flow, worked example, limitations, deeper references. Original illustrations only, never copied graphics. | `chapter.html` — one sample chapter, built |
+| **Concept exploration** | Obsidian — connected knowledge | Related chapters, prerequisites, dependencies, backlinks — every link labelled with its relationship type. Topic relationships and cross-domain navigation. Graph view deferred, not built. | Schema + sample chapter Related section — design only |
+| **Historical timeline** | E — timeline | Eras, dates, technology changes, institutional changes, source evidence, cross-domain relationships. Unknown dates shown as unknown. | Requirement only — not built |
+| **Content records** | Separate records, not cards | Sources, transcriptions, chapters, diagrams, tables, events, concepts, relationships — each its own record with its own ID, joined by reference. | `content.schema.json` — design only |
+| **Chapter reader (UX)** | Reading-first UX | Mobile-first, keyboard-accessible, fast static load, searchable, responsive, reusable, long-reading measure, no developer text on reader pages, no excessive animation, reduced-motion preserved. | `chapter.html` + `chapter.css` — built |
+| **Site architecture** | Sixth — design flexibility | Theme tokens, reusable components, data-driven navigation. No Next.js migration now. | `styles.css`, `categories.json`, `notes.json` — current |
+
+A new pattern, when the owner sends one, goes under its best fit
+template here first — do not create a new top-level template for every
+pattern, and do not file a pattern under a template it does not fit.
+
 ## First — Reading experience comes first
 
 - The first priority of this handbook is the reading experience.
