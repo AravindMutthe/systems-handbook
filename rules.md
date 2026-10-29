@@ -845,3 +845,22 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   verified against Wikipedia or trusted sources. Under this
   rule it is UNVERIFIED, held, and not to be added or pushed
   until that verification is done and recorded.
+
+## Card pages are full web pages, not cards (2026-10-29)
+
+- A card page, once opened, reads as a normal web page:
+  paper background edge to edge, no dark outer frame, no
+  rounded card box around the whole article. The poster
+  stays as a banner image, and Original images + / Key
+  points are flat sections, not boxed cards.
+- Only the buttons stay as buttons: top Back, and bottom
+  Previous / Next / Home pills.
+- Top header on every card page: site logo + "Systems
+  Evolution" name (link to site home) on the left, "← Back"
+  on the right — Back goes to the page the reader actually
+  came from (browser history), or to site home if opened
+  directly.
+- Bottom nav is continuous in learning order: on the
+  branch build, Card E Next goes to Card F and Card F
+  Previous goes to Card E (1-8 order); on main, Card E
+  remains last until Batch 2 merges.
