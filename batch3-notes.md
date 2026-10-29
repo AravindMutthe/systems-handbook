@@ -91,6 +91,16 @@ interoperability protocols as the dev work. In the internet /
 web / cloud era, the page starts with hypergrowth and stops.
 That stop is completed in the Future completion section below.
 
+[Added, labelled distinction, under R14 — not one hierarchy:]
+The central standards bodies in the completion (ICANN, IETF,
+W3C) are not one body. ICANN allocates names and numbers,
+IETF sets Internet technical standards, W3C sets web
+standards. Leadership in the internet / web / cloud era
+therefore works with three different kinds of central body,
+not one central authority, and the same distinction applies
+to national regulators (FCC / TRAI) and to IEEE and 3GPP
+in later eras.
+
 ### Enhanced diagram [Added, different style, never replacing the original]
 [Historical] 1940's Telegraph → 1980-1990 Distribution →
 2000 Internet / web / cloud (starts, page ends).
@@ -201,6 +211,18 @@ with every era: duration, chargeback, licence, advertising /
 subscription, SaaS + usage, API token. The interface changes,
 the control changes, and the payment model changes together.
 
+[Added, cross-domain vocabulary, grounded in this page:]
+The business controller is a market story, not only a payment
+list. The customer pays — by duration, by chargeback, by
+licence, by subscription, by SaaS usage, by API token. The
+vendor supplies the device, framework, app store, or AI model
+the customer pays for. The market is where that exchange
+happens, and regulation gates it — FCC / TRAI for telecom
+eras, ICANN / IETF / W3C for names, technical standards, and
+web standards, as distinguished above. Market, customer,
+vendor, and regulation are therefore words on this card, not
+only in its business-controller column.
+
 [Added, labelled distinction, under R14:] ICANN, IETF, and
 W3C are not one body. IETF = Internet technical standards;
 ICANN = names / numbers allocation; W3C = web standards.
@@ -282,6 +304,19 @@ a company, a bank network, a standards body, or a public-private
 consortium. Who schedules changes the fairness and the
 efficiency, because the scheduler owns the allocation.
 
+[Added, cross-domain vocabulary, grounded in this page:]
+The scheduler's tasks belong to a customer — a person, a
+company, or a government agency whose job, contract, or
+transaction is being scheduled. The resources it allocates
+come from vendors and suppliers — money, labour, raw
+material, and compute supplied by others. Regulation is the
+rule that says who may schedule and how fairly — a
+government agency, ISO / RTO rules for electricity, ISP
+and ICANN rules for networking, bank rules for settlement.
+Customer, vendor, and regulation are therefore part of the
+scheduler model, not only of the business projects it
+schedules.
+
 [Added, labelled distinction, under R14:] ISO/RTO, ICANN, ISP,
 and VISA/SWIFT are not the same kind of scheduler. ISO/RTO
 schedule electricity, ICANN allocates names/numbers, ISPs
@@ -318,6 +353,33 @@ hb-batch3-003 — 1000103115_67_la1p.jpg. Full transcription in
 batch3-intake.md. Source date: null.
 
 ---
+
+## Synthesis — A to K [Added, closing note, no new facts]
+
+A story in one line, from the cards themselves: A asks why
+networks exist — business need. B names and addresses them —
+directory to DNS, with regulation. C supplies the hardware —
+silicon to vendors to the NIC endpoint. D runs that endpoint —
+kernel stack and a separate management lane. E builds, operates,
+and approves the product that uses all of it. F makes that
+product universal — four parallel flows and a full value chain.
+G asks who controls and who builds — government layer, global
+oversight, government networks. H changes the interface era by
+era, from telegraph keys to real-time, XR, and AI. I asks who
+leads each era — org structure, tech strategy, leadership
+mindset, completed [Added] after 2000. J reads the same six
+eras through three lenses — interface, control, and how it is
+paid for. K schedules it all — tasks and resources, allocated
+fairly, by whoever owns the allocation.
+
+No new era, body, or claim is introduced here. It is only the
+eleven cards, in learning order, as one system: ground base,
+naming, hardware, endpoint, product, universal product, control,
+interface, leadership, eras, and scheduler. A reader who has
+read A to K has followed the whole story; a reader who filters
+by a technical perspective — institutions, hardware,
+infrastructure, business, software engineering — follows the
+same story through that lens, without a duplicate card.
 
 ## Batch 3 held-back list
 
