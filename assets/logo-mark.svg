@@ -1,9 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Systems Evolution logo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Systems Evolution logo: a handbook with systems evolving">
   <rect x="6" y="6" width="108" height="108" rx="24" fill="#1f2a33"/>
-  <polyline points="28,84 60,60 92,36" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="28" cy="84" r="10" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/>
-  <circle cx="60" cy="60" r="10" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/>
-  <circle cx="92" cy="36" r="10" fill="#d9a441" stroke="#fdfbf7" stroke-width="3"/>
-  <path d="M92 22 L104 34 L92 34 Z" fill="#d9a441"/>
-  <line x1="28" y1="98" x2="60" y2="98" stroke="#5b6770" stroke-width="3" stroke-linecap="round"/>
+  <!-- Handbook (open book) at the base: this is a handbook, not a generic network icon -->
+  <path d="M28 88 Q44 80 60 88 Q76 80 92 88 L92 100 Q76 92 60 100 Q44 92 28 100 Z" fill="#fdfbf7"/>
+  <line x1="60" y1="88" x2="60" y2="100" stroke="#d9a441" stroke-width="3"/>
+  <!-- Systems evolving: connected nodes GROWING small → medium → large, rising left → right -->
+  <polyline points="32,68 60,50 88,32" fill="none" stroke="#d9a441" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="68" r="6" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/>
+  <circle cx="60" cy="50" r="9" fill="#fdfbf7" stroke="#d9a441" stroke-width="3"/>
+  <circle cx="88" cy="32" r="12" fill="#d9a441" stroke="#fdfbf7" stroke-width="3"/>
+  <path d="M88 16 L102 28 L88 30 Z" fill="#d9a441"/>
 </svg>
