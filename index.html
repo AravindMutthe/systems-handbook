@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Handwritten Notes</title>
+<meta name="description" content="My handwritten notes, in one place, readable anywhere.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="blob blob-a" aria-hidden="true"></div>
+<div class="blob blob-b" aria-hidden="true"></div>
+<header class="topbar">
+  <a class="brand" href="./">✎ <span>My Handwritten Notes</span></a>
+  <nav><a href="#browse">Browse</a><a href="#how">How it works</a><a href="#growth">Built to grow</a></nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text reveal">
+    <p class="eyebrow">Written by hand · Read anywhere</p>
+    <h1>All my handwritten notes,<br><span class="gradient">in one place.</span></h1>
+    <p class="lede">Every page as written — no rewrites, no summaries standing in for the original. Open a page and read it full-size, on your phone or anywhere else.</p>
+    <form class="search" role="search" onsubmit="return false">
+      <input id="search" type="search" placeholder="Search notes by title, topic or words on the page…" aria-label="Search notes">
+    </form>
+    <p class="stats"><span id="stat-pages">0 pages</span> · <span>Topics appear as notes arrive</span></p>
+    <div id="topics" aria-label="Filter by topic"></div>
+  </div>
+  <div class="hero-art reveal" aria-hidden="true">
+    <!-- Local SVG illustration: a stack of handwritten pages, drawn in code, no external images -->
+    <svg viewBox="0 0 420 340" role="img">
+      <g class="float-slow"><rect x="40" y="40" width="260" height="240" rx="14" fill="#ffffff" stroke="#e6ddd0" transform="rotate(-6 170 160)"/><line x1="70" y1="95" x2="260" y2="85" stroke="#cbd5e1"/><line x1="70" y1="125" x2="240" y2="115" stroke="#cbd5e1"/><line x1="70" y1="155" x2="250" y2="145" stroke="#cbd5e1"/><path class="draw" d="M80 200 q40 -18 80 0 t80 0" fill="none" stroke="#8a6d1b" stroke-width="3" stroke-linecap="round"/></g>
+      <g class="float-med"><rect x="110" y="70" width="260" height="240" rx="14" fill="#fffdf5" stroke="#e6ddd0" transform="rotate(4 240 190)"/><line x1="140" y1="125" x2="320" y2="125" stroke="#cbd5e1"/><line x1="140" y1="155" x2="300" y2="155" stroke="#cbd5e1"/><path d="M150 200 q30 -22 60 0" fill="none" stroke="#1f2a33" stroke-width="3" stroke-linecap="round"/></g>
+      <g class="float-fast"><path d="M310 40 L360 90 L330 100 L315 115 Z" fill="#8a6d1b"/><rect x="300" y="105" width="14" height="110" rx="7" fill="#1f2a33" transform="rotate(24 307 160)"/></g>
+      <circle class="spark" cx="70" cy="45" r="6" fill="#d9a441"/><circle class="spark" cx="385" cy="230" r="5" fill="#d9a441"/><circle class="spark" cx="360" cy="55" r="4" fill="#1f2a33"/>
+    </svg>
+    <p class="art-caption">Illustration: pages, not a photograph — your real pages replace the sample cards below.</p>
+  </div>
+</section>
+
+<main id="browse">
+  <div class="section-head reveal">
+    <h2>Browse pages</h2>
+    <p id="count"></p>
+  </div>
+  <div id="grid" class="grid"></div>
+  <p id="empty" class="empty" hidden>No notes added yet. This homepage is the template — your pages will fill this grid once you approve the design and send the first batch.</p>
+  <p class="sample-note" id="sample-note" hidden>Sample layout cards below — placeholders for judging the design only, not real notes.</p>
+</main>
+
+<section id="how" class="how">
+  <h2 class="reveal">How it works</h2>
+  <ol>
+    <li class="reveal"><span class="step-icon">↗</span><strong>1. You send a page</strong><br>Photo of the handwritten page, in order, batch by batch.</li>
+    <li class="reveal"><span class="step-icon">▦</span><strong>2. It is filed, untouched</strong><br>Original image kept as-is, indexed by title, topic and date. Nothing is invented or rewritten.</li>
+    <li class="reveal"><span class="step-icon">◎</span><strong>3. You read it anywhere</strong><br>Search it, filter by topic, open it full-size — from any device with the link.</li>
+  </ol>
+  <h3 id="growth" class="reveal">Built to grow, without rebuilding</h3>
+  <ul class="growth reveal">
+    <li><strong>Static first:</strong> no backend, no database — fast, cheap, and easy to host anywhere.</li>
+    <li><strong>Scales out:</strong> pages are stateless files served by a CDN; the index splits by collection as it grows, so a thousand pages load no slower than ten.</li>
+    <li><strong>Scales up:</strong> responsive image sizes and lazy loading keep big pages light on phones.</li>
+    <li><strong>Adaptable:</strong> colours, type and layout live in theme variables — a new theme is a change in one place, not a rewrite.</li>
+    <li><strong>Integrable later:</strong> <code>notes.json</code> is the data contract. Search, auth, an API or a CMS can plug into that same contract when you ask for it — none of it is built yet.</li>
+    <li><strong>Framework path, no lock-in:</strong> components (Hero, Search, Gallery, Viewer, Motion) are separated in <code>app.js</code> with the same data contract, so a move to Next.js + Tailwind + Framer Motion later is a port of components, not a data migration. All art and animation here is local code — no external fonts, images or scripts.</li>
+  </ul>
+</section>
+
+<footer><p>Template only — no notes published yet. Content arrives after you approve this design.</p></footer>
+
+<div id="viewer" class="viewer" hidden>
+  <button id="close" aria-label="Close">× Close</button>
+  <img id="viewer-img" alt="">
+  <h2 id="viewer-title"></h2>
+  <p id="viewer-meta"></p>
+  <p id="viewer-caption"></p>
+  <p><a id="viewer-original" target="_blank" rel="noopener">Open original image</a></p>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

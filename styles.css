@@ -1,0 +1,70 @@
+/* Design system — theme in :root, motion in keyframes, art in local SVG.
+   Re-theme by editing :root. No external fonts, images or scripts. */
+:root{
+  --paper:#fdfbf7; --surface:#ffffff; --ink:#1a2027; --muted:#5b6770;
+  --line:#e6ddd0; --accent:#8a6d1b; --accent-soft:#f5ecd4; --dark:#1f2a33; --gold:#d9a441;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:var(--ink);background:var(--paper);line-height:1.55;overflow-x:hidden}
+a{color:var(--accent)}
+.blob{position:fixed;border-radius:50%;filter:blur(60px);opacity:.35;z-index:-1;pointer-events:none}
+.blob-a{width:340px;height:340px;background:#f5d98a;top:-80px;right:-60px;animation:drift 14s ease-in-out infinite alternate}
+.blob-b{width:280px;height:280px;background:#bfe3dd;bottom:10%;left:-90px;animation:drift 18s ease-in-out infinite alternate-reverse}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(-30px,25px) scale(1.08)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes draw{from{stroke-dasharray:220;stroke-dashoffset:220}to{stroke-dasharray:220;stroke-dashoffset:0}}
+@keyframes twinkle{0%,100%{opacity:.3}50%{opacity:1}}
+.reveal{opacity:0;animation:fadeUp .7s ease forwards}
+.reveal.in{opacity:1}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
+.brand{font-weight:700;text-decoration:none;color:var(--ink);font-size:18px}
+.brand span{font-family:Georgia,serif}
+.topbar nav a{margin-left:16px;text-decoration:none;color:var(--muted)}
+.topbar nav a:hover{color:var(--ink)}
+.hero{max-width:1100px;margin:0 auto;padding:48px 20px 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--accent);font-weight:700;margin:0 0 12px}
+.hero h1{font-family:Georgia,serif;font-size:54px;line-height:1.05;margin:0 0 16px;font-weight:600}
+.gradient{background:linear-gradient(90deg,var(--accent),var(--gold),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 24px}
+.search input{width:100%;max-width:640px;padding:14px 16px;font-size:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);transition:box-shadow .2s,border-color .2s}
+.search input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px var(--accent-soft)}
+.stats{color:var(--muted);font-size:14px}
+#topics{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+#topics button{padding:7px 14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;cursor:pointer;transition:transform .15s}
+#topics button:hover{transform:translateY(-1px)}
+#topics button.active{background:var(--dark);color:#fff;border-color:var(--dark)}
+.hero-art svg{width:100%;height:auto;filter:drop-shadow(0 12px 24px rgba(0,0,0,.08))}
+.float-slow{animation:floatY 7s ease-in-out infinite}
+.float-med{animation:floatY 6s ease-in-out infinite .6s}
+.float-fast{animation:floatY 5s ease-in-out infinite 1.2s}
+.draw{animation:draw 2.2s ease forwards .4s}
+.spark{animation:twinkle 3s ease-in-out infinite}
+.art-caption{font-size:13px;color:var(--muted);text-align:center}
+main{max-width:1100px;margin:0 auto;padding:16px 20px 32px}
+.section-head{display:flex;justify-content:space-between;align-items:baseline}
+.section-head h2,.how h2{font-family:Georgia,serif;font-size:30px;margin:16px 0 8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;cursor:pointer;text-align:left;padding:0;box-shadow:0 1px 3px rgba(0,0,0,.04);transition:transform .2s,box-shadow .2s;animation:fadeUp .6s ease both}
+.card:hover{transform:translateY(-4px) rotate(-.3deg);box-shadow:0 14px 28px rgba(0,0,0,.10)}
+.card .paper{height:200px;background:repeating-linear-gradient(var(--surface),var(--surface) 27px,#eef2f5 28px);display:flex;align-items:center;justify-content:center;color:var(--muted);font-family:Georgia,serif;font-size:18px;padding:16px;text-align:center}
+.card img{width:100%;height:200px;object-fit:cover;display:block}
+.card div{padding:14px}
+.card h3{margin:0 0 4px;font-size:16px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.badge{display:inline-block;background:var(--accent-soft);color:var(--accent);font-size:12px;font-weight:700;padding:2px 8px;border-radius:999px;margin-bottom:8px}
+.empty,.sample-note{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:20px}
+.how{max-width:1100px;margin:0 auto;padding:8px 20px 40px}
+.how ol{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.how ol li{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;transition:transform .2s}
+.how ol li:hover{transform:translateY(-3px)}
+.step-icon{display:inline-block;width:36px;height:36px;line-height:36px;text-align:center;border-radius:50%;background:var(--accent-soft);color:var(--accent);font-weight:700;margin-bottom:10px}
+.growth{line-height:1.7}
+.growth li{margin-bottom:8px}
+footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var(--muted)}
+.viewer{position:fixed;inset:0;background:var(--surface);overflow:auto;padding:16px;z-index:10;animation:fadeUp .25s ease}
+.viewer img{max-width:100%;height:auto;display:block;margin:16px auto}
+.viewer button{font-size:16px;padding:8px 14px;cursor:pointer}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:28px}.hero h1{font-size:38px}.hero-art{order:-1}.topbar nav a{margin-left:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
