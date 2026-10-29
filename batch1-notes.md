@@ -1,13 +1,27 @@
 # Handbook — Batch 1 Study Notes
 ## From the 10 pics you sent (sample first batch)
 
-Status: **DRAFT for your approval — NOT pushed to git yet.**
-Push to git will happen only after you approve this file.
+Status: **HELD, draft, NOT published. Pushed to git 2026-10-29
+(commit ee7242aa, batch1-notes.md; batch1-cards.json commit b74ddf8b).
+Original images are NOT pushed with it.**
 
-Cross-check done first, per rules.md: rules.md (commit 3a8200a, 30,209 bytes)
-and requirements.md (5ab5eefc, 7,637 bytes) were re-read before building
-these notes. No conflict found, except the correction already applied:
-cards are decided from the whole batch, not one per image.
+Audit update 2026-10-29: this file was checked against current
+rules.md (48,049 bytes, repo SHA 6124e90c, including the new
+"Relationship kinds in enhanced diagrams" rule) and requirements.md
+R1–R17 (20,810 bytes, repo SHA f349da2b). Fixes made in this audit:
+R15 original headlines first (see each card), R14 distinction for
+Card B, business vocabulary for Card D, and relationship-kind labels
+on every enhanced diagram arrow. Original transcriptions are unchanged.
+
+Arrow kinds in enhanced diagrams below, in text form (site SVG
+rendering is development's job; the kind for every arrow is given here):
+[Historical] → = what came before, with era/date.
+[Depends on] ⇒ = dependent → dependency.
+[Organizational: verb] ═> = manufactures / regulates / owns / operates / supplies / implements.
+[Data: …] - - > = information travels in that direction.
+[Commands] ▶▶ = controller → controlled, commands / decides.
+[Sequence] –> = learning order only, NOT a relationship claim.
+[Flow: physical goods] = goods flow, not data flow.
 
 How to read these notes:
 - **Original** = only what is on your pages, in your spelling where it matters.
@@ -22,7 +36,15 @@ How to read these notes:
 
 ---
 
-## Card A — Why networks exist: origins and business need
+## Card A
+
+### Original topic names first
+- "Before Agencies of Networks" — hb-batch1-008
+- "why needed" — hb-batch1-006
+- "why needed / Comm to Business" — hb-batch1-005
+
+### Enhanced headline [Added, labelled, related only]
+Why networks exist: origins and business need
 
 Primary domain: systems-evolution
 Also touches: industrial-business-networks, institutions-markets
@@ -92,12 +114,14 @@ rules and coordination appear before any device in this sequence:
 first the need, then the organisation that trades, then the rules
 that govern that trading.
 
-### Enhanced diagram [Added, redraw]
+### Enhanced diagram [Added, redraw, arrows labelled by kind]
 
-A horizontal timeline: Human to human, then Mechanical signals,
-then Electronic telegraph, then DARPA 1960, with a second lane
-underneath: Business need (speed of trade) leading to Organisation,
-then Regulation and coordination.
+[Historical] Human to human → Mechanical signals → Electronic
+telegraph → DARPA 1960.
+[Sequence] Business need (speed of trade) –> Organisation –>
+Regulation and coordination. This lane is learning order, not a
+claim that regulation technically depends on organisation in the
+same way a driver depends on a kernel.
 
 ### Horizontal links
 
@@ -107,7 +131,15 @@ then Regulation and coordination.
 
 ---
 
-## Card B — Naming, addressing and regulation: directory to DNS
+## Card B
+
+### Original topic names first
+- "Market rules" — hb-batch1-003
+- "Phone book" — hb-batch1-002 (topic as written on the page; no single headline on this page, flagged, not invented)
+- "DNS" — hb-batch1-010 ("DNS → owners")
+
+### Enhanced headline [Added, labelled, related only]
+Naming, addressing and regulation: directory to DNS
 
 Primary domain: institutions-markets
 Also touches: infrastructure-operations
@@ -174,12 +206,29 @@ allocated in blocks by region, and both are wrapped in regulation
 and privacy rules. That is why naming and regulation belong in
 one note, not in separate ones.
 
-### Enhanced diagram [Added, redraw]
+[Added, labelled distinction, under R14 — not one hierarchy:]
+RIRs administer regional Internet number-resource allocation.
+IETF develops Internet technical standards. IEEE develops
+standards across electrical, electronics and computing fields.
+3GPP develops mobile telecommunications specifications. FCC and
+TRAI have national regulatory roles in their respective
+jurisdictions. ICANN handles names and addresses. Listing them
+together under one "regulation" heading without those functions
+labelled would fail R14; the functions above are the labels.
 
-Left to right: Telephone directory, then DNS in the centre, then
-ICANN at the top, RIRs (ARIN / RIPE / APNIC) below it, then ISP,
-then user. A regulator lane underneath: FCC / TRAI, with standards
-bodies IETF / IEEE / 3GPP beside it.
+### Enhanced diagram [Added, redraw, arrows labelled by kind]
+
+[Historical] Telephone directory → DNS (replacement, before → after).
+[Organizational: allocates] ICANN ═> RIRs (ARIN / RIPE / APNIC)
+═> ISP ═> user. The allocation chain is organizational, not a
+technical dependency chain.
+[Organizational: regulates] FCC / TRAI ═> telecom companies and
+directory/DNS operation, in a regulator lane underneath.
+[Depends on] DNS ⇒ ICANN / RIR allocation and TCP/IP: DNS
+resolution depends on that allocation and on TCP/IP transport,
+labelled separately from the organizational allocation arrow.
+Standards bodies IETF / IEEE / 3GPP sit beside the regulator lane,
+labelled by function in the R14 note above, not as regulators.
 
 ### Horizontal links
 
@@ -189,7 +238,14 @@ bodies IETF / IEEE / 3GPP beside it.
 
 ---
 
-## Card C — Hardware supply and the NIC endpoint
+## Card C
+
+### Original topic names first
+- "Sillicon product" — hb-batch1-001
+- "Market Vendors" — hb-batch1-004 (top part)
+
+### Enhanced headline [Added, labelled, related only]
+Hardware supply and the NIC endpoint
 
 Primary domain: hardware-computing
 Also touches: industrial-business-networks
@@ -232,11 +288,19 @@ Selling that endpoint is not just a shipment — it is governed,
 which is why the NIC chain in your notes keeps returning to
 government rules and to FCC.
 
-### Enhanced diagram [Added, redraw]
+### Enhanced diagram [Added, redraw, arrows labelled by kind]
 
-Top to bottom: Silicon, then Intel / Broadcom / Nvidia, then
-Cloud / OEMs / Telco-ISP / Government labs, with the NIC as the
-endpoint box at the bottom, connected by PCI to the device.
+[Organizational: manufactures / supplies] Silicon ═> Intel /
+Broadcom / Nvidia ═> Cloud / OEMs / Telco-ISP / Government labs.
+[Organizational: supplies] Vendors ═> direct buyers, with the NIC
+integrated into devices by assemblers.
+[Depends on] NIC ⇒ PCI interface to the device: the endpoint
+depends on that interface to be visible to the system.
+[Organizational: regulates] Government / FCC ═> NIC sale to
+customers who follow government rules.
+[Sequence] Supply chain top to bottom is learning order –>
+endpoint at the bottom, not a claim that silicon technically
+depends on the customer.
 
 ### Horizontal links
 
@@ -246,7 +310,15 @@ endpoint box at the bottom, connected by PCI to the device.
 
 ---
 
-## Card D — The NIC and kernel stack, plus out-of-band management
+## Card D
+
+### Original topic names first
+- "NIC" — hb-batch1-009 ("NIC / own infra Hardware")
+- "N/W Device / HW + SW / OEM" — hb-batch1-004 (bottom part)
+- NIC chain — hb-batch1-001 ("NIC contains", "Sell to customers")
+
+### Enhanced headline [Added, labelled, related only]
+The NIC and kernel stack, plus out-of-band management
 
 Primary domain: infrastructure-operations
 Also touches: hardware-computing
@@ -296,12 +368,27 @@ web or API, and it works even when the data lane does not.
 Learning them as one stack hides the second lane; learning them
 as two lanes explains why a device can be managed while it is down.
 
-### Enhanced diagram [Added, redraw]
+[Added, business vocabulary, grounded in 009 itself:] This is
+not an isolated stack. The page itself says the system is
+"driven by S/W for fast trading / communication", and
+"Port → Business → Network → customer", with "Business →
+ASIC Hardware". The NIC therefore carries customer traffic for
+cloud and ISP companies, for fast trading, and the business
+that traffic serves is the reason the management lane exists:
+a device that cannot be managed cannot carry that business.
 
-Two parallel lanes. Data lane: End customer, Interface, Driver,
-Kernel stack, Net device, TCP/IP. Management lane, separate and
-below: OOB, BMC / ILO, then CLI / Web UI / API, then Running config,
-then Start up to hardware.
+### Enhanced diagram [Added, redraw, arrows labelled by kind]
+
+Two parallel lanes, never merged into one arrow.
+Data lane, [Data: customer traffic] End customer - - > Interface
+(NIC) - - > Driver - - > Kernel stack - - > Net device - - >
+TCP/IP.
+Dependency lane, [Depends on] Driver ⇒ Kernel stack ⇒ Net device:
+each layer depends on the one below it to run.
+Management lane, separate and below, [Commands] OOB ▶▶ BMC / ILO
+▶▶ CLI / Web UI / API ▶▶ Running config ▶▶ Start up to hardware.
+Control flow runs controller → controlled, opposite in direction
+to data flow in places, and is drawn separately for that reason.
 
 ### Horizontal links
 
@@ -311,7 +398,15 @@ then Start up to hardware.
 
 ---
 
-## Card E — Building, operating and approving a product
+## Card E
+
+### Original topic names first
+- "Product Dev" [crossed out] — hb-batch1-007
+- "why needed" — hb-batch1-006 (governance parts)
+- "why needed / Comm to Business" — hb-batch1-005 (governance parts)
+
+### Enhanced headline [Added, labelled, related only]
+Building, operating and approving a product
 
 Primary domain: industrial-business-networks
 Also touches: institutions-markets, hardware-computing
@@ -353,12 +448,19 @@ granted. That approval gate is why this note comes last — it
 depends on every note before it, from origins to naming to the
 NIC stack.
 
-### Enhanced diagram [Added, redraw]
+### Enhanced diagram [Added, redraw, arrows labelled by kind]
 
-A loop, left to right and back: C-suite and operations, then
-Engineering and testing, then Customers, then Vendors, then
-Silicon, with an FCC approval gate between Vendors / Silicon
-and the market, marked as a gate, not a step.
+[Organizational: operates / builds] C-suite and operations ═>
+Engineering and testing ═> Customers.
+[Organizational: supplies] Customers ═> Vendors ═> Silicon
+(the loop back, in supply terms, not in time).
+[Commands] FCC approval gate ▶▶ market entry: approval decides
+whether a product may enter the market. The gate is a control
+decision, not a step in the build sequence, and is marked as a
+gate, not a step.
+[Depends on] Product approval ⇒ every card before it (origins,
+naming, NIC stack): the product depends on those layers, labelled
+separately from the organizational loop.
 
 ### Horizontal links
 
