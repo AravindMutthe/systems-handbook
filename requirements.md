@@ -186,6 +186,43 @@ A batch is complete only when all of these are true:
   `rules.md`, under "Proper nouns italic bold, across the site",
   and is not restated here beyond this requirement.
 
+## R12. Systems across domains, not isolated system evaluation
+
+- Requirement: the handbook is about systems, not about evaluating
+  a single system in isolation. Every delivered page must show how
+  its topic fits into the whole system, and how it connects to
+  other domains — not as a standalone evaluation.
+- Requirement: business vocabulary, domain terminology, and
+  technology/telecom analogies must be used across domains, not
+  kept inside one domain. A reader must meet the same core
+  systems vocabulary in every domain — network, signalling,
+  directory, endpoint, stack, lane, gate, hierarchy, allocation,
+  regulation, trading speed, customer, vendor, company, market,
+  approval — and see it used in that domain's own terms.
+- Requirement: business vocabulary must appear in every domain,
+  including technical domains. A technical card (for example, the
+  NIC and kernel stack, or out-of-band management) must still show
+  the business side — whose customer traffic it carries, whose
+  company runs it, what trading or market use it serves, and what
+  approval or regulation gates it — so the business thread does
+  not thin out in the middle of the system.
+- Requirement: analogies must map across domains in the same way:
+  signalling (fire beacons, drums, telegraph) to networks, a
+  telephone directory to DNS, silicon to chip to vendor device to
+  NIC endpoint, two lanes (data and management) to a business
+  network, and an approval gate to market entry. An analogy learned
+  in one domain must be reused, not replaced, in the next domain
+  where it applies.
+- Requirement: every page must carry its cross-domain links —
+  horizontal links and related topics in related domains — so the
+  interlink is visible on the page itself, not only in the learning
+  sequence. A page with no cross-domain link is incomplete under
+  this requirement.
+- This requirement is about what the content must deliver. How
+  terminology and analogies are written is in `rules.md`, under
+  "Domain terminology, technology and telecom analogies" and
+  "Proper nouns italic bold, across the site".
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
