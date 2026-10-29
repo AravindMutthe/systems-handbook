@@ -290,6 +290,32 @@ A batch is complete only when all of these are true:
   implementation, regulation — distinguished, not one
   hierarchy", and is not restated here beyond this requirement.
 
+## R15. Headlines and topic names — original first, enhanced second, related only
+
+- Requirement: use the headline and topic name exactly as they
+  appear in the original notes first. The headline, topic name,
+  or chapter heading as written on the page — in the owner's
+  spelling — comes first, before any enhanced version, on every
+  card, chapter page, and note.
+- Requirement: only after the original headline / topic name is
+  shown, use an enhanced headline — and only an enhanced headline
+  that is related to that note. Related means grounded in what
+  that page actually shows: its content, its diagram, and its
+  links to other pages. An enhanced headline must never introduce
+  an unrelated topic, and must never be presented as the owner's
+  headline.
+- Requirement: an enhanced headline stays labelled as enhanced
+  and in a different style from the original, under the exact-vs-
+  enhancement rule in `rules.md`. It never replaces, overwrites,
+  or hides the original headline.
+- Requirement: if an original page has no clear headline or topic
+  name, flag it as missing — do not invent one and present it as
+  original. An enhanced headline may then be proposed, labelled
+  as enhanced / proposed, with the reason for it, so the owner
+  can check and overrule it.
+- This requirement applies to headlines and topic names on cards,
+  chapter pages, study notes, and homepage key points alike.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
