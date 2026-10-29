@@ -303,3 +303,9 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 
 - Every nested card on the homepage is a button that NAVIGATES to a page about that topic or concept (`topic.html?domain=&topic=&title=`), samples included — not only notes that already have a file. A card that did nothing is a bug.
 - The topic page shows the domain emoji + description (from `categories.json`), the card's caption if any, the original image if the note has a safe in-repo file, a link to its archived original-note page if it has an ID, and the logo+name home button. No topic content is invented.
+
+## Public-facing explanations (2026-10-29)
+
+- Public-facing explanations — on the homepage, chapter pages and topic pages — must be deep, readable and illustrated.
+- They must be free of internal processing commentary: no schema names, file names, build steps, pipeline talk, or how the site was processed. The reader sees the explanation, not the work behind it.
+- Archived original pages are different: they show the original image, untouched, plus its transcription and details. An archived original is evidence, not an explanation — it does not need to be deep, readable or illustrated, and it must not be rewritten into an explanation.
