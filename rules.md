@@ -864,3 +864,43 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   branch build, Card E Next goes to Card F and Card F
   Previous goes to Card E (1-8 order); on main, Card E
   remains last until Batch 2 merges.
+
+## Verification presentation — sources and corrections live in Original images + / references page, not in main notes (2026-10-29)
+
+- Amendment to the 2026-10-29 verification rule, owner's
+  direction 2026-10-29 21:00 IST: verification itself does
+  NOT change — every batch, when the owner sends it, Leo
+  still inspects, audits, and verifies Leo-added content
+  against Wikipedia and trusted sources WHILE making the
+  notes for that batch, not after, and not as a separate
+  later step.
+- Presentation DOES change, over time: Leo does not need
+  to put the source of trust / truth in the main notes,
+  in the main explanation, or in chat replies, batch after
+  batch. Verified content reads as verified content, without
+  a source list attached to every claim.
+- Lastly, a page for content references will be made —
+  that is a future, final step, not built in this rule
+  change, and not built per batch. Sources recorded during
+  per-batch verification are kept for that page, and are
+  not plastered into main notes in the meantime.
+- Corrections and fixes to original batch notes: Leo may
+  correct and fix an original batch note when verification
+  or a transcription check shows it is wrong, but all such
+  corrections are NOT mentioned in the main notes or main
+  explanation. They are mentioned only inside "Original
+  images +" (the dropdown / details section on the card
+  page, where the original headline and original images
+  live), in that one place. The original image itself is
+  never altered; a correction is a note about the
+  transcription / note, inside Original images +, not a
+  rewrite of the main article.
+- Consequence for Batch 3, recorded here so it is not
+  pushed as-is: batch3-notes.md Card I currently mentions
+  verification in the main notes. Under this amendment,
+  those verification mentions are to be removed from the
+  main notes before push, and any correction to an
+  original batch note is to be noted only inside
+  Original images + on the card page. Verification itself
+  (done 2026-10-29, audit file) stands; only its
+  presentation moves.
