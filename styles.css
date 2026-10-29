@@ -193,3 +193,6 @@ footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var
 /* Tagline must stay visible on mobile too: it is part of the brand, not decoration to hide */
 .brand-text small{white-space:nowrap}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+
+.tagline{font-size:12px;font-weight:700;color:var(--accent);margin:6px 0 0}
+.badge-new{background:#1f2a33;color:#fdfbf7}

@@ -13,7 +13,7 @@
       "topic": "Systems evolution",
       "caption": "Networks did not start with computers. A deal is only as fast as the information behind it.",
       "keys": [
-        "Networks did not start with computers \u2014 they started with people signalling, long before any device.",
+        "Networks did not start with computers — they started with people signalling, long before any device.",
         "Human, mechanical, then electronic signalling were used by people, communities, and companies to send a message farther and faster.",
         "Business = exchange of information: a deal is only as fast as the information behind it."
       ],
@@ -27,7 +27,22 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-a.svg"
+      "poster": "assets/posters/card-a.svg",
+      "uniqueTag": "network-origins",
+      "tags": [
+        "network-origins",
+        "systems-evolution",
+        "institutions-markets",
+        "industrial-business-networks",
+        "network",
+        "trading",
+        "company",
+        "business",
+        "coordination",
+        "market",
+        "regulation",
+        "signalling"
+      ]
     },
     {
       "id": "card-b",
@@ -49,7 +64,21 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-b.svg"
+      "poster": "assets/posters/card-b.svg",
+      "uniqueTag": "directory-to-dns",
+      "tags": [
+        "directory-to-dns",
+        "institutions-markets",
+        "infrastructure-operations",
+        "company",
+        "directory",
+        "regulation",
+        "internet",
+        "business",
+        "network",
+        "networks",
+        "allocation"
+      ]
     },
     {
       "id": "card-c",
@@ -71,7 +100,21 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-c.svg"
+      "poster": "assets/posters/card-c.svg",
+      "uniqueTag": "nic-endpoint",
+      "tags": [
+        "nic-endpoint",
+        "hardware-computing",
+        "industrial-business-networks",
+        "network",
+        "company",
+        "silicon",
+        "vendor",
+        "business",
+        "product",
+        "customer",
+        "market"
+      ]
     },
     {
       "id": "card-d",
@@ -93,7 +136,21 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-d.svg"
+      "poster": "assets/posters/card-d.svg",
+      "uniqueTag": "nic-kernel-stack",
+      "tags": [
+        "nic-kernel-stack",
+        "infrastructure-operations",
+        "hardware-computing",
+        "network",
+        "customer",
+        "business",
+        "company",
+        "stack",
+        "data-lane",
+        "product",
+        "lane"
+      ]
     },
     {
       "id": "card-e",
@@ -104,7 +161,7 @@
       "keys": [
         "A product is built by engineering and operations, tested, sold to customers, and bought through vendors who buy silicon.",
         "FCC approval is the gate: equipment certification for routers and phones, and a broadband speed report, before market entry.",
-        "That gate depends on every card before it \u2014 origins, naming, hardware, and the NIC stack."
+        "That gate depends on every card before it — origins, naming, hardware, and the NIC stack."
       ],
       "page": "batch1/card-e.html",
       "relatedDomains": [
@@ -116,7 +173,21 @@
         "status": "published"
       },
       "reviewStatus": "published",
-      "poster": "assets/posters/card-e.svg"
+      "poster": "assets/posters/card-e.svg",
+      "uniqueTag": "product-approval",
+      "tags": [
+        "product-approval",
+        "industrial-business-networks",
+        "institutions-markets",
+        "hardware-computing",
+        "product",
+        "company",
+        "silicon",
+        "network",
+        "approval",
+        "business",
+        "vendor"
+      ]
     }
   ],
   "relationships": [],

@@ -150,7 +150,9 @@ function render() {
         const num = String(i + 1).padStart(2, '0');
         const isRelated = Array.isArray(n.relatedDomains) && n.relatedDomains.includes(cat.id) && noteDomain(n) !== cat.id && noteDomain(n) !== cat.title;
         const relHtml = isRelated ? '<span class="badge">RELATED</span>' : '';
-        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${relHtml}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.subject, n.topic || cat.title, n.sourceDate || n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${keyHtml}</div>`;
+        const newHtml = n.isNew ? '<span class="badge badge-new">NEW</span>' : '';
+        const tagHtml = n.uniqueTag ? `<p class="tagline">#${esc(n.uniqueTag)}</p>` : '';
+        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${relHtml}${newHtml}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.subject, n.topic || cat.title, n.sourceDate || n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${tagHtml}${keyHtml}</div>`;
         // Real cards navigate to their real page, not to the sample topic page.
         card.onclick = () => {
           if (n.page) { location.href = n.page; return; }
