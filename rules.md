@@ -352,23 +352,35 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - Storage gate, separate from the code gate: code enforcement does NOT make a public repo private. Real original images must NOT be pushed to this public repo until (a) the note is public+published, AND (b) the owner has decided the storage for real originals — public repo, private storage, or a private repo. Until that decision, real originals stay in a private archive only, never in this repo. The site being Vercel-private does not change the repo being public.
 - Sample cards are not real notes and are exempt only while no real notes exist; once real notes exist, samples do not appear alongside them.
 
-## Nested cards in learning sequence (2026-10-29)
+## Nested cards in learning sequence (2026-10-29, corrected 2026-10-29)
 
-- Based on the notes themselves, a nested card is created for each
-  note/topic, in the learning sequence decided from those notes —
-  not in batch-upload order, not alphabetically, and not from a
-  hardcoded list.
-- Card placement follows the decision made for that note (see
-  `requirements.md` R7, kept separate from this file): its topic,
-  its category/domain, and its chapter/section/order within that
-  domain. The card sits under that domain, in that sequence position.
-- One primary card per note/topic. Cross-domain and cross-topic
-  relations are shown ON that card as labelled links (prerequisite,
-  depends-on, successor, standard, cross-domain link) — they do not
-  create duplicate cards in the other domain or topic.
-- Card order inside a domain is the learning order: domain, then
-  chapter, then section, then `order` within the section. The
-  watermark number on a card is its position in that domain sequence
+- CORRECTION — the earlier "one card per note/topic" reading was
+  wrong, and is superseded by this section. Do NOT create a nested
+  card for each image.
+- A batch of images is related to a domain. Based on that whole
+  batch, Leo decides where cards and content are needed — cards are
+  decided from the content, not counted from the images. Several
+  images may feed one card; one image may feed more than one card
+  only where its content genuinely belongs in two places, and then
+  the link, not a duplicate card, carries the second place.
+- Vertical integration: within a domain, cards follow depth in
+  learning order — ground base first, then the layers built on it
+  (for example, silicon → vendor → device → NIC → driver → kernel →
+  TCP/IP → business use). A card's place is its depth position in
+  that vertical chain, not its batch or upload position.
+- Horizontal integration: across domains and topics, the same
+  concept is linked, not repeated as a new card. For example, NIC,
+  DNS, FCC, or business/trading speed appearing in several pages
+  is one horizontal thread, shown as labelled cross-links on the
+  cards it touches (prerequisite, depends-on, successor, standard,
+  cross-domain link).
+- Card placement follows the decision made for the batch (see
+  `requirements.md` R7, kept separate from this file): topic,
+  category/domain, and chapter/section/order for the CARD, decided
+  from the batch content as a whole.
+- Card order is the decided learning order for cards, not the
+  learning order of individual images. The watermark number on a
+  card is its position in that decided card sequence for its domain
   (for example, 03 in its domain), restarting per domain.
 - A card's headline, key points, and cover come only from that note
   or from the owner — never invented. Enhanced text and enhanced
