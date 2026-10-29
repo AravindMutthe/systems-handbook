@@ -692,3 +692,20 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
 - Learning sequence page (`batch1/batch1.html`) now has an
   "Illustrations, in learning order" gallery: one illustration
   per card, A → E, each tapping through to its card page.
+
+## Branch per batch publish — batch/<batch>publish, for all future batches (2026-10-29)
+
+- Every batch publish lives on its own branch, never directly
+  on main. Branch name pattern: `batch/b<N>publish` — for
+  example `batch/b2publish` for Batch 2, `batch/b3publish`
+  for Batch 3, and so on for every future batch.
+- Main stays as it was: held content stays held, published
+  content stays published, until the owner taps merge/deploy
+  for that branch. A branch build, a branch push, and a branch
+  test deploy do not, by themselves, merge anything to main
+  or change main's publication status.
+- On the branch, the batch's card pages, sequence page,
+  content data, and any categories update the batch justifies
+  (for example an R16 future domain) are built and tested.
+  The branch name, not a generic name, is the publish record
+  for that batch.
