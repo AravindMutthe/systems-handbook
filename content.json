@@ -82,7 +82,7 @@
       "keys": [
         "A customer's traffic goes through the NIC interface, driver, kernel stack, net device, and TCP/IP.",
         "Two lanes must not be confused: the data lane carries traffic, the management lane manages the device, even when it is down.",
-        "Out-of-band to BMC, then CLI, web, or API, lets a company manage a device while its data lane is down."
+        "Out-of-band to BMC, then CLI, web, or API, lets a company manage a device while its data lane is down, so trading can resume faster and market trust is kept."
       ],
       "page": "batch1/card-d.html",
       "relatedDomains": [
