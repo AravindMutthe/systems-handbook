@@ -10,7 +10,12 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:var(--ink);background:var(--paper);line-height:1.55;overflow-x:hidden}
+html,body{overflow-x:clip;width:100%}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;color:var(--ink);background:var(--paper);line-height:1.55}
+/* Responsive standard: flex/grid children must be allowed to shrink below their
+   intrinsic content width, otherwise a nowrap chips bar or a wide search input
+   forces the whole page wider than the viewport (the bug in the screenshots).
+   Every layout container below gets min-width:0, and grid tracks use minmax(0,…) */
 a{color:var(--accent)}
 .blob{position:fixed;border-radius:50%;filter:blur(60px);opacity:.35;z-index:-1;pointer-events:none}
 .blob-a{width:340px;height:340px;background:#f5d98a;top:-80px;right:-60px;animation:drift 14s ease-in-out infinite alternate}
@@ -22,23 +27,24 @@ a{color:var(--accent)}
 @keyframes twinkle{0%,100%{opacity:.3}50%{opacity:1}}
 .reveal{opacity:0;animation:fadeUp .7s ease forwards}
 .reveal.in{opacity:1}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}
-.topbar nav{display:flex;flex-wrap:nowrap;overflow-x:auto;flex:none}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--ink);font-size:18px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;min-width:0}
+.topbar nav{display:flex;flex-wrap:nowrap;overflow-x:auto;flex:0 1 auto;min-width:0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--ink);font-size:18px;min-width:0;flex:1 1 auto}
 .logo-mark{width:40px;height:40px;flex:none}
-.brand-text{display:flex;flex-direction:column;line-height:1.1}
-.brand-text strong{font-family:var(--font-display);font-size:19px}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;min-width:0}
+.brand-text strong{font-family:var(--font-display);font-size:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .brand-text small{font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.14em;color:var(--muted);font-weight:600}
 .topbar nav a{margin-left:16px;text-decoration:none;color:var(--muted);white-space:nowrap}
 .topbar nav a:hover{color:var(--ink)}
-.hero{max-width:1100px;margin:0 auto;padding:48px 20px 24px;display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+.hero{max-width:1100px;margin:0 auto;padding:48px 20px 24px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:32px;align-items:center;min-width:0}
+.hero>*{min-width:0;width:100%}
 .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--accent);font-weight:700;margin:0 0 12px}
-.hero h1{font-family:var(--font-display);font-size:54px;line-height:1.05;margin:0 0 16px;font-weight:700;letter-spacing:-.01em}
+.hero h1{font-family:var(--font-display);font-size:clamp(32px,8vw,54px);line-height:1.05;margin:0 0 16px;font-weight:700;letter-spacing:-.01em;overflow-wrap:break-word}
 .gradient{background:linear-gradient(90deg,var(--accent),var(--gold),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lede{font-size:19px;color:var(--muted);max-width:680px;margin:0 0 12px}
-.hero-domains{color:var(--muted);margin:0 0 20px;animation:fadeUp .7s ease .3s both}
-.search{position:relative;max-width:640px}
-.search input{width:100%;padding:14px 16px;font-size:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);transition:box-shadow .2s,border-color .2s}
+.lede{font-size:clamp(16px,4vw,19px);color:var(--muted);max-width:680px;margin:0 0 12px;overflow-wrap:break-word}
+.hero-domains{color:var(--muted);margin:0 0 20px;animation:fadeUp .7s ease .3s both;overflow-wrap:break-word}
+.search{position:relative;max-width:640px;width:100%;min-width:0}
+.search input{width:100%;min-width:0;padding:14px 16px;font-size:16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);transition:box-shadow .2s,border-color .2s}
 .search input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px var(--accent-soft)}
 .suggestions{position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 28px rgba(0,0,0,.10);z-index:20;overflow:hidden}
 .suggestions button{display:block;width:100%;text-align:left;padding:12px 14px;border:0;border-bottom:1px solid var(--line);background:var(--surface);cursor:pointer;font-size:15px}
@@ -47,7 +53,7 @@ a{color:var(--accent)}
 .suggestions small{display:block;color:var(--muted);font-size:12px}
 .stats{color:var(--muted);font-size:14px}
 /* Chips: ONE horizontal bar, scrolling left ↔ right, never wrapping into rows — mobile and desktop alike */
-#topics{display:flex;flex-wrap:nowrap;gap:8px;margin-top:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+#topics{display:flex;flex-wrap:nowrap;gap:8px;margin-top:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin;-webkit-overflow-scrolling:touch;min-width:0;width:100%}
 #topics button{flex:0 0 auto;white-space:nowrap;padding:7px 14px;border:1px solid var(--line);background:var(--surface);border-radius:999px;cursor:pointer;transition:transform .15s}
 #topics button:hover{transform:translateY(-1px)}
 #topics button.active{background:var(--dark);color:#fff;border-color:var(--dark)}
@@ -58,11 +64,11 @@ a{color:var(--accent)}
 .draw{animation:draw 2.2s ease forwards .4s}
 .spark{animation:twinkle 3s ease-in-out infinite}
 .art-caption{font-size:13px;color:var(--muted);text-align:center}
-main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px}
-.section-head{display:flex;justify-content:space-between;align-items:baseline}
+main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:0}
+.section-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;min-width:0}
 .section-head h2,.how h2{font-family:var(--font-display);font-size:30px;margin:16px 0 8px}
 .domains-note{color:var(--muted);max-width:760px}
-.domain{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 20px}
+.domain{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 20px;min-width:0;overflow:hidden}
 /* Domain head uses the FULL card width: text flexes, action never squeezes it */
 .domain-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;width:100%}
 .domain-head>div{flex:1 1 auto;min-width:0}
@@ -114,5 +120,6 @@ footer{border-top:1px solid var(--line);padding:20px;text-align:center;color:var
 .viewer{position:fixed;inset:0;background:var(--surface);overflow:auto;padding:16px;z-index:10;animation:fadeUp .25s ease}
 .viewer img{max-width:100%;height:auto;display:block;margin:16px auto}
 .viewer button{font-size:16px;padding:8px 14px;cursor:pointer}
-@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:28px}.hero h1{font-size:38px}.hero-art{order:-1}.topbar nav a{margin-left:10px}.brand-text small{font-size:9px;letter-spacing:.08em;white-space:nowrap}.brand-text strong{font-size:17px}}
+@media(max-width:760px){.hero{grid-template-columns:minmax(0,1fr);padding:28px 16px 24px;gap:20px}.hero-art{order:-1}.topbar{padding:12px 16px}.topbar nav a{margin-left:10px}.brand-text small{font-size:9px;letter-spacing:.08em;white-space:nowrap}.brand-text strong{font-size:17px}main{padding:16px 16px 32px}.domain{padding:16px}.how{padding:8px 16px 40px}}
+@media(max-width:480px){.hero{padding:24px 12px 20px}.brand-text small{display:none}main{padding:12px 12px 24px}.domain{padding:14px}.domain-emoji{font-size:32px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
