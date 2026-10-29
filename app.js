@@ -120,6 +120,20 @@ function renderSuggestions() {
   });
 }
 document.getElementById('close').onclick = () => { document.getElementById('viewer').hidden = true; };
+// Floating dark/light toggle, entire site. Default = dark (Style 2, his last choice);
+// a saved choice wins on return. Light = paper site, cards white; dark = whole site dark, cards dark.
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  const btn = document.getElementById('theme-toggle');
+  if (btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+  try { localStorage.setItem('theme', theme); } catch (e) {}
+}
+let savedTheme = 'dark';
+try { savedTheme = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+applyTheme(savedTheme === 'light' ? 'light' : 'dark');
+document.getElementById('theme-toggle').onclick = () => {
+  applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+};
 document.getElementById('search').addEventListener('input', () => { render(); renderSuggestions(); });
 document.addEventListener('click', e => { if (!e.target.closest('.search')) document.getElementById('suggestions').hidden = true; });
 load();

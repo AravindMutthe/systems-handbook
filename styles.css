@@ -7,6 +7,15 @@
   --paper:#fdfbf7; --surface:#ffffff; --ink:#1a2027; --muted:#5b6770;
   --line:#e6ddd0; --accent:#8a6d1b; --accent-soft:#f5ecd4; --dark:#1f2a33; --gold:#d9a441;
   --font-display:'Fraunces',Georgia,'Times New Roman',serif;
+  /* Card theme, switched by the floating toggle: light = paper cards, dark = Style 2 */
+  --domain-bg:#ffffff; --sample-bg:#ffffff; --paper-bg:#ffffff; --paper-strip:#eef2f5;
+}
+/* Entire-site dark theme, via the floating toggle (data-theme on <html>).
+   Dark = the Style 2 dark cards, extended to hero, topbar, sections and footer. */
+[data-theme="dark"]{
+  --paper:#10181e; --surface:#1f2a33; --ink:#fdfbf7; --muted:#cbd5e1;
+  --line:#3a4a57; --accent:#d9a441; --accent-soft:#2b3a47; --dark:#0f161c; --gold:#d9a441;
+  --domain-bg:#1f2a33; --sample-bg:#26343f; --paper-bg:#2b3a47; --paper-strip:#33424e;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -27,7 +36,10 @@ a{color:var(--accent)}
 @keyframes twinkle{0%,100%{opacity:.3}50%{opacity:1}}
 .reveal{opacity:0;animation:fadeUp .7s ease forwards}
 .reveal.in{opacity:1}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;min-width:0}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;background:var(--surface);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5;min-width:0}
+/* Floating dark/light toggle, entire site */
+.theme-toggle{position:fixed;right:16px;bottom:16px;width:54px;height:54px;border-radius:50%;background:var(--surface);color:var(--ink);border:1px solid var(--line);font-size:24px;cursor:pointer;z-index:30;box-shadow:0 8px 20px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center}
+.theme-toggle:hover{transform:translateY(-2px)}
 .topbar nav{display:flex;flex-wrap:nowrap;overflow-x:auto;flex:0 1 auto;min-width:0}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700;text-decoration:none;color:var(--ink);font-size:18px;min-width:0;flex:1 1 auto}
 .logo-mark{width:40px;height:40px;flex:none}
@@ -68,17 +80,20 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:
 .section-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;min-width:0}
 .section-head h2,.how h2{font-family:var(--font-display);font-size:30px;margin:16px 0 8px}
 .domains-note{color:var(--muted);max-width:760px}
-/* Style 2 — Dark ink (chosen 2026-10-29): domain cards are dark, gold accents.
-   Hero, topbar, footer stay paper — only the main domain card goes dark. */
-.domain{width:100%;background:var(--dark);color:#fdfbf7;border:1px solid var(--dark);border-radius:16px;padding:20px;margin:0 0 20px;min-width:0;overflow:hidden}
-.domain .domain-desc{color:#cbd5e1}
-.domain .domain-art{background:#2b3a47}
-.domain .row .card{background:#26343f;border-color:#3a4a57;color:#fdfbf7}
-.domain .row .card .paper{background:repeating-linear-gradient(#2b3a47,#2b3a47 27px,#33424e 28px);color:#cbd5e1}
-.domain .row .card h4{color:#fdfbf7}
-.domain .row .card p{color:#cbd5e1}
-.domain .row .card .badge{background:#3a4a57;color:#d9a441}
-.domain .domain-action{color:#d9a441}
+/* Domain cards follow the site theme: light = paper cards, dark = Style 2 dark ink.
+   The floating toggle switches the whole site, cards included — no fixed black cards. */
+.domain{width:100%;background:var(--domain-bg);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:20px;margin:0 0 20px;min-width:0;overflow:hidden}
+.domain .domain-desc{color:var(--muted)}
+.domain .domain-art{background:var(--accent-soft)}
+.domain .row .card{background:var(--sample-bg);border-color:var(--line);color:var(--ink)}
+.domain .row .card .paper{background:repeating-linear-gradient(var(--paper-bg),var(--paper-bg) 27px,var(--paper-strip) 28px);color:var(--muted)}
+.domain .row .card h4{color:var(--ink)}
+.domain .row .card p{color:var(--muted)}
+.domain .row .card .badge{background:var(--accent-soft);color:var(--accent)}
+.domain .domain-action{color:var(--accent)}
+[data-theme="dark"] #topics button.active{background:#d9a441;color:#1f2a33;border-color:#d9a441}
+[data-theme="dark"] .search input{color:var(--ink)}
+[data-theme="dark"] .viewer{background:var(--surface);color:var(--ink)}
 /* Domain head rule: logo + domain name = ONE horizontal line, any mobile width.
    Headline row never wraps, title never wraps, font shrinks fluidly to fit;
    description and action sit on later rows and never squeeze the title. */
