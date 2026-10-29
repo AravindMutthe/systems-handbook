@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Card C — Hardware supply and the NIC endpoint · Systems Evolution</title>
-<style>body{font-family:system-ui,sans-serif;background:#1f2a33;color:#fdfbf7;margin:0;padding:16px}
-main{max-width:760px;margin:0 auto;background:#fdfbf7;color:#1a2027;border-radius:16px;padding:24px 18px}
+<style>body{font-family:system-ui,sans-serif;background:#fdfbf7;color:#1a2027;margin:0;padding:0}
+main{max-width:760px;margin:0 auto;background:#fdfbf7;color:#1a2027;border-radius:0;padding:0 18px 24px}
 .eyebrow{color:#8a6d1b;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin:0 0 8px}
 h1{font-family:Georgia,serif;font-size:32px;line-height:1.15;margin:0 0 8px}
 .lede{color:#555;font-size:16px;line-height:1.6}
@@ -16,7 +16,7 @@ p,li{font-size:16px;line-height:1.75}
 figure{margin:20px 0}
 figure svg{width:100%;height:auto;display:block;background:#1f2a33;border-radius:12px;padding:8px}
 figcaption{font-size:14px;color:#555;text-align:center;margin-top:8px;line-height:1.6}
-.original{border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;background:#fff}
+.original{border:0;border-radius:0;padding:0;background:transparent}
 .meta{color:#555;font-size:14px}
 .home,.nav a{display:inline-flex;align-items:center;gap:10px;border:1px solid #e6ddd0;border-radius:999px;padding:8px 16px;text-decoration:none;color:#1a2027;font-weight:700;margin:8px 8px 0 0}
 .nav{margin-top:32px;padding-top:16px;border-top:1px solid #e6ddd0}
@@ -26,18 +26,26 @@ strong em, em strong{font-style:italic;font-weight:800}
 li strong{font-weight:800;color:#111827}
 ul{padding-left:20px;margin:12px auto}
 li{margin-bottom:12px}
-.cardlist li{border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;margin:14px 0;background:#fff}
+.cardlist li{border:0;border-bottom:1px solid #e6ddd0;border-radius:0;padding:16px 0;margin:0;background:transparent}
 .cardlist a{color:#1a2027;font-weight:700}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}</style>
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}.site-header{max-width:760px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #e6ddd0;background:#fdfbf7}
+.site-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1a2027}
+.site-brand img{width:36px;height:36px;flex:none}
+.site-brand strong{font-family:Georgia,serif;font-size:19px;line-height:1.1}
+.site-brand em{font-style:italic;color:#8a6d1b}
+.site-brand small{display:block;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.12em;color:#555;font-weight:600}
+.back{display:inline-flex;align-items:center;border:1px solid #e6ddd0;border-radius:999px;padding:8px 16px;text-decoration:none;color:#1a2027;font-weight:700;white-space:nowrap}
+</style>
 </head>
 <body>
+<header class="site-header"><a class="site-brand" href="../index.html"><img src="../assets/logo-mark.svg" alt="Systems Evolution logo"><span><strong>Systems <em>Evolution</em></strong><small>Networks · Business · Technology</small></span></a><a class="back" href="../index.html" onclick="if(history.length>1){history.back();return false;}">← Back</a></header>
 <main>
 <figure style="margin:0 0 16px"><img src="../assets/posters/card-c.svg" alt="" style="width:100%;height:auto;border-radius:12px"></figure>
 <p class="eyebrow">💻 Hardware &amp; Computing · Card C · 3 of 8</p>
 <h1>Hardware supply and the NIC endpoint</h1>
 <p class="lede">After naming: what physical thing carries those names and addresses.</p>
 <p class="meta">Hardware & Computing — After naming: what physical thing carries those names and addresses.</p>
-<details style="margin:16px 0 24px;border:1px solid #e6ddd0;border-radius:12px;padding:16px 18px;background:#fff">
+<details style="margin:16px 0 24px;border:0;border-top:1px solid #e6ddd0;border-bottom:1px solid #e6ddd0;padding:16px 0;background:transparent">
 <summary style="cursor:pointer;font-family:Georgia,serif;font-size:24px;font-weight:700;list-style:none">Original images +</summary>
 <p><strong>Original headline(s) first (R15), exactly as written:</strong></p><ul><li>Sillicon product</li><li>Market Vendors</li></ul><p class="meta">Original spelling preserved. Enhanced headline on this page: Hardware supply and the NIC endpoint [Added, labelled in batch1-cards.json] — it does not replace the original.</p>
 <p>Original pages behind this card, untouched.</p>
@@ -79,7 +87,7 @@ li{margin-bottom:12px}
 <a class="card-link" href="card-e.html"><strong>Card E — Building, operating and approving a product</strong><br><span>Industrial & Business Networks</span></a><figure style="margin:10px 0 0"><img src="../assets/wiki/card-e.jpg" alt="Related topic image" style="width:100%;height:auto;border-radius:12px;border:1px solid #e6ddd0"><figcaption style="font-size:14px;color:#555;line-height:1.6">Example: a cellular tower — a telecom product cannot go live until its tower siting, RF exposure limits, and equipment certification are approved. Image: Wikimedia Commons, CC BY-SA 4.0 — Cell tower, <strong><em>Ciudad del Carmen</em></strong>.</figcaption></figure>
 </div>
 <nav class="nav"><a href="card-b.html">← Previous: Card B</a> <a href="card-d.html">Next: Card D →</a></nav>
-<a class="home" href="batch1.html">Systems Evolution — Home</a>
+<a class="home" href="batch1.html">Batch 1 — Learning sequence</a><a class="home" href="../index.html">Systems Evolution — Home</a>
 </main>
 </body>
 </html>

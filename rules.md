@@ -785,3 +785,82 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   C Sillicon product / Market Vendors; D NIC / N/W Device /
   HW + SW / OEM / NIC chain; E Product Dev / why needed /
   why needed / Comm to Business.
+
+## Site is public, with original images (2026-10-29)
+
+- Site https://systems-handbook.vercel.app was private
+  (Vercel Authentication, ssoProtection deploymentType all)
+  from 2026-10-29 15:27 IST until 2026-10-29 20:22 IST.
+- On the owner's explicit tap "Make public with original
+  images" (20:22 IST, after a warning that all existing
+  deployments become unprotected), ssoProtection was set to
+  null via PATCH /v9/projects, verified by GET (null).
+- Public, verified unauthenticated: homepage 200, card
+  pages 200, and original images 200 image/jpeg — Batch 1
+  (10) and Batch 2 (7) original JPGs in batch1/ and batch2/
+  assets/originals/ are now publicly accessible, as he chose.
+  They are still NOT in the public GitHub repo — only in the
+  Vercel deploy.
+- To make the site private again, set ssoProtection back to
+  {"deploymentType": "all"} — that re-protects all deployments.
+
+## Content from Leo's side — inspect, audit, verify from wiki and trusted sources before adding (2026-10-29)
+
+- Owner's rule, 2026-10-29 20:52 IST: "before adding any content
+  from your side, you must inspect and audit and verify the
+  content source from wiki and trusted sources."
+- "From your side" means any content Leo adds that is not the
+  owner's original notes: enhanced explanations, enhanced
+  diagrams, [Added] completions, research, and any era, field,
+  date, or claim Leo proposes. It does NOT mean the owner's
+  original notes — originals are transcribed verbatim as the
+  source of truth, and are never rewritten to match Wikipedia
+  or any other source.
+- Before such content is added (to notes, cards, a card page,
+  or a push), Leo must: (1) inspect the source — read the
+  Wikipedia page and any trusted source it points to, not a
+  snippet or a summary alone; (2) audit the content against
+  that source — check each factual claim, date, name, and
+  relationship in the added content, claim by claim; (3)
+  verify — keep only claims the source supports, correct or
+  remove claims it does not support, and record the source
+  (page + trusted source) with the content so the owner can
+  check it.
+- Trusted sources, in order after Wikipedia: the primary
+  source Wikipedia cites where one exists, and standards /
+  institutional sources (for example IETF, IEEE, ITU, ICANN,
+  IANA, RIRs, and national regulators) for standards,
+  allocation, and regulation claims. A single Wikipedia
+  snippet, a model memory, or another assistant's summary is
+  not verification.
+- Unverified content is not added as fact. If it is shown to
+  the owner for check at all, it is labelled UNVERIFIED and
+  proposed, with the missing verification named, and it is
+  not pushed until verification is done or the owner
+  explicitly overrules the verification step for that item.
+- Status on this rule's adoption: the tech leadership eras
+  completion draft created 2026-10-29 20:44 IST
+  (batch3-tech-leadership-completion.md, Eras 3–5) was
+  grounded in the owner's own era pages only and was NOT
+  verified against Wikipedia or trusted sources. Under this
+  rule it is UNVERIFIED, held, and not to be added or pushed
+  until that verification is done and recorded.
+
+## Card pages are full web pages, not cards (2026-10-29)
+
+- A card page, once opened, reads as a normal web page:
+  paper background edge to edge, no dark outer frame, no
+  rounded card box around the whole article. The poster
+  stays as a banner image, and Original images + / Key
+  points are flat sections, not boxed cards.
+- Only the buttons stay as buttons: top Back, and bottom
+  Previous / Next / Home pills.
+- Top header on every card page: site logo + "Systems
+  Evolution" name (link to site home) on the left, "← Back"
+  on the right — Back goes to the page the reader actually
+  came from (browser history), or to site home if opened
+  directly.
+- Bottom nav is continuous in learning order: on the
+  branch build, Card E Next goes to Card F and Card F
+  Previous goes to Card E (1-8 order); on main, Card E
+  remains last until Batch 2 merges.
