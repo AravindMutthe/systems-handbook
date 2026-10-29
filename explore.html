@@ -61,10 +61,13 @@ const fmt = k => crossTerm(italicBold(boldLead(k)));
   if (!pages.length) { document.getElementById('empty').hidden = false; return; }
   pages.forEach(n => {
     const seq = String(notes.indexOf(n) + 1).padStart(2, '0');
-    const keys = Array.isArray(n.keys) && n.keys.length ? n.keys.slice(0, 3) : [];
     const isRelated = (n.domain !== cat.id && n.domain !== cat.title);
+    // Headline only, no content: badge, title split at colon, primary domain topic. No key points, no poster, no body text.
+    const ti = n.title.indexOf(':');
+    const headMain = ti > 0 ? n.title.slice(0, ti + 1) : n.title;
+    const headRest = ti > 0 ? n.title.slice(ti + 1).trim() : '';
     const btn = document.createElement('button'); btn.className = 'card';
-    btn.innerHTML = `<span class="card-number" aria-hidden="true">${seq}</span><div class="card-cover">${n.poster ? `<img src="${esc(n.poster)}" alt="" loading="lazy">` : ''}</div><div class="card-body">${isRelated ? '<span class="badge">RELATED</span>' : ''}<h4>${esc(n.title)}</h4><p>${esc([n.subject, n.topic || cat.title].filter(Boolean).join(' · '))}</p>${keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${fmt(k)}</li>`).join('')}</ul>` : ''}</div>`;
+    btn.innerHTML = `<span class="card-number" aria-hidden="true">${seq}</span><div class="card-body">${isRelated ? '<span class="badge">RELATED</span>' : ''}<h4>${esc(headMain)}<br>${esc(headRest)}</h4><p>${esc(n.topic || cat.title)}</p></div>`;
     btn.onclick = () => { if (n.page) location.href = n.page; };
     grid.appendChild(btn);
   });

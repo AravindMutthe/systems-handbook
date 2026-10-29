@@ -482,10 +482,15 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   (`explore.html?domain=<id>`), not filter the homepage in place.
   That new page shows, in a grid, in learning order, ALL cards
   for that domain — primary plus related, sorted Card A … Card E
-  — all visible at once, flat, not nested cards, each card a
-  rectangle with a square poster cover on top. Tapping a card
-  there opens its real card page. Homepage itself keeps only
-  the Explore domain action, never Start reading.
+  — all visible at once, flat, not nested cards. Inside that
+  explore page, cards show sequence order ONLY with headlines,
+  NOT content: badge (RELATED where related), title split at
+  the colon, and primary domain topic — for example, RELATED /
+  "Why networks exist:" / "origins and business need" /
+  "Systems evolution". No key points, no poster, no body text
+  on explore-page cards. Tapping a card there opens its real
+  card page, where the full content lives. Homepage itself keeps
+  only the Explore domain action, never Start reading.
 - Homepage domain cards have only one action: "Explore domain".
   No domain card says "Start reading" — the Institutions &
   markets card, which previously said "Start reading" in
