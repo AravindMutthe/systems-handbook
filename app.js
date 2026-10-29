@@ -59,6 +59,8 @@ async function load() {
   const data = await loadJson('notes.json', []);
   notes = Array.isArray(data) ? data : (data.notes || []);
   document.getElementById('stat-pages').textContent = notes.length ? `${notes.length} page${notes.length === 1 ? '' : 's'} · ${categories.length} domains` : `${categories.length} core domains · 0 pages yet — template`;
+  const qParam = new URLSearchParams(location.search).get('q');
+  if (qParam) { const inp = document.getElementById('search'); if (inp) inp.value = qParam; }
   renderTopics(); render(); observeReveals();
 }
 function renderTopics() {
@@ -115,9 +117,9 @@ function render() {
         const keyHtml = keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${esc(k)}</li>`).join('')}</ul>` : '';
         const hierHtml = [n.chapter, n.section].filter(Boolean).length ? `<p class="card-hier">${esc([n.chapter, n.section].filter(Boolean).join(' · '))}</p>` : '';
         const evHtml = n.evidenceStatus && n.evidenceStatus !== 'unverified' ? `<span class="evidence evidence-${esc(n.evidenceStatus)}">${esc(n.evidenceStatus)}</span>` : '';
-        const pubHtml = n.publication && n.publication.status && n.publication.status !== 'published' ? `<span class="pub pub-${esc(n.publication.status)}">${esc(n.publication.status)}</span>` : '';
+        const pubHtml = (n.reviewStatus || (n.publication && n.publication.status)) && (n.reviewStatus || n.publication.status) !== 'published' ? `<span class="pub pub-${esc(n.reviewStatus || n.publication.status)}">${esc(n.reviewStatus || n.publication.status)}</span>` : '';
         const num = String(i + 1).padStart(2, '0');
-        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.topic || cat.title, n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${keyHtml}</div>`;
+        card.innerHTML = `<span class="card-number" aria-hidden="true">${num}</span><div class="card-cover">${cover}<div class="card-fade" aria-hidden="true"></div><div class="cover-label" aria-hidden="true">${showingSamples ? 'Your handwritten page will appear here' : ''}</div></div><div class="card-body">${showingSamples ? '<span class="badge">SAMPLE</span>' : ''}${evHtml}${pubHtml}<h4>${esc(n.title)}</h4><p>${esc([n.subject, n.topic || cat.title, n.sourceDate || n.date].filter(Boolean).join(' · '))}</p>${hierHtml}${keyHtml}</div>`;
         card.onclick = () => { if (file) openViewer({...n, file}); };
         row.appendChild(card);
       });
@@ -134,7 +136,7 @@ function openViewer(n) {
   const img = document.getElementById('viewer-img');
   img.src = file; img.alt = n.title || '';
   document.getElementById('viewer-title').textContent = n.title || '';
-  document.getElementById('viewer-meta').textContent = [n.topic || n.domain, n.date, n.chapter, n.section].filter(Boolean).join(' · ');
+  document.getElementById('viewer-meta').textContent = [n.subject, n.topic || n.domain, n.sourceDate || n.date, n.chapter, n.section, n.privacy, n.reviewStatus || (n.publication && n.publication.status)].filter(Boolean).join(' · ');
   document.getElementById('viewer-caption').textContent = n.caption || '';
   const orig = document.getElementById('viewer-original');
   if (file) { orig.href = file; orig.hidden = false; } else { orig.removeAttribute('href'); orig.hidden = true; }

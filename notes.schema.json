@@ -110,6 +110,136 @@
         "transcription": {
           "description": "Full text transcribed from the handwritten page; searched, shown in the viewer, never presented as the original image",
           "type": "string"
+        },
+        "subject": {
+          "description": "Subject of the note, distinct from topic (topic is the finer tag)",
+          "type": "string"
+        },
+        "sourceDate": {
+          "description": "Date of the original handwritten source, when known; null means unknown, never guessed",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "chapterId": {
+          "description": "Stable chapter id this note belongs to, e.g. ch-institutions-markets-01",
+          "type": "string"
+        },
+        "originalImage": {
+          "description": "Reference to the untouched original page image, e.g. notes/<domain>/<id>.jpg; file is the display copy, originalImage is the source of truth",
+          "type": "string"
+        },
+        "editorialEnhancements": {
+          "description": "Editorial work added on top of the original, each labelled, never presented as original text",
+          "items": {
+            "properties": {
+              "date": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "type": {
+                "enum": [
+                  "clarification",
+                  "correction",
+                  "diagram",
+                  "table",
+                  "summary",
+                  "transcription-fix"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "type",
+              "description"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "privacy": {
+          "description": "Privacy classification of the note",
+          "enum": [
+            "public",
+            "internal",
+            "private",
+            "restricted"
+          ],
+          "type": "string"
+        },
+        "reviewStatus": {
+          "description": "Current review status; publication{} records approval when it happens",
+          "enum": [
+            "draft",
+            "in-review",
+            "approved",
+            "published"
+          ],
+          "type": "string"
+        },
+        "relationships": {
+          "description": "Two separate relationship types, never merged into one generic list",
+          "properties": {
+            "chronology": {
+              "description": "Historical chronology: what came before/after, in time",
+              "items": {
+                "properties": {
+                  "note": {
+                    "type": "string"
+                  },
+                  "relation": {
+                    "enum": [
+                      "precedes",
+                      "follows",
+                      "contemporary-with"
+                    ],
+                    "type": "string"
+                  },
+                  "toId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "toId",
+                  "relation"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            },
+            "conceptual": {
+              "description": "Conceptual dependency: what a concept depends on, requires, relates to, or contradicts",
+              "items": {
+                "properties": {
+                  "note": {
+                    "type": "string"
+                  },
+                  "relation": {
+                    "enum": [
+                      "depends-on",
+                      "prerequisite-for",
+                      "related-to",
+                      "contradicts"
+                    ],
+                    "type": "string"
+                  },
+                  "toId": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "toId",
+                  "relation"
+                ],
+                "type": "object"
+              },
+              "type": "array"
+            }
+          },
+          "type": "object"
         }
       },
       "required": [
@@ -121,7 +251,7 @@
     }
   },
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "description": "One entry per handwritten page. v1 fields (id, title, domain, topic, date, file, caption) still load; v2 fields are all optional. Rendering escapes every data value; file must be an in-repo relative path (notes/... or assets/...), no '..', no URL scheme, no quotes or spaces.",
+  "description": "One entry per handwritten page. v1 fields still load; v2 fields are optional. Content organization (v3 fields, all optional except id/title/domain): subject, sourceDate (null = unknown), chapterId + chapter/section/parentId/order (chapter relationships), originalImage (untouched original), transcription, editorialEnhancements (labelled, never original), privacy (public|internal|private|restricted), reviewStatus (draft|in-review|approved|published), relationships split into chronology (precedes|follows|contemporary-with) and conceptual (depends-on|prerequisite-for|related-to|contradicts). related[] is kept for backward compatibility as a generic list; new notes should use relationships.* instead.",
   "properties": {
     "notes": {
       "items": {
