@@ -167,6 +167,8 @@ main{width:100%;max-width:1100px;margin:0 auto;padding:16px 20px 32px;min-width:
 .card .card-body{padding:14px}
 .key-headline{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:12px 0 4px!important}
 .key-points{list-style:none;margin:0;padding:0}
+.key-points li strong{font-weight:800;color:var(--ink)}
+li strong{font-weight:800;color:var(--ink)}
 .key-points li{font-size:13px;color:var(--muted);padding-left:14px;position:relative;margin-bottom:4px}
 .key-points li::before{content:"•";position:absolute;left:0;color:var(--gold);font-weight:700}
 .card h3,.card h4{margin:0 0 4px;font-size:16px}

@@ -447,6 +447,23 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   above; it does not replace them. Local preparation in a chat
   is not a sync.
 
+## Bullet lead-ins dark bold, across the site (2026-10-29)
+
+- In every bullet, across the site, the headline words at the start
+  of the bullet — the words before the colon, such as
+  "Human to human:" — must be dark bold.
+- Markup: wrap the headline words, including the colon, in
+  `<strong>`, with the darkest ink colour and weight 800
+  (`li strong{font-weight:800;color:#111827}` on card pages,
+  `li strong{font-weight:800;color:var(--ink)}` site-wide, so the
+  same rule reads dark bold in light theme and in dark theme).
+- Homepage key points use the same rule: the lead-in before a
+  colon, " = ", or " — " is wrapped in `<strong>` by `app.js`
+  (`boldLead`), not left as plain text.
+- This is styling only. It does not change the words of a bullet,
+  and it does not change an original Key point's wording — the
+  original stays verbatim, only its headline is shown dark bold.
+
 ## Domain terminology, technology and telecom analogies (2026-10-29)
 
 - Content, terminology, and vocabulary on a page must belong to

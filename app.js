@@ -140,7 +140,8 @@ function render() {
           : `<div class="cover-art" aria-hidden="true">${artForCard.art}<span class="cover-emoji">${esc(artForCard.emoji)}</span></div>`;
         const keySource = showingSamples ? cat.description : (n.caption || n.title || '');
         const keys = Array.isArray(n.keys) && n.keys.length ? n.keys.slice(0, 3) : keySource.split(/[,;]/).map(s => s.replace(/^\s*and\s+/i, '').trim()).filter(Boolean).slice(0, 3);
-        const keyHtml = keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${esc(k)}</li>`).join('')}</ul>` : '';
+        const boldLead = k => { const e = esc(k); for (const sep of [': ', ' = ', ' — ']) { const i = e.indexOf(sep); if (i >= 3 && i <= 60) return `<strong>${e.slice(0, i + sep.length).trimEnd()}</strong>${e.slice(i + sep.length)}`; } return e; };
+        const keyHtml = keys.length ? `<p class="key-headline">Key points</p><ul class="key-points">${keys.map(k => `<li>${boldLead(k)}</li>`).join('')}</ul>` : '';
         const hierHtml = [n.chapter, n.section].filter(Boolean).length ? `<p class="card-hier">${esc([n.chapter, n.section].filter(Boolean).join(' · '))}</p>` : '';
         const evHtml = n.evidenceStatus && n.evidenceStatus !== 'unverified' ? `<span class="evidence evidence-${esc(n.evidenceStatus)}">${esc(n.evidenceStatus)}</span>` : '';
         const pubHtml = (n.reviewStatus || (n.publication && n.publication.status)) && (n.reviewStatus || n.publication.status) !== 'published' ? `<span class="pub pub-${esc(n.reviewStatus || n.publication.status)}">${esc(n.reviewStatus || n.publication.status)}</span>` : '';

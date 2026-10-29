@@ -160,6 +160,18 @@ A batch is complete only when all of these are true:
   in `rules.md`, under "Domain terminology, technology and telecom
   analogies", and is not restated here beyond this requirement.
 
+## R10. Bullet lead-ins dark bold, across the site
+
+- Requirement: every bullet on every delivered page must show its
+  headline words — the words at the start of the bullet, before
+  the colon, such as "Human to human:" — in dark bold, so a reader
+  scanning a page sees the headline first, then the elaboration.
+- This applies to detailed bullets, summary bullets, horizontal-link
+  bullets, and homepage key points, across all cards and pages.
+- How the headline is marked up, and how it reads in light and dark
+  themes, is in `rules.md`, under "Bullet lead-ins dark bold, across
+  the site", and is not restated here beyond this requirement.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
