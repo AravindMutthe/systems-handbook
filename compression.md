@@ -17,6 +17,8 @@ Contents below are the 3 backup files in full, in order, separated by part headi
 
 > **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
 > **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section. Scope: this applies to all notes given after the segregation of files into the 3 lines / 5 files (from 2026-10-30 about 16:47 IST onward), not only to future notes; those post-segregation batches were each verified before adding, and any error found later is corrected in place with its correction noted.
+> **Corrections format rule (set 2026-10-30, by Aravind):** Corrections are written in italic text, so a corrected statement is visible as corrected.
+
 > **Verification rule — official sources only (set 2026-10-30, by Aravind, best method):** Verify truthfulness against primary official sources only — Linux man-pages / kernel.org, kubernetes.io documentation, OCI specification, and vendor documentation. Do not use Wikipedia, blogs, Medium, secondary search cards, or random internet sites as verification sources.
 
 > **US and global perspective rule (set 2026-10-30, by Aravind):** India-perspective notes also get a US and global perspective in the same update, mapped to the same eras and layers, not as a separate later note.
@@ -4173,13 +4175,13 @@ Verified against Linux namespaces(7) man pages and Kubernetes documentation. Add
 
 - A Linux namespace wraps a global system resource so processes inside it appear to have their own isolated instance of that resource. Changes are visible inside the namespace and invisible outside it. This is the kernel mechanism containers are built on.
 - Current types: mount (CLONE_NEWNS), PID (CLONE_NEWPID), network (CLONE_NEWNET), IPC (CLONE_NEWIPC), UTS (CLONE_NEWUTS), user (CLONE_NEWUSER), cgroup (CLONE_NEWCGROUP), and time (CLONE_NEWTIME). Note on sources: the older Linux man-pages release lists the first seven; time is a later addition (Linux 5.6), so a version difference in a man page list is not a contradiction.
-- Correction to the source: namespaces do NOT sandbox CPU and memory by themselves. Namespaces isolate views (PIDs, network stack, mount tree, IPC, hostname, user IDs). CPU and memory limits and accounting are cgroups. A container process therefore needs both: namespaces for what it can see, cgroups for what it can use.
-- Correction: namespaces are per-process, and a container is a group of processes sharing a set of namespaces, not a single process in every case.
+- *Correction to the source: namespaces do NOT sandbox CPU and memory by themselves. Namespaces isolate views (PIDs, network stack, mount tree, IPC, hostname, user IDs). CPU and memory limits and accounting are cgroups. A container process therefore needs both: namespaces for what it can see, cgroups for what it can use.*
+- *Correction: namespaces are per-process, and a container is a group of processes sharing a set of namespaces, not a single process in every case.*
 
 ### Kubernetes namespaces, application-level grouping
 
 - A Kubernetes namespace is a logical partition inside one cluster. It groups namespaced resources, gives names a scope (the same name can exist in two namespaces), and is the scope for RBAC, ResourceQuota, and NetworkPolicy.
-- Correction to the source: a Kubernetes namespace by itself does NOT provide network isolation or access control. By default, pods can communicate across namespaces. Network isolation comes only from a NetworkPolicy, access control from RBAC, and resource limits from ResourceQuota. Kubernetes documentation and multitenancy guidance call this soft isolation, not hard multitenancy: namespaces share the cluster control plane and trust domain.
+- *Correction to the source: a Kubernetes namespace by itself does NOT provide network isolation or access control. By default, pods can communicate across namespaces. Network isolation comes only from a NetworkPolicy, access control from RBAC, and resource limits from ResourceQuota. Kubernetes documentation and multitenancy guidance call this soft isolation, not hard multitenancy: namespaces share the cluster control plane and trust domain.*
 - Use: grouping resources for a team, project, or environment, and managing access boundaries for entire microservices and teams, through the policies above, not through the namespace name alone.
 
 ### Pod volumes: emptyDir, ConfigMap, Secret
@@ -4187,8 +4189,8 @@ Verified against Linux namespaces(7) man pages and Kubernetes documentation. Add
 - A pod volume is defined in `spec.volumes` (what the storage is) and exposed to a container in `spec.containers[*].volumeMounts` (name plus mountPath). Defining a volume and mounting it are two separate steps.
 - emptyDir: created when a pod is assigned to a node, exists as long as that pod runs on that node, and is deleted when the pod is removed from the node. It is empty at creation, and containers in the same pod can read and write the same files in it, but only if they both mount it. A container crashing does NOT remove the pod from the node, so emptyDir data survives container crashes; it is pod removal that deletes it.
 - ConfigMap volume: injects non-sensitive configuration as files into a pod. Secret volume: injects sensitive data such as passwords and tokens as files, backed by tmpfs so it is not written to non-volatile storage.
-- Correction to the source: ConfigMaps and Secrets are NOT purely ephemeral pod-local files. The ConfigMap and Secret objects themselves live in the cluster (in the namespace) and persist beyond any one pod; only the pod's mounted view of them is tied to the pod. Both can also be consumed as environment variables, not only as volumes.
-- Correction: "files and folders provided as volumes that are local to the Pod" is true for the mount, not for the source object. Do not use a ConfigMap or Secret volume as durable storage; for durable data use a PersistentVolumeClaim.
+- *Correction to the source: ConfigMaps and Secrets are NOT purely ephemeral pod-local files. The ConfigMap and Secret objects themselves live in the cluster (in the namespace) and persist beyond any one pod; only the pod's mounted view of them is tied to the pod. Both can also be consumed as environment variables, not only as volumes.*
+- *Correction: "files and folders provided as volumes that are local to the Pod" is true for the mount, not for the source object. Do not use a ConfigMap or Secret volume as durable storage; for durable data use a PersistentVolumeClaim.*
 
 ## Physical Shipping Versus Software Containerization — Conceptual Mapping (Audited, Analogy Only)
 
@@ -4198,7 +4200,7 @@ Verified against Kubernetes Pod documentation, Docker/OCI container documentatio
 
 - Physical: a standardized freight container, a rigid metal box (ISO 20-foot and 40-foot sizes, commercialized by Malcolm McLean in 1956) that moves bulk goods uniformly across ships, trains, and trucks.
 - Virtual: a Docker / OCI container, a software package (image plus runtime) that moves code uniformly across laptops, test servers, and clouds, on compatible hosts.
-- Correction: "runs identically on any operating system" is oversimplified. A container shares the host kernel. A Linux container needs a Linux kernel; a Windows container needs Windows. Cross-OS running normally goes through a virtual machine, not through the container alone.
+- *Correction: "runs identically on any operating system" is oversimplified. A container shares the host kernel. A Linux container needs a Linux kernel; a Windows container needs Windows. Cross-OS running normally goes through a virtual machine, not through the container alone.*
 
 ### Core goal
 
@@ -4209,7 +4211,7 @@ Verified against Kubernetes Pod documentation, Docker/OCI container documentatio
 
 - Physical grouping in the source: a moving-service pod (PODS is a trademarked brand, not a generic term) that bundles furniture (main item) with blankets and boxes (helpers) as one unit for transport.
 - Virtual: a Kubernetes Pod, the smallest deployable unit in Kubernetes, a group of one or more containers with shared storage and network resources and a specification for how to run them. Contents are co-located and co-scheduled and run in a shared context.
-- Correction, important: Kubernetes documentation says Pod as in a pod of whales or a pea pod, not as in the PODS moving company. The moving-pod mapping is an analogy invented for teaching, not the origin of the Kubernetes term.
+- *Correction, important: Kubernetes documentation says Pod as in a pod of whales or a pea pod, not as in the PODS moving company. The moving-pod mapping is an analogy invented for teaching, not the origin of the Kubernetes term.*
 
 ### Evolution in three steps
 
@@ -4223,6 +4225,56 @@ Verified against Kubernetes Pod documentation, Docker/OCI container documentatio
 - Tied lifecycles: pod containers are created and terminated together, and a pod is ephemeral. When a pod dies or is rescheduled, Kubernetes normally replaces it with a new pod, rather than moving the same pod. Native sidecar containers (Kubernetes 1.29 and later) start before the main container and stop after it, but still within the pod lifecycle.
 - Helper patterns, kept distinct: Sidecar augments the app with cross-cutting work (logging, metrics, proxying, mTLS). Ambassador is a proxy focused on external communication, so the app talks only to localhost and the ambassador handles the outside. Adapter converts data formats for a consumer. Do not use the three names interchangeably.
 - No sidecar, ambassador, or code-architecture expansion was built from the source's closing offers, per the standing rule; the patterns above are the verified definitions only.
+
+## IP Identity Matrix — Cluster, Node, Pod, Service, and External IPs (Audited, Official Sources Only, Elaborate Only)
+
+Verified against kubernetes.io Pods, Services, and Volumes documentation and Kubernetes authentication/authorization documentation. Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule, so a corrected statement is visible as corrected.
+
+- *Correction: "IP Identity Matrix" and the L0 / L3 / L4 / L5 / L6 numbers are the source's teaching framework, not standard Kubernetes terminology. The L-numbers are not OSI layers and not a Kubernetes standard. The five identities below are real Kubernetes and cloud concepts, but the matrix name and numbering are the source's, not the project's.*
+- *Correction: the source gives two different counts. The first matrix lists five identities (Cluster API, Node, Pod, ClusterIP, External) with numbers [, 2, 3, 4, 6], and the summary lists four identities (Node, Pod, ClusterIP, External) with numbers [1, 2, 3, 4, 5]. The summary simply drops the Cluster API IP. The corrected count is five identities, renumbered 1 to 5 below, with no L-numbers.*
+
+### 1. Cluster API IP, control-plane endpoint
+
+- Scope: the Kubernetes control plane, reached by kubectl, controllers, and in-cluster clients through the API server.
+- Lifetime: the cluster's lifetime, not infinite. A cluster can be deleted, recreated, or re-addressed, and the API endpoint can change.
+- Who manages it: the cluster administrator and, in managed clusters, the cloud provider, which may front the API server with a load balancer. The API server itself serves the endpoint; it does not "translate" it in the kube-proxy sense.
+- *Correction: access is NOT authorized by "mTLS Certs & RBAC Engine" alone. Authentication comes first, by X.509 client certificates, bearer tokens, service-account tokens, or OIDC tokens, and authorization comes second, most commonly by RBAC, followed by admission control. A client certificate is one authentication method, not the whole authorization system, and mTLS for the API server is transport security, not a substitute for RBAC.*
+
+### 2. Node IP, hardware and VPC address
+
+- Scope: the node machine, in the cloud VPC or data-centre network. Pods on the node are reached through it for NodePort and host access, and it is the node's own address, not a pod or service address.
+- *Correction: lifetime is NOT permanent. A node IP lasts for the node's lifetime. When a node is replaced, scaled down, or recreated, its IP can change. Only a reserved or static address, where one is explicitly allocated, persists across node replacement, and that is a cloud allocation choice, not a property of every Node IP.*
+- Who manages it: the cloud provider or data-centre DHCP and IP allocation, with the kubelet registering the node.
+- Access control: security groups, cloud firewalls, and OS firewalls filter traffic to the node. *Correction: those are network filters, not identity authorization. They decide which source addresses and ports can reach the node; they do not authenticate a user or a workload.*
+
+### 3. Pod IP, internal cluster address
+
+- Scope: internal cluster network. Every pod gets its own IP from the pod CIDR, and pods can reach each other directly without NAT in the Kubernetes network model.
+- Lifetime: ephemeral. A pod IP changes when the pod is recreated or rescheduled. A Service, not a pod IP, is the stable endpoint.
+- Who manages it: the CNI plugin (Calico, Cilium, Flannel, and others) assigns the IP and routes packets. Kubernetes itself delegates networking to the CNI.
+- *Correction: access is NOT authorized by "NetworkPolicies / eBPF tags" as a pair. NetworkPolicy is the API object that selects pods by labels and allows or denies ingress and egress. eBPF is an implementation mechanism used by Cilium (and by Calico in eBPF mode) to enforce policies; it is not a NetworkPolicy field, and Flannel alone does not enforce NetworkPolicy at all. By default, with no NetworkPolicy selecting a pod, all pod-to-pod traffic is allowed.*
+
+### 4. ClusterIP, internal service virtual IP
+
+- Scope: internal cluster only. A ClusterIP Service provides a stable virtual IP and DNS name for a set of pods selected by labels.
+- Lifetime: static for the Service's lifetime. *Correction: "Static" does not mean permanent. If the Service is deleted and recreated without a specified clusterIP, it gets a new ClusterIP. The stability is relative to pod churn, not absolute.*
+- Who manages it: kube-proxy on every node programs forwarding rules from Services and EndpointSlices, using iptables, IPVS, or nftables modes, with eBPF-based replacements such as Cilium in place of kube-proxy in some clusters. The ClusterIP itself is virtual: no single host answers it, and kube-proxy rules DNAT it to a backend pod IP.
+- *Correction: access to a ClusterIP is NOT authorized by "Kubernetes RBAC API rules". RBAC authorizes API operations on Service objects (create, get, update, delete). Connecting to a ClusterIP from inside the cluster is governed by network reachability and by NetworkPolicy, not by RBAC. Confusing API authorization with network access is the main error in this row.*
+
+### 5. External IP, public edge address
+
+- Scope: public network, at the edge of the cluster.
+- Lifetime: dynamic or static, depending on allocation. A cloud LoadBalancer IP can be dynamic unless a static address is reserved; an Ingress external IP is the load balancer or ingress controller address, and on-premises MetalLB can allocate from a configured pool.
+- Who manages it: the cloud load balancer for a LoadBalancer Service, the ingress controller (NGINX, Traefik, HAProxy, and others) for Ingress, or MetalLB on bare metal. The source's "Cloud Load Balancer / Ingress" merges two different mechanisms: a LoadBalancer Service and an Ingress resource are not the same object.
+- *Correction: TLS certificates and WAF rules are NOT authorization. TLS encrypts and authenticates the server (and, with mTLS, the client) for transport, and a WAF filters malicious requests. Neither grants a user or workload permission to use a service. External access control comes from ingress rules, firewall and security-group rules, and, for applications, application-level authentication and authorization behind the edge.*
+
+### Corrected summary, in list form, not as a literal table
+
+- Cluster API IP: control plane, cluster lifetime, admin and cloud provider, TLS plus certificate/token/OIDC authentication, RBAC authorization, admission control.
+- Node IP: node and VPC, node lifetime, cloud provider and DHCP, security groups and firewalls as network filters.
+- Pod IP: internal cluster, ephemeral, CNI plugin, NetworkPolicy by labels, enforced by the CNI.
+- ClusterIP: internal service, Service lifetime, kube-proxy (iptables, IPVS, nftables, or eBPF replacement), network reachability and NetworkPolicy, not RBAC, for traffic.
+- External IP: public edge, dynamic or reserved static, cloud load balancer or ingress controller, TLS for transport and WAF for filtering, with application authorization behind the edge.
 
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
@@ -6355,6 +6407,14 @@ Full section: compression.md Part 1, "Linux Kernel Namespaces Versus Kubernetes 
 - Pod volumes are an operations choice: emptyDir is free scratch space that dies with the pod, ConfigMap and Secret volumes inject configuration without rebuilding images, and durable data still needs a PersistentVolumeClaim. Treating a ConfigMap volume as storage is a design error.
 - Shipping analogy in business terms: standardization (ISO containers, OCI images) lowered the cost of moving goods and code by fixing the interface, and the Pod is the bundling unit that lets a main service ship with its helpers. The analogy is useful for explaining the model to non-technical stakeholders, but it is not the history of the Kubernetes term.
 
+## IP Identity Matrix — Business Angle (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "IP Identity Matrix — Cluster, Node, Pod, Service, and External IPs". Corrections in the full section are in italic text.
+
+- Five IP identities, not four and not six: control-plane API, node, pod, ClusterIP service, and external edge. The source's summary drops the API IP; the corrected list keeps all five.
+- Business point: only two of the five are stable enough to build on directly — the ClusterIP (stable for a Service's lifetime) and a reserved external IP. Pod IPs and unreserved node IPs change, so any contract, firewall rule, or customer integration that hard-codes a pod IP will break on rescheduling.
+- *Correction, in italic in the full section: RBAC does not authorize traffic to a ClusterIP, and TLS and WAF do not authorize external access. Those are API authorization, transport security, and request filtering respectively. Budgeting and compliance work that treats them as authorization will pass the wrong audit.*
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -7465,6 +7525,16 @@ Full section: compression.md Part 1, "Linux Kernel Namespaces Versus Kubernetes 
 - Linux namespaces (kernel, per-process views) and Kubernetes namespaces (cluster, logical grouping with soft isolation) share a name and nothing else in implementation. Confusing them is the main interview and design error in this note.
 - Pod volumes follow one rule: define in spec.volumes, mount in volumeMounts. emptyDir dies with the pod, ConfigMap and Secret volumes inject files from cluster objects that outlive the pod.
 - Shipping to software mapping: standardized box, isolated cargo, bundled pod. It holds as an analogy for standardization, isolation, and bundling, and breaks as history: Kubernetes Pod means a pod of whales or a pea pod, and a container shares its host kernel.
+
+## IP Identity Matrix — Combined View (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "IP Identity Matrix — Cluster, Node, Pod, Service, and External IPs". Corrections in the full section are in italic text.
+
+- Control plane: API IP, cluster lifetime, authentication plus RBAC plus admission.
+- Node: VPC address, node lifetime, cloud and DHCP, firewalls as filters.
+- Pod: internal, ephemeral, CNI-assigned, NetworkPolicy by labels.
+- ClusterIP: internal virtual service IP, Service lifetime, kube-proxy forwarding, traffic governed by reachability and NetworkPolicy, not RBAC.
+- External: public edge, dynamic or reserved static, load balancer or ingress controller, TLS and WAF as transport and filtering, not authorization.
 
 ## Business Promotion — Combined View (No Diagram)
 

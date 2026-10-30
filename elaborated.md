@@ -13,6 +13,8 @@ No new topics and no new sections were added. Analogies stay analogies, forecast
 
 > **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
 > **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section. Scope: this applies to all notes given after the segregation of files into the 3 lines / 5 files (from 2026-10-30 about 16:47 IST onward), not only to future notes; those post-segregation batches were each verified before adding, and any error found later is corrected in place with its correction noted.
+> **Corrections format rule (set 2026-10-30, by Aravind):** Corrections are written in italic text, so a corrected statement is visible as corrected.
+
 > **Verification rule — official sources only (set 2026-10-30, by Aravind, best method):** Verify truthfulness against primary official sources only — Linux man-pages / kernel.org, kubernetes.io documentation, OCI specification, and vendor documentation. Do not use Wikipedia, blogs, Medium, secondary search cards, or random internet sites as verification sources.
 
 > **US and global perspective rule (set 2026-10-30, by Aravind):** India-perspective notes also get a US and global perspective in the same update, mapped to the same eras and layers, not as a separate later note.
@@ -6933,6 +6935,16 @@ Pointer: full sections in compression.md Part 1. Business and combined angles ar
 - Containers share the host kernel. Example: a Linux container image runs on a Linux host, not natively on a Windows host without a virtual machine layer.
 - Sidecar, Ambassador, and Adapter are distinct. Example: a logging sidecar augments the app, an Ambassador proxies external traffic so the app talks to localhost, and an Adapter converts the app's output format for a monitoring system.
 
+## IP Identity Matrix — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+
+- Cluster API IP lasts for the cluster, not forever. Example: recreating a cluster can change its API endpoint, even though the workloads are the same.
+- Node IP lasts for the node, not permanently. Example: replacing a node in an autoscaling group gives the new node a new IP unless a static address was reserved.
+- Pod IP is ephemeral, ClusterIP is the stable endpoint. Example: a pod restart changes its pod IP, but clients keep using the Service ClusterIP and DNS name without change.
+- NetworkPolicy selects by labels, eBPF is only an enforcement mechanism. Example: Cilium enforces a NetworkPolicy with eBPF, Calico can use iptables or eBPF, and Flannel alone does not enforce it.
+- RBAC authorizes API operations, not network traffic. Example: a Role can allow getting a Service object, but it does not allow or deny connecting to that Service's ClusterIP; a NetworkPolicy does that.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9604,6 +9616,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings.
 
+
+## IP Identity Matrix — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11036,6 +11053,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 ## Namespaces, Pod Volumes, and Shipping Versus Containerization — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings.
+
+
+## IP Identity Matrix — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
 
 ## Business Promotion — Combined View (No Diagram)
 
