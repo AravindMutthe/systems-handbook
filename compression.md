@@ -3157,6 +3157,97 @@ This 15-part version is largely already covered in this file and in the previous
 - The source's offers at the end — to explain kernel-level networking (Linux stack, drivers, NIC, interrupts) or how packets physically move in hardware step by step — were not acted on, as they were offers in the source material, not instructions in your message. Kernel networking and drivers are already covered in detail in the Linux network stack sections of this file.
 - Full section: this Technology.md section. Business angle: Bussiness.md, "Network Evolution — Structured 15-Part Version, New Gaps Only — Business Angle". Combined view: Business&Technology.md, "Network Evolution — Structured 15-Part Version, New Gaps Only — Combined View".
 
+
+## Linux Network Kernel Devices — Start, Run, Stop, Types, Directory Map, Governance (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+This section merges five overlapping notes into one, without repeating them: how to start, run, and stop network kernel devices; what device types exist; where each driver, protocol, and subsystem lives in the kernel source tree; and who governs the stack from hardware to end users. Drivers, netdev, and the Linux network stack are already covered in detail elsewhere in this file — those sections are the full record, and this section is the start/stop, types, directory, and governance companion to them.
+
+### A. Overview: network kernel subsystem
+- The network kernel subsystem manages network interfaces (wired, wireless, virtual), network drivers (for example, e1000e, iwlwifi), protocol stacks (TCP/IP, UDP, ICMP), and routing and packet filtering.
+- When you "start" or "stop" a network device, you are really controlling the kernel's network interface driver and its TCP/IP stack bindings — more precisely, activating or deactivating a registered interface, not creating or destroying the driver itself.
+
+### B. Commands to manage devices, and what happens inside the kernel
+- List devices: `ip link show` — kernel lists interfaces registered with the netdev subsystem, in `/sys/class/net/`.
+- Start / enable (up): `sudo ip link set eth0 up` — kernel marks the interface UP, activates it, allocates buffer queues, and attaches it to the TCP/IP stack. This does not load the driver — the driver must already be loaded and the interface already registered.
+- Stop / disable (down): `sudo ip link set eth0 down` — kernel detaches the NIC from the stack, flushes buffers, and stops transmission. This does not unbind the driver — the driver remains loaded and the interface remains registered, just deactivated.
+- Restart service: `sudo systemctl restart NetworkManager` — restarts the user-space daemon managing interfaces. NetworkManager talks to the kernel via Netlink.
+- View IP configuration: `ip addr show` or `ifconfig` — reads information from kernel network tables. `ifconfig` is legacy and uses ioctl, not Netlink, and may not be installed on modern systems.
+- Assign IP: `sudo ip addr add 192.168.1.10/24 dev eth0` — adds an address to the interface; the kernel updates its routing tables accordingly.
+- Bring Wi-Fi up: `nmcli radio wifi on` — user command triggers the wireless driver via NetworkManager and the kernel activates the radio interface, subject to rfkill and hardware switches.
+- Flush or reset network: `sudo ip addr flush dev eth0` — clears assigned IPs from the kernel table but keeps the device alive.
+- Inside the kernel, simplified flow: User command → Netlink socket → Kernel netdev subsystem → Network driver (for example, e1000e) → Device registers / DMA buffers → Physical NIC transceiver. User-space commands like `ip` or `nmcli` talk to the kernel via Netlink; the kernel activates or deactivates the interface; the driver controls the hardware directly, loading firmware and managing interrupts.
+- Important kernel subsystems involved, as source paths in the kernel source tree (not runtime paths): `net/core/dev.c` for device registration and status (UP, DOWN); `net/ipv4/` and `net/ipv6/` for the TCP/IP stack; `drivers/net/` for hardware drivers for Ethernet and Wi-Fi (e1000e, iwlwifi, and others); `net/netlink/` for communication between user space and kernel space.
+
+### C. Typical workflow, Ethernet example
+- `ip link set eth0 up` → kernel marks interface state UP → driver allocates TX/RX rings → interface appears active in `/proc/net/dev`.
+- `dhclient eth0` or `nmcli` → user daemon requests an IP from DHCP → kernel updates the routing table and ARP cache. Note: `dhclient` is a user-space DHCP client that is deprecated in many distributions; NetworkManager's internal DHCP client is the modern default.
+- `ip link set eth0 down` → kernel stops queues and deactivates the interface → driver releases DMA memory and hardware IRQs, but the driver is not unbound — unbinding is a separate step via sysfs, and unloading is via `modprobe -r`.
+
+### D. Wireless devices, start and stop
+- Start: `sudo modprobe iwlwifi` then `nmcli radio wifi on`.
+- Stop: `nmcli radio wifi off` then `sudo modprobe -r iwlwifi`.
+- Correction: `nmcli radio wifi off` is an rfkill block, not a driver unload. `modprobe -r` unloads the kernel module, removing the driver, and the device disappears from `/sys/class/net/` — but it will fail if the interface is still up or in use, so bring the interface down first, and removing `iwlwifi` also affects its dependencies such as `iwlmvm`.
+
+### E. What a network device is, and its kernel view
+- A network device is any hardware or virtual interface that can send or receive data packets through the network kernel subsystem. Each network device appears in Linux under `/sys/class/net/`. Examples: eth0, wlan0, lo, docker0, tun0.
+- Each network device has kernel properties: state (UP or DOWN); MAC address (hardware identifier, with loopback using all-zero); MTU (maximum transmission unit); RX/TX queues (buffers for data packets); driver (which module controls it, for example, e1000e, iwlwifi).
+- View them with: `cat /sys/class/net/<device>/operstate` and `ethtool -i <device>`.
+
+### F. Device types, by how the kernel organizes them
+- Physical, real hardware: Ethernet (wired LAN) — eth0, eno1, enp3s0, drivers e1000e, r8169, ixgbe, tg3, atlantic, standard RJ45 or fiber interfaces; Wi-Fi (wireless LAN) — wlan0, wlp2s0, drivers iwlwifi, ath9k, rtlwifi, brcmfmac, wireless 802.11 adapters; Bluetooth (PAN) — bnep0, drivers bnep and bluetooth, Bluetooth Personal Area Networking; Cellular modem (WWAN) — wwan0, cdc-wdm0, drivers qmi_wwan, cdc_ncm, mbim, mobile broadband (LTE/5G) interfaces; Infrared (legacy) — irda0, driver irda, legacy infrared networking.
+- Loopback, corrected category: lo, loopback driver built in, local virtual interface used by localhost (127.0.0.1). Loopback is virtual, not physical, even though two of the source notes list it under Physical.
+- Virtual / software, created by software (kernel modules, virtualization, containers): Bridge — br0, driver bridge, acts like a Layer 2 switch joining multiple interfaces; Bonding / Teaming — bond0, team0, drivers bonding and team, combine multiple NICs for redundancy or speed; VLAN Interface — eth0.10, driver 8021q, logical sub-interfaces for Virtual LAN tagging; Dummy Interface — dummy0, driver dummy, fake NIC for testing and routing experiments; TUN/TAP — tun0, tap0, driver tun, virtual network devices used by VPNs or VMs; Veth Pair — veth0, veth1, driver veth, virtual Ethernet cable between two namespaces, used in containers; MACVLAN / IPVLAN — macvlan0, ipvlan0, drivers macvlan and ipvlan, multiple logical NICs sharing one physical NIC; Bridge VLAN Filtering — br_vlan_filter, adds VLAN capability to Linux bridges; WireGuard VPN — wg0, driver wireguard, secure encrypted tunnel device; OpenVPN / TUN/TAP — tun0, driver tun, used by OpenVPN for tunnel creation; VXLAN — vxlan0, driver vxlan, virtual Layer 2 overlay over Layer 3 networks; GRE / GRETAP / SIT / IPIP — gre0, sit0, ipip0, drivers ip_gre, ipip, sit, Layer 3 tunneling for IPv4/IPv6 encapsulation; Geneve / GTP / L2TP — geneve0, gtp0, l2tp0, drivers geneve, gtp, l2tp, advanced virtual networking and telecom tunnels; Docker / Podman Bridges — docker0, br-xxxx, drivers bridge and veth, created automatically by container engines; Open vSwitch — ovs-system, ovs-br0, driver openvswitch, software-defined virtual switching fabric.
+- Specialized / system-level, corrected: SR-IOV Virtual Functions — ens1f0v1, enp5s0v1, PCI-based virtual NIC from a physical card; CAIF / CAN / TIPC / 6LoWPAN — drivers caif, can, tipc, 6lowpan, telecom and embedded protocol device interfaces; Phonet / Bluetooth RFCOMM — drivers phonet and rfcomm, Nokia and Bluetooth stack integrations. NFQUEUE and XDP / AF_XDP are not network devices — NFQUEUE (nfnetlink_queue) is a netfilter queue mechanism for packet inspection and firewalls (iptables/nftables), and XDP / AF_XDP are high-performance packet-processing frameworks in kernel space, with no `/sys/class/net/` entry of their own. CAN, TIPC, and 6LoWPAN are protocol stacks with their own device types, not Ethernet-like net devices in the same sense as eth0.
+- Physical devices, deep view: Network Interface Card (NIC) — Ethernet cards (Intel, Realtek, Broadcom), connects a computer to wired LAN; Wi-Fi Adapter / Antenna — wireless cards (Intel iwlwifi, Qualcomm), sends and receives radio waves for wireless LAN; Router / Switch — Cisco, Netgear, Juniper, directs data packets between networks; Access Point (AP) — TP-Link, UniFi, wireless bridge for clients to connect; Modem — DSL, cable, fiber modems, converts digital to analog and back for ISPs; Firewall / Gateway — Fortinet, Palo Alto, filters and protects network traffic; Cellular Modems — 4G/5G USB dongles and SIM modules, connects to mobile broadband networks; Fiber Transceiver — SFP, QSFP, ONT, converts light to electrical signals in fiber optic systems. These are tangible devices that transmit or receive signals (electric, optical, or radio) and form the physical layer (Layer 1) of communication.
+- Virtual devices, deep view: virtual devices are software constructs in the kernel network stack (Layer 2–3) that simulate or extend hardware, and each behaves like a physical device but routes packets through software bridges and tunnels.
+
+### G. List all network devices, practical commands
+- `ip link show` — lists all interfaces and their states.
+- `ls /sys/class/net/` — kernel's interface directory.
+- `nmcli device status` — NetworkManager's device summary.
+- `lshw -class network` — detailed hardware information.
+- `ifconfig -a` — legacy command showing all interfaces, may not be installed.
+- `ethtool -i eth0` — displays driver and firmware information.
+- `lsmod | grep net` — filters loaded module names containing "net"; it does not show which driver is bound to which device — use `ethtool -i <device>` or `/sys/class/net/<device>/device/driver` for that.
+- Example output, as an example only, not an actual system output: lo (Loopback), eth0 (Intel e1000e Ethernet), wlan0 (Intel iwlwifi Wireless), docker0 (Virtual bridge), tun0 (VPN tunnel), vethXXX (Container pair).
+- Interface names, corrected: eth0 is a legacy example name. Modern Linux uses predictable names such as enp3s0 for Ethernet and wlp2s0 for Wi-Fi. Always use the actual name from `ip link show`, not eth0 by assumption. On the recorded ThinkPad X1 Yoga, the wireless interface uses `iwlwifi` and the wired interface uses `e1000e`, as in the earlier Linux stack sections.
+
+### H. Kernel directory map, source tree
+- Top-level structure, in the kernel source tree (for example, `/usr/src/linux/` on a system with sources, or the Elixir source browser at elixir.bootlin.com/linux/latest/source/ — a browser, not the kernel itself): `drivers/net/` for hardware device drivers (Ethernet, Wi-Fi, and others); `net/` for protocol stacks and software networking; `include/net/` for networking header files; `tools/net/` for user-space utilities and test tools; `Documentation/networking/` for developer documentation.
+- `drivers/net/` — hardware and virtual network drivers: ethernet/ (all wired NIC drivers grouped by vendor: intel/, realtek/, broadcom/, marvell/); wireless/ (Wi-Fi chipsets and radio firmware: ath/, iwlwifi/, rtlwifi/, brcm80211/); wwan/ (mobile broadband interfaces: qmi_wwan.c, cdc_mbim.c, rmnet/); bluetooth/ (Bluetooth networking: bnep.c, hci_*); can/ (Controller Area Network, vehicle bus: m_can.c, slcan.c); phy/ (Ethernet PHY, physical transceiver layer: phy_device.c); bonding/ (multi-interface link aggregation: bond_main.c); bridge/ (software bridge for L2 switching: br_device.c, br_input.c); tun.c / tap.c (virtual TUN/TAP interface drivers, VPNs and virtual interfaces); vxlan/ (virtual extensible LAN overlay: vxlan.c); wireguard/ (WireGuard VPN kernel module: main.c, receive.c); macvlan/ (multiple MACs on one NIC: macvlan.c); ipvlan/ (Layer 3 virtual interfaces: ipvlan.c); dummy.c (dummy network device, for testing and routing); veth.c (virtual Ethernet peer interfaces, used in containers); team/ (network interface teaming: team.c, team_mode.c); openvswitch/ (software-defined networking: datapath.c, vport.c); caif/ (Ericsson's Communication API Interface, telecom systems); virtio_net.c (virtualized NIC for KVM/QEMU, for guest virtual machines); SR-IOV virtual function support (hardware virtualization support, under the relevant Ethernet driver, not a single srio_v.c file in all versions).
+- `net/` — protocol implementations and software networking: core/ (network core, packet scheduling, Netlink, routing: dev.c, sock.c, net_namespace.c); ipv4/ (IPv4 stack, TCP, UDP, ICMP: tcp.c, udp.c, ip_input.c); ipv6/ (IPv6 stack: ip6_input.c, ip6_output.c); packet/ (low-level packet sockets, AF_PACKET, raw socket access); 8021q/ (VLAN handling: vlan_dev.c, vlan_gvrp.c); bridge/ (bridge and Spanning Tree protocol: br_if.c, br_stp.c); sched/ (traffic control, QoS, queuing disciplines: sch_htb.c, sch_fq_codel.c, hierarchical token bucket, SFQ); xfrm/ (IPsec and encryption frameworks: xfrm_input.c, xfrm_state.c); netfilter/ (firewall, iptables/nftables: nf_hook.c, xt_*, nft_*); unix/ (UNIX domain sockets, IPC communication); wireless/ (cfg80211 and mac80211 stacks, user-space control of radios); mac80211/ (Wi-Fi MAC layer framework, used by modern drivers); openvswitch/ (SDN datapath layer, user-space to kernel switch); tipc/ (Transparent Inter Process Communication, cluster communication); l2tp/ (Layer 2 Tunneling Protocol, VPN tunnels); vxlan/ (VXLAN encapsulation, overlay networks for VMs); geneve/ (Generic Network Virtualization, used in cloud networking); gtp/ (GPRS Tunneling Protocol, telecom and mobile networks); rds/ (Reliable Datagram Sockets, Oracle cluster communication); caif/ (telecom stack, Ericsson modem stack); 6lowpan/ (IPv6 over low-power wireless, IoT and embedded); can/ (Controller Area Network protocol stack, automotive and industrial bus).
+- `include/net/` — networking headers, defining kernel networking structures and APIs: netdevice.h (core structure for network devices, struct net_device); sock.h (socket operations); inet_sock.h (Internet IPv4/6 socket layer); net_namespace.h (network namespaces); ip.h, tcp.h, udp.h (protocol headers); xfrm.h (IPsec framework); filter.h (packet filters, BPF, eBPF); rtnetlink.h (routing and Netlink APIs); sched.h (traffic control definitions).
+- Developer and user tools, optional layer: tools/net/ynl/ (YAML Netlink Parser, test and interact with Netlink APIs); tools/testing/selftests/net/ (network self-tests, automated kernel network tests); Documentation/networking/ (documentation for each driver and subsystem, text explanations and examples).
+
+### I. Who governs the whole stack, from hardware to user
+- Physical layer (hardware): IEEE, FCC, TRAI, ITU — 802.3 (Ethernet), 802.11 (Wi-Fi) — electrical and radio spectrum rules. Governance inside the OS: controlled by kernel device drivers (for example, e1000e, iwlwifi), registered under `/sys/class/net/`, managed by NetworkManager or systemd-networkd. Governance outside the OS: regulated by international and national telecom authorities (FCC in the US, TRAI in India, ITU globally), with IEEE defining standards.
+- Kernel layer (drivers plus stack): Linux kernel maintainers, with IETF for protocols — TCP/IP, IPv6, ICMP, Netlink — OS-level network operation. Correction: the Linux Foundation hosts the kernel project, but it does not govern the network stack day to day — subsystem maintainers do.
+- Network layer (ISPs): Regional Internet Registries (ARIN, RIPE, APNIC) for IP address allocation, Internet backbone and routing.
+- Application layer (end users): W3C for web standards, IANA for number allocation, cloud providers for services — DNS, HTTPS, browsers, content delivery and access. Correction: W3C does not govern end users; it sets web standards, while IANA allocates numbers and cloud providers operate services.
+- Global governance: ICANN, IETF, UN-ITU — DNS root, RFCs — coordinating global Internet functioning, with ICANN managing the root zone but not operating all root servers alone, and not governing the Internet alone.
+- Governance inside the OS, virtual devices: created and managed by the Linux kernel's `net/core/dev.c` and the Netlink interface, controlled by system daemons (for example, NetworkManager, Docker, Libvirt, Kubernetes).
+
+### J. Data flow path, end to end
+- Application (browser or app) → Socket interface (user space to kernel) → TCP/IP stack (kernel: `/net/ipv4/`, `/net/core/`, in source-tree terms `net/ipv4/` and `net/core/`) → Network interface (virtual or physical) → Driver (e1000e, iwlwifi, tun) → NIC hardware → Switch / Router / ISP → Internet backbone → Destination server or end user.
+- Every packet sent passes through, in simplified order: virtual network layer (logical routing, where a virtual device exists), kernel stack (protocol handling), physical device (transmission), and ISP and Internet infrastructure (routing to destination). Note: virtual devices are netdevs inside the kernel stack, not a separate layer before it — the order above is a teaching order, not a strict kernel call order.
+
+### K. Simplified analogy, analogy only
+- Roads (physical devices): Ethernet cables, Wi-Fi radios — built by IEEE, FCC, and hardware vendors.
+- Vehicles (virtual devices): VLANs, TUNs, VPNs, containers — managed by kernel and software tools.
+- Traffic rules (protocols): TCP/IP, DNS, HTTP — defined by IETF and IANA.
+- Government (authorities): FCC, TRAI, ITU, ICANN — regulate communication, allocate frequencies and IPs.
+- Citizens (end users): people using the Internet — access through ISPs and OS interfaces.
+- In summary, as the source puts it: physical devices are real hardware governed by hardware standards and telecom regulators; virtual devices are software interfaces governed by kernel subsystems and IETF standards; end-to-end governance runs from IEEE to Linux kernel to ISP to IETF to ICANN, ensuring packets travel safely and uniformly across the globe — with the corrections above (maintainers, not the Linux Foundation, govern the kernel stack; ICANN does not govern alone; W3C sets web standards, not end-user governance).
+
+### Corrections, cross-checked with the rule book
+- Paths, corrected: the kernel source tree has `drivers/net/` and `net/` at the top level, not `/drivers/net/` as an absolute path. File lists in the directory map are approximate and vary by kernel version — SR-IOV, VLAN, and other entries are not a single fixed file in all versions, and the source lists VLAN twice (as 8021q and as vlan) — VLAN handling is in `net/8021q/`, not a separate `net/vlan/`.
+- Devices, corrected: loopback is virtual, not physical; NFQUEUE and XDP/AF_XDP are not devices; CAN, TIPC, and 6LoWPAN are protocol stacks, not Ethernet-like devices; `lsmod | grep net` does not show driver binding per device.
+- Commands, corrected: `ip link set up` does not load a driver and `ip link set down` does not unbind one; `modprobe -r` fails if the interface is still up; `dhclient` is deprecated in many distributions; `ifconfig` is legacy and may not be installed; eth0 is a legacy example name, not a modern default.
+- Summary table in the source, corrected: the L1–L4 mapping in the source's summary table is a teaching simplification, not an OSI mapping — the driver is kernel code, not OSI Layer 1 alone; netdev core is not OSI Layer 2; the socket layer is not OSI Layer 4 alone, and `ping` uses ICMP, not a socket-layer-only operation.
+- No diagram was drawn for these notes, per the rule book (md only, no diagram unless explicitly asked). The source offers to show the kernel internal tree, to extend with a kernel directory map, and to make a visual flow diagram of the governance chain were not acted on as diagrams — the directory map and governance chain are given here in text.
+- Full section: this Technology.md section. Business angle: Bussiness.md, "Linux Network Kernel Devices — Business Angle". Combined view: Business&Technology.md, "Linux Network Kernel Devices — Combined View".
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -4998,6 +5089,20 @@ Only the new gaps from the 15-part version are added here. The full era history 
 - YouTube flow, as a simplified example: device gets IP, request via HTTP, routers, server response, video stream, all on TCP/IP plus protocols plus standards — actual delivery uses HTTPS, CDN, and adaptive streaming.
 - Full technical detail: Technology.md, "Network Evolution — Structured 15-Part Version, New Gaps Only". Combined view: Business&Technology.md, "Network Evolution — Structured 15-Part Version, New Gaps Only — Combined View".
 
+
+## Linux Network Kernel Devices — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the business-relevant companion to the kernel device section is added here: device types as products, start/stop as operations, and governance as market gates. Full technical detail is in Technology.md and is not repeated.
+
+### Device types, in business terms
+- Physical: NICs, Wi-Fi adapters, routers, switches, access points, modems, firewalls, cellular modems, fiber transceivers — sold as hardware, governed by IEEE standards and telecom regulators (FCC, TRAI, ITU), and operated by ISPs and enterprises.
+- Virtual: loopback, bridges, VLANs, bonding/teaming, TUN/TAP, veth pairs, MACVLAN/IPVLAN, VXLAN/GRE/Geneve overlays, Docker/Podman bridges, Open vSwitch, dummy interfaces — sold as software and cloud features, created and managed by the kernel and by daemons (NetworkManager, Docker, Libvirt, Kubernetes).
+- Specialized: SR-IOV virtual functions, CAN, TIPC, 6LoWPAN, CAIF, Phonet, RFCOMM — sold for automotive, industrial, telecom, and embedded markets, not as general consumer network devices.
+- Start, run, stop, in business terms: `ip link set up/down` activates or deactivates an interface, NetworkManager restarts a user-space daemon, and `modprobe` loads or unloads a driver — operations that an IT admin, a cloud operator, or a school IT admin performs, with downtime and user impact as the business cost of stopping a device.
+- Governance, in business terms: IEEE and telecom regulators set the rules for hardware and spectrum; kernel maintainers and IETF set the rules for the stack and protocols; RIRs allocate IPs; ICANN manages the DNS root zone; W3C sets web standards; cloud providers operate the services on top. A product must clear each layer for its market, as in the previous hierarchy sections.
+- Full technical detail: Technology.md, "Linux Network Kernel Devices — Start, Run, Stop, Types, Directory Map, Governance". Combined view: Business&Technology.md, "Linux Network Kernel Devices — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -5947,6 +6052,21 @@ New gaps only from the 15-part version, read with the previous timeline sections
 - Examples: NSFNET DNS example (google.com instead of 142.250.x.x range); Web GET example (simplified, actual HTTP uses path plus Host header); VPC as logical network; smart home phone ↔ router ↔ IoT; YouTube flow as simplified, actual delivery uses HTTPS, CDN, adaptive streaming.
 - Summary: No Network → Circuit → Packet → ARPANET → TCP/IP → Web → Mobile plus Cloud → Virtual → IoT plus Edge → AI Networks. Core idea, as a direction: fixed/manual → dynamic/intelligent.
 - Corrections carried over: first link was UCLA–SRI, layer models are not interchangeable, AI networks are a direction not a universal state, and the source's offers on kernel-level networking and hardware packet movement were not acted on.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
+
+## Linux Network Kernel Devices — Combined View (No Diagram)
+
+### Headline
+Kernel devices, types, directory map, and governance, read together, without repeating the full technical section.
+
+### Combined list
+- Start/stop: `ip link show`, `ip link set up/down`, `ip addr show/add/flush`, `systemctl restart NetworkManager`, `nmcli radio wifi on/off`, `modprobe` / `modprobe -r` — with the corrections that up does not load a driver, down does not unbind one, and `modprobe -r` fails if the interface is still up.
+- Types: physical (Ethernet, Wi-Fi, Bluetooth PAN, cellular, infrared, plus NICs, routers, switches, APs, modems, firewalls, fiber transceivers); virtual (loopback — virtual, not physical — bridge, VLAN, bond/team, dummy, TUN/TAP, veth, MACVLAN/IPVLAN, VXLAN/GRE/Geneve, Docker/Podman bridges, Open vSwitch); specialized (SR-IOV, CAN, TIPC, 6LoWPAN, CAIF, Phonet, RFCOMM; NFQUEUE and XDP/AF_XDP are mechanisms, not devices).
+- Directory map: `drivers/net/` (ethernet, wireless, wwan, bluetooth, can, phy, bonding, bridge, tun, vxlan, wireguard, macvlan, ipvlan, dummy, veth, team, openvswitch, caif, virtio_net); `net/` (core, ipv4, ipv6, packet, 8021q, bridge, sched, xfrm, netfilter, unix, wireless, mac80211, openvswitch, tipc, l2tp, vxlan, geneve, gtp, rds, caif, 6lowpan, can); `include/net/` (netdevice.h, sock.h, inet_sock.h, net_namespace.h, ip.h, tcp.h, udp.h, xfrm.h, filter.h, rtnetlink.h, sched.h); `tools/net/` and `Documentation/networking/` as the tools and documentation layer.
+- Governance: IEEE/FCC/TRAI/ITU (hardware, spectrum) → kernel maintainers/IETF (stack, protocols) → RIRs (IP allocation) → W3C/IANA/cloud providers (web standards, numbers, services) → ICANN/IETF/UN-ITU (root zone, RFCs, coordination, not sole governance).
+- Data flow: application → socket → TCP/IP stack → interface → driver → NIC → switch/router/ISP → backbone → destination. Analogy, analogy only: roads (physical), vehicles (virtual), traffic rules (protocols), government (authorities), citizens (end users).
+- Corrections carried over: paths are source-tree relative, not absolute `/drivers/net/`; VLAN is `net/8021q/`; loopback is virtual; NFQUEUE/XDP are not devices; eth0 is a legacy example name; no diagram was drawn, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
 ## Business Promotion — Combined View (No Diagram)

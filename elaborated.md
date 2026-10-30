@@ -6712,6 +6712,26 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
   - Key note: Each step is a separate job. Addressing names the destination, packet formation splits the data, routing chooses the path, and reassembly rebuilds the data at the destination.
   - Example: a YouTube request follows those steps, but actual delivery adds HTTPS, CDN, and adaptive streaming on top of them.
 
+
+## Linux Network Kernel Devices — Start, Run, Stop, Types, Directory Map, Governance (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- Five overlapping notes merged into one section: start/stop, device types, directory map, and governance.
+  - Key note: Merging matters because the five notes repeat the same device lists. The merged section keeps each device once, in its correct category, with corrections.
+  - Example: loopback appears under Physical in two source notes, but it is virtual, so it is listed once, under Virtual, in the merged section.
+- Start, run, stop — `ip link show`, `ip link set up/down`, `ip addr show/add/flush`, `systemctl restart NetworkManager`, `nmcli radio wifi on/off`, `modprobe` / `modprobe -r`.
+  - Key note: Up and down activate and deactivate an interface. They do not load or unbind a driver. Loading and unloading are `modprobe` operations, and unloading fails if the interface is still up.
+  - Example: `ip link set eth0 up` → kernel marks UP, allocates TX/RX rings, interface appears in `/proc/net/dev`; `ip link set eth0 down` → kernel stops queues, interface deactivated, driver still loaded.
+- Device types — physical (Ethernet, Wi-Fi, Bluetooth, cellular, infrared, NICs, routers, switches, APs, modems, firewalls, fiber transceivers); virtual (loopback, bridge, VLAN, bond/team, dummy, TUN/TAP, veth, MACVLAN/IPVLAN, VXLAN/GRE/Geneve, Docker bridges, Open vSwitch); specialized (SR-IOV, CAN, TIPC, 6LoWPAN, CAIF, Phonet, RFCOMM).
+  - Key note: Virtual devices behave like physical ones to the kernel, but they route packets through software, not through a physical NIC.
+  - Example: a bridge joins interfaces like a switch, a veth pair is a virtual cable between containers, and a VXLAN overlay carries Layer 2 over Layer 3.
+- Directory map — `drivers/net/` for drivers, `net/` for protocol stacks, `include/net/` for headers, `tools/net/` and `Documentation/networking/` for tools and documentation.
+  - Key note: Source-tree paths are relative to the kernel source root, not absolute system paths. The map varies by kernel version.
+  - Example: `drivers/net/ethernet/intel/` for Intel wired drivers, `net/ipv4/` for the IPv4 stack, `include/net/netdevice.h` for `struct net_device`.
+- Governance — IEEE/FCC/TRAI/ITU → kernel maintainers/IETF → RIRs → W3C/IANA/cloud providers → ICANN/IETF/UN-ITU.
+  - Key note: Governance is layered, like the stack itself. No single body governs the whole Internet, and the Linux Foundation hosts the kernel project but does not govern its network stack day to day.
+  - Example: a Wi-Fi product needs IEEE 802.11, FCC/TRAI radio rules, kernel driver support, an IP from an RIR via an ISP, and DNS from the ICANN-managed root zone — all five layers at once.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9319,6 +9339,17 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
   - Key note: A network product that lacks any one of these four cannot work, however good the other three are.
   - Example: a VPC product sells logical networks, but still needs devices, a medium, protocols, and addressing underneath it.
 
+
+## Linux Network Kernel Devices — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Device types as products — physical hardware, virtual software features, and specialized embedded/telecom devices.
+  - Key note: Physical devices are sold as hardware with regulator and standards gates; virtual devices are sold as software and cloud features with kernel and daemon gates.
+  - Example: a router is a physical product with FCC/TRAI and IEEE gates; a VPC is a virtual product with kernel, cloud, and API gates.
+- Start/stop as operations — activating, deactivating, and unloading a device have different business costs.
+  - Key note: Bringing an interface down stops its traffic but keeps its driver; unloading its driver removes it entirely and requires a reload to restore it.
+  - Example: an IT admin brings an interface down for maintenance, but unloads a driver only when replacing or testing that driver.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10690,6 +10721,14 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 - Combined point — a 15-part outline plus new gaps, read with detailed era sections, gives a complete study structure without duplication.
   - Key note: Outline plus detail is the right pair, as with the previous timeline section.
   - Example: the outline lists ARPANET, TCP/IP, Web, cloud, and AI in order, while detailed sections explain how each actually worked.
+
+
+## Linux Network Kernel Devices — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — start/stop, types, directory map, and governance, read together, give the full kernel device picture without repeating five notes.
+  - Key note: The merged section is the study unit. The five source notes are its inputs, not five separate sections.
+  - Example: a student can start from the merged section, go to `drivers/net/` for a driver, to `net/ipv4/` for a protocol, and to the governance list for the authority behind each layer.
 
 ## Business Promotion — Combined View (No Diagram)
 
