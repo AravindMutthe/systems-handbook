@@ -4651,6 +4651,42 @@ Source: the user's WhatsApp channel, checked 2026-10-30. Filed here, in elaborat
 - GitHub Repos and GitHub Actions, filled in from the source's fragment: Repos are the source side, code, history, branches, pull requests, and issues. Actions are the built-in CI and CD side, with workflows in .github/workflows/*.yml, triggered by push, pull request, schedule, or release, running on GitHub-hosted or self-hosted runners. A typical flow is push, build and test in Actions, publish the image to GHCR or the package to GitHub Packages, then deploy.
 - *Correction: actions/upload-artifact is NOT a registry. It stores short-lived build output such as logs, test reports, or a zip, with an expiry, for download from a workflow run. The durable artifact store in GitHub's world is Packages and GHCR, not upload-artifact.*
 
+## WhatsApp Notes — Databases by Memory and Disk, and the IBM Suite (Audited, Official Sources Only, Elaborate Only)
+
+Source: the user's WhatsApp channel, checked 2026-10-30, two new notes after batch 17. Filed here, in elaborate only, with corrections applied. Verified against redis.io persistence documentation and IBM Sterling File Gateway documentation, which confirm File Gateway is installed on a Sterling B2B Integrator instance and shares its adapters, business processes, and services. Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule.
+
+### Databases: in-memory, disk-based, and distributed
+
+- Process in-memory engine: data lives in RAM for speed, and durability, if any, comes from a separate disk write, not from RAM itself.
+- Redis: a single-node, or small sharded, in-memory data-structure server. Data types include strings, hashes, lists, sets, sorted sets, streams, JSON, and vectors.
+- *Correction: "Redis persists to local storage (tmpfs/DAS/SAN)" is wrong in its first term and loose in its third. Redis persistence, per redis.io, is RDB point-in-time snapshots and an AOF append-only log of write operations, both written to durable storage such as an SSD. Persisting to tmpfs would defeat the purpose, because tmpfs is RAM presented as a filesystem, and a reboot would wipe the exact copy meant to survive a reboot. DAS, direct-attached local disk, is the normal case. SAN is possible but atypical, because Redis wants low-latency local disk, and a SAN adds network latency and a shared failure domain.*
+- *Correction: "Disk storage is tmpfs" is a contradiction, and it appears twice in the source. tmpfs is not disk storage. It is RAM with a filesystem interface. It is fine for temporary or spill data, and it is never durability. The corrected ladder is: RAM for speed, tmpfs for temporary filesystem data in RAM, DAS or SAN for local durable disk, and replicated or distributed storage for node-failure durability.*
+- Cassandra: a true multi-node distributed database that persists to local disks, DAS on each node, and distributes and replicates data across nodes, so the loss of one node does not lose the data that node held, as long as replication is configured.
+- Ceph, HDFS, and MinIO: distributed storage grids, not databases in the same sense. Ceph provides block, file, and object storage across nodes, HDFS provides a distributed filesystem, and MinIO provides S3-compatible object storage, which can be distributed across nodes and sites.
+- Cloud object storage: the global, elastic persistence layer, for data that does not need local disk latency and must survive a site failure.
+- SAP HANA: a multi-node, in-memory database.
+- *Correction: "SAP HANA disk is optional" is wrong. HANA keeps data in memory for speed, but disk persistence, data volumes, log volumes, and savepoints, is mandatory for crash recovery. In-memory does not mean diskless, and a HANA system without disk persistence cannot recover after a power loss. The same correction applies to any in-memory database claim that treats persistence as optional.*
+- Valkey: the Linux Foundation fork of Redis, and a data-structure server in the same family, with the same string, hash, list, set, sorted set, stream, JSON, and vector types.
+- *Correction: the source's data-structure list omits sorted sets, which are a core Redis and Valkey type, distinct from sets because each member has a score used for ordering. The corrected list above includes them.*
+
+### IBM suite: JVM-based, daemon-based, embedded, and desktop
+
+- *Correction: this list is a source classification, not an IBM product taxonomy. IBM does not publish a single "JVM-based versus daemon-based versus desktop" suite list, and several items below are dependencies or companion products, not one suite. The list is kept as a source working classification, with the corrections below, not as an IBM standard.*
+- JVM-based, as listed in the source: Sterling B2B Integrator (SBI), the enterprise workflow engine; IBM Transformation Extender Advanced (ITXA), the EDI and data-transformation validation engine; SEAS, the external authentication server; Control Center, the monitoring product for B2Bi, MQ, and Connect:Direct; Global Mailbox, the replicated mailbox capability for File Gateway; Cassandra and ZooKeeper, Java-based dependencies used by some IBM products; OMS, Sterling Order Management System; and Maximo, the asset-management product.
+- *Correction: Cassandra and ZooKeeper are not IBM suite products in the same sense as SBI or OMS. They are open-source Java systems that some IBM products depend on, and listing them alongside IBM products without that distinction makes the suite look larger and more unified than it is. The same applies to OMS and Maximo, which are separate IBM products with their own installations, not components of a B2Bi installation.*
+- Native daemon-based, as listed: IBM MQ, the message-queue daemon, and Connect:Direct, the file-transfer daemon.
+- *Correction: Perimeter Server does NOT belong in the native daemon row without qualification. A perimeter server is the DMZ-facing component that brokers connections into the internal B2Bi system, and in Sterling it runs as a Java-based server process, not as a native C daemon like MQ or Connect:Direct. It is daemon-like in that it runs as a long-lived service, but its runtime is Java, so the source's native-versus-JVM split breaks on this item.*
+- No separate server process: Sterling File Gateway (SFG) runs inside the SBI JVM.
+- This item stands, and it is verified: IBM documentation says Sterling File Gateway is installed on an instance of Sterling B2B Integrator and shares its communication adapters, business processes, security services, perimeter services, and encryption, and that the underlying platform for File Gateway is B2Bi. File Gateway is an application layered on B2Bi, not a standalone server with its own database and workflow engine.
+- *Correction: Global Mailbox is listed twice in the source, once as JVM-based and once as the capability File Gateway adds, which is confusing. Global Mailbox is not a separate server product. It is a File Gateway capability where messages and metadata are replicated across data centres, so another data centre can continue work after an outage. It should not be counted as a separate JVM server in the list.*
+- Desktop unmanaged tools: Map Editor, the desktop mapping tool for Transformation Extender, and GPM, the Graphical Process Modeler for B2Bi business processes.
+- *Correction: "desktop unmanaged" is source shorthand, not a product category. These are client-side design tools installed on a workstation, not managed server components, and they do not run as services. They create maps and process models that are then deployed to the server, which is why they appear in a suite list but do not appear in a server inventory.*
+
+### Linux equivalent: systemd versus SBI
+
+- systemd runs services on a Linux host. SBI runs business processes, BPML workflows, which are series of tasks required to execute and complete a process.
+- *Correction: "systemd starts nginx, SBI starts a BPML workflow" is an analogy, not an equivalence. systemd is the operating-system init and service manager: it starts, stops, and supervises OS services at boot and on demand, and it does not execute business logic. SBI is an application workflow engine: it executes business processes on events, such as a file arrival or a message, and each step can call adapters, transformations, and external systems. The only shared idea is "a supervisor that starts something". systemd supervises processes, SBI supervises business transactions, and neither can do the other's job.*
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6842,6 +6878,14 @@ Full sections: compression.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persi
 - For B2Bi, the business risk is inconsistency between database state and document files. A backup that captures only one side can restore a system that does not agree with itself.
 - Repositories are also a ladder. Source code is for change history, artifact registries are for immutable build outputs, and a short-lived workflow artifact is neither. Choosing Bitbucket for a registry need, or upload-artifact for a release store, will fail when a release needs to be pulled months later.
 
+## WhatsApp Notes — Business Angles (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "WhatsApp Notes — Databases by Memory and Disk, and the IBM Suite". Corrections in the full section are in italic text.
+
+- Database choice is a durability choice, not a speed choice alone. Redis and HANA are fast because data is in memory, but both still need disk persistence, RDB and AOF for Redis, data and log volumes for HANA, or a restart loses the data the speed was bought for.
+- Distributed storage is a failure-domain choice. Cassandra, Ceph, HDFS, and MinIO survive a node loss by replication across nodes, while a single-node Redis or a hostPath volume does not, no matter how fast its local disk is.
+- For IBM, the support boundary matters more than the suite label. File Gateway has no separate server to patch or restart, because it runs inside B2Bi, while MQ, Connect:Direct, and the database are separate services with their own lifecycles, and desktop tools are design-time only, not runtime.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -8027,6 +8071,19 @@ Full sections: compression.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persi
 - Flush: volatile to durable movement. Backup: point-in-time independent copy. Archive: cold long-term retention, .tar.gz not far.gz.
 - B2Bi: defaultDocumentStorageType DB, FS, or OS for containers, overrides in customer_overrides.properties, database and document backups must be consistent, archive BP names are source-only and unverified.
 - Repositories: source for code history, artifact for immutable outputs, JFrog Artifactory, Sonatype Nexus, Cloudsmith, GHCR, Quay, Docker Hub, CodeArtifact plus ECR, Artifacts plus ACR, Google Artifact Registry, GitHub and GitLab dual-purpose, Bitbucket is not a registry in the same sense, upload-artifact is short-lived not a registry.
+
+## WhatsApp Notes — Combined Views (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "WhatsApp Notes — Databases by Memory and Disk, and the IBM Suite". Corrections in the full section are in italic text.
+
+- Redis: single-node or small sharded, in-memory, strings, hashes, lists, sets, sorted sets, streams, JSON, vectors, RDB snapshots plus AOF log to durable SSD or DAS, never to tmpfs for durability, SAN atypical.
+- Cassandra: multi-node, disk-based, DAS per node, replicated across nodes.
+- Ceph, HDFS, MinIO: distributed storage grids, block, file, and object.
+- Cloud object storage: global elastic persistence.
+- SAP HANA: multi-node in-memory, disk persistence mandatory, not optional.
+- Valkey: Linux Foundation Redis fork, same data-structure family.
+- IBM: SBI workflow engine, ITXA transformation, SEAS authentication, Control Center monitoring, OMS, Maximo, all Java-based but separate products, Cassandra and ZooKeeper are dependencies not suite products, MQ and Connect:Direct are native daemons, Perimeter Server is Java-based not native, File Gateway runs inside SBI with no separate server, Global Mailbox is a File Gateway replication capability not a server, Map Editor and GPM are desktop design tools.
+- systemd versus SBI: analogy only, systemd supervises OS services, SBI executes business workflows.
 
 ## Business Promotion — Combined View (No Diagram)
 
