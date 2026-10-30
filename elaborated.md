@@ -6826,6 +6826,19 @@ Pointer: full sections in Technology.md. Business and combined angles are in Bus
 - TLS trust is browser and operating-system CA stores, not ICANN or IANA. Example: a DigiCert chain is trusted because the root is in the browser store, not because IANA says so.
 - DHCP runs before browsing, NTP runs continuously and matters for certificate dates. Example: a device clock set years wrong can reject a valid certificate.
 
+## Where Protocols Reside — Elaborated Key Points (New Gaps Only)
+
+Pointer: full section in Technology.md. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings. Parts 2 and 3 of this file carry only pointers for this batch, per the rule.
+
+- TCP/IP model is Link, Internet, Transport, Application. Example: Ethernet is a Link-layer technology, not a Physical-layer protocol on its own.
+- A protocol runs in several places at once: kernel, application, router firmware, backbone router. Example: DNS exists as a client on your device, a forwarder on your router, and an authoritative server at the domain owner.
+- Winsock is a Windows API, not the stack; the stack is in the kernel. Example: an application calls Winsock, and the kernel TCP/IP code does the sending.
+- Netfilter and iptables are filtering, not the Linux stack. Example: iptables rules hook into the packet path; they do not implement TCP.
+- ICANN operates only the L root server. Example: the other root letters belong to Verisign, RIPE NCC, Netnod, and the other operators named in the coordination section.
+- Linux kernel map: net/core, net/ipv4, net/ipv6, net/packet, net/sched. Example: a TCP receive problem is traced through net/ipv4/tcp_input.c and the socket layer, not through a single application file.
+- Packet flow in Linux: NIC, driver, net device interface, net/core/dev.c, IP layer, transport layer, socket, application. Example: tcpdump sees packets on the path before the application ever reads them.
+- Tools: ss for sockets, ip for addresses and routes, tcpdump for capture, iptables or nftables for filtering, sysctl for tuning. Example: sysctl can change tcp_rmem without reinstalling anything.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9467,6 +9480,11 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
+
+## Where Protocols Reside — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points on where protocols reside. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10869,6 +10887,11 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 ## How the Internet Works and Who Coordinates It — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
+
+## Where Protocols Reside — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points on where protocols reside. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
 ## Business Promotion — Combined View (No Diagram)
 
