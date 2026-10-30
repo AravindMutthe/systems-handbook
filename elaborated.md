@@ -6802,6 +6802,30 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
 - Final chain framing: Industrial Revolution to telegraph to telephone to ARPANET to TCP/IP to NICs and routers to ISPs to distributed servers to cloud to financial networks to AI infrastructure. Example: use it as a teaching timeline, not as proof that each step caused the next in a straight line.
 - Full versions: compression.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
 
+## How the Internet Works and Who Coordinates It — Elaborated Key Points (New Gaps Only)
+
+Pointer: full sections in Technology.md. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings. Parts 2 and 3 of this file carry only pointers for this batch, per the rule.
+
+- Allocation chain versus query chain: allocation runs ICANN policy, IANA functions, RIR, then ISP, once per block; a query runs device, recursive resolver, root, TLD, then authoritative, on every uncached visit. Example: buying an address block does not make a website load; a resolver query does.
+- IANA functions are performed by PTI, an ICANN affiliate, since the 2016 transition: root zone, large IP blocks to five RIRs, protocol registries. Example: APNIC receives a block and sub-allocates it to Indian ISPs under APNIC policy.
+- Five RIRs, not three: AFRINIC, APNIC, ARIN, LACNIC, RIPE NCC. Example: an Indian ISP normally draws addresses through APNIC.
+- Root servers are 13 logical identities, A to M, run by 12 organisations, anycast to about 2,000 instances. Example: asking a root server returns a referral to .com servers; it never returns a website.
+- ICG is closed: the IANA Stewardship Transition Coordination Group finished its work on 1 October 2016. Example: citing ICG as a current regulator is an anachronism, like citing a dissolved committee.
+- ICANN does not settle domain disputes: UDRP providers, including WIPO, decide under ICANN policy. Example: a mybrand.com claim goes to a UDRP panel, not to ICANN staff.
+- IANA does not operate .com: Verisign operates .com and .net, NIXI operates .IN. Example: the root zone delegates .in to NIXI's registry.
+- DNS caching is layered: browser, operating system, and resolver caches, each with its own TTL. Example: a changed record may appear in one browser before another because their caches expire at different times.
+- TLS 1.3 compresses the handshake to about one round trip with an encrypted certificate; TLS 1.2 sends the certificate in the clear during the handshake. Example: the source's five steps describe TLS 1.2, not TLS 1.3.
+- DV proves domain control only: a phishing site can hold a valid DV certificate. Example: a padlock on a lookalike domain is not evidence the site is legitimate.
+- EV company-name display in the browser bar is discontinued in modern browsers. Example: paying for EV no longer buys that address-bar display.
+- Road analogies are teaching images only: routers forward by address and policy, not by timed signals; packets split and reassemble, unlike a single van. Example: one file download is many packets on possibly different paths.
+- India roles are separate: TRAI regulates telecom and net neutrality, DoT licenses ISPs, MeitY orders blocks under IT Act section 69A, CERT-In responds to incidents. Example: the 2020 TikTok ban was a MeitY order implemented through DoT, not a TRAI block.
+- Protocols are IETF open standards, not owned: TCP/IP, DNS, HTTP, TLS, BGP, DHCP, IPsec, SMTP/POP3/IMAP, FTP, SNMP, NTP. Example: a business pays for support and certificates, not for a licence to use TCP/IP.
+- FTP versus SFTP: plain FTP is unencrypted and legacy; SFTP is SSH-based, FTPS is FTP over TLS. Example: FileZilla can speak all three, but they are not the same protocol.
+
+- Amazon.in walkthrough, new gaps only: TCP three-way handshake SYN, SYN-ACK, ACK. Example: a browser and Amazon agree a reliable connection before any page data flows.
+- TLS trust is browser and operating-system CA stores, not ICANN or IANA. Example: a DigiCert chain is trusted because the root is in the browser store, not because IANA says so.
+- DHCP runs before browsing, NTP runs continuously and matters for certificate dates. Example: a device clock set years wrong can reject a valid certificate.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9438,6 +9462,11 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
 - Business unique points, elaborated in full in compression.md Part 2: NIC privilege by role, daemon model, group corrections, the American commercialization arc, SWIFT correction, Web correction, and present-day market correction.
 - Full elaborated key points: this elaborated.md Part 1 section. Full business sections: compression.md Part 2.
 
+
+## How the Internet Works and Who Coordinates It — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10835,6 +10864,11 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 
 - Combined unique points, elaborated in full in compression.md Part 3: privilege as the combined rule, the combined ARPA-to-cloud arc, and the combined DARPA-to-Silicon Valley chain.
 - Full elaborated key points: this elaborated.md Part 1 section. Full combined sections: compression.md Part 3.
+
+
+## How the Internet Works and Who Coordinates It — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
 ## Business Promotion — Combined View (No Diagram)
 
