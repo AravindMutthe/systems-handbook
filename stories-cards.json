@@ -1,0 +1,54 @@
+{
+  "domain": {
+    "id": "stories",
+    "title": "Stories",
+    "emoji": "\ud83d\udcda",
+    "description": "Two interconnected narratives from the first 17 pages \u2014 how global digital infrastructure is built, and how people interact with digital systems."
+  },
+  "status": "held, pushed 2026-10-30, privacy private draft",
+  "source_scope": "First 17 pages only (Batches 1+2, Cards A\u2013H). Provisional learning paths, not direct-evolution claims.",
+  "cards": [
+    {
+      "storyId": "story-a",
+      "title": "Story A \u2014 How global digital infrastructure is built",
+      "path": "Communication needs \u2192 businesses and governments \u2192 standards and regulation \u2192 manufacturers and vendors \u2192 physical networks \u2192 hardware/software integration",
+      "sourceCards": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G"
+      ],
+      "sourceCardTitles": [
+        "Why networks exist: origins and business need",
+        "Naming, addressing and regulation: directory to DNS",
+        "Hardware supply and the NIC endpoint",
+        "The NIC and kernel stack, plus out-of-band management",
+        "Building, operating and approving a product",
+        "The universal product: four parallel flows, cross flow, and the full value chain",
+        "Who controls and who builds: government layer, global oversight, and government networks"
+      ],
+      "canonical_note": "Source Cards A\u2013G remain canonical; this Story card aggregates their related notes and links back to them."
+    },
+    {
+      "storyId": "story-b",
+      "title": "Story B \u2014 How people interact with digital systems",
+      "path": "Telegraph interfaces \u2192 early computer interfaces \u2192 desktop GUI \u2192 web applications \u2192 mobile/cloud \u2192 real-time and AI-assisted interfaces",
+      "sourceCards": [
+        "H"
+      ],
+      "sourceCardTitles": [
+        "How the interface changed: from telegraph keys to real-time, XR, and AI UI's"
+      ],
+      "canonical_note": "Source Card H remains canonical; this Story card aggregates its related notes and links back to it. Batch 3 Card J expands Story B, but is not included in this first-17 scope."
+    }
+  ],
+  "meeting_points": [
+    "A\u2194H telegraph",
+    "B\u2194H web/DNS/browser",
+    "C/D\u2194H hardware/kernel under UI",
+    "E\u2194H approval/platform gates (forward link to J, Batch 3)"
+  ]
+}
