@@ -6749,6 +6749,35 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
   - Key note: Speculation must be marked as speculation, or it becomes a false fact in a later read.
   - Example: self-healing OS is a research direction, not a kernel branch in mainline Linux today.
 
+## Extension, Architecture Paper, Models, TCP/IP, and Stack Evolution — Elaborated Key Points (New Gaps Only)
+
+- Extension, kernel: a loadable module adds a driver without rebooting, but it runs with kernel privileges, so a bad module can affect the whole kernel. Example: `modprobe e1000e` loads an Intel NIC driver; `modprobe -r` removes it only if nothing is using it.
+- Extension, ABI correction: user-space syscalls stay stable, but in-kernel APIs change freely and in-tree users are fixed together. Example: a user program compiled years ago still calls the same syscalls, while an out-of-tree driver may break on a new kernel version.
+- Extension, business correction: Apple designs M-series chips, TSMC fabricates them, so the example proves design insourcing, not chip manufacturing. Example: a company can own the design and still depend on a foundry for production.
+- Extension, timeline correction: Prime launched in 2005, AWS in 2006, so any Amazon extension story must put Prime first. Example: do not read the source list "AWS, Prime" as a chronological order.
+- Extension, governance correction: OECD AI Principles from 2019 are a non-binding recommendation, not law. Example: a company can cite OECD principles in a policy without being legally bound by them as a statute.
+- NOS, SONiC: SONiC is a Linux-based, container-modular switch OS from Microsoft and OCP in 2016, under the Linux Foundation since 2022, built on SAI. Example: BGP in SONiC is largely provided via FRRouting, and each function runs in its own container.
+- NOS, Cumulus correction: Cumulus Linux is an NVIDIA data-center NOS for bare-metal switches, not an edge router OS. Example: choose Cumulus for a data-center leaf and spine, not for a small office router.
+- NOS, DentOS correction: DENT is a Linux Foundation project founded by Amazon for distributed edge, and dentOS targets edge and campus switches. Example: DentOS for an edge or campus deployment is a different niche from SONiC for a cloud data center.
+- NOS, platform rule: switch ASIC work needs SONiC or a hardware NOS, while routing, firewall, and VPN on x86 or VM fits VyOS. Example: VyOS on a VM makes a branch router; SONiC on a white-box switch makes a data-center switch.
+- NOS, tools correction: NSX is a VMware SDN platform and Calico is a Kubernetes CNI plugin, neither is a NOS. Example: Calico gives pod networking and policy in Kubernetes, while the underlying node still runs its own OS.
+- Telegraph to AI, analogy correction: telegraph and telephone used circuit switching with a dedicated path, TCP/IP uses packet switching with shared paths. Example: a phone call held a circuit for its duration, while a web page arrives as packets that can take different routes.
+- Telegraph to AI, governance correction: DARPA funded ARPANET and the IETF publishes RFCs by rough consensus, neither is a parliament. Example: RFC 7282 describes humming to sense consensus, not voting to pass a law.
+- Telegraph to AI, AI correction: AI Netfilter, cognitive memory, and autonomous extension branches are proposals, not mainline kernel subsystems. Example: an AI-assisted scheduler in a product is not the same as a subsystem merged into mainline Linux.
+- System models, Internet: the Internet model is TCP/IP with four layers, link, internet, transport, and application, governed by rough consensus and running code. Example: a new protocol becomes an RFC only after implementation and consensus, not by a single authority ordering it.
+- System models, India: India is a federal parliamentary republic with a Constitution in force from 26 January 1950, and Union, State, and Concurrent Lists under Article 246. Example: telecom is a Union subject, health is a State subject, education is a Concurrent subject, and Union law generally prevails on a Concurrent conflict.
+- System models, kernel: Linux is monolithic in execution and modular in organisation, with core services in one kernel address space and drivers as loadable modules. Example: `lsmod` shows loaded modules, but each loaded module still runs with kernel privileges.
+- TCP/IP, device: a device stack runs application, transport, internet, and link, with the kernel handling TCP, UDP, and IP and the driver framing data for the NIC. Example: a browser calls send(), the kernel adds TCP and IP headers, the driver frames it, and the NIC transmits it.
+- TCP/IP, commands correction: modern Linux uses `ip addr show`, `ip route show`, and `ss -tulpn`, while `ifconfig`, `route`, and `netstat` are legacy and may be absent. Example: check listening ports with `ss -tulpn` instead of `netstat -an` on a current distribution.
+- TCP/IP, MTU and DNS correction: Ethernet MTU 1500 is a default, not a universal maximum, and 8.8.8.8 is a public resolver example, not a default. Example: PPPoE commonly uses 1492, and a device normally uses the resolver given by DHCP.
+- Stack evolution, optical: Chappe's optical telegraph in 1792 used relay towers 5 to 20 miles apart, with operators reading arm positions through a telescope. Example: a message spelled by semaphore arms at one tower was copied and repeated at the next tower in line of sight.
+- Stack evolution, telegraph: the first United States transcontinental telegraph was completed on 24 October 1861, linking East to West via Salt Lake City. Example: the line made the Pony Express obsolete within days.
+- Stack evolution, radio: Marconi's practical wireless telegraphy dates to 1894 to 1895, and the Berlin Radiotelegraph Convention of 1906 adopted SOS. Example: SOS became the international distress signal from that convention, effective 1 July 1908.
+- Stack evolution, ARPANET: the first ARPANET message on 29 October 1969 was "lo", the first two letters of "login", before the SRI host crashed. Example: UCLA to SRI was the first host-to-host link, and the four-node network was complete by 5 December 1969.
+- Stack evolution, cellular: 1G was analog voice, 2G digital voice plus SMS, 3G packet data, 4G all-IP, and 5G slicing and edge, while 6G is still research. Example: S1 and X2 are LTE interfaces, not 5G interfaces, so do not group them as general 5G protocols.
+- Stack evolution, AI direction: intent-based networking, telemetry, and closed-loop control are real directions, but LLM-controlled autonomous networks are not a deployed standard. Example: a controller can auto-apply an intent policy today, but that is not the same as a network governed by a large language model.
+- Full versions: compression.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9375,6 +9404,11 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
   - Key note: Analogies help a business reader map a kernel, but they do not prove that a kernel works like a company.
   - Example: memory pages are not money, and a scheduler does not hire employees — it assigns processes to CPUs.
 
+## Extension, Architecture Paper, Models, TCP/IP, and Stack Evolution — Business Angle (Pointer, New Gaps Only)
+
+- Business unique points, elaborated in full in compression.md Part 2: business extension steps, business-type network architectures, business-as-mini-government analogy, NOS choice by business type, and permissions by role.
+- Full elaborated key points: this elaborated.md Part 1 section. Full business sections: compression.md Part 2.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10762,6 +10796,11 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 - Combined point — audited branches, analogy-only mappings, and speculative AI extension, kept distinct.
   - Key note: Keeping verified, analogy, and speculative apart is the audit itself. Mixing them is how a study file becomes unreliable.
   - Example: init/, mm/, net/, and drivers/ are verified; government and business mappings are analogy; AI governance is speculation.
+
+## Extension, Architecture Paper, Models, TCP/IP, and Stack Evolution — Combined View (Pointer, New Gaps Only)
+
+- Combined unique points, elaborated in full in compression.md Part 3: the combined extension pattern, combined NOS choice by platform, combined telegraph-to-AI arc, combined system-model table, combined device view, and combined stack evolution timeline.
+- Full elaborated key points: this elaborated.md Part 1 section. Full combined sections: compression.md Part 3.
 
 ## Business Promotion — Combined View (No Diagram)
 
