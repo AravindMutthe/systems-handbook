@@ -3372,6 +3372,14 @@ This note repeats the LVM, NFS, and AWS steps already added above, so only the n
 - Correction: the source says GPT supports "unlimited partitions". In practice, GPT as commonly implemented supports 128 partitions by default (the UEFI specification's default entry count); the standard allows more entries, but "unlimited" is not the practical limit.
 - The paths, structure table, and AWS mapping in this note are already covered above and are not repeated here.
 
+
+### Storage gaps, fifth pass — mapper paths and commands table only
+This note repeats the LVM and NFS steps already added above, so only the new path detail and commands summary are added here.
+- Device-mapper path, clarified: `df -h` in this note shows `/dev/mapper/my_vg-lv_data` and `/dev/mapper/my_vg-lv_backup`, instead of `/dev/my_vg/lv_data` and `/dev/my_vg/lv_backup` used in earlier notes. These are the same devices: `/dev/my_vg/lv_data` is the LVM name path, and `/dev/mapper/my_vg-lv_data` is the device-mapper path it points to. Both refer to the same logical volume.
+- Allocation variant, not a new plan: this note uses `lv_data` at 300 GB and `lv_backup` at 200 GB, swapping the sizes from the earlier 200 GB + 300 GB example. The total is still 500 GB, and the steps are identical; only the example split changed.
+- Example inconsistency, noted: this note's `lsblk` example shows the system disk `sda` as 250 GB, while earlier examples showed it as 500 GB. Treat each example's disk sizes as illustrative, not as one real machine.
+- Commands breakdown, as a summary table, for the steps already listed above: `lsblk` — list block devices and partitions; `fdisk` — partition a disk; `pvcreate` — initialize a physical volume for LVM; `vgcreate` — create a volume group; `lvcreate` — create logical volumes from a volume group; `mkfs.ext4` — format a volume with ext4; `mount` — attach a volume to a directory; `df -h` — check mounted storage and free space.
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.
@@ -4957,6 +4965,12 @@ Virtualization, in business terms, is buying and running fewer physical machines
 - Full forms: MBR (Master Boot Record, up to 2 TB and 4 primary partitions), GPT (GUID Partition Table, over 2 TB, 128 partitions by default in practice, not truly unlimited), LVM (Logical Volume Manager), NFS (Network File System).
 - Steps and AWS mapping are already covered above and are not repeated here.
 
+
+#### Storage gaps, fifth pass — business angle, gaps only
+- Path detail: `/dev/my_vg/lv_data` and `/dev/mapper/my_vg-lv_data` are the same volume under two names — the LVM name and the device-mapper name. Staff checking `df -h` should not treat them as two different volumes.
+- Allocation variant: this note splits the 500 GB disk as 300 GB for data and 200 GB for backup, swapping the earlier example. Total capacity is unchanged; only the example split changed.
+- Commands summary is already covered in Technology.md, "Storage gaps, fifth pass", and is not repeated here.
+
 ### User space, in business risk terms
 - User space is everything above the kernel: apps, libraries, and configs. Kernel space is the OS core that controls hardware.
 - Containers isolate user space only and share one kernel. That is cheaper and faster, but a kernel-level fault can affect all containers on that host.
@@ -5643,6 +5657,13 @@ Virtualization is one idea read two ways at once: technically, a layer that abst
 - `lvcreate`: `-L` size, `-n` name.
 - Full forms: MBR = Master Boot Record (2 TB, 4 primary), GPT = GUID Partition Table (>2 TB, 128 by default, not unlimited), LVM = Logical Volume Manager, NFS = Network File System.
 - Steps and AWS mapping are already covered above and are not repeated here.
+
+
+#### Storage gaps, fifth pass — combined view, gaps only
+- Mapper path: `/dev/my_vg/lv_data` = `/dev/mapper/my_vg-lv_data`, same volume, two path forms.
+- Allocation: 300 GB data + 200 GB backup in this note, versus 200 GB + 300 GB earlier — same total, different example split.
+- Commands table: `lsblk`, `fdisk`, `pvcreate`, `vgcreate`, `lvcreate`, `mkfs.ext4`, `mount`, `df -h` — purposes as listed in Technology.md.
+- Steps themselves are already covered above and are not repeated here.
 
 ### User space, combined
 - User space holds apps, libraries, configs, and processes; kernel space holds the OS core. Containers isolate user space only, so they are light and fast but share kernel risk. VMs isolate both, so they are heavier but give a stronger boundary. That single distinction explains most of the cost-versus-isolation choice in the table above.

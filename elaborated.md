@@ -1070,6 +1070,15 @@ Virtualization creates virtual versions of physical resources — servers, stora
   - Key note: Full forms matter because they name the layer. MBR and GPT are partition-table schemes, LVM is a volume manager, NFS is a file-sharing protocol — different layers, not interchangeable terms.
   - Example: MBR up to 2 TB and 4 primary partitions; GPT over 2 TB and 128 partitions by default, not unlimited as the source states.
 
+
+#### Storage gaps, fifth pass — elaborated, deduplicated
+- Device-mapper path — `/dev/mapper/my_vg-lv_data` is the same volume as `/dev/my_vg/lv_data`.
+  - Key note: Two names for one device can look like two volumes in output. Recognizing the mapper form prevents double-counting storage that is actually one logical volume.
+  - Example: `df -h` shows `/dev/mapper/my_vg-lv_data` mounted at `/mnt/data`, where earlier notes used `/dev/my_vg/lv_data` for the same mount.
+- Allocation variant — 300 GB data and 200 GB backup, versus 200 GB and 300 GB earlier.
+  - Key note: The split is an example choice, not a rule. What matters is that the parts add up to the pool, and that the steps to create them do not change with the split.
+  - Example: `lv_data` 300 GB and `lv_backup` 200 GB still total the 500 GB volume group.
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.
