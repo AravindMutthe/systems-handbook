@@ -6945,6 +6945,17 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 - NetworkPolicy selects by labels, eBPF is only an enforcement mechanism. Example: Cilium enforces a NetworkPolicy with eBPF, Calico can use iptables or eBPF, and Flannel alone does not enforce it.
 - RBAC authorizes API operations, not network traffic. Example: a Role can allow getting a Service object, but it does not allow or deny connecting to that Service's ClusterIP; a NetworkPolicy does that.
 
+## IPC Mechanisms — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+
+- Pipe is a byte stream, not a message stream. Example: two writes of 10 bytes can be read back as one read of 20 bytes, or as reads of 5, 5, and 10 bytes.
+- Pipe capacity is a default, not a law. Example: `fcntl(fd, F_GETPIPE_SZ)` returns 65,536 by default, and `F_SETPIPE_SZ` can raise it up to the pipe-max-size limit.
+- FIFO is a pipe with a name. Example: `mkfifo /tmp/work` lets two unrelated processes open it, one for reading and one for writing, with no fork relationship.
+- POSIX message queues deliver highest priority first. Example: a priority-10 alert jumps ahead of priority-0 background jobs in the same queue.
+- Shared memory has no flow control. Example: a writer and a reader sharing a region must use a semaphore, or the reader can read a half-written value.
+- Sockets are the only cross-host IPC here. Example: a pipe cannot reach another server, but a TCP socket can, and a Unix socket is the local-only equivalent.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9621,6 +9632,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
 
+
+## IPC Mechanisms — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11056,6 +11072,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 
 ## IP Identity Matrix — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
+
+
+## IPC Mechanisms — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
 

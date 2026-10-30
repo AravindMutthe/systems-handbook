@@ -4276,6 +4276,54 @@ Verified against kubernetes.io Pods, Services, and Volumes documentation and Kub
 - ClusterIP: internal service, Service lifetime, kube-proxy (iptables, IPVS, nftables, or eBPF replacement), network reachability and NetworkPolicy, not RBAC, for traffic.
 - External IP: public edge, dynamic or reserved static, cloud load balancer or ingress controller, TLS for transport and WAF for filtering, with application authorization behind the edge.
 
+## IPC Mechanisms — Pipes, FIFOs, Message Queues, Shared Memory, Sockets (Audited, Official Sources Only, Elaborate Only)
+
+Verified against the Linux man-pages project: pipe(7), mq_overview(7), and shm_overview(7), opened 2026-10-30. Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule.
+
+- *Correction: "IPC happened in kernel space which lives in RAM" is an oversimplification. IPC mechanisms are kernel-mediated, but the data path is not the same for all of them. Pipe, FIFO, and message-queue data are buffered in the kernel, while shared-memory data, once mapped with mmap, is read and written directly by user-space processes from RAM without a kernel copy on each access. Signals are kernel-delivered notifications, not a data channel. So "in kernel space" describes the mediation, not every data movement.*
+- *Correction: the source summary table has four headers (Mechanism, Data Unit, Flow Type, Scope) but five fields in the pipe row. The extra field, "Producer writes, consumer reads", is a description of use, not a fifth column. The corrected list below uses one field set per mechanism.*
+
+### Pipe (anonymous pipe)
+
+- Data unit: byte stream, with no message boundaries. A read can return fewer bytes than a write sent, and the receiver cannot see where one write ended and the next began.
+- Flow: unidirectional, one read end and one write end, created by pipe(2).
+- Buffer: kernel buffer. Default capacity 16 pages, which is 65,536 bytes on a system with a 4,096-byte page size. *Correction: 64 KiB is the default, not a fixed size. Capacity can be queried and changed with fcntl F_GETPIPE_SZ and F_SETPIPE_SZ, up to /proc/sys/fs/pipe-max-size, whose default is 1 MiB, and it can be lower when the pipe-user-pages-soft limit is exceeded.*
+- Flow control: built in. A read from an empty pipe blocks until data arrives, a write to a full pipe blocks until space is freed, unless O_NONBLOCK is set.
+- *Correction: scope is NOT strictly "parent/child only". An anonymous pipe is usable between processes that share its file descriptors, which in practice means related processes after fork, but a descriptor can also be passed to an unrelated process with SCM_RIGHTS over a Unix socket. "Parent/child" is the typical case, not the rule.*
+- End conditions: closing all write ends makes a read return end-of-file; closing all read ends makes a write generate SIGPIPE, or fail with EPIPE if SIGPIPE is ignored.
+
+### FIFO (named pipe)
+
+- Data unit: byte stream, exactly the same I/O semantics as a pipe once opened. The only difference from a pipe is creation and opening.
+- Flow: unidirectional per open, read end with O_RDONLY, write end with O_WRONLY.
+- Scope: any process that can open the filesystem pathname, assuming file permissions allow it. A FIFO has a name created with mkfifo, but I/O on it does not operate on an underlying device.
+- Use: two FIFOs, one in each direction, give bidirectional communication between unrelated processes.
+
+### Message queue
+
+- Data unit: discrete messages, not a byte stream. The receiver gets whole messages, and message boundaries are preserved.
+- Flow: one queue, many senders and receivers, with kernel persistence until unlinked or shutdown.
+- *Correction: "priority-based" is true for POSIX message queues and false as a general statement. In POSIX message queues (mq_send, mq_receive), each message has a priority and messages are delivered highest priority first. In the older System V message queues (msgsnd, msgrcv), the receiver selects by message type, not by priority. The source merges two different APIs into one row; the corrected statement keeps them apart.*
+- Scope: any process that can open the same queue name (POSIX, /somename) or the same key (System V), subject to permissions.
+
+### Shared memory
+
+- Data unit: raw memory region, random access. Processes map the same region into their own address spaces with mmap after shm_open (POSIX) or shmat (System V).
+- Flow: no flow at all. There is no producer-to-consumer stream and no kernel queue; both processes see the same bytes, and either can read or write any offset at any time.
+- Scope: any process that can open the same shared-memory object, subject to permissions. POSIX objects live in a tmpfs normally mounted at /dev/shm and persist until unlinked and unmapped, or shutdown.
+- *Correction: "the fastest" is generally true because it avoids kernel copies, but it is not free. The man page states that processes typically must synchronize access, for example with POSIX semaphores, because the kernel provides no flow control, no locking, and no ordering for shared memory. Without synchronization, one process can overwrite data another is reading.*
+
+### Socket
+
+- Data unit: byte stream for stream sockets (TCP, Unix stream), packets or datagrams for datagram sockets (UDP, Unix datagram). The source's "Byte/Packet" merges the two socket types.
+- Flow: bidirectional. A connected stream socket carries data both ways, and a datagram socket can both send and receive.
+- Scope: local or network, depending on family. Unix domain sockets are local only, with an optional socketpair for related processes; TCP and UDP sockets reach other hosts.
+- Difference from pipes: sockets are the only mechanism in this list that crosses hosts, and they are the only one with an address (IP and port, or filesystem pathname) that a client can connect to without inheriting a descriptor or opening a shared name.
+
+### Signals, for completeness
+
+- A signal is a notification, not a data channel. *Correction: "you can't send complex data" is correct, but "just a notification" needs one qualification. sigqueue can carry a small payload, one integer or one pointer, with a real-time signal, and signals can be queued. That is still not a general data transfer mechanism, and it does not replace pipes or message queues for actual data.*
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6415,6 +6463,15 @@ Full section: compression.md Part 1, "IP Identity Matrix — Cluster, Node, Pod,
 - Business point: only two of the five are stable enough to build on directly — the ClusterIP (stable for a Service's lifetime) and a reserved external IP. Pod IPs and unreserved node IPs change, so any contract, firewall rule, or customer integration that hard-codes a pod IP will break on rescheduling.
 - *Correction, in italic in the full section: RBAC does not authorize traffic to a ClusterIP, and TLS and WAF do not authorize external access. Those are API authorization, transport security, and request filtering respectively. Budgeting and compliance work that treats them as authorization will pass the wrong audit.*
 
+## IPC Mechanisms — Business Angle (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Queues, Shared Memory, Sockets". Corrections in the full section are in italic text.
+
+- Pipes and FIFOs are the cheap, built-in, same-machine channel with kernel flow control. Good for pipelines and producer-consumer work, bad for anything that must cross hosts or keep message boundaries.
+- Message queues are the discrete-message choice, with POSIX priority ordering, useful where a job, event, or notification must arrive whole and in order of importance.
+- Shared memory is the fastest path and the most dangerous without discipline: no kernel flow control, so synchronization (semaphores) is a design requirement, not an optional extra, and a synchronization bug is a data-corruption bug.
+- Sockets are the only cross-host mechanism in the list, and the one whose address, port, and firewall exposure must be managed as a business and security surface.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -7535,6 +7592,17 @@ Full section: compression.md Part 1, "IP Identity Matrix — Cluster, Node, Pod,
 - Pod: internal, ephemeral, CNI-assigned, NetworkPolicy by labels.
 - ClusterIP: internal virtual service IP, Service lifetime, kube-proxy forwarding, traffic governed by reachability and NetworkPolicy, not RBAC.
 - External: public edge, dynamic or reserved static, load balancer or ingress controller, TLS and WAF as transport and filtering, not authorization.
+
+## IPC Mechanisms — Combined View (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Queues, Shared Memory, Sockets". Corrections in the full section are in italic text.
+
+- Pipe: byte stream, unidirectional, kernel buffer, default 65,536 bytes, adjustable, shared file descriptors, kernel flow control.
+- FIFO: same byte-stream semantics, named pathname, any process with permission, two FIFOs for bidirectional use.
+- Message queue: discrete messages, POSIX priority delivery, System V type selection, kernel persistence.
+- Shared memory: random-access RAM, fastest, no kernel flow control, synchronization required.
+- Socket: stream or datagram, bidirectional, Unix local or TCP/UDP network, only cross-host mechanism here.
+- Signal: notification only, sigqueue small payload at most, not a data channel.
 
 ## Business Promotion — Combined View (No Diagram)
 
