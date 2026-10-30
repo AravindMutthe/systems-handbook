@@ -527,7 +527,7 @@ ICANN, IETF, and
 W3C are not one body. IETF = Internet technical standards;
 ICANN = names / numbers allocation; W3C = web standards.
 The page lists them together as bodies; the functions above
-are the labels that keep them distinct.
+are the kinds that keep them distinct.
 
 ### Diagram
 [Historical] Telegraph → mainframes → Client server →
@@ -622,11 +622,11 @@ and VISA/SWIFT are not the same kind of scheduler. ISO/RTO
 schedule electricity, ICANN allocates names/numbers, ISPs
 schedule bandwidth, banks settle transactions. The page lists
 them together as "who schedules"; the functions above are the
-labels that keep them distinct.
+kinds that keep them distinct.
 
 ### Diagram
 [Depends on] Schedule ⇒ Tasks + Resources: a schedule depends
-on both inputs, labelled separately from the arrow below.
+on both inputs, shown separately from the arrow below.
 [Organizational: allocates] Scheduler ═> resources (money,
 labor, raw material, compute) ═> tasks (jobs, contracts,
 transactions), fairly / efficiently.
@@ -636,7 +636,7 @@ Business: projects - - > scheduler allocation.
 [Organizational: owns] Scheduler owns the allocation:
 ISO/RTO (electricity), BGP + ISP route / ICANN / ISP carrier
 (networking), VISA/SWIFT banks, Govt agency / Company,
-PPP / consortia (business projects) — each labelled by function,
+PPP / consortia (business projects) — each shown by function,
 not as one hierarchy.
 
 ### Related topics
