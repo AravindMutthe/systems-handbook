@@ -7004,6 +7004,18 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 - Storage is not egress. Example: a database call is egress traffic, but a PersistentVolume is mounted into the pod, not reached over an egress path.
 - Trading-partner traffic is bidirectional. Example: a partner can push an AS2 message in and receive an acknowledgment out, so an egress-only level cannot describe it, and an allow-all internet egress rule is not a partner design.
 
+## WhatsApp Notes — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full sections in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30.
+
+- emptyDir Memory is tmpfs, emptyDir default is disk. Example: setting medium Memory changes the backing from node disk to RAM, and the files then count against the container memory limit.
+- emptyDir survives a container crash, not a pod deletion. Example: a restarted JVM can read a crash dump from emptyDir, but a deleted pod loses the whole directory permanently.
+- A PVC is disk, not memory. Example: claiming a PVC for a JVM heap dump store gives durable disk, not shared RAM, and the pod can be rescheduled and still mount it.
+- Flush, backup, and archive are different operations. Example: flushing a file to disk moves it, backing it up copies it to Blob at a point in time, and archiving it moves it to cold Blob tier for long-term retention.
+- B2Bi document storage has three verified values. Example: DB is the default, FS is recommended for files over 10 MB, and OS is for Certified Containers using object storage.
+- Artifact registries are not source repos. Example: GitHub Packages and GHCR store immutable images and packages, while actions/upload-artifact stores a short-lived zip that expires.
+- Vendor names matter for a job interview. Example: Sonatype Nexus, not Sona type, Cloudsmith, not CloudSmith, Google Artifact Registry, not GCAR, and AWS splits packages to CodeArtifact and containers to ECR.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9705,6 +9717,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
+
+## Batch 17 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11165,6 +11182,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 
 ## Batch 16 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
+
+## Batch 17 — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 

@@ -4590,6 +4590,67 @@ Verified against IBM Sterling B2B Integrator documentation for Certified Contain
 - Generic mechanism, example only: outbound egress through a gateway, NAT, or proxy with firewall rules, and inbound partner traffic through the Level 1 edge, with TLS, certificates, and partner-specific authentication at the application layer, not at the network layer alone.
 - *Correction: "Pod-to-Internet" is too broad. Trading partners are specific external endpoints with agreed protocols, certificates, and IP allow-lists, not the general internet. An egress policy that allows all internet traffic from a B2Bi pod is a security gap, not a trading-partner design.*
 
+## WhatsApp Notes — tmpfs, emptyDir, Persistence, Flush, Backup, Archive, and B2Bi (Audited, Official Sources Only, Elaborate Only)
+
+Source: the user's WhatsApp channel, checked 2026-10-30, where the same note had already been reviewed in that chat. Filed here, in elaborate only, with corrections applied, not as a copy of that chat's review. Verified against kubernetes.io Volumes documentation and IBM Sterling B2B Integrator documentation. Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule. No diagram from the source is rebuilt here, per the no-diagram rule; the two flow diagrams are described in text only.
+
+### tmpfs and memory-backed emptyDir
+
+- An emptyDir with medium Memory is the Kubernetes equivalent of a tmpfs mount: RAM-backed, fast, and volatile.
+- By default, without medium Memory, an emptyDir is stored on whatever medium backs the node, such as disk, SSD, or network storage. *Correction: the source's later line "emptyDir = application/pod level in disk" is true only for the default medium. It is false for medium Memory, which is RAM. The two cases must not be merged into one definition.*
+- *Correction: the source's FHS comparison is half wrong. On modern Linux, /tmp is commonly a tmpfs, but /var/tmp is normally disk-backed and intended to survive a reboot. Saying emptyDir Memory is "the exact equivalent of /tmp or /var/tmp" overstates it: it is equivalent to /tmp on a tmpfs system, not to /var/tmp.*
+- Lifecycle, verified: an emptyDir is created when the pod is assigned to a node, all containers in the pod can read and write it, a container crash does NOT remove the pod from the node so the data is safe across container crashes, and when the pod is removed from a node for any reason the data is deleted permanently.
+- *Correction: "If your JVM threads fill this directory past your specified Pod memory limits, Kubernetes will OOM-kill the Pod" needs precision. Files written to a memory-backed emptyDir count against the memory limit of the container that wrote them, per kubernetes.io. Exceeding a container memory limit can OOM-kill that container, and exceeding the emptyDir sizeLimit is a separate eviction path. The source merges OOM-kill and eviction into one event; they are different mechanisms, and sizeLimit should always be set, sized inside the memory request and limit headroom.*
+- *Correction: "Unlike standard Linux tmpfs which can sometimes spill over into swap space" is the key difference, but it is not a Kubernetes guarantee in all configurations. Standard Linux tmpfs can spill to swap under memory pressure. A memory-backed emptyDir is charged against the pod memory limit, so in practice it is killed or evicted before it can spill in the way a plain tmpfs can. The interview point stands, but it should be stated as a limit-accounting difference, not as a physical impossibility of swapping in every cluster configuration.*
+
+### Secrets and ConfigMaps as volumes
+
+- Secrets and ConfigMaps mounted as volumes are also RAM-backed tmpfs mounts, read-only, and managed by Kubernetes, while an emptyDir Memory volume is a blank writable workspace.
+- Use emptyDir for fast scratch writes such as GC logs or heap dumps, ConfigMaps for application.properties or logback.xml, and Secrets for passwords, TLS certificates, or API keys.
+- *Correction: "Use Secrets to inject ... safely into RAM" is overstated. A Secret volume is still readable by any process in the pod that can read the mount, and it is still present in the node's memory. RAM-backed is not the same as safe, and it does not replace RBAC, encryption at rest for etcd, or least-privilege access to the pod.*
+
+### Persistence beyond tmpfs, emptyDir, and ephemeral disks
+
+- Native Linux: a tmpfs is wiped on reboot. Persistence needs a physical device mount, or a hybrid sync from RAM to disk, such as a scheduled copy, which is a copy, not a tmpfs that survives.
+- Native Kubernetes: an emptyDir is tied to the pod. Persistence across pod deletion or rescheduling needs a PersistentVolume and PersistentVolumeClaim.
+- *Correction: "PV/PVC = persistence shared memory for pods" is wrong, and it is the most important error in this note. A PVC is block, file, or object-backed storage, which is disk or network storage, not memory and not shared memory. The ladder is: RAM (tmpfs) to pod-local disk (default emptyDir) to node-local disk (hostPath or ephemeral OS disk) to network or cloud disk (PVC) to object storage (Blob). Calling a PVC shared memory will confuse every later storage question.*
+- Sidecar persistence: a secondary container in the same pod can upload or sync data to object storage. That is a pattern, not a volume type, and it works because the sidecar shares the pod's volumes.
+- HostPath persistence: node-level local disk, tied to one node, with the security risks kubernetes.io warns about, and it should be avoided where a local PersistentVolume can be used instead.
+- Azure: an ephemeral OS disk is built from the host's local cache or temporary NVMe. Data is lost when the node is deleted, reimaged, or deallocated, including on scale-down of that node. Durable Azure storage is an independent resource: Azure Managed Disks, Azure Files, or Azure Blob Storage.
+- *Correction: the Azure mapping table in the source is loose, not equivalent. ConfigMap to Azure App Configuration and Secret to Azure Key Vault are analogies, not the same thing. In AKS, the real bridge for Secrets is the CSI Secrets Store driver, which mounts Key Vault secrets as a volume. App Configuration is a separate managed service called through an SDK, not a volume mount. The closer Azure analog for emptyDir is the node's local temporary disk, not the ephemeral OS disk, which is the VM's operating-system disk.*
+
+### Flush, backup, and archive, and the two flow directions
+
+- Flush: moving data from volatile memory or page cache down to durable storage. It is a movement, not a copy left behind for recovery.
+- Backup: a separate, point-in-time, independent copy stored in a different location, for disaster recovery.
+- Archive: long-term, read-only, cold retention, different from a short-term backup. *Correction: "far.gz" in the source is a typo for ".tar.gz", a tarball archive format.*
+- *Correction: the source's flush definition, "down to a physical disk platter or SSD block", is outdated hardware language. Modern SSDs have no platter, and a flush in Linux is writeback from page cache to the backing device, whatever that device is. The concept stands, the platter language does not.*
+- Two-way flow, described in text, not as a diagram: B2Bi JVM writes an inbound payload to /tmp (tmpfs), then flushes or syncs it to an Azure Managed Disk, and later reads it back from disk to tmpfs for reprocessing. The source labels the disk step as an IOPS bottleneck; that is a source claim about a specific deployment, not a measured fact, and it applies only where IOPS, not throughput or latency, is the constraint.
+- One-way flow, described in text: B2Bi JVM reads from a Managed Disk volume and streams out through a network interface over HTTPS to Azure Blob Storage. The source labels this a bandwidth bottleneck; again, that is a deployment-specific claim, not a general rule.
+- *Correction: the source's labels "2 way, RWO" and "One way" confuse two concepts. RWO is a PersistentVolumeClaim access mode, ReadWriteOnce, meaning the volume can be mounted read-write by a single node, not a description of data direction. A two-way data flow can use any access mode, and RWO does not mean two-way.*
+
+### B2Bi flush, backup, and archive specifics
+
+- Verified against IBM documentation: defaultDocumentStorageType can be DB, FS, or, for Certified Containers only, OS for object storage through the Document Service. DB is the default, FS is recommended for files larger than 10 MB, and the setting lives in jdbc.properties, with overrides in customer_overrides.properties, not by editing jdbc.properties directly.
+- *Correction: the source's example path /ibm/b2bi/documents is an example only, not a verified default. The verified property names are jdbcService.defaultDocumentStorageType and jdbcService.document_dir, and the source's instruction to put overrides in customer_overrides.properties matches IBM's guidance, which says not to modify a property file that has a corresponding .in file.*
+- Backup in B2Bi: the database state and the document storage must be captured consistently, because B2Bi is relational between state and payloads. A database backup without the matching document files, or vice versa, can leave a restored system inconsistent.
+- Archive in B2Bi: the source names three business processes, IndexBusinessProcessService, Schedule_BackupService, and Schedule_PurgeService, and properties in noapp.properties with schedules in the Archive Manager. *Correction: those BP names and the noapp.properties detail are source-only and were NOT verified against IBM documentation in this check. They are carried as source claims, not as verified B2Bi facts, and they should not be quoted as documentation until they are checked against the installed version's Archive Manager.*
+
+## WhatsApp Notes — Source Code Repositories Versus Artifact Repositories (Audited, Official Sources Only, Elaborate Only)
+
+Source: the user's WhatsApp channel, checked 2026-10-30. Filed here, in elaborate only, with corrections applied. Verified against vendor documentation for GitHub Packages and Container Registry, JFrog Artifactory, Sonatype Nexus, AWS CodeArtifact and ECR, Azure Artifacts and ACR, and Google Artifact Registry. Added to elaborate only. Corrections in italic.
+
+- Rule: source repositories track changes to human-readable code over time with a version control system such as Git, Subversion, or Mercurial. Artifact repositories store immutable, versioned build outputs: compiled binaries, packages, and container images, and they proxy and cache public registries so builds are reproducible and do not break when a public package disappears.
+- Dedicated universal repository managers: JFrog Artifactory, Sonatype Nexus Repository, and Cloudsmith.
+- *Correction: "Sona type nexus" is Sonatype Nexus, and "CloudSmith" is Cloudsmith. Those are vendor names, not generic types.*
+- Container-specific registries: Docker Hub, GitHub Container Registry (GHCR), and Quay.io.
+- Cloud provider artifact systems, split correctly: AWS CodeArtifact for packages and Amazon ECR for containers, Azure Artifacts for packages and Azure Container Registry (ACR) for containers, and Google Artifact Registry (GAR) for both.
+- *Correction: "AWS artifact registry" is not an AWS product name, "GCAR" is not the product name, and GCR, Google Container Registry, is the older name that Artifact Registry replaces. The source's cloud row merges package and container systems that are separate products in AWS and Azure.*
+- Dual-purpose platforms: GitHub hosts source code and, through GitHub Packages and GHCR, packages and images. GitLab hosts source code and, through its Package Registry and Container Registry, packages and images, in SaaS and self-managed editions. Azure DevOps bundles Azure Repos with Azure Artifacts and ACR under one ecosystem.
+- *Correction: Bitbucket Cloud does NOT belong in the dual-purpose registry list in the same sense. Bitbucket hosts source code and provides Pipelines artifacts and Downloads, which are build outputs and file hosting, not a package registry or container registry like GitHub Packages, GitLab Package Registry, or ACR. Listing it alongside GitHub and GitLab as "hosts source code plus binaries via Deployments/Artifacts" overstates what Bitbucket provides.*
+- GitHub Repos and GitHub Actions, filled in from the source's fragment: Repos are the source side, code, history, branches, pull requests, and issues. Actions are the built-in CI and CD side, with workflows in .github/workflows/*.yml, triggered by push, pull request, schedule, or release, running on GitHub-hosted or self-hosted runners. A typical flow is push, build and test in Actions, publish the image to GHCR or the package to GitHub Packages, then deploy.
+- *Correction: actions/upload-artifact is NOT a registry. It stores short-lived build output such as logs, test reports, or a zip, with an expiry, for download from a workflow run. The durable artifact store in GitHub's world is Packages and GHCR, not upload-artifact.*
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6772,6 +6833,15 @@ Full section: compression.md Part 1, "IBM Sterling B2B Integrator Networking —
 - The business risk is in the missing mapping. Until the actual Services, Ingress or Routes, firewall rules, and partner endpoints are attached to each level, the model cannot be used for troubleshooting or for an audit, because a failure cannot be assigned to a level.
 - Statelessness is a design claim to verify, not assume. If durable state is not fully externalized to the database, MQ, and storage, replacing a pod can lose in-flight work, and that loss is a business-process failure, not just a pod restart.
 
+## WhatsApp Notes — Business Angles (Condensed, Elaborate Only)
+
+Full sections: compression.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persistence, Flush, Backup, Archive, and B2Bi" and "WhatsApp Notes — Source Code Repositories Versus Artifact Repositories". Corrections in the full sections are in italic text.
+
+- Storage is a ladder with a price and a failure mode at each rung. RAM is fastest and lost on pod removal, node disk is tied to one node, PVC is network or cloud disk that survives the pod, and object storage is the durable and archival rung. Calling a PVC shared memory breaks that ladder and will mislead a cost and durability decision.
+- Flush, backup, and archive are three different budgets. Flush is a movement to durability, backup is a point-in-time copy for recovery, and archive is cold long-term retention. Funding one does not buy the other two.
+- For B2Bi, the business risk is inconsistency between database state and document files. A backup that captures only one side can restore a system that does not agree with itself.
+- Repositories are also a ladder. Source code is for change history, artifact registries are for immutable build outputs, and a short-lived workflow artifact is neither. Choosing Bitbucket for a registry need, or upload-artifact for a release store, will fail when a release needs to be pulled months later.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -7945,6 +8015,18 @@ Full section: compression.md Part 1, "IBM Sterling B2B Integrator Networking —
 - Level 3, infrastructure egress: pod to database, MQ, and cluster services, with storage as a volume mount, not as egress traffic.
 - Level 4, external trading partners: bidirectional, not egress-only, specific partner endpoints with certificates and allow-lists, not the general internet.
 - Source model only, service mapping not yet supplied, stateless only where state is externalized.
+
+## WhatsApp Notes — Combined Views (Condensed, Elaborate Only)
+
+Full sections: compression.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persistence, Flush, Backup, Archive, and B2Bi" and "WhatsApp Notes — Source Code Repositories Versus Artifact Repositories". Corrections in the full sections are in italic text.
+
+- tmpfs: RAM, fast, volatile, /tmp is commonly tmpfs, /var/tmp is normally disk.
+- emptyDir default: node disk. emptyDir Memory: tmpfs, counts against container memory limit, sizeLimit set always, survives container crash, deleted on pod removal.
+- Secret and ConfigMap volumes: tmpfs, read-only, RAM-backed is not the same as safe.
+- Persistence: Linux physical mount or sync, Kubernetes PVC, Azure Managed Disks, Files, or Blob, never a PVC labelled shared memory.
+- Flush: volatile to durable movement. Backup: point-in-time independent copy. Archive: cold long-term retention, .tar.gz not far.gz.
+- B2Bi: defaultDocumentStorageType DB, FS, or OS for containers, overrides in customer_overrides.properties, database and document backups must be consistent, archive BP names are source-only and unverified.
+- Repositories: source for code history, artifact for immutable outputs, JFrog Artifactory, Sonatype Nexus, Cloudsmith, GHCR, Quay, Docker Hub, CodeArtifact plus ECR, Artifacts plus ACR, Google Artifact Registry, GitHub and GitLab dual-purpose, Bitbucket is not a registry in the same sense, upload-artifact is short-lived not a registry.
 
 ## Business Promotion — Combined View (No Diagram)
 
