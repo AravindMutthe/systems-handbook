@@ -3915,6 +3915,137 @@ All addresses, ports, and MAC values in this section are source examples, not a 
 - Private versus public in this context: 192.168.1.x is private and visible only locally; WhatsApp and GitHub addresses are public and globally reachable; NAT is the bridge that translates the private source to a public one for outbound traffic.
 - No parallel-flow comparison diagram was built from the source's closing offer, per the standing rule; the two flows above are the comparison in text.
 
+## DNS — Hardware Path and Software Side (Audited, New Gaps Only)
+
+This section records the DNS hardware and software note. DNS resolution itself is already detailed in the coordination section; only where DNS software runs and which devices merely forward it are new.
+
+### Software side on the laptop
+
+- The laptop holds no DNS database. It runs a stub resolver that decides where to ask: it checks its cache, then /etc/hosts for manual static mappings, then forwards to the configured resolver.
+- Cache lives in RAM in the resolver and, separately, in browsers, which keep their own DNS caches. A cached answer is used only until its TTL expires.
+- Resolver library: on traditional Linux, glibc reads /etc/resolv.conf for upstream servers. On modern distributions using systemd-resolved, the stub at 127.0.0.53 is the local endpoint, and /etc/resolv.conf is commonly a symlink to the stub configuration rather than a direct list of upstream servers; resolved itself obtains upstreams from link and DHCP configuration. The source's "glibc or systemd-resolved reads /etc/resolv.conf" merges two different mechanisms and is corrected here.
+- Software DNS therefore does not hold all domains; it forwards queries to the server configured by DHCP or static configuration, as the source correctly states.
+
+### Hardware path, device by device
+
+The source path is laptop, access point, switch, SD-WAN, router or ISP, Internet. The SD-WAN hop is optional and enterprise-specific; a home path has no SD-WAN edge.
+
+- Laptop: stub resolver only. It does not know the world; it forwards the query.
+- Access point: Layer 2. It does not host DNS for clients. It bridges the wireless frame onto the wired LAN and forwards it upstream. An access point may run a DNS client for its own management, but that is not a DNS service for clients.
+- Switch: Layer 2, MAC to port mapping. It has no DNS role; it forwards Ethernet frames.
+- Router or SD-WAN edge: this is often the first DNS service a query hits after the access point. A home router at 192.168.1.1 commonly acts as a DNS forwarder or proxy and may cache answers. An enterprise SD-WAN edge, for example VMware SD-WAN by VeloCloud as named in the source, may intercept DNS, apply policy, steer it over a secure path, and cache answers. "Intercept" here means policy-based forwarding, not altering the answer.
+- ISP resolver: a recursive resolver run by the ISP. It holds many cached answers for popular services and, on a cache miss, walks the global hierarchy.
+- Public hierarchy: root servers point to TLD servers, TLD servers point to the domain's authoritative servers, and authoritative servers give the final answer, for example github.com's nameserver returning its address.
+
+### Software side on servers
+
+Authoritative DNS servers run dedicated software such as BIND, NSD, or PowerDNS, and hold the zone's actual records:
+
+- A: IPv4 address. AAAA: IPv6 address.
+- MX: mail servers. TXT: text policies, including SPF and DKIM records.
+- Also present in a normal zone, though not listed in the source: NS (nameservers), SOA (zone start, with serial, refresh, retry, expire, and minimum TTL), and CNAME (aliases).
+
+### Flow recap, with the correction already applied
+
+Laptop stub asks over UDP port 53 (or DoT/DoH where configured) to the DHCP-supplied resolver, commonly the gateway at 192.168.1.1 or an ISP resolver. The access point forwards the frame, the switch forwards the frame, the router or SD-WAN forwards or answers from cache, the ISP resolver resolves or walks root, TLD, and authoritative servers, the authoritative server answers, and the answer travels back down the chain into the laptop's cache. The source's GitHub answer example, 140.82.112.3, is an example only, as in earlier sections.
+
+### Key point, stated precisely
+
+Not every device has DNS: laptop has a stub resolver only; access point and switch have none for clients; router or SD-WAN may forward and cache; ISP runs a recursive resolver; the global hierarchy runs authoritative servers. DNS therefore lives mainly at the router, the ISP, and the authoritative servers, and merely passes through the access point and switch. No ladder diagram was built from the source's closing offer, per the standing rule; the ladder above is in text.
+
+## Identity Along the Path — MAC, IP, Port, FQDN, Certificate (Audited, Examples Only)
+
+This section records the identity-mapping note. All MAC, IP, and port values are source examples, not a captured session, and several source simplifications are corrected.
+
+### End-user device, Linux laptop
+
+- Identity: the NIC, source example wlan0.
+- MAC, source example AA:BB:CC:DD:EE:11: a 48-bit Layer 2 address. The first 24 bits are the OUI, the vendor identifier; the remaining 24 bits are assigned by the vendor, not literally a serial number. Correction: a MAC is not a stable personal identity in modern systems. Wi-Fi MAC randomization, locally administered addresses, and virtual interfaces mean the address a network sees can change, and a MAC is valid only hop to hop within a LAN segment.
+- Private IP, source example 192.168.1.101: a Layer 3 address. For a /24 network the split is network 192.168.1 and host 101, but the split depends on the subnet mask and is not always at the last octet. It is valid only inside the private subnet.
+- Port, source example 54321: an ephemeral source port. It identifies a socket, and therefore a session, on the laptop; one process may hold many sockets and ports.
+- FQDN: a client normally has no FQDN. Reverse DNS (PTR records) can map an address back to a name where one is published, but that is not guaranteed and is not how a client is normally identified.
+
+### Access point
+
+- MAC, source example 11:22:33:44:55:66: each SSID has a BSSID, which is the radio's MAC address for that SSID.
+- Management IP, source example 192.168.1.2: optional, for administration only.
+- Correction to the source's role description: an access point bridging Wi-Fi to Ethernet does not rewrite the client's IP, and it does not replace the client's source MAC with its own for forwarded client traffic. It translates between 802.11 and 802.3 frame formats, using transmitter, receiver, and BSSID fields on the wireless side, while the logical source and destination MACs of the endpoints are preserved. Calling it an "identity translator at Layer 2" is an analogy, not a description of address rewriting.
+
+### Switch, if present
+
+- Management MAC and IP, source example 192.168.1.3: for administration only.
+- CAM table: maps MAC addresses to ports, learned from source addresses on incoming frames. It forwards a frame to the port for its destination MAC and floods only unknown, broadcast, or multicast destinations.
+- The switch does not change the packet; it delivers the frame to the right uplink.
+
+### Router or SD-WAN edge, the gateway
+
+- LAN interface IP, source example 192.168.1.1, the default gateway.
+- WAN interface IP, source example 198.51.100.10: a TEST-NET-2 documentation address, not a real assigned public address.
+- MAC addresses differ per interface, LAN side versus WAN side.
+- NAT rewrites the private source address to the public address, and Port Address Translation rewrites the source port when needed so return traffic can be mapped back to the right internal socket. This is the private-to-public translation point.
+
+### ISP devices, public core
+
+- Public IPs, source examples 203.0.113.1 and 203.0.113.2: TEST-NET-3 documentation addresses, not real backbone addresses.
+- MACs are valid only hop to hop on each ISP link.
+- Core routers forward by destination IP. Correction to the absolute form in the source: core routers normally do not inspect application data, but NAT, firewall, and QoS middleboxes elsewhere in a path can inspect ports and more; "only care about IP headers" is true for pure core forwarding, not for every middlebox.
+
+### DNS servers, resolution identity
+
+- Stub resolver on the laptop: no permanent address of its own; it asks upstream.
+- Recursive resolver, ISP or router: source example 68.94.156.1 is an example only.
+- Authoritative DNS for GitHub: source example ns-1703.awsdns-20.co.uk follows the Route 53 naming pattern GitHub uses, but nameserver assignments can change and this value is recorded as a source example, not as a live-verified current nameserver.
+- Record contents: A maps a name to IPv4, AAAA to IPv6, NS lists nameservers, SOA starts the zone and carries serial, refresh, retry, expire, and minimum TTL values, not merely "TTLs" in general.
+
+### Destination server, WhatsApp or GitHub
+
+- Public IPs, source examples 140.82.112.3 for GitHub and 157.240.20.60 for WhatsApp: examples inside those companies' address space, not verified live session addresses.
+- MAC addresses inside a data centre are internal and hidden from the client; the client never sees the destination server's MAC.
+- Ports, source examples: 443 for HTTPS (GitHub push and pull), 22 for SSH (GitHub over SSH), 3478 and 5222 for WhatsApp signalling and media. Correction: these are source port examples for those services, not a verified live WhatsApp port list; WhatsApp uses several ports and protocols across signalling, media relay, and web services, and media normally uses UDP with ephemeral ports, not a single fixed media port.
+- TLS and SSH certificates and keys are the cryptographic identity: they prove server authenticity (TLS) or authenticate the client and server (SSH), which is the final authenticated identity at the application level, by GitHub key or token, or by WhatsApp account token.
+
+### Summary, with analogies marked as analogies
+
+MAC is like a NIC serial number only loosely, because it changes per hop and can be randomized. IP is an address in a network, private inside a LAN and public on the Internet. Port is like an apartment number only loosely, because it identifies a socket, not a person or a home. FQDN is a name in a phonebook that maps to an IP. A certificate is like a passport only loosely, because it proves a cryptographic identity for a session, not a person's legal identity. Together, these layers let an authorized user move from laptop to access point to switch to router to ISP to DNS to destination, with each layer's identity valid only in its own scope and lifetime: MAC hop to hop, private IP for the LAN lifetime, public IP while routed, port for the session, DNS record for its TTL, and certificate for its validity period. No live GitHub SSH trace was built from the source's closing offer, per the standing rule.
+
+## Parallel Trace — GitHub Push (SSH) and WhatsApp Call, With Addresses at Each Hop (Audited, Examples Only)
+
+This section records the parallel-trace note. It is the live-example trace requested in the previous note, in text, not as a diagram. All addresses and ports are source examples, not a captured session.
+
+### GitHub push over SSH, TCP port 22
+
+1. Laptop, NIC wlan0: MAC AA:BB:CC:DD:EE:11, private IP 192.168.1.101, ephemeral source port 55001. After DNS resolution, the packet before NAT is: source 192.168.1.101:55001, destination 140.82.112.3:22. Correction: the packet carries the resolved IP address, not the name github.com; the name was used only for the DNS lookup that preceded it.
+2. Access point and switch: access point MAC example 11:22:33:44:55:66, switch forwards by its MAC table. No port or service change; Layer 2 forwarding only.
+3. Router, NAT: LAN IP 192.168.1.1, WAN public example 198.51.100.10 (TEST-NET-2 documentation address). After NAT the packet is: source 198.51.100.10:40001, destination 140.82.112.3:22. The mapped port is an example; NAT with Port Address Translation may preserve the original source port when it is free, or map it to a different port, as here.
+4. ISP and Internet routers: each hop swaps link MAC addresses, while IP addresses and ports stay unchanged in this home-NAT model. A carrier-grade NAT further upstream could rewrite them again, which the simplified model omits.
+5. GitHub server: public IP example 140.82.112.3, SSH daemon on TCP port 22, authentication by SSH key check against the user's GitHub identity. Session established; code pushes securely inside SSH.
+
+### WhatsApp voice call, UDP port 3478 and TCP port 5222
+
+1. Laptop, WhatsApp client: same MAC and private IP as above, ephemeral source port example 56001. Services in the source: STUN/TURN on UDP port 3478 and XMPP-style signalling on TCP port 5222. Packet before NAT, as an example: source 192.168.1.101:56001, destination 157.240.20.60:3478, for the edge-mqtt.facebook.com service domain.
+2. Access point and switch: same Layer 2 forwarding as the GitHub flow.
+3. Router, NAT: source rewritten to the public example 198.51.100.10:41001, destination unchanged at 157.240.20.60:3478.
+4. ISP and Internet routers: forward by IP header; the service stays UDP port 3478 in this simplified trace.
+5. WhatsApp servers: public IP example 157.240.20.60, ports 5222 for signalling and call setup and 3478 for STUN/TURN and ICE traversal, authentication by WhatsApp account token. Session established; encrypted voice packets flow.
+- Corrections to the WhatsApp trace: the source calls the client a "WhatsApp Web App" in this note after calling it an app in the previous note; the trace is generic to a WhatsApp client, and WhatsApp Web calls in a browser use WebRTC paths that differ in detail. Port 3478 is the STUN/TURN traversal port; media itself after ICE negotiation normally uses negotiated ephemeral UDP ports, directly peer to peer where possible or relayed through a TURN server where not, so "media stream on 3478" is a simplification. The port list is a source example, not a verified live WhatsApp port list. Encrypted voice packets are end-to-end encrypted; a TURN relay forwards them without decrypting them.
+
+### Recap, in the source's own terms, corrected
+
+GitHub push uses TCP port 22 for SSH. WhatsApp call uses UDP port 3478 for traversal and media negotiation plus TCP port 5222 for signalling in the source's model. At each hop, MAC addresses swap hop to hop, NAT rewrites private to public IP, ports identify sessions, DNS maps names to IPs before transport begins, and the final server authenticates the user. No dual-flow diagram was built from the source's closing offer, per the standing rule.
+
+## Address Management at Each Level — One Identity Versus Many Tables (Audited, Corrected)
+
+This section records the address-management note. Its thesis concept is kept: the end user holds one identity per interface at a time, intermediate devices hold tables of many identities, and servers multiplex many sessions.
+
+- End-user laptop: one MAC address and one IP address per interface at a time, but many ephemeral ports, one per socket, so one IP runs many sessions simultaneously. Corrections: a laptop commonly has several interfaces (Wi-Fi, Ethernet, VPN tunnel, loopback) and both IPv4 and IPv6 addresses, so "one address" means per interface, not per device; MAC randomization also means the Wi-Fi MAC is not necessarily fixed. The source's "Browser DNS = UDP/53" means the DNS query's destination port is 53; the browser's own source port is an ephemeral port, not 53.
+- Access point: one BSSID (MAC) per SSID, a client association table holding each client's MAC and session, and per-client WPA2 session keys. It does not rewrite IPs; it remembers many MACs and forwards frames. Layer 2 forwarding.
+- Switch: a CAM table mapping every learned MAC address to a port. Correction to the source's example: its second example MAC, FF:GG:HH:II:JJ:22, is not a valid MAC address, because G, H, I, and J are not hexadecimal digits. A valid second example would be 22:33:44:55:66:77, mapped in the source's illustration to port 7, while the laptop's AA:BB:CC:DD:EE:11 maps to port 5. The switch holds many MAC identities at once but has no IP knowledge in its basic Layer 2 role.
+- Router or SD-WAN edge: LAN IP 192.168.1.1, WAN public example 198.51.100.10 (TEST-NET-2), and a NAT table mapping many private users to one or more public addresses, for example 192.168.1.101:55001 to 198.51.100.10:40001 and 192.168.1.102:55002 to 198.51.100.10:40002. Layer 3 routing plus NAT translation.
+- ISP core routers: routing tables with many networks. A full BGP table holds hundreds of thousands of IPv4 prefixes and, with IPv6, on the order of a million routes in total, with next-hop MACs valid only for the local link. ISPs forward by prefix, not by tracking individual users.
+- DNS servers: caches holding many FQDN to IP mappings, and, at authoritative servers, zone files holding A, AAAA, MX, NS, and other records. A laptop queries one resolver at a time, but the resolver and the authoritative servers each hold many records.
+- Destination servers: one service can have many public IPs behind load balancers, each service listens on fixed ports (GitHub SSH TCP 22, GitHub HTTPS TCP 443, WhatsApp call UDP 3478 and TCP 5222 in the source's model), and millions of client sessions are multiplexed by the four-tuple of source IP, source port, destination IP, and destination port, together with the protocol.
+- No per-device table-flow illustration was built from the source's closing offer, per the standing rule; the table above is in text.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -5896,6 +6027,18 @@ Full section: Technology.md, "Authentication Chain — From Wi-Fi to Final Desti
 
 Full sections: Technology.md, "After AP Authentication — Switch, Router, and Where DNS Lives" and "Worked Examples — WhatsApp Call and GitHub Push". Business points only: the AP-switch-router chain is a cost and failure-domain map (a combined home box hides three failure points in one device; an enterprise chain separates them for troubleshooting and redundancy). DNS placement is a control point: a private resolver inside a VPN or enterprise can enforce internal names and filtering, while a public resolver cannot. The worked examples show why port and authentication choices are product decisions: SSH keys versus tokens for Git, and UDP real-time media versus TCP for Git transfer, each with different firewall, NAT, and support implications.
 
+## DNS Hardware/Software and Path Identity — Business Angle (Condensed, No Duplication)
+
+Full sections: Technology.md, "DNS — Hardware Path and Software Side" and "Identity Along the Path — MAC, IP, Port, FQDN, Certificate".
+
+- DNS placement is a vendor and control decision: a home router forwarder, an SD-WAN policy edge, an ISP recursive resolver, and an authoritative provider such as Route 53 are four different services with four different contracts, latencies, and failure modes. Choosing among them is not a technical detail; it decides who can see queries, who can filter them, and who is blamed when resolution fails.
+- Identity scope is a privacy and audit lesson: MAC addresses are hop-local and increasingly randomized, private IPs are LAN-local, public IPs are globally routable but NAT-shared, ports are session-local, DNS records live for a TTL, and certificates live for a validity period. No single identifier follows a user end to end, so an audit trail must join several identifiers with timestamps, and a privacy policy must not promise that a MAC alone identifies a person.
+- The access-point correction matters commercially: a vendor claiming an access point "rewrites identity" is describing bridging incorrectly; procurement should ask what the device actually forwards, filters, and logs at Layer 2 versus Layer 3.
+
+## Parallel Trace and Address Management — Business Angle (Condensed)
+
+Full sections: Technology.md, "Parallel Trace — GitHub Push (SSH) and WhatsApp Call, With Addresses at Each Hop" and "Address Management at Each Level — One Identity Versus Many Tables". Business points only: NAT and PAT tables, CAM tables, routing tables, DNS caches, and server session tables are all capacity and state limits — a table that fills up drops new sessions, which is why sizing and ageing of those tables are operations concerns, not trivia. The invalid example MAC in the source (containing non-hexadecimal characters) is a documentation-quality lesson: example data in runbooks must be valid, or it will be copied into tests and configurations that fail for the wrong reason.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -6963,6 +7106,18 @@ Full section: Technology.md, "Authentication Chain — From Wi-Fi to Final Desti
 
 - After AP authentication: laptop, AP (Layer 2), switch (MAC to port), router (Layer 3, NAT), ISP, server; DNS lives in local cache, /etc/hosts, the DHCP-supplied resolver (often the gateway as forwarder, or a private VPN resolver), and the global root, TLD, authoritative hierarchy.
 - Worked examples: WhatsApp call resolves a Meta service domain, then UDP with SRTP media and token authentication; GitHub push resolves github.com, then TCP to port 22 (SSH keys) or 443 (HTTPS tokens), with Git objects inside the encrypted session. All IPs, ports, and the example MAC are illustrations, not a captured session.
+
+## DNS Hardware/Software and Path Identity — Combined View (Condensed)
+
+Full sections: Technology.md, "DNS — Hardware Path and Software Side" and "Identity Along the Path — MAC, IP, Port, FQDN, Certificate". Business angle: Bussiness.md, "DNS Hardware/Software and Path Identity — Business Angle".
+
+- DNS software: laptop stub resolver, cache, /etc/hosts, glibc or systemd-resolved (127.0.0.53 stub on modern Ubuntu); server software BIND, NSD, PowerDNS holding A, AAAA, MX, TXT, NS, SOA, and CNAME records.
+- DNS hardware path: laptop stub, access point (Layer 2, no DNS service), switch (Layer 2, no DNS), router or SD-WAN edge (forwarder, cache, policy), ISP recursive resolver, root, TLD, authoritative.
+- Identity per hop: laptop MAC (48-bit, OUI plus vendor-assigned, randomized in modern Wi-Fi), private IP (mask-dependent split), ephemeral port (socket), access point BSSID and management IP, switch CAM table, router LAN and WAN IPs with NAT and PAT, ISP public IPs (TEST-NET examples in the source), DNS recursive and authoritative identities, destination public IP, port, and TLS or SSH cryptographic identity.
+- Corrections carried over: access points bridge without rewriting endpoint MACs or IPs; ISP core forwarding is IP-based but middleboxes can inspect more; WhatsApp ports and the GitHub nameserver example are source examples, not live-verified values.
+
+- Parallel trace: GitHub SSH from 192.168.1.101:55001 to 140.82.112.3:22, NAT to 198.51.100.10:40001, SSH key authentication; WhatsApp call from 192.168.1.101:56001 to 157.240.20.60:3478, NAT to 198.51.100.10:41001, signalling on TCP 5222 and token authentication. All values are source examples; media ports are negotiated by ICE, not fixed at 3478.
+- Address management: laptop one MAC and IP per interface with many ports; access point many client MACs; switch CAM table; router NAT table; ISP BGP prefix tables; DNS caches and zones; servers multiplexing by source IP, source port, destination IP, destination port, and protocol. The source's second switch example MAC is invalid (non-hexadecimal characters) and is corrected to a valid example in Technology.md.
 
 ## Business Promotion — Combined View (No Diagram)
 

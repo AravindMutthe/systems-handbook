@@ -6860,6 +6860,27 @@ Pointer: full section in Technology.md. Business and combined angles are in Buss
 - WhatsApp call uses UDP real-time media with SRTP. Example: voice packets are end-to-end encrypted and forwarded by routers without being decrypted at each hop.
 - GitHub push uses SSH port 22 with keys or HTTPS port 443 with a token. Example: the same repository can be pushed over either, with different authentication.
 
+## DNS Hardware/Software and Path Identity — Elaborated Key Points (New Gaps Only)
+
+Pointer: full sections in Technology.md. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings. Parts 2 and 3 of this file carry only pointers for this batch, per the rule.
+
+- A laptop has a stub resolver, not a DNS database. Example: it checks cache and /etc/hosts, then forwards to the DHCP-supplied resolver.
+- systemd-resolved uses a local stub at 127.0.0.53. Example: /etc/resolv.conf on modern Ubuntu is commonly a symlink to the stub, not a direct upstream list.
+- Access points and switches have no DNS service for clients. Example: they forward frames, and DNS is first served at the router, SD-WAN edge, or ISP resolver.
+- Authoritative software is BIND, NSD, or PowerDNS. Example: GitHub's zone records live in its authoritative servers, not on your laptop.
+- A MAC is 48 bits: OUI plus vendor-assigned bits, and it can be randomized. Example: a phone's Wi-Fi MAC may differ between networks for privacy.
+- A private IP split depends on the subnet mask. Example: 192.168.1.101 is host 101 only under a /24 mask.
+- An access point bridges without rewriting endpoint addresses. Example: the laptop's MAC remains the logical source for its traffic across the bridge.
+- NAT rewrites address and, with PAT, port. Example: 192.168.1.101 with an ephemeral port becomes a public address with a mapped port at the gateway.
+- DNS records have different jobs: A for IPv4, AAAA for IPv6, NS for nameservers, SOA for zone timing. Example: an SOA serial change signals a zone update to secondary servers.
+- A certificate is a session cryptographic identity, not a personal passport. Example: a TLS certificate proves the server's domain, not the identity of the person using the browser.
+
+- Parallel trace, GitHub: packet before NAT 192.168.1.101:55001 to 140.82.112.3:22, after NAT 198.51.100.10:40001 to 140.82.112.3:22. Example: NAT may preserve or remap the source port.
+- Parallel trace, WhatsApp: packet before NAT 192.168.1.101:56001 to 157.240.20.60:3478, after NAT 198.51.100.10:41001. Example: port 3478 is traversal, while media ports are negotiated by ICE.
+- Address management: one user, many tables. Example: a switch CAM table holds your MAC on port 5 and another laptop's MAC on port 7 at the same time.
+- A MAC address uses hexadecimal digits only. Example: FF:GG:HH:II:JJ:22 is invalid, because G, H, I, and J are not hex digits; 22:33:44:55:66:77 is valid.
+- Servers multiplex by four-tuple plus protocol. Example: two users can both connect to GitHub port 22 at once because their source IPs and ports differ.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9511,6 +9532,11 @@ See Part 1 of this file for the elaborated key points on where protocols reside.
 
 See Part 1 of this file for the elaborated key points on the authentication chain. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
+
+## DNS and Path Identity — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points on DNS and path identity. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10923,6 +10949,11 @@ See Part 1 of this file for the elaborated key points on where protocols reside.
 ## Authentication Chain — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points on the authentication chain. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
+
+## DNS and Path Identity — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points on DNS and path identity. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
 ## Business Promotion — Combined View (No Diagram)
 
