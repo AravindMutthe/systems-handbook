@@ -6778,6 +6778,30 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
 - Stack evolution, AI direction: intent-based networking, telemetry, and closed-loop control are real directions, but LLM-controlled autonomous networks are not a deployed standard. Example: a controller can auto-apply an intent policy today, but that is not the same as a network governed by a large language model.
 - Full versions: compression.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
 
+## User Accounts and NIC Control, and American Network Technology — Elaborated Key Points (New Gaps Only)
+
+- NIC control, capability: the kernel permission for interface changes is CAP_NET_ADMIN, not the username root itself. Example: a binary given `cap_net_admin+eip` can run `ip link set` without full sudo, while a normal user without it gets "Operation not permitted".
+- NIC control, MAC change: many drivers require the interface down before a MAC change. Example: `sudo ip link set dev <interface> down`, then set the address, then bring it up again, using the real predictable name, not eth0.
+- NIC control, groups: netdev membership alone does not grant `ip link` control on Ubuntu, and sudo membership alone grants nothing without a sudoers rule. Example: check what NetworkManager actually allows with `nmcli general permissions`.
+- NIC control, capture: Wireshark capture works through dumpcap with CAP_NET_RAW and CAP_NET_ADMIN, restricted to the wireshark group. Example: add the user to the wireshark group and log out and in, instead of running Wireshark as root.
+- NIC control, daemons: NetworkManager runs as root and authorizes users through polkit, while wpa_supplicant handles Wi-Fi authentication. Example: a local desktop user can often join Wi-Fi through polkit without sudo, but system routes still need admin authorization.
+- American networks, ARPA: ARPA was created on 7 February 1958 after Sputnik 1 on 4 October 1957. Example: ARPA became DARPA in 1972, briefly ARPA again in 1993, and DARPA again in 1996.
+- American networks, packet switching: Baran in the United States and Davies in the United Kingdom developed packet switching independently. Example: ARPANET demonstrated it at scale, it did not invent it alone.
+- American networks, Web correction: the Web was invented by Tim Berners-Lee at CERN in 1989, in Europe, not in the United States. Example: the first United States web server came later, at SLAC in December 1991.
+- American networks, SWIFT correction: SWIFT is a Belgian cooperative from 1973 that carries payment instructions and does not move money. Example: a bank sends a SWIFT message, then settlement moves through correspondent accounts separately.
+- American networks, cloud: AWS, Azure, and Google Cloud operate global data centers and virtual networking, but they are not the only global clouds. Example: Alibaba Cloud and regional clouds also operate globally, and some systems stay on premises for sovereignty.
+- Full versions: compression.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
+
+## From DARPA to Silicon Valley — Elaborated Key Points (New Gaps Only)
+
+- Five-system model: government funds research, universities supply engineers and standards, companies commercialize, finance supplies venture capital and public markets, and global markets buy and improve. Example: a university protocol becomes a company product, then a venture-backed business, then a global service.
+- Venture capital stages: research, startup, growth, expansion, maturity, and reinvestment, each with a different funding source. Example: venture capital funds growth and manufacturing, not the original research, which usually comes from grants or founder capital.
+- India bank example: a bank buys hardware, licences, and cloud, and earns customer use through digital banking, but the router sale is not the payment itself. Example: paying for a Cisco router is a technology purchase, while a SWIFT message is a payment instruction settled separately.
+- Layer control: semiconductors, network equipment, operating systems, protocols, coordination, cloud, financial networks, and capital markets each have different controllers. Example: IETF and IEEE set open protocol standards that nobody owns, while AWS sells cloud infrastructure as a subscription.
+- X1 Yoga chain: Firefox or SSH, Ubuntu TCP/IP stack, iwlwifi or e1000e driver, physical NIC, access point, switch, router, ISP and Internet exchange, and cloud or enterprise server. Example: one banking website visit crosses all of those layers and organizations.
+- Final chain framing: Industrial Revolution to telegraph to telephone to ARPANET to TCP/IP to NICs and routers to ISPs to distributed servers to cloud to financial networks to AI infrastructure. Example: use it as a teaching timeline, not as proof that each step caused the next in a straight line.
+- Full versions: compression.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9409,6 +9433,11 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
 - Business unique points, elaborated in full in compression.md Part 2: business extension steps, business-type network architectures, business-as-mini-government analogy, NOS choice by business type, and permissions by role.
 - Full elaborated key points: this elaborated.md Part 1 section. Full business sections: compression.md Part 2.
 
+## User Accounts and NIC Control, and American Network Technology — Business Angle (Pointer, New Gaps Only)
+
+- Business unique points, elaborated in full in compression.md Part 2: NIC privilege by role, daemon model, group corrections, the American commercialization arc, SWIFT correction, Web correction, and present-day market correction.
+- Full elaborated key points: this elaborated.md Part 1 section. Full business sections: compression.md Part 2.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10800,6 +10829,11 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 ## Extension, Architecture Paper, Models, TCP/IP, and Stack Evolution — Combined View (Pointer, New Gaps Only)
 
 - Combined unique points, elaborated in full in compression.md Part 3: the combined extension pattern, combined NOS choice by platform, combined telegraph-to-AI arc, combined system-model table, combined device view, and combined stack evolution timeline.
+- Full elaborated key points: this elaborated.md Part 1 section. Full combined sections: compression.md Part 3.
+
+## User Accounts and NIC Control, and American Network Technology — Combined View (Pointer, New Gaps Only)
+
+- Combined unique points, elaborated in full in compression.md Part 3: privilege as the combined rule, the combined ARPA-to-cloud arc, and the combined DARPA-to-Silicon Valley chain.
 - Full elaborated key points: this elaborated.md Part 1 section. Full combined sections: compression.md Part 3.
 
 ## Business Promotion — Combined View (No Diagram)
