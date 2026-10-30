@@ -660,6 +660,42 @@ Audited kernel branches, read together, without repeating the full technical sec
 - No diagram or essay expansion was made, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
+## Extension — Combined View (Corrected, De-duplicated)
+
+- Extension is the same pattern across business, government, kernel, and network in the source framework: add a module, branch, department, or protocol without breaking the core, through Identify, Integrate, Standardize, and Govern. Kernel modules, government ministries and Acts, business divisions and subsidiaries, and network protocols are the parallel mechanisms, analogy only.
+- Business plus technology: a new business unit is like a kernel module, semi-autonomous but bound by core rules; a board approval is like maintainer review, analogy only. Real corrections carry across both: user-space ABI is stable, in-kernel API is not; Apple designs, TSMC fabricates; Prime 2005 predates AWS 2006; OECD AI Principles are non-binding; 6G self-healing routing is speculative.
+- Full technical detail: Technology.md, "Extension — How Systems Grow Without Breaking". Business angle: Bussiness.md, "Extension — Business Angle".
+
+## Extension Architecture Paper — Combined View (Corrected, De-duplicated)
+
+- Combined outline: a 10-section paper proposal, from unified extension, through telegraph-to-AI history, kernel, business, government, network, AI, parallels, case studies, and conclusion, recorded as an outline in text only, with no paper and no diagram generated.
+- Combined NOS view: choose by platform, not by brand alone. Switch ASIC performance needs SONiC or a hardware NOS; routing, firewall, and VPN on x86 or VM fits VyOS; edge and small networks fit OpenWrt, pfSense, and OPNsense; virtual networks fit Linux plus OVS and OVN with an SDN control plane; data-center switching fits SONiC, Cumulus Linux as an NVIDIA data-center NOS, and Arista EOS; carrier routing fits Junos and Nokia SR OS, while Cisco NX-OS is data-center and IOS XR is Cisco carrier routing; DentOS fits edge and campus, not the SONiC data-center niche.
+- Full technical detail: Technology.md, "Extension Architecture Paper — Outline and Best Networking OS". Business angle: Bussiness.md, "Extension Architecture Paper — Business Angle".
+
+## From Telegraph Networks to AI Kernels — Combined View (Corrected, De-duplicated)
+
+- Combined arc: telegraph, telephone, Internet, cloud, and AI kernel, in text only. Each layer adds capability, with business departments, government ministries and laws, kernel scheduler, memory, I/O, and security, and network physical, virtual, cloud, and AI layers stacked in the source's view, analogy only.
+- Combined corrections: circuit switching is not packet switching; DARPA and IETF are not a legislature; ICANN is not a court; ISP pricing is not tax; root is UID 0, not a constitutional override; AI kernel branches are proposals, not mainline subsystems; NSX and Calico are virtual-networking tools, not NOS; BalenaOS is a container OS, not a NOS; SONiC plus DPDK plus eBPF is an architecture, not a product; no PDF or DOCX was made.
+- Full technical detail: Technology.md, "From Telegraph Networks to AI Kernels — The Extension Architecture Paper". Business angle: Bussiness.md, "From Telegraph Networks to AI Kernels — Business Angle".
+
+## System Models — Combined View (Corrected, De-duplicated)
+
+- Combined table: Internet, TCP/IP layered and decentralized, IETF and ICANN; government, constitutional separation, executive, legislative, judicial; India, federal parliamentary republic, Union, State, and Concurrent Lists, Constitution of India in force 26 January 1950; kernel, monolithic modular, core plus loadable modules, maintainers and community. Extensions are protocol updates, amendments, kernel modules, and constitutional amendments, analogy only.
+- Combined corrections: RFC 7282 rough consensus is verified and is not a vote; India is quasi-federal with Union law prevailing on Concurrent List conflicts; monolithic means shared kernel address space, modular means loadable organisation; root is privilege, not legal authority; not all governments use the three-branch constitutional model.
+- Full technical detail: Technology.md, "System Models — Internet, Government, India, and Kernel". Business angle: Bussiness.md, "System Models — Business Angle".
+
+## TCP/IP Structure of a Network Device — Combined View (Corrected, De-duplicated)
+
+- Combined device view: application, transport, internet, and link layers, with user-space apps calling sockets, the kernel stack processing TCP, UDP, and IP, drivers framing data, and the NIC transmitting physically. Configuration spans IP, subnet, gateway, DNS, MAC, MTU, ports, firewall, routing, and DHCP or static assignment, with owners configuring and users operating within policy.
+- Combined corrections: use modern commands `ip addr`, `ip route`, and `ss`, not legacy `ifconfig`, `route`, and `netstat` where they are absent; MTU 1500 is Ethernet default, not universal; 8.8.8.8 is an example resolver; SCTP is not universally enabled; TLS sits above TCP; IETF and ICANN coordinate, they do not own the network.
+- Full technical detail: Technology.md, "TCP/IP Structure of a Network Device". Business angle: Bussiness.md, "TCP/IP Structure of a Network Device — Business Angle".
+
+## Communication Device and Network Stack Evolution — Combined View (Corrected, De-duplicated)
+
+- Combined evolution in text: optical signalling, Chappe 1792, then electrical telegraph, transcontinental link 24 October 1861, then telephone 1876, then wireless, Marconi 1894 to 1895 and Radiotelegraph Convention Berlin 1906, then packet networks, ARPANET first message "lo" 29 October 1969 and four nodes by 5 December 1969, then broadband and Wi-Fi, then cellular 1G to 5G, then cloud, SDN, and overlays, then AI-era intent-based and closed-loop networking as a direction, not a finished standard.
+- Combined corrections: pre-TCP layers are analogies; S1 and X2 are LTE, not 5G; 6G is research; eBPF is kernel technology and P4 is a language, not devices; LLM-controlled autonomous networks are a direction, not a standard; no visual timeline was built.
+- Full technical detail: Technology.md, "Communication Device and Network Stack Evolution — Pre-Telegraph to AI Era". Business angle: Bussiness.md, "Communication Device and Network Stack Evolution — Business Angle".
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.
