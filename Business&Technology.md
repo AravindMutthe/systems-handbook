@@ -517,6 +517,23 @@ Market flows and regulation, read together: a product moves through innovation, 
 - Bodies, laws, markings, and frameworks are kept distinct: ISO/IEEE/IETF/3GPP/ETSI/BSI/BIS/JIS are standards bodies; FCC/FDA/NHTSA/TRAI/Ofcom/MIIT/MIC are regulators; CE is a marking; REACH/RoHS/WEEE are regulations/directives; CCC is a scheme; SOC 2, PCI-DSS, Euro NCAP, and GFSI are framework, standard, rating, or benchmarking, not laws. 6G is in progress, not deployed. No diagram was drawn, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
+
+## Business Placement & UI Frameworks — Combined View (No Diagram)
+
+### Headline
+Business placement and UI history, read together: where a product sits in the regulation hierarchy decides which gates it must clear, and which UI framework era and licence it chooses decides how portable it stays.
+
+### Combined table
+- Placement: Tern → infrastructure/platform (ISO, GDPR, cloud compliance); GradeSpot → SaaS, B2B EdTech (FERPA, SOC 2, LTI); HighGradesApp → consumer app (GDPR/CCPA, PCI-DSS, app-store rules) — all as source placements, not verified live facts.
+- Execution channels: suppliers (Firebase, AWS, GitHub, Jira) → platforms (app stores, web hosting) → channels (schools, universities, direct-to-student) → consumers (students, teachers, institutions).
+- UI eras: telegraph hardware (Morse, teletype, rotary) → mainframe terminals (ASCII encoding, IBM 3270, VT100) → PC GUIs (X Window, Win32, Toolbox, AWT/Swing) → web (HTML/CSS/JS, W3C, jQuery, Flash/Silverlight) → mobile/cloud (Bootstrap, React, Vue, Flutter, UIKit, Android SDK, Lightning, Ionic/Cordova) → 5G/modern (React, Vue, Svelte, Next.js, Tailwind, Carbon, Flutter, React Native, Jetpack Compose, SwiftUI, Three.js, Babylon.js, WebXR, Material, Fluent).
+- Public/open versus vendor-controlled: open means community or open-source and portable (React, Vue, Flutter, Tailwind, Carbon, Jetpack Compose, Oracle JET); vendor-controlled means ecosystem-locked (SwiftUI, UIKit, Fluent UI, Salesforce Lightning), even when free to use. Material Design is semi-open, Google-led.
+- Business fits, as proposals: Tern — React, Next.js, Tailwind, Carbon; GradeSpot — React, Angular, Bootstrap, plus LTI/SCORM integration; HighGradesApp — Flutter, React Native, Jetpack Compose, SwiftUI.
+
+### Corrections carried over
+- Recorded Tern is a ternary-computing platform with Next.js/React frontends, not the source's generic label. GradeSpot and HighGradesApp placements are unverified proposals. Morse, ASCII, HTML, LTI, and SCORM are codes, encodings, markup, or integration standards, not UI frameworks. AngularJS is legacy, Flash and Silverlight are discontinued, and no diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.

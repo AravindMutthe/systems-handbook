@@ -1300,6 +1300,24 @@ For a business, market flows are how value moves, and standards are the gate at 
 - Standards bodies develop standards; regulators enforce law. CE is a marking, REACH and RoHS/WEEE are regulations/directives, CCC is a certification scheme, and SOC 2, PCI-DSS, Euro NCAP, and GFSI are frameworks, ratings, or benchmarking, not laws or regulators. GDPR/CCPA are laws; ISO standards are standards.
 - Full technical detail: Technology.md, "Market Flows & Global Standards — Technology Angle". Combined view: Business&Technology.md, "Market Flows & Global Standards — Combined View".
 
+
+## Business Placement & UI Frameworks — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+For a business, placement in the hierarchy is a compliance and channel question: which standard, regulator, store, and school or institution gate must be cleared before a product can be sold, and which UI framework choice locks a product into which vendor's ecosystem.
+
+### Business placement, in business terms
+- Tern (source placement): infrastructure and platform — ISO 27001, GDPR, and cloud compliance, with cloud providers (Firebase, AWS) as suppliers and GitHub/Jira as developer tools.
+- GradeSpot (source placement): B2B SaaS for schools and universities — EdTech regulation, SaaS data privacy, FERPA where US school records are involved, SOC 2, and LTI integration, sold through schools and universities.
+- HighGradesApp (source placement): B2C mobile app for students — app-store compliance, data privacy (GDPR/CCPA), and PCI-DSS if subscriptions are monetized, sold direct to students.
+- Enforcement, in business terms: school deployment brings government education-department checks; multi-country sale brings each country's education ministry and privacy regulator separately; cloud certification does not transfer a tenant's duties to AWS, GCP, or Azure.
+- UI choice, in business terms: a public/open framework (React, Flutter, Tailwind, Carbon) keeps a product portable across vendors; a vendor-controlled framework (SwiftUI, Fluent UI, Salesforce Lightning) trades portability for that vendor's ecosystem, store, and tooling. LTI/SCORM, Classroom APIs, and Teams Edu kits are integration choices, not UI frameworks, and they decide whether a school can adopt the product at all.
+- Source best fits, as proposals only: React plus Tailwind/Carbon for Tern, React/Angular plus LTI/SCORM for GradeSpot, Flutter/SwiftUI for HighGradesApp.
+
+### Corrections carried over
+- These placements are source proposals, not verified live facts. Recorded Tern is a ternary-computing platform with Next.js/React frontends, not a generic AI hardware label; GradeSpot is recorded as an IT Solutions company, not verified as B2B school SaaS; HighGradesApp is a case study in notes, not verified as a live consumer app. Jetpack Compose and Oracle JET are open source and vendor-led, not private licensed frameworks; AngularJS is legacy; Flash and Silverlight are discontinued.
+- Full technical detail: Technology.md, "Business Placement & UI Frameworks — Technology Angle". Combined view: Business&Technology.md, "Business Placement & UI Frameworks — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
