@@ -1,3 +1,5 @@
+R18 build note: ONLY these sections are main presentation — Original headlines, Original notes, Detailed explanation, Diagram, Related topics. File headers, held-back lists, and the Archive appendix at the end are INTERNAL / ARCHIVE, not main presentation. Render the Archive appendix ONLY inside "Original images +" on that page. Main presentation must contain no [Added], labelled, this-card/that-card, or provenance language.
+
 # Batch 3 notes — HELD, not published
 
 Status: privacy = private, reviewStatus = draft, publication NOT
@@ -53,7 +55,7 @@ inside "Original images +" is development's build step.
 ### Original headline first
 **Tech leadership Era**
 
-### Enhanced headline [Added, labelled, related only]
+### Enhanced headline
 Who leads each era: org structure, tech strategy, and leadership mindset
 
 ### Story place
@@ -78,7 +80,7 @@ technical lens), institutions-markets, infrastructure-operations.
   - Core focus = Building hypergrowth
   - Page ends here. No further text for this era on this page.
 
-### [Added] explanation
+### Detailed explanation
 Leadership is not a single style. In each era, the same three
 questions get a different answer: how is the organisation
 structured, what is the tech strategy, and what mindset does
@@ -91,7 +93,7 @@ interoperability protocols as the dev work. In the internet /
 web / cloud era, the page starts with hypergrowth and stops.
 That stop is completed in the Future completion section below.
 
-[Added, labelled distinction, under R14 — not one hierarchy:]
+
 The central standards bodies in the completion (ICANN, IETF,
 W3C) are not one body. ICANN allocates names and numbers,
 IETF sets Internet technical standards, W3C sets web
@@ -101,7 +103,7 @@ not one central authority, and the same distinction applies
 to national regulators (FCC / TRAI) and to IEEE and 3GPP
 in later eras.
 
-### Enhanced diagram [Added, different style, never replacing the original]
+### Diagram
 [Historical] 1940's Telegraph → 1980-1990 Distribution →
 2000 Internet / web / cloud (starts, page ends).
 Per era, same three columns:
@@ -112,13 +114,13 @@ Per era, same three columns:
   decentralization (heterogenous systems, distribution peers);
   [Depends on] interoperability protocols ⇒ that decentralization.
 - Era 3: [Sequence] Core focus = Building hypergrowth –>
-  [completed in Future completion section below, [Added]].
+  [completed in Future completion section below, ].
 
-### Horizontal links
-- Leadership / org thread → Batch 1, Card A (origins, business
-  organisation) and Card E (building / operating / approving)
-- Telegraph thread → Batch 2, Card H (UI evolution, telegraph era)
-- Distribution / decentralization thread → Batch 3, Card J
+### Related topics
+- Leadership / org thread → Batch 1, Why networks exist: origins and business need (origins, business
+  organisation) and Building, operating and approving a product (building / operating / approving)
+- Telegraph thread → Batch 2, How the interface changed: from telegraph keys to real-time, XR, and AI UI's (UI evolution, telegraph era)
+- Distribution / decentralization thread → Batch 3, The same six eras, three lenses: interface, control, and how it is paid for
   (same eras, UI / control / business lenses)
 
 ### Archive sources
@@ -126,13 +128,13 @@ hb-batch3-001 — 1000103113_65_jo8x.jpg. Full transcription in
 batch3-intake.md. Source date: null (no date on page; era labels
 are not source dates).
 
-### Future completion — completed 2026-10-29 [Added]
+### Future completion — completed 2026-10-29
 Full completion in batch3-tech-leadership-completion.md, same
 simple style, per era: Core business and focus | Org structure |
 Tech strategy | Leadership mindset | Business model / strategy.
 Original ends at 2000, "Core focus = Building hypergrowth".
-Completion, all [Added], grounded in his own era pages
-(Batch 3 Card J, Batch 2 Card H), proposed fields marked as such:
+Completion, all , grounded in his own era pages
+(Batch 3 The same six eras, three lenses: interface, control, and how it is paid for, Batch 2 How the interface changed: from telegraph keys to real-time, XR, and AI UI's), proposed fields marked as such:
 - Era 3 — 2000 Internet / web / cloud: Building hypergrowth
   [Original core focus]; org = distributed product / platform
   teams + central standards bodies (ICANN, IETF, W3C); tech =
@@ -156,19 +158,19 @@ Completion, all [Added], grounded in his own era pages
 Nothing after 2000 above is original. Fields marked proposed
 are Leo's, not on the owner's pages. No specific prices, model
 versions, or company org claims are made. The owner can overrule
-any [Added — proposed] field, especially org structure and
+any field, especially org structure and
 leadership mindset for Eras 3–5, which his pages do not state
 directly. Full completion in
 batch3-tech-leadership-completion.md.
 
 ---
 
-## Research dimensions — expanded comparison [Added, not original]
+## Research dimensions — expanded comparison
 
-This section expands Card I only. It is not on the owner's
+This section expands Who leads each era: org structure, tech strategy, and leadership mindset only. It is not on the owner's
 original page, and it does not replace the original eras.
-Every example below comes from Cards A–K or from Batch 1–2
-notes; every interpretation is labelled [Added]. Sources
+Every example below comes from Why networks exist: origins and business need–K or from Batch 1–2
+notes; every interpretation is labelled . Sources
 used to check the definitions (link-state, decentralization
 vs distributed, interoperability) are kept for the future
 content references page, not in this main text, per the
@@ -176,7 +178,6 @@ verification presentation rule.
 
 ### 1. Who decides what — five kinds of actor, not one hierarchy
 
-[Added, labelled distinction, under R14, expanded:]
 - Standards organizations decide HOW systems talk, not
   who may sell or operate them. IETF = Internet technical
   standards (TCP/IP). IEEE = electrical, electronics, and
@@ -185,34 +186,34 @@ verification presentation rule.
   across sectors. ICANN and RIRs are not standards bodies
   in the same sense: ICANN allocates names, RIRs allocate
   regional number resources. Example from notes: web era
-  lists ICANN, IETF, W3C together (Card J) — together on
+  lists ICANN, IETF, W3C together (The same six eras, three lenses: interface, control, and how it is paid for) — together on
   the page, different functions in fact.
 - Regulators decide WHETHER a system may operate in a
   market, and under what public rules. FCC (USA) and TRAI
   (India) are national regulators. Example: FCC approval
-  gates market entry for routers and phones (Card E);
-  FCC 1934 is an era mention on Card B, not a source date.
+  gates market entry for routers and phones (Building, operating and approving a product);
+  FCC 1934 is an era mention on Naming, addressing and regulation: directory to DNS, not a source date.
   A regulator does not write TCP/IP, and a standards
   body does not grant a licence.
 - Corporations decide WHAT to build, sell, and charge for,
   under company rules. Examples: Intel, Broadcom, Nvidia
-  (silicon, Card C); Cisco, Juniper, Arista, Fortinet,
+  (silicon, Hardware supply and the NIC endpoint); Cisco, Juniper, Arista, Fortinet,
   Dell EMC, Huawei, ZTE (government network vendors,
-  Card G); vendors and manufacturers in general (Cards
-  C, G); app-store owners and cloud providers (Card J).
+  Who controls and who builds: government layer, global oversight, and government networks); vendors and manufacturers in general (Cards
+  C, G); app-store owners and cloud providers (The same six eras, three lenses: interface, control, and how it is paid for).
   Their private rule is the "Bussiness Controller
-  (Private) (company rules)" on Card J — a private
+  (Private) (company rules)" on The same six eras, three lenses: interface, control, and how it is paid for — a private
   gate, distinct from a public regulator's gate.
 - Infrastructure operators decide HOW traffic actually
   runs, day to day. Examples: ISPs (carrier) scheduling
-  bandwidth (Card K); ISO/RTO scheduling electricity
-  (Card K); telco-ISPs and cloud/ISP operators (Cards
+  bandwidth (One scheduler model: tasks, resources, and who allocates them fairly); ISO/RTO scheduling electricity
+  (One scheduler model: tasks, resources, and who allocates them fairly); telco-ISPs and cloud/ISP operators (Cards
   C, D); government agencies operating government
-  networks (Card G). An operator may be public, private,
-  or semi-public (ICANN semi, ISPs private, on Card K).
+  networks (Who controls and who builds: government layer, global oversight, and government networks). An operator may be public, private,
+  or semi-public (ICANN semi, ISPs private, on One scheduler model: tasks, resources, and who allocates them fairly).
 - Technology communities decide WHAT is shared, in
   public, without a single owner. Examples from notes:
-  Apache and MySQL in the web stack (Cards I, J);
+  Apache and MySQL in the web stack (Who leads each era: org structure, tech strategy, and leadership mindset, J);
   browsers and web servers as shared infrastructure;
   open protocols (TCP/IP) that any vendor can implement.
   A community does not regulate a market, and it does
@@ -227,9 +228,7 @@ Contradiction: when they disagree, the same system
 can be technically open and economically closed —
 see §6 below.
 
-### 2. Terms clarified [Added]
-
-- Link-state — two meanings, do not merge them.
+### 2. Terms clarified - Link-state — two meanings, do not merge them.
   (a) In networking, link-state routing (e.g. OSPF):
   each router advertises the state of its own links,
   every router builds the same topology map, and each
@@ -240,8 +239,7 @@ see §6 below.
   a routing claim: in the telegraph era, the leader's
   focus is establishing one link, in one state, by one
   protocol. The page does not claim OSPF. Keep (a) and
-  (b) separate; (b) is original wording, (a) is [Added]
-  explanation of the networking term it echoes.
+  (b) separate; (b) is original wording, (a) is explanation of the networking term it echoes.
 - Decentralization — authority and decision-making
   spread away from a single centre, to multiple
   authorities. It is about WHO decides, not where
@@ -251,16 +249,16 @@ see §6 below.
   or geography. A distributed system CAN still have a
   central authority (a cloud provider's distributed
   data centres, run by one company, with one Cloud IAM
-  gate, Card J). Distributed ≠ decentralized.
+  gate, The same six eras, three lenses: interface, control, and how it is paid for). Distributed ≠ decentralized.
 - Centralized systems — one authority controls
   everything, one main location, one policy engine.
-  Example: Govt PTT in the telegraph era (Card J);
-  Corporate IT Dept in the mainframe era (Card J).
+  Example: Govt PTT in the telegraph era (The same six eras, three lenses: interface, control, and how it is paid for);
+  Corporate IT Dept in the mainframe era (The same six eras, three lenses: interface, control, and how it is paid for).
 - Organizational hierarchy — levels of decision in
   an organisation, from the notes: C-suite → middle
   managers → team lead → supervisors → employees /
   workers, with engineering, operations, marketing,
-  and testing as functions (Cards A, E, I). Hierarchy
+  and testing as functions (Why networks exist: origins and business need, E, I). Hierarchy
   is not the same as centralization: a hierarchy can
   delegate (distribution era: centralised team managing
   heterogeneous, distributed systems), and a flat
@@ -273,13 +271,11 @@ see §6 below.
   data the same way. Cross-domain interoperability =
   organisations work together across boundaries.
   Example: heterogeneous systems in Era 2 needing
-  interoperability protocols (Card I); browsers +
+  interoperability protocols (Who leads each era: org structure, tech strategy, and leadership mindset); browsers +
   web servers + Apache + MySQL working together
-  because they share web standards (Card J).
+  because they share web standards (The same six eras, three lenses: interface, control, and how it is paid for).
 
-### 3. Comparison by research dimension [Added]
-
-Governance — central authority versus distributed
+### 3. Comparison by research dimension Governance — central authority versus distributed
 decision-making.
 Connection: governance is who may decide, at what
 level. Central: Govt PTT, FCC approval gate, C-suite.
@@ -308,7 +304,7 @@ Correlation: centralized architecture correlates with
 centralized control (mainframe, Corporate IT Dept).
 Contradiction: a system can be distributed in
 architecture and centralized in control — cloud
-(microservices, Kub + Terra, Card J) run on many
+(microservices, Kub + Terra, The same six eras, three lenses: interface, control, and how it is paid for) run on many
 nodes, but are gated by one Cloud IAM and one
 company's rules. Conversely, a system can be
 decentralized in control and still depend on a
@@ -322,8 +318,8 @@ whom, and on what terms. Monopoly: Govt PTT,
 telegraph era. Regulated operator: telco-ISP under
 FCC/TRAI, ISO/RTO for electricity. Competitive
 markets: vendors, manufacturers, direct buyers,
-cloud/AWS/GCP (Card C/D). Platforms: app stores,
-SaaS, API token (Card J) — a platform is a market
+cloud/AWS/GCP (Hardware supply and the NIC endpoint/D). Platforms: app stores,
+SaaS, API token (The same six eras, three lenses: interface, control, and how it is paid for) — a platform is a market
 with a private gatekeeper, not a free market.
 Correlation: open standards correlate with
 competitive markets (web: browsers, Apache, MySQL,
@@ -332,12 +328,12 @@ platform power (app store, Cloud IAM, API token).
 Contradiction: a platform can look like a market
 (many sellers, many buyers) while one gatekeeper
 decides entry, ranking, and payment — the business
-controller, private, company rules (Card J).
+controller, private, company rules (The same six eras, three lenses: interface, control, and how it is paid for).
 
 Technology — mainframes → client-server → Internet
 → cloud → AI.
 Connection: each era changes medium, framework,
-architecture, and payment together (Cards H, J).
+architecture, and payment together (How the interface changed: from telegraph keys to real-time, XR, and AI UI's, J).
 Mainframes: batch processing, Corporate IT Dept,
 accounting chargeback. Client-server: IT manager /
 LAN Admin, software licence → contracts. Internet /
@@ -363,7 +359,7 @@ Examples: proprietary — Corporate IT Dept systems,
 software licence, app-store rules, API token terms
 (company rules). Open — TCP/IP (IETF), web standards
 (W3C), Apache/MySQL, interoperability protocols for
-heterogeneous systems (Card I).
+heterogeneous systems (Who leads each era: org structure, tech strategy, and leadership mindset).
 Correlation: open interoperability correlates with
 more vendors, more competition, and slower, negotiated
 change. Proprietary correlates with faster, single-
@@ -377,7 +373,7 @@ guarantee open at the market layer.
 Leadership — control, coordination, scaling,
 platform governance, AI oversight.
 Connection: leadership is what the leader must do
-in each era, in Card I's three columns.
+in each era, in Who leads each era: org structure, tech strategy, and leadership mindset's three columns.
 Control (Era 1, telegraph): establish the link,
 the protocol, the state — one centre decides.
 Coordination (Era 2, distribution): a centralised
@@ -386,16 +382,15 @@ through interoperability protocols — control becomes
 coordination, not command.
 Scaling (Era 3, internet/web/cloud): hypergrowth —
 distributed product/platform teams + central standards
-bodies, leadership mindset = build for scale [Added —
-proposed].
+bodies, leadership mindset = build for scale .
 Platform governance (Era 4, mobile & cloud):
 small service teams + central platform / app-store /
 Cloud IAM gates, leadership mindset = product mindset
-[Added — proposed]. The leader now governs a platform,
+. The leader now governs a platform,
 not just a team or a network.
 AI oversight (Era 5, 5G & AI, till 2026): AI/platform/
 data/edge teams + central company rules, leadership
-mindset = orchestration mindset [Added — proposed]:
+mindset = orchestration mindset :
 deciding what AI decides, what humans decide, and
 what the edge decides, under MEC orchestration and
 service mesh, with API token as the billing gate.
@@ -414,9 +409,7 @@ Oversight therefore has to be both distributed
 company rules, in regulation, in standards) at
 once — and no single actor in §1 owns all of it.
 
-### 4. The central contradiction [Added]
-
-Decentralized infrastructure alongside centralized
+### 4. The central contradiction Decentralized infrastructure alongside centralized
 economic power — this is the contradiction that runs
 through all five dimensions above, and it is the
 point of the whole comparison.
@@ -428,7 +421,7 @@ network. Economically, power concentrates: app
 stores decide market entry, Cloud IAM decides access,
 AI models (GPT, Claude) are trained and billed by a
 few providers, and API token billing turns use into
-a metered, centrally priced resource (Card J).
+a metered, centrally priced resource (The same six eras, three lenses: interface, control, and how it is paid for).
 
 Examples, all from the notes:
 - Telegraph: infrastructure centralized (Govt PTT)
@@ -465,7 +458,7 @@ distinct, and why R14 matters: if standards,
 regulators, corporations, operators, and communities
 are collapsed into "the system" or "the hierarchy",
 the contradiction disappears from view — and with
-it, the question Card I actually asks: who leads,
+it, the question Who leads each era: org structure, tech strategy, and leadership mindset actually asks: who leads,
 who decides, and who pays, in each era.
 
 ---
@@ -475,7 +468,7 @@ who decides, and who pays, in each era.
 ### Original headline first
 **Eras UI Frameworks + Hardware controlled / SW**
 
-### Enhanced headline [Added, labelled, related only]
+### Enhanced headline
 The same six eras, three lenses: interface, control, and how it is paid for
 
 ### Story place
@@ -505,7 +498,7 @@ industrial-business-networks.
 - UI frameworks + hardware/SW control: AI models (GPT, Claude), GPU + IoT sensors + Edge nodes, AI pipeline MEC orchestration, (Pytorch, Tensorflow) service mesh
 - Bussiness controller: API Token
 
-### [Added] explanation
+### Detailed explanation
 The same six eras can be read three ways at once, and the page
 does exactly that. First, what interface and hardware control
 it: government PTT for telegraph, corporate IT for mainframes,
@@ -518,7 +511,7 @@ with every era: duration, chargeback, licence, advertising /
 subscription, SaaS + usage, API token. The interface changes,
 the control changes, and the payment model changes together.
 
-[Added, cross-domain vocabulary, grounded in this page:]
+
 The business controller is a market story, not only a payment
 list. The customer pays — by duration, by chargeback, by
 licence, by subscription, by SaaS usage, by API token. The
@@ -527,16 +520,16 @@ the customer pays for. The market is where that exchange
 happens, and regulation gates it — FCC / TRAI for telecom
 eras, ICANN / IETF / W3C for names, technical standards, and
 web standards, as distinguished above. Market, customer,
-vendor, and regulation are therefore words on this card, not
+vendor, and regulation are therefore words on this topic, not
 only in its business-controller column.
 
-[Added, labelled distinction, under R14:] ICANN, IETF, and
+ICANN, IETF, and
 W3C are not one body. IETF = Internet technical standards;
 ICANN = names / numbers allocation; W3C = web standards.
 The page lists them together as bodies; the functions above
 are the labels that keep them distinct.
 
-### Enhanced diagram [Added, different style, never replacing the original]
+### Diagram
 [Historical] Telegraph → mainframes → Client server →
 web 1.0 / 2.0 → mobile & / cloud → 5G & AI. Timeline only, NOT
 a dependency chain.
@@ -552,15 +545,15 @@ API token.
 mobile apps depend on APIs and cloud arch) are drawn separately
 inside that era, not as the timeline arrow.
 
-### Horizontal links
-- Same six eras → Batch 2, Card H (UI frameworks evolution,
-  telegraph → 5G) — Card J adds control and business lenses,
-  it does not replace Card H
-- IT manager / LAN Admin thread → Batch 1, Card D (management
+### Related topics
+- Same six eras → Batch 2, How the interface changed: from telegraph keys to real-time, XR, and AI UI's (UI frameworks evolution,
+  telegraph → 5G) — The same six eras, three lenses: interface, control, and how it is paid for adds control and business lenses,
+  it does not replace How the interface changed: from telegraph keys to real-time, XR, and AI UI's
+- IT manager / LAN Admin thread → Batch 1, The NIC and kernel stack, plus out-of-band management (management
   lane, OOB / BMC / CLI)
-- Standards bodies thread → Batch 2, Card G (ICANN / IETF,
-  under R14 distinguished) and Batch 1, Card B
-- Business controller / payment thread → Batch 3, Card K
+- Standards bodies thread → Batch 2, Who controls and who builds: government layer, global oversight, and government networks (ICANN / IETF,
+  under R14 distinguished) and Batch 1, Naming, addressing and regulation: directory to DNS
+- Business controller / payment thread → Batch 3, One scheduler model: tasks, resources, and who allocates them fairly
   (scheduler / allocator, in allocation terms)
 
 ### Archive sources
@@ -574,7 +567,7 @@ batch3-intake.md. Source date: null.
 ### Original headline first
 **Project scheduler**
 
-### Enhanced headline [Added, labelled, related only]
+### Enhanced headline
 One scheduler model: tasks, resources, and who allocates them fairly
 
 ### Story place
@@ -600,7 +593,7 @@ technical lens), institutions-markets, industrial-business-networks.
   - Semi public: ICANN (semi), ISPs (private), N/W
   - Business projects: megaprojects by govt, corporate / ERP projects, semi (PPP / consortia)
 
-### [Added] explanation
+### Detailed explanation
 A scheduler is not a timetable. It is an entity that takes
 tasks and resources and allocates those resources fairly and
 efficiently. The page shows the same model three times:
@@ -611,7 +604,7 @@ a company, a bank network, a standards body, or a public-private
 consortium. Who schedules changes the fairness and the
 efficiency, because the scheduler owns the allocation.
 
-[Added, cross-domain vocabulary, grounded in this page:]
+
 The scheduler's tasks belong to a customer — a person, a
 company, or a government agency whose job, contract, or
 transaction is being scheduled. The resources it allocates
@@ -624,14 +617,14 @@ Customer, vendor, and regulation are therefore part of the
 scheduler model, not only of the business projects it
 schedules.
 
-[Added, labelled distinction, under R14:] ISO/RTO, ICANN, ISP,
+ISO/RTO, ICANN, ISP,
 and VISA/SWIFT are not the same kind of scheduler. ISO/RTO
 schedule electricity, ICANN allocates names/numbers, ISPs
 schedule bandwidth, banks settle transactions. The page lists
 them together as "who schedules"; the functions above are the
 labels that keep them distinct.
 
-### Enhanced diagram [Added, different style, never replacing the original]
+### Diagram
 [Depends on] Schedule ⇒ Tasks + Resources: a schedule depends
 on both inputs, labelled separately from the arrow below.
 [Organizational: allocates] Scheduler ═> resources (money,
@@ -646,13 +639,13 @@ ISO/RTO (electricity), BGP + ISP route / ICANN / ISP carrier
 PPP / consortia (business projects) — each labelled by function,
 not as one hierarchy.
 
-### Horizontal links
-- Allocation thread → Batch 1, Card B (RIR allocation, IP blocks)
-  and Batch 2, Card G (ISO / RTO, ICANN, ISP as allocators)
-- Business controller thread → Batch 3, Card J (usage,
+### Related topics
+- Allocation thread → Batch 1, Naming, addressing and regulation: directory to DNS (RIR allocation, IP blocks)
+  and Batch 2, Who controls and who builds: government layer, global oversight, and government networks (ISO / RTO, ICANN, ISP as allocators)
+- Business controller thread → Batch 3, The same six eras, three lenses: interface, control, and how it is paid for (usage,
   chargeback, licence, subscription, SaaS, API token — all
   allocation / payment models in scheduler terms)
-- Govt projects thread → Batch 2, Card G (government networks,
+- Govt projects thread → Batch 2, Who controls and who builds: government layer, global oversight, and government networks (government networks,
   govt agencies deploying networks)
 
 ### Archive sources
@@ -661,7 +654,7 @@ batch3-intake.md. Source date: null.
 
 ---
 
-## Synthesis — A to K [Added, closing note, no new facts]
+## Synthesis — A to K
 
 A story in one line, from the cards themselves: A asks why
 networks exist — business need. B names and addresses them —
@@ -674,7 +667,7 @@ G asks who controls and who builds — government layer, global
 oversight, government networks. H changes the interface era by
 era, from telegraph keys to real-time, XR, and AI. I asks who
 leads each era — org structure, tech strategy, leadership
-mindset, completed [Added] after 2000. J reads the same six
+mindset, completed after 2000. J reads the same six
 eras through three lenses — interface, control, and how it is
 paid for. K schedules it all — tasks and resources, allocated
 fairly, by whoever owns the allocation.
@@ -699,3 +692,15 @@ same story through that lens, without a duplicate card.
   owner's check.
 - No other item held back for privacy: no digit string, no
   personal-names list on these pages.
+
+## Archive — Original images + notes (R18)
+
+Per R18, all labelling and provenance below lives ONLY in "Original images +" on the presentation page, never in the main presentation above. Main text above has been cleaned of [Added], labelled, and card-reference meta language.
+
+- Enhanced headlines, detailed explanations, diagrams, and synthesis / research-dimensions sections in this file are [Added] material, not the owner's original text, unless a section is explicitly marked Original notes / Original headlines.
+- Card I Future completion (Eras 3–5, till 2026) is [Added — proposed], grounded in Cards J and H, with org structure and leadership mindset proposed, not stated on the owner's page. Original Card I page ends at 2000, hypergrowth.
+- Card I research dimensions expansion is [Added, not original].
+- Synthesis A to K is [Added, closing note, no new facts].
+- Corrections, original forms only in archive: Batch 3 Card K comput [cut off] → compute in main, schedule = with no value written, Govt projects in a bracket on the left; Card J Subsn [truncated] → subscription in main, Bussiness spelling preserved as original; Card I Centralized written diagonally, crossed through at top; Batch 2 Card F connec [cut off at page edge], intended word NOT confirmed (connected vs connecting); Batch 1 Card A source date 2025-09-29 only, Batch 1 Card D margin Sep-29/2025 NOT assigned as source date, Batch 2 Card G margin Sep27 month/day only, NOT a source date.
+- Transcription markers ([cut off], [unclear], [crossed out], [no value], and similar) are preserved in Original notes sections above and in the local intake files, for "Original images +" only, never in main presentation.
+- Relationship-kind arrow labels ([Historical], [Depends on], [Organizational: verb], [Data: …], [Commands], [Sequence]) are diagram labelling for the enhanced diagrams; in clean presentation they appear only as diagram arrow labels / in "Original images +" notes, not as bracket text in main prose.
