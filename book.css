@@ -1,0 +1,31 @@
+/* Book design for the Systems Evaluation book branch.
+   Same logo, same name, same paper — only the book framing is new.
+   Scoped to .book-* so existing card pages keep their own styles. */
+@font-face{font-family:"Fraunces";src:url("assets/fonts/fraunces-latin.woff2") format("woff2");font-display:swap}
+.book-cover{max-width:760px;margin:0 auto;padding:48px 20px 24px;text-align:center}
+.book-cover .book-logo{width:96px;height:96px;margin:0 auto 16px}
+.book-cover h1{font-family:"Fraunces",Georgia,serif;font-size:44px;line-height:1.1;margin:0 0 8px;color:#1f2a33}
+.book-cover h1 em{color:#8a6d1b;font-style:italic}
+.book-cover .book-sub{font-size:18px;color:#555;line-height:1.6;margin:0 0 24px}
+.book-cover .book-meta{color:#8a6d1b;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin:0 0 24px}
+.book-start{display:inline-block;background:#1f2a33;color:#fdfbf7;text-decoration:none;padding:14px 28px;border-radius:999px;font-weight:700}
+.book-start:hover{background:#d9a441;color:#1f2a33}
+.book-contents{max-width:760px;margin:0 auto;padding:24px 20px 48px}
+.book-contents h2{font-family:"Fraunces",Georgia,serif;font-size:28px;margin:32px 0 12px;padding-top:24px;border-top:1px solid #e6ddd0}
+.book-contents h3{font-size:18px;margin:24px 0 8px}
+.book-contents p,.book-contents li{font-size:16px;line-height:1.75}
+.book-contents ol,.book-contents ul{padding-left:20px}
+.book-contents a{color:#1f2a33;text-decoration:underline;text-decoration-color:#d9a441;text-underline-offset:3px}
+.book-contents a:hover{color:#8a6d1b}
+.book-contents .chap-no{display:inline-block;min-width:28px;font-weight:800;color:#8a6d1b}
+.book-contents .chap-domain{color:#777;font-size:14px}
+.book-bar{display:flex;gap:16px;align-items:center;justify-content:space-between;max-width:760px;margin:0 auto;padding:12px 18px;border-bottom:1px solid #e6ddd0;font-size:14px}
+.book-bar a{color:#1f2a33;font-weight:700;text-decoration:none}
+.book-bar .book-chap{color:#8a6d1b;font-weight:800}
+.book-nav a{font-weight:700}
+[data-theme="dark"] .book-cover h1{color:#fdfbf7}
+[data-theme="dark"] .book-cover .book-sub{color:#cbd5e1}
+[data-theme="dark"] .book-contents a,[data-theme="dark"] .book-bar a{color:#fdfbf7}
+[data-theme="dark"] .book-contents h2{border-top-color:#334155}
+[data-theme="dark"] .book-bar{border-bottom-color:#334155}
+@media(max-width:600px){.book-cover{padding-top:32px}.book-cover h1{font-size:34px}}

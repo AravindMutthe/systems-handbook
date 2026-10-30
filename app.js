@@ -167,7 +167,7 @@ function render() {
     }
     section.appendChild(row); list.appendChild(section);
   });
-  document.getElementById('count').textContent = showingSamples ? 'Sample layout · core domains' : `${total} page${total === 1 ? '' : 's'}`;
+  document.getElementById('count').textContent = showingSamples ? 'Sample layout · core domains' : `${total} card–domain associations · ${notes.length} unique cards`;
   document.getElementById('empty').hidden = shownCats.length > 0;
   document.getElementById('sample-note').hidden = !showingSamples;
   const heldEl = document.getElementById('held-note');
