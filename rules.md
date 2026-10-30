@@ -1127,3 +1127,39 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
     clear from context. Such an addition is enhanced
     content, must be verified claim by claim before
     push, and must be labelled only in archive.
+
+## Answer style — crisp and clear, keynotes and points, lengthy only where needed (2026-10-30, R20)
+
+- Owner's rule, 2026-10-30: "I dont want such lengthy
+  answers, make it crisp and clear with important
+  keynotes or points, across domains except wherever
+  needed such lengthy information that's okay."
+- In chat, answer crisp and clear, with important
+  keynotes and points. Lead with the answer or result.
+  Use short paragraphs and bullets for parallel points.
+  Do not turn a simple answer into an essay, and do
+  not repeat the same point in several wordings.
+- This applies across domains and across topics, not
+  only to one batch, one card, or one domain.
+- Lengthy information is allowed only where it is
+  actually needed: an exact transcription, a
+  verification or cross-check report, a commit / proof
+  list, a detailed diagram description, or a detailed
+  explanation the owner explicitly asked for. If length
+  is not needed, cut it.
+- This does NOT change R1 or the notes themselves.
+  Original notes stay detailed, not abstract.
+  Transcriptions stay exact. Per-batch intake and
+  archive records stay complete. Crisp chat answers
+  are not a reason to cut original content, to drop
+  a gap, a conflict, or a limitation, or to skip a
+  required cross-check.
+- A crisp answer must still carry, where relevant:
+  the decision, the key points, the proof (commit,
+  SHA, size, link), and what is still open, blocked,
+  or awaiting the owner's call. Brevity that drops
+  a condition that changes the decision fails this
+  rule.
+- If an answer must be lengthy to be accurate, say
+  so in one line at the top, then give the lengthy
+  part. Do not pad a short answer to look thorough.
