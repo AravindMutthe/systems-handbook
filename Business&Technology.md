@@ -593,6 +593,44 @@ Two new layers only, read with the previous five-layer control stack.
 - Corrections carried over: speeds are peaks, typicals, or targets, not guarantees; ICANN does not operate all root servers alone; ENS/Handshake are alternatives, not DNS replacements; product latencies are source targets, not measured values; no diagram was drawn, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
+
+## Network Evolution Timeline — Simple Milestones, New Gaps Only — Combined View (No Diagram)
+
+### Headline
+Simple milestone index only, with new gaps, read with the detailed timeline sections elsewhere.
+
+### Combined list
+- Pre-ARPA: telegraph, telephone, circuit switching, standalone systems.
+- Packet switching: Baran, Davies, 1960s.
+- ARPANET: 1969, DARPA, NCP, first message "LO".
+- TCP/IP: Cerf, Kahn, 1970s, 1983 cutover, TCP reliable delivery, IP addressing and routing.
+- Academic: NSFNET, universities, DNS, email, FTP.
+- Web: Berners-Lee, 1989, HTTP, HTML, browsers.
+- Modern: broadband, Wi-Fi, mobile, cloud, 3G to 5G, data centers, virtualization.
+- SDN/NFV: programmable, scalable networks.
+- AI networks: self-optimizing, predictive traffic, automated fault detection, AI routing, smart data centers, autonomous security, ML, edge, IoT.
+- Summary: Telegraph → Telephone → Packet Switching → ARPANET → TCP/IP → Web → Mobile plus Cloud → SDN → AI Networks. Core idea, as a direction: humans controlled networks, now AI can control, optimize, and predict them.
+- Corrections carried over: 1983 is TCP/IP cutover not invention, CERN built the Web not the Internet backbone, AI networks are a direction not a universal finished state, and the source's offers to list protocol evolution or explain AI networks at kernel/hardware level were not acted on.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
+
+## Network Evolution — Structured 15-Part Version, New Gaps Only — Combined View (No Diagram)
+
+### Headline
+New gaps only from the 15-part version, read with the previous timeline sections.
+
+### Combined list
+- Network minimum: devices, medium, protocols, addressing.
+- ARPANET formation: nodes, IMPs (early routers), leased telephone lines; first link UCLA to SRI, not Stanford University, first message "LO".
+- Packet illustration: "HELLO" split into letters is simplified, not actual packetization.
+- TCP/IP layers, as listed: Application, Transport, Network, Physical — simplified; standard TCP/IP model is Link, Internet, Transport, Application; OSI is 7 layers (Physical, Data Link, Network, Transport, Session, Presentation, Application).
+- Standards: TCP/IP, HTTP, FTP, SMTP; organisations IEEE, IETF, ISO.
+- Types by era: telephone/circuit → ARPANET/packet → NSFNET/backbone → Internet/global → ISP/commercial → cloud/virtual → AI/intelligent.
+- Examples: NSFNET DNS example (google.com instead of 142.250.x.x range); Web GET example (simplified, actual HTTP uses path plus Host header); VPC as logical network; smart home phone ↔ router ↔ IoT; YouTube flow as simplified, actual delivery uses HTTPS, CDN, adaptive streaming.
+- Summary: No Network → Circuit → Packet → ARPANET → TCP/IP → Web → Mobile plus Cloud → Virtual → IoT plus Edge → AI Networks. Core idea, as a direction: fixed/manual → dynamic/intelligent.
+- Corrections carried over: first link was UCLA–SRI, layer models are not interchangeable, AI networks are a direction not a universal state, and the source's offers on kernel-level networking and hardware packet movement were not acted on.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.

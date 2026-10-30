@@ -1382,6 +1382,33 @@ Only the two new layers are added here: DNS/phone book and speed. The other five
 - Speed figures are peaks, typicals, or targets, not guarantees. 5G typical speeds are much lower than peak, edge under 10 ms is a target not typical end-to-end latency, and ARPANET's early speed was 50 Kbps with 56 Kbps later. ICANN manages the root zone but does not operate all root servers alone; DNSSEC and Route53 are not phone books; ENS and Handshake are alternatives, not mainstream DNS replacements. Product latencies are source targets, not measured values.
 - Full technical detail: Technology.md, "Control Stack — Speed and DNS/Phone Book, New Gaps Only". Combined view: Business&Technology.md, "Control Stack — Speed and DNS/Phone Book, New Gaps Only — Combined View".
 
+
+## Network Evolution Timeline — Simple Milestones, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the milestone index and the new gaps are added here. Detailed era sections are in Technology.md and are not repeated.
+
+### Milestone index, in business terms
+- Pre-ARPA: isolated systems, telegraph and telephone, circuit switching, no network business beyond a line or exchange.
+- Packet switching (Baran, Davies, 1960s) → ARPANET (1969, DARPA, NCP, first message "LO") → TCP/IP (Cerf, Kahn, 1970s, 1983 cutover) → NSFNET and universities, DNS, email, FTP → Web (Berners-Lee, 1989, HTTP, HTML, browsers) → broadband, Wi-Fi, mobile, cloud (Google, Amazon, Microsoft as source examples) → SDN and NFV, programmable and scalable networks → AI-driven networks (self-optimizing, predictive traffic, automated fault detection, AI routing, smart data centers, autonomous security).
+- Business implication, as the source's core idea: control moved from humans alone to AI-assisted control, optimization, and prediction. That is a direction in specific networks, not a finished universal state, and it does not remove human operators, regulators, or engineers.
+- Full technical detail: Technology.md, "Network Evolution Timeline — Simple Milestones, New Gaps Only". Combined view: Business&Technology.md, "Network Evolution Timeline — Simple Milestones, New Gaps Only — Combined View".
+
+
+## Network Evolution — Structured 15-Part Version, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the new gaps from the 15-part version are added here. The full era history is in Technology.md and in the previous timeline section and is not repeated.
+
+### New gaps, in business terms
+- What a network needs, at minimum: devices, medium, protocols, and an addressing system — a business cannot sell a network product without all four.
+- ARPANET formation: nodes, IMPs (early routers), and leased telephone lines — the first network was built on rented telephone infrastructure, not on a new physical network.
+- Cloud example: Virtual Private Cloud (VPC) as a logical network controlled by software, sold as a service, not as physical hardware.
+- IoT example: smart home — phone ↔ router ↔ IoT devices, with edge processing near the data source, which is a latency and privacy selling point, not just a technical detail.
+- AI networks: self-healing, traffic prediction, and security automation, with AI rerouting around congestion as the example — a feature in specific networks, sold as automation, not a universal present state.
+- YouTube flow, as a simplified example: device gets IP, request via HTTP, routers, server response, video stream, all on TCP/IP plus protocols plus standards — actual delivery uses HTTPS, CDN, and adaptive streaming.
+- Full technical detail: Technology.md, "Network Evolution — Structured 15-Part Version, New Gaps Only". Combined view: Business&Technology.md, "Network Evolution — Structured 15-Part Version, New Gaps Only — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
