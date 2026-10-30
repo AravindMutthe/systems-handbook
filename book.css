@@ -47,6 +47,6 @@
 .book-visuals{margin:32px 0}
 .book-visuals h2{font-family:Georgia,serif;font-size:28px;margin:0 0 16px}
 .book-visual{margin:0 0 20px}
-.book-visual img{border:1px solid #e6ddd0}
-.book-visual figcaption{color:#777;font-size:14px;margin-top:6px}
+.book-visual img{border:1px solid #e2e8f0;background:#f8fafc;box-shadow:0 4px 18px rgba(31,42,51,.08)}
+.book-visual figcaption{color:#5b6b76;font-size:15px;margin-top:8px;font-style:italic}
 [data-theme="dark"] .book-visual figcaption{color:#94a3b8}
