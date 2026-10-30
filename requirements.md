@@ -377,6 +377,167 @@ A batch is complete only when all of these are true:
   notes: primary placement is the story place, secondary
   placements are technical perspectives on that same place.
 
+## R18. Clean presentation — no meta language in the main page
+
+- Requirement: the presentation page itself must be clean
+  and clear. It reads as a study page, not as a processing
+  note about the page.
+- Requirement: the main presentation — headlines, key
+  points, detailed explanation, diagrams, and horizontal /
+  related links — must NOT include meta language about
+  the page or the work behind it. Examples of what is
+  forbidden in the main presentation, in any wording:
+  "this card", "that card", "this section", "this page
+  covers", "[Added]", "[Added, labelled]", "[Added —
+  proposed]", "labelled", "labelled in", "original vs
+  enhanced", "as added above", "see the card for",
+  and any other bracket label, provenance note, or
+  processing commentary about what was added, corrected,
+  or labelled.
+- Requirement: refer to topics by their own names in the
+  main presentation, not by card letters or by "this /
+  that card". A link to another topic is shown by that
+  topic's title, not by "that card" or "Card X".
+- Requirement: ALL of that meta material goes into
+  "Original images +" on that same presentation page,
+  and only there. That section, inside its dropdown, is
+  where the reader (and the builder) can see: which
+  headline is original and which is enhanced, which
+  words were added or corrected and what the original
+  form was, which transcription markers were present
+  ([cut off], [unclear], [crossed out], and similar),
+  and any other labelling or provenance note.
+- Requirement: this does NOT remove labelling — it moves
+  it. The distinction between original and enhanced,
+  and between original form and corrected form, must
+  still be recorded, in full, inside "Original images +"
+  on that page, and in the local intake / archive record.
+  It must simply not appear in the main presentation.
+- Note on earlier requirements: this requirement
+  supersedes, for presentation purposes only, the
+  main-page "[Added]" labelling in R15 and in earlier
+  audit fixes. R15's substance stands — original
+  headline first, enhanced headline never replacing or
+  hiding the original — but the "[Added]" marker itself
+  is now archive-only, inside "Original images +",
+  not a marker in the main headline. The same move
+  applies to [Added] markers in key points and in
+  detailed explanation: clean text in main, full
+  labelling in "Original images +".
+- Requirement: this applies to every presentation page,
+  including Story pages and batch sequence pages, not
+  only to Cards A–K. A Story page's main presentation
+  likewise shows clean story text and topic titles, with
+  its path / source-card provenance only inside its
+  "Original images +" section.
+
+## R19. Original diagrams — faithful clean SVG redraw, not a redesign
+
+- Requirement: every diagram on an original note page is
+  recreated as a digital redraw, in clean SVG graphics.
+  This is a redraw of the owner's own work, not a new
+  diagram invented by the builder.
+- Requirement: the redraw reproduces the original as
+  closely as possible: the same nodes, the same arrows,
+  the same branches, the same hierarchy, and the same
+  labels — in the same structure, in the same order, and
+  with the same connections the original page shows.
+- Requirement: labels in the redraw are the original
+  labels, with the owner's spelling preserved for complete
+  words, exactly as in the original headline rule (R15).
+  Spelling is not "corrected" in a redraw, and wording is
+  not rephrased to sound cleaner.
+- Requirement: the redraw does NOT add, remove, reorder,
+  or reinterpret. No new node, no new arrow, no new
+  branch, no new hierarchy level, and no changed
+  connection is added in a redraw. If a branch is cut
+  off at the page edge in the original, the redraw shows
+  it ending there, incomplete — it does not invent a
+  continuation. If a node or label is crossed through in
+  the original, the redraw shows it crossed through —
+  it does not silently drop it, and it does not present
+  crossed content as active without that marking.
+- Requirement: the redraw is clean SVG, not a screenshot
+  and not a raster image. Labels are real SVG text, so
+  they stay readable, searchable, and scalable, and the
+  file lives locally in the repo, never hotlinked and
+  never fetched from a remote source.
+- Requirement: the redraw does not replace the original
+  image. The original image stays, untouched, inside
+  "Original images +" on that page. The SVG redraw sits
+  in the page's diagram section, as the readable digital
+  version of that same original diagram.
+- Requirement: this redraw rule is different from the
+  enhanced-diagram rule. An enhanced diagram (R4, and
+  the flow-chart / relationship-kinds rules in rules.md)
+  may simplify, re-map, or explain a relationship. A
+  redraw under this requirement may not. Where a page
+  has both, the redraw and the enhanced diagram are
+  shown as two different things, and the redraw is
+  labelled as the original diagram, in the archive
+  section only under R18 — never as meta language in
+  the main presentation.
+- Requirement: the only changes allowed in a redraw are
+  the ones other rules already allow, and they are
+  recorded in "Original images +" only, never in the
+  SVG itself: a truncated / cut-off word corrected in
+  the redraw only when the intended word is clear, with
+  the original truncated form recorded in archive; an
+  arrow kind (Historical, Depends on, Organizational
+  verb, Data, Control) applied only where the kind is
+  clear from the page, with any kind that is not clear
+  left as drawn and noted as unspecified in archive,
+  never silently assigned; and private material omitted
+  from the redraw under the privacy gate, with the
+  omission noted in archive — privacy overrides
+  faithfulness, and no private label is ever reproduced
+  in a redraw.
+- Requirement: this applies to every diagram in every
+  batch, on Cards A–K, on Story pages, and on batch
+  sequence pages, and to any diagram added by a later
+  batch. A page with a diagram but no SVG redraw is
+  incomplete under this requirement.
+
+## R20. Answer style — crisp and clear, keynotes and points, lengthy only where needed
+
+- Requirement: Leo's answers and explanations in chat
+  are crisp and clear, with important keynotes and
+  points, not lengthy essays.
+- Requirement: this applies across domains and across
+  topics, not only to one domain or one batch.
+- Requirement: lengthy information is allowed only
+  where it is actually needed — for example, an exact
+  transcription, a verification or cross-check report,
+  a commit / proof list, or a detailed explanation the
+  owner explicitly asked for. Length must be justified
+  by need, not by habit.
+- Requirement: this style rule does NOT flatten the
+  notes themselves. R1 stands: original notes stay
+  detailed, not abstract, and transcriptions stay
+  exact. Crisp answers are about how Leo explains
+  and reports, not about cutting original content.
+- Requirement: a crisp answer still carries what the
+  owner needs to act on: the decision, the key points,
+  the proof (commit, SHA, size, link) where relevant,
+  and what is still open or blocked. Brevity must not
+  drop a condition, a gap, or a limitation that
+  changes the decision.
+
+## R21. Global technology industry framework — front guide, not a card
+
+- A front guide, read before Card A, not a card duplicating Cards A–K, and not a new domain in categories.json. It does not change the A–M learning order.
+- Substance: no single government, corporation, or standards organization controls the whole system; power differs in kind (legal authority, ownership, technical influence, market share, purchasing power); layers are not exclusive boxes (a player can sit in several).
+- Layers: governments; international coordination (ITU, WTO); technical standards (IEEE, ISO/IEC, IETF, 3GPP); Internet coordination (ICANN, IANA, RIRs); semiconductor supply chain (ASML, TSMC, Intel, NVIDIA — verified page by page 2026-10-30); network infrastructure (Cisco, Ericsson, Nokia, telecom operators); cloud and platforms (AWS, Microsoft Azure, Google Cloud — verified 2026-10-30); software platforms (operating systems, databases, APIs, applications); industry customers (finance, healthcare, education, manufacturing — sectors only, no named institution claimed); new businesses and market opportunities.
+- Commercialization / adoption lifecycle, as a reference sequence NOT a universal rule: (1) Need/demand, (2) Research and development, (3) Standards and coordination, (4) Manufacturing and infrastructure, (5) Regulation and certification, (6) Commercial services, (7) Industrial adoption. Standardization, regulation, development, manufacturing, and adoption frequently happen in parallel or repeat in cycles.
+- Learning order is NOT commercialization order: A–K is a study order, ground base first; the lifecycle is a commercialization reference order. They must not be conflated.
+- Newcomer entry: entry point determines which gates apply (software startup: security, licences, data laws; cloud services: contracts, capability, service obligations; network equipment: standards, certification; telecom operator: licensing, spectrum; semiconductor: IP, design tools, fabrication access, export rules). Entry does not remove governance.
+- Three sequences, each with its own arrow kind: Historical evolution (Telegraph → Telephone → Digital networks → Internet & AI); Technical dependency (Hardware → Drivers & OS → Network stack → Applications); Market and governance relationships (Governance → Standards → Industry → Market).
+- Four perspectives, together the library foundation: Historical sequence, Technical dependencies, Governance and market structures, Business strategy. Plus feedback loop: adoption creates new demands, which influence the next generation.
+- Bidirectional arrows: drawn as SEPARATE arrows in opposite directions, each with its own verb under the relationship-kinds rule (e.g. Government regulates Industry; Industry proposes to Standards; Industry invests in Technology). Never one double-headed arrow meaning everything, never a bare "influences" or "related to" arrow. "Industry influences regulation" is a feedback model only, with named mechanisms (standards participation, consultation, procurement, investment).
+- Presentation: R18-clean main text, no meta language, no [Added] on main. All labelling, provenance, and verification notes live ONLY in the same-page Archive appendix ("Original images +" dropdown, empty of original images — framework has none, it is synthesis, no original headline invented). No separate archive file.
+- Verification: named examples verified page by page 2026-10-30 (Wikipedia pages opened and read: ASML, TSMC, Ericsson, Nokia, ITU, WTO, Microsoft Azure, Google Cloud). Sources kept for the future content references page, not in main text. Unverified examples, if any in future, are not pushed as fact until verified or the owner explicitly overrules verification for that item.
+- Status: framework draft pushed as held (private, draft) 2026-10-30, no publication, no deploy. A framework requirement, if adopted later as a different scope, must be renumbered, not reuse R21.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.

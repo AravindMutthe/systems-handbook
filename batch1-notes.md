@@ -218,7 +218,7 @@ standards across electrical, electronics and computing fields.
 TRAI have national regulatory roles in their respective
 jurisdictions. ICANN handles names and addresses. Listing them
 together under one "regulation" heading without those functions
-labelled would fail R14; the functions above are the labels.
+shown would fail R14; the functions above are shown.
 
 ### Diagram
 
@@ -230,9 +230,9 @@ technical dependency chain.
 directory/DNS operation, in a regulator lane underneath.
 [Depends on] DNS ⇒ ICANN / RIR allocation and TCP/IP: DNS
 resolution depends on that allocation and on TCP/IP transport,
-labelled separately from the organizational allocation arrow.
+shown separately from the organizational allocation arrow.
 Standards bodies IETF / IEEE / 3GPP sit beside the regulator lane,
-labelled by function in the R14 note above, not as regulators.
+shown by function in the R14 note above, not as regulators.
 
 ### Related topics
 
@@ -491,7 +491,7 @@ whether a product may enter the market. The gate is a control
 decision, not a step in the build sequence, and is marked as a
 gate, not a step.
 [Depends on] Product approval ⇒ every card before it (origins,
-naming, NIC stack): the product depends on those layers, labelled
+naming, NIC stack): the product depends on those layers, shown
 separately from the organizational loop.
 
 ### Related topics

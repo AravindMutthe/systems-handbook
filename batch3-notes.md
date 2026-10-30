@@ -463,10 +463,6 @@ who decides, and who pays, in each era.
 
 ---
 
-### Site expansion — era examples (development chat 2026-10-30, NOT yet in main notes)
-
-Era-by-era real companies and real business, added to the Card I site page only: Western Union (1851/1856/1861 transcontinental); IBM PC 1981, DEC PDP-11/VAX, Novell NetWare; Netscape 1994, Amazon 1994, eBay 1995, Google 1998/AdWords 2000; iPhone 2007, App Store July 2008, Android Nov 2007, AWS March 2006 pay-as-you-go, Netflix streaming Jan 2007; ChatGPT 30 Nov 2022, 100M users in two months, Azure + Nvidia GPUs, API token business. Facts checked 2026-10-30 via Wikipedia / web search. If content chat does not adopt this section into main notes, the next notes pull will overwrite the site page — carry it over explicitly.
-
 ## Card J
 
 ### Original headline first
@@ -531,7 +527,7 @@ ICANN, IETF, and
 W3C are not one body. IETF = Internet technical standards;
 ICANN = names / numbers allocation; W3C = web standards.
 The page lists them together as bodies; the functions above
-are the labels that keep them distinct.
+are the kinds that keep them distinct.
 
 ### Diagram
 [Historical] Telegraph → mainframes → Client server →
@@ -626,11 +622,11 @@ and VISA/SWIFT are not the same kind of scheduler. ISO/RTO
 schedule electricity, ICANN allocates names/numbers, ISPs
 schedule bandwidth, banks settle transactions. The page lists
 them together as "who schedules"; the functions above are the
-labels that keep them distinct.
+kinds that keep them distinct.
 
 ### Diagram
 [Depends on] Schedule ⇒ Tasks + Resources: a schedule depends
-on both inputs, labelled separately from the arrow below.
+on both inputs, shown separately from the arrow below.
 [Organizational: allocates] Scheduler ═> resources (money,
 labor, raw material, compute) ═> tasks (jobs, contracts,
 transactions), fairly / efficiently.
@@ -640,7 +636,7 @@ Business: projects - - > scheduler allocation.
 [Organizational: owns] Scheduler owns the allocation:
 ISO/RTO (electricity), BGP + ISP route / ICANN / ISP carrier
 (networking), VISA/SWIFT banks, Govt agency / Company,
-PPP / consortia (business projects) — each labelled by function,
+PPP / consortia (business projects) — each shown by function,
 not as one hierarchy.
 
 ### Related topics

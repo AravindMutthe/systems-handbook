@@ -334,7 +334,7 @@ different categories — Bootstrap is a CSS framework, React /
 AngularJS are UI frameworks, X11 / Motif are windowing systems —
 and REST / GraphQL / gRPC are API styles / technologies, not UI
 frameworks. The original grouping is preserved as written; this
-distinction is added, labelled.
+distinction is added, shown.
 
 No external images are used for
 this topic, and voice / spatial interfaces not on these pages
@@ -362,7 +362,7 @@ timeline arrow.
   → electronic)
 - Hardware thread → Batch 1, Hardware supply and the NIC endpoint (NIC endpoint, the hardware
   the UI runs on)
-- Kernel / TCP/IP under the UI → Batch 1, The NIC and kernel stack, plus out-of-band management. Note, labelled:
+- Kernel / TCP/IP under the UI → Batch 1, The NIC and kernel stack, plus out-of-band management. Note:
   CLI is a UI medium here, and a management lane there — same
   word, different lane.
 - Cloud / 5G thread → Batch 1, The NIC and kernel stack, plus out-of-band management (network device, TCP/IP)

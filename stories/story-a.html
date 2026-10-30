@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><script>try{document.documentElement.dataset.theme=localStorage.getItem('theme')||'dark';}catch(e){}</script>
+<title>Story A — How global digital infrastructure is built — Systems Evolution</title>
+<style>body{font-family:system-ui,sans-serif;background:#fdfbf7;color:#1a2027;margin:0;padding:0}
+main{max-width:760px;margin:0 auto;background:#fdfbf7;color:#1a2027;border-radius:0;padding:0 18px 24px}
+.eyebrow{color:#8a6d1b;font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;margin:0 0 8px}
+h1{font-family:Georgia,serif;font-size:32px;line-height:1.15;margin:0 0 8px}
+.lede{color:#555;font-size:16px;line-height:1.6}
+h2{font-family:Georgia,serif;font-size:24px;margin:32px 0 12px;padding-top:16px;border-top:1px solid #e6ddd0}
+h3{font-size:18px;margin:24px 0 8px}
+p,li{font-size:16px;line-height:1.75}
+.added{border-left:4px solid #d9a441;padding-left:14px;background:#fdf8ec;border-radius:0 10px 10px 0}
+figure{margin:20px 0}
+figure svg{width:100%;height:auto;display:block;background:#1f2a33;border-radius:12px;padding:8px}
+figcaption{font-size:14px;color:#555;text-align:center;margin-top:8px;line-height:1.6}
+.original{border:0;border-radius:0;padding:0;background:transparent}
+.meta{color:#555;font-size:14px}
+.home,.nav a{display:inline-flex;align-items:center;gap:10px;border:1px solid #e6ddd0;border-radius:999px;padding:8px 16px;text-decoration:none;color:#1a2027;font-weight:700;margin:8px 8px 0 0}
+.nav{margin-top:32px;padding-top:16px;border-top:1px solid #e6ddd0}
+.cardlist{list-style:none;padding:0}
+strong em, em strong{font-style:italic;font-weight:800}
+.cross-term{font-weight:800;color:#8a6d1b}
+li strong{font-weight:800;color:#111827}
+ul{padding-left:20px;margin:12px auto}
+li{margin-bottom:12px}
+.cardlist li{border:0;border-bottom:1px solid #e6ddd0;border-radius:0;padding:16px 0;margin:0;background:transparent}
+.cardlist a{color:#1a2027;font-weight:700}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}.site-header{max-width:760px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #e6ddd0;background:#fdfbf7}
+.site-brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1a2027}
+.site-brand img{width:36px;height:36px;flex:none}
+.site-brand strong{font-family:Georgia,serif;font-size:19px;line-height:1.1}
+.site-brand em{font-style:italic;color:#8a6d1b}
+.site-brand small{display:block;font-family:system-ui,sans-serif;font-size:10px;letter-spacing:.12em;color:#555;font-weight:600}
+.back{display:inline-flex;align-items:center;border:1px solid #e6ddd0;border-radius:999px;padding:8px 16px;text-decoration:none;color:#1a2027;font-weight:700;white-space:nowrap}
+.theme-toggle{position:fixed;right:16px;bottom:16px;width:54px;height:54px;border-radius:50%;background:#ffffff;color:#1a2027;border:1px solid #e6ddd0;font-size:24px;cursor:pointer;z-index:30;box-shadow:0 8px 20px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center}
+[data-theme="dark"] body,[data-theme="dark"] main,[data-theme="dark"] .site-header{background:#10181e;color:#fdfbf7}
+[data-theme="dark"] .site-brand,[data-theme="dark"] .back,[data-theme="dark"] .home,[data-theme="dark"] .nav a,[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3,[data-theme="dark"] li strong,[data-theme="dark"] .cardlist a,[data-theme="dark"] .card-body h4{color:#fdfbf7}
+[data-theme="dark"] .lede,[data-theme="dark"] .meta,[data-theme="dark"] figcaption,[data-theme="dark"] .site-brand small,[data-theme="dark"] .card-body p,[data-theme="dark"] .empty{color:#cbd5e1}
+[data-theme="dark"] .eyebrow,[data-theme="dark"] .cross-term,[data-theme="dark"] .key-headline,[data-theme="dark"] .badge{color:#d9a441}
+[data-theme="dark"] .added{background:#26343f}
+[data-theme="dark"] h2,[data-theme="dark"] .nav,[data-theme="dark"] details,[data-theme="dark"] .site-header{border-color:#33424e}
+[data-theme="dark"] .theme-toggle{background:#1f2a33;color:#fdfbf7;border-color:#33424e}
+[data-theme="dark"] .card{background:#1f2a33;border-color:#33424e}
+[data-theme="dark"] figure img{border-color:#33424e!important}
+.tags{margin:8px 0}.tag{display:inline-block;border:1px solid #e6ddd0;border-radius:999px;padding:4px 10px;margin:0 6px 6px 0;font-size:13px;font-weight:700}.tag-unique{background:#fdf8ec;border-color:#d9a441;color:#8a6d1b}.tag-new{background:#1f2a33;color:#fdfbf7;border-color:#1f2a33}[data-theme="dark"] .tag{border-color:#33424e;color:#fdfbf7}[data-theme="dark"] .tag-unique{color:#d9a441}[data-theme="dark"] .tag-new{background:#d9a441;color:#1a2027;border-color:#d9a441}</style>
+</head>
+<body>
+<header class="site-header"><a class="site-brand" href="../index.html"><img src="../assets/logo-mark.svg" alt="Systems Evolution logo"><span><strong>Systems <em>Evolution</em></strong><small>Networks · Business · Technology</small></span></a><a class="back" href="../index.html" onclick="if(history.length>1){history.back();return false;}">← Back</a></header>
+<main>
+<figure style="margin:0 0 16px"><img src="../assets/posters/story-a.svg" alt="" style="width:100%;height:auto;border-radius:12px"></figure>
+<p class="eyebrow">📚 Stories</p>
+<h1>Story A — How global digital infrastructure is built</h1>
+<p class="lede">Story A — How global digital infrastructure is built</p>
+<p class="meta">Stories — held reading path, from the first 17 pages.</p>
+<details style="margin:16px 0 24px;border:0;border-top:1px solid #e6ddd0;border-bottom:1px solid #e6ddd0;padding:16px 0;background:transparent">
+<summary style="cursor:pointer;font-family:Georgia,serif;font-size:24px;font-weight:700;list-style:none">Original images +</summary>
+<p class="meta">Held — private, draft. Story cards aggregate and link back to source chapters; they do not replace them and do not create a second canonical version. Provisional learning paths, not direct-evolution claims.</p><p>Archive: R17 no-duplicate rule is superseded for these path cards only, by owner order 2026-10-30. If the owner later withdraws that order, remove the Story cards and keep A–H.</p>
+</details>
+<h2>Path</h2><p>Communication needs → businesses and governments → standards and regulation → manufacturers and vendors → physical networks → hardware/software integration.</p><h2>Chapters in this story</h2>
+<h3>A — Why networks exist: origins and business need</h3><p><a href="../batch1/card-a.html">Why networks exist: origins and business need</a> — source chapter, canonical and unchanged. This story section collects its related notes and links back to it; it does not replace it.</p>
+<h3>B — Naming, addressing and regulation: directory to DNS</h3><p><a href="../batch1/card-b.html">Naming, addressing and regulation: directory to DNS</a> — source chapter, canonical and unchanged. This story section collects its related notes and links back to it; it does not replace it.</p>
+<h3>C — Hardware supply and the NIC endpoint</h3><p><a href="../batch1/card-c.html">Hardware supply and the NIC endpoint</a> — source chapter, canonical and unchanged. This story section collects its related notes and links back to it; it does not replace it.</p>
+<h3>D — The NIC and kernel stack, plus out-of-band management</h3><p><a href="../batch1/card-d.html">The NIC and kernel stack, plus out-of-band management</a> — source chapter, canonical and unchanged. This story section collects its related notes and links back to it; it does not replace it.</p>
+<h3>E — Building, operating and approving a product</h3><p><a href="../batch1/card-e.html">Building, operating and approving a product</a> — source chapter, canonical and unchanged. This story section collects its related notes and links back to it; it does not replace it.</p>
+<h3>F — The universal product: four parallel flows, cross flow, and the full value chain</h3><p><a href="../batch2/card-f.html">The universal product: four parallel flows, cross flow, and the full value chain</a> — source chapter, canonical and unchanged. This story section collects its related notes and links back to it; it does not replace it.</p>
+<h3>G — Who controls and who builds: government layer, global oversight, and government networks</h3><p><a href="../batch2/card-g.html">Who controls and who builds: government layer, global oversight, and government networks</a> — source chapter, canonical and unchanged. This story section collects its related notes and links back to it; it does not replace it.</p>
+<h2>Meeting points</h2>
+<ul><li>Telegraph: Why networks exist meets How the interface changed.</li><li>Naming / web: Naming, addressing and regulation meets How the interface changed (browsers, web era).</li><li>Hardware / kernel under the interface: Hardware supply and the NIC endpoint, and The NIC and kernel stack, meet How the interface changed.</li><li>Product / approval: Building, operating and approving a product meets app-store / platform gates in later chapters.</li></ul>
+<nav class="nav"><a href="../index.html">Home</a> <a href="stories.html">Stories</a></nav>
+</main>
+<button class="theme-toggle" onclick="var t=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=t;try{localStorage.setItem('theme',t);}catch(e){}this.textContent=t==='dark'?'☀️':'🌙'">☀️</button>
+</body>
+</html>

@@ -939,9 +939,22 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   edge, corrected to "compute" in the main page; schedule =
   has no value after it; and Govt projects is in a left
   bracket, on the original page.
-- Original image is never changed. The [Added] label on the
-  enhanced headline stays on the main page, so readers can
-  tell enhanced from original.
+- Original image is never changed. R18 (owner order
+  2026-10-30, chosen as the standing rule 2026-10-30
+  on owner instruction "choose best one"): the [Added]
+  label does NOT stay on the main page. All labelling
+  and provenance — [Added], "labelled", "this card /
+  that card", original-vs-enhanced discussion — moves
+  ONLY to "Original images +" on that same page, in
+  full. Main presentation shows headlines, key points,
+  detailed explanation, diagrams, and links by topic
+  title, clean. The enhanced headline is shown in a
+  different style from the original, and its status is
+  recorded only in "Original images +". This
+  supersedes, for presentation only, the earlier
+  "[Added] stays on main" line in this section; R15
+  substance (original first, enhanced never replacing)
+  stands.
 - Posters: no empty placeholder caption bars. Either a real
   caption goes in them, or the bars are removed — on Card K
   and all cards, the bars were removed.
@@ -1003,107 +1016,163 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   tables) are PARKED for later, per owner's 2026-10-29 word
   ("fix can be later"). Tags + New were done first, on their own.
 
-## Rebuild from cleaned notes, 2026-10-29 (branch only, no deploy)
+## Original diagrams redrawn as clean SVG — faithful, not redesigned (2026-10-30, R19)
 
-- Pulled latest main notes before rebuilding: batch1-notes
-  e224264c, batch2-notes 1725eaa7, batch3-notes 4c235e34,
-  batch1-cards c306f2c4. Branch notes/cards files synced to those.
-- Homepage stale "Template only" footer removed; domains
-  header now reads "38 card–domain associations · 11 unique
-  cards", and the footer explains the 11 vs 38 difference.
-- Card A (and B–E, same bug) Key points footer: "section
-  below" → "section above".
-- Batch 1 Horizontal links are now real hyperlinks, like
-  Batch 2/3, with the flow-chart figure kept above them.
-  Card D gains the new Product / approval / market → Card E link.
-- Batch 2 dropdowns: "private Vercel deploy" → "Vercel deploy
-  only, not in the public GitHub repo — the deploy itself is
-  public".
-- Rebuilt from cleaned notes: R14 distinctions on C, E, F, H, I;
-  market/vendor/allocation/regulation vocabulary on D; signalling/
-  endpoint/stack/trading vocabulary on F; market/customer/vendor/
-  allocation/regulation vocabulary on H, J, K; closing Synthesis
-  A to K [Added] on the Batch 3 sequence page, with a pointer
-  from Card K. No new facts in the synthesis.
-- Main was NOT pushed in this rebuild, to avoid overwriting
-  the new content notes with the stale local main copy. Main
-  changes ride on the next merge tap. Production deploy is
-  pending the owner's tap in the development chat.
+- A redraw is a digital copy of the owner's original
+  diagram, not an enhanced diagram and not a new design.
+  Enhanced diagrams (flow charts, relationship kinds,
+  circle illustrations) may simplify or explain. A redraw
+  may not. The two are different artefacts, and a redraw
+  is never presented as an enhanced diagram.
+- Faithfulness checklist, checked against the original
+  image itself, before any redraw is pushed:
+  - Nodes: same nodes, no node added, no node dropped,
+    no node renamed, no node merged with another.
+  - Arrows: same arrows, same direction, same source
+    and target, same branching. A branch that splits
+    in the original splits in the redraw, at the same
+    point, to the same targets.
+  - Hierarchy: same levels, same nesting, same order.
+    A parent in the original stays a parent in the
+    redraw; a child stays a child. Hierarchy is not
+    flattened, and a tree is not turned into a sequence.
+  - Labels: same labels, owner's spelling preserved
+    for complete words (for example "Bussiness",
+    "Sillicon", "Univescal", "Thier", "controll",
+    "Coorporate", "heterogenous" where they appear as
+    labels). Labels are not rephrased, not shortened,
+    and not "cleaned up" to sound better.
+  - Crossed and cut-off marks: a crossed-through node
+    or label is drawn crossed through. A branch cut off
+    at the page edge is drawn ending there, incomplete.
+    A continuation is never invented, and a crossed
+    item is never silently dropped or silently revived.
+- SVG format, how:
+  - Clean SVG only, local to the repo, in the same
+    folder convention as other local SVGs, never
+    hotlinked, never a screenshot, never a raster
+    image pasted into an SVG wrapper.
+  - Labels are real SVG <text>, not paths and not
+    images of text, so they stay readable at any size
+    and searchable. Layout follows the original as
+    closely as possible; site colours come second —
+    if a site colour would hide a hierarchy level or
+    an arrow, the original layout wins and the colour
+    choice is noted in archive.
+  - No decoration: no added icons, no added background
+    art, no added arrows for balance, no added title
+    inside the SVG that is not on the original page.
+    A caption outside the SVG may say which original
+    page it redraws; the SVG itself carries only the
+    original's nodes, arrows, and labels.
+- Arrow kinds, in a redraw only:
+  - Relationship kinds (Historical thin solid, Depends
+    on thick solid, Organizational double-line with a
+    verb, Data dashed with "data: …", Control bold
+    with command head) are applied in a redraw ONLY
+    where the kind is clear from the page itself.
+  - Where the kind is not clear, the arrow is drawn
+    exactly as the original draws it, with its
+    direction preserved, and the archive notes "kind
+    unspecified on the original page" — a kind is
+    never silently assigned to make a redraw look
+    consistent with an enhanced diagram.
+  - A pair with several kinds in the original is drawn
+    with separate arrows, one per kind, never as one
+    arrow meaning all three, and never as one
+    double-headed arrow meaning everything.
+- Truncated words, in a redraw only:
+  - Follow the truncated-word rule, not a guess: a
+    truncated / cut-off label word is corrected in the
+    redraw only when the intended word is clear from
+    context or the owner confirms it. The original
+    truncated form, and the fact of correction, live
+    ONLY in "Original images +" and in the local
+    intake, never as a bracket note inside the SVG.
+  - If the intended word is NOT clear, do NOT guess
+    it in the redraw. Show the label exactly as written,
+    with no bracket note in the SVG, and record the
+    unclear / cut-off form only in "Original images +",
+    flagged for the owner.
+- Privacy, in a redraw, overrides faithfulness:
+  - A label containing private material (a digit
+    string, a personal-names list, or any other
+    private material flagged in intake) is NOT
+    reproduced in the redraw. It is omitted or
+    redacted in the SVG, and the omission is noted
+    in "Original images +" and in intake. No private
+    label is ever copied into a clean SVG to make the
+    redraw "complete".
+- Main presentation, under R18:
+  - The SVG itself carries no meta language: no
+    "[Added]", no "labelled", no "this card / that
+    card", no provenance note, no processing
+    commentary inside the SVG or in its caption.
+    The SVG shows only the original diagram.
+  - ALL labelling about the redraw — that it is a
+    redraw, which words were corrected, which arrow
+    kinds were applied or left unspecified, which
+    crossed / cut-off marks were preserved, and any
+    privacy omission — goes ONLY into "Original
+    images +" on that page, and into the local
+    intake / archive record.
+- Placement and originals:
+  - The SVG redraw sits in the diagram section of
+    its card / story / sequence page. It does NOT
+    replace the original image, and it does NOT
+    replace the page's text. The original image stays,
+    untouched, inside "Original images +", and the
+    text still stands on its own without the diagram,
+    as the flow-chart rule already requires.
+  - A page with a diagram but no SVG redraw is
+    incomplete under R19. A redraw that adds a node,
+    an arrow, a branch, or a reworded label fails
+    this rule, even if the resulting diagram looks
+    cleaner than the original.
+- Verification scope:
+  - A verbatim redraw is transcription, not
+    Leo-added factual content, so the verification
+    rule does not require Wikipedia verification of
+    the original's own labels. Verification DOES
+    apply to anything the redraw adds beyond the
+    original: a new label, a new arrow, an assigned
+    arrow kind, or a corrected word that is not
+    clear from context. Such an addition is enhanced
+    content, must be verified claim by claim before
+    push, and must be labelled only in archive.
 
-## Rebuild Card I research dimensions, 2026-10-30 (branch only, no deploy)
+## Answer style — crisp and clear, keynotes and points, lengthy only where needed (2026-10-30, R20)
 
-- Pulled main batch3-notes.md, head c575b9e5, blob
-  9ef60870984da20015ed53c884ddadd75941ad4d (32,681 bytes).
-  Diff vs branch notes proved a single insertion only:
-  lines 166–472, the Research dimensions section; original
-  Card I notes untouched.
-- Card I page: new h3 3 "Research dimensions — expanded
-  comparison [Added, not original]" inserted after the
-  Future completion section (h3 2); the previous R14
-  section renumbered to h3 4. Subsections: five actors,
-  terms clarified, six-dimension comparison, central
-  contradiction — all [Added], all examples from Cards
-  A–K, link-state networking vs leadership metaphor kept
-  separate. Key points, Tags, toggle, header unchanged.
-- Main NOT pushed; production NOT deployed — both pending
-  the owner's tap in the development chat.
-
-## Presentation-page clean rule, 2026-10-30 (owner, branch only, no deploy)
-
-- The main card page reads as a continuous story, not as a
-  provenance report. Full-sentence provenance mentions —
-  "nothing after 2000 is original", "this section expands
-  Card I only / is not on the original page", exclusion
-  lists ("NOT on the original page"), "preserved as written",
-  "labelled distinction/exclusion", transcription edge
-  notes, diagram-labelling notes — live ONLY inside
-  "Original images +" under "Presentation notes — archive
-  only, not on the main page", never in Detailed, Summary,
-  Horizontal links, or the header lede.
-- What stays on the main page: the content itself, with
-  only the short [Added] tag on an enhanced section
-  heading (e.g. Card I "Eras 3–5, continued [Added]",
-  "Research dimensions [Added, not original]"). Card I's
-  eras now continue seamlessly from the original page's
-  stop at 2000/hypergrowth, with no "proposed / owner can
-  overrule" paragraph in the main flow.
-- Applied site-wide 2026-10-30: Card I (both quoted
-  passages + Era 2000 trailing clause + Summary bullet +
-  per-bullet proposed tags), Card G (exclusion + chain
-  framing), Card H (exclusion + grouping framing +
-  horizontal-link label), Card F (Detailed "connec" edge
-  clause; its transcription note was already in the
-  dropdown), Card K (diagram-labelling clause), and the
-  Batch 2/3 header lede prefix "Enhanced headline
-  [Added, labelled, related only]:" (headline text kept).
-  Content, Key points, Tags, toggles, headers unchanged.
-  Main NOT pushed; production NOT deployed — pending the
-  owner's tap in the development chat.
-
-## Card I era examples, 2026-10-30 (owner: "lack of content and notes", "no examples", "real companies, real business, real wiki notes", branch only, no deploy)
-
-- Card I was the thinnest original card (6 Key points) and its
-  page read as abstract theory plus card-to-card links.
-  Added a new Detailed section "Era by era — real
-  companies, real business [Added]": Western Union
-  (telegraph), IBM / DEC / Novell (distribution),
-  Netscape / Amazon / eBay / Google (internet/web),
-  Apple / Google / AWS / Netflix (mobile & cloud),
-  Nvidia / OpenAI / Microsoft / Google (5G & AI) — each
-  with org, tech, and business model, tied back to the
-  original three questions and to Cards C, H, J.
-- Facts checked 2026-10-30 via Wikipedia / web search;
-  no prices or market-share claims beyond pay-as-you-go
-  and per-token concepts already in the notes. Sources
-  are held for the future content-references page, not
-  printed on the main page, per the presentation rule.
-- Card I Detailed grew from 2,461 to 3,217 words, 32 to
-  39 bullets. Original Key points and dropdown untouched.
-  Main notes NOT changed in this step — the section is
-  recorded in branch batch3-notes.md as a site expansion
-  for content chat to adopt, or the next notes pull will
-  overwrite it. Main NOT pushed; production NOT deployed.
-
-## R18 clean rebuild (branch, 2026-10-30)
-
-Built from cleaned main notes/cards (main head 8cf271a3, R18 cleanup commits 303fc138–8cf271a3). Main card pages now carry no [Added] markers, no card-letter references, no "this card / that card / this section" presentation language, and no (R15)/(R17) requirement references; links and Previous/Next are by topic title only. All labelling/provenance moved into "Original images +" per page, including Tags (moved from main) and the Key points provenance footer. Sequence pages cleaned the same way, with a new "Sequence notes — archive only" dropdown carrying batch/order/provenance. Card I era examples (site expansion, 2026-10-30) preserved, heading cleaned. Homepage index tagline and New badge kept for now — homepage is an index, not a study page; owner to confirm whether R18 clean-up applies there too. Stories pages not yet built — still waiting for content chat's Story notes/cards push.
+- Owner's rule, 2026-10-30: "I dont want such lengthy
+  answers, make it crisp and clear with important
+  keynotes or points, across domains except wherever
+  needed such lengthy information that's okay."
+- In chat, answer crisp and clear, with important
+  keynotes and points. Lead with the answer or result.
+  Use short paragraphs and bullets for parallel points.
+  Do not turn a simple answer into an essay, and do
+  not repeat the same point in several wordings.
+- This applies across domains and across topics, not
+  only to one batch, one card, or one domain.
+- Lengthy information is allowed only where it is
+  actually needed: an exact transcription, a
+  verification or cross-check report, a commit / proof
+  list, a detailed diagram description, or a detailed
+  explanation the owner explicitly asked for. If length
+  is not needed, cut it.
+- This does NOT change R1 or the notes themselves.
+  Original notes stay detailed, not abstract.
+  Transcriptions stay exact. Per-batch intake and
+  archive records stay complete. Crisp chat answers
+  are not a reason to cut original content, to drop
+  a gap, a conflict, or a limitation, or to skip a
+  required cross-check.
+- A crisp answer must still carry, where relevant:
+  the decision, the key points, the proof (commit,
+  SHA, size, link), and what is still open, blocked,
+  or awaiting the owner's call. Brevity that drops
+  a condition that changes the decision fails this
+  rule.
+- If an answer must be lengthy to be accurate, say
+  so in one line at the top, then give the lengthy
+  part. Do not pad a short answer to look thorough.

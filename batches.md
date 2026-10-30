@@ -51,3 +51,14 @@ and learning order, with no batch labels and no source IDs.
 - Card I: tech leadership eras, original stops at 2000 Internet/web/cloud, core focus Building hypergrowth; Eras 3–5 (Internet/web/cloud, Mobile & cloud, 5G & AI 2020–Now till 2026) are labelled [Added] completion from batch3-tech-leadership-completion.md, proposed fields marked, owner can overrule. Card J: six eras, three lenses (interface/control/payment), R14 ICANN/IETF/W3C distinguished, original spelling 'Bussiness controller' preserved in Key points, spelling note only inside Original images +. Card K: one scheduler model, R14 ISO/RTO/ICANN/ISP/VISA/SWIFT distinguished by function.
 - Original images: deploy-only on the Vercel site, NOT in the GitHub branch, as with Batches 1–2. Batch3-intake.md, batch3-verification-audit.md, batch3-audit-2026-10-29.md: NOT pushed.
 - Cumulative branch: this branch is based on batch/b2publish, so the live branch build shows Cards A–K (11 cards), not Batch 3 alone. Main still holds Batch 3 as private/draft, as with Batch 2 before it.
+
+## Held rebuild 2026-10-30 (main 847a13d2, branch only, NOT deployed, NOT in public index)
+- Batch 4 Card L (batch4/card-l.html): Employer — Employee, government regulation shapes work, feedback both ways. Originals: hb-batch4-002 handwritten + hb-batch4-001 owner-confirmed original digital diagram, neither replaces the other. Held, private, draft.
+- Batch 5 Card M (batch5/card-m.html): The Evolution of Radio Broadcasting, U.S. part only. Indian broadcasting governance pending, not invented. Held, private, draft.
+- Stories (stories/stories.html, story-a.html, story-b.html): Story A (A–G) + Story B (H only, first 17 pages), aggregate + link back, A–H canonical unchanged. Held, private, draft. Stories domain entry on main (74fbf802) NOT added to branch homepage categories, to keep held items out of the public index; branch categories keep software domain (H/J) + original 5.
+- Framework (framework.html): How the global technology industry works, front guide, R21, enhanced synthesis, examples snippet-checked only / unverified. Held.
+- Paths (career-path.html, industry-path.html): navigation views over the same notes, no duplicate cards, gaps marked as gaps, not filled. Held.
+- Synthesis (synthesis.html): Synthesis after M, A→M links, no new fact. Held.
+- Research (research.html): Research → Handbook integration, LINK not copy. 3 md files (Technology, Bussiness, Business&Technology, 5,178 lines) are working files, not copied into any card. Held.
+- Batch 1–3 notes synced to audit-corrected main versions (12fb2a90, cbf9e99f, 235f0b2b); rules 294c798d, requirements 0e390ff7 (R21). Existing A–K pages unchanged in content; audit was notes rewording only.
+- Original images for Batch 4/5/Stories are NOT in this branch (public repo rule) and were NOT deployed. No production deploy from this rebuild.
