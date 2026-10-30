@@ -1423,6 +1423,19 @@ Only the business-relevant companion to the kernel device section is added here:
 - Governance, in business terms: IEEE and telecom regulators set the rules for hardware and spectrum; kernel maintainers and IETF set the rules for the stack and protocols; RIRs allocate IPs; ICANN manages the DNS root zone; W3C sets web standards; cloud providers operate the services on top. A product must clear each layer for its market, as in the previous hierarchy sections.
 - Full technical detail: Technology.md, "Linux Network Kernel Devices — Start, Run, Stop, Types, Directory Map, Governance". Combined view: Business&Technology.md, "Linux Network Kernel Devices — Combined View".
 
+
+## Linux Kernel Branches (Subsystems) — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the audited business companion is added here. Full technical detail is in Technology.md and is not repeated.
+
+### Kernel branches, in business terms, analogy only
+- Kernel branches are like a company's departments, as an analogy only: init/ and kernel/ as management, mm/ as finance allocating resources, kernel/sched/ as HR/operations assigning tasks to CPUs, security/ as legal/compliance, drivers/ and net/ as R&D/IT, block/ and fs/ as logistics and storage.
+- Real governance, audited: each subsystem has a maintainer, tracked in the MAINTAINERS file, with mailing-list review and tree integration — not executive, legislative, and judicial branches, and not a corporate board.
+- Networking branch, in business terms: net/core/ as device registration and routing, ipv4/ipv6 as protocol stacks, packet/ as raw sockets, netfilter/ as firewall, wireless/ as Wi-Fi stack, bridge/ as Layer 2 bridging, vxlan/geneve as overlays — all verified as real net/ directories.
+- AI governance extension, speculative only: AI as automated advisors or governors, predicting overloads or breaches, is a future direction, not a current kernel branch.
+- Full technical detail: Technology.md, "Linux Kernel Branches (Subsystems) — Audited, Then Added". Combined view: Business&Technology.md, "Linux Kernel Branches (Subsystems) — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.

@@ -646,6 +646,20 @@ Kernel devices, types, directory map, and governance, read together, without rep
 - Corrections carried over: paths are source-tree relative, not absolute `/drivers/net/`; VLAN is `net/8021q/`; loopback is virtual; NFQUEUE/XDP are not devices; eth0 is a legacy example name; no diagram was drawn, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
+
+## Linux Kernel Branches (Subsystems) — Combined View (No Diagram)
+
+### Headline
+Audited kernel branches, read together, without repeating the full technical section.
+
+### Combined list
+- Audited true: top-level directories init, kernel, mm, fs, net, drivers, security, ipc, sound, crypto, block, virt, arch, scripts, tools; subsystems each with a maintainer in MAINTAINERS; net/ subdirectories core, ipv4, ipv6, packet, netfilter, wireless, bridge, vxlan, geneve.
+- Analogy only: government branches (executive, legislative, judicial) and business departments (finance, HR, legal, R&D, logistics, management) mapped to kernel subsystems; unified model Business Kernel → Government Kernel → System Kernel → Network Kernel is a source framework, not a standard model.
+- Corrected: ipc/ is SysV IPC and POSIX message queues, pipes are in fs/pipe.c; virt/ is primarily KVM, Xen guest support is in drivers/xen/; sound/ is top-level ALSA, not drivers/sound/; scheduler is in kernel/sched/ in modern kernels.
+- Speculative only: AI governance extension, self-healing OS predicting overloads or breaches, is future direction, not a current kernel branch.
+- No diagram or essay expansion was made, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.
