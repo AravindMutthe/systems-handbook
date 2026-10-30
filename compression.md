@@ -13,6 +13,9 @@ Contents below are the 3 backup files in full, in order, separated by part headi
 
 > **New rule (set 2026-10-30, by Aravind, for the 5 files and the new branch):** Every time these 5 files are updated, the rule book applies. Compression.md must carry all original shared notes, in full. Elaborated.md must remove the redundant notes found in compression.md, and elaborate only the remaining, non-redundant points with key notes — about 2 lines per point, plus an example, and a command or protocol only where applicable, as discussed earlier for one-liner points.
 
+> **Branch rule (set 2026-10-30, by Aravind):** All work stays in these 3 lines only — main, systems-evaluation-book, and research-compression-elaborated. No work outside those branches, no direct edits to main, no merge and no deploy without Aravind's tap.
+
+
 # Part 1 — Technology.md (original order)
 
 > **Standing rule (set 2026-10-30, by Aravind):** For every note shared in this chat from now on — clean it to subject only, correct factual errors (with a corrections list in the new section), and remove redundant content/data already in any of the 3 files. Decide the primary file by topic, then update all 3 files with relevant content every time: the primary file gets the full new section, and the other files get their own angle on the same note — e.g. a tech note in Technology.md must also be mapped to its business analogy in Bussiness.md, and a business note must also be mapped to its technology counterpart here. If a note fits all 3 files, update all 3 with new notes/data. Do not copy the same section verbatim across files — each file gets only its own angle, condensed, with a pointer to the full section elsewhere. Md only, no PDF/diagram unless explicitly asked.
