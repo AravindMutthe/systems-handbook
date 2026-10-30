@@ -3830,6 +3830,91 @@ Top level: net/ in the kernel source, with the TCP/IP stack principally in net/i
 - TLS lives in system and application libraries as well as in browsers, not in browsers alone.
 - No diagram was built from either source's closing offer, per the standing rule.
 
+## Authentication Chain — From Wi-Fi to Final Destination (Audited, Sanitized)
+
+This section records the source's thesis-level overview of every authentication step from an authorized Linux user joining Wi-Fi to reaching a final service. It is an overview, not a complete protocol specification: association, WPA3, 802.11 management-frame protection, and per-application flows are outside its scope. One sanitization decision is recorded first: the source's example Wi-Fi password is omitted from these files. A shared password in a teaching note is still a credential-shaped value, and these notes do not need it; the mechanism is described without it.
+
+### 1. Wi-Fi authentication at the access point
+
+Two models, not one process:
+
+- WPA2-PSK (home, cafe): a pre-shared key is shared by all users of that network. The passphrase is converted by PBKDF2 into the Pairwise Master Key (a 64-hex-digit PSK is used directly as the PMK), and the 4-way EAPOL-Key handshake exchanges nonces (ANonce, SNonce) and MAC addresses to derive the Pairwise Transient Key, install the Group Temporal Key, and confirm both sides hold the PMK. Traffic is then encrypted with AES-CCMP. Correction: this is not EAP authentication and does not use 802.1X; EAPOL is the key-exchange frame format, and in PSK mode there is no RADIUS server and no per-user identity. Anyone holding the shared key joins, so PSK proves possession of the key, not who the user is.
+- WPA2-Enterprise (university, enterprise): 802.1X with EAP inside, for example PEAP, EAP-TLS, or EAP-TTLS. The access point forwards EAP messages to a RADIUS server, which validates the credential against a directory such as Active Directory or LDAP. On success, keying material (MSK) is derived and the 4-way handshake runs as above, with per-user, per-session keys. Result: only a validated enterprise identity gets network access, and each user gets distinct keys.
+
+### 2. DHCP and LAN identity
+
+After Wi-Fi authentication, DHCP runs Discover, Offer, Request, Acknowledge (DORA) and assigns a private address, gateway, and resolver. The source example, 192.168.1.101 with gateway 192.168.1.1, is a typical private-LAN example, not a measured address. Correction: DHCP itself has no strong authentication in normal use; RFC 3118 defines a DHCP authentication option, but it is rarely deployed, and the practical gate is that the access point or router only serves clients that passed Wi-Fi authentication. DHCP therefore assigns an identity; it does not prove one.
+
+### 3. Network Access Control, optional
+
+In enterprises, an additional check may run, often tied to 802.1X: device posture such as OS patch level and antivirus state may be assessed, and a non-compliant device may be placed in a quarantine VLAN with limited access. Correction: NAC is not always 802.1X-based; agent-based, DHCP-based, and switch-port-based NAC also exist, and posture assessment is a policy decision by the organisation, not a property of Wi-Fi itself.
+
+### 4. NAT and the public Internet
+
+A private address such as 192.168.1.101 is not routable on the public Internet (RFC 1918 private space). The router performs Network Address Translation, rewriting source address and port so return traffic can be mapped back. The source's public example, 198.51.100.10, is in the TEST-NET-2 documentation range (RFC 5737) and is not a real assigned public address; it is kept here only as a labelled example. Correction: NAT is not authentication. Packets are allowed because the client already passed Wi-Fi authentication and the router's policy permits outbound traffic; NAT itself proves nothing about identity, and it does not encrypt traffic.
+
+### 5. VPN authentication, re-entering private space
+
+A VPN client connects to a gateway — the source's server example, 203.0.113.25, is in the TEST-NET-3 documentation range, not a real gateway address, and its command, written as "namcli connect", is not a standard VPN tool. The standard forms depend on the VPN type: NetworkManager with `nmcli connection up <vpn-name>`, OpenVPN with `openvpn --config`, WireGuard with `wg-quick up`. Do not quote the source command as a tool name.
+
+- OpenVPN or IPsec VPNs: the client authenticates the server by X.509 certificate, the server authenticates the client by password, certificate, or token, sometimes with MFA, and session keys are derived via Diffie-Hellman or ECDH. A tunnel interface such as tun0 carries the encrypted traffic, and the client receives an internal address; the source example 10.0.0.55 is RFC 1918 private space.
+- WireGuard differs: it uses static Curve25519 key pairs and the Noise protocol, not X.509 certificates or a TLS/IPsec handshake, so the source's TLS/IPsec description does not cover WireGuard.
+- Result: from the public Internet, the user securely re-enters a private network. DNS for the VPN gateway itself normally happens before the tunnel, while DNS for internal names happens inside it; the source's single linear order hides that split.
+
+### 6. DNS authentication for the destination
+
+For www.github.com, the resolver is asked over UDP port 53 in plain DNS, or over DoT (port 853) or DoH (port 443) when encrypted DNS is used. Plain DNS has no authentication and is vulnerable to spoofing and cache poisoning. DNSSEC adds digital signatures over DNS records so a resolver can verify that the data came from the zone owner and was not altered in transit. Correction: DNSSEC authenticates data origin, not the server's identity in the TLS sense, and it does not encrypt queries; DoT and DoH encrypt, DNSSEC signs, and the two solve different problems. The source's resolved example, 140.82.112.3, is inside GitHub's address space but is an example only; GitHub answers vary by location and time.
+
+### 7. TCP handshake
+
+SYN, SYN-ACK, ACK establishes a connection, with initial sequence numbers chosen by each side. Correction, as the source itself notes: this is state and reachability verification, not identity authentication. It makes blind spoofing harder because an attacker must guess sequence numbers to inject data, but it does not prove who the peer is; that is TLS's job.
+
+### 8. TLS authentication for the application
+
+On opening an HTTPS site, the TLS handshake runs: the server sends its certificate, the client verifies the chain to a root in its trust store, checks dates and the domain name, and the sides derive symmetric session keys, using ECDHE in modern configurations for forward secrecy. Mutual TLS, where the client also presents a certificate, is optional and used mainly for machine-to-machine and enterprise access, not for ordinary web browsing. Result: an encrypted channel to the verified server, over which application authentication then runs.
+
+### 9. Application authentication, the final layer
+
+Inside the TLS channel, the application authenticates the user: a GitHub login by password plus a second factor, OAuth authorization for third-party access, or SSH keys for Git operations. Correction: OAuth tokens are authorizations, not passwords; an OAuth token grants scoped access to an application without sharing the user's password, and SSH keys authenticate a key holder, not a password holder. These are user-level, end-to-end authentications, distinct from every network-layer step above.
+
+### Private to public to private, in one line
+
+Private LAN (192.168.x.x) to public Internet by NAT, back to a private corporate network (10.x.x.x) by VPN tunnel, then to a public service over TLS, with application login as the final check. Each transition changes what is trusted: Wi-Fi proves key possession or enterprise identity, DHCP assigns an address, NAT translates it, VPN proves corporate identity, DNSSEC proves record origin, TCP proves reachability, TLS proves server identity, and the application proves user identity. No single step proves all of them.
+
+### Corrections list for this batch
+
+- The source's example Wi-Fi password is omitted as a sanitization step; the mechanism is described without a credential value.
+- WPA2-PSK uses the 4-way EAPOL-Key handshake without EAP or RADIUS and proves key possession, not user identity.
+- DHCP has no strong authentication in normal deployment; RFC 3118 exists but is rarely used.
+- 198.51.100.10 and 203.0.113.25 are RFC 5737 documentation addresses, not real public or gateway addresses.
+- The source's VPN command is not a standard tool; nmcli, openvpn, and wg-quick forms are given instead, and WireGuard does not use the TLS/IPsec certificate handshake described.
+- NAT is not authentication and does not encrypt.
+- DNSSEC signs data origin; it does not encrypt queries and does not authenticate a server the way TLS does.
+- TCP's handshake is reachability and state verification, not identity authentication.
+- OAuth tokens are scoped authorizations, not passwords; SSH keys authenticate a key holder.
+- No multi-layer authentication ladder diagram was built from the source's closing offer, per the standing rule.
+
+## After AP Authentication — Switch, Router, and Where DNS Lives (Audited, New Gaps Only)
+
+This section records the step-2 recap note. The authentication steps themselves are not repeated; only the hop order and DNS placement are new.
+
+- After WPA2 authentication and DHCP, the laptop holds a private address (source example 192.168.1.101), a gateway (192.168.1.1), and a resolver address. The resolver may be a public resolver such as 8.8.8.8, the gateway itself as a forwarder, or, inside a VPN, a private resolver such as the source's 10.0.0.10 example. Those resolver addresses are examples, not a fixed assignment.
+- Hop order in an enterprise network: laptop, access point at Layer 2, access switch at Layer 2, router or firewall gateway at Layer 3, then the public Internet. The access point forwards frames by MAC address into the wired LAN. A switch learns source MAC addresses against ports in its MAC address table (often called a CAM table) and forwards a frame to the port for its destination MAC, flooding only when the destination is unknown, broadcast, or multicast. In a small home network the access point, switch, and router are usually one combined box, so the three logical hops collapse into one device; the logical order does not change.
+- Correction: the router does not itself "tell you which DNS server to use" as a separate step after authentication. DHCP already supplied the resolver address when the address was leased; the router is commonly the address supplied (192.168.1.1), acting as a DNS forwarder to upstream resolvers.
+- Where DNS lives: locally, in the laptop's resolver cache and in /etc/hosts for manual entries, which the name-service switch normally consults before DNS. On Ubuntu 22.04 in particular, the stub resolver systemd-resolved normally listens on 127.0.0.53 and forwards upstream, so an application rarely talks to 8.8.8.8 directly unless configured to. On the network, the resolver is the DHCP-supplied server or, in an enterprise or VPN, a private resolver. Globally, the hierarchy is root, TLD, and authoritative servers, as detailed in the coordination section.
+- Full order after authentication: authorized on Wi-Fi, AP forwards into the LAN, switch forwards by MAC, router or gateway applies NAT and forwards by IP, DNS resolves the destination name, then TCP and TLS handshakes run to the resolved address. DNS may also be needed again for additional domains a page or app fetches.
+
+## Worked Examples — WhatsApp Call and GitHub Push (Audited, Examples Only)
+
+All addresses, ports, and MAC values in this section are source examples, not a captured live session. They illustrate the flow; they are not evidence of a real connection.
+
+- Starting position: laptop MAC AA:BB:CC:DD:EE:11 (a locally administered example MAC, not a real device address), private IP 192.168.1.101, gateway 192.168.1.1. The laptop is inside the private LAN but does not yet know where a service lives; that is why DNS comes before any transport handshake to a named service.
+- WhatsApp call: the app resolves a service domain such as edge-mqtt.facebook.com, then opens a transport session. Real-time voice and video normally use UDP with SRTP for encrypted media, with STUN/TURN-style relaying where a direct path is unavailable; the source's example flow, 192.168.1.101:54321 to 157.240.20.60:3478, uses an ephemeral source port and the standard STUN/TURN port as an illustration. The server validates the account's login token and session. Correction: media is end-to-end encrypted and routers forward UDP packets without decrypting them; "sent hop-by-hop" in the source means forwarded hop by hop, not decrypted at each hop. The WhatsApp IP example 157.240.20.60 is inside Meta's address space but is an example only; WhatsApp uses many addresses and domains.
+- GitHub push or pull: the Git client resolves github.com (source example 140.82.112.3, inside GitHub's space, example only), then runs a TCP handshake to port 22 for SSH or port 443 for HTTPS, from an ephemeral source port such as the source's 60123. Authentication is by SSH key for SSH remotes or by personal access token (and equivalent scoped tokens) for HTTPS remotes. Git objects then transfer inside the encrypted SSH or TLS session.
+- Devices after the AP, in order: laptop builds the packet with source and destination IPs, AP forwards the frame, switch forwards by MAC to port, router or gateway NATs the private source to a public address (source example 198.51.100.10, a TEST-NET-2 documentation address, not a real assigned address), ISP routers forward by destination IP, and the remote server completes the handshake.
+- Private versus public in this context: 192.168.1.x is private and visible only locally; WhatsApp and GitHub addresses are public and globally reachable; NAT is the bridge that translates the private source to a public one for outbound traffic.
+- No parallel-flow comparison diagram was built from the source's closing offer, per the standing rule; the two flows above are the comparison in text.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -5798,6 +5883,19 @@ Full section: Technology.md, "Where Protocols Reside — Device, Server, Router,
 - Router and backbone functions are vendor and ISP costs: DHCP, NAT, firewall, and DNS forwarding on the router, and BGP on ISP routers, are the points where a misconfiguration becomes an outage for every user behind that device.
 - The corrections in the full section are commercial as well as technical: buying a Windows API, a firewall tool, or a root-server claim does not buy the stack, the filtering, or the DNS root; each is a different component with a different owner and support path.
 
+## Authentication Chain — Business Angle (Condensed, No Duplication)
+
+Full section: Technology.md, "Authentication Chain — From Wi-Fi to Final Destination".
+
+- Each authentication layer is a different business control with a different owner: Wi-Fi key or enterprise identity (IT), DHCP addressing (network operations), NAT (edge routing), VPN corporate identity (security), DNSSEC (domain operations), TLS certificates (web operations), and application login (product team). A failure in one layer is not a failure of the others, and an audit must name the layer.
+- Shared-key Wi-Fi is a shared-secret risk: anyone holding the key joins, and changing it means reissuing it to every legitimate user. Enterprise 802.1X with per-user keys is the control that turns Wi-Fi access into an auditable identity event.
+- Documentation addresses in the source (TEST-NET ranges) are a reminder for procurement and documentation: examples in diagrams and runbooks must be labelled as examples, or they will be copied into real configurations.
+- OAuth and SSH keys change the credential model from shared passwords to scoped tokens and key pairs; revocation, rotation, and least-privilege scoping are the business processes that make those controls real.
+
+## After AP Authentication and Worked Examples — Business Angle (Condensed)
+
+Full sections: Technology.md, "After AP Authentication — Switch, Router, and Where DNS Lives" and "Worked Examples — WhatsApp Call and GitHub Push". Business points only: the AP-switch-router chain is a cost and failure-domain map (a combined home box hides three failure points in one device; an enterprise chain separates them for troubleshooting and redundancy). DNS placement is a control point: a private resolver inside a VPN or enterprise can enforce internal names and filtering, while a public resolver cannot. The worked examples show why port and authentication choices are product decisions: SSH keys versus tokens for Git, and UDP real-time media versus TCP for Git transfer, each with different firewall, NAT, and support implications.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -6853,6 +6951,18 @@ Full section: Technology.md, "Where Protocols Reside — Device, Server, Router,
 - Device: DNS client, browser HTTP and TLS, kernel TCP/IP, DHCP client, NTP client. Server: authoritative DNS, Apache or Nginx, mail servers, certificate files. Router: DHCP server, DNS forwarder, NAT and firewall, routing, in OpenWrt, Cisco IOS, or RouterOS. Backbone: BGP on ISP routers, root DNS anycast, public NTP.
 - Linux kernel map: net/core for device handling, net/ipv4 for IPv4, TCP, UDP, and ICMP, net/ipv6 for IPv6, net/packet for packet sockets, net/sched for traffic control, with ss, ip, tcpdump, iptables or nftables, and sysctl as the interaction tools.
 - Winsock is an API, Netfilter is filtering, ICANN runs only the L root server, and BGP is a router function, not a web-server function.
+
+## Authentication Chain — Combined View (Condensed)
+
+Full section: Technology.md, "Authentication Chain — From Wi-Fi to Final Destination". Business angle: Bussiness.md, "Authentication Chain — Business Angle".
+
+- Wi-Fi: WPA2-PSK proves key possession via the 4-way handshake and AES-CCMP; WPA2-Enterprise proves enterprise identity via 802.1X, EAP, and RADIUS, with per-user keys.
+- LAN and edge: DHCP (DORA) assigns a private identity without authenticating it; optional NAC may quarantine non-compliant devices; NAT translates private to public without authenticating or encrypting.
+- Re-entry and destination: VPN proves corporate identity (TLS/IPsec certificates, or WireGuard keys) and gives an internal address; DNSSEC proves record origin while DoT/DoH encrypt queries; TCP proves reachability; TLS proves server identity; application login, OAuth, or SSH keys prove user identity.
+- Sanitization note: the source's example Wi-Fi password is omitted from these files; the TEST-NET example addresses are labelled as documentation ranges, not real addresses.
+
+- After AP authentication: laptop, AP (Layer 2), switch (MAC to port), router (Layer 3, NAT), ISP, server; DNS lives in local cache, /etc/hosts, the DHCP-supplied resolver (often the gateway as forwarder, or a private VPN resolver), and the global root, TLD, authoritative hierarchy.
+- Worked examples: WhatsApp call resolves a Meta service domain, then UDP with SRTP media and token authentication; GitHub push resolves github.com, then TCP to port 22 (SSH keys) or 443 (HTTPS tokens), with Git objects inside the encrypted session. All IPs, ports, and the example MAC are illustrations, not a captured session.
 
 ## Business Promotion — Combined View (No Diagram)
 

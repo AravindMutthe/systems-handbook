@@ -6841,6 +6841,25 @@ Pointer: full section in Technology.md. Business and combined angles are in Buss
 - Packet flow in Linux: NIC, driver, net device interface, net/core/dev.c, IP layer, transport layer, socket, application. Example: tcpdump sees packets on the path before the application ever reads them.
 - Tools: ss for sockets, ip for addresses and routes, tcpdump for capture, iptables or nftables for filtering, sysctl for tuning. Example: sysctl can change tcp_rmem without reinstalling anything.
 
+## Authentication Chain — Elaborated Key Points (New Gaps Only)
+
+Pointer: full section in Technology.md. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings. Parts 2 and 3 of this file carry only pointers for this batch, per the rule.
+
+- WPA2-PSK proves key possession, not user identity. Example: anyone given the shared key joins the network, with the same key for all users.
+- WPA2-Enterprise proves enterprise identity. Example: a university user authenticates by EAP through RADIUS to Active Directory and gets per-session keys.
+- DHCP assigns an address; it does not authenticate. Example: a device that passed Wi-Fi authentication still gets its address from an unauthenticated DORA exchange.
+- NAT translates addresses; it does not authenticate or encrypt. Example: a private 192.168 address becomes a public address at the router, with no identity check in the translation itself.
+- VPN re-enters private space from public space. Example: a remote worker tunnels to a corporate gateway and receives a 10.x internal address.
+- DNSSEC signs records; DoT and DoH encrypt queries. Example: DNSSEC proves a github.com record came from its zone, while DoH hides the query from the local network.
+- TCP handshake proves reachability, not identity. Example: SYN, SYN-ACK, ACK confirms both sides can send and receive, without proving who they are.
+- TLS proves server identity; application login proves user identity. Example: a browser verifies GitHub's certificate, then GitHub verifies the user's login or SSH key.
+
+- After AP authentication, hops are laptop, AP, switch, router, ISP, server. Example: a home box combines AP, switch, and router in one device, but the logical hops remain.
+- A switch forwards by MAC address learned against ports. Example: a frame for a known MAC goes to one port, not to every port.
+- DNS lives locally (cache, /etc/hosts), at the DHCP-supplied resolver, and globally (root, TLD, authoritative). Example: Ubuntu's systemd-resolved stub at 127.0.0.53 forwards to the configured upstream resolver.
+- WhatsApp call uses UDP real-time media with SRTP. Example: voice packets are end-to-end encrypted and forwarded by routers without being decrypted at each hop.
+- GitHub push uses SSH port 22 with keys or HTTPS port 443 with a token. Example: the same repository can be pushed over either, with different authentication.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9487,6 +9506,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points on where protocols reside. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
+
+## Authentication Chain — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points on the authentication chain. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10894,6 +10918,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 ## Where Protocols Reside — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points on where protocols reside. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
+
+## Authentication Chain — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points on the authentication chain. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
 ## Business Promotion — Combined View (No Diagram)
 
