@@ -738,6 +738,18 @@ Full section: Technology.md, "Where Protocols Reside — Device, Server, Router,
 - Linux kernel map: net/core for device handling, net/ipv4 for IPv4, TCP, UDP, and ICMP, net/ipv6 for IPv6, net/packet for packet sockets, net/sched for traffic control, with ss, ip, tcpdump, iptables or nftables, and sysctl as the interaction tools.
 - Winsock is an API, Netfilter is filtering, ICANN runs only the L root server, and BGP is a router function, not a web-server function.
 
+## Authentication Chain — Combined View (Condensed)
+
+Full section: Technology.md, "Authentication Chain — From Wi-Fi to Final Destination". Business angle: Bussiness.md, "Authentication Chain — Business Angle".
+
+- Wi-Fi: WPA2-PSK proves key possession via the 4-way handshake and AES-CCMP; WPA2-Enterprise proves enterprise identity via 802.1X, EAP, and RADIUS, with per-user keys.
+- LAN and edge: DHCP (DORA) assigns a private identity without authenticating it; optional NAC may quarantine non-compliant devices; NAT translates private to public without authenticating or encrypting.
+- Re-entry and destination: VPN proves corporate identity (TLS/IPsec certificates, or WireGuard keys) and gives an internal address; DNSSEC proves record origin while DoT/DoH encrypt queries; TCP proves reachability; TLS proves server identity; application login, OAuth, or SSH keys prove user identity.
+- Sanitization note: the source's example Wi-Fi password is omitted from these files; the TEST-NET example addresses are labelled as documentation ranges, not real addresses.
+
+- After AP authentication: laptop, AP (Layer 2), switch (MAC to port), router (Layer 3, NAT), ISP, server; DNS lives in local cache, /etc/hosts, the DHCP-supplied resolver (often the gateway as forwarder, or a private VPN resolver), and the global root, TLD, authoritative hierarchy.
+- Worked examples: WhatsApp call resolves a Meta service domain, then UDP with SRTP media and token authentication; GitHub push resolves github.com, then TCP to port 22 (SSH keys) or 443 (HTTPS tokens), with Git objects inside the encrypted session. All IPs, ports, and the example MAC are illustrations, not a captured session.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.

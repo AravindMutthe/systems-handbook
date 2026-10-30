@@ -1538,6 +1538,19 @@ Full section: Technology.md, "Where Protocols Reside — Device, Server, Router,
 - Router and backbone functions are vendor and ISP costs: DHCP, NAT, firewall, and DNS forwarding on the router, and BGP on ISP routers, are the points where a misconfiguration becomes an outage for every user behind that device.
 - The corrections in the full section are commercial as well as technical: buying a Windows API, a firewall tool, or a root-server claim does not buy the stack, the filtering, or the DNS root; each is a different component with a different owner and support path.
 
+## Authentication Chain — Business Angle (Condensed, No Duplication)
+
+Full section: Technology.md, "Authentication Chain — From Wi-Fi to Final Destination".
+
+- Each authentication layer is a different business control with a different owner: Wi-Fi key or enterprise identity (IT), DHCP addressing (network operations), NAT (edge routing), VPN corporate identity (security), DNSSEC (domain operations), TLS certificates (web operations), and application login (product team). A failure in one layer is not a failure of the others, and an audit must name the layer.
+- Shared-key Wi-Fi is a shared-secret risk: anyone holding the key joins, and changing it means reissuing it to every legitimate user. Enterprise 802.1X with per-user keys is the control that turns Wi-Fi access into an auditable identity event.
+- Documentation addresses in the source (TEST-NET ranges) are a reminder for procurement and documentation: examples in diagrams and runbooks must be labelled as examples, or they will be copied into real configurations.
+- OAuth and SSH keys change the credential model from shared passwords to scoped tokens and key pairs; revocation, rotation, and least-privilege scoping are the business processes that make those controls real.
+
+## After AP Authentication and Worked Examples — Business Angle (Condensed)
+
+Full sections: Technology.md, "After AP Authentication — Switch, Router, and Where DNS Lives" and "Worked Examples — WhatsApp Call and GitHub Push". Business points only: the AP-switch-router chain is a cost and failure-domain map (a combined home box hides three failure points in one device; an enterprise chain separates them for troubleshooting and redundancy). DNS placement is a control point: a private resolver inside a VPN or enterprise can enforce internal names and filtering, while a public resolver cannot. The worked examples show why port and authentication choices are product decisions: SSH keys versus tokens for Git, and UDP real-time media versus TCP for Git transfer, each with different firewall, NAT, and support implications.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
