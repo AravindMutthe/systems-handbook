@@ -3023,6 +3023,74 @@ This section adds only the new material in the latest note: what each UI era mea
 - No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The source offer to draw a vertical timeline chart with era, UI, business, finance, and "Your Fit" columns was not acted on.
 - Full section: this Technology.md section. Business angle: Bussiness.md, "Timeline + Business & Finance Mapping — Business Angle". Combined view: Business&Technology.md, "Timeline + Business & Finance Mapping — Combined View".
 
+
+## Control Stack — Hardware, Drivers, Admins, Storage/Networks, IDs (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+This section merges two overlapping notes into one control stack, without repeating them twice: hardware → software drivers → network admins → public storage and networks → identification attributes, from telegraph to 5G AI era, with the three products mapped onto it. Business and finance models for these eras are already in the previous section and are not repeated here.
+
+### A. Control stack per era, five layers
+- Telegraph and early telephone, 1850s–1940s: hardware — telegraph keys, rotary switches, copper lines, wires, relays, rotary dials; drivers — none, manual switching, operators acting as "drivers" only by analogy; network admins — line operators, switchboard operators; public storage/network — telegraph lines and early telephone exchanges, as transmission networks, not storage; identification — Morse address codes, telephone numbers with manual mapping, operator routing codes.
+- Mainframes and early computing, 1950s–1970s: hardware — mainframes, tape drives, punched card readers, terminals; drivers — OS-integrated device support, for example IBM OS/360 device drivers, plus ASCII as an open character standard; network admins — system operators (sysops), job schedulers, batch operations; public storage/network — ARPANET beginnings (from 1969, late in this era), magnetic tapes, shared labs; identification — machine IDs, user account IDs, punched-card job IDs.
+- Client-server and PC era, 1980s–1990s: hardware — PCs, monitors, NICs, storage disks, servers, LAN switches; drivers — Microsoft Win32 device drivers, Apple Toolbox plus extensions, X11 drivers (open source), as listed in the source; network admins — corporate sysadmins, LAN admins, Novell NetWare admins; public storage/network — early ISPs, FTP servers, bulletin boards; identification — MAC addresses, IPv4 addresses, login credentials.
+- Internet and web 1.0/2.0, 1990s–2000s: hardware — servers, routers, modems, NIC cards; drivers — NIC drivers in the kernel (Linux net_device, Windows NDIS), browser rendering engines (Gecko, WebKit); network admins — IT teams, sysadmins, hosting providers, managing DNS, firewalls, and servers; public storage/network — public web servers, DNS, early cloud file hosting; identification — IP addresses, domain names (DNS), usernames and passwords.
+- Mobile and cloud era, 2010s: hardware — smartphones, cloud data centers; drivers — iOS and Android device drivers, cloud hypervisors (KVM, Xen, VMware); network admins — cloud DevOps engineers (AWS, GCP, Azure), mobile device management admins for schools and enterprises, SaaS admins; public storage/network — AWS S3, Google Drive, OneDrive, Dropbox; identification — cloud account IDs, OAuth tokens, device IMEI and serial numbers.
+- 5G and AI era, 2020s–now: hardware — 5G towers, AI accelerators (GPU, TPU, custom ASICs), IoT devices; drivers — kernel drivers for GPUs and NPUs (Nvidia CUDA, ROCm, Intel oneAPI, as listed in the source), virtual NIC drivers (DPDK, SR-IOV, eBPF), edge computing OS (containers, Kubernetes), Kubernetes CNI plugins; network admins — cloud architects, AI infra admins, 5G network slicing admins; public storage/network — decentralized cloud (IPFS, Filecoin), public hyperscale (AWS, Azure, GCP), CDN and edge networks (Cloudflare, Akamai); identification — IPv6 addresses, public and private keys (PKI), blockchain wallet IDs, biometric IDs (fingerprint, Face ID).
+
+### B. Identification attributes across eras, as a list
+- Telegraph: Morse addresses, operator routing codes.
+- Mainframes: job IDs, account IDs.
+- Client-server: MAC addresses, IPv4 addresses, logins.
+- Web 1.0/2.0: IPs, domain names, usernames and passwords.
+- Mobile/cloud: cloud IDs, OAuth tokens, IMEIs.
+- 5G/AI: IPv6, PKI keys, blockchain IDs, biometrics.
+- In short: identification evolved from Morse addresses to IPs to cloud IDs to biometrics and blockchain, while the control foundation — hardware, drivers, and admins — stayed underneath every era.
+
+### C. Products in this control stack (source mapping, not verified)
+- Tern, infra plus AI platform: layer — hardware plus drivers plus admin APIs; hardware — AI hardware, future chips, GPUs; drivers — CUDA, ROCm, Linux kernel drivers, NIC drivers (DPDK, eBPF), cloud orchestration (Kubernetes, Docker); admins — AI infra architects; storage/network — cloud object storage (S3, GCS), HPC clusters; IDs — API keys, PKI certificates, customer organisation IDs; business — platform SaaS plus API usage billing.
+- GradeSpot, EdTech SaaS: layer — web frameworks plus cloud drivers, abstracted; hardware — runs on cloud servers; drivers — browser engines, OS-level drivers (abstracted), SCORM and LTI drivers (education APIs, as listed in the source); admins — school IT admins managing integration; storage/network — SaaS databases, cloud storage (encrypted); IDs — student IDs, OAuth (Google, Microsoft), GDPR compliance IDs (as listed in the source); business — per-student licensing.
+- HighGradesApp, B2C app: layer — mobile OS drivers plus cloud APIs; hardware — phones (Android, iOS); drivers — iOS and Android SDKs; admins — app-store platform admins (Apple and Google compliance), plus MDM if in schools; storage/network — Firebase, iCloud, Google Drive; IDs — Apple IDs, Google accounts, biometrics; business — freemium plus ads plus premium subscription.
+- In short, as the source puts it: hardware control, drivers, and admins form the invisible backbone of each UI era, public storage and networks give global reach, and identification attributes give trust and addressing. The three products sit at the top layer but depend on infra drivers and network admins that evolved from telegraph operators to sysadmins to DevOps and AI infra engineers.
+
+### Corrections, cross-checked with the rule book
+- Drivers, clarified: telegraph operators are not software drivers, the word is an analogy only. Win32 is a user API, not a device-driver model — Windows drivers are kernel-mode WDM/WDF drivers. Apple Toolbox is an API, and system extensions are not drivers in the same sense. Browser rendering engines (Gecko, WebKit) are not hardware drivers. CUDA, ROCm, and Intel oneAPI are software stacks and toolkits on top of drivers, not drivers themselves. DPDK is a userspace packet-processing framework, SR-IOV is a hardware virtualization feature, and eBPF is a kernel technology — none is simply a virtual NIC driver. Kubernetes is orchestration, not an operating system, and containers are not an OS.
+- Hypervisors, clarified: KVM and Xen are open source, VMware is proprietary — the source list mixes licences. Android drivers are partly open (kernel) with proprietary vendor HALs, not simply private. IBM OS/360 device support is early device support, not a modern driver model.
+- Storage and network, clarified: telegraph lines are transmission, not storage — storage in that era was paper and message logs. Magnetic tapes are storage, not a network. FTP servers and bulletin boards are early public services, not modern storage networks. IPFS and Filecoin are decentralized alternatives with a small share, not equivalent to hyperscale public cloud. Cloudflare and Akamai are private companies operating public-facing CDN and edge networks, not public storage.
+- Identification, clarified: an IP address is a locator, not a stable identity, as already noted in the Identity sections — IPv6 does not change that. Blockchain wallet IDs are pseudonymous, not verified identity. Biometric IDs (fingerprint, Face ID) are authentication factors stored locally on the device, not network IDs. "GDPR compliance IDs" are not a thing — GDPR is a law, not an ID system; student IDs and OAuth are the IDs, GDPR compliance is a requirement.
+- Product mappings are source proposals, not verified stacks: recorded Tern is a ternary-computing platform with Firebase, NestJS, and Next.js, not a verified GPU/TPU driver platform; GradeSpot's SCORM and LTI are integration standards and APIs, not drivers; HighGradesApp's Firebase, iCloud, and Google Drive storage is a source proposal, not a verified stack.
+- No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The source offers to draw a layered pyramid (hardware → drivers → admins → business) and a 5-layer control-stack diagram were not acted on.
+- Full section: this Technology.md section. Business angle: Bussiness.md, "Control Stack — Business Angle". Combined view: Business&Technology.md, "Control Stack — Combined View".
+
+
+## Control Stack — Speed and DNS/Phone Book, New Gaps Only (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+This section adds only the two new layers in the latest note — public DNS/phone book, and speed — to the control stack in the previous section. Hardware, drivers, admins, storage/networks, and IDs are not repeated here in full.
+
+### A. Full stack, now seven layers
+- Hardware → Drivers → Network Admins → Public Storage/Network → IDs → Public DNS/Phone Book → Speed.
+- Speed evolved, in the source's summary, from minutes per message (telegraph) to 1–10 Gbps real-time (5G/AI), with the three products riding the top of the stack: Tern (infra, real-time AI), GradeSpot (SaaS, mid-latency), HighGradesApp (consumer UX speed).
+
+### B. DNS/phone book and speed, per era (new material only)
+- Telegraph and early telephone, 1850s–1940s: public DNS/phone book — printed telephone books; speed — slow, minutes per message, seconds per call setup.
+- Mainframes and early computing, 1950s–1970s: public DNS/phone book — HOSTS.TXT, a central mapping; speed — batch, hours; ARPANET at about 56 Kbps in the source's figure, very slow by today's standards.
+- Client-server and PC era, 1980s–1990s: public DNS/phone book — DNS, from 1983; speed — LAN at about 10 Mbps, dial-up internet at 28–56 Kbps, slow by today's standards.
+- Internet and web 1.0/2.0, 1990s–2000s: public DNS/phone book — ICANN DNS root hierarchy, as listed in the source; speed — DSL and cable broadband at 512 Kbps to 10 Mbps, fast for websites but not real-time.
+- Mobile and cloud era, 2010s: public DNS/phone book — DNSSEC, Cloud DNS (Google, AWS Route53); speed — 4G at 10–100 Mbps, cloud latency around 100 ms.
+- 5G and AI era, 2020s–now: public DNS/phone book — DNS over HTTPS and DNS over TLS (DoH/DoT), blockchain DNS (ENS, Handshake); speed — 5G at 1–10 Gbps, edge latency under 10 ms, real-time AI inferencing.
+
+### C. Products in this extended stack, speed only (source proposals, not measured)
+- Tern, infra: controls hardware drivers (CUDA, NICs, Kubernetes CNIs); admins are AI infra engineers and DevOps; uses public cloud and edge storage; identifies via API keys and PKI certificates; DNS is API endpoints; speed must support real-time, under 10 ms AI inference, as a source target.
+- GradeSpot, B2B SaaS: relies on browser and OS drivers; admins are school IT teams; uses cloud databases and storage; identifies via student IDs and OAuth; DNS is SaaS subdomains; speed around 100 ms is acceptable for grading dashboards, as a source target.
+- HighGradesApp, B2C mobile: runs on phone hardware and OS drivers; admins are app-store and MDM admins; uses Firebase, iCloud, and Google Drive; identifies via Apple ID, Google account, and biometrics; DNS is app APIs; speed needs low latency, under 100 ms, for good user experience, as a source target.
+
+### Corrections, cross-checked with the rule book
+- Speed figures are peak, typical, or target figures, not guaranteed end-to-end speeds, and they are not interchangeable. ARPANET's early lines were 50 Kbps, with 56 Kbps coming later, so the source's "ARPANET ~56 Kbps" is approximate for the era, not a single constant. 5G at 1–10 Gbps is a peak and theoretical range; typical user speeds are much lower, commonly in the hundreds of Mbps, and edge latency under 10 ms is a target for edge placement, not typical end-to-end 5G latency, which is commonly 20–50 ms. Cloud latency around 100 ms and app latency under 100 ms are targets that vary by region, network, and workload.
+- DNS, clarified: ICANN manages the DNS root zone, but the root servers themselves are operated by 12 organisations, not by ICANN alone. DNSSEC is a security extension to DNS, not a phone book. Route53 is an AWS DNS service, not a phone book. ENS is the Ethereum Name Service and Handshake is a decentralized DNS project — both are alternatives to mainstream DNS, not replacements for it, and neither is a general "blockchain DNS" in the same sense as DNS.
+- AI inference under 10 ms is a very aggressive target that depends on model size, hardware, batching, and network path; it is not a general property of AI inference, and it is not a verified Tern measurement. GradeSpot at around 100 ms and HighGradesApp under 100 ms are source targets, not measured latencies.
+- No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The source offer to visualize a 7-layer control model with speed as a performance line was not acted on.
+- Full section: this Technology.md section. Business angle: Bussiness.md, "Control Stack — Speed and DNS/Phone Book, New Gaps Only — Business Angle". Combined view: Business&Technology.md, "Control Stack — Speed and DNS/Phone Book, New Gaps Only — Combined View".
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -4805,6 +4873,38 @@ Only the new business and finance material is added here: how each era made mone
 - These are source proposals and analogies, not verified revenues or business models. App-store distribution is not zero cost, and global reach still requires local compliance. One-time licences, recurring SaaS, and pay-per-use billing are distinct finance models and are kept distinct here.
 - Full technical detail: Technology.md, "Timeline + Business & Finance Mapping — Technology Angle". Combined view: Business&Technology.md, "Timeline + Business & Finance Mapping — Combined View".
 
+
+## Control Stack — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the control-stack material is added here: five layers per era, identification across eras, and product mapping. Business and finance models are in the previous section and are not repeated.
+
+### Control stack, in business terms
+- Five layers: controlling hardware → software drivers → network admins → public storage and networks → identification attributes. Each era adds a layer of abstraction, but does not remove the layer below it.
+- Identification across eras: Morse addresses → job and account IDs → MAC and IPv4 plus logins → IPs, domains, usernames and passwords → cloud IDs, OAuth tokens, IMEIs → IPv6, PKI keys, blockchain IDs, biometrics.
+- Product mapping, as source proposals: Tern — hardware, drivers, and admin APIs, platform SaaS plus API billing, with API keys, PKI certificates, and organisation IDs; GradeSpot — web and cloud drivers abstracted, school IT admins, SaaS databases and encrypted cloud storage, student IDs and OAuth, per-student licensing; HighGradesApp — mobile OS drivers and cloud APIs, app-store admins, Firebase/iCloud/Google Drive, Apple and Google IDs plus biometrics, freemium plus ads plus premium subscription.
+- Business implication: a product at the top layer still depends on the control layers below it for compliance, scaling, and trust. A failure in drivers, admins, storage, or identity stops the top-layer product, even if its UI is finished.
+
+### Corrections carried over
+- Operators are not drivers, Win32 is an API not a driver model, browser engines and CUDA/ROCm/oneAPI are not drivers themselves, KVM/Xen are open source while VMware is proprietary, IP is a locator not a stable identity, blockchain IDs are pseudonymous, biometrics are local authentication factors, and "GDPR compliance IDs" are not an ID system. Product mappings are source proposals, not verified stacks.
+- Full technical detail: Technology.md, "Control Stack — Hardware, Drivers, Admins, Storage/Networks, IDs". Combined view: Business&Technology.md, "Control Stack — Combined View".
+
+
+## Control Stack — Speed and DNS/Phone Book, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the two new layers are added here: DNS/phone book and speed. The other five control layers are in the previous section and are not repeated.
+
+### DNS/phone book and speed, in business terms
+- DNS/phone book per era: printed telephone books → HOSTS.TXT → DNS (1983) → ICANN root hierarchy → DNSSEC and Cloud DNS (Route53) → DoH/DoT and blockchain DNS alternatives (ENS, Handshake).
+- Speed per era: minutes per message → batch hours and about 56 Kbps → 10 Mbps LAN and 28–56 Kbps dial-up → 512 Kbps to 10 Mbps broadband → 4G 10–100 Mbps and about 100 ms cloud latency → 5G peak 1–10 Gbps and under 10 ms edge latency as a target.
+- Product speed, as source targets: Tern — real-time, under 10 ms AI inference; GradeSpot — around 100 ms for grading dashboards; HighGradesApp — under 100 ms for consumer user experience.
+- Business implication: speed is a product promise that must be backed by network, edge, and model choices. A latency target that cannot be met in a user's region or on a user's network is a support and reputation cost, not just a technical miss.
+
+### Corrections carried over
+- Speed figures are peaks, typicals, or targets, not guarantees. 5G typical speeds are much lower than peak, edge under 10 ms is a target not typical end-to-end latency, and ARPANET's early speed was 50 Kbps with 56 Kbps later. ICANN manages the root zone but does not operate all root servers alone; DNSSEC and Route53 are not phone books; ENS and Handshake are alternatives, not mainstream DNS replacements. Product latencies are source targets, not measured values.
+- Full technical detail: Technology.md, "Control Stack — Speed and DNS/Phone Book, New Gaps Only". Combined view: Business&Technology.md, "Control Stack — Speed and DNS/Phone Book, New Gaps Only — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -5689,6 +5789,33 @@ Business and finance models per era, read together with the previous UI sections
 
 ### Corrections carried over
 - Source proposals and analogies only, not verified live business models or revenues. App-store distribution is not zero cost, and licence, SaaS, and pay-per-use models are kept distinct. No diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
+
+## Control Stack — Combined View (No Diagram)
+
+### Headline
+Five-layer control stack, read together with the previous UI and business sections, without repeating their business models.
+
+### Combined list
+- Layers: hardware → drivers → admins → public storage/networks → identification attributes.
+- Per era: telegraph (keys, switches, copper; manual; operators; telegraph lines; Morse codes, phone numbers) → mainframes (mainframes, tapes, cards; OS-integrated drivers; sysops; ARPANET beginnings, tapes; machine, account, job IDs) → client-server (PCs, NICs, LAN; Win32, Toolbox, X11; corporate IT; early ISPs, FTP, bulletin boards; MAC, IPv4, logins) → web (servers, routers, NICs; kernel NIC drivers, Gecko/WebKit; IT, hosting; web servers, DNS, early cloud hosting; IPs, domains, usernames/passwords) → mobile/cloud (phones, data centers; iOS/Android drivers, KVM/Xen/VMware; DevOps, MDM, SaaS admins; S3, Drive, OneDrive, Dropbox; cloud IDs, OAuth, IMEI) → 5G/AI (AI chips, 5G, IoT; CUDA/ROCm/oneAPI, DPDK/SR-IOV/eBPF, CNI; cloud/AI architects, slicing admins; IPFS/Filecoin, hyperscale, CDN/edge; IPv6, PKI, blockchain, biometrics).
+- Products, as source proposals: Tern — hardware, drivers, admin APIs, S3/GCS, HPC, API keys, PKI, org IDs, platform SaaS plus API billing; GradeSpot — cloud servers, browser engines, school IT admins, SaaS DBs, encrypted cloud storage, student IDs, OAuth, per-student licensing; HighGradesApp — phones, iOS/Android SDKs, app-store admins, Firebase/iCloud/Drive, Apple/Google IDs, biometrics, freemium plus ads plus premium.
+- Corrections carried over: drivers clarified (operators, Win32, browser engines, CUDA/ROCm/oneAPI, DPDK/SR-IOV/eBPF, Kubernetes are not all drivers); IP is a locator, blockchain IDs are pseudonymous, biometrics are local factors, GDPR issues no IDs; product mappings are source proposals, not verified stacks; no diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
+
+## Control Stack — Speed and DNS/Phone Book, New Gaps Only — Combined View (No Diagram)
+
+### Headline
+Two new layers only, read with the previous five-layer control stack.
+
+### Combined list
+- Full stack: Hardware → Drivers → Admins → Public Storage/Network → IDs → Public DNS/Phone Book → Speed.
+- DNS/phone book: printed books → HOSTS.TXT → DNS (1983) → ICANN root hierarchy → DNSSEC, Cloud DNS, Route53 → DoH/DoT, ENS, Handshake.
+- Speed: minutes per message → batch hours, about 56 Kbps → 10 Mbps LAN, 28–56 Kbps dial-up → 512 Kbps to 10 Mbps broadband → 4G 10–100 Mbps, about 100 ms cloud → 5G peak 1–10 Gbps, under 10 ms edge target, real-time AI.
+- Products, speed targets only: Tern — under 10 ms AI inference; GradeSpot — around 100 ms dashboards; HighGradesApp — under 100 ms user experience.
+- Corrections carried over: speeds are peaks, typicals, or targets, not guarantees; ICANN does not operate all root servers alone; ENS/Handshake are alternatives, not DNS replacements; product latencies are source targets, not measured values; no diagram was drawn, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
 ## Business Promotion — Combined View (No Diagram)

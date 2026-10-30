@@ -6653,6 +6653,37 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
   - Key note: These mappings are source proposals, not verified revenues. Recorded Tern is a ternary-computing platform, GradeSpot is an IT Solutions company, and HighGradesApp is a case study in notes.
   - Example: GradeSpot's AI grading upsell is a proposed future feature, not a verified live revenue line.
 
+
+## Control Stack — Hardware, Drivers, Admins, Storage/Networks, IDs (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- Five-layer control stack, merged from two overlapping notes, without repeating either note twice.
+  - Key note: Each era adds abstraction, but does not remove the layer below. A cloud app still needs hardware, drivers, admins, storage, and identity.
+  - Example: a mobile app needs phone hardware, OS drivers, app-store admins, cloud storage, and a user ID — all five layers at once.
+- Layers per era — telegraph (keys, manual, operators, telegraph lines, Morse codes) → mainframes (mainframes, OS drivers, sysops, ARPANET beginnings, account/job IDs) → client-server (PCs, Win32/Toolbox/X11, corporate IT, early ISPs, MAC/IPv4/logins) → web (servers, kernel NIC drivers, IT/hosting, web servers/DNS, IPs/domains/passwords) → mobile/cloud (phones, iOS/Android drivers and hypervisors, DevOps/MDM, S3/Drive/Dropbox, cloud IDs/OAuth/IMEI) → 5G/AI (AI chips, GPU drivers and vNIC tech, cloud/AI architects, hyperscale/CDN/decentralized, IPv6/PKI/blockchain/biometrics).
+  - Key note: Identification is the layer that changed most in form, from manual codes to biometrics, while hardware control stayed the foundation.
+  - Example: a telegraph message was routed by a Morse address an operator read; a modern app is routed by an IP, authenticated by OAuth, and unlocked by a biometric — three different ID kinds in one flow.
+- Products in the stack, as source proposals — Tern: hardware, drivers, admin APIs, S3/GCS, HPC, API keys, PKI, org IDs; GradeSpot: cloud servers, browser engines, school IT admins, SaaS DBs, student IDs, OAuth; HighGradesApp: phones, iOS/Android SDKs, app-store admins, Firebase/iCloud/Drive, Apple/Google IDs, biometrics.
+  - Key note: These mappings are source proposals, not verified stacks. Recorded Tern uses Firebase, NestJS, and Next.js, not a verified GPU driver platform, and SCORM/LTI are standards, not drivers.
+  - Example: GradeSpot's school IT admin is a real gate — without that admin's integration, the product cannot be adopted, however good its UI is.
+
+
+## Control Stack — Speed and DNS/Phone Book, New Gaps Only (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- Two new layers only — DNS/phone book and speed. The other five control layers are in the previous section and are not repeated here.
+  - Key note: DNS is the lookup layer, and speed is the performance layer. A product can have the right lookup and still fail on speed, or be fast and still fail on lookup.
+  - Example: a printed telephone book, HOSTS.TXT, DNS, and DoH are all the same job — mapping a name to an address — at different scales and speeds.
+- DNS/phone book per era — printed books → HOSTS.TXT → DNS (1983) → ICANN root hierarchy → DNSSEC and Cloud DNS → DoH/DoT and blockchain DNS alternatives.
+  - Key note: DNS replaced a central file with a distributed hierarchy, and DoH/DoT added encryption to that lookup. Blockchain DNS alternatives are not mainstream DNS, they are parallel systems.
+  - Example: HOSTS.TXT was a single central file; DNS is a hierarchy of servers; DoH sends that query over HTTPS.
+- Speed per era — minutes per message → batch hours, about 56 Kbps → 10 Mbps LAN, 28–56 Kbps dial-up → 512 Kbps to 10 Mbps broadband → 4G 10–100 Mbps, about 100 ms cloud → 5G peak 1–10 Gbps, under 10 ms edge target.
+  - Key note: Speed figures are peaks, typicals, or targets, not guarantees. A peak 5G figure does not mean a user gets that speed end to end.
+  - Example: a 5G peak of 10 Gbps does not give a user 10 Gbps to a cloud model, because backhaul, server, and model time also count.
+- Product speed targets, as source proposals — Tern: under 10 ms AI inference; GradeSpot: around 100 ms dashboards; HighGradesApp: under 100 ms user experience.
+  - Key note: These are targets, not measured latencies, and under 10 ms AI inference is very aggressive and depends on model, hardware, and network path.
+  - Example: a small model at the edge can hit a low target, while a large model over a distant cloud cannot, even on the same 5G link.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9228,6 +9259,22 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
   - Key note: A freemium app and a SaaS app can both be software, but freemium earns from a small paying share plus ads, while SaaS earns from recurring seats.
   - Example: HighGradesApp as freemium earns from premium AI features and ads; GradeSpot as B2B SaaS earns from per-seat licences.
 
+
+## Control Stack — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Control stack as a business risk — a top-layer product depends on all five layers below it.
+  - Key note: Compliance, scaling, and trust are control-layer properties, not UI properties. A product that fails identity, storage, or admin gates cannot scale, even if it is finished.
+  - Example: a school SaaS product needs school IT admin approval, encrypted cloud storage, and student IDs before it can be sold, not after launch.
+
+
+## Control Stack — Speed and DNS/Phone Book, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Speed as a business promise — latency targets are promises to users, and missing them costs support and reputation.
+  - Key note: A speed target must be backed by network, edge, and model choices in the user's region, not just by a peak network figure.
+  - Example: promising under 100 ms to a user on a distant network, with a large model in another region, will fail even if the local network is 5G.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10567,6 +10614,22 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 - Combined point — era finance models evolve from CapEx and one-time licences to recurring SaaS to pay-per-use AI, and the three products are mapped by the source onto that evolution.
   - Key note: The mapping is a direction, not a proven path. A product does not automatically move from SaaS to AI-first billing because the era changed.
   - Example: Tern, GradeSpot, and HighGradesApp can each stay on SaaS or freemium even in a 5G/AI era, if that is what their users pay for.
+
+
+## Control Stack — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — hardware, drivers, admins, storage/networks, and IDs form one stack, and the three products ride its top layer.
+  - Key note: Reading the stack together shows why infra players monetize drivers and APIs, while SaaS and consumer apps monetize on top of that infra.
+  - Example: Tern at the infra layer, GradeSpot at the SaaS layer, and HighGradesApp at the consumer layer all depend on the same five-layer stack, at different layers.
+
+
+## Control Stack — Speed and DNS/Phone Book, New Gaps Only — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — DNS/phone book plus speed complete the seven-layer stack, without repeating the five layers before them.
+  - Key note: Seven layers, read together, give the full control stack: hardware, drivers, admins, storage/networks, IDs, DNS/phone book, and speed.
+  - Example: Tern, GradeSpot, and HighGradesApp each sit at a different speed target on the same seven-layer stack.
 
 ## Business Promotion — Combined View (No Diagram)
 
