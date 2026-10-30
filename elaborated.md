@@ -6573,6 +6573,35 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
   - Key note: On this point, in this section, it governs how separate networks announce and choose routes to each other, so a change here affects reachability beyond a single network.
   - Protocol: BGP. No single host command proves a BGP route; the point is about inter-network route announcement.
   - Example: in a normal exchange of the kind described here, Pyramid Implements (technology column only): Governments is what determines whether the exchange succeeds, is ordered correctly, or is trusted.
+
+## Market Flows & Global Standards — Technology Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- Market flows move value from idea and raw material to consumer and back to recycling, with standards and regulation at every layer.
+  - Key note: Standards are gates, not paperwork at the end. A product that fails a layer cannot legally be sold or shipped in that market, even if it is technically finished.
+  - Example: a Wi-Fi product built to IEEE 802.11 can interoperate across makers, because the standard, not a single vendor, defines it.
+- Technology / innovation flow — idea and research → patents → prototypes → standards → commercial products.
+  - Key note: The standard step is what turns a prototype into a mass-market product, because other makers can build compatible parts to the same specification.
+  - Example: Wi-Fi → IEEE 802.11 → routers and smartphones.
+- Manufacturing flow — raw resources → processing → components → assembly → testing → packaging → distribution.
+  - Key note: Testing and quality assurance are a gate in this flow. Assembly alone does not make a product sellable; it must pass testing and certification first.
+  - Example: lithium → battery cells → EV battery packs → electric cars.
+- Business / financial flow — capital → enterprises → supply chains → products → customers → returns and recycling.
+  - Key note: Capital flow is a business flow, not a technical one. Funding, supply, sales, and returns are separate steps, and a failure at any step stops value from reaching the customer.
+  - Example: venture funding → startup → product launch, with IPO as one possible exit, not a guaranteed endpoint.
+- Network / logistics flow — transport plus digital infrastructure → hubs → retail and online platforms → end users.
+  - Key note: Logistics is both physical transport and digital infrastructure. Without fibre, 5G, or satellite links, online ordering and tracking cannot reach the hub or the customer.
+  - Example: Amazon logistics with Prime delivery, where sub-24-hour delivery applies only where service, product, and location support it.
+- Hierarchy, global to execution — Global oversight → International standards → Regional regulation → Industry standards → National enforcement → Market actors → Consumers.
+  - Key note: Each layer adds a different kind of rule. Global bodies set trade and health frames, standards bodies set technical rules, regulators enforce law, and certification bodies test before sale.
+  - Example: a car must pass ISO 26262 and UNECE WP.29 at industry level, plus national enforcement, before it reaches a consumer.
+- Standards bodies versus regulators — ISO, IEC, IEEE, IETF, 3GPP, ETSI, BSI, BIS, and JIS develop standards; FCC, FDA, NHTSA, TRAI, Ofcom, MIIT, and MIC regulate or enforce.
+  - Key note: Mixing these up is a common error in the source notes. A standard does not itself make a product legal; a regulator's clearance, or conformity to a law that adopts a standard, does.
+  - Example: CE is a conformity marking, not an organisation; REACH is an EU regulation, not a body; CCC is a certification scheme, not a body.
+- Product regulation examples — automotive, electronics, pharma, food, cloud/data.
+  - Key note: Each industry has its own gatekeepers, so a product cleared in one industry or market is not automatically cleared in another.
+  - Example: automotive — UNECE WP.29 and ISO 26262; electronics — FCC and CE; pharma — FDA and EMA; food — Codex and EFSA; cloud/data — GDPR, CCPA, and ISO 27001.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9110,6 +9139,17 @@ Key Takeaway (source, business): From silicon era to now, ownership shifted — 
 5. Ownership & Relationships (business): You (LLC owner) — Founder, decision-maker (note: LLC owner is not automatically sole decision-maker if investors/board exist). Partners — Telcos (AT&T, Jio, Vodafone); Fintech/payment rails (Visa, Stripe, UPI as a system); Consulting firms (Infosys, Accenture). Governments — provide licenses, compliance checks (regulators, not commercial partners).
 
 Key Takeaway (business, corrected): Start today — register, build a cloud-hosted product, make it GDPR/ISO compliant. Expand globally — first via cloud marketplaces + payment gateways, then via telco/fintech partnerships, later via local subsidiaries or resellers. Standards = trust (GDPR, PCI-DSS, ISO, 3GPP, NIST). Meeting them helps you sell in many countries, it does not by itself remove borders — local licensing, tax, residency, and sanctions still apply.
+
+## Market Flows & Global Standards — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Market flows and hierarchy, business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Business / financial flow — capital → enterprise → supply chain → product → customer → returns and recycling, IPO as one possible exit only.
+  - Key note: For a business, the financial flow is the risk flow. Capital must survive supply, sales, and returns before it becomes a return, and IPO is not the default outcome.
+  - Example: venture funding → startup → product launch, with many startups exiting by acquisition or closure, not IPO.
+- Logistics and selling gates — a product must clear certification and regional compliance before a retailer or platform can sell it.
+  - Key note: Selling is itself a regulated step. A platform that lists a non-compliant product inherits the compliance problem, which is why CE, FCC, and GDPR checks sit at the retail layer.
+  - Example: an electronics product needs FCC/CE clearance before online sale in the US/EU, not after.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10418,6 +10458,14 @@ Full technology implements/standards are in Technology.md; full business owners/
 ### Combined Key Takeaway
 
 Ownership shifted from Government + chip makers + telcos → Cloud + AI giants + finance/telecom SaaS. Best fit (source, 2025) = AI-driven Finance + Telecom business networks, starting consulting/SaaS → product platform, positioned under Cloud/AI + Private Enterprise, partnering with Public Telcos and Gov regulators. Expansion = start with world standards (TCP/IP, BGP, DNS, 5G, Kubernetes, NIST/EU AI, PCI-DSS, ISO 20022, ISO 27001/SOC 2, GDPR/CCPA), register, build cloud product, comply, go-to-market via marketplaces/payments, then expand via partnerships/subsidiaries/resellers — standards help trust, they do not remove borders.
+
+## Market Flows & Global Standards — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — innovation, manufacturing, finance, and logistics flows each pass through global, international, regional, industry, and national layers before reaching consumers and recycling.
+  - Key note: Reading flows and regulation together shows why a product can be technically ready and still unsellable in a market: it has not yet passed that market's layer.
+  - Example: a car, a phone, a drug, and a cloud service each pass different industry gates, even though they share the same global-to-consumer hierarchy.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.
