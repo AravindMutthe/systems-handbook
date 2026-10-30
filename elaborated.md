@@ -6684,6 +6684,34 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
   - Key note: These are targets, not measured latencies, and under 10 ms AI inference is very aggressive and depends on model, hardware, and network path.
   - Example: a small model at the edge can hit a low target, while a large model over a distant cloud cannot, even on the same 5G link.
 
+
+## Network Evolution Timeline — Simple Milestones, New Gaps Only (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- Simple milestone index, not a repeat of detailed era sections. Only new gaps are elaborated here.
+  - Key note: A milestone index is useful because it shows order at a glance, while detailed sections show how each era actually worked. The index does not replace the detail.
+  - Example: "TCP/IP, 1983" in an index means cutover, while the detailed section explains that TCP/IP was developed in the 1970s and replaced NCP on 1 January 1983.
+- New gaps — packet switching pioneers Paul Baran and Donald Davies; first ARPANET message "LOGIN" crashing at "LO" in 1969; TCP/IP creators Vint Cerf and Bob Kahn; Web inventor Tim Berners-Lee.
+  - Key note: Names matter because they show that packet switching, TCP/IP, and the Web were separate inventions by different people, not one invention.
+  - Example: Baran and Davies on packet switching (1960s) → Cerf and Kahn on TCP/IP (1970s) → Berners-Lee on the Web (1989).
+- AI-driven networks — self-optimizing networks, predictive traffic management, automated fault detection, AI-based routing, smart data centers, autonomous network security, using machine learning, edge computing, and IoT networks.
+  - Key note: AI networks assist and automate parts of control. They do not yet fully replace human operators across all networks.
+  - Example: predictive traffic management can reroute around congestion before users notice, while a human operator still sets policy and handles exceptions.
+
+
+## Network Evolution — Structured 15-Part Version, New Gaps Only (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- New gaps only from the 15-part version. The full era history is in the previous timeline section and is not repeated here.
+  - Key note: A structured 15-part version is useful as a study outline, but most of its parts are already in this file in detail. Adding them again would duplicate, not add.
+  - Example: circuit switching, packet switching, ARPANET, TCP/IP, NSFNET, the Web, cloud, SDN, and AI networks are all already detailed elsewhere in this file.
+- New gaps — IMPs as early routers on leased telephone lines; first link UCLA to SRI, not Stanford University; packet illustration "HELLO" split into letters; TCP/IP layer list as simplified; OSI 7 layers as a standalone list; VPC, smart home, and YouTube flow examples.
+  - Key note: IMPs show that the first network reused telephone lines and added a new box — the IMP — to turn a computer into a network node. That box is the ancestor of the router.
+  - Example: UCLA computer → IMP → leased telephone line → SRI IMP → SRI computer, with NCP as the early protocol.
+- How computers connect, step by step — addressing → binary conversion → packet formation → routing → delivery → reassembly.
+  - Key note: Each step is a separate job. Addressing names the destination, packet formation splits the data, routing chooses the path, and reassembly rebuilds the data at the destination.
+  - Example: a YouTube request follows those steps, but actual delivery adds HTTPS, CDN, and adaptive streaming on top of them.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9275,6 +9303,22 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
   - Key note: A speed target must be backed by network, edge, and model choices in the user's region, not just by a peak network figure.
   - Example: promising under 100 ms to a user on a distant network, with a large model in another region, will fail even if the local network is 5G.
 
+
+## Network Evolution Timeline — Simple Milestones, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Milestone index as a business story — from isolated lines to packet networks to the Web to cloud to AI-assisted networks.
+  - Key note: Each milestone lowered the cost of reaching more users, and each created a new business layer on top of the previous one.
+  - Example: the Web created browser businesses on top of TCP/IP, and AI networks create optimization businesses on top of cloud networks.
+
+
+## Network Evolution — Structured 15-Part Version, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Network minimum as a business checklist — devices, medium, protocols, addressing.
+  - Key note: A network product that lacks any one of these four cannot work, however good the other three are.
+  - Example: a VPC product sells logical networks, but still needs devices, a medium, protocols, and addressing underneath it.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10630,6 +10674,22 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 - Combined point — DNS/phone book plus speed complete the seven-layer stack, without repeating the five layers before them.
   - Key note: Seven layers, read together, give the full control stack: hardware, drivers, admins, storage/networks, IDs, DNS/phone book, and speed.
   - Example: Tern, GradeSpot, and HighGradesApp each sit at a different speed target on the same seven-layer stack.
+
+
+## Network Evolution Timeline — Simple Milestones, New Gaps Only — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — a simple index plus new names and AI features, read with the detailed timeline sections, gives the full evolution without repeating it.
+  - Key note: Index plus detail is the right pair. Index alone hides how each era worked; detail alone hides the order.
+  - Example: Telegraph → Telephone → Packet Switching → ARPANET → TCP/IP → Web → Mobile plus Cloud → SDN → AI Networks, in that order, with each step's detail elsewhere in the file.
+
+
+## Network Evolution — Structured 15-Part Version, New Gaps Only — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — a 15-part outline plus new gaps, read with detailed era sections, gives a complete study structure without duplication.
+  - Key note: Outline plus detail is the right pair, as with the previous timeline section.
+  - Example: the outline lists ARPANET, TCP/IP, Web, cloud, and AI in order, while detailed sections explain how each actually worked.
 
 ## Business Promotion — Combined View (No Diagram)
 
