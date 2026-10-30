@@ -4687,6 +4687,57 @@ Source: the user's WhatsApp channel, checked 2026-10-30, two new notes after bat
 - systemd runs services on a Linux host. SBI runs business processes, BPML workflows, which are series of tasks required to execute and complete a process.
 - *Correction: "systemd starts nginx, SBI starts a BPML workflow" is an analogy, not an equivalence. systemd is the operating-system init and service manager: it starts, stops, and supervises OS services at boot and on demand, and it does not execute business logic. SBI is an application workflow engine: it executes business processes on events, such as a file arrival or a message, and each step can call adapters, transformations, and external systems. The only shared idea is "a supervisor that starts something". systemd supervises processes, SBI supervises business transactions, and neither can do the other's job.*
 
+## WhatsApp Notes — CNCF and OCI Open Standards, Kubernetes Interfaces, and Observability (Audited, Official Sources Only, Elaborate Only)
+
+Source: the user's WhatsApp channel, checked 2026-10-30, one new note after batch 18. Filed here, in elaborate only, with corrections applied. Verified against CNCF documentation for the SMI archive (3 October 2023, archived in favour of the Gateway API GAMMA initiative) and Kubernetes SIG Storage documentation for COSI (v1alpha1, transitioning to v1alpha2, beta planned for a future release). Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule.
+
+- *Correction: "OCNF" is not a thing. The title is a typo for CNCF, the Cloud Native Computing Foundation, which is part of the Linux Foundation. The body is about CNCF and OCI standards, not about any organisation called OCNF, and the corrected title below uses CNCF.*
+- *Correction: "open-source standards managed by CNCF and the Linux Foundation ensure interoperability and eliminate vendor lock-in" is overstated. Standards reduce lock-in and improve interoperability, but they do not eliminate lock-in by themselves. A cluster can use OCI, CRI, CNI, and CSI and still be locked in by managed-service features, proprietary extensions, and operational tooling. The correct claim is that standards make switching possible, not free.*
+
+### Core container standards, OCI
+
+- OCI, the Open Container Initiative, a Linux Foundation project that works alongside CNCF, governs three specifications.
+- Runtime Spec: the configuration, lifecycle, and execution environment for a low-level runtime such as runc, including the config.json format and the create, start, and delete operations.
+- Image Spec: the format for image manifests, layers, and configuration, so an image built by one tool can run on another OCI-compliant runtime.
+- Distribution Spec: the API for pushing, pulling, and transferring images and other artifacts between registries, including tag and digest addressing.
+- These three stand as written, with one qualification: OCI governs the format and runtime contract, not the whole container platform. Scheduling, networking, and storage above the runtime are Kubernetes interfaces, not OCI.
+
+### Core Kubernetes infrastructural interfaces
+
+- CRI, Container Runtime Interface: the gRPC API between the kubelet and a container runtime such as containerd or CRI-O, for creating, starting, stopping, and removing containers and pod sandboxes.
+- CNI, Container Network Interface: the plugin interface for assigning pod IP addresses, setting up routes, and connecting pod network namespaces, implemented by Cilium, Calico, and Flannel.
+- CSI, Container Storage Interface: the gRPC API for provisioning, attaching, mounting, snapshotting, and expanding block and file volumes, without changing Kubernetes core code, implemented by drivers such as AWS EBS, Rook, and Longhorn.
+- *Correction: "CPI" is not a formal interface in the same sense as CRI, CNI, and CSI. There is no versioned CPI specification that cloud providers implement like CRI or CSI. The real component is the Cloud Controller Manager (CCM), which runs cloud-specific controllers for nodes, routes, services, and load balancers, with one CCM implementation per cloud provider, such as AWS, Azure, and GCP. Calling it CPI and listing it in the same matrix as CRI, CNI, and CSI implies a standard that does not exist in that form.*
+- *Correction: the summary matrix's CPI row, "Couples clusters to hyperscaler resources, AWS, Azure, GCP provider managers", is really the CCM row. Renamed here to CCM, not CPI.*
+
+### Emerging node, hardware, and storage extensions
+
+- CDI, Container Device Interface: a specification for runtimes to inject third-party devices, such as GPUs and other accelerators, into containers in a standard way, instead of each runtime inventing its own device handling.
+- *Correction: the summary matrix's CDI row, "NVIDIA and Intel device plugins", merges two different mechanisms. Kubernetes device plugins are the older mechanism, where a plugin advertises a resource such as nvidia.com/gpu and the kubelet allocates it. CDI is the newer runtime-level mechanism for passing device nodes and configuration into a container. A device plugin and CDI can work together, but they are not the same thing, and listing device plugins as CDI implementations is wrong.*
+- NRI, Node Resource Interface: a plugin interface that lets extensions adjust container resources and configuration at the node level, after the kubelet has made its decisions, for cases such as CPU pinning and device allocation tuning.
+- *Correction: NRI is emerging, not a stable core standard. It is a CRI-adjacent extension, and its implementations are runtime-specific, not a universal node interface like CRI. It should not be listed alongside CRI, CNI, and CSI without that maturity qualifier.*
+- COSI, Container Object Storage Interface: a Kubernetes SIG Storage project for provisioning buckets, with BucketClaim and BucketAccess objects, and credentials delivered through Secrets, in the same pattern as PVCs for block and file storage.
+- *Correction: COSI is alpha, not a production standard. It is at v1alpha1, transitioning to v1alpha2, with beta planned for a future release, and its drivers are out-of-tree and installed manually. The source's "evolving standard" is correct only if evolving is read as alpha and subject to breaking changes, not as a stable interface to build on without that warning.*
+
+### Service mesh and application interfaces
+
+- SMI, Service Mesh Interface: a set of custom APIs for traffic splits, access control, and telemetry across service meshes.
+- *Correction: SMI is archived, not live. The CNCF Technical Oversight Committee voted to archive SMI on 3 October 2023, after the SMI team decided to consolidate mesh work under the Gateway API GAMMA initiative, and CNCF no longer supports it. The live standard for mesh traffic configuration today is the Kubernetes Gateway API, including its GAMMA work for east-west traffic, not SMI. Listing SMI in a current standards matrix without the archived status will mislead anyone choosing a mesh API in 2026.*
+- *Correction: the summary matrix's SMI row, "Linkerd, Istio", is also outdated. Linkerd adopted Gateway API, and Istio announced Gateway API as its default management API. Neither should be listed as current SMI implementations.*
+- SMP, Service Mesh Performance: a benchmarking framework for measuring service mesh performance.
+- *Correction: SMP is not a CNCF standard and not a Kubernetes interface. It is a benchmarking specification from the Meshery project, useful for comparing mesh performance, but it does not configure or govern a mesh, and it should not sit in a standards matrix alongside CRI, CNI, and CSI without that distinction.*
+- gRPC: a high-performance remote procedure call framework using HTTP/2 and Protocol Buffers, and a CNCF graduated project.
+- *Correction: gRPC is a framework, not a Kubernetes application interface. It standardizes how microservices call each other, but it is not a Kubernetes API, and it does not belong in the same layer as CRI or CNI. The correct layer is application communication, not cluster infrastructure.*
+- Wasm and WASI: WebAssembly as a sandboxed execution format, and WASI as its system interface for access to operating-system capabilities such as files and clocks.
+- *Correction: WASI is NOT CNCF-governed. WASI is developed by the Bytecode Alliance and in the W3C community process, while CNCF hosts wasm runtimes that implement it. Saying WASI is a CNCF interface confuses the host of runtimes with the owner of the standard.*
+
+### Observability standards
+
+- OpenTelemetry, OTel: formed by merging OpenTracing and OpenCensus, and now a CNCF graduated project, providing APIs, SDKs, and a collector for metrics, logs, and traces.
+- *Correction: "distributed logs" in the source is the wrong phrase. OpenTelemetry covers metrics, logs, and traces, and distributed tracing is the technique that follows a request across services. Logs themselves are not distributed in that sense; they are emitted per service and correlated by trace context. The corrected phrase is metrics, logs, and distributed traces.*
+- OpenMetrics: a specification for a scrapeable metrics exposition format, developed for cloud-native telemetry at scale.
+- *Correction: the summary matrix's OTel row, "OpenTelemetry SDKs, Prometheus", merges two roles. OpenTelemetry SDKs emit telemetry, and Prometheus is a metrics collection and storage system that can scrape OpenTelemetry or Prometheus exposition formats. Prometheus is not an OpenTelemetry implementation, and an OTel SDK is not Prometheus. The correct mapping is SDKs emit, Prometheus or an OTel Collector receives and stores.*
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6886,6 +6937,14 @@ Full section: compression.md Part 1, "WhatsApp Notes — Databases by Memory and
 - Distributed storage is a failure-domain choice. Cassandra, Ceph, HDFS, and MinIO survive a node loss by replication across nodes, while a single-node Redis or a hostPath volume does not, no matter how fast its local disk is.
 - For IBM, the support boundary matters more than the suite label. File Gateway has no separate server to patch or restart, because it runs inside B2Bi, while MQ, Connect:Direct, and the database are separate services with their own lifecycles, and desktop tools are design-time only, not runtime.
 
+## WhatsApp Notes — Business Angles (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "WhatsApp Notes — CNCF and OCI Open Standards, Kubernetes Interfaces, and Observability". Corrections in the full section are in italic text.
+
+- Standards are a switching cost reducer, not a lock-in eliminator. OCI, CRI, CNI, and CSI let a workload move between runtimes, networks, and storage drivers, but managed-service features and proprietary extensions can still lock a deployment in.
+- Maturity matters more than the acronym list. CRI, CNI, and CSI are stable core interfaces. COSI is alpha, NRI is emerging, SMI is archived, and SMP is a benchmark, not a standard. Choosing an alpha or archived interface for a production platform, because it appeared in the same matrix as CRI, is the main business risk in this note.
+- For mesh traffic today, the live choice is Gateway API, not SMI, and for observability the live choice is OpenTelemetry SDKs feeding a collector or Prometheus, not a single OTel-plus-Prometheus product.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -8084,6 +8143,17 @@ Full section: compression.md Part 1, "WhatsApp Notes — Databases by Memory and
 - Valkey: Linux Foundation Redis fork, same data-structure family.
 - IBM: SBI workflow engine, ITXA transformation, SEAS authentication, Control Center monitoring, OMS, Maximo, all Java-based but separate products, Cassandra and ZooKeeper are dependencies not suite products, MQ and Connect:Direct are native daemons, Perimeter Server is Java-based not native, File Gateway runs inside SBI with no separate server, Global Mailbox is a File Gateway replication capability not a server, Map Editor and GPM are desktop design tools.
 - systemd versus SBI: analogy only, systemd supervises OS services, SBI executes business workflows.
+
+## WhatsApp Notes — Combined Views (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "WhatsApp Notes — CNCF and OCI Open Standards, Kubernetes Interfaces, and Observability". Corrections in the full section are in italic text.
+
+- OCI: Runtime Spec for runc, Image Spec for layers and manifests, Distribution Spec for registry push and pull.
+- CRI: kubelet to runtime gRPC, containerd and CRI-O. CNI: pod IPs and routes, Cilium, Calico, Flannel. CSI: block and file provisioning, AWS EBS, Rook, Longhorn.
+- CCM, not CPI: cloud controllers for nodes, routes, services, and load balancers, one implementation per cloud.
+- CDI: runtime device injection for GPUs and accelerators, distinct from device plugins. NRI: node-level resource adjustment, emerging. COSI: bucket provisioning with BucketClaim and BucketAccess, alpha v1alpha1 to v1alpha2.
+- SMI: archived 3 October 2023, replaced by Gateway API GAMMA for mesh traffic. SMP: Meshery benchmarking, not a standard. gRPC: CNCF RPC framework over HTTP/2 and Protobuf, application layer not cluster infrastructure. Wasm and WASI: Bytecode Alliance and W3C, not CNCF-governed.
+- OpenTelemetry: OpenTracing plus OpenCensus merger, metrics, logs, and distributed traces, SDKs emit, Collector or Prometheus receives.
 
 ## Business Promotion — Combined View (No Diagram)
 

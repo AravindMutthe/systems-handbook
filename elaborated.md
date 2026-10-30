@@ -7027,6 +7027,18 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 - File Gateway has no separate server. Example: patching or restarting B2Bi patches or restarts File Gateway with it, because File Gateway shares B2Bi's database, adapters, and workflow engine.
 - systemd and SBI are not equivalents. Example: systemd starts nginx as an OS service, while SBI starts a BPML workflow when a file arrives, and neither can replace the other.
 
+## WhatsApp Notes — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30.
+
+- OCNF is a typo, CNCF is the foundation. Example: a search for OCNF finds no foundation, while CNCF is the Linux Foundation project that hosts Kubernetes.
+- OCI has three specs, not one. Example: an image built to the Image Spec can be pulled through the Distribution Spec and run by a Runtime Spec runtime, and each spec can change independently.
+- CPI is not a standard interface. Example: there is no CPI specification to implement; there is a Cloud Controller Manager per cloud, with AWS, Azure, and GCP implementations.
+- COSI is alpha. Example: a BucketClaim works in a test cluster, but the API is v1alpha1 moving to v1alpha2, so a production platform should not treat it as stable.
+- SMI is archived, Gateway API is live. Example: a new mesh traffic split should be written as a Gateway API route, not as an SMI TrafficSplit, which no CNCF project supports anymore.
+- WASI is not CNCF. Example: a wasm runtime hosted by CNCF can implement WASI, but WASI itself is a Bytecode Alliance and W3C-track standard.
+- OpenTelemetry traces are distributed, logs are not. Example: one trace id links log lines across services, but the logs themselves are emitted per service and correlated, not distributed as a single log.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9738,6 +9750,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
+
+## Batch 19 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11208,6 +11225,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 
 ## Batch 18 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
+
+## Batch 19 — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
