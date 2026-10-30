@@ -13,6 +13,8 @@ No new topics and no new sections were added. Analogies stay analogies, forecast
 
 > **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
 > **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section. Scope: this applies to all notes given after the segregation of files into the 3 lines / 5 files (from 2026-10-30 about 16:47 IST onward), not only to future notes; those post-segregation batches were each verified before adding, and any error found later is corrected in place with its correction noted.
+> **US and global perspective rule (set 2026-10-30, by Aravind):** India-perspective notes also get a US and global perspective in the same update, mapped to the same eras and layers, not as a separate later note.
+
 
 
 
@@ -6902,6 +6904,21 @@ Pointer: full section in Bussiness.md. Technology and combined angles are in Tec
 - Blockchain is emerging in supply-chain IT, not standard everywhere. Example: ERP and WMS are standard; blockchain pilots are not yet universal.
 - Reverse logistics is missing from the linear flow. Example: customer returns and product recycling run backward through the chain and need their own handling.
 
+## US and Global Perspective, Silicon, Comparative Framework, Era Frameworks, and Kernel Evolution — Elaborated Key Points (New Gaps Only)
+
+Pointer: full sections in Bussiness.md and Technology.md. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings. Parts 2 and 3 of this file carry only pointers for this batch, per the rule.
+
+- US telegraph was private before consolidation, India's was government. Example: Morse 1844 and Western Union monopoly 1866, versus East India Company lines in India.
+- US Bell divestiture took effect on 1 January 1984. Example: seven Baby Bells were created from 22 local companies, then reconsolidated after the 1996 Act.
+- Instant payment rails are domestic parallels, not one global system. Example: UPI 2016, Pix 2020, FedNow 2023, and SEPA Instant 2017 do not natively pay each other.
+- Silicon chain concentrates fabrication. Example: TSMC in Taiwan, Samsung in South Korea, and Intel in the US fabricate chips designed by fabless firms such as Qualcomm and MediaTek.
+- Rare-earth dominance is in processing, not only mining. Example: several countries mine rare earths, but China dominates separation and refining.
+- Vedanta-Foxconn did not proceed in its original form. Example: Tata Electronics is the leading Indian fab project, while Tata Elxsi is a design-services firm, not a fab builder.
+- Comparative columns are parallel, not equivalent. Example: a firmware module is not a regulator, though a secure element does anchor payment trust.
+- BSNL and INSAT do not belong to the 1950s to 1970s era. Example: BSNL was created in 2000, INSAT-1A launched in 1982.
+- Monolithic does not mean unmodular. Example: Linux is monolithic and still loads kernel modules without a full rebuild.
+- Exokernels are a 1990s research idea, not a 2020s trend. Example: MIT exokernel work dates to the mid-1990s, while unikernels are a 2010s cloud idea.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9563,6 +9580,11 @@ See Part 1 of this file for the elaborated key points on DNS and path identity. 
 
 See Part 1 of this file for the elaborated key points on India business, finance, and supply chain. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
+
+## US and Global Perspective, Silicon, Comparative Framework, Era Frameworks, and Kernel Evolution — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10985,6 +11007,11 @@ See Part 1 of this file for the elaborated key points on DNS and path identity. 
 ## India Business Finance and Supply Chain — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points on India business, finance, and supply chain. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
+
+## US and Global Perspective, Silicon, Comparative Framework, Era Frameworks, and Kernel Evolution — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
 ## Business Promotion — Combined View (No Diagram)
 
