@@ -7,6 +7,8 @@ Method: every dash bullet point from the 3 source files, in learning-sequence or
 No new topics and no new sections were added. Analogies stay analogies, forecasts stay forecasts, and source-only examples (GradeSpot Bank of America, gsitssolutions.com, OPT / visa claims) keep their original flags exactly as in the source — they are not upgraded to verified facts. Corrections lists from the source are kept in place as bullet heads. Non-bullet paragraphs, tables and numbered lists are kept verbatim as context, not elaborated, so the sequence stays readable.
 
 ---
+> **New rule (set 2026-10-30, by Aravind, for the 5 files and the new branch):** Every time these 5 files are updated, the rule book applies. Compression.md must carry all original shared notes, in full. Elaborated.md must remove the redundant notes found in compression.md, and elaborate only the remaining, non-redundant points with key notes — about 2 lines per point, plus an example, and a command or protocol only where applicable, as discussed earlier for one-liner points.
+
 # Part 1 — Technology
 
 
@@ -978,6 +980,42 @@ Virtualization creates virtual versions of physical resources — servers, stora
 - Commands and management: packaging with ThinApp/App-V, delivery over the network, deployment with PowerShell or Group Policy in Windows shops.
 - Needed resources: packaging tools, storage for application packages, networking for streaming to endpoints, client devices able to run the virtualized app (minimal hardware, since the host kernel is used).
 - Kernel behavior: shares kernel — the app uses the host OS kernel while its execution environment is isolated.
+
+
+#### Storage virtualization in detail — elaborated, deduplicated
+- Block-level storage virtualization — abstracts raw fixed-size blocks, identified by block number only, with no file structure.
+  - Key note: Block-level storage gives raw, fast access to chunks of data, but it does not know what those chunks mean. That is why it suits databases and VMs, which manage their own structure on top of it.
+  - Example: a 500 GB drive split into 4 KB blocks, or several SAN disks presented as one virtual disk.
+  - Command/Protocol: `lsblk`; iSCSI and Fibre Channel for SAN block access.
+- File system on top of blocks — organizes raw blocks into files and directories, with metadata for name, size, permissions, and timestamps.
+  - Key note: The file system is the layer that turns meaningless blocks into files a person can open by name. Without it, finding data would mean knowing the exact block layout.
+  - Example: ext4 or NTFS on a 500 GB drive, `report.txt` of 8 KB in Block 5 → Block 6, opened as `report.txt`.
+- File-level virtualization — aggregates file systems and shares into one unified virtual file system.
+  - Key note: File-level virtualization hides where files physically live, so users see one folder view across servers. That is its business value: sharing without server-by-server navigation.
+  - Example: Server 1, 2, and 3 each hold a file in `/docs/`; the user sees one `/shared/docs/` with all three.
+  - Protocol: NFS and CIFS/SMB; typical platform NAS.
+- Object-level storage virtualization — stores data as objects, each with data, metadata, and a unique identifier.
+  - Key note: Object storage drops both block numbers and directory paths for the user, replacing them with an ID. That makes it simple to scale in the cloud, at the cost of not behaving like a local file system.
+  - Example: Amazon S3 or Google Cloud Storage, `image.jpg` retrieved by its bucket URL/ID.
+  - Protocol: S3-compatible object API over HTTP.
+- Why block and file are separate layers — block is the low-level storage layer, file is the organization layer on top of it.
+  - Key note: They are not duplicates. Block answers where data sits in chunks; file answers what data is called and how it is organized. Object is a third answer, for ID-based cloud access.
+  - Example: a database uses block storage directly, staff use file shares for documents, and backups use object storage.
+
+
+#### Storage virtualization in practice — elaborated, deduplicated
+- Block level with LVM — check the disk, partition it, make a physical volume, volume group, and logical volumes, then format and mount them.
+  - Key note: LVM turns a physical disk into a flexible pool, so volumes can be sized and later expanded without re-partitioning the raw disk. That flexibility is the practical point, not the individual commands alone.
+  - Example: a 500 GB test disk becomes a 200 GB volume and a 100 GB volume in one volume group.
+  - Commands: `sudo fdisk -l`, `sudo pvcreate /dev/sdb1`, `sudo vgcreate my_vg /dev/sdb1`, `sudo lvcreate -L 200G -n my_lv1 my_vg`, `sudo mkfs.ext4 /dev/my_vg/my_lv1`, `sudo mount /dev/my_vg/my_lv1 /mnt/lv1`.
+- File level with NFS — share a directory from a logical volume, export it, and mount it from another machine.
+  - Key note: File-level sharing hides the physical volume behind a path, so users work with folders, not disks. That is why it sits on top of block storage, not instead of it.
+  - Example: `/mnt/lv1/shared` exported by NFS and mounted at `/mnt/client` on another machine.
+  - Commands: `sudo apt install nfs-kernel-server`, add the export to `/etc/exports`, `sudo systemctl restart nfs-kernel-server`, `sudo mount <server_ip>:/mnt/lv1/shared /mnt/client`.
+- Object storage with MinIO — upload a file, and it becomes data plus metadata plus a unique ID in a flat namespace.
+  - Key note: Object storage removes both block numbers and directory paths from how you fetch data. You ask for an ID, and the store returns the object, which is why it scales well for cloud backups and media.
+  - Example: `photo.jpg`, metadata size 2 MB and type image/jpeg, object ID as given in the source, served from MinIO's dashboard at port 9000.
+  - Protocol: S3-compatible object API over HTTP.
 
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
@@ -7916,6 +7954,8 @@ Virtualization, in business terms, is buying and running fewer physical machines
 - Combined tech-plus-business view: Business&Technology.md, "Virtualization — Combined View".
 - Corrections carried over: containers share, not virtualize, the kernel; OpenStack Neutron, not OpenStack alone, is the network component; Fibre Channel, not "Fiber Channel"; VxRail is hyperconverged infrastructure, not pure storage virtualization alone.
 
+#### Storage virtualization in detail and in practice — see Part 1 elaborated storage subsections above (deduplicated, not repeated here).
+
 ## Spectrum, DNS Visibility, and Government Control — Business Angle (Corrected, De-duplicated)
 
 Technical detail (bands, schedulers, Linux tc, DNS records) is in Technology.md; the combined 5-layer view is in Business&Technology.md. This section is only the business, ownership, and regulation angle.
@@ -10120,6 +10160,8 @@ Virtualization is one idea read two ways at once: technically, a layer that abst
 - Full technical section: Technology.md, "Virtualization — Types, User Space, Differences, Resources".
 - Business angle: Bussiness.md, "Virtualization — Business Angle".
 - Corrections carried over, not repeated in full here: containers share the kernel, they do not virtualize it; Neutron, not OpenStack alone, is the network component; Fibre Channel spelling; VxRail is hyperconverged infrastructure; session-based desktops share a server OS, unlike VM-backed desktops.
+
+#### Storage virtualization in detail and in practice — see Part 1 elaborated storage subsections above (deduplicated, not repeated here).
 
 ## Kernel vs Government NOS, U.S. Gov Tech, Startup Model & Big Tech on Gov NOS — Combined View (No Diagram)
 

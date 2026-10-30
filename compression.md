@@ -11,6 +11,8 @@ Contents below are the 3 backup files in full, in order, separated by part headi
 
 ---
 
+> **New rule (set 2026-10-30, by Aravind, for the 5 files and the new branch):** Every time these 5 files are updated, the rule book applies. Compression.md must carry all original shared notes, in full. Elaborated.md must remove the redundant notes found in compression.md, and elaborate only the remaining, non-redundant points with key notes — about 2 lines per point, plus an example, and a command or protocol only where applicable, as discussed earlier for one-liner points.
+
 # Part 1 — Technology.md (original order)
 
 > **Standing rule (set 2026-10-30, by Aravind):** For every note shared in this chat from now on — clean it to subject only, correct factual errors (with a corrections list in the new section), and remove redundant content/data already in any of the 3 files. Decide the primary file by topic, then update all 3 files with relevant content every time: the primary file gets the full new section, and the other files get their own angle on the same note — e.g. a tech note in Technology.md must also be mapped to its business analogy in Bussiness.md, and a business note must also be mapped to its technology counterpart here. If a note fits all 3 files, update all 3 with new notes/data. Do not copy the same section verbatim across files — each file gets only its own angle, condensed, with a pointer to the full section elsewhere. Md only, no PDF/diagram unless explicitly asked.
@@ -3233,6 +3235,79 @@ Virtualization creates virtual versions of physical resources — servers, stora
 - Needed resources: packaging tools, storage for application packages, networking for streaming to endpoints, client devices able to run the virtualized app (minimal hardware, since the host kernel is used).
 - Kernel behavior: shares kernel — the app uses the host OS kernel while its execution environment is isolated.
 
+
+### Storage virtualization in detail — blocks, files, and objects
+Storage virtualization, as already listed under type 3, is not one thing. It has three layers, and they answer different questions: what is stored, how is it organized, and how is it addressed.
+
+#### Block-level storage virtualization
+- Abstracts: raw physical storage blocks — fixed-size chunks, for example 512 bytes or 4 KB, identified only by block number. The system knows Block 0, Block 1, Block 2, and so on; it does not know what the data means.
+- Shows after abstraction: one unified block storage device, even if it is spread across many physical disks. Example: several disks in a SAN appear as one large virtual disk, or a RAID pool appears as one volume.
+- Used in: Storage Area Networks (SANs), databases, and virtual machines — anywhere an OS or application needs direct, raw block access for performance or control.
+- Example, step by step: a 500 GB hard drive divided into 4 KB blocks holds only raw bits, for example Block 0: 101010…, Block 1: 111000…. Without anything else, a human cannot open a file from those blocks.
+- Commands and protocols: `lsblk`, `fdisk -l`, `lvs`/`pvs` for LVM; protocols iSCSI and Fibre Channel for SAN block access.
+
+#### File system — the layer on top of blocks
+- A file system is not the same as block storage, even though it is usually stored at block level. It is the logical layer that sits on top of blocks and gives them meaning.
+- It takes raw blocks and organizes them into files and directories, and keeps metadata: file name, directory path, size, permissions, and timestamps.
+- Example: install ext4 or NTFS on that 500 GB drive. A file `report.txt` of 8 KB might use Block 5 ("This is a text") and Block 6 ("file example."). Metadata says: name `report.txt`, size 8 KB, location Block 5 → Block 6. Opening `report.txt` then returns "This is a text file example."
+- Why it is needed: without a file system, a user or application would have to know the exact block layout to find data, which is cumbersome and error-prone. Block storage gives raw access; the file system gives usable files.
+
+#### File-level storage virtualization
+- Abstracts: file systems and directories, not raw blocks. It aggregates multiple file systems or shares into one unified virtual file system.
+- Shows after abstraction: one directory structure across many devices or servers. Example: Server 1 holds `/docs/report.txt`, Server 2 holds `/docs/image.jpg`, Server 3 holds `/docs/data.csv`; the user sees one `/shared/docs/` containing all three, without knowing where each file physically lives.
+- Used in: Network-Attached Storage (NAS), NFS, and CIFS/SMB file sharing.
+- How it relates to block level: block virtualization first combines disks into a usable volume; file-level virtualization then organizes and unifies the files on top of it, so users access files by path, not by block number.
+
+#### Object-level storage virtualization
+- Abstracts: data as objects, each bundling data plus metadata, addressed by a unique identifier, not by block number or directory path.
+- Shows after abstraction: a virtual object store. Example: Amazon S3 or Google Cloud Storage. Uploading `image.jpg` stores the image data, metadata (name, type JPEG, creation date), and a unique ID/URL, for example `https://mybucket.storage.com/image.jpg`. You retrieve it by that ID, without caring about blocks or folders.
+- Used in: cloud storage, backups, and large media, where flat, scalable, ID-based access matters more than a directory hierarchy.
+- Difference from the other two: object storage does not divide data into blocks for the user, and does not organize it in directories. Each object is self-contained.
+
+#### Comparison, merged
+- Block-level: abstracts raw blocks; presents a virtual disk; use case databases and VMs; tools SAN arrays, VMware vSAN.
+- File-level: abstracts files and directories; presents a virtual file system; use case user-friendly file access and sharing; tools NFS, CIFS/SMB, NAS.
+- Object-level: abstracts objects with metadata; presents objects by unique ID; use case cloud storage, backups, large media; tools Amazon S3, Google Cloud Storage.
+- Why block and file are separate layers, in one line: block answers "where is the data physically, in chunks?"; file answers "what is this data called, and where does it fit in a structure users understand?" Both are needed — raw access for performance, file organization for usability — and object storage is a third answer, for ID-based access at cloud scale.
+
+### Corrections for this storage detail
+- The two later source notes repeat the block-versus-file explanation already given in the first storage note. That repetition is merged here, not added twice.
+- "File system is stored at block level" does not make file system and block virtualization the same: one is the storage layer, the other is the organizing layer on top of it.
+- Object storage still uses physical disks underneath, in the cloud provider's infrastructure; what is virtualized for the user is addressing and organization, not the absence of disks.
+
+
+### Storage virtualization in practice — 500 GB HDD on Linux, step by step
+Scenario: one 500 GB HDD on an Ubuntu/Linux machine, used only as a test disk. All steps below build on the storage layers above: block first, then file, then object.
+
+#### Step 1 — Block level with LVM
+- Check the disk first and confirm the device name. The source assumes `/dev/sdb`; never assume — a wrong device will destroy data.
+- Commands: `sudo fdisk -l`; then, only on the confirmed test disk, `sudo fdisk /dev/sdb` to create a partition, for example `/dev/sdb1` spanning the disk.
+- Create a physical volume: `sudo pvcreate /dev/sdb1`
+- Create a volume group, a logical storage pool: `sudo vgcreate my_vg /dev/sdb1`
+- Create logical volumes from the pool: `sudo lvcreate -L 200G -n my_lv1 my_vg`; `sudo lvcreate -L 100G -n my_lv2 my_vg`
+- Format and mount: `sudo mkfs.ext4 /dev/my_vg/my_lv1`; `sudo mkfs.ext4 /dev/my_vg/my_lv2`; `sudo mount /dev/my_vg/my_lv1 /mnt/lv1`; `sudo mount /dev/my_vg/my_lv2 /mnt/lv2`
+- What you see: the 500 GB HDD is now logical volumes independent of its physical structure. More physical disks can be added to the volume group later without changing the logical volumes' names.
+- Warning, added: `fdisk`, `pvcreate`, and especially `mkfs.ext4` are destructive on the target device. Use them only on a confirmed test disk, with backups elsewhere, never on a disk holding data you need.
+
+#### Step 2 — File level with NFS, on top of block level
+- Create a shared directory on a logical volume: `sudo mkdir -p /mnt/lv1/shared`; `sudo chmod 777 /mnt/lv1/shared` — note: 777 is a lab shortcut in the source, not a production permission; use narrower permissions for real shares.
+- Install and export: `sudo apt install nfs-kernel-server`; add `/mnt/lv1/shared *(rw,sync,no_subtree_check)` to `/etc/exports`; `sudo systemctl restart nfs-kernel-server`
+- From another machine, mount it: `sudo mount <server_ip>:/mnt/lv1/shared /mnt/client`
+- What you see: files are accessed by path through NFS, without knowing they live on `/dev/my_vg/my_lv1`. Other file-level tools in the same family: Samba, and distributed file systems such as Ceph.
+- This is file-level virtualization in practice: it abstracts files and directories, not blocks, and it sits on top of the block-level volumes made in Step 1.
+
+#### Step 3 — Object storage with MinIO, flat and ID-based
+- Install MinIO, an S3-compatible object server: download the binary, make it executable, and move it to `/usr/local/bin` as in the source; start it with `minio server /mnt/lv1/shared`, then open the dashboard at `http://<server_ip>:9000`.
+- Upload with the dashboard or the MinIO client (`mc`). An uploaded file becomes an object: data plus metadata plus a unique ID. Example from the source: file `photo.jpg`, metadata `{"size": "2MB", "type": "image/jpeg"}`, object ID `abc123xyz`.
+- What you see: a flat namespace. Fetching `photo.jpg` needs only its object ID, not a block number and not a directory path.
+- Note, added: MinIO's default dashboard credentials in the source are not stated here and should not be left as defaults in any real setup; change them before exposing the service, and do not publish a server IP or credentials in notes.
+
+#### Comparison, practical
+- Block-level: virtualized object blocks (for example 4 KB); abstraction raw blocks → logical volumes; practical use RAID, LVM, SAN storage.
+- File-level: virtualized object files and directories; abstraction files → logical shares; practical use file sharing (NFS, Samba), distributed file systems.
+- Object storage: virtualized object data + metadata + ID; abstraction flat objects with unique IDs; practical use cloud storage (AWS S3, MinIO), scalable web applications.
+- Summary in one line: block makes logical volumes from raw blocks (LVM), file makes shares from files and directories (NFS), object makes ID-addressed objects from data plus metadata (S3/MinIO) — each on top of, or alongside, the previous layer, for a different use case.
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.
@@ -4775,6 +4850,21 @@ Virtualization, in business terms, is buying and running fewer physical machines
 - Desktop virtualization: deliver a centrally managed desktop to any device. Example: remote staff open the same company desktop from a thin client or a home PC, with data kept in the data centre rather than on the device.
 - Application virtualization: deliver a single app without installing it on every machine. Example: a legacy app streams to newer machines, avoiding reinstalls and version conflicts across the estate.
 
+
+#### Storage virtualization in detail — business angle
+- Block-level, in business terms: buy raw, fast storage as one pool for systems that need direct disk access, for example databases and VMs on a SAN. Benefit: performance and control. Cost: the business still needs a file system or application on top to make the data usable.
+- File system, in business terms: the layer that turns those blocks into files users can open by name, with permissions and timestamps. Without it, staff would need to know block layouts to find anything.
+- File-level, in business terms: unify file shares from several servers into one `/shared/` view, so staff access documents without knowing which server holds them. Typical choice: NAS with NFS or SMB/CIFS, for everyday document sharing.
+- Object-level, in business terms: store each item as an object with metadata and a unique ID, for example in Amazon S3 or Google Cloud Storage. Typical choice: backups, archives, and large media, where ID-based, scalable access beats a folder hierarchy.
+- Business choice, in one line: use block for performance-critical systems, file for people sharing documents, and object for cloud backups and media at scale. Full technical detail, commands, and protocols: Technology.md, "Storage virtualization in detail".
+
+
+#### Storage virtualization in practice — business angle
+- Block level, in practice: an admin pools a test 500 GB disk with LVM into 200 GB and 100 GB logical volumes, so capacity can be assigned and later expanded without re-partitioning by hand. Business value: flexible capacity for databases and VMs. Risk note: partitioning and formatting destroy data on the target disk, so this is a lab procedure on a confirmed test disk only.
+- File level, in practice: that volume is shared by NFS, so staff mount one shared folder from another machine without knowing which disk or volume holds it. Business value: simple document sharing across machines.
+- Object level, in practice: the same shared area can host an S3-compatible object store (MinIO in the source), where each file becomes an object with metadata and an ID, fetched without block or folder knowledge. Business value: scalable storage for backups, media, and web applications.
+- Full Linux commands and step-by-step detail: Technology.md, "Storage virtualization in practice".
+
 ### User space, in business risk terms
 - User space is everything above the kernel: apps, libraries, and configs. Kernel space is the OS core that controls hardware.
 - Containers isolate user space only and share one kernel. That is cheaper and faster, but a kernel-level fault can affect all containers on that host.
@@ -5413,6 +5503,21 @@ Virtualization is one idea read two ways at once: technically, a layer that abst
 - Network virtualization: tech — physical network into virtual networks; business — tenant and environment isolation without new hardware per tenant; kernel — not applicable; key tools — NSX, ACI, Neutron, Open vSwitch; protocols — VXLAN, OpenFlow.
 - Desktop virtualization: tech — full remote desktop, usually VM-backed; business — central management and remote access; kernel — isolates (VM-backed); key tools — Horizon, Citrix Virtual Apps and Desktops, RDS; protocols — RDP, Blast, HDX/ICA.
 - Application virtualization: tech — single app, isolated execution, host kernel; business — legacy app delivery without local installation; kernel — shares; key tools — App-V, ThinApp, Virtual Apps.
+
+
+#### Storage virtualization in detail — combined view
+- Block: tech — raw fixed-size blocks by number, no file meaning; business — SAN/VM/database performance. Shows: one virtual disk.
+- File system: tech — logical layer on blocks, files, directories, metadata; business — staff open files by name, not by block. Shows: organized files.
+- File-level: tech — unify file systems/shares into one virtual file system; business — one shared folder view across servers. Shows: `/shared/docs/` from several servers. Tools: NFS, CIFS/SMB, NAS.
+- Object: tech — data plus metadata, addressed by unique ID; business — cloud backups and media at scale. Shows: an object store, for example S3 `https://mybucket.storage.com/image.jpg`.
+- Combined point: block gives the foundation, the file system gives meaning, file virtualization gives one view, and object gives ID-based scale. Full detail: Technology.md; business angle: Bussiness.md.
+
+
+#### Storage virtualization in practice — combined view
+- Block: LVM on a 500 GB test disk — `pvcreate`, `vgcreate`, `lvcreate`, `mkfs.ext4`, `mount` — gives logical volumes from raw blocks; business use: flexible capacity for databases/VMs.
+- File: NFS share on that volume — export `/mnt/lv1/shared`, mount from a client by server IP and path — gives one shared folder view; business use: document sharing without knowing the physical location.
+- Object: MinIO on that volume — upload becomes data + metadata + unique ID, fetched by ID from a flat namespace; business use: cloud-style backups and media at scale.
+- Warning carried over: partitioning/formatting are destructive, and lab permissions (777) and default MinIO credentials are not production settings.
 
 ### User space, combined
 - User space holds apps, libraries, configs, and processes; kernel space holds the OS core. Containers isolate user space only, so they are light and fast but share kernel risk. VMs isolate both, so they are heavier but give a stronger boundary. That single distinction explains most of the cost-versus-isolation choice in the table above.
