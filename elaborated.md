@@ -6919,6 +6919,18 @@ Pointer: full sections in Bussiness.md and Technology.md. Business and combined 
 - Monolithic does not mean unmodular. Example: Linux is monolithic and still loads kernel modules without a full rebuild.
 - Exokernels are a 1990s research idea, not a 2020s trend. Example: MIT exokernel work dates to the mid-1990s, while unikernels are a 2010s cloud idea.
 
+## Namespaces, Pod Volumes, and Shipping Versus Containerization — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full sections in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Segregation deferred until the owner says done.
+
+- Linux namespaces isolate views, cgroups limit resources. Example: a PID namespace gives a container PID 1, but a memory limit comes from a cgroup, not from any namespace.
+- Kubernetes namespaces do not block traffic by themselves. Example: two pods in different namespaces can still communicate unless a NetworkPolicy blocks it; RBAC, not the namespace name, controls API access.
+- emptyDir is pod-lifetime scratch space. Example: an app writes logs to an emptyDir volume and a logging sidecar in the same pod mounts the same volume to forward them; both mounts are deleted when the pod is removed.
+- ConfigMap and Secret objects outlive the pod. Example: deleting a pod does not delete its ConfigMap; the next pod mounts the same ConfigMap again, and a Secret volume is backed by tmpfs.
+- Kubernetes Pod is not named after the moving company. Example: Kubernetes documentation says pod as in a pod of whales or a pea pod; PODS is a trademarked moving brand, and the mapping is an analogy only.
+- Containers share the host kernel. Example: a Linux container image runs on a Linux host, not natively on a Windows host without a virtual machine layer.
+- Sidecar, Ambassador, and Adapter are distinct. Example: a logging sidecar augments the app, an Ambassador proxies external traffic so the app talks to localhost, and an Adapter converts the app's output format for a monitoring system.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9585,6 +9597,11 @@ See Part 1 of this file for the elaborated key points on India business, finance
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
+
+## Namespaces, Pod Volumes, and Shipping Versus Containerization — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11012,6 +11029,11 @@ See Part 1 of this file for the elaborated key points on India business, finance
 ## US and Global Perspective, Silicon, Comparative Framework, Era Frameworks, and Kernel Evolution — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
+
+## Namespaces, Pod Volumes, and Shipping Versus Containerization — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings.
 
 ## Business Promotion — Combined View (No Diagram)
 
