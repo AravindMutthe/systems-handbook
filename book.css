@@ -30,3 +30,16 @@
 [data-theme="dark"] .book-contents h2{border-top-color:#334155}
 [data-theme="dark"] .book-bar{border-bottom-color:#334155}
 @media(max-width:600px){.book-cover{padding-top:32px}.book-cover h1{font-size:34px}}
+
+.book-seq{display:flex;flex-direction:column;gap:14px;margin:16px 0 8px}
+.book-chap-card{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid #e6ddd0;border-radius:14px;padding:18px 20px;box-shadow:0 1px 4px rgba(31,42,51,.06)}
+.book-seq-no{flex:0 0 auto;width:40px;height:40px;border-radius:50%;background:#1f2a33;color:#d9a441;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.book-chap-body{flex:1;min-width:0}
+.book-chap-title{font-size:18px;line-height:1.4;margin:0 0 4px}
+.book-chap-domain{color:#777;font-size:14px;margin:0 0 12px}
+.book-open{display:inline-block;background:#1f2a33;color:#fdfbf7 !important;text-decoration:none !important;padding:10px 20px;border-radius:999px;font-weight:700;font-size:15px}
+.book-open:hover{background:#d9a441;color:#1f2a33 !important}
+[data-theme="dark"] .book-chap-card{background:#16232c;border-color:#334155}
+[data-theme="dark"] .book-chap-domain{color:#94a3b8}
+[data-theme="dark"] .book-open{background:#d9a441;color:#1f2a33 !important}
+[data-theme="dark"] .book-open:hover{background:#fdfbf7}
