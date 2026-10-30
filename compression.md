@@ -4738,6 +4738,118 @@ Source: the user's WhatsApp channel, checked 2026-10-30, one new note after batc
 - OpenMetrics: a specification for a scrapeable metrics exposition format, developed for cloud-native telemetry at scale.
 - *Correction: the summary matrix's OTel row, "OpenTelemetry SDKs, Prometheus", merges two roles. OpenTelemetry SDKs emit telemetry, and Prometheus is a metrics collection and storage system that can scrape OpenTelemetry or Prometheus exposition formats. Prometheus is not an OpenTelemetry implementation, and an OTel SDK is not Prometheus. The correct mapping is SDKs emit, Prometheus or an OTel Collector receives and stores.*
 
+## WhatsApp Notes — Systems Lifecycle, Cluster Anatomy, XSI Interfaces, Repositories, systemd, Kernel Structures, and Config Writers (Audited, Official Sources Only, Elaborate Only)
+
+Source: the user's WhatsApp channel, checked 2026-10-30, all notes after batch 19, sequences 70436 to 70458, plus the five notes already read at the 22:45 IST check (70454 to 70458). Filed here, in elaborate only, deduplicated and merged, because the same lifecycle mapping was pasted in many variants. Repeated lists are kept once, in their best version, not once per paste. The earlier WhatsApp notes in this window, sequences 70392, 70394, and 70410, were already filed as batches 18 and 19, so they are not repeated here. Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule. No diagrams, no PDF, per the owner's rule.
+
+### Cluster anatomy: where the parts actually run
+
+- A Kubernetes cluster is a set of servers, and every infrastructure component runs on the CPU and RAM of a specific node. Nothing floats.
+- Worker nodes: kubelet, a systemd service and the node's site manager, talks to the container runtime through CRI, and to the API server. Container runtime, containerd or CRI-O, runs as a host service and creates containers through an OCI runtime such as runc or crun. kube-proxy and the CNI agent run on every node and program that node's networking.
+- Control plane nodes: kube-apiserver, etcd, kube-scheduler, and kube-controller-manager.
+- *Correction: the source lists only apiserver, etcd, and scheduler as control plane brains, and omits kube-controller-manager, which runs the core controllers for nodes, replication, endpoints, and service accounts, and cloud-controller-manager on cloud clusters, which runs the cloud-specific controllers. A cluster without kube-controller-manager does not reconcile desired state, so the three-component list is incomplete.*
+- *Correction: "Docker" in the Kubernetes fetch flow is outdated. Modern Kubernetes does not use Docker as its runtime. The kubelet talks CRI to containerd or CRI-O, and containerd's storage is under /var/lib/containerd, not /var/lib/docker. /var/lib/docker is Docker Engine storage, which is a different product.*
+- Deployment method for control plane components in kubeadm clusters: static pods, YAML files in /etc/kubernetes/manifests read by the local kubelet. This stands.
+- *Correction: "Kubernetes does not come with default application containers" is loose. A cluster does come with system components, often as pods in kube-system, such as CoreDNS, kube-proxy, and the CNI agents, and on managed clusters many more. The correct point is that it does not come with the user's application containers.*
+
+### XSI interfaces: CNI, CSI, CRI, CPI, CDI, and OCI
+
+- OCI: image and runtime specifications, so any OCI-compliant image runs on any OCI runtime such as runc, crun, or gVisor. This stands.
+- CRI: the gRPC interface between kubelet and runtime, for sandbox, process, and image operations, with cgroups v2 and namespaces for isolation. Implementations: containerd, CRI-O.
+- CNI: the plugin interface for pod networking, IP allocation, and data paths. Implementations: Calico, Cilium, OVN-Kubernetes, Flannel.
+- CSI: the interface for persistent storage lifecycle, create, attach, format, mount, and expand. Implementations: AWS EBS CSI, Rook-Ceph, Longhorn, Dell PowerScale CSI.
+- CDI: the specification for injecting devices such as GPUs, TPUs, and FPGAs into containers. Implementations and tooling: NVIDIA Container Toolkit, Intel device plugins, and CDI specification files in /etc/cdi.
+- *Correction: "CPI" is not a formal interface in the same sense as CRI, CNI, and CSI, and this is the second time the source repeats it, after batch 19. The real component is the Cloud Controller Manager, with per-cloud implementations such as AWS Cloud Controller Manager and Azure Cloud Provider, running node, route, and service/load-balancer controllers. The matrix row is therefore CCM, not CPI, and "cloud providers use CPI" should read "cloud providers use a cloud controller manager".*
+- *Correction: CDI and device plugins are not the same thing. A device plugin is a Kubernetes mechanism where a DaemonSet advertises a resource such as nvidia.com/gpu to the scheduler. CDI is a runtime-level specification for which device nodes, libraries, and environment variables are injected into a container. They can work together, but listing device plugins as CDI implementations merges two mechanisms.*
+- *Correction: the CNI does not, by itself, enforce NetworkPolicy. The CNI specification defines ADD and DEL calls for attaching a pod to a network. NetworkPolicy enforcement is a feature of specific CNI implementations, such as Calico and Cilium, which program iptables, nftables, or eBPF rules. A basic CNI such as Flannel does not enforce NetworkPolicy on its own.*
+- *Correction: "every pod gets its own unique IP and every pod can talk to every other pod without NAT" is the Kubernetes networking model, not an absolute guarantee. It is the model the cluster is designed to meet, and hostNetwork pods, egress NAT to outside the cluster, and NetworkPolicy restrictions are all exceptions to a literal reading.*
+- CNI deep dive, mechanisms as written, with one qualification: Calico uses Linux routing and BGP peering, Cilium uses eBPF programs on host interfaces and veth pairs, and OVN-Kubernetes uses Open vSwitch and a logical network database. All three do IPAM, connectivity, and, where implemented, policy.
+- *Correction: Cilium does not attach eBPF "directly to the pod's network interface" in the simple sense the source implies. eBPF programs attach to host-side veth interfaces, tc hooks, and other host networking points, and the pod sees a normal interface. The effect is the same, the attachment point is host-side.*
+- Interface packaging: CNI binaries in /opt/cni/bin, node DaemonSets such as cilium-agent, calico-node, and ovn-controller, and central operators such as cilium-operator and calico-kube-controllers. CSI sidecars csi-provisioner, csi-attacher, and csi-resizer, plus a node DaemonSet that runs mount and mkfs operations, and a controller that talks to the storage backend. CRI as a host systemd service with config in /etc/containerd/config.toml or /etc/crio/crio.conf, and host tools crictl and ctr. These stand, with the CPI row read as CCM.
+
+### Repositories: state, content, execution, and where they live
+
+- Four repository kinds: flat-file repositories in /etc, database repositories such as etcd and OpenLDAP, runtime repositories in kernel memory such as routing, ARP, socket, and process tables, and control-plane repositories managed by controllers such as the Kubernetes API and Terraform state.
+- Three dimensions: what it is, state, content, or execution; where it lives, local, remote, or hybrid; how it is accessed, file, API, CLI, or runtime memory.
+- State is what the system should be, content is what the system delivers, execution is what the system runs. Local is one machine, remote is a shared system, hybrid is a local copy synced with a remote truth.
+- *Correction: "openLAdp" is a typo for OpenLDAP. "sysctl" in the runtime state list is also misplaced: sysctl settings are kernel runtime parameters, not a table or repository in the same sense as the routing table or ARP cache. The correct list is routing table, ARP cache, socket table, process table, and netfilter tables, with sysctl as a parameter interface, not a stored table.*
+- *Correction: "all remote fetches ALWAYS include authentication" is false. Public repositories, public registries, and public package mirrors need no authentication. Authentication is required for private repositories, and authorization is a separate check after authentication. The correct flow is: public fetch needs only a network request, private fetch needs auth, then authorization, then download.*
+- *Correction: Kubernetes registry authentication is not "service accounts" alone. A pod pulls a private image using an imagePullSecret, or a node-level credential, and a service account can reference imagePullSecrets, but the secret itself is the credential. Saying service accounts authenticate pulls, without imagePullSecrets, will not work as a configuration.*
+- Fetch mechanics, as written: Git fetches objects, commits, trees, and blobs, and rebuilds the working directory, it does not download files one by one. Artifact fetches are HTTP downloads with a token, such as a Maven JAR from Nexus or Artifactory. Registry fetches are a manifest request, then layer blobs by digest, cached locally, then container start. This stands, with the Docker-to-containerd correction above.
+
+### systemd units
+
+- RAM-only units, generated dynamically, with no static file in /etc/systemd/system: .scope, created for processes started outside systemd such as an SSH session, and .device, generated from kernel and udev hardware detection.
+- Disk-originated units, unit files in /lib/systemd/system or /etc/systemd/system, parsed into RAM objects when started: .service, .socket, .timer, .path, .target, .slice, .mount, .automount, and .swap. That is nine disk types plus two RAM types, eleven in total, which matches the source count.
+- Cooperative pairs: .timer with .service, .socket with .service, .path with .service, and .automount with .mount. Standalone units: .service, .target, .device, .mount, .swap, .slice, and .scope.
+- *Correction: ".timer sets hardware clock trackers" is wrong. A timer uses the system monotonic clock or the realtime clock, not the hardware clock, and it does not program hardware timers. The correct statement is that a timer schedules a service on calendar or elapsed-time conditions.*
+- *Correction: ".service saves software configurations to disk" is misleading. A service unit file is a configuration file on disk, and the service itself is a process in RAM. The unit file does not save application configuration, it describes how systemd starts the application.*
+
+### Kernel data structures
+
+- Kernel structures live in protected kernel-space RAM, not in user space, and are visible to users only through pseudo-filesystems such as /proc and /sys, and through tools that read them.
+- task_struct: one per process or thread, with PID, state, and priority, linked in the kernel task list and found by PID.
+- mm_struct: a process's virtual memory layout, with pointers to page tables and memory areas.
+- inode: file metadata, permissions, size, and block locations, with no file name. dentry: the name-to-inode link for directory traversal.
+- sk_buff: one per network packet, carrying the packet through protocol layers.
+- list_head: the intrusive linked-list node embedded inside kernel objects, so the data wraps the structure, unlike user-space lists where a node wraps a pointer to data.
+- *Correction: "Radix Tree" as the current page-cache structure is outdated. The Linux kernel replaced the radix tree API with XArray in kernel 4.20, and the page cache now uses XArray. A radix tree description is correct for older kernels, and wrong as a current-kernel statement without that date.*
+- *Correction: "kernel handles hardware without relying on user-space libraries like libc" is correct in substance, but the reason is not just circular dependency. The kernel cannot link libc because libc is a user-space library that itself makes system calls into the kernel, and the kernel must run before any user-space library exists. The kernel has its own string, memory, and list implementations for that reason.*
+- Tools as interfaces: ps, top, and htop read task state, kill and pkill send signals, renice changes priority, taskset changes CPU affinity. These stand as interfaces, not as direct edits to task_struct, which user tools cannot write directly.
+
+### File, process, and thread lifecycle, and the local to Kubernetes to OpenShift mapping
+
+- One lifecycle, nine stages, applied to files, processes, threads, networks, storage, Kubernetes, and OpenShift: birth, ingestion, inspection, hierarchy, monitoring, auditing, governance, diagnostics, and destruction.
+- File commands, in full, as the source lists them: birth touch, mkdir, mktemp, mkfifo, mknod, ln, cp, install; ingestion scp, rsync, sftp, wget, curl; inspection ls, dir, vdir, pwd, tree, file, stat, find, locate; viewing cat, tac, less, more, head, tail, rev, od, hexdump, xxd; manipulation mv, rename, truncate, split, csplit, cut, paste, join, sort, uniq, tee, nl, sed, awk; administration chmod, chown, chgrp, chattr, lsattr, df, du, sync, mount, umount; analysis grep, wc, diff, cmp, comm, md5sum, sha256sum, sha512sum; archiving tar, cpio, dd, gzip, bzip2, xz, zip; destruction rmdir, rm, unlink, shred.
+- Process commands: systemd, init, setsid, exec, bg, fg, nohup, clone, fork, pthread_create for birth; ipcs, ipcrm, coproc, nc, socat for ingestion; ps, pgrep, pidof, pwdx, w, who, ps -T, ps -eLf, ps -m for inspection; pstree for hierarchy; top, htop, atop, tload, glances, top -H for monitoring; pmap, vmstat, free, uptime, time, prlimit for auditing; nice, renice, snice, taskset, sysctl, chrt for governance; strace, ltrace, lsof, fuser, gdb for diagnostics; kill, pkill, killall, tgkill, pthread_cancel, pthread_kill for destruction.
+- *Correction: fork creates a process, clone creates a thread only when called with thread flags, and pthread_create wraps clone. The source lists fork under thread birth, which is wrong: fork duplicates a process, it does not create a thread in the same process.*
+- *Correction: pidwait is not a standard procps or coreutils command on most distributions. The portable shell equivalent is the wait builtin with a PID. Listing pidwait alongside kill and pkill as a standard tool will fail on a default install.*
+- *Correction: ifconfig, route, netstat, brctl, and iwconfig are legacy net-tools and wireless-tools commands, replaced by ip, ss, and iw. They still exist where net-tools is installed, but they are not the current standard, and a new system may not have them at all.*
+- *Correction: fstyp in the source list is not a standard tool. The standard tool for filesystem identification is blkid, with lsblk --fs for the same information.*
+- *Correction: ksniff is not a kubectl builtin. It is a third-party kubectl plugin for packet capture, installed separately, and it should not be listed alongside kubectl exec and kubectl debug as if it ships with Kubernetes.*
+- *Correction: kubectl get does not have a --recursive option for listing nested resources. The -R and --recursive flags belong to kubectl apply, create, and delete for directory inputs. For hierarchy, use kubectl get with namespaces and labels, or a tool such as k9s, not kubectl get --recursive.*
+- *Correction: kubectl delete pod --force does not, on its own, mean instant deletion in all cases. For a pod, the documented immediate form is --force with --grace-period=0, and --force alone can still leave the pod in a terminating state or be rejected by admission. The safe form to record is kubectl delete pod <name> --force --grace-period=0, used only for a stuck pod, because it skips graceful shutdown.*
+- Kubernetes mapping, in brief: birth kubectl create, apply, run, expose; ingestion kubectl cp, port-forward, proxy; inspection kubectl get, api-resources; monitoring kubectl logs -f, top pod, top node; auditing kubectl describe, get -o yaml, explain; governance kubectl edit, patch, cordon, drain, taint; diagnostics kubectl exec -it, debug, events; destruction kubectl delete.
+- OpenShift mapping, in brief: oc new-app from source or image, oc new-project for a project, oc rsync, oc cp, oc port-forward, oc get including Routes, DeploymentConfigs, and Builds, oc projects, oc status, oc logs -f including build logs, oc adm top pods and nodes, oc describe, oc get scc, oc adm cordon and drain, oc set env, oc scale, oc exec -it, oc debug, oc adm node-logs, oc delete, oc delete project.
+- *Correction: "OpenShift uses Routes instead of Ingresses" is overstated. OpenShift supports both Ingress and Route objects, and Route is the OpenShift-native, older, and more feature-rich router for external URLs, but Ingress is also supported. The correct statement is that Route is OpenShift's native external router, not its only one.*
+- *Correction: oc debug does not bypass platform security rules in general. It creates a debug pod with troubleshooting tools, and that pod is still subject to admission and SecurityContextConstraints. It is a debugging aid, not a security bypass, and on a restricted cluster it may be denied.*
+- YAML manifests by stage: birth Pod, Deployment, StatefulSet, DaemonSet, StorageClass, PersistentVolume, Service, and, for OpenShift, Route; delivery Ingress, Route, NetworkPolicy, PersistentVolumeClaim; inspection ConfigMap, Secret, Endpoints, EndpointSlice; architecture Namespace, Project, Helm Chart; monitoring ServiceMonitor, PodMonitor, ClusterLogForwarder; auditing audit Policy and container probes livenessProbe, readinessProbe, startupProbe; governance Role, ClusterRole, RoleBinding, ClusterRoleBinding, SecurityContextConstraints, HorizontalPodAutoscaler, VerticalPodAutoscaler, ResourceQuota, LimitRange; diagnostics PrometheusRule, EphemeralContainer; destruction Finalizers and garbage collection.
+- *Correction: DeploymentConfig is deprecated. Red Hat documentation for OpenShift 4.14 and later says DeploymentConfig objects are deprecated, still supported, but not recommended for new installations, with only security and critical fixes, and that Deployment objects should be used instead. Listing DeploymentConfig as the current OpenShift compute manifest, without that status, is outdated for new work.*
+- *Correction: Secrets are base64-encoded, not encrypted, by default. The source repeats "encrypted environment keys" and "encrypted data blocks" for Secrets in two pastes. Base64 is an encoding, not encryption, and anyone with etcd read access or a Secret YAML can decode it. Encryption at rest must be enabled separately with an EncryptionConfiguration, ideally backed by a KMS provider.*
+- *Correction: AuditSink and Policy are not a current auditing pair. AuditSink is a v1alpha1 dynamic auditing API that never reached general availability, and current Kubernetes auditing is configured statically on the API server with an audit policy file and log or webhook backends. Listing AuditSink as the cluster auditing manifest will not work on a modern cluster without the old alpha feature gate.*
+- *Correction: a CRD does not contain application configuration. A CustomResourceDefinition defines the schema for a new custom resource type, and the custom resources themselves, created from that schema, hold the configuration. The source's "CRDs hold custom workflows" merges the definition with the instances.*
+
+### File syscalls: birth, allocation, and death
+
+- Reserve an inode, no data blocks yet: touch through open with O_CREAT, mkdir, symlink for ln -s, mkfifo, cp through open with O_CREAT plus write, mv through rename on the same filesystem.
+- Allocate blocks: echo, cat, dd, and editor saves through write, which allocates blocks as data is written.
+- *Correction: truncate -s 1G does NOT pre-allocate blocks. truncate sets the file size and creates a sparse file, with blocks allocated only on later writes. fallocate is the call that pre-allocates blocks without writing data. The source's "fallocate or truncate, pre-allocates blocks" merges two different operations.*
+- *Correction: touch does not call creat directly on a modern system. creat is a legacy wrapper, and current glibc translates it to openat with O_CREAT. The syscall to record for a modern trace is openat, not creat.*
+- Create hardware entry pointers: mknod for block, character, and pipe device nodes, with major and minor numbers for devices.
+- *Correction: modprobe and insmod do not create /dev entries by calling mknod themselves on a modern system. Device nodes are created by devtmpfs and udev when the kernel registers the device, and udev rules may then set permissions and symlinks. Recording mknod as the modprobe path is outdated for current distributions.*
+- Free inodes and blocks: rm through unlink, rmdir for an empty directory, and unlink as the direct syscall wrapper. A file's inode and blocks are freed only when its link count reaches zero and no process holds it open.
+- *Correction: shred does not guarantee unrecoverability. On SSDs, wear levelling and over-provisioning mean overwritten blocks may not be the physical blocks that held the data, and on journaling filesystems old copies can survive in the journal. Shred is a best-effort overwrite on a traditional hard disk, not a secure erase.*
+
+### Network file transfer tools
+
+- Same machine: cp, mv, rsync -av for local sync.
+- Over SSH: scp for a one-off copy, sftp for an interactive session with get and put, and rsync -avP over SSH for syncing, with progress and partial-file resume, which is the usual server-to-server default.
+- Over HTTP, HTTPS, and FTP: wget with -c for resume and -r for recursive, and curl with -O to keep the original name, -o to choose a name, and -T for upload.
+- Windows shares: smbclient and mount -t cifs. Linux to Linux filesystem: mount -t nfs, then normal cp, mv, and rsync.
+- *Correction: "no extra apps needed beyond what is usually installed" is too strong. rsync, curl, wget, smbclient, and the cifs and NFS mount helpers are packages, not guaranteed on every minimal install. On a minimal system, check for rsync, curl, wget, cifs-utils, and nfs-utils before assuming they exist, and scp in current OpenSSH is implemented over the SFTP protocol, not the legacy scp protocol, which is why scp and sftp now behave the same for most transfers.*
+
+### Config writers: software, middleware, Kubernetes, and B2Bi
+
+- Software level, writing: compilers produce binaries from source, and buffering accumulates data in streams before flushing to disk. Serialization converts objects to JSON or XML for storage or transfer.
+- Software level, reading and executing: parsers read syntax into abstract syntax trees, and interpreters translate scripts to bytecode or machine code on the fly. Runtimes such as Python and Node.js execute that code.
+- Middleware level, writing: message brokers such as Kafka, databases, and ORMs write through transaction logs such as write-ahead logs, and through persistence engines that translate in-memory data to database files.
+- Middleware level, reading and executing: enterprise service buses, JDBC and ODBC drivers, and web servers route queries, execute business logic, sync data, and enforce access rules.
+- *Correction: the source's "compilers write files" is loose. A compiler's job is to translate source to an output artifact, and it writes that artifact, but an interpreter does not write a program file at all, it executes it. The software writing row should be split: compilers and build tools write artifacts, interpreters and runtimes execute, and buffering and serialization are mechanisms, not writers.*
+- Kubernetes and OpenShift config, as written, deduplicated: ConfigMaps hold plaintext key-value pairs or whole files such as nginx.conf, Secrets hold sensitive values, and CRDs define new API types. Configuration covers environment variables, feature flags, database URLs, and credentials. Tools are editors, kubectl, oc, and Git-based delivery such as ArgoCD and Flux. Ways to write are declarative YAML with kubectl apply -f, and imperative CLI with kubectl create configmap from literals or files.
+- *Correction: the source pastes the Kubernetes config section twice, with the same content in different words. It is kept once here, not twice, per the redundant-content rule.*
+- IBM Sterling B2B Integrator config: customer_overrides.properties for localized parameter overrides, sandbox.cfg for installer and environment parameters, and setupfiles scripts for merging templates with live properties. Configuration covers database pool tuning, transport and retry parameters, server bindings, host paths, ports, and cluster parameters.
+- *Correction: sandbox.cfg and the setupfiles script are source-only in this batch, not verified against IBM documentation here, while customer_overrides.properties as the override location was verified in batch 17. They are kept as source items, not as verified IBM facts.*
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6945,6 +7057,14 @@ Full section: compression.md Part 1, "WhatsApp Notes — CNCF and OCI Open Stand
 - Maturity matters more than the acronym list. CRI, CNI, and CSI are stable core interfaces. COSI is alpha, NRI is emerging, SMI is archived, and SMP is a benchmark, not a standard. Choosing an alpha or archived interface for a production platform, because it appeared in the same matrix as CRI, is the main business risk in this note.
 - For mesh traffic today, the live choice is Gateway API, not SMI, and for observability the live choice is OpenTelemetry SDKs feeding a collector or Prometheus, not a single OTel-plus-Prometheus product.
 
+## WhatsApp Notes — Business Angles (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "WhatsApp Notes — Systems Lifecycle, Cluster Anatomy, XSI Interfaces, Repositories, systemd, Kernel Structures, and Config Writers". Corrections in the full section are in italic text.
+
+- The lifecycle matrix is a hiring and interview asset, not a product. The same nine stages, birth to destruction, run from a local file to a Kubernetes pod to an OpenShift project, and being able to map a stage across all three layers is the skill the matrix is actually teaching.
+- For platform choices, maturity beats completeness. DeploymentConfig, AuditSink, SMI, and CPI all appear in the source lists, and all four are deprecated, alpha, archived, or not a real standard. A platform built on them today inherits migration work tomorrow, while Deployment, Gateway API, static audit policy, and Cloud Controller Manager are the current choices.
+- For security, the two corrections that matter most are Secrets and shred. Secrets are base64, not encrypted, until encryption at rest is enabled, and shred is not a secure erase on SSDs. Both are easy to get wrong in a design review, and both are cheap to fix if caught early.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -8154,6 +8274,21 @@ Full section: compression.md Part 1, "WhatsApp Notes — CNCF and OCI Open Stand
 - CDI: runtime device injection for GPUs and accelerators, distinct from device plugins. NRI: node-level resource adjustment, emerging. COSI: bucket provisioning with BucketClaim and BucketAccess, alpha v1alpha1 to v1alpha2.
 - SMI: archived 3 October 2023, replaced by Gateway API GAMMA for mesh traffic. SMP: Meshery benchmarking, not a standard. gRPC: CNCF RPC framework over HTTP/2 and Protobuf, application layer not cluster infrastructure. Wasm and WASI: Bytecode Alliance and W3C, not CNCF-governed.
 - OpenTelemetry: OpenTracing plus OpenCensus merger, metrics, logs, and distributed traces, SDKs emit, Collector or Prometheus receives.
+
+## WhatsApp Notes — Combined Views (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "WhatsApp Notes — Systems Lifecycle, Cluster Anatomy, XSI Interfaces, Repositories, systemd, Kernel Structures, and Config Writers". Corrections in the full section are in italic text.
+
+- Cluster anatomy: worker kubelet, containerd or CRI-O, kube-proxy, CNI agent; control plane apiserver, etcd, scheduler, kube-controller-manager, cloud-controller-manager; kubeadm static pods in /etc/kubernetes/manifests.
+- XSI: OCI image and runtime, CRI kubelet to runtime, CNI pod networking, CSI storage lifecycle, CDI device injection, CCM not CPI for cloud, CNI binaries /opt/cni/bin, CSI sidecars provisioner, attacher, resizer, CDI files /etc/cdi.
+- CNI plugins: Calico routing and BGP, Cilium eBPF host-side, OVN Open vSwitch and logical database; IPAM, connectivity, and plugin-enforced policy.
+- Repositories: flat-file /etc, database etcd and OpenLDAP, runtime kernel tables, control-plane Kubernetes API and Terraform; state, content, execution crossed with local, remote, hybrid; Git objects, artifact HTTP, registry manifest plus layers, K8s imagePullSecrets.
+- systemd: scope and device RAM-generated; service, socket, timer, path, target, slice, mount, automount, swap disk-originated; timer, socket, path, automount are triggers for services.
+- Kernel: task_struct, mm_struct, inode, dentry, sk_buff, list_head, XArray replacing radix tree; /proc and /sys as windows.
+- Lifecycle: nine stages file, process, thread, network, storage, Kubernetes, OpenShift; YAML by stage Pod, Deployment, StatefulSet, DaemonSet, Service, Ingress, Route, NetworkPolicy, PVC, ConfigMap, Secret, Namespace, Project, Helm, ServiceMonitor, PodMonitor, ClusterLogForwarder, probes, RBAC, SCC, HPA, VPA, ResourceQuota, LimitRange, PrometheusRule, EphemeralContainer, Finalizers.
+- File syscalls: openat O_CREAT, mkdir, symlink, mkfifo, rename, write, fallocate pre-allocates, truncate sparse, mknod, unlink, rmdir.
+- Transfer: cp, mv, rsync -avP over SSH, scp over SFTP protocol, sftp, wget -c, curl -O, smbclient, mount cifs, mount nfs.
+- Config writers: compilers write artifacts, interpreters execute, Kafka and databases write through WAL, K8s ConfigMap, Secret, CRD, declarative apply, imperative create, B2Bi customer_overrides, sandbox.cfg source-only, setupfiles source-only.
 
 ## Business Promotion — Combined View (No Diagram)
 

@@ -7039,6 +7039,21 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 - WASI is not CNCF. Example: a wasm runtime hosted by CNCF can implement WASI, but WASI itself is a Bytecode Alliance and W3C-track standard.
 - OpenTelemetry traces are distributed, logs are not. Example: one trace id links log lines across services, but the logs themselves are emitted per service and correlated, not distributed as a single log.
 
+## WhatsApp Notes — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30, sequences 70436 to 70458, deduplicated and merged.
+
+- Control plane is four parts, not three. Example: without kube-controller-manager, no controller reconciles node, replication, or endpoint state, even if apiserver, etcd, and scheduler are running.
+- CPI is not a standard, CCM is the component. Example: an AWS cluster runs aws-cloud-controller-manager, not a CPI driver, and it owns node, route, and load-balancer controllers.
+- CNI spec does not enforce policy. Example: Flannel gives pods IPs and connectivity, but NetworkPolicy needs Calico or Cilium to program the rules.
+- Public fetches need no auth. Example: pulling a public Docker Hub image needs no token, while a private registry needs an imagePullSecret, not just a service account.
+- truncate is sparse, fallocate pre-allocates. Example: truncate -s 1G creates a 1 GB file that uses almost no disk until written, while fallocate -l 1G reserves the blocks immediately.
+- DeploymentConfig is deprecated. Example: a new OpenShift 4.14 or later app should use a Deployment, not a DeploymentConfig, which gets only security and critical fixes.
+- Secrets are base64, not encrypted. Example: base64 -d on a Secret YAML reveals the password, until encryption at rest with a KMS provider is enabled.
+- Radix tree is replaced by XArray. Example: a current-kernel page-cache description should say XArray, with radix tree only for kernels before 4.20.
+- shred is not secure erase on SSDs. Example: overwriting a file on an SSD may leave the old data in over-provisioned blocks that wear levelling never rewrites.
+- kubectl get has no --recursive. Example: use kubectl get across namespaces, or k9s, for hierarchy, and reserve -R for apply, create, and delete with directories.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9755,6 +9770,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
+
+## Batch 20 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11230,6 +11250,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 
 ## Batch 19 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
+
+## Batch 20 — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
