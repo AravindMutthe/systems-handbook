@@ -1,5 +1,5 @@
 Status: held, privacy private, publication draft, pushed 2026-10-30, no publication, no deploy.
-Gaps filled 2026-10-30 from web-verified trusted sources (see Archive). Still held. Filled chapters are verified added content, NOT original handwritten notes.
+Gaps filled 2026-10-30 from web-verified trusted sources (see Archive), cloud filled the same day from the web. Still held. Filled chapters are verified added content, NOT original handwritten notes.
 
 # Career learning path
 
@@ -36,9 +36,8 @@ presented as original-page content.
 5. Cloud — LINKS: Card I (Tech leadership Era,
    Internet/web/cloud Era), Card J (Eras UI Frameworks
    + Hardware controlled / SW, mobile & cloud, Cloud
-   IAM, API/microservices). Status: partial — not
-   filled in this turn, because no cloud page was
-   web-verified in this turn. Do not treat it as filled.
+   IAM, API/microservices). Status: FILLED 2026-10-30,
+   verified from web, see Filled chapters.
 6. Containers — LINKS: Card J only, mention of Kub.
    Status: FILLED 2026-10-30, verified from web,
    see Filled chapters.
@@ -100,6 +99,45 @@ or no modification. The usual goal is to centralize
 administration while improving scalability and hardware
 utilization — one physical server consolidating work that
 used to need several underused servers.
+
+### Cloud
+
+Cloud computing is, in the International Organization
+for Standardization definition, a paradigm for enabling
+network access to a scalable and elastic pool of
+shareable physical or virtual resources, with self-service
+provisioning and administration on demand. The National
+Institute of Standards and Technology's five essential
+characteristics are on-demand self-service, broad network
+access, resource pooling across multiple consumers,
+rapid elasticity that appears unlimited to the consumer,
+and measured service, where usage is monitored,
+controlled and reported. Its history runs from 1960s
+time-sharing, through Amazon Web Services in 2002 and
+Amazon S3 and EC2 in 2006, to Microsoft Azure in 2010
+and the OpenStack project the same year. NIST recognized
+three service models: Infrastructure as a Service, where
+the consumer runs its own operating systems and
+applications on provider infrastructure and patches them;
+Platform as a Service, where the provider delivers a
+platform (operating system, language runtime, database,
+web server) and the consumer controls only its deployed
+applications; and Software as a Service, where the
+provider installs and operates the application and the
+consumer uses it, usually through a browser, on a
+pay-per-use or subscription basis. Deployment models are
+private cloud (one organization), public cloud (delivered
+over the public Internet), and hybrid cloud (public and
+private bound together, including cloud bursting to
+public resources when demand rises). Responsibility is
+shared: the provider is typically responsible for
+infrastructure security and physical hardware, while the
+customer keeps data encryption, identity and access
+management, and application-level security. In this path
+cloud sits between virtualization and containers because
+it is built on them: IaaS runs virtual machines as guests
+under a hypervisor, and Linux containers run in isolated
+partitions of a single kernel.
 
 ### Containers
 
@@ -233,7 +271,7 @@ system itself.
   (not snippets, not repo files, not Atlas): Linux
   kernel; Virtualization; Containerization (computing);
   Kubernetes; DevOps; Site reliability engineering;
-  Computer security. Content above is paraphrased from
+  Computer security; Cloud computing. Content above is paraphrased from
   those pages, not copied from them. No content in the
   filled chapters comes from Atlas, and no Atlas file
   was used as a source for any filled chapter.
@@ -243,9 +281,10 @@ system itself.
   as a set in this turn. Commands named on the pages
   read (kubectl, kubeadm, Docker Engine) are named only
   where the page itself names them.
-- Cloud remains partial, as stated in Chapters above,
-  because no cloud page was web-verified in this turn.
-  It is not filled, and must not be described as filled.
+- Cloud was filled the same day, 2026-10-30, from the
+  Cloud computing page listed above, and its chapter
+  status is FILLED. No chapter in this file remains a
+  gap after this fill.
 - When a gap chapter is written, its practical layer
   must be verified claim by claim (verification rule)
   and labelled only here, in archive, not in main text.
