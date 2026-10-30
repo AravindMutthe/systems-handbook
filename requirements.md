@@ -431,6 +431,73 @@ A batch is complete only when all of these are true:
   its path / source-card provenance only inside its
   "Original images +" section.
 
+## R19. Original diagrams — faithful clean SVG redraw, not a redesign
+
+- Requirement: every diagram on an original note page is
+  recreated as a digital redraw, in clean SVG graphics.
+  This is a redraw of the owner's own work, not a new
+  diagram invented by the builder.
+- Requirement: the redraw reproduces the original as
+  closely as possible: the same nodes, the same arrows,
+  the same branches, the same hierarchy, and the same
+  labels — in the same structure, in the same order, and
+  with the same connections the original page shows.
+- Requirement: labels in the redraw are the original
+  labels, with the owner's spelling preserved for complete
+  words, exactly as in the original headline rule (R15).
+  Spelling is not "corrected" in a redraw, and wording is
+  not rephrased to sound cleaner.
+- Requirement: the redraw does NOT add, remove, reorder,
+  or reinterpret. No new node, no new arrow, no new
+  branch, no new hierarchy level, and no changed
+  connection is added in a redraw. If a branch is cut
+  off at the page edge in the original, the redraw shows
+  it ending there, incomplete — it does not invent a
+  continuation. If a node or label is crossed through in
+  the original, the redraw shows it crossed through —
+  it does not silently drop it, and it does not present
+  crossed content as active without that marking.
+- Requirement: the redraw is clean SVG, not a screenshot
+  and not a raster image. Labels are real SVG text, so
+  they stay readable, searchable, and scalable, and the
+  file lives locally in the repo, never hotlinked and
+  never fetched from a remote source.
+- Requirement: the redraw does not replace the original
+  image. The original image stays, untouched, inside
+  "Original images +" on that page. The SVG redraw sits
+  in the page's diagram section, as the readable digital
+  version of that same original diagram.
+- Requirement: this redraw rule is different from the
+  enhanced-diagram rule. An enhanced diagram (R4, and
+  the flow-chart / relationship-kinds rules in rules.md)
+  may simplify, re-map, or explain a relationship. A
+  redraw under this requirement may not. Where a page
+  has both, the redraw and the enhanced diagram are
+  shown as two different things, and the redraw is
+  labelled as the original diagram, in the archive
+  section only under R18 — never as meta language in
+  the main presentation.
+- Requirement: the only changes allowed in a redraw are
+  the ones other rules already allow, and they are
+  recorded in "Original images +" only, never in the
+  SVG itself: a truncated / cut-off word corrected in
+  the redraw only when the intended word is clear, with
+  the original truncated form recorded in archive; an
+  arrow kind (Historical, Depends on, Organizational
+  verb, Data, Control) applied only where the kind is
+  clear from the page, with any kind that is not clear
+  left as drawn and noted as unspecified in archive,
+  never silently assigned; and private material omitted
+  from the redraw under the privacy gate, with the
+  omission noted in archive — privacy overrides
+  faithfulness, and no private label is ever reproduced
+  in a redraw.
+- Requirement: this applies to every diagram in every
+  batch, on Cards A–K, on Story pages, and on batch
+  sequence pages, and to any diagram added by a later
+  batch. A page with a diagram but no SVG redraw is
+  incomplete under this requirement.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
