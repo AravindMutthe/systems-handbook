@@ -377,6 +377,60 @@ A batch is complete only when all of these are true:
   notes: primary placement is the story place, secondary
   placements are technical perspectives on that same place.
 
+## R18. Clean presentation — no meta language in the main page
+
+- Requirement: the presentation page itself must be clean
+  and clear. It reads as a study page, not as a processing
+  note about the page.
+- Requirement: the main presentation — headlines, key
+  points, detailed explanation, diagrams, and horizontal /
+  related links — must NOT include meta language about
+  the page or the work behind it. Examples of what is
+  forbidden in the main presentation, in any wording:
+  "this card", "that card", "this section", "this page
+  covers", "[Added]", "[Added, labelled]", "[Added —
+  proposed]", "labelled", "labelled in", "original vs
+  enhanced", "as added above", "see the card for",
+  and any other bracket label, provenance note, or
+  processing commentary about what was added, corrected,
+  or labelled.
+- Requirement: refer to topics by their own names in the
+  main presentation, not by card letters or by "this /
+  that card". A link to another topic is shown by that
+  topic's title, not by "that card" or "Card X".
+- Requirement: ALL of that meta material goes into
+  "Original images +" on that same presentation page,
+  and only there. That section, inside its dropdown, is
+  where the reader (and the builder) can see: which
+  headline is original and which is enhanced, which
+  words were added or corrected and what the original
+  form was, which transcription markers were present
+  ([cut off], [unclear], [crossed out], and similar),
+  and any other labelling or provenance note.
+- Requirement: this does NOT remove labelling — it moves
+  it. The distinction between original and enhanced,
+  and between original form and corrected form, must
+  still be recorded, in full, inside "Original images +"
+  on that page, and in the local intake / archive record.
+  It must simply not appear in the main presentation.
+- Note on earlier requirements: this requirement
+  supersedes, for presentation purposes only, the
+  main-page "[Added]" labelling in R15 and in earlier
+  audit fixes. R15's substance stands — original
+  headline first, enhanced headline never replacing or
+  hiding the original — but the "[Added]" marker itself
+  is now archive-only, inside "Original images +",
+  not a marker in the main headline. The same move
+  applies to [Added] markers in key points and in
+  detailed explanation: clean text in main, full
+  labelling in "Original images +".
+- Requirement: this applies to every presentation page,
+  including Story pages and batch sequence pages, not
+  only to Cards A–K. A Story page's main presentation
+  likewise shows clean story text and topic titles, with
+  its path / source-card provenance only inside its
+  "Original images +" section.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
