@@ -1079,3 +1079,27 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   Content, Key points, Tags, toggles, headers unchanged.
   Main NOT pushed; production NOT deployed — pending the
   owner's tap in the development chat.
+
+## Card I era examples, 2026-10-30 (owner: "lack of content and notes", "no examples", "real companies, real business, real wiki notes", branch only, no deploy)
+
+- Card I was the thinnest original card (6 Key points) and its
+  page read as abstract theory plus card-to-card links.
+  Added a new Detailed section "Era by era — real
+  companies, real business [Added]": Western Union
+  (telegraph), IBM / DEC / Novell (distribution),
+  Netscape / Amazon / eBay / Google (internet/web),
+  Apple / Google / AWS / Netflix (mobile & cloud),
+  Nvidia / OpenAI / Microsoft / Google (5G & AI) — each
+  with org, tech, and business model, tied back to the
+  original three questions and to Cards C, H, J.
+- Facts checked 2026-10-30 via Wikipedia / web search;
+  no prices or market-share claims beyond pay-as-you-go
+  and per-token concepts already in the notes. Sources
+  are held for the future content-references page, not
+  printed on the main page, per the presentation rule.
+- Card I Detailed grew from 2,461 to 3,217 words, 32 to
+  39 bullets. Original Key points and dropdown untouched.
+  Main notes NOT changed in this step — the section is
+  recorded in branch batch3-notes.md as a site expansion
+  for content chat to adopt, or the next notes pull will
+  overwrite it. Main NOT pushed; production NOT deployed.

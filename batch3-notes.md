@@ -470,6 +470,10 @@ who decides, and who pays, in each era.
 
 ---
 
+### Site expansion — era examples [Added, development chat 2026-10-30, NOT yet in main notes]
+
+Added to the Card I site page only (branch), after the Future completion section, as "Era by era — real companies, real business [Added]". Facts checked 2026-10-30 via Wikipedia / web search (sources for the future content-references page, not in main text): Western Union founded 1851, renamed 1856, dominated US telegraphy 1860s–1980s, first transcontinental telegraph 1861, business = telegram transmission + wire money transfer; IBM PC 1981, DEC PDP-11/VAX cheaper than IBM mainframes, Novell NetWare leading early client/server networking; Netscape Navigator 1994, Amazon founded 1994, eBay 1995, Google founded 1998, AdWords 2000; iPhone announced 2007, App Store July 2008, Android announced Nov 2007, AWS launched March 2006 (S3, EC2) metered pay-as-you-go, Netflix streaming Jan 2007; ChatGPT launched 30 Nov 2022, 100 million users in two months, on Microsoft Azure infrastructure powered by Nvidia GPUs, business = API token + subscription. Original Card I notes and Key points untouched. If content chat does not adopt this section into main notes, the next notes pull will overwrite the site page — carry it over explicitly.
+
 ## Card J
 
 ### Original headline first
