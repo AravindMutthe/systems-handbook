@@ -3278,6 +3278,44 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
 - AI Services: Implements GPUs (NVIDIA), AI frameworks (PyTorch, TensorFlow), custom data pipelines.
 - API & SaaS Marketplaces: Implements API gateways, cloud billing systems, container orchestration.
 - Pyramid Implements (technology column only): Governments — laws, licenses, compliance (not tech, listed for context); Tier-1 — Cisco IOS XR, Juniper JunOS; Semi-Public — DNS, BGP, Wi-Fi, 5G specs; Private — SaaS, ERP, CDNs, DB engines; Cloud & AI — SDN, Linux NOS, GPUs, APIs; Individuals — apps, AI ads, P2P payments.
+
+## Market Flows & Global Standards — Technology Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Market flows move value from idea and raw material to consumer and back to recycling. Standards and regulation sit at every layer of that flow, not only at the end, and they come from different kinds of bodies — standards bodies, trade bodies, regulators, and certification/testing organisations — which are not interchangeable.
+
+### A. Market flows, from source to consumer
+- Technology / innovation flow: idea and research → intellectual property and patents → prototypes → standards (ISO, IEEE, IETF) → commercial products. Example: Wi-Fi → IEEE 802.11 standard → routers and smartphones → mass market.
+- Manufacturing flow: raw resources → processing (refining, chemicals, metals) → components → assembly → testing and quality assurance → packaging → distribution. Example: lithium → battery cells → EV battery packs → electric cars (Tesla is one example maker, not the only one).
+- Business / financial flow: capital (investors, banks) → enterprises → supply chains → products and services → customers → returns and recycling. Example path, not a guarantee: venture funding → startup → product launch → IPO. Many startups never reach IPO; IPO is one exit path, not the normal endpoint.
+- Network / logistics flow: transport (land, sea, air) plus digital infrastructure (5G, fibre, satellites) → distribution hubs → retail and online platforms → end users. Example: Amazon logistics with Prime delivery, where sub-24-hour delivery applies only where the service, product, and location support it, not everywhere for everything.
+- In short: ideas → resources → products → customers → recycle, with a different flow (technology, manufacturing, finance, logistics) carrying each step.
+
+### B. Hierarchy of regulation, top to execution
+- Layer 1 — Global oversight: UN agencies — WHO for health, FAO for food and agriculture, UNECE for vehicles, ITU for telecom (a UN specialized agency for information and communication technology). Trade and customs: WTO for trade compliance, WCO for customs and logistics. Food code: Codex Alimentarius, the FAO/WHO international food safety code programme.
+- Layer 2 — International standardization bodies: ISO for quality, environment, safety, and processes; IEC for electrical and electronic safety; IEEE for communication and network standards; IETF for Internet protocols (TCP/IP, HTTP, DNS); 3GPP for telecom standards (2G through 5G deployed, with 6G work ongoing, not yet a deployed standard); ICANN and Regional Internet Registries (RIRs) for domain names and IP addresses.
+- Layer 3 — Regional regulation and standards: EU — CE marking, GDPR, REACH, ETSI; US — FCC for telecom and electronics, FDA for drugs and food, NHTSA for automotive, NIST for cybersecurity guidance; UK — Ofcom for telecom, BSI for standards; India — TRAI for telecom, BIS for standards; China — CCC certification scheme, MIIT for telecom; Japan — MIC for telecom, JIS for standards.
+- Layer 4 — Industry and sector standards: automotive — ISO 26262 for functional safety, UNECE WP.29 for vehicle regulation, Euro NCAP for safety ratings; electronics and IT — UL for safety testing, RoHS and WEEE for hazardous substances and recycling, PCI-DSS for payment security; healthcare and pharma — ICH for drug-trial harmonization, FDA and EMA approvals, ISO 13485 for medical-device quality management; cloud and data — ISO 27001 for information-security management, SOC 2 as an audit framework, GDPR and CCPA as privacy law; food and agriculture — HACCP for food-safety systems, GFSI as a benchmarking organisation, ISO 22000 for food-safety management.
+- Layer 5 — National enforcement and certification: customs and border control for import and export checks; national labs and certification bodies — UL in the US, TÜV organisations in Germany, Intertek globally; national cybersecurity agencies — for example CISA in the US (US-CERT's functions now sit under CISA, the older US-CERT name is outdated) and ENISA in Europe.
+- Layer 6 — Market and business flows, execution: suppliers and vendors → components, resources, and parts; manufacturers → assembly, quality assurance, and certification; distributors and logistics → cross-border compliance (WCO, customs); retailers and platforms → CE, FCC, and GDPR compliance for selling; consumers → use, feedback, and recycling (WEEE, circular economy).
+- Hierarchy summary, in order: Global oversight → International standards → Regional regulators → Industry standards → National enforcement → Market actors → Consumers.
+
+### C. Product regulation examples, by industry
+- Automotive: UNECE WP.29 and ISO 26262 for safety, EU CO2 emissions limits, US NHTSA rules.
+- Electronics: FCC for radio emissions, CE marking for safety and electromagnetic compatibility, UL for safety testing.
+- Pharmaceuticals: FDA in the US, EMA in Europe, ICH for harmonization of clinical trials.
+- Food and agriculture: Codex Alimentarius (FAO/WHO), FDA, EFSA in the EU.
+- Cloud and data: GDPR (EU privacy law), CCPA (California privacy law, as amended), ISO 27001 (security management standard).
+
+### Corrections, cross-checked with the rule book
+- Standards bodies are not regulators, and regulators are not standards bodies. ISO, IEC, IEEE, IETF, 3GPP, ETSI, BSI, BIS, and JIS develop standards. FCC, FDA, NHTSA, TRAI, Ofcom, MIIT, and MIC regulate or enforce. NIST provides guidance and standards, not regulation in the same sense as a regulator.
+- CE is a conformity marking, not an organisation that issues products. REACH is an EU regulation, not a body. CCC is a China compulsory certification scheme, not a body. RoHS and WEEE are EU directives, not bodies.
+- 5G is primarily a 3GPP standard; IEEE covers Ethernet and Wi-Fi, not 5G alone. 6G is work in progress in 3GPP, not a deployed standard.
+- UL, TÜV, and Intertek are testing and certification organisations, not regulators. Euro NCAP is a safety rating programme, not a mandatory regulator. PCI-DSS is an industry payment-security standard enforced contractually by card brands, not a law. SOC 2 is an audit framework based on Trust Services Criteria, not a law or a product standard. GFSI benchmarks food-safety schemes; it does not itself issue a food-safety standard. EFSA provides risk assessment in the EU; it is not the sole EU food rulemaker.
+- GDPR and CCPA are laws; ISO 27001, ISO 26262, ISO 13485, and ISO 22000 are standards. That law-versus-standard distinction is kept throughout, as in the earlier regulatory sections, which already list many of these bodies — those earlier mentions are not repeated here in full, only the new flow and hierarchy structure is added.
+- No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The hierarchy above is in text and tables only, not as a drawn tree or org chart.
+- Full section: this Technology.md section. Business angle: Bussiness.md, "Market Flows & Global Standards — Business Angle". Combined view: Business&Technology.md, "Market Flows & Global Standards — Combined View".
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.

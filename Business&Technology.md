@@ -499,6 +499,24 @@ Full technology implements/standards are in Technology.md; full business owners/
 ### Combined Key Takeaway
 
 Ownership shifted from Government + chip makers + telcos → Cloud + AI giants + finance/telecom SaaS. Best fit (source, 2025) = AI-driven Finance + Telecom business networks, starting consulting/SaaS → product platform, positioned under Cloud/AI + Private Enterprise, partnering with Public Telcos and Gov regulators. Expansion = start with world standards (TCP/IP, BGP, DNS, 5G, Kubernetes, NIST/EU AI, PCI-DSS, ISO 20022, ISO 27001/SOC 2, GDPR/CCPA), register, build cloud product, comply, go-to-market via marketplaces/payments, then expand via partnerships/subsidiaries/resellers — standards help trust, they do not remove borders.
+
+## Market Flows & Global Standards — Combined View (No Diagram)
+
+### Headline
+Market flows and regulation, read together: a product moves through innovation, manufacturing, finance, and logistics, and at each move it must pass a layer of global, international, regional, industry, and national rules before it reaches a consumer.
+
+### Combined table
+- Innovation flow: tech — research → patents → prototypes → standards → product (Wi-Fi / IEEE 802.11); business — a standard is what makes a product sellable across makers.
+- Manufacturing flow: tech — raw → processing → components → assembly → testing → packaging → distribution; business — testing and certification are gates, not paperwork after assembly.
+- Financial flow: tech — capital systems and payment security (PCI-DSS); business — capital → enterprise → supply chain → customer → returns/recycling, IPO as one possible exit only.
+- Logistics flow: tech — transport plus 5G, fibre, satellites; business — hubs → retail/platforms → end users, with fast-delivery claims limited by service, product, and location.
+- Hierarchy: Global (UN agencies, WTO/WCO, Codex) → International standards (ISO, IEC, IEEE, IETF, 3GPP, ICANN/RIRs) → Regional (EU, US, UK, India, China, Japan — regulators and standards bodies kept distinct) → Industry (automotive, electronics, pharma, cloud/data, food) → National enforcement (customs, UL/TÜV/Intertek, CISA/ENISA) → Market actors → Consumers → Recycling.
+- Product examples: automotive (UNECE WP.29, ISO 26262, NHTSA, EU CO2), electronics (FCC, CE, UL), pharma (FDA, EMA, ICH, ISO 13485), food (Codex, FDA, EFSA, HACCP, ISO 22000), cloud/data (GDPR, CCPA, ISO 27001, SOC 2).
+
+### Corrections carried over
+- Bodies, laws, markings, and frameworks are kept distinct: ISO/IEEE/IETF/3GPP/ETSI/BSI/BIS/JIS are standards bodies; FCC/FDA/NHTSA/TRAI/Ofcom/MIIT/MIC are regulators; CE is a marking; REACH/RoHS/WEEE are regulations/directives; CCC is a scheme; SOC 2, PCI-DSS, Euro NCAP, and GFSI are framework, standard, rating, or benchmarking, not laws. 6G is in progress, not deployed. No diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.
