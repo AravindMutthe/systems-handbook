@@ -6,6 +6,8 @@
 
 > **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
 > **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section. Scope: this applies to all notes given after the segregation of files into the 3 lines / 5 files (from 2026-10-30 about 16:47 IST onward), not only to future notes; those post-segregation batches were each verified before adding, and any error found later is corrected in place with its correction noted.
+> **US and global perspective rule (set 2026-10-30, by Aravind):** India-perspective notes also get a US and global perspective in the same update, mapped to the same eras and layers, not as a separate later note.
+
 
 
 
@@ -774,6 +776,16 @@ Full section: Bussiness.md, "Business and Finance Networks in India — Telegrap
 
 - India's supply chain: pre-1991 domestic, mandi and PDS based, with container handling already present at major ports from the 1970s; post-1991 global practices, ERP, and automotive chains (Maruti Suzuki from 1982, Hyundai 1996, Toyota 1997), highways and freight corridors from the 2000s onward, FMCG kirana last mile; Modi era Make in India 2014, GST 2017, e-way bills 2018, FASTag mandatory 2021, National Logistics Policy 2022, with global ISO, container, WTO, and ERP standards still borrowed — a hybrid system.
 - Nine subsystems: procurement, production (MRP, MES), inventory (WMS, RFID, IoT), logistics (TMS, GPS, FASTag, e-way bills), distribution (kirana, Amazon, Flipkart, Reliance Retail), demand (forecasting, CRM, AI/ML), finance (banking APIs, UPI, ERP finance), IT (ERP, cloud SCM, AI dashboards, blockchain as emerging), compliance (GRC, customs, tax, ESG), with demand, finance, IT, and compliance running throughout and reverse logistics as the missing loop.
+
+## US and Global Perspective, Silicon, Comparative Framework, Era Frameworks, and Kernel Evolution — Combined View (Condensed)
+
+Full sections: Bussiness.md, "India Business, Finance, and Supply Chain — US and Global Perspective"; Technology.md, "Silicon Supply Chain for Telecom — From Sand to Service", "Comparative Framework — Silicon Versus Business in Telecom", "Era Frameworks — Telegraph to 2025", and "Kernel Architecture Evolution — Before Kernels to 2025".
+
+- US and global perspective: US telegraph 1844 and Western Union monopoly 1866 with stock ticker 1867, versus India's government telegraph; US Bell private monopoly, divestiture 1984, Telecommunications Act 1996, versus European PTT and Indian Posts and Telegraph; global instant rails RTP 2017, FedNow July 2023, Pix November 2020, SEPA Instant 2017 with a 2025 mandate, as domestic parallels to UPI, not one global system; ISO containers from the 1960s and US highways and rail as the global supply-chain physical layer.
+- Silicon: sand to wafers (Taiwan, South Korea, Japan) to chips (TSMC, Samsung, Intel; fabless Qualcomm, Broadcom, MediaTek, Marvell) to gear (Ericsson, Nokia, Huawei, ZTE, Cisco) to operators (Jio, Airtel, BSNL, Vodafone Idea; AT&T, Verizon, T-Mobile) to services, with radio, baseband, transport, routing, control, and device subsystems. India is strong in design and R&D, still importing fabrication at scale.
+- Comparative framework: silicon and business columns are parallel layers, not equivalents, except where a secure element genuinely anchors payment trust. The framework name is descriptive, not a formal standard.
+- Era frameworks: telegraph, telephone and broadcasting, post-independence and early IT, early computer networks, liberalization, broadband and mobile Internet, digital transformation, and AI and 5G, each in communication, business, finance, and technology columns, with BSNL (2000) and INSAT (1982) corrected out of the 1950s to 1970s era, and blockchain supply chains and Starlink in India marked as pilots and late arrivals.
+- Kernel evolution: bare metal and early batch monitors, monolithic UNIX and Linux, microkernel Mach, QNX, and Minix, hybrid Windows NT and XNU, and, in the 2020s, Linux dominance with microkernels in some real-time and telecom devices, unikernels as a 2010s cloud idea, exokernels as a 1990s research idea, and AI-driven kernels as experimental.
 
 ## Business Promotion — Combined View (No Diagram)
 

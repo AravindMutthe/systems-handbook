@@ -6,6 +6,8 @@
 
 > **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
 > **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section. Scope: this applies to all notes given after the segregation of files into the 3 lines / 5 files (from 2026-10-30 about 16:47 IST onward), not only to future notes; those post-segregation batches were each verified before adding, and any error found later is corrected in place with its correction noted.
+> **US and global perspective rule (set 2026-10-30, by Aravind):** India-perspective notes also get a US and global perspective in the same update, mapped to the same eras and layers, not as a separate later note.
+
 
 
 
@@ -1639,6 +1641,59 @@ This section records the subsystems note. It is business-primary, so the full ve
 
 - Flow, corrected: the source's linear flow (suppliers, factories, warehouses, transport, wholesalers, retailers, shops and apps, customers, finance) is a teaching simplification. In practice, demand and order management run before production through forecasting and throughout through order processing, finance runs throughout through invoicing and credit, and IT and compliance are cross-cutting layers, not end steps. Reverse logistics — returns, repairs, recycling, and disposal — is missing from the source flow and is a standard tenth concern in real supply chains, though it is not counted as a separate subsystem in the source's nine.
 - Short version, kept: a supply chain is not one line; it is a machine of nine subsystems, each a gear that keeps the chain moving, plus the cross-cutting and reverse flows above.
+
+## India Business, Finance, and Supply Chain — US and Global Perspective (Audited)
+
+Standing rule added with this batch: India-perspective notes also get a US and global perspective, in the same update. This section is the US and global counterpart to Bussiness.md, "Business and Finance Networks in India — Telegraph Era to Modi Era" and "India's Supply Chain System — Global Structure, Indian Customization". It does not repeat the India sections; it maps the same eras elsewhere.
+
+### Telegraph era, US and global
+
+- United States: Samuel Morse's Washington to Baltimore line in May 1844, with the first official message "What Hath God Wrought", followed by private commercial lines and, by 1851, the company that became Western Union. Western Union emerged as the US telegraph monopoly by 1866. Finance followed the wire: Edward Calahan's stock ticker in 1867 broadcast exchange prices to brokers away from the trading floor.
+- Global: Britain's Cooke and Wheatstone telegraph in 1837, Morse code adopted as the international standard in 1865, and the lasting transatlantic cable in 1866 linked US and European markets. Contrast with India: US telegraphy was private and competitive before consolidation, while Indian telegraphy was government-controlled from the start.
+- Supply chain: the US transcontinental telegraph in 1861 and rail-linked telegraph lines tied commodity markets together, so grain and cotton prices converged across regions, just as Indian telegraph lines tied Bombay, Calcutta, and Madras to each other and, later, to London.
+
+### State and private monopoly era
+
+- United States: the Bell System, a private regulated monopoly under AT&T, controlled most local and long-distance telephone service from the early 1900s. The 1974 Justice Department antitrust suit ended in the Modified Final Judgment, and divestiture took effect on 1 January 1984, creating seven regional Bell operating companies (the Baby Bells) from 22 local companies.
+- Global: most of Europe ran state Post, Telegraph, and Telephone (PTT) monopolies, closer to India's Posts and Telegraph model than to the US Bell model. The contrast matters: "monopoly era" does not mean the same ownership everywhere.
+- Finance: US telephone-based brokerage and banking grew on the Bell network, while Western Union's money-order service (from 1870) was an early retail money-transfer network.
+
+### Liberalization era
+
+- United States: the Telecommunications Act of 1996 opened local, long-distance, and cable markets to competition, though in practice it triggered a merger wave that reconsolidated much of the industry into today's AT&T and Verizon lineages.
+- Global: the WTO Basic Telecommunications Agreement in 1997 committed many countries to opening telecom markets, parallel to India's 1994 policy and 1990s private entry.
+- Finance and supply chain: US electronic trading, ATM networks, and client-server ERP spread in the same decade as India's NSE screen trading and ERP adoption, but on an already-computerized banking base, so the US change was less about first computerization than about competition and internet distribution.
+
+### Internet, mobile, and platform era
+
+- United States: NSFNET commercialization in the 1990s, then broadband, Amazon (founded 1994) and eBay (1995) e-commerce, and platform firms that became global supply-chain operators in their own right, with Walmart's logistics and Amazon's fulfilment network as the US counterparts to India's kirana last mile.
+- Global payments: the US older rails are Fedwire and ACH; its instant rails are the Clearing House RTP network (2017) and the Federal Reserve's FedNow (July 2023). Brazil's Pix launched in November 2020 under its central bank, and the euro area's SEPA Instant scheme launched in 2017 with a 2025 mandate for eurozone providers to offer it. Domestic instant systems do not natively interoperate, so UPI, Pix, FedNow, and SEPA Instant are parallels, not one global system.
+- Supply chain: US Interstate highways, Class I rail freight, and container ports, together with the ISO container standard from the 1960s, form the US side of the global container system India joined. "China+1" diversification is a global sourcing trend, not an Indian programme, and it affects US and European buyers as much as Indian manufacturers.
+
+### Present era, 2020 to 2025
+
+- United States and global: 5G rollout, edge computing, satellite internet from OneWeb and Starlink (Starlink's India licensing only arrived in 2025, so its Indian deployment lags its global one), platform economies, fintech, open commerce networks such as India's ONDC (2022), and central-bank digital-currency pilots such as India's e-rupee pilot (December 2022) alongside pilots elsewhere.
+- Correction to a common reading: India's lead is in real-time payment volume, while the US still runs largely on card networks for retail payments and on Fedwire and ACH for wholesale and batch payments. The US and global perspective therefore does not show a single winner; it shows different rails dominating in different countries.
+
+## Silicon Supply Chain for Telecom — Business Angle (Condensed, No Duplication)
+
+Full section: Technology.md, "Silicon Supply Chain for Telecom — From Sand to Service".
+
+- The silicon chain is a concentration risk business: wafers and leading-edge fabrication concentrate in Taiwan (TSMC), South Korea (Samsung), and, for some nodes, the United States (Intel), while rare-earth processing concentrates in China. A telecom operator's equipment cost and availability therefore depend on geopolitics and fab capacity, not only on vendor choice.
+- Design versus manufacturing is the India story in business terms: India earns design and R&D revenue for Qualcomm, Intel, MediaTek, and ARM, but pays import costs for wafers and finished chips, which is why the India Semiconductor Mission is an industrial-policy bet on closing the manufacturing gap, not a claim that the gap is closed.
+- Vendor concentration: Ericsson, Nokia, Huawei, ZTE, and Cisco dominate telecom equipment, and operator procurement (Jio, Airtel, BSNL, Vodafone Idea in India; AT&T, Verizon, T-Mobile in the US) is a small number of large contracts, so a vendor decision locks in a supply chain for a decade.
+
+## Comparative Framework — Silicon Versus Business in Telecom (Condensed)
+
+Full section: Technology.md, "Comparative Framework — Silicon Versus Business in Telecom". Business reading only: the two columns are parallel layers, not equivalent roles. A chip supplier is not a capital provider, a firmware module is not a regulator, and a secure element is not a billing system, though secure elements do anchor payment trust. The framework's value is in showing where a failure on one side (a chip shortage, a firmware flaw) becomes a failure on the other (an operator outage, a billing or compliance incident).
+
+## Era Frameworks — Business Angle (Condensed, No Duplication)
+
+Full section: Technology.md, "Era Frameworks — Telegraph to 2025". Business points only: each era's business framework follows its communication framework — government telegraph monopolies, private Bell monopoly, PTT monopolies, liberalized competition after 1994 in India and 1996 in the US, platform competition after 2000, and platform-plus-fintech competition after 2014. Finance frameworks follow the same arc: telegraph price transfer, telephone brokerage, telex interbank, electronic trading, NEFT/RTGS/IMPS and cards, UPI and instant rails, and CBDC pilots.
+
+## Kernel Architecture Evolution — Business Angle (Condensed, No Duplication)
+
+Full section: Technology.md, "Kernel Architecture Evolution — Before Kernels to 2025". Business points only: kernel choice is a product and support decision. Monolithic Linux dominates servers, cloud, Android, and much telecom gear because of its driver ecosystem and support, while microkernels (QNX and similar) win where real-time determinism and fault isolation matter, such as some telecom and automotive systems. Hybrid kernels (Windows NT, Apple XNU) dominate desktops and Apple devices. Unikernels and exokernels remain research and niche choices, not a general replacement for Linux in production telecom.
 
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
