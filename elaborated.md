@@ -1017,6 +1017,21 @@ Virtualization creates virtual versions of physical resources — servers, stora
   - Example: `photo.jpg`, metadata size 2 MB and type image/jpeg, object ID as given in the source, served from MinIO's dashboard at port 9000.
   - Protocol: S3-compatible object API over HTTP.
 
+
+#### Storage recap — elaborated, gaps only, deduplicated
+- Kernel-space storage drivers — `dm-raid` and `dm-lvm` in Linux kernel space, with LVM commands, Docker, and NFS services in user space.
+  - Key note: This split explains why storage tools feel like ordinary commands but act on kernel-managed devices. The command runs in user space, the driver in kernel space does the block work.
+  - Example: `lvcreate` in user space asks the `dm-lvm` driver in kernel space to create a logical volume.
+- Container isolation by namespaces — user, network, mount, and PID namespaces, plus cgroups, on a shared kernel.
+  - Key note: Namespaces are what make shared-kernel containers isolated at all. Without them, containers would just be processes on the same host with no separation.
+  - Example: two containers with separate network namespaces can each use their own network view on one host kernel.
+- NFS re-export — `sudo exportfs -a` after editing `/etc/exports`.
+  - Key note: Re-exporting applies a share change without a full service restart, so existing shares are less disrupted. That is a practical admin detail, not a new virtualization type.
+  - Command: `sudo exportfs -a`
+- Object storage physical dependency — logically independent, physically still on block devices.
+  - Key note: Object storage removes folders and block numbers from the user's view, but the cloud or server still stores those objects on disks underneath. Independence is about addressing, not about having no hardware.
+  - Example: an S3/MinIO object is fetched by ID, while the provider stores it on its own block storage.
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.

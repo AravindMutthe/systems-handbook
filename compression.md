@@ -3308,6 +3308,15 @@ Scenario: one 500 GB HDD on an Ubuntu/Linux machine, used only as a test disk. A
 - Object storage: virtualized object data + metadata + ID; abstraction flat objects with unique IDs; practical use cloud storage (AWS S3, MinIO), scalable web applications.
 - Summary in one line: block makes logical volumes from raw blocks (LVM), file makes shares from files and directories (NFS), object makes ID-addressed objects from data plus metadata (S3/MinIO) — each on top of, or alongside, the previous layer, for a different use case.
 
+
+### Storage recap — only the gaps not already covered
+This recap note repeats most of the storage detail and practical steps already added above, so only the points that were not already in this section are added here, as per the rule book. No duplicate block/file/object explanation is repeated.
+- Kernel-space storage drivers: block-level management in Linux lives in kernel space, for example `dm-raid` and `dm-lvm` (device-mapper). User-space tools such as LVM commands (`pvcreate`, `vgcreate`, `lvcreate`), Docker, and NFS services run in user space and talk to those kernel drivers through system calls.
+- Container isolation mechanism: containers share the host kernel, and isolation is achieved with namespaces — for example user, network, mount, and PID namespaces — plus cgroups for resource limits. That is the mechanism behind "shared kernel, isolated user spaces" already stated above.
+- One NFS command not yet listed: after editing `/etc/exports`, `sudo exportfs -a` re-exports all shares, as an alternative to restarting the NFS service. Example from the recap: share `/mnt/data` with `echo "/mnt/data *(rw,sync,no_subtree_check)" | sudo tee -a /etc/exports`, then `sudo exportfs -a`, then mount from a client with `sudo mount <server_ip>:/mnt/data /mnt/client`.
+- Object storage independence, clarified: object storage is independent logically — it does not need a file system hierarchy for the user — but it is not independent physically. Objects are still stored on block devices underneath, in the provider's or server's storage. That is why the earlier correction stands: object storage virtualizes addressing and organization for the user, not the absence of disks.
+- Example-name variant only, not a new concept: the recap uses logical volumes named `lv_data` (200 GB) and `lv_backup` (100 GB) instead of the earlier `my_lv1`/`my_lv2`. The steps are identical; the names are not added as a separate procedure.
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.
@@ -4865,6 +4874,13 @@ Virtualization, in business terms, is buying and running fewer physical machines
 - Object level, in practice: the same shared area can host an S3-compatible object store (MinIO in the source), where each file becomes an object with metadata and an ID, fetched without block or folder knowledge. Business value: scalable storage for backups, media, and web applications.
 - Full Linux commands and step-by-step detail: Technology.md, "Storage virtualization in practice".
 
+
+#### Storage recap — business angle, gaps only
+- Container isolation, in business terms: shared-kernel containers are kept apart by namespaces (user, network, and others), not by separate kernels. That is why containers are cheaper than VMs, and why a kernel-level issue has a wider blast radius than a single container fault.
+- One admin step not yet listed: after editing NFS exports, `exportfs -a` re-exports shares without a full service restart, shortening the change window for a shared folder.
+- Object storage, in business terms: it looks independent to the user (no folders to manage), but the provider still pays for physical block storage underneath. Cloud object pricing therefore covers that underlying storage, plus the object service itself.
+- The rest of this recap — general virtualization types, block/file/object definitions, and the LVM/NFS/MinIO steps — is already in this file's Virtualization section and is not repeated here.
+
 ### User space, in business risk terms
 - User space is everything above the kernel: apps, libraries, and configs. Kernel space is the OS core that controls hardware.
 - Containers isolate user space only and share one kernel. That is cheaper and faster, but a kernel-level fault can affect all containers on that host.
@@ -5518,6 +5534,14 @@ Virtualization is one idea read two ways at once: technically, a layer that abst
 - File: NFS share on that volume — export `/mnt/lv1/shared`, mount from a client by server IP and path — gives one shared folder view; business use: document sharing without knowing the physical location.
 - Object: MinIO on that volume — upload becomes data + metadata + unique ID, fetched by ID from a flat namespace; business use: cloud-style backups and media at scale.
 - Warning carried over: partitioning/formatting are destructive, and lab permissions (777) and default MinIO credentials are not production settings.
+
+
+#### Storage recap — combined view, gaps only
+- Kernel vs user space for storage: kernel — `dm-raid`, `dm-lvm` device-mapper drivers; user — LVM commands, Docker, NFS services.
+- Container isolation: namespaces (user, network, mount, PID) plus cgroups, on a shared kernel.
+- NFS: `exportfs -a` after editing `/etc/exports`, as an alternative to restarting NFS.
+- Object storage: logically independent (ID-based, no hierarchy), physically dependent (objects still sit on block devices underneath).
+- Rest of the recap is already covered in the Virtualization section above and is not repeated here.
 
 ### User space, combined
 - User space holds apps, libraries, configs, and processes; kernel space holds the OS core. Containers isolate user space only, so they are light and fast but share kernel risk. VMs isolate both, so they are heavier but give a stronger boundary. That single distinction explains most of the cost-versus-isolation choice in the table above.
