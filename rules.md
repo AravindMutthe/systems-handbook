@@ -1047,3 +1047,35 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   separate. Key points, Tags, toggle, header unchanged.
 - Main NOT pushed; production NOT deployed — both pending
   the owner's tap in the development chat.
+
+## Presentation-page clean rule, 2026-10-30 (owner, branch only, no deploy)
+
+- The main card page reads as a continuous story, not as a
+  provenance report. Full-sentence provenance mentions —
+  "nothing after 2000 is original", "this section expands
+  Card I only / is not on the original page", exclusion
+  lists ("NOT on the original page"), "preserved as written",
+  "labelled distinction/exclusion", transcription edge
+  notes, diagram-labelling notes — live ONLY inside
+  "Original images +" under "Presentation notes — archive
+  only, not on the main page", never in Detailed, Summary,
+  Horizontal links, or the header lede.
+- What stays on the main page: the content itself, with
+  only the short [Added] tag on an enhanced section
+  heading (e.g. Card I "Eras 3–5, continued [Added]",
+  "Research dimensions [Added, not original]"). Card I's
+  eras now continue seamlessly from the original page's
+  stop at 2000/hypergrowth, with no "proposed / owner can
+  overrule" paragraph in the main flow.
+- Applied site-wide 2026-10-30: Card I (both quoted
+  passages + Era 2000 trailing clause + Summary bullet +
+  per-bullet proposed tags), Card G (exclusion + chain
+  framing), Card H (exclusion + grouping framing +
+  horizontal-link label), Card F (Detailed "connec" edge
+  clause; its transcription note was already in the
+  dropdown), Card K (diagram-labelling clause), and the
+  Batch 2/3 header lede prefix "Enhanced headline
+  [Added, labelled, related only]:" (headline text kept).
+  Content, Key points, Tags, toggles, headers unchanged.
+  Main NOT pushed; production NOT deployed — pending the
+  owner's tap in the development chat.
