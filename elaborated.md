@@ -6994,6 +6994,16 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 - A socket does not route traffic to a container by itself. Example: a Service and kube-proxy rules bring traffic to the pod IP, and the socket bound to that IP and port receives it.
 - Allocation does not allocate RAM at once. Example: malloc can return a pointer for a large region, and physical pages appear only when the program touches each page, which is why resident memory is smaller than virtual memory.
 
+## IBM Sterling B2B Integrator Networking — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+
+- Four levels are a deployment model, not a Kubernetes standard. Example: Kubernetes defines Ingress, Service, and NetworkPolicy, but it does not define a four-level B2Bi stack.
+- Ingress is two things. Example: an HTTP Ingress resource routes web traffic, while ingress traffic in a NetworkPolicy is any traffic entering a pod, and partner protocols such as SFTP are not HTTP Ingress.
+- Pod-to-Service is not pod-to-pod. Example: a direct pod IP call bypasses Service forwarding, while a Service call goes through ClusterIP rules to a backend pod.
+- Storage is not egress. Example: a database call is egress traffic, but a PersistentVolume is mounted into the pod, not reached over an egress path.
+- Trading-partner traffic is bidirectional. Example: a partner can push an AS2 message in and receive an acknowledgment out, so an egress-only level cannot describe it, and an allow-all internet egress rule is not a partner design.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9690,6 +9700,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
+
+## Batch 16 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11145,6 +11160,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 
 ## Batch 15 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
+
+## Batch 16 — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 

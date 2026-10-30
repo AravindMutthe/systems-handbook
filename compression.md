@@ -4551,6 +4551,45 @@ Verified against kubernetes.io Pods documentation (a pod is a group of container
 - *Correction: creating a variable or object in Java, Go, or Python does not immediately allocate a physical RAM page. Allocation normally reserves virtual address space and creates or extends a VMA, and a physical anonymous page, a page not backed by a file, is faulted in only when the process first touches that address. That is why virtual size, resident size, and allocated size differ, and why an allocation can succeed and still fail later on first access if memory is exhausted.*
 - Anonymous pages are freed when the process exits or unmaps the region, and they are not shared between processes unless explicitly shared, unlike shared-memory pages.
 
+## IBM Sterling B2B Integrator Networking — Four-Layer Deployment Model (Audited, Official Sources Only, Elaborate Only)
+
+Verified against IBM Sterling B2B Integrator documentation for Certified Container installations on Kubernetes and OpenShift, which confirm a container edition, Helm-based deployment, and external services including a database, IBM MQ, and persistent storage. Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule.
+
+- *Correction: the four levels are the source's deployment model for B2Bi, not a Kubernetes standard and not an IBM standard layer model. Kubernetes itself defines Ingress, Service, Pod, and NetworkPolicy, but it does not define a four-level B2Bi network stack. The levels below are therefore kept as a source deployment model, not as a general Kubernetes fact.*
+- *Correction: the source says "the services mapped (attached) to them", but no service mapping is actually given in the note. No mapping is invented here. Generic Kubernetes mechanisms that would sit at each level are named only as examples, not as B2Bi services, and a B2Bi-specific mapping still needs the deployment's Helm values and service list to be filled in.*
+- *Correction: "userface" is a typo for user-facing. It is corrected to user-facing in the level name below.*
+
+### The hybrid design claim, qualified
+
+- B2Bi in containers runs application pods that can be replaced and scaled, while state lives outside the pod in a database, in message queues such as IBM MQ, and in persistent volumes for logs and document storage, as IBM's container documentation describes for external services.
+- *Correction: "stateless pod execution" is a deployment choice, not a product property. A B2Bi pod still holds in-flight business-process state, queues, and configuration while it runs, and it is stateless only in the sense that durable state is externalized to the database, MQ, and storage, so a replacement pod can resume work from that external state. Calling the whole product stateless would be wrong.*
+
+### Level 1: Ingress layer, external to internal, user-facing
+
+- Direction: outside users and systems into the cluster, through an ingress controller or, on OpenShift, a Route, to a Service and then to a pod.
+- Generic mechanism, example only: Ingress or Route, TLS termination at the edge, then a ClusterIP Service.
+- *Correction: "Ingress Layer (userface, External to Internal)" merges two different ingress meanings. In Kubernetes, Ingress is the HTTP routing resource, while ingress traffic in a NetworkPolicy is any traffic entering a pod. For B2Bi, trading-partner protocols such as AS2, SFTP, and FTPS are not all HTTP Ingress traffic, so an HTTP Ingress alone does not cover Level 1. The level must also cover non-HTTP listeners exposed through Services, LoadBalancers, or NodePorts, depending on the protocol.*
+
+### Level 2: Pod-to-Service and pod-to-pod layer, internal cluster
+
+- Direction: inside the cluster only. Pods call each other directly by pod IP, or through a Service ClusterIP and DNS name, and kube-proxy or an eBPF dataplane forwards the Service address to a backend pod.
+- Generic mechanism, example only: ClusterIP Services, DNS names, and NetworkPolicies that allow only the pod labels that should communicate.
+- This level stands as written, with one qualification: pod-to-pod and pod-to-Service are not the same path. Pod-to-pod uses the pod IP directly, while pod-to-Service uses the virtual ClusterIP and its forwarding rules, and a failure in Service endpoints looks different from a failure in pod networking.
+
+### Level 3: Egress infrastructure layer, pod to internal infrastructure
+
+- *Correction: the source's label "(Pod-to-Host Internal)" is misleading. Egress normally means traffic leaving a boundary, and pod-to-host is not egress in the Kubernetes sense. The corrected reading is: pod to infrastructure that is not a pod, whether that infrastructure is on a host, on another node, or outside the cluster but inside the organisation. That includes the database, MQ, and shared storage that IBM's documentation lists as external services.*
+- Direction: pod out to database, MQ, and persistent storage, and to cluster services such as DNS and image registries.
+- Generic mechanism, example only: egress NetworkPolicy rules, service endpoints or external names for the database and MQ, and CSI volumes for storage.
+- *Correction: storage is not network egress. A PersistentVolume is mounted into the pod, not reached by egress traffic, even though the storage itself may be network-attached. Mixing storage mounts into an egress layer confuses a volume path with a network path.*
+
+### Level 4: External egress layer, trading-partner traffic, pod to internet
+
+- Direction: pod to external trading partners, and trading partners back into the cluster.
+- *Correction: labelling this level only "Egress" while also writing "(Ingress & Egress)" in the same line is contradictory. Trading-partner traffic is bidirectional by nature: partners push files and messages in, and B2Bi pulls or pushes files and messages out, over protocols such as AS2, SFTP, and FTPS. The corrected level name is external trading-partner layer, with both ingress and egress directions, not an egress-only layer.*
+- Generic mechanism, example only: outbound egress through a gateway, NAT, or proxy with firewall rules, and inbound partner traffic through the Level 1 edge, with TLS, certificates, and partner-specific authentication at the application layer, not at the network layer alone.
+- *Correction: "Pod-to-Internet" is too broad. Trading partners are specific external endpoints with agreed protocols, certificates, and IP allow-lists, not the general internet. An egress policy that allows all internet traffic from a B2Bi pod is a security gap, not a trading-partner design.*
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6725,6 +6764,14 @@ Full section: compression.md Part 1, "Kernel Objects for a Pod — Runtime-Creat
 - That split matters for support boundaries. A pod that cannot start, has no IP, or hits a cgroup limit is a platform and runtime problem. A pod that runs but leaks file descriptors, binds the wrong port, or grows its virtual memory until it is killed is an application problem, even though the kernel reports both.
 - Port and namespace sharing inside a pod is a design constraint to check before deployment: two containers in one pod cannot bind the same port, and a pod's network identity is one IP, not one per container.
 
+## IBM Sterling B2B Integrator Networking — Business Angle (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "IBM Sterling B2B Integrator Networking — Four-Layer Deployment Model". Corrections in the full section are in italic text.
+
+- The four levels are a useful support boundary, not a product standard. Level 1 is partner and user entry, Level 2 is internal application traffic, Level 3 is database, MQ, and storage dependencies, and Level 4 is external partner traffic in both directions.
+- The business risk is in the missing mapping. Until the actual Services, Ingress or Routes, firewall rules, and partner endpoints are attached to each level, the model cannot be used for troubleshooting or for an audit, because a failure cannot be assigned to a level.
+- Statelessness is a design claim to verify, not assume. If durable state is not fully externalized to the database, MQ, and storage, replacing a pod can lose in-flight work, and that loss is a business-process failure, not just a pod restart.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -7888,6 +7935,16 @@ Full section: compression.md Part 1, "Kernel Objects for a Pod — Runtime-Creat
 - Runtime-created: namespaces (network shared, IPC shared, UTS for hostname, mount per container, PID per container unless shareProcessNamespace, plus user, cgroup, and time), cgroups (CPU, memory, process count, I/O, device limits in v2), and veth interfaces created by the CNI, one end in the pod namespace.
 - Application-created: processes and threads, file descriptors for open files and sockets (not for volume mounts), inodes looked up on open not created on open, sockets bound in the pod network namespace, and virtual memory areas with anonymous pages faulted in on first touch, not on allocation.
 - Kubernetes creates the Pod object; kubelet, CRI, runtime, and CNI create the kernel state.
+
+## IBM Sterling B2B Integrator Networking — Combined View (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "IBM Sterling B2B Integrator Networking — Four-Layer Deployment Model". Corrections in the full section are in italic text.
+
+- Level 1, ingress, user-facing: external into the cluster, Ingress or Route plus Service, HTTP and non-HTTP listeners both needed for partner protocols.
+- Level 2, internal: pod-to-pod by pod IP, pod-to-Service by ClusterIP and DNS, NetworkPolicy by labels.
+- Level 3, infrastructure egress: pod to database, MQ, and cluster services, with storage as a volume mount, not as egress traffic.
+- Level 4, external trading partners: bidirectional, not egress-only, specific partner endpoints with certificates and allow-lists, not the general internet.
+- Source model only, service mapping not yet supplied, stateless only where state is externalized.
 
 ## Business Promotion — Combined View (No Diagram)
 
