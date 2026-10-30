@@ -4152,6 +4152,86 @@ Most of this walkthrough repeats the previous sections; only its Amazon-specific
 - Clicks do not all share one TLS channel; connections are reused, opened anew, and split across domains, with separate DNS and TLS steps where needed.
 - No flow diagram or comic version was built from the source's closing offer, per the standing rule.
 
+## Where Protocols Reside — Device, Server, Router, Backbone, and the Linux Kernel (Audited, New Gaps Only)
+
+This section merges two overlapping source notes. Everything already in Technology.md about TCP/IP layers, kernel devices, and the kernel subsystems is not repeated; only where each protocol runs, and the Linux kernel file map, are added. No diagram was built from either source's closing offer.
+
+### Layered model, corrected
+
+The source's four rows — Physical, Network, Transport, Application — are a simplified teaching model. The standard TCP/IP model is Link, Internet, Transport, Application. Ethernet and Wi-Fi sit at the Link layer, running over physical hardware, not at a separate "Physical" protocol layer on their own. The OSI model, by contrast, has seven layers and is a reference model, not the model TCP/IP implements. A protocol therefore does not live on one floor of a building: the same host runs link, internet, transport, and application functions together, in kernel and in user space.
+
+### On your device
+
+- DNS client: resolves names, using the resolver configured for the system. On Linux the classic configuration file is /etc/resolv.conf; on Windows the equivalent settings live in the network configuration, queried with ipconfig, which is a command, not a configuration file.
+- HTTP and HTTPS: run in the browser and in apps. TLS is not browser-only: browsers use TLS libraries, and operating systems and apps also use TLS libraries such as OpenSSL and NSS, so a mail client or API client can do TLS without a browser.
+- TCP/IP stack: built into the operating-system kernel on Windows, Linux, macOS, and Android.
+- DHCP client: obtains an address, gateway, and resolver when joining a network.
+- NTP client: keeps the clock synchronised; time matters for certificate validity, as recorded in the Amazon walkthrough section.
+
+### On servers
+
+- DNS authoritative server: answers queries for the domains it serves.
+- HTTP web server: Apache or Nginx serving pages and APIs.
+- SMTP mail server: Postfix, Sendmail, or Exchange sending and relaying mail.
+- TLS certificates: stored as certificate and private-key files, conventionally .crt and .key, and presented by the server during the handshake.
+- BGP is not normally a web-server function: BGP runs on routers at ISP and large-network level, even when the organisation also runs web servers. Placing BGP "at the ISP/server level" without that distinction, as the source does, is corrected here.
+
+### On your router or modem
+
+- DHCP server: leases addresses to devices on the local network.
+- DNS resolver or forwarder: forwards queries upstream and caches answers.
+- NAT and firewall: lets many local devices share one public address and filters traffic.
+- IP routing: forwards packets between the local network and the ISP.
+- These run in an embedded operating system such as OpenWrt, Cisco IOS, or MikroTik RouterOS, configured through the router's admin interface.
+
+### On Internet infrastructure
+
+- BGP: exchanges routes between autonomous systems, so ISPs learn paths to each other.
+- IP: global addressing at the internet layer.
+- Root DNS servers: the 13 logical root identities, anycast worldwide, answer root queries only when a resolver's cache misses.
+- NTP servers: public time servers run by operators, universities, and companies such as Google and Cloudflare, and by the NTP Pool Project.
+- Correction: the source says root servers are run by "ICANN root servers (13 main clusters globally)". ICANN operates only the L root server. The other 11 operators are listed in the coordination section; "13 main clusters" understates the system, which is about 2,000 anycast instances.
+
+### TCP/IP stack location by system, corrected
+
+- Windows: the TCP/IP stack runs in the kernel, historically through tcpip.sys. Winsock is the user-space programming interface applications use to reach it, not the stack itself.
+- Linux: the stack is in the kernel's net/ subsystem, described below. Netfilter and iptables are the packet-filtering framework and its tool, not the TCP/IP stack itself; iptables uses Netfilter hooks inside the stack's path.
+- macOS: a BSD-derived TCP/IP stack inside the XNU kernel.
+- Android: a Linux-kernel TCP/IP stack, as Android runs on the Linux kernel.
+- Servers: the same kernel stack, on server Linux distributions such as Ubuntu, CentOS, or Red Hat, or on Windows Server.
+- Routers and network devices: an embedded network operating system, such as Cisco IOS, MikroTik RouterOS, or OpenWrt, which itself usually runs a kernel TCP/IP stack.
+
+### Linux kernel TCP/IP file map — new gaps only
+
+Top level: net/ in the kernel source, with the TCP/IP stack principally in net/ipv4/ and net/ipv6/, core device and socket handling in net/core/, packet sockets in net/packet/, and traffic control in net/sched/. The source list is partial: net/ also contains netfilter, bridge, unix, wireless, and other subsystems, which are outside this section's scope.
+
+- IP: net/ipv4/ip_input.c handles incoming IPv4 packets, net/ipv4/ip_output.c handles outgoing IPv4 packets, with forwarding and fragmentation in neighbouring files. The source's two-file summary is a starting point, not the whole IPv4 implementation.
+- TCP: net/ipv4/tcp_input.c and net/ipv4/tcp_output.c cover receive and transmit paths, alongside tcp.c, tcp_ipv4.c, and congestion-control files. Reliability, ordering, flow control, and congestion control are spread across those files, not contained in two files alone.
+- UDP: net/ipv4/udp.c, a connectionless transport with no reliability or ordering guarantees.
+- ICMP: net/ipv4/icmp.c, control and error messages for IPv4.
+- IPv6: net/ipv6/ holds the whole IPv6 implementation, including its TCP and UDP paths.
+- Packet flow, simplified: the NIC receives a frame, its driver hands it to the kernel through the net device interface, net/core/dev.c provides core device handling, the IP layer processes it, the transport layer (TCP or UDP) processes it, and sockets deliver it to the user-space application. The source calls dev.c a "raw packet handler"; it is the core network-device layer, and the real path also includes driver receive processing, NAPI polling, GRO, and Netfilter hooks, which the simplified flow omits.
+
+### Tools that interact with the stack
+
+- ss: shows socket connections for TCP and UDP; netstat is the legacy equivalent and may not be installed.
+- ip: shows and manages addresses, links, and routes.
+- tcpdump: captures packets for inspection.
+- iptables: configures packet filtering through Netfilter; on modern systems nftables is the successor framework.
+- sysctl: tunes kernel networking settings, for example tcp_rmem for TCP receive buffer sizes.
+
+### Corrections list for this batch
+
+- The simplified four-layer table is a teaching model; the TCP/IP model is Link, Internet, Transport, Application, and OSI is seven layers.
+- Ethernet and Wi-Fi are Link-layer technologies over physical hardware, not a standalone Physical protocol layer.
+- Winsock is a Windows API, not the Windows TCP/IP stack; Netfilter and iptables are filtering, not the Linux stack itself.
+- BGP runs on ISP and large-network routers, not on web servers as such.
+- ICANN operates only the L root server, not all 13; the root system is about 2,000 anycast instances, not 13 clusters.
+- ipconfig is a Windows command, not a configuration file; /etc/resolv.conf is the Linux classic resolver file.
+- The kernel file list is a starting map, not an exhaustive file list: TCP, IP, and device handling span more files than the source names, and the packet path includes driver, NAPI, GRO, and Netfilter stages the simplified flow omits.
+- TLS lives in system and application libraries as well as in browsers, not in browsers alone.
+- No diagram was built from either source's closing offer, per the standing rule.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.

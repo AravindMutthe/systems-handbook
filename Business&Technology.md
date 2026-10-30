@@ -727,6 +727,15 @@ Full sections: Technology.md, "How the Internet Works — From a Name to a Page"
 
 - Amazon.in walkthrough: DNS through root, .in (NIXI), and Amazon Route 53, then TCP handshake, TLS certificate verification against browser CA stores (not ICANN), HTTP GET, CloudFront edge delivery, with DHCP before browsing and NTP running throughout. The source IP is a Route 53-range example, not a verified amazon.in server address.
 
+## Where Protocols Reside — Combined View (Condensed)
+
+Full section: Technology.md, "Where Protocols Reside — Device, Server, Router, Backbone, and the Linux Kernel". Business angle: Bussiness.md, "Where Protocols Reside — Business Angle".
+
+- TCP/IP is Link, Internet, Transport, Application in the standard model, not the source's Physical, Network, Transport, Application shorthand, and it runs in kernels on devices, servers, and routers alike.
+- Device: DNS client, browser HTTP and TLS, kernel TCP/IP, DHCP client, NTP client. Server: authoritative DNS, Apache or Nginx, mail servers, certificate files. Router: DHCP server, DNS forwarder, NAT and firewall, routing, in OpenWrt, Cisco IOS, or RouterOS. Backbone: BGP on ISP routers, root DNS anycast, public NTP.
+- Linux kernel map: net/core for device handling, net/ipv4 for IPv4, TCP, UDP, and ICMP, net/ipv6 for IPv6, net/packet for packet sockets, net/sched for traffic control, with ss, ip, tcpdump, iptables or nftables, and sysctl as the interaction tools.
+- Winsock is an API, Netfilter is filtering, ICANN runs only the L root server, and BGP is a router function, not a web-server function.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.

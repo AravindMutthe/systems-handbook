@@ -1527,6 +1527,15 @@ Full section: Technology.md, "Internet Protocols". Business points only: open st
 
 Full section: Technology.md, "Walkthrough — Visiting https://www.amazon.in". Business points only: a storefront visit is a chain of paid services (DNS, CDN edge, certificate lifecycle, hosting) and a chain of trust decisions (CA store, certificate validity, clock accuracy); a single broken link in that chain is a lost sale, not a technical footnote. The TLS trust correction matters commercially: a business cannot buy trust from ICANN, it earns browser trust through a valid certificate chain and correct time, DNS, and hosting configuration.
 
+## Where Protocols Reside — Business Angle (Condensed, No Duplication)
+
+Full section: Technology.md, "Where Protocols Reside — Device, Server, Router, Backbone, and the Linux Kernel".
+
+- A protocol is not a product you install once: it is a capability split across device kernels, server software, router firmware, and backbone routers. A business budget must therefore cover all four places, not just a server licence.
+- The kernel file map is an operational map: when a Linux network problem is traced, the team is tracing net/core, net/ipv4, net/ipv6, and net/sched code paths, not a single application log. That is why kernel tuning (sysctl) and packet capture (tcpdump) are operations skills, not developer extras.
+- Router and backbone functions are vendor and ISP costs: DHCP, NAT, firewall, and DNS forwarding on the router, and BGP on ISP routers, are the points where a misconfiguration becomes an outage for every user behind that device.
+- The corrections in the full section are commercial as well as technical: buying a Windows API, a firewall tool, or a root-server claim does not buy the stack, the filtering, or the DNS root; each is a different component with a different owner and support path.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
