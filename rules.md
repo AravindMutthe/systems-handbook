@@ -1002,3 +1002,128 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   titles, relationship-kind arrow rendering, clarification
   tables) are PARKED for later, per owner's 2026-10-29 word
   ("fix can be later"). Tags + New were done first, on their own.
+
+## Original diagrams redrawn as clean SVG — faithful, not redesigned (2026-10-30, R19)
+
+- A redraw is a digital copy of the owner's original
+  diagram, not an enhanced diagram and not a new design.
+  Enhanced diagrams (flow charts, relationship kinds,
+  circle illustrations) may simplify or explain. A redraw
+  may not. The two are different artefacts, and a redraw
+  is never presented as an enhanced diagram.
+- Faithfulness checklist, checked against the original
+  image itself, before any redraw is pushed:
+  - Nodes: same nodes, no node added, no node dropped,
+    no node renamed, no node merged with another.
+  - Arrows: same arrows, same direction, same source
+    and target, same branching. A branch that splits
+    in the original splits in the redraw, at the same
+    point, to the same targets.
+  - Hierarchy: same levels, same nesting, same order.
+    A parent in the original stays a parent in the
+    redraw; a child stays a child. Hierarchy is not
+    flattened, and a tree is not turned into a sequence.
+  - Labels: same labels, owner's spelling preserved
+    for complete words (for example "Bussiness",
+    "Sillicon", "Univescal", "Thier", "controll",
+    "Coorporate", "heterogenous" where they appear as
+    labels). Labels are not rephrased, not shortened,
+    and not "cleaned up" to sound better.
+  - Crossed and cut-off marks: a crossed-through node
+    or label is drawn crossed through. A branch cut off
+    at the page edge is drawn ending there, incomplete.
+    A continuation is never invented, and a crossed
+    item is never silently dropped or silently revived.
+- SVG format, how:
+  - Clean SVG only, local to the repo, in the same
+    folder convention as other local SVGs, never
+    hotlinked, never a screenshot, never a raster
+    image pasted into an SVG wrapper.
+  - Labels are real SVG <text>, not paths and not
+    images of text, so they stay readable at any size
+    and searchable. Layout follows the original as
+    closely as possible; site colours come second —
+    if a site colour would hide a hierarchy level or
+    an arrow, the original layout wins and the colour
+    choice is noted in archive.
+  - No decoration: no added icons, no added background
+    art, no added arrows for balance, no added title
+    inside the SVG that is not on the original page.
+    A caption outside the SVG may say which original
+    page it redraws; the SVG itself carries only the
+    original's nodes, arrows, and labels.
+- Arrow kinds, in a redraw only:
+  - Relationship kinds (Historical thin solid, Depends
+    on thick solid, Organizational double-line with a
+    verb, Data dashed with "data: …", Control bold
+    with command head) are applied in a redraw ONLY
+    where the kind is clear from the page itself.
+  - Where the kind is not clear, the arrow is drawn
+    exactly as the original draws it, with its
+    direction preserved, and the archive notes "kind
+    unspecified on the original page" — a kind is
+    never silently assigned to make a redraw look
+    consistent with an enhanced diagram.
+  - A pair with several kinds in the original is drawn
+    with separate arrows, one per kind, never as one
+    arrow meaning all three, and never as one
+    double-headed arrow meaning everything.
+- Truncated words, in a redraw only:
+  - Follow the truncated-word rule, not a guess: a
+    truncated / cut-off label word is corrected in the
+    redraw only when the intended word is clear from
+    context or the owner confirms it. The original
+    truncated form, and the fact of correction, live
+    ONLY in "Original images +" and in the local
+    intake, never as a bracket note inside the SVG.
+  - If the intended word is NOT clear, do NOT guess
+    it in the redraw. Show the label exactly as written,
+    with no bracket note in the SVG, and record the
+    unclear / cut-off form only in "Original images +",
+    flagged for the owner.
+- Privacy, in a redraw, overrides faithfulness:
+  - A label containing private material (a digit
+    string, a personal-names list, or any other
+    private material flagged in intake) is NOT
+    reproduced in the redraw. It is omitted or
+    redacted in the SVG, and the omission is noted
+    in "Original images +" and in intake. No private
+    label is ever copied into a clean SVG to make the
+    redraw "complete".
+- Main presentation, under R18:
+  - The SVG itself carries no meta language: no
+    "[Added]", no "labelled", no "this card / that
+    card", no provenance note, no processing
+    commentary inside the SVG or in its caption.
+    The SVG shows only the original diagram.
+  - ALL labelling about the redraw — that it is a
+    redraw, which words were corrected, which arrow
+    kinds were applied or left unspecified, which
+    crossed / cut-off marks were preserved, and any
+    privacy omission — goes ONLY into "Original
+    images +" on that page, and into the local
+    intake / archive record.
+- Placement and originals:
+  - The SVG redraw sits in the diagram section of
+    its card / story / sequence page. It does NOT
+    replace the original image, and it does NOT
+    replace the page's text. The original image stays,
+    untouched, inside "Original images +", and the
+    text still stands on its own without the diagram,
+    as the flow-chart rule already requires.
+  - A page with a diagram but no SVG redraw is
+    incomplete under R19. A redraw that adds a node,
+    an arrow, a branch, or a reworded label fails
+    this rule, even if the resulting diagram looks
+    cleaner than the original.
+- Verification scope:
+  - A verbatim redraw is transcription, not
+    Leo-added factual content, so the verification
+    rule does not require Wikipedia verification of
+    the original's own labels. Verification DOES
+    apply to anything the redraw adds beyond the
+    original: a new label, a new arrow, an assigned
+    arrow kind, or a corrected word that is not
+    clear from context. Such an addition is enhanced
+    content, must be verified claim by claim before
+    push, and must be labelled only in archive.
