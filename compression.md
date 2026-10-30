@@ -4046,6 +4046,24 @@ This section records the address-management note. Its thesis concept is kept: th
 - Destination servers: one service can have many public IPs behind load balancers, each service listens on fixed ports (GitHub SSH TCP 22, GitHub HTTPS TCP 443, WhatsApp call UDP 3478 and TCP 5222 in the source's model), and millions of client sessions are multiplexed by the four-tuple of source IP, source port, destination IP, and destination port, together with the protocol.
 - No per-device table-flow illustration was built from the source's closing offer, per the standing rule; the table above is in text.
 
+## Business and Finance Networks in India — Technology Angle (Condensed, No Duplication)
+
+Full section: Bussiness.md, "Business and Finance Networks in India — Telegraph Era to Modi Era".
+
+- Telegraph to telephone: electric telegraph (1850s), then manual and automatic telephone exchanges, telex, and fax — each step cut the latency of price, order, and settlement information, which is why finance adopted each one as soon as it was available.
+- Liberalization technology: private mobile networks, PCO and STD access, and screen-based exchange trading from 1994 changed the transport layer for business from postal and branch processes to electronic networks.
+- Payment rails as infrastructure: RTGS (2004) for high-value real-time settlement, NEFT (2005) for batched retail transfers, IMPS (2010) for instant mobile transfers, and UPI (2016) as an interoperable instant-payment interface over IMPS rails. The business story in Bussiness.md depends on this stack order; UPI did not replace the settlement rails, it built an interface on them.
+- Access technology: broadband, 3G, 4G from Jio's 2016 launch, and 5G from 2022 changed the last mile for both commerce and payments, while Aadhaar-based e-KYC and Jan Dhan accounts changed the identity layer for account opening.
+- Regulation split, carried over: TRAI for telecom networks, RBI for payment systems, NPCI as operator of retail payment systems. A technology design that confuses those regulators will misassign compliance.
+
+## India's Supply Chain System and Its Subsystems — Technology Angle (Condensed, No Duplication)
+
+Full sections: Bussiness.md, "India's Supply Chain System — Global Structure, Indian Customization" and "Supply Chain Subsystems — Nine Gears".
+
+- System technology: container standards, port handling, national highways, dedicated freight corridors, and GST's e-way bill system (from April 2018) are the physical and tax infrastructure; ERP, MRP, MES, WMS, TMS, and demand-planning software are the application layers.
+- Digital rails: UPI settles payments, FASTag automates tolls, GPS tracks fleets, RFID and barcodes track stock, and IoT sensors monitor warehouses and cold storage. Blockchain sits in the emerging, not standard, column.
+- Subsystem stack in one line: procurement (ERP, e-procurement), production (MRP, MES, lean and JIT), inventory (WMS, RFID, IoT), logistics (TMS, GPS, FASTag, e-way bills), distribution (POS, e-commerce), demand (forecasting, CRM, AI and ML), finance (banking APIs, UPI, ERP finance), IT (ERP, cloud SCM, AI dashboards), and compliance (GRC, customs, tax, ESG), with reverse logistics as the missing loop.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6039,6 +6057,83 @@ Full sections: Technology.md, "DNS — Hardware Path and Software Side" and "Ide
 
 Full sections: Technology.md, "Parallel Trace — GitHub Push (SSH) and WhatsApp Call, With Addresses at Each Hop" and "Address Management at Each Level — One Identity Versus Many Tables". Business points only: NAT and PAT tables, CAM tables, routing tables, DNS caches, and server session tables are all capacity and state limits — a table that fills up drops new sessions, which is why sizing and ageing of those tables are operations concerns, not trivia. The invalid example MAC in the source (containing non-hexadecimal characters) is a documentation-quality lesson: example data in runbooks must be valid, or it will be copied into tests and configurations that fail for the wrong reason.
 
+## Business and Finance Networks in India — Telegraph Era to Modi Era (Audited, Sanitized)
+
+This is a business-primary note, so the full section lives here. The technology angle is in Technology.md and the combined view in Business&Technology.md, condensed, with no verbatim duplication. No timeline infographic was built from the source's closing offer, per the standing rule.
+
+### 1. Telegraph era, 1850s to 1947, colonial period
+
+- Business network: electric telegraph lines were laid under the East India Company from 1850 to 1851, with the first line between Calcutta and Diamond Harbour, under William O'Shaughnessy. They connected ports, military stations, and trading hubs.
+- Finance link: faster transmission of trade prices, stock rates, and banking instructions between Bombay, Calcutta, and Madras, and, once cable routes existed, onward to London. Correction: intra-India transmission fell from weeks of post to minutes or hours on the telegraph, but India to London communication in the 1850s was not a direct minutes-long link; submarine and overland cable routes to Europe were built in the 1860s, with the Persian Gulf cable route completed in the mid-1860s, so "minutes to London" for the whole era is an overstatement.
+- Ownership and control: government-controlled, first by the Company and then, after 1858, by the British Raj through the Indian Posts and Telegraph system.
+- Impact: vital for colonial trade in cotton, jute, and tea, where price and shipping information had commercial value that decayed with delay.
+
+### 2. Post-independence and state monopoly, 1947 to 1980s
+
+- Business network: telegraph and telephone services under the Department of Posts and Telegraph.
+- Finance network: banks, stock exchanges, and insurance used telex and, later, fax for intercity coordination, alongside physical files and face-to-face markets.
+- Ownership and control: effectively a government monopoly in this period. Correction to the source's parenthetical order: the Department of Telecommunications was created in 1985, MTNL in 1986, and BSNL only in 2000, so BSNL and MTNL are not a single post-independence split; they belong to different decades.
+- Impact: limited reach and high cost kept telecom a luxury rather than a mass service, and business and finance still depended heavily on physical processes.
+
+### 3. Liberalization and private entry, 1990s to early 2000s
+
+- Business network: the National Telecom Policy of 1994 opened basic and mobile services to private players. Mobile telephony entered, and PCO and STD booths flourished, giving public access where private ownership was still rare.
+- Finance network: stock exchanges shifted to electronic, screen-based trading, with the National Stock Exchange beginning trading in November 1994. Banks began adopting core banking systems, but correction: core banking spread mainly in the early 2000s, not as a completed 1990s change, and real-time fund transfer at national scale followed the payment-system launches in the next era.
+- Ownership and control: a mix of government operators (BSNL, MTNL) and private operators (Airtel, Reliance, Idea).
+- Impact: telecom became a backbone for India's IT and outsourcing boom, as connectivity cost and availability changed what services could be sold from India.
+
+### 4. Internet and mobile growth, 2000s to 2010s
+
+- Business network: broadband, 3G, and then 4G expansion, internet cafes, and mobile phones connected small businesses to wider markets.
+- Finance network: RTGS launched in March 2004, NEFT in November 2005, and IMPS in November 2010, modernizing interbank payments from batch and branch processes toward near-real-time transfer. E-commerce grew with Flipkart (founded 2007) and Snapdeal (founded 2010).
+- Ownership and control: private operators competing under TRAI regulation for telecom, with the Reserve Bank of India regulating payment systems. Correction: TRAI does not regulate finance; the source's single "regulated" label hides the split between telecom regulation (TRAI) and payment regulation (RBI, with NPCI operating retail payment systems including UPI).
+- Impact: mobile and internet access democratized market and banking access, though unevenly by region, device, and literacy, which the source's "democratized" summary should not be read as universal.
+
+### 5. Modi era, 2014 to present
+
+- Business network: Digital India launched in July 2015. Reliance Jio's commercial launch in September 2016 cut data prices sharply and expanded 4G usage. 5G rollout began in October 2022.
+- Finance network: UPI launched by NPCI in August 2016, offering instant, 24 by 7 transfers. Fintech firms including PhonePe, Paytm, and BharatPe grew on top of it. Aadhaar-linked banking and the Pradhan Mantri Jan Dhan Yojana (launched August 2014) expanded account access as a financial-inclusion programme.
+- Ownership and control: market-driven private majors (Jio, Airtel, Vodafone Idea) under TRAI telecom regulation and RBI payment regulation.
+- Impact: correction to the source's headline claim: India leads the world in real-time payment transaction volume, driven by UPI, which is a narrower and better-supported claim than "largest volume of digital transactions globally" across all forms of digital payment. Telecom networks are now the backbone for startups, e-commerce, digital governance, and fintech, as the source states, subject to the same uneven-access caveat as above.
+- "Free" UPI, corrected: UPI transfers are generally free to the end user, but the system is not costless; costs are borne by banks, the government, and, in some merchant cases, through other charges, and merchant discount rate policy for UPI has changed over time. Do not present "free" as a property of the system itself.
+
+### Corrections list for this batch
+
+- India to London telegraphy was not minutes-long in the 1850s; direct cable routes came in the 1860s.
+- DoT was created in 1985, MTNL in 1986, BSNL in 2000; they are not one post-independence split.
+- Core banking spread in the early 2000s, not as a completed 1990s shift.
+- TRAI regulates telecom; RBI regulates payment systems; NPCI operates UPI and other retail systems. TRAI does not regulate finance.
+- India leads in real-time payment volume, not in all digital transactions by every measure.
+- UPI is free to users in general, not costless to run.
+- No timeline infographic was built from the source's closing offer.
+
+## India's Supply Chain System — Global Structure, Indian Customization (Audited)
+
+This is a business-primary section, so the full version lives here. The technology angle is in Technology.md and the combined view in Business&Technology.md, condensed.
+
+- Definition: a supply chain is the network of suppliers, manufacturers, distributors, retailers, and customers, and a supply-chain system is the infrastructure, standards, and governance that keeps that chain moving across logistics, IT, finance, and regulation.
+- Before globalization, pre-1991: mostly domestic and agriculture-focused, with local mandis, the Public Distribution System for food grains through state warehouses and ration shops, and government-run railways and road transport. Correction: container handling did exist at major Indian ports before 1991, from the 1970s onward; what post-liberalization changed was its scale and standardization, not its invention in India. Colonial rail and port logistics were inherited, but the pre-1991 system was largely self-contained, without modern ERP, just-in-time, or container-scale shipping as standard practice.
+- Post-liberalization, 1991 to 2010s: foreign companies brought global practices. Containerization expanded to global shipping standards, ERP and MRP systems from SAP, Oracle, and others were imported through multinationals, and global automotive supply chains grew in India. Correction: Maruti Suzuki predates liberalization, with Maruti Udyog founded in 1981 and Suzuki joining in 1982; Hyundai (1996) and Toyota (1997) are the post-liberalization examples. Domestic adaptation included national highways and dedicated freight corridors as an Indian initiative, though the corridors were approved in 2006 and built mainly in the 2010s and 2020s, not completed in the 1991 to 2010s window. FMCG firms such as HUL and ITC built India-specific last-mile distribution through kirana shops and rural outreach. The result is a hybrid model: borrowed global frameworks adapted to Indian geography and retail.
+- Modi era, 2014 to present: Make in India launched in September 2014 for local manufacturing; GST in July 2017 created one national tax and removed state-border tax fragmentation, unifying the domestic supply chain; digital tools include UPI for payments, FASTag for tolls, and e-way bills for goods movement. Corrections: e-way bills under GST began in April 2018, not with GST in 2017; FASTag became mandatory for toll payment in 2021, after its earlier rollout; UPI is a payment rail used in supply-chain settlement, not supply-chain management software itself. The National Logistics Policy was launched in September 2022 as an India-specific supply-chain strategy. Global integration covers electronics, pharma, and automotive chains, and "China+1" is a business diversification trend toward India as an alternative manufacturing hub, not an official Indian government programme by that name. Standards such as ISO, containerization, and WTO trade rules, and ERP and SCM software from SAP, Oracle, and Microsoft, remain global.
+- Conclusion, as the source frames it: India has built its own supply-chain system in recent years through GST, UPI, the National Logistics Policy, and Digital India, but its backbone still borrows global standards, so the system is hybrid — global structure plus Indian customization.
+
+## Supply Chain Subsystems — Nine Gears (Audited)
+
+This section records the subsystems note. It is business-primary, so the full version lives here, with condensed angles in Technology.md and Business&Technology.md. No diagram was built from the source's closing offer, per the standing rule.
+
+1. Procurement (sourcing): suppliers, vendor selection, contracts, raw-material purchase, supplier relationship management. Tools: ERP such as SAP and Oracle, and e-procurement portals.
+2. Production (manufacturing): converts raw materials into finished goods, through scheduling, assembly, and quality control, using lean and just-in-time methods. Inside it: MRP for material requirements planning and MES for manufacturing execution.
+3. Inventory and warehousing: stock levels, warehouse automation, cold storage, and distribution centres. Tools: WMS, RFID and barcoding, and IoT sensors.
+4. Logistics and transportation: freight, last-mile delivery, route optimization, and fleet management. Tools: TMS, GPS tracking, and, in India, FASTag and e-way bills.
+5. Distribution and retail: wholesale distribution, retail stores, e-commerce platforms, and point-of-sale systems. Examples: kirana shops, Amazon, Flipkart, and Reliance Retail.
+6. Order and demand management: forecasting, sales-order processing, and customer relationship management. Tools: demand-planning software and AI and machine-learning forecasting.
+7. Finance and payment: invoices, payment gateways, credit, and subsidies across the chain. Tools: banking APIs, UPI in India, and ERP financial modules.
+8. Information and technology: the digital layer for data flow, communication, and analytics. Tools: ERP, cloud SCM, IoT, and AI dashboards. Correction: blockchain is an emerging tool in this layer, not a standard component of every supply chain; listing it alongside ERP without that qualification overstates its adoption.
+9. Compliance and risk management: customs, taxes, trade compliance, and ESG (environment, sustainability, governance). Tools: GRC software.
+
+- Flow, corrected: the source's linear flow (suppliers, factories, warehouses, transport, wholesalers, retailers, shops and apps, customers, finance) is a teaching simplification. In practice, demand and order management run before production through forecasting and throughout through order processing, finance runs throughout through invoicing and credit, and IT and compliance are cross-cutting layers, not end steps. Reverse logistics — returns, repairs, recycling, and disposal — is missing from the source flow and is a standard tenth concern in real supply chains, though it is not counted as a separate subsystem in the source's nine.
+- Short version, kept: a supply chain is not one line; it is a machine of nine subsystems, each a gear that keeps the chain moving, plus the cross-cutting and reverse flows above.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -7118,6 +7213,19 @@ Full sections: Technology.md, "DNS — Hardware Path and Software Side" and "Ide
 
 - Parallel trace: GitHub SSH from 192.168.1.101:55001 to 140.82.112.3:22, NAT to 198.51.100.10:40001, SSH key authentication; WhatsApp call from 192.168.1.101:56001 to 157.240.20.60:3478, NAT to 198.51.100.10:41001, signalling on TCP 5222 and token authentication. All values are source examples; media ports are negotiated by ICE, not fixed at 3478.
 - Address management: laptop one MAC and IP per interface with many ports; access point many client MACs; switch CAM table; router NAT table; ISP BGP prefix tables; DNS caches and zones; servers multiplexing by source IP, source port, destination IP, destination port, and protocol. The source's second switch example MAC is invalid (non-hexadecimal characters) and is corrected to a valid example in Technology.md.
+
+## Business and Finance Networks in India — Combined View (Condensed)
+
+Full section: Bussiness.md, "Business and Finance Networks in India — Telegraph Era to Modi Era". Technology angle: Technology.md, "Business and Finance Networks in India — Technology Angle".
+
+- Telegraph (1850s): East India Company lines cut intra-India trade information from weeks to minutes or hours; London links came later, via 1860s cable routes.
+- State monopoly (1947 to 1980s): Posts and Telegraph, then DoT (1985), MTNL (1986), BSNL (2000) in that order, with telex and fax as finance coordination tools.
+- Liberalization (1990s): 1994 telecom policy, private mobile operators, PCO and STD booths, NSE screen trading from November 1994, core banking spreading in the early 2000s.
+- Internet era (2000s to 2010s): RTGS 2004, NEFT 2005, IMPS 2010, Flipkart 2007, Snapdeal 2010, broadband, 3G, and 4G.
+- Modi era (2014 to present): Jan Dhan 2014, Digital India 2015, Jio 2016, UPI 2016, 5G 2022, with India leading in real-time payment volume, UPI generally free to users but not costless, and regulation split between TRAI (telecom) and RBI (payments).
+
+- India's supply chain: pre-1991 domestic, mandi and PDS based, with container handling already present at major ports from the 1970s; post-1991 global practices, ERP, and automotive chains (Maruti Suzuki from 1982, Hyundai 1996, Toyota 1997), highways and freight corridors from the 2000s onward, FMCG kirana last mile; Modi era Make in India 2014, GST 2017, e-way bills 2018, FASTag mandatory 2021, National Logistics Policy 2022, with global ISO, container, WTO, and ERP standards still borrowed — a hybrid system.
+- Nine subsystems: procurement, production (MRP, MES), inventory (WMS, RFID, IoT), logistics (TMS, GPS, FASTag, e-way bills), distribution (kirana, Amazon, Flipkart, Reliance Retail), demand (forecasting, CRM, AI/ML), finance (banking APIs, UPI, ERP finance), IT (ERP, cloud SCM, AI dashboards, blockchain as emerging), compliance (GRC, customs, tax, ESG), with demand, finance, IT, and compliance running throughout and reverse logistics as the missing loop.
 
 ## Business Promotion — Combined View (No Diagram)
 

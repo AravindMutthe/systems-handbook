@@ -6881,6 +6881,27 @@ Pointer: full sections in Technology.md. Business and combined angles are in Bus
 - A MAC address uses hexadecimal digits only. Example: FF:GG:HH:II:JJ:22 is invalid, because G, H, I, and J are not hex digits; 22:33:44:55:66:77 is valid.
 - Servers multiplex by four-tuple plus protocol. Example: two users can both connect to GitHub port 22 at once because their source IPs and ports differ.
 
+## Business and Finance Networks in India — Elaborated Key Points (New Gaps Only)
+
+Pointer: full section in Bussiness.md. Technology and combined angles are in Technology.md and Business&Technology.md under the same headings. Parts 2 and 3 of this file carry only pointers for this batch, per the rule.
+
+- Telegraph cut intra-India information delay from weeks to minutes or hours. Example: a Bombay cotton price could reach Calcutta by telegraph the same day, instead of by post weeks later.
+- London links came later than intra-India links. Example: 1860s cable routes, not 1850s minutes-long London telegrams, connected India to Europe.
+- DoT, MTNL, and BSNL belong to different decades. Example: DoT 1985, MTNL 1986, BSNL 2000, so they are not one split.
+- NSE screen trading began in November 1994. Example: an order could be matched electronically instead of by open-outcry trading.
+- Payment rails arrived in order: RTGS 2004, NEFT 2005, IMPS 2010, UPI 2016. Example: UPI builds an instant interface on IMPS rails; it did not replace settlement by itself.
+- TRAI regulates telecom, RBI regulates payments. Example: a telecom licence question goes to TRAI and DoT, while a UPI question goes to RBI and NPCI.
+- India leads in real-time payment volume, not in every digital-payment measure. Example: UPI transaction counts lead real-time payment rankings, which is narrower than all digital transactions.
+- UPI is generally free to users, not costless. Example: banks and the government absorb operating costs, and merchant charges have been a separate policy question.
+
+- India's supply chain is hybrid: global structure plus Indian customization. Example: GST unified domestic tax in 2017, while container and ERP standards remain global.
+- Container handling existed before 1991 at major ports. Example: post-liberalization expanded container shipping to global scale, rather than inventing it in India.
+- Maruti Suzuki predates liberalization. Example: Maruti Udyog 1981 and Suzuki 1982, while Hyundai 1996 and Toyota 1997 are post-liberalization entries.
+- GST e-way bills began in April 2018, not with GST in 2017. Example: a goods movement after April 2018 needs an e-way bill above the threshold, under GST rules.
+- Nine subsystems, each a gear: procurement, production, inventory, logistics, distribution, demand, finance, IT, compliance. Example: a warehouse (inventory) cannot ship without a transport plan (logistics) and an invoice (finance).
+- Blockchain is emerging in supply-chain IT, not standard everywhere. Example: ERP and WMS are standard; blockchain pilots are not yet universal.
+- Reverse logistics is missing from the linear flow. Example: customer returns and product recycling run backward through the chain and need their own handling.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9537,6 +9558,11 @@ See Part 1 of this file for the elaborated key points on the authentication chai
 
 See Part 1 of this file for the elaborated key points on DNS and path identity. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
+
+## India Business Finance and Supply Chain — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points on India business, finance, and supply chain. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10954,6 +10980,11 @@ See Part 1 of this file for the elaborated key points on the authentication chai
 ## DNS and Path Identity — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points on DNS and path identity. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
+
+
+## India Business Finance and Supply Chain — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points on India business, finance, and supply chain. Business and combined angles are in Bussiness.md and Business&Technology.md under the same headings.
 
 ## Business Promotion — Combined View (No Diagram)
 
