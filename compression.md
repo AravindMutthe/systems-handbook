@@ -4324,6 +4324,121 @@ Verified against the Linux man-pages project: pipe(7), mq_overview(7), and shm_o
 
 - A signal is a notification, not a data channel. *Correction: "you can't send complex data" is correct, but "just a notification" needs one qualification. sigqueue can carry a small payload, one integer or one pointer, with a real-time signal, and signals can be queued. That is still not a general data transfer mechanism, and it does not replace pipes or message queues for actual data.*
 
+## Communication Models — Message Passing Versus Shared Memory (Audited, Official Sources Only, Elaborate Only)
+
+Verified against Linux man-pages: socket(7) for send and receive, mq_overview(7) for message queues, shm_overview(7) for shared memory, pipe(7) for pipes. Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule. The source's opening definition is repeated twice in different words; the duplicate is removed here, not carried twice.
+
+### Message passing
+
+- Definition: independent processes, threads, or nodes exchange data by explicitly sending and receiving messages through a channel, queue, or mailbox, without sharing mutable memory.
+- Flow, in the source's three steps, cleaned: the sender prepares a message and calls a send operation, the system or middleware copies it into a buffer or queue, and the receiver calls a receive operation that copies it into the receiver's private memory.
+- *Correction: "send() system call" is not one universal call. Message passing is a pattern, not a single mechanism. In Linux it is implemented by different calls for different channels: write for pipes, mq_send for POSIX message queues, msgsnd for System V queues, and send, sendto, or sendmsg for sockets. A distributed system may use a middleware library instead of a kernel call at all.*
+- *Correction: message passing does NOT eliminate race conditions. It eliminates shared-memory data races, because processes cannot touch each other's private memory, but ordering races, lost or duplicated messages, deadlocks from waiting on each other, and protocol-level races remain. Saying "without needing complex locks" is also too strong: message-passing systems still need coordination, timeouts, and ordering rules.*
+- Benefits that stand: no shared physical RAM is required, so it works across machines; a crashing process does not corrupt another process's memory; and the same send/receive structure can be spread across two servers or two thousand.
+- Cost that the source omits: every message is copied at least once, through a kernel buffer or a network stack, so message passing is slower than shared memory for large local data.
+
+### Shared memory
+
+- Definition: independent processes exchange data by mapping their virtual address spaces to the same physical memory region, and reading and writing that region directly, instead of copying message packets.
+- Flow, cleaned: one process creates a segment with shmget or shm_open, both processes attach or map it, and each then reads and writes the same physical locations.
+- *Correction: shared memory does NOT work for "nodes". A node, in the distributed sense, is a separate machine with its own physical RAM, and standard Linux shared memory cannot map another machine's RAM. Distributed shared memory is a research and special-system concept, not the POSIX or System V shared memory in this note. The correct scope is processes on the same machine.*
+- *Correction: threads are not the same case as processes. Threads in one process already share the process's address space by definition; they do not need a shared-memory segment. Only separate processes need shmget, shm_open, and mmap to share a region.*
+- *Correction: "instantly, without any operating system intervention, context switches, or data copying" is true only after setup, and only for the data access itself. Setup needs the kernel, synchronization usually needs the kernel or atomic operations, and a reader has no guarantee of seeing a writer's latest value in order without synchronization, such as a semaphore or a memory barrier. "Instantly" also hides cache-coherence and contention costs on multi-core machines.*
+- Benefits that stand, qualified: it is the fastest local IPC because it avoids per-message copies, it avoids duplicating a large dataset in every process, and it suits high-performance local work such as database workers on one server.
+- *Correction: "absolute maximum speed", "zero overhead", and "in nanoseconds" are marketing absolutes, not measured claims. Shared memory still pays synchronization and cache-contention costs, and for small messages a pipe or queue can be simpler and fast enough.*
+
+## Communication and Data Flow Models — Pull Versus Push (Audited, Official Sources Only, Elaborate Only)
+
+Verified against the Linux man-pages socket(7) for send and receive, and IETF HTTP semantics for request and response. Added to elaborate only. Corrections in italic.
+
+### Pull model: the consumer asks
+
+- Synchronous pull, request-response: the client sends a request and waits for a response. A REST API over HTTP is the common example, but REST is an architectural style, not a protocol, and request-response is the HTTP pattern.
+- *Correction: polling is NOT a single request-response cycle. Polling is repeated request-response cycles at an interval. One request and one response, with no repetition, is just a request-response. The email-refresh analogy is polling only because the app refreshes repeatedly.*
+- Cost of polling: each poll costs a request even when nothing changed, so frequent polling wastes bandwidth and server work, and infrequent polling adds latency between an event and its discovery.
+- Long polling, not in the source, is the middle step: the server holds the request open until an event occurs or a timeout fires, which reduces empty polls but still uses a request-response cycle.
+
+### Push model: the producer sends
+
+- Asynchronous push, event-driven: the producer sends data when an event occurs, without waiting for the consumer to ask.
+- Webhook: the producer makes an HTTP POST to a URL the consumer registered, when a trigger fires.
+- *Correction: a webhook is NOT a standard protocol and NOT "one-time" in the sense of guaranteed exactly-once delivery. It is a pattern built on HTTP POST, with no single webhook RFC. One POST is sent per event, but the producer commonly retries on failure, so a consumer can receive the same event more than once and must handle duplicates. Delivery is also not guaranteed if the consumer is down and retries are exhausted.*
+- *Correction: "push is speed, pull is efficiency" is a tendency, not a rule. Push is faster for event notification, but it costs a persistent connection or a registered endpoint and can flood a slow consumer. Pull is simpler and lets the consumer control rate, but it adds polling latency. The choice is latency versus control, not speed versus efficiency in general.*
+- Other push mechanisms, not in the source: WebSocket for a persistent bidirectional channel, and Server-Sent Events for a persistent server-to-client stream over HTTP. A webhook is the simplest push form, not the only one.
+
+## Kubernetes Pod Network Namespace, Pause Container, Routing, Ingress, Egress, and DNS (Audited, Official Sources Only, Elaborate Only)
+
+Verified against kubernetes.io Pods documentation (pods share network and storage, are co-located and co-scheduled) and IETF RFC 6891 for EDNS. Added to elaborate only. The owner re-sent this note at 22:00 IST; it is not added twice. Corrections in italic.
+
+### Pause container and the pod network namespace
+
+- A pod's containers share a network namespace, so they share one pod IP, one localhost, and one port space. Containers in the same pod can reach each other on localhost, and two containers in one pod cannot bind the same port.
+- The runtime creates an infrastructure container, commonly called the pause container, to hold that network namespace open for the pod's lifetime, and application containers join it.
+- *Correction: the pause container does NOT hold the PID namespace for the entire pod by default. By default each container has its own PID namespace. Containers share a PID namespace only when the pod sets shareProcessNamespace to true. The pause container's job is the network namespace, and in some runtimes the IPC namespace; PID sharing is opt-in, not default.*
+- *Correction: the pause container is a container-runtime implementation detail, not a Kubernetes API object. Kubernetes defines the pod and its shared context; the pause image and the infra container are how runtimes such as containerd implement it. A note that treats "pause container" as a Kubernetes resource overstates its status.*
+
+### Routing, ingress, egress
+
+- Routing: directing a packet along a path toward its destination, by destination address and by policy, through routers and, in a cluster, through CNI forwarding and kube-proxy rules.
+- Ingress, in the traffic sense: traffic entering a boundary. Egress, in the traffic sense: traffic leaving a boundary.
+- *Correction: in Kubernetes the word Ingress has two meanings that must not be merged. Lowercase ingress and egress in a NetworkPolicy mean traffic entering or leaving a selected pod. Capitalized Ingress is a separate API resource for HTTP and HTTPS routing into the cluster, served by an ingress controller. The source's definitions are the traffic sense only, and do not describe the Ingress resource.*
+
+### DNS
+
+- DNS is an application-layer protocol. Name resolution is provided by resolver libraries and DNS servers, and in a cluster by kube-dns or CoreDNS, not by one application.
+- *Correction: DNS does NOT switch from UDP for requests to TCP for responses at 512 bytes. The 512-byte limit is the original RFC 1035 limit for a DNS message over UDP without extensions. RFC 6891 (EDNS(0)) lets a requestor advertise a larger UDP payload size, so modern resolvers commonly use UDP well above 512 bytes, and a response is retried over TCP when it is truncated, shown by the TC bit, or when the operation needs TCP, such as a zone transfer (AXFR or IXFR).*
+- *Correction: "use UDP for Service lookups, expect TCP for headless lookups" is not a rule. A ClusterIP Service DNS answer normally returns one A record and is small, while a headless Service answer returns one A record per pod endpoint and can be larger, but the transport is decided by response size and truncation, not by Service type. A small headless answer stays on UDP, and a large ClusterIP answer can fall back to TCP.*
+- *Correction: the source's "requests in, responses out" mapping is wrong. Both the query and the response use the same transport in a given exchange, and either can be UDP or TCP depending on size, truncation, and operation.*
+
+## Kubernetes "Kernel Space" and "User Space" — Analogy Only (Audited, Official Sources Only, Elaborate Only)
+
+Verified against kubernetes.io Pods documentation and Kubernetes role and RBAC concepts. Added to elaborate only. Corrections in italic.
+
+- *Correction: the whole mapping is an analogy, not a fact. Kernel space and user space are operating-system privilege levels inside one machine's kernel. A Kubernetes control plane is not kernel space, and a worker node is not user space. Control-plane components (kube-apiserver, etcd, kube-scheduler, kube-controller-manager) run as ordinary user-space processes, usually on control-plane nodes, and worker nodes are machines that run kubelet and container runtimes, also in user space. The analogy is useful for "who manages the platform versus who manages the app", and false if read literally.*
+- System administrator, control plane: cluster health (etcd, API server response, control-plane uptime), RBAC, ResourceQuotas so one application cannot consume a whole cluster, and backup and recovery, with Velero as a common third-party tool, not a built-in Kubernetes feature.
+- *Correction: the command in the source's comparison table, "kubectl get certificates", is not a Kubernetes resource. Certificate signing requests are listed with "kubectl get csr". The application-admin commands, "kubectl logs" and "kubectl rollout restart", are correct.*
+- Application administrator, worker nodes: deploying Pods, Deployments, and StatefulSets, configuring Services and Ingress for traffic, managing ConfigMaps and Secrets, and scaling with HorizontalPodAutoscaler.
+- Infrastructure engineer, both sides: control-plane bootstrapping, upgrades, RBAC, and policy, plus node provisioning, cluster autoscaling, and node-level daemons such as log collectors and monitoring agents.
+- *Correction: policy enforcement is not control-plane-only work. NetworkPolicies are defined through the API, but they are enforced on the nodes by the CNI plugin, and a service mesh's data plane also runs on the nodes. The control-plane versus worker-node split describes where a component is configured, not where every effect happens.*
+- *Correction: "application engineers work almost exclusively inside worker nodes" is too absolute. Application engineers also use the API server, namespaces, RBAC bindings, and cluster-level Services and Ingress objects, all of which are control-plane resources, even when they never touch a node.*
+
+## Errors and Isolation — Structural Layers, Crash Diagnostics, and Runbooks (Audited, Official Sources Only, Elaborate Only)
+
+Verified against kubernetes.io Pods and Volumes documentation (emptyDir is created on pod-to-node assignment and deleted on pod removal, and is not durable storage) and Linux man-pages shm_overview(7) (shared memory persists until unlinked and unmapped, or shutdown). Added to elaborate only. The source contains two different layer tables that contradict each other; both are kept below only as corrected lists, not as one consistent matrix. Corrections in italic. Product examples (B2Bi, Azure, Velero) are source examples, not verified generic facts.
+
+### The two source tables do not agree, and neither is a standard
+
+- *Correction: there is no standard "Master Structural Layer" of process, container, pod, node, cluster, and cloud with the storage media the source assigns. The two tables in the source assign different primary media to the same tier: the first table says node storage is a Linux tmpfs RAM disk, the second says node storage is physical DAS block arrays. Both can exist on a node, but they are different storage choices, not one layer definition. The corrected reading is: each tier can use several media, and the survival answer depends on the medium chosen, not on the tier name.*
+- *Correction: the "Hardening Technology Replacement" column mixes unrelated technologies. MappedByteBuffers are a Java file-mapping mechanism, not a replacement for a JVM heap. JDBC is a database connectivity API, not a persistent message queue. A CSI PersistentVolume is a different volume type from emptyDir, not a hardening upgrade of the same volume. The column is source filler, and it is not carried as a recommendation.*
+
+### Corrected survival, by medium, not by tier name
+
+- JVM heap and off-heap process memory: wiped when the process dies, and wiped on host reboot. A file-backed MappedByteBuffer's file can survive, but the mapping itself does not.
+- Container shared memory (/dev/shm): a tmpfs inside the container. It survives an application process crash while the container is kept, it is wiped when the container is removed, and it is wiped on host reboot.
+- Container writable overlay: disk-backed. *Correction: the second table says it is wiped instantly on host reboot, which is wrong for a disk-backed overlay. It survives a process crash and a host reboot while the container exists, and it is deleted only when the container is removed.*
+- Pod emptyDir, memory medium: survives a container crash, is deleted on pod removal, and does not survive a host reboot in practice because the pod is rescheduled, not restored with its memory.
+- Pod Secrets: mounted as tmpfs, same survival as emptyDir memory, and they are credentials, not durable storage.
+- Node tmpfs RAM disk: wiped on host reboot, by definition.
+- Node physical DAS with mdadm RAID 1 or 10: survives a process crash and a host reboot, and survives one disk failure in a mirror, but RAID is not a backup.
+- Cluster in-memory data grid or Redis: *Correction: "survives host reboot, partial" is not a guarantee. Replicated in-memory data can survive the loss of one node, but it does not survive a whole-cluster loss unless it is persisted, for Redis with AOF or RDB snapshots, or replicated to a surviving cluster. Without persistence, in-memory data is lost on restart.*
+- Local PersistentVolumes: *Correction: a local PV is bound to one worker node, so it is not cluster-wide storage. A pod using it cannot move to another node and keep the same volume, which contradicts the second table's "Cluster" tier label for local PVs. Clustered storage such as Ceph is the cluster-wide case, not local PVs.*
+- Azure ephemeral disks and temporary disks: *Correction: they survive a reboot, but they do NOT survive stop and deallocate, reimage, or a move to another host. The source's "survives safely" for both crash and reboot is true only for reboot, not for deallocate.*
+- Azure Managed Disks, including Premium SSD v2: disk-backed, survive reboot and deallocate, and are the durable case in the cloud tier.
+
+### Crash diagnostics: the cascade is not one chain
+
+- *Correction: the source's downward cascade, Azure blade to RHEL host to container to JVM, is not how these failures relate. A hardware fault, a host out-of-memory kill by the Linux oom_killer, a container cgroup limit producing OOMKilled, and a JVM heap exhaustion producing OutOfMemoryError are independent failure levels, and any one can occur without the others. A JVM OutOfMemoryError does not cause a host oom_killer event, and a host oom_killer event does not require a JVM error first. The diagnostic order is: check the pod status and container exit reason, then the JVM error, then the node memory pressure, then the host, not a fixed top-down cascade.*
+- The source's diagram also skips layers 3 and 5, which shows it is a selected chain, not a complete layer model.
+
+### Zero-downtime runbook: every command is overstated
+
+- *Correction: "jcmd GC.run forces immediate RAM recovery without process drops" is overstated. It requests a garbage collection, which can free unreachable heap, but it cannot free a genuine leak, it cannot guarantee how much is recovered, and a full collection pauses the application. It is a diagnostic step, not a zero-downtime cure.*
+- B2Bi workflow freeze, terminate a business process through the Operations UI: kept as a source product example only, not a generic Kubernetes or Linux runbook, and not verified here.
+- *Correction: "mount -o remount,size=4G" does NOT add RAM. It raises the size ceiling of a tmpfs, which is still backed by RAM, and a tmpfs at 100 percent still needs data deleted or moved, or more physical memory, before it can hold more. Expanding the ceiling without freeing RAM can push the host toward an out-of-memory kill.*
+- *Correction: "az disk update --iops 16000 instantly clears a storage bottleneck with zero VM restarts" is true only for disk types that support live IOPS changes, such as Premium SSD v2 and Ultra Disk, and only up to the disk and VM limits. It does not apply to every Azure disk, and it does not guarantee the bottleneck was IOPS rather than throughput or latency.*
+- *Correction: "az aks scale --node-count" adds nodes live, but it does NOT guarantee a Pending pod provisions immediately. A pod can stay Pending for scheduling constraints, node selectors, taints, affinity, or resource requests that no new node satisfies, not only for total cluster capacity.*
+- *Correction: the "Core Connectivity Mechanism" column in the second table is source filler, not standard terminology. A JVM heap is not connected by a "CPU System Bus / MMU Channel", and a container is not connected by a "Linux Kernel VFS Driver Mapping". Those phrases are not carried as facts.*
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6472,6 +6587,16 @@ Full section: compression.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Q
 - Shared memory is the fastest path and the most dangerous without discipline: no kernel flow control, so synchronization (semaphores) is a design requirement, not an optional extra, and a synchronization bug is a data-corruption bug.
 - Sockets are the only cross-host mechanism in the list, and the one whose address, port, and firewall exposure must be managed as a business and security surface.
 
+## Batch 13 — Business Angles (Condensed, Elaborate Only)
+
+Full sections: compression.md Part 1, "Communication Models", "Communication and Data Flow Models", "Kubernetes Pod Network Namespace", "Kubernetes Kernel Space and User Space", and "Errors and Isolation". Corrections in the full sections are in italic text.
+
+- Message passing versus shared memory is a cost and isolation trade, not a speed contest alone. Message passing isolates processes and scales across machines, at the cost of copies. Shared memory is fastest locally, at the cost of synchronization discipline and no cross-machine use.
+- Pull versus push is a latency versus control trade. Polling lets the consumer control rate and costs empty requests. Webhooks push instantly per event, but delivery is at-least-once in practice, so consumers must handle duplicates, and a webhook is a pattern on HTTP POST, not a standard protocol.
+- Pause container and DNS: a pod is one network identity, so port conflicts inside a pod are a design constraint, and DNS transport follows response size and truncation, not Service type. A headless Service is not automatically a TCP case.
+- Kernel-space versus user-space for Kubernetes is an analogy for platform versus application responsibility, not a literal privilege split. Budget and role work should use control-plane versus workload responsibility, not kernel versus user labels.
+- Errors and isolation: survival is a property of the storage medium, not the tier name. Anything in RAM, including tmpfs, emptyDir memory, and unpersisted Redis, is lost on reboot or pod removal. Durable work needs disk, a CSI volume, or a persisted and replicated store, and runbook commands that promise instant zero-downtime recovery are overstated in every row of the source.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -7603,6 +7728,17 @@ Full section: compression.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Q
 - Shared memory: random-access RAM, fastest, no kernel flow control, synchronization required.
 - Socket: stream or datagram, bidirectional, Unix local or TCP/UDP network, only cross-host mechanism here.
 - Signal: notification only, sigqueue small payload at most, not a data channel.
+
+## Batch 13 — Combined Views (Condensed, Elaborate Only)
+
+Full sections: compression.md Part 1, "Communication Models", "Communication and Data Flow Models", "Kubernetes Pod Network Namespace", "Kubernetes Kernel Space and User Space", and "Errors and Isolation". Corrections in the full sections are in italic text.
+
+- Message passing: explicit send and receive, no shared memory, copies through buffers, works across machines, ordering and duplication still need handling.
+- Shared memory: same physical region mapped into several processes, fastest locally, same machine only, synchronization required, setup needs the kernel.
+- Pull: request-response, polling is repeated cycles, long polling holds a request open. Push: event-driven, webhook is one HTTP POST per event with retries, WebSocket and Server-Sent Events are persistent push forms.
+- Pod network: pause container holds the network namespace, app containers share one pod IP and localhost, PID sharing is opt-in only, Ingress as a resource is not the same as ingress traffic, DNS is application layer with EDNS larger UDP and TCP on truncation or zone transfer.
+- Kubernetes roles: control plane is user-space processes on control-plane nodes, worker nodes are machines, policy is enforced on nodes by the CNI, and the command for signing requests is kubectl get csr, not kubectl get certificates.
+- Errors and isolation: heap and tmpfs are lost on process death or reboot, overlay and DAS survive reboot while the container or disk exists, local PVs are node-bound, Azure ephemeral disks survive reboot but not deallocate, and every zero-downtime runbook command in the source is conditional, not guaranteed.
 
 ## Business Promotion — Combined View (No Diagram)
 

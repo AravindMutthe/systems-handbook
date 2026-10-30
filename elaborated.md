@@ -6956,6 +6956,21 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 - Shared memory has no flow control. Example: a writer and a reader sharing a region must use a semaphore, or the reader can read a half-written value.
 - Sockets are the only cross-host IPC here. Example: a pipe cannot reach another server, but a TCP socket can, and a Unix socket is the local-only equivalent.
 
+## Batch 13 — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full sections in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text. Segregation deferred until the owner says done. The pause-container note was re-sent at 22:00 IST and is not duplicated.
+
+- Message passing has no single send call. Example: pipes use write, POSIX queues use mq_send, sockets use sendmsg, and each is a different channel for the same pattern.
+- Message passing does not remove all races. Example: two senders can still race on message order, and a receiver waiting on a message another process never sends can still deadlock.
+- Shared memory does not cross machines. Example: two processes on one server can map the same segment, but a process on a second server cannot map the first server's RAM with standard shared memory.
+- Polling is repetition, not one cycle. Example: an email app that checks every 60 seconds makes 60 request-response cycles an hour, not one.
+- Webhooks can deliver twice. Example: a producer that retries a POST after a timeout can deliver the same payment event twice, so the consumer must de-duplicate by event id.
+- Pause holds the network namespace, not the PID namespace by default. Example: two containers in one pod share localhost and the pod IP, but they do not see each other's processes unless shareProcessNamespace is true.
+- DNS TCP fallback follows truncation, not Service type. Example: a headless answer with few endpoints stays on UDP, while a large answer with the TC bit set is retried over TCP.
+- Control plane is not kernel space. Example: kube-apiserver and etcd run as user-space processes on control-plane nodes, and kubectl get csr, not kubectl get certificates, lists signing requests.
+- Survival follows the medium, not the tier. Example: emptyDir memory and /dev/shm are lost on pod removal and reboot, while a CSI volume and a managed disk survive both.
+- Runbook commands are conditional. Example: remounting a tmpfs larger does not add RAM, and scaling an AKS node count does not schedule a pod that is Pending for a taint or affinity rule.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9637,6 +9652,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
 
+
+## Batch 13 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11079,6 +11099,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 ## IPC Mechanisms — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
+
+
+## Batch 13 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 ## Business Promotion — Combined View (No Diagram)
 
