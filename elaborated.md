@@ -6622,6 +6622,37 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
   - Key note: LTI and SCORM are integration standards, not UI frameworks. They decide school adoption, while the UI framework decides how the app looks and where it runs.
   - Example: GradeSpot with LTI support can plug into a school's learning system; without it, the same UI cannot be adopted there.
 
+
+## UI Frameworks — Full-Stack View, New Gaps Only (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- New gaps only — architecture per era and generalized attributes. Timeline and fits are in the previous section and are not repeated here.
+  - Key note: Architecture decides where work and cost sit, and attributes decide how a framework behaves. Timeline alone does not tell a builder which framework to pick.
+  - Example: a thin-terminal mainframe app puts cost in the backend, while a native mobile app puts cost in device-specific UI code.
+- Architecture per era — telegraph (hardware-only) → mainframe (thin UI, heavy backend) → PC (monolithic OS UI, client-server) → web (browser → HTTP → server) → mobile/cloud (component-based, REST/GraphQL, cloud-native) → 5G/modern (micro-frontends, cloud + edge + AI, WebSockets/gRPC).
+  - Key note: Each architecture step moved work outward from a central machine to the edge and the device, and each step needed a new network to support it.
+  - Example: web architecture needs HTTP and a browser; 5G architecture needs real-time APIs and edge placement to keep latency low.
+- Generalized attributes — openness, architecture type, distribution, performance.
+  - Key note: Openness is about control and portability, architecture type is about how UI code is written, distribution is about how it reaches users, and performance is about what limits it.
+  - Example: declarative UI (SwiftUI, Jetpack Compose) describes what the screen should show, while event-driven GUI code describes what to do on each mouse or keyboard event.
+- Business fits, as proposals — Tern: React, Next.js, Carbon, Tailwind; GradeSpot: React, Angular, Bootstrap, SCORM/LTI; HighGradesApp: Flutter, React Native, SwiftUI.
+  - Key note: These fits are source proposals, not recorded stacks, except that recorded Tern frontends use Next.js and React, which matches the Tern proposal.
+  - Example: GradeSpot's SCORM/LTI fit is an integration fit, not a UI fit — it decides school adoption, not screen design.
+
+
+## Timeline + Business & Finance Mapping — Technology Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- Business and finance models per era, plus source mappings to the three products. Era UI and fits are in previous sections and are not repeated here.
+  - Key note: Business model answers who pays and for what; finance model answers when money arrives and what it costs to earn it. A product can have the same business model and a different finance model.
+  - Example: a SaaS product and a one-time-licence product can both sell software, but one earns monthly and the other earns at purchase plus upgrades.
+- Finance models per era — telegraph (CapEx → subscription billing) → mainframes (upfront → maintenance) → client-server (one-time → upgrades) → web (ads, subscriptions, e-commerce, low-cost distribution) → mobile/cloud (recurring SaaS, usage-based cloud) → 5G/AI (SaaS plus AI add-ons, pay-per-use API/inference, marketplace).
+  - Key note: Each era's finance model followed its distribution cost. When distribution got cheap, ads and freemium became possible; when compute got metered, pay-per-use became possible.
+  - Example: web distribution made a free student app viable with ads, while mainframe distribution required upfront hardware sales.
+- Source mappings — Tern: infra/platform, enterprise SaaS plus API billing; GradeSpot: B2B SaaS, seat licences plus analytics upsell; HighGradesApp: B2C, freemium plus ads plus premium AI features.
+  - Key note: These mappings are source proposals, not verified revenues. Recorded Tern is a ternary-computing platform, GradeSpot is an IT Solutions company, and HighGradesApp is a case study in notes.
+  - Example: GradeSpot's AI grading upsell is a proposed future feature, not a verified live revenue line.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9181,6 +9212,22 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
   - Key note: Framework choice is a long-term cost. Rebuilding a UI for another vendor's ecosystem is a migration, not a re-skin.
   - Example: a Flutter app can target Android and iOS from one codebase; a SwiftUI-only app is iOS-locked.
 
+
+## UI Frameworks — Full-Stack View, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Architecture as a business cost — where work sits decides who pays for it: backend, OS vendor, browser, app store, or edge.
+  - Key note: A framework choice is also a distribution and lock-in choice. App-store distribution brings store rules and fees; browser delivery brings network dependence.
+  - Example: a browser-delivered SaaS product reaches users without an app store, but its performance depends on the user's network, not only its code.
+
+
+## Timeline + Business & Finance Mapping — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Business model versus finance model — who pays, versus when money arrives and what it costs.
+  - Key note: A freemium app and a SaaS app can both be software, but freemium earns from a small paying share plus ads, while SaaS earns from recurring seats.
+  - Example: HighGradesApp as freemium earns from premium AI features and ads; GradeSpot as B2B SaaS earns from per-seat licences.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10504,6 +10551,22 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 - Combined point — regulation hierarchy decides which gates a product must clear, and UI era and licence decide how portable it stays while clearing them.
   - Key note: A product can be technically ready and still unsellable if it fails a regulatory gate, and it can be sellable and still hard to move if its UI is vendor-locked.
   - Example: Tern, GradeSpot, and HighGradesApp each sit at a different hierarchy layer and need a different UI and integration mix, even though they share the same global-to-consumer flow.
+
+
+## UI Frameworks — Full-Stack View, New Gaps Only — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — architecture per era plus generalized attributes, read with the previous UI section, gives the full-stack view without repeating its timeline.
+  - Key note: Full-stack means era plus architecture plus attributes plus fit, not timeline alone.
+  - Example: a 5G modern product is component-based, declarative or component-driven, browser or app-store distributed, and latency-sensitive — all four attributes at once.
+
+
+## Timeline + Business & Finance Mapping — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — era finance models evolve from CapEx and one-time licences to recurring SaaS to pay-per-use AI, and the three products are mapped by the source onto that evolution.
+  - Key note: The mapping is a direction, not a proven path. A product does not automatically move from SaaS to AI-first billing because the era changed.
+  - Example: Tern, GradeSpot, and HighGradesApp can each stay on SaaS or freemium even in a 5G/AI era, if that is what their users pay for.
 
 ## Business Promotion — Combined View (No Diagram)
 
