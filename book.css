@@ -43,3 +43,10 @@
 [data-theme="dark"] .book-chap-domain{color:#94a3b8}
 [data-theme="dark"] .book-open{background:#d9a441;color:#1f2a33 !important}
 [data-theme="dark"] .book-open:hover{background:#fdfbf7}
+
+.book-visuals{margin:32px 0}
+.book-visuals h2{font-family:Georgia,serif;font-size:28px;margin:0 0 16px}
+.book-visual{margin:0 0 20px}
+.book-visual img{border:1px solid #e6ddd0}
+.book-visual figcaption{color:#777;font-size:14px;margin-top:6px}
+[data-theme="dark"] .book-visual figcaption{color:#94a3b8}
