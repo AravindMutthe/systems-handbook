@@ -1507,6 +1507,26 @@ Only the audited business companion is added here. Full technical detail is in T
 - Layer control, business correction: semiconductors Intel, NVIDIA, Broadcom; network equipment Cisco, Juniper, Arista, with Juniper's 2025 HPE acquisition noted; operating systems Microsoft plus the global Linux ecosystem, not an American product; cloud AWS, Azure, Google Cloud; financial networks Visa and Mastercard as United States payment networks, with SWIFT as a Belgian messaging cooperative, not a payment network in the same sense.
 - Full technical detail: Technology.md, "From DARPA to Silicon Valley — How America Built a Global Technology and Financial Empire". Combined view: Business&Technology.md, "From DARPA to Silicon Valley — Combined View".
 
+## Internet Coordination and Protocols — Business Angle (Condensed, No Duplication)
+
+Full sections: Technology.md, "How the Internet Works — From a Name to a Page", "Internet Protocols", and "Internet vs Road Networks". This is only the business angle on the same notes.
+
+- Names and addresses are a regulated commons, not a product a single company sells: ICANN policy, IANA functions through PTI, and the five RIRs allocate a finite resource (IPv4 exhausted at the top level in 2011, with later regional exhaustion) under community policy, so address scarcity, transfers, and IPv6 migration are cost and planning items for any ISP or hosting business, not just technical details.
+- Registries and registrars are a franchise-like market: a TLD registry (Verisign for .com, NIXI for .IN) runs the zone, registrars sell names, and disputes run through UDRP providers such as WIPO rather than through ICANN staff. A business buying a domain is buying a registration in that chain, not ownership of the name system.
+- CDNs and edge caching are a distribution business: paying to cache content near users trades infrastructure cost for latency and origin load, the same trade a local warehouse makes against a central one. The road analogy's "local godown" is the business model in miniature.
+- Protocols are open standards, not licensed products: because TCP/IP, DNS, HTTP, TLS, BGP, DHCP, and mail protocols are IETF RFCs, a business does not pay a protocol owner, but it does pay for implementation, support, certificates, and compliance. Certificate validation levels are a trust purchase: DV proves domain control only, so a padlock is not a trust mark for customers; OV and EV cost more validation and no longer buy a company name in the browser bar.
+- India compliance is a distinct cost line: TRAI regulates telecom and net neutrality, DoT licenses ISPs, MeitY orders blocks under section 69A of the IT Act, and CERT-In handles incident response. A business operating in India must separate those four roles in its compliance map; collapsing them into "TRAI blocks sites" misassigns the decision-maker.
+- The ICG correction is a governance lesson: a coordination body created for a single transition closed when its job ended in 2016. Temporary governance structures should be recorded with their end date, not carried forward as permanent regulators.
+- Road analogies as market-access reading: last-mile ISPs, backbone operators, and CDNs correspond to city roads, national highways, and local warehouses. The business question in each layer is the same: who controls the bottleneck, what does access cost, and what happens when that layer changes its rules.
+
+## Internet Protocols — Business Angle (Condensed)
+
+Full section: Technology.md, "Internet Protocols". Business points only: open standards remove protocol licensing cost but create support and security-patching cost; TLS is a certificate and lifecycle cost (Let's Encrypt automated DV versus paid OV/EV); BGP is an operator-level capability that decides whether a network's routes are trusted by peers, so a routing misconfiguration is a revenue outage, not a lab error; DHCP, DNS, NTP, and SNMP are operational services whose failure modes (address exhaustion, stale cache, clock drift, blind monitoring) are business continuity risks; plain FTP is a security liability and should be replaced by SFTP or FTPS in any customer-facing workflow.
+
+## Amazon.in Walkthrough — Business Angle (Condensed)
+
+Full section: Technology.md, "Walkthrough — Visiting https://www.amazon.in". Business points only: a storefront visit is a chain of paid services (DNS, CDN edge, certificate lifecycle, hosting) and a chain of trust decisions (CA store, certificate validity, clock accuracy); a single broken link in that chain is a lost sale, not a technical footnote. The TLS trust correction matters commercially: a business cannot buy trust from ICANN, it earns browser trust through a valid certificate chain and correct time, DNS, and hosting configuration.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.

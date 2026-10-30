@@ -3965,6 +3965,193 @@ This section merges five overlapping notes into one, without repeating them: how
 - Already covered elsewhere, not repeated: ARPA, ARPANET, TCP/IP, NSFNET, Silicon Valley companies, cloud providers, and SWIFT are in "Evolution of American Computer Network Technology and Its Global Expansion"; this section adds only the five-system model, the venture capital stages, the India bank purchase example, the layer control table, the X1 Yoga connection chain, and the corrections above.
 - Full section: this Technology.md section. Business angle: Bussiness.md, "From DARPA to Silicon Valley — Business Angle". Combined view: Business&Technology.md, "From DARPA to Silicon Valley — Combined View".
 
+## How the Internet Works — From a Name to a Page (Audited, De-duplicated)
+
+This section merges thirteen overlapping source notes received 2026-10-30 into one new-gaps-only account. Everything already in Technology.md in detail — TCP/IP layers, DNS/phone-book history, ISP hierarchy, TLS history — is not repeated here; only the new steps, the coordination roster, the road analogies, and the DNS-caching / HTTPS-handshake / certificate details are added. No diagram was built; the source flowcharts are transcribed as numbered text lists, per the standing no-diagram rule.
+
+### Simple request flow
+
+1. You type a name, for example www.google.com or www.youtube.com, in the browser.
+2. Your device asks a DNS resolver, usually supplied by your ISP or a public resolver such as Google DNS at 8.8.8.8, for that name's IP address.
+3. The resolver checks its cache. On a miss it walks the DNS hierarchy: root servers, then the TLD server for .com, then the authoritative server for the domain.
+4. The authoritative server answers with an IP address. The examples in the sources, 142.250.190.68 and 142.250.190.14 for Google, are single addresses inside a Google range, not a fixed "the" address for www.google.com; Google answers vary by location, load, and anycast.
+5. Your device sends packets to that address through your home router, your ISP, and backbone providers to the server or its CDN edge.
+6. The server or CDN sends the content back in packets; the browser reassembles them and renders the page with HTML, CSS, and JavaScript.
+
+Corrections to the simple version: DNS resolution normally goes through a local or recursive resolver and its cache, not straight from the device to a single DNS authority. The return path is not necessarily "the same internet highway" — Internet routing is commonly asymmetric, so replies may take a different path from requests. The source's "traffic lights guiding cars" is an analogy only: routers forward packets by destination and policy, they do not time traffic like signals. Undersea cables are typically owned by consortia of carriers and content companies, not by big technology companies alone. HTTPS, TLS, CDN, and HTTP request details are simplified out of the simple steps and are covered separately below.
+
+### Who coordinates what — the roster, corrected
+
+- ICANN (Internet Corporation for Assigned Names and Numbers): coordinates the DNS root zone and domain-name policy through a multistakeholder process, and oversees the IANA functions. It does not own the Internet, does not operate every root server, and does not itself settle domain disputes.
+- IANA functions, performed by Public Technical Identifiers (PTI), an ICANN affiliate: the DNS root zone, allocation of large IP address blocks to the five Regional Internet Registries, and protocol parameter registries, including service and port numbers. Since the IANA stewardship transition completed 1 October 2016, oversight sits with the global multistakeholder community, not with the U.S. government under the old NTIA contract.
+- RIRs, five in total: AFRINIC (Africa), APNIC (Asia-Pacific, including India), ARIN (United States, Canada, many Caribbean and North Atlantic islands), LACNIC (Latin America and the Caribbean), and RIPE NCC (Europe, the Middle East, and parts of Central Asia). They allocate IP addresses and Autonomous System Numbers to ISPs and organisations in their regions under community-developed policies, and maintain public WHOIS/RDAP databases for those resources. The sources name only three RIRs in places; the full list is five.
+- Root server operators: 13 logical root servers, letters A to M, run by 12 independent organisations. Verisign runs two, A and J. The others include USC Information Sciences Institute (B), Cogent (C), University of Maryland (D), NASA (E), Internet Systems Consortium (F), U.S. Defense Information Systems Agency (G), U.S. Army Research Laboratory (H), Netnod of Sweden (I), RIPE NCC (K), ICANN (L), and the WIDE Project of Japan (M). The "13 servers" are logical identities: each is anycast to many physical instances worldwide, on the order of 2,000 instances in 2026, so a location column naming one city per letter is misleading.
+- IETF (Internet Engineering Task Force): develops Internet protocol standards, published as RFCs, through working groups, with the Internet Architecture Board overseeing architecture and the Internet Engineering Steering Group approving standards. Rough consensus, not voting, is its decision norm.
+- W3C (World Wide Web Consortium): sets web standards such as HTML, CSS, and accessibility guidance. Its working-group names in the sources are simplified and in part historical; the consortium's groups have been reorganised over time.
+- ISOC (Internet Society): a nonprofit advocating an open Internet, and the organisational home of the IETF, whose operations run through IETF LLC. It supports, but does not run, the UN-convened Internet Governance Forum.
+- ISPs and backbone providers: ISPs such as Jio, Airtel, BSNL, Comcast, and AT&T connect users and carry their traffic; backbone and cable operators such as Tata Communications, NTT, and AT&T run long-distance and undersea infrastructure. A CDN such as Cloudflare or Akamai caches popular content at edge locations near users; a CDN node is not a warehouse that stocks videos the way a shop stocks goods.
+- Governments: regulate locally — licensing, privacy, lawful interception, and court- or statute-based blocking — within their own jurisdiction. They do not jointly run the global DNS.
+- Cybersecurity response: national CERTs such as CERT-In (India, under the Ministry of Electronics and Information Technology) respond to incidents and issue alerts. There is no single global cybersecurity organisation protecting the Internet; operators, vendors, and CERTs share the work.
+
+### ICG — the correction that matters most in this roster
+
+The source lists an "Internet Coordination Group" (ICG) as an ongoing body overseeing technical coordination. That is wrong as a current description. The ICG was the IANA Stewardship Transition Coordination Group, formed in 2014 to assemble the transition proposal from the domain-names, numbering, and protocol-parameters communities. When the NTIA contract expired on 30 September 2016 and stewardship transferred on 1 October 2016, the ICG stated its work was complete and formally concluded its existence. Do not cite ICG as a live coordinator.
+
+### ICANN in detail — structure, with limits stated
+
+- Board of Directors: approves policy developed through the multistakeholder community; it is not a sole legislature for the Internet.
+- GNSO (Generic Names Supporting Organization): policy for generic top-level domains such as .com and .info.
+- ccNSO (Country Code Names Supporting Organization): policy for country-code domains such as .in and .uk.
+- ALAC (At-Large Advisory Committee): represents individual end users.
+- SSAC (Security and Stability Advisory Committee): advises on DNS security and stability; it does not operate security for the Internet.
+- WHOIS data: ICANN policy requires registrars and registries to maintain registration data; ICANN does not itself hold every domain owner's record.
+- Disputes: a claim over a name such as mybrand.com is not settled by ICANN staff. ICANN policy provides the Uniform Domain-Name Dispute-Resolution Policy (UDRP); disputes are decided by approved dispute-resolution providers, including the WIPO Arbitration and Mediation Center. WIPO is a UN specialised agency; its UDRP decisions are administrative, not court judgments, and courts can still be approached. The source analogy to a court handling traffic violations is therefore inaccurate.
+
+### IANA in detail — what it does and does not do
+
+- IP allocation: large blocks to RIRs. The source example 103.0.0.0/8 is an APNIC block; treat the prefix as an example of the mechanism, not as a current allocation statement.
+- DNS root management: IANA maintains the root zone, the master list of top-level domains and their delegations. It does not operate .com or .net: Verisign operates the .com and .net registries under contract, and each TLD's registry operates its own zone.
+- Protocol assignments: port and protocol numbers, for example port 80 for HTTP and port 443 for HTTPS, are recorded in IANA registries on the basis of IETF standards work, not invented by IANA alone.
+- Time zones: IANA maintains the Time Zone Database used by operating systems. That is not the same as coordinating clock synchronisation: NTP is an IETF protocol, and time is served by separate NTP servers. The source line conflating the two is corrected here.
+
+### Naming and addressing in two chains — do not merge them
+
+The sources merge two different chains into one numbered list. They must be kept apart.
+
+Allocation chain (how an address comes to exist, before any query): ICANN policy, then IANA functions, then the RIR for the region, then a Local Internet Registry such as an ISP, which assigns addresses to customers. This chain runs once per allocation, not once per web visit.
+
+Query chain (how a name is resolved, on every visit unless cached): your device's stub resolver, then a recursive resolver (ISP or public resolver), then root servers, then TLD servers, then authoritative servers, then the answer back to the device. The resolver, not the device, talks to root, TLD, and authoritative servers. Root servers do not host websites and do not direct all Internet traffic; they answer only DNS root queries, and only when the resolver's cache has no referral. TLD servers manage a domain ending: Verisign for .com, and NIXI as the .IN registry for India. Authoritative servers hold the domain's actual records and are run by the domain owner or its hosting or DNS provider.
+
+### Device to resolver, step by step
+
+1. You type www.example.com. The device needs an IP address; a name alone cannot be routed.
+2. The device asks its configured recursive resolver, from the ISP or a public resolver such as 8.8.8.8.
+3. The resolver checks its cache. A hit returns the answer at once.
+4. On a miss, the resolver asks a root server: which servers serve .com? The root referral points to the .com TLD servers.
+5. The resolver asks a .com TLD server: which authoritative servers serve example.com? The TLD referral points to them.
+6. The resolver asks an authoritative server for www.example.com and receives the address. The source example 93.184.216.34 is the long-standing reserved example address for example.com.
+7. The resolver returns the address to the device, which connects to the web server over HTTP or HTTPS.
+8. Caching: browser, operating system, and resolver caches each remember answers until their Time to Live (TTL) expires. The TTL is set by the authoritative server's record, but a resolver may cap it by local policy, and root and TLD referrals carry their own TTLs, so a later visit may skip only some steps, not necessarily all of steps 4 to 6. Negative answers (NXDOMAIN) can also be cached for a shorter period. "Recursive" and "caching" are not two separate resolver types: a recursive resolver normally caches, and the device itself runs a stub resolver that forwards to it.
+
+### DNS caching and HTTPS — new gaps only
+
+DNS caching: caching reduces repeated queries and load on authoritative servers and speeds up repeat visits. It does not make DNS private: a plain DNS query is visible to the resolver and to the network path unless DNS over HTTPS (DoH) or DNS over TLS (DoT) is used, and even then the resolver itself still sees the query.
+
+HTTPS: HTTP over TLS. The source's "SSL/TLS" wording is updated: SSL versions are deprecated and insecure; current practice is TLS 1.2 and TLS 1.3. HTTPS encrypts the HTTP content between browser and server and authenticates the server by certificate, but it does not by itself hide the domain name from the network in all cases: the Server Name Indication (SNI) in the handshake can be visible unless Encrypted ClientHello (ECH) is used, and the DNS lookup precedes the HTTPS connection.
+
+HTTPS handshake, simplified, with the version difference stated: in TLS 1.2 the steps are ClientHello (supported cipher suites, random value), ServerHello (chosen suite, random value, certificate), certificate verification, key exchange, then encrypted session. In TLS 1.3 the handshake is compressed to roughly one round trip: the client sends key shares in its first message, the server replies with its key share and its certificate already encrypted, and there is no separate unencrypted certificate-and-key-exchange phase as in TLS 1.2. The source's five steps describe the TLS 1.2 shape; do not present them as the TLS 1.3 wire flow.
+
+Certificate verification in a browser checks the chain to a root in the browser or operating-system trust store, the certificate's validity dates, that the domain matches a Subject Alternative Name in the certificate, and revocation or distrust signals where the browser applies them. A failed check produces the browser's "connection is not private" warning; the warning is a browser decision, not a message from the CA.
+
+### Digital certificates and Certificate Authorities — new gaps only
+
+- A digital certificate binds a domain name to a public key, carries the issuer CA's signature, validity dates, and extensions. It is the server's credential, not proof of the organisation behind the site in all cases.
+- A CA issues certificates after validation. Examples: DigiCert, Let's Encrypt, and Sectigo (formerly Comodo, renamed in 2018). Let's Encrypt issues automated Domain Validation certificates only, typically with 90-day validity.
+- Validation levels: Domain Validation (DV) proves control of the domain only — a phishing site can hold a valid DV certificate, so a padlock does not mean a site is trustworthy. Organization Validation (OV) adds organisation checks. Extended Validation (EV) adds the most rigorous checks, but modern browsers no longer show the company name in the address bar for EV certificates; the source's "shows company name in browser bar" describes a discontinued browser user interface, not current behaviour.
+- Key roles, corrected for modern TLS: the public key in the certificate authenticates the server and, in older key-exchange designs, could encrypt a session secret. The private key, held only by the server, signs the handshake to prove possession. In TLS 1.2 with ephemeral Diffie-Hellman and in TLS 1.3, session keys are ephemeral and are not derived from the certificate's private key alone, so compromising a private key later does not retroactively decrypt recorded sessions that used forward secrecy. The source's "private key decrypts data" is therefore true only for obsolete RSA key transport, not as a general statement.
+
+### Corrections list for this batch
+
+- ICANN does not own the Internet, operate all root servers, hold all WHOIS data, or settle domain disputes itself; UDRP providers decide disputes under ICANN policy.
+- IANA functions are performed by PTI, not by a department that "controls" .com; Verisign operates .com/.net, NIXI operates .IN.
+- ICG is closed since 1 October 2016; it is not a live coordination body.
+- Root servers are 13 logical identities over about 2,000 anycast instances run by 12 organisations; they answer DNS root queries only, not all traffic.
+- The allocation chain and the query chain are different chains; the source's single 1-to-7 list that puts DNS resolvers last inverts the query order.
+- Google example IPs are range examples, not fixed addresses; 93.184.216.34 for example.com is a reserved example address.
+- W3C is a web-standards consortium, not a road-construction authority; ISOC is a nonprofit, not a transport ministry; BIS and ARAI are Indian standards and vehicle-testing bodies, not global Internet standards bodies. All road mappings in the next section are analogies only.
+- SSL is deprecated; TLS 1.2 and 1.3 are the current protocols, and the handshake steps differ between them.
+- A padlock and a DV certificate do not prove a site is trustworthy; EV company-name display in the address bar is discontinued.
+
+## Internet vs Road Networks — USA, India, and RTO (Analogy Only)
+
+This section merges the two road-analogy source notes. Every mapping below is an analogy for teaching; none of these bodies is the Internet equivalent of the road body in law, funding, or operation.
+
+### Part-to-road mapping
+
+- User device: your own vehicle (car or bike). Examples in the sources: Tesla or Ford in the USA, Hero bike or Tata car in India. These are illustrations, not technical claims.
+- Website address: the destination name, like "Statue of Liberty" or "India Gate" typed into GPS; the Taj Mahal and Charminar examples in the sources are the same idea.
+- DNS: the GPS or signboard system that turns a name into a route. The RTO does not do this job: an RTO registers vehicles and issues licences and plates, it does not map names to coordinates. Split the analogy correctly: DNS is like maps and signboards; ICANN, IANA, and RIRs are like registration authorities.
+- IP address: the exact address or coordinates, like 1600 Pennsylvania Avenue or Rashtrapati Bhavan in the sources, or a PIN code or street number in the Indian version.
+- ISP: local city roads or toll expressways that get you from home to the highway. USA examples: Comcast, AT&T. India examples: Jio Fiber, Airtel broadband.
+- Router: in the sources, a traffic signal, toll gate, or roundabout. Corrected: a router forwards packets toward their destination by address and routing policy; it does not stop and release traffic on a timed signal cycle. The signal comparison is a teaching image only.
+- Data packets: vehicles carrying goods, such as a FedEx truck or an India Post van. Corrected: one message is split into many packets that may travel different paths and arrive out of order for reassembly; a single van carrying one parcel is not an accurate model of that.
+- Modem or router device: the sources call it a toll-booth scanner or RFID gate. Corrected: a modem modulates and demodulates signals for the access medium, and a router forwards between networks; neither is a toll scanner, and home equipment is usually a combined gateway.
+- Backbone providers: national highways and flyovers. USA: the Interstate Highway System. India: the Golden Quadrilateral expressway network and national highways such as NH-44 (Delhi to Kanyakumari) and Hyderabad's Outer Ring Road, both named in the sources.
+- Content servers: warehouses or factories at the destination, such as an Amazon fulfilment centre in Texas or a Flipkart or Google facility in Mumbai in the sources. Those facility examples are source illustrations, not verified statements about which facility serves a given request.
+- CDNs: local godowns or mini-warehouses near cities, such as an Amazon hub in New York or a Cloudflare node in Bengaluru in the sources. The function that carries over is caching near users; the stocking model does not.
+- Protocols (TCP/IP, HTTP): traffic rules. USA: right-hand driving and speed limits. India: left-hand driving, lane rules, and horn use. The driving side is correct; the protocol comparison is an analogy only.
+- Coordination bodies: USA Department of Transportation and India's NHAI (National Highways Authority of India) appear in the sources as the road-side counterparts of ICANN, IANA, IETF, and W3C. Corrected: the U.S. DOT and NHAI build and manage roads; they do not set Internet standards, and ICANN, IANA, IETF, and W3C do not build roads. The shared property is only that each system has planners, operators, and rules.
+
+### India road-transport version, with corrections
+
+- ICANN, IANA, and RIRs map in the sources to MoRTH (Ministry of Road Transport and Highways), RTOs, and state vehicle-registration offices, assigning IP addresses like vehicle numbers. Corrected nuance: RTOs are state transport-department offices; MoRTH sets national policy and oversees bodies such as NHAI, but vehicle registration itself is a state function. The registration analogy works for allocation; it does not work for DNS lookup.
+- IETF and W3C map in the sources to BIS (Bureau of Indian Standards) and ARAI (Automotive Research Association of India). Corrected: BIS sets Indian standards and ARAI tests and certifies vehicles; neither sets global Internet protocols or web standards. The analogy holds only at the level of "a standards and testing body exists".
+- ISOC maps in the sources to MoRTH as a policy-making ministry. Corrected: ISOC is a nonprofit advocacy and standards-support organisation, not a government ministry, and it does not make transport policy.
+- Government control maps to police checkpoints and border security. Source examples, corrected: the TikTok ban in India in June 2020 was ordered by the Ministry of Electronics and Information Technology under section 69A of the IT Act, with the Department of Telecommunications directing ISPs to implement it; "banned via DOT" alone omits the ordering authority. ISP blocking of torrent sites likewise normally follows court orders or MeitY directions, not ISP discretion alone. TRAI (Telecom Regulatory Authority of India) regulates telecom tariffs and, through its 2016 discriminatory-tariff prohibition and 2017 net-neutrality recommendations, is the Indian net-neutrality regulator; it does not itself order website blocks, and content-blocking orders come through MeitY and DoT channels. DoT licenses ISPs; it does not unilaterally write Internet content law.
+- Backbone examples: Reliance and Tata cables in the sources are Tata Communications and Reliance Jio infrastructure in the Indian market. BSNL is named in the sources as a backbone provider; BSNL is primarily a telecom operator and ISP, and naming it as a global backbone operator overstates its role.
+- YouTube-from-India flow in the sources: open YouTube, DNS finds the address, packets ride Jio or Airtel local access, routers direct them, backbone cables carry them, a CDN in India serves cached video, the server responds, and the browser plays it. Corrected: the "return via the same route" line is wrong for the same asymmetric-routing reason as above, and a request to google.com or youtube.com is served by the nearest Google edge or data-centre capacity, not by a Google office in Hyderabad; the Hyderabad office is a workplace, not the serving data centre.
+
+### Why the analogy still works, and where it stops
+
+It works for three ideas: names must resolve to addresses before travel; traffic follows shared rules; and capacity near the user is faster than capacity far away. It stops at enforcement, ownership, and failure: Internet coordination is multistakeholder and largely voluntary at the standards layer, road transport is state-licensed and police-enforced; a road closure is a physical fact, a DNS or routing change is a configuration fact that propagates; and unlike a vehicle, a packet is not a single object that must arrive whole or not at all.
+
+### Corrections list for the road section
+
+- RTOs register vehicles; they do not resolve names to addresses. DNS is the maps-and-signboards side of the analogy, not the RTO side.
+- Routers forward by address and policy; they are not traffic signals. Packets are split, parallel, and reassembled; they are not single vans.
+- U.S. DOT and NHAI do not set Internet standards; ICANN, IANA, IETF, and W3C do not build roads.
+- MoRTH sets national road policy; vehicle registration is a state RTO function.
+- BIS and ARAI are Indian standards and testing bodies, not Internet standards bodies. ISOC is a nonprofit, not a ministry.
+- TikTok's India ban was a MeitY section 69A order implemented through DoT; torrent-site blocking normally follows court or MeitY orders; TRAI regulates telecom and net neutrality, it does not order content blocks.
+- BSNL is an operator and ISP, not a global backbone provider in the sense of Tata Communications or NTT.
+- A Google office in Hyderabad is not the server for google.com; serving capacity is edge and data-centre capacity, and return routing is commonly asymmetric.
+
+
+## Internet Protocols — What They Do, Who Standardises Them, and Where You Meet Them (Audited, De-duplicated)
+
+This section merges three overlapping protocol notes into one list. The standing correction applies throughout: the IETF standardises these protocols as open RFCs; it does not "own" them, and no protocol in this list is owned by ICANN, IANA, an RIR, or a Certificate Authority. CAs issue certificates used by TLS; they do not own TLS.
+
+### Core list
+
+- TCP/IP: IP addresses and routes packets; TCP adds reliable, ordered, connection-oriented delivery on top. IETF. Used by essentially all Internet applications, but real-time applications such as Zoom calls and online games commonly use UDP alongside or instead of TCP, because low latency matters more than TCP's retransmission guarantees. The source's "TCP/IP used in everything" needs that UDP qualification.
+- DNS: hierarchical name-to-address resolution, root to TLD to authoritative, as detailed in the previous section. Protocol standardised by the IETF; the namespace and address allocation are managed through ICANN, IANA, and the RIRs. Tools: nslookup, dig, Google DNS 8.8.8.8, Cloudflare DNS 1.1.1.1.
+- HTTP/HTTPS: request-response transfer of web resources. HTTP is standardised by the IETF, not by W3C; W3C standardises web content technologies such as HTML and CSS that ride on top of HTTP. HTTPS is HTTP over TLS. Tools: browsers, REST APIs in mobile apps, online banking and shopping sites.
+- SSL/TLS: encryption and authentication for a session. SSL is deprecated; TLS 1.2 and 1.3 are current, standardised by the IETF. Tools: HTTPS sites, secure mail transport, OpenSSL as a developer toolkit, VPNs that use TLS. Signal and WhatsApp use TLS for transport, but their end-to-end message encryption is the Signal Protocol, not TLS alone; do not collapse the two.
+- BGP (Border Gateway Protocol): exchanges routing information between autonomous systems, which is how ISPs and large networks learn paths to each other. IETF. It is operator infrastructure, not user-visible. Tools that observe it, such as BGPView, monitor BGP; traceroute and mtr do not run BGP, they trace packet hops and can only show the resulting path.
+- DHCP (Dynamic Host Configuration Protocol): a device requests configuration and a DHCP server leases it an IP address, subnet, gateway, and DNS resolver. IETF. Used by home routers and by phones and computers joining Wi-Fi. ipconfig and ifconfig display configuration and, on Windows, ipconfig can renew a lease; they are not themselves DHCP servers, and ifconfig is legacy on Linux in favour of ip.
+- IPsec: authentication and encryption at the IP layer, used for VPN tunnels and site-to-site security. IETF. Tools: Cisco AnyConnect, Fortinet, Windows built-in VPN, corporate routers and firewalls.
+- SMTP, POP3, IMAP: mail protocols. SMTP sends mail between servers and from a client to its submission server; POP3 downloads and usually removes mail from the server; IMAP keeps mail on the server and syncs folders across devices. IETF. Tools: Gmail, Outlook, Thunderbird, phone mail apps, Postfix, Sendmail, Microsoft Exchange. Note: web Gmail in a browser talks to Google over HTTPS APIs; SMTP and IMAP are the protocols mail clients and servers use, not the web interface itself.
+- FTP (File Transfer Protocol): client-server file upload and download. IETF. Plain FTP sends credentials and data unencrypted and is legacy for public use. Tools: FileZilla, WinSCP, Cyberduck, hosting panels such as cPanel. Correction: sftp is not FTP over a secure channel; it is the SSH File Transfer Protocol, a different protocol over SSH. FTP over TLS is FTPS.
+- SNMP (Simple Network Management Protocol): monitoring and managing network devices by polling status and receiving traps. IETF. Tools: Nagios, Zabbix, PRTG, SolarWinds, and the agents in routers and switches.
+- NTP (Network Time Protocol): synchronises clocks by querying time servers. IETF. Tools: Windows Time Service (w32time), Linux ntpd and chronyd, and the NTP Pool Project (pool.ntp.org), which is the public pool most systems use rather than a single "NTP.org server". Phones also receive time from their carrier network, so NTP is not the only phone time source.
+
+### Corrections list for the protocol notes
+
+- "Owned by IETF" is corrected to "standardised by IETF as open RFCs"; ICANN and IANA manage names and addresses, they do not create protocols; RIRs allocate addresses, they do not manage protocols; CAs issue certificates, they do not own TLS.
+- HTTP is IETF, not W3C; W3C covers HTML, CSS, and related web standards.
+- SSL is deprecated; TLS is the current standard.
+- Real-time apps use UDP as well as TCP; traceroute and mtr do not use BGP; ipconfig and ifconfig are not DHCP servers; sftp is SSH-based, not FTP; web Gmail is HTTPS, not SMTP/IMAP in the browser; Signal and WhatsApp end-to-end encryption is the Signal Protocol over TLS transport, not TLS alone.
+
+## Walkthrough — Visiting https://www.amazon.in (Audited, New Gaps Only)
+
+Most of this walkthrough repeats the previous sections; only its Amazon-specific steps and its errors are recorded here, so nothing is missed and nothing is duplicated.
+
+1. Type https://www.amazon.in. The device asks its recursive resolver for www.amazon.in. The resolver walks root, then the .in TLD (NIXI registry), then Amazon's authoritative name servers, which Amazon operates through Route 53. The source's result IP, 205.251.242.103, is not to be quoted as Amazon.in's web address: that range belongs to Amazon's Route 53 DNS infrastructure, and the address a browser actually connects to for amazon.in is a CloudFront edge address that varies by location and time. Treat 205.251.242.103 as a source example, not as a verified amazon.in server IP.
+2. TCP connection: the standard three-way handshake, SYN, SYN-ACK, ACK, establishes a reliable, ordered connection, standardised by the IETF.
+3. TLS handshake: Amazon sends its certificate, the browser verifies it against its trust store, and the two sides derive session keys. Correction to the source: ICANN does not "indirectly manage the root of trust through IANA" for TLS. The DNS root and the TLS certificate trust store are different roots. TLS trust comes from root CA certificates shipped in browsers and operating systems, plus the chain the server presents. IANA's root zone has nothing to do with whether DigiCert or Let's Encrypt is trusted by a browser. The CA-as-RTO analogy is also corrected: a CA verifies domain control (DV) or organisation details (OV/EV); it does not verify a driving licence, and an RTO does not issue TLS certificates.
+4. HTTP request: the browser sends a GET request for the homepage and receives HTML, CSS, and JavaScript. HTTP is standardised by the IETF; W3C standardises the HTML and CSS that the response carries, not HTTP itself. Modern browsers may use HTTP/2 or HTTP/3 rather than a single plain HTTP/1.1 request.
+5. Browsing, clicks, and searches: each new page or resource sends further HTTPS requests, and the browser may reuse a connection, open new ones, or fetch from other domains (images, scripts, APIs), each needing its own DNS lookup and TLS handshake. Amazon CloudFront is Amazon's CDN service for delivering that content from edge locations; there is no separate "CDN protocol" distinct from HTTP and TLS that CloudFront invents. The source's "stays connected using the same TLS channel" is therefore simplified: connection reuse happens, but it is not one channel for every click and every domain.
+6. Background services, in correct order: DHCP and NTP do not happen after browsing. DHCP assigns the device's local IP address, gateway, and resolver when it joins the network, before any DNS lookup can happen. NTP synchronises the clock continuously in the background, and accurate time matters for certificate validity checks, because a clock far in the past or future can make a valid certificate appear expired or not yet valid. The source's insurance-renewal and dashboard-clock analogies are teaching images only.
+
+### Corrections list for the walkthrough
+
+- 205.251.242.103 is a Route 53-range example, not a verified amazon.in web server address; amazon.in is served from varying CloudFront edge addresses.
+- TLS trust comes from browser and operating-system CA stores, not from ICANN or IANA.
+- HTTP is IETF; W3C covers HTML and CSS, not HTTP.
+- DHCP precedes browsing; NTP runs continuously; neither is a step that follows a page load.
+- Clicks do not all share one TLS channel; connections are reused, opened anew, and split across domains, with separate DNS and TLS steps where needed.
+- No flow diagram or comic version was built from the source's closing offer, per the standing rule.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.

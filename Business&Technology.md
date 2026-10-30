@@ -715,6 +715,18 @@ Audited kernel branches, read together, without repeating the full technical sec
 - Combined corrections: Ethernet is American, Xerox PARC 1973, TCP/IP is American, Linux is Finnish and global, the Web is European at CERN, SWIFT is Belgian and messaging-only, and American influence is substantial but interdependent with Taiwan, South Korea, Japan, Europe, China, India, and others.
 - Full technical detail: Technology.md, "From DARPA to Silicon Valley — How America Built a Global Technology and Financial Empire". Business angle: Bussiness.md, "From DARPA to Silicon Valley — Business Angle".
 
+## How the Internet Works, Who Coordinates It, and the Road Analogy — Combined View (Condensed)
+
+Full sections: Technology.md, "How the Internet Works — From a Name to a Page", "Internet vs Road Networks", and "Internet Protocols". Business angle: Bussiness.md, "Internet Coordination and Protocols — Business Angle".
+
+- One request, two chains: the allocation chain (ICANN policy, IANA functions, RIR, ISP) creates addresses long before a visit, and the query chain (device, recursive resolver, root, TLD, authoritative) resolves a name on each visit unless cached. Keeping those chains separate is the single most important correction in this batch.
+- No single owner, several coordinators: ICANN, IANA through PTI, five RIRs, 12 root-server operators running 13 logical servers, IETF for protocols, W3C for web standards, ISOC as advocate and IETF home, ISPs and backbone operators for carriage, CDNs for edge caching, and governments for local law. The ICG is not a current coordinator; it closed in 2016 after the IANA transition.
+- Roads help only as analogy: devices are vehicles, DNS is maps and signboards, IP addresses are street addresses, ISPs are local roads, backbones are highways, CDNs are local warehouses, protocols are traffic rules. Registration authorities (ICANN, IANA, RIRs) correspond to RTOs, not to maps; standards bodies (IETF, W3C) correspond to BIS and ARAI only at the level of "a standards body exists"; ISOC is a nonprofit, not a ministry; and in India, TRAI, DoT, MeitY, and CERT-In have four different jobs that must not be collapsed.
+- Security in one line: DNS caching speeds repeat visits but does not hide queries; TLS 1.2 and 1.3 encrypt HTTP content and authenticate the server by certificate, with DV proving domain control only; a padlock is not a trust mark, and EV company-name display in the browser bar is discontinued.
+- Protocols are open IETF standards, not owned products: TCP/IP, DNS, HTTP, TLS, BGP, DHCP, IPsec, mail, FTP, SNMP, and NTP, each with the everyday tools named in Technology.md.
+
+- Amazon.in walkthrough: DNS through root, .in (NIXI), and Amazon Route 53, then TCP handshake, TLS certificate verification against browser CA stores (not ICANN), HTTP GET, CloudFront edge delivery, with DHCP before browsing and NTP running throughout. The source IP is a Route 53-range example, not a verified amazon.in server address.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.
