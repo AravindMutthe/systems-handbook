@@ -4501,6 +4501,56 @@ Verified against vendor documentation for PCIe point-to-point links and IEEE 802
 - Tree, for a true tree network: root and branch utilization, and subtree impact of a branch failure. For DNS, the equivalent telemetry is query latency, cache hit rate, and resolver failure rate, which are naming metrics, not topology metrics.
 - Broadcast domain: broadcast frame rate, flooding volume, and loop or storm indicators, because an uncontrolled broadcast domain fails by flooding, not by link loss.
 
+## Kernel Objects for a Pod — Runtime-Created Versus Application-Created (Audited, Official Sources Only, Elaborate Only)
+
+Verified against kubernetes.io Pods documentation (a pod is a group of containers with shared storage and network, co-located and co-scheduled, in a shared context of Linux namespaces, cgroups, and other isolation facets) and the Linux namespaces(7) man page (cgroup, IPC, network, mount, PID, user, UTS, with time added later). Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule. The source gives two overlapping versions of the same list; they are merged here, not carried twice.
+
+- *Correction: "kernel objects = C structures" is a teaching simplification, not a definition. The kernel represents namespaces, cgroups, processes, sockets, and memory areas with internal C data structures, but they are not one uniform object type, and most are not visible to user space as objects. A file descriptor, for example, is an integer index in a per-process table that refers to an open file description, not a kernel object in the same sense as a namespace. The useful distinction is not "C structure", but "what the kernel tracks, and who creates it".*
+- *Correction: Kubernetes itself does not directly create these kernel objects. Kubernetes creates the Pod API object and asks the kubelet and the container runtime, through the CRI, to create the pod sandbox. The runtime, usually runc through containerd or CRI-O, creates the namespaces and cgroups, and the CNI plugin creates the network interfaces. Saying "the container runtime directly creates" is closer, but "Kubernetes creates" skips the kubelet, CRI, runtime, and CNI layers.*
+
+### Runtime-created for the pod sandbox
+
+#### Namespaces
+
+- Namespaces isolate what a process can see: network interfaces and addresses, process IDs, IPC objects, mount points, hostname, user IDs, and, in newer kernels, time.
+- *Correction: the source's list, Net, PID, IPC, MNT, and UTS, is incomplete and its sharing model is wrong if read as "one set per pod, all shared". The full Linux set is mount, UTS, IPC, PID, network, user, cgroup, and time. In a pod, the sharing differs by type: the network namespace is shared by all containers in the pod, which is why they share one pod IP and localhost. The IPC namespace is normally shared by the pod sandbox. The UTS namespace gives the pod its hostname. The mount namespace is per container, with shared volumes mounted into each. The PID namespace is per container by default, and only shared when the pod sets shareProcessNamespace to true. The user and cgroup namespaces depend on the runtime and configuration. So "a dedicated set for each pod" is true for the sandbox, but "all containers share all of them" is false.*
+- Deployment and StatefulSet do not change this: they are workload controllers that create Pod objects, and the runtime then creates the same sandbox objects for each pod.
+
+#### Cgroups
+
+- Cgroups enforce resource limits from the pod specification, such as CPU and memory requests and limits, and they account for usage per pod and per container.
+- *Correction: cgroups are not only CPU and memory police. In cgroups v2, the unified hierarchy can also limit process count, block I/O, and device access, and it provides memory pressure and accounting. The source's "YAML CPU and memory limits" is the common case, not the whole cgroup system, and a limit is enforced by throttling or by killing on memory overuse, not by a policeman that rewrites the application.*
+
+#### Network interfaces, net_device
+
+- The CNI plugin creates a virtual interface pair, a veth pair, with one end inside the pod's network namespace and the other end attached to a host bridge or routing setup, so traffic can enter and leave the pod's private network namespace.
+- *Correction: net_device is the kernel's internal structure for a network interface, not an object Kubernetes creates. The CNI plugin asks the kernel to create the interface, and the kernel creates the net_device. The veth pair is the mechanism, and the pod IP is assigned to the interface inside the pod namespace.*
+
+### Application-created, inside the pod
+
+#### Processes and threads
+
+- A container's application is a standard Linux process, with threads as execution units inside it, and the kernel scheduler schedules it like any other process, subject to its namespaces and cgroups.
+- *Correction: "just a standard Linux process" needs the qualifier that the source itself adds in the next clause. A container process is a normal process with additional constraints: its namespaces, its cgroups, its seccomp profile, its capabilities, and its mount table. The scheduler does not know it is a container, but the process cannot see or touch anything outside its namespaces, and it cannot exceed its cgroup limits.*
+
+#### File descriptors and inodes
+
+- Every open file, log stream, network connection, and pipe is tracked in a process by a file descriptor, a small integer that indexes the process's open-file table.
+- *Correction: a storage volume is NOT tracked as a file descriptor. A volume is mounted into the container's mount namespace, and files inside it are opened, which then creates a file descriptor for that open file. The mount itself is not a file descriptor, and closing a descriptor does not unmount a volume.*
+- *Correction: an inode is not created when an application opens a configuration file. An inode is the filesystem's metadata object for a file, created when the file is created, and opening an existing file looks up its inode. Opening a file creates a file descriptor and an open file description, not a new inode.*
+
+#### Network sockets
+
+- When an application listens on a port, such as 8080 for a web server, the kernel creates a socket bound to an address and port inside the pod's network namespace.
+- *Correction: the socket does not by itself "route incoming traffic directly to the correct container". Routing to the pod is done by the pod IP, the CNI forwarding, and, for Services, kube-proxy rules, and the socket is the endpoint that receives traffic once it arrives at that IP and port. Two containers in one pod cannot bind the same port, because they share one network namespace and one socket address space.*
+- A socket is also not only for internet traffic: Unix domain sockets are local, in the same way a network socket is for TCP or UDP.
+
+#### Virtual memory areas and anonymous pages
+
+- When an application allocates memory, the kernel creates a virtual memory area, a VMA, describing a contiguous range of the process's virtual address space, its permissions, and what backs it.
+- *Correction: creating a variable or object in Java, Go, or Python does not immediately allocate a physical RAM page. Allocation normally reserves virtual address space and creates or extends a VMA, and a physical anonymous page, a page not backed by a file, is faulted in only when the process first touches that address. That is why virtual size, resident size, and allocated size differ, and why an allocation can succeed and still fail later on first access if memory is exhausted.*
+- Anonymous pages are freed when the process exits or unmaps the region, and they are not shared between processes unless explicitly shared, unlike shared-memory pages.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6667,6 +6717,14 @@ Full section: compression.md Part 1, "Topologies — Physical, Logical, and the 
 - Buying a system because it is labelled mesh, or calling Kubernetes or Ceph a topology, misleads a purchasing decision. The question to ask a vendor is: what shape are the links, how many paths exist between two nodes, and what fails when one link or one centre device fails.
 - Telemetry follows the shape: measure contention on a bus, centre load on a star, path and convergence on a mesh, and broadcast flooding in a Layer 2 domain, not one generic health score.
 
+## Kernel Objects for a Pod — Business Angle (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "Kernel Objects for a Pod — Runtime-Created Versus Application-Created". Corrections in the full section are in italic text.
+
+- The business split is: the platform creates the sandbox, the application creates its own work inside it. Platform cost and failure live in namespaces, cgroups, and CNI interfaces. Application cost and failure live in processes, file descriptors, sockets, and memory areas.
+- That split matters for support boundaries. A pod that cannot start, has no IP, or hits a cgroup limit is a platform and runtime problem. A pod that runs but leaks file descriptors, binds the wrong port, or grows its virtual memory until it is killed is an application problem, even though the kernel reports both.
+- Port and namespace sharing inside a pod is a design constraint to check before deployment: two containers in one pod cannot bind the same port, and a pod's network identity is one IP, not one per container.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -7822,6 +7880,14 @@ Full section: compression.md Part 1, "Topologies — Physical, Logical, and the 
 - Broadcast: transmission mode, not a topology. VLAN broadcast domain is a Layer 2 boundary, bonding and LACP are link aggregation, not broadcast.
 - Media: guided and unguided carriers do not decide topology. The same radio can be star, point-to-point, or mesh.
 - Telemetry: per-shape metrics, contention on a bus, centre load on a star, path and convergence on a mesh, flooding in a broadcast domain.
+
+## Kernel Objects for a Pod — Combined View (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "Kernel Objects for a Pod — Runtime-Created Versus Application-Created". Corrections in the full section are in italic text.
+
+- Runtime-created: namespaces (network shared, IPC shared, UTS for hostname, mount per container, PID per container unless shareProcessNamespace, plus user, cgroup, and time), cgroups (CPU, memory, process count, I/O, device limits in v2), and veth interfaces created by the CNI, one end in the pod namespace.
+- Application-created: processes and threads, file descriptors for open files and sockets (not for volume mounts), inodes looked up on open not created on open, sockets bound in the pod network namespace, and virtual memory areas with anonymous pages faulted in on first touch, not on allocation.
+- Kubernetes creates the Pod object; kubelet, CRI, runtime, and CNI create the kernel state.
 
 ## Business Promotion — Combined View (No Diagram)
 

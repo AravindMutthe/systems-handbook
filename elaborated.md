@@ -6983,6 +6983,17 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 - Broadcast is a mode, not a shape. Example: a VLAN broadcast domain can be wired as a star of switches, and bonding two links into one logical link does not make it a broadcast topology.
 - Telemetry must match the shape. Example: on a bus, watch arbitration waits; on a star, watch the centre; on a mesh, watch path count and convergence after a link fails.
 
+## Kernel Objects for a Pod — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+
+- Namespaces are not all shared in a pod. Example: all containers share the pod IP and localhost, but each has its own PID namespace unless shareProcessNamespace is true.
+- Cgroups limit more than CPU and memory. Example: a cgroup can also cap process count, so a fork bomb hits a pids limit before it exhausts the node.
+- A volume mount is not a file descriptor. Example: mounting a volume creates no descriptor; opening a file inside it does, and closing that descriptor does not unmount the volume.
+- Opening a file does not create an inode. Example: opening /etc/config reads its existing inode; the inode was created when the file was first created.
+- A socket does not route traffic to a container by itself. Example: a Service and kube-proxy rules bring traffic to the pod IP, and the socket bound to that IP and port receives it.
+- Allocation does not allocate RAM at once. Example: malloc can return a pointer for a large region, and physical pages appear only when the program touches each page, which is why resident memory is smaller than virtual memory.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9674,6 +9685,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
+
+## Batch 15 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11124,6 +11140,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 
 ## Batch 14 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
+
+## Batch 15 — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
