@@ -4450,6 +4450,24 @@ This section records the address-management note. Its thesis concept is kept: th
 - Destination servers: one service can have many public IPs behind load balancers, each service listens on fixed ports (GitHub SSH TCP 22, GitHub HTTPS TCP 443, WhatsApp call UDP 3478 and TCP 5222 in the source's model), and millions of client sessions are multiplexed by the four-tuple of source IP, source port, destination IP, and destination port, together with the protocol.
 - No per-device table-flow illustration was built from the source's closing offer, per the standing rule; the table above is in text.
 
+## Business and Finance Networks in India — Technology Angle (Condensed, No Duplication)
+
+Full section: Bussiness.md, "Business and Finance Networks in India — Telegraph Era to Modi Era".
+
+- Telegraph to telephone: electric telegraph (1850s), then manual and automatic telephone exchanges, telex, and fax — each step cut the latency of price, order, and settlement information, which is why finance adopted each one as soon as it was available.
+- Liberalization technology: private mobile networks, PCO and STD access, and screen-based exchange trading from 1994 changed the transport layer for business from postal and branch processes to electronic networks.
+- Payment rails as infrastructure: RTGS (2004) for high-value real-time settlement, NEFT (2005) for batched retail transfers, IMPS (2010) for instant mobile transfers, and UPI (2016) as an interoperable instant-payment interface over IMPS rails. The business story in Bussiness.md depends on this stack order; UPI did not replace the settlement rails, it built an interface on them.
+- Access technology: broadband, 3G, 4G from Jio's 2016 launch, and 5G from 2022 changed the last mile for both commerce and payments, while Aadhaar-based e-KYC and Jan Dhan accounts changed the identity layer for account opening.
+- Regulation split, carried over: TRAI for telecom networks, RBI for payment systems, NPCI as operator of retail payment systems. A technology design that confuses those regulators will misassign compliance.
+
+## India's Supply Chain System and Its Subsystems — Technology Angle (Condensed, No Duplication)
+
+Full sections: Bussiness.md, "India's Supply Chain System — Global Structure, Indian Customization" and "Supply Chain Subsystems — Nine Gears".
+
+- System technology: container standards, port handling, national highways, dedicated freight corridors, and GST's e-way bill system (from April 2018) are the physical and tax infrastructure; ERP, MRP, MES, WMS, TMS, and demand-planning software are the application layers.
+- Digital rails: UPI settles payments, FASTag automates tolls, GPS tracks fleets, RFID and barcodes track stock, and IoT sensors monitor warehouses and cold storage. Blockchain sits in the emerging, not standard, column.
+- Subsystem stack in one line: procurement (ERP, e-procurement), production (MRP, MES, lean and JIT), inventory (WMS, RFID, IoT), logistics (TMS, GPS, FASTag, e-way bills), distribution (POS, e-commerce), demand (forecasting, CRM, AI and ML), finance (banking APIs, UPI, ERP finance), IT (ERP, cloud SCM, AI dashboards), and compliance (GRC, customs, tax, ESG), with reverse logistics as the missing loop.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.

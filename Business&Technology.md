@@ -762,6 +762,19 @@ Full sections: Technology.md, "DNS — Hardware Path and Software Side" and "Ide
 - Parallel trace: GitHub SSH from 192.168.1.101:55001 to 140.82.112.3:22, NAT to 198.51.100.10:40001, SSH key authentication; WhatsApp call from 192.168.1.101:56001 to 157.240.20.60:3478, NAT to 198.51.100.10:41001, signalling on TCP 5222 and token authentication. All values are source examples; media ports are negotiated by ICE, not fixed at 3478.
 - Address management: laptop one MAC and IP per interface with many ports; access point many client MACs; switch CAM table; router NAT table; ISP BGP prefix tables; DNS caches and zones; servers multiplexing by source IP, source port, destination IP, destination port, and protocol. The source's second switch example MAC is invalid (non-hexadecimal characters) and is corrected to a valid example in Technology.md.
 
+## Business and Finance Networks in India — Combined View (Condensed)
+
+Full section: Bussiness.md, "Business and Finance Networks in India — Telegraph Era to Modi Era". Technology angle: Technology.md, "Business and Finance Networks in India — Technology Angle".
+
+- Telegraph (1850s): East India Company lines cut intra-India trade information from weeks to minutes or hours; London links came later, via 1860s cable routes.
+- State monopoly (1947 to 1980s): Posts and Telegraph, then DoT (1985), MTNL (1986), BSNL (2000) in that order, with telex and fax as finance coordination tools.
+- Liberalization (1990s): 1994 telecom policy, private mobile operators, PCO and STD booths, NSE screen trading from November 1994, core banking spreading in the early 2000s.
+- Internet era (2000s to 2010s): RTGS 2004, NEFT 2005, IMPS 2010, Flipkart 2007, Snapdeal 2010, broadband, 3G, and 4G.
+- Modi era (2014 to present): Jan Dhan 2014, Digital India 2015, Jio 2016, UPI 2016, 5G 2022, with India leading in real-time payment volume, UPI generally free to users but not costless, and regulation split between TRAI (telecom) and RBI (payments).
+
+- India's supply chain: pre-1991 domestic, mandi and PDS based, with container handling already present at major ports from the 1970s; post-1991 global practices, ERP, and automotive chains (Maruti Suzuki from 1982, Hyundai 1996, Toyota 1997), highways and freight corridors from the 2000s onward, FMCG kirana last mile; Modi era Make in India 2014, GST 2017, e-way bills 2018, FASTag mandatory 2021, National Logistics Policy 2022, with global ISO, container, WTO, and ERP standards still borrowed — a hybrid system.
+- Nine subsystems: procurement, production (MRP, MES), inventory (WMS, RFID, IoT), logistics (TMS, GPS, FASTag, e-way bills), distribution (kirana, Amazon, Flipkart, Reliance Retail), demand (forecasting, CRM, AI/ML), finance (banking APIs, UPI, ERP finance), IT (ERP, cloud SCM, AI dashboards, blockchain as emerging), compliance (GRC, customs, tax, ESG), with demand, finance, IT, and compliance running throughout and reverse logistics as the missing loop.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.
