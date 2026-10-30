@@ -6732,6 +6732,23 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
   - Key note: Governance is layered, like the stack itself. No single body governs the whole Internet, and the Linux Foundation hosts the kernel project but does not govern its network stack day to day.
   - Example: a Wi-Fi product needs IEEE 802.11, FCC/TRAI radio rules, kernel driver support, an IP from an RIR via an ISP, and DNS from the ICANN-managed root zone — all five layers at once.
 
+
+## Linux Kernel Branches (Subsystems) — Audited, Then Added (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- Audited first, then added, as instructed. Trusted sources checked: kernel source-tree documentation, MAINTAINERS system, and Linux networking documentation.
+  - Key note: Audit before adding matters because analogies look like facts when they are copied without marking. The government and business mappings are analogies, not kernel architecture.
+  - Example: "Executive = Scheduler" is a teaching analogy. Real kernel governance is maintainer delegation via MAINTAINERS, mailing lists, and trees.
+- Main branches, audited — init/ (startup, start_kernel in init/main.c), kernel/ (scheduler, signals, interrupts, timers), mm/ (memory management), fs/ (filesystems, VFS), net/ (network protocols), drivers/ (device drivers), security/ (LSM, SELinux, AppArmor), ipc/ (SysV IPC, POSIX message queues), sound/ (ALSA, top level), crypto/ (Crypto API), block/ (block I/O layer), virt/ (primarily KVM), arch/ (x86, ARM, RISC-V, and others), scripts/ (build scripts), tools/ (diagnostic tools).
+  - Key note: Each branch has a maintainer, tracked in MAINTAINERS, with fields for maintainer, reviewer, mailing list, status, files, and tree.
+  - Example: net/ has its own maintainers and mailing list, separate from fs/ or drivers/, which is how the kernel scales trust.
+- Networking branch, audited — core/ (device registration, socket buffers), ipv4/ipv6 (protocol stacks), packet/ (AF_PACKET raw sockets), netfilter/ (firewall, nftables), wireless/ (cfg80211, with mac80211 in net/mac80211/), bridge/ (Layer 2, Spanning Tree), vxlan/geneve (overlays).
+  - Key note: net/ is not one protocol. It is a set of protocol and feature directories, with core/ as the generic exception.
+  - Example: a Wi-Fi packet goes through wireless/mac80211, then net/core, then a driver in drivers/net/wireless — three different directories, three different maintainers' areas.
+- AI governance extension, speculative only — AI as automated advisors or governors, predicting overloads or breaches.
+  - Key note: Speculation must be marked as speculation, or it becomes a false fact in a later read.
+  - Example: self-healing OS is a research direction, not a kernel branch in mainline Linux today.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9350,6 +9367,14 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
   - Key note: Bringing an interface down stops its traffic but keeps its driver; unloading its driver removes it entirely and requires a reload to restore it.
   - Example: an IT admin brings an interface down for maintenance, but unloads a driver only when replacing or testing that driver.
 
+
+## Linux Kernel Branches (Subsystems) — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Kernel branches as departments, analogy only — init/kernel as management, mm as finance, scheduler as HR/operations, security as legal, drivers/net as R&D/IT, block/fs as logistics.
+  - Key note: Analogies help a business reader map a kernel, but they do not prove that a kernel works like a company.
+  - Example: memory pages are not money, and a scheduler does not hire employees — it assigns processes to CPUs.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10729,6 +10754,14 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 - Combined point — start/stop, types, directory map, and governance, read together, give the full kernel device picture without repeating five notes.
   - Key note: The merged section is the study unit. The five source notes are its inputs, not five separate sections.
   - Example: a student can start from the merged section, go to `drivers/net/` for a driver, to `net/ipv4/` for a protocol, and to the governance list for the authority behind each layer.
+
+
+## Linux Kernel Branches (Subsystems) — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — audited branches, analogy-only mappings, and speculative AI extension, kept distinct.
+  - Key note: Keeping verified, analogy, and speculative apart is the audit itself. Mixing them is how a study file becomes unreliable.
+  - Example: init/, mm/, net/, and drivers/ are verified; government and business mappings are analogy; AI governance is speculation.
 
 ## Business Promotion — Combined View (No Diagram)
 

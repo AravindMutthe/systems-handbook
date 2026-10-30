@@ -3248,6 +3248,77 @@ This section merges five overlapping notes into one, without repeating them: how
 - No diagram was drawn for these notes, per the rule book (md only, no diagram unless explicitly asked). The source offers to show the kernel internal tree, to extend with a kernel directory map, and to make a visual flow diagram of the governance chain were not acted on as diagrams — the directory map and governance chain are given here in text.
 - Full section: this Technology.md section. Business angle: Bussiness.md, "Linux Network Kernel Devices — Business Angle". Combined view: Business&Technology.md, "Linux Network Kernel Devices — Combined View".
 
+
+## Linux Kernel Branches (Subsystems) — Audited, Then Added (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Audit first, as instructed — source of truth checked before adding
+- Checked against trusted community and open-source sources, 2026-10-30: kernel source-tree documentation (kernel.org, OSDev Linux Kernel Primer, and kernel source-structure summaries), the MAINTAINERS system (LWN, kernel.org maintainer documentation), and the Linux networking documentation (kernel.org).
+- Verified true: the Linux kernel source tree has top-level directories arch, block, crypto, Documentation, drivers, fs, include, init, ipc, kernel, lib, mm, net, samples, scripts, security, sound, tools, usr, and virt — with init/main.c containing start_kernel, kernel/ containing process scheduling and timers, mm/ containing architecture-independent memory management, fs/ containing filesystems and the VFS, net/ containing network protocols, drivers/ containing device drivers, and sound/ and net/ treated as their own top-level directories with drivers in subdirectories, not under drivers/sound/.
+- Verified true: the kernel is broken into subsystems, each with a maintainer, most with a mailing list, tracked in the MAINTAINERS file, with fields for maintainer, reviewer, mailing list, status, files, and tree — decisions on patch acceptance are delegated to subsystem maintainers, each taking partial or full responsibility for a specific portion of the kernel.
+- Verified true for net/: net/ contains core (device handling, socket buffers, generic network features), ipv4 and ipv6 protocol stacks, packet (AF_PACKET raw sockets), unix (UNIX-domain sockets as a protocol family), bridge, netfilter, wireless (cfg80211/mac80211), vxlan, geneve, and other protocol and overlay directories — each protocol or feature in its own subdirectory, with core as the exception that implements generic features.
+- Not a kernel fact, analogy only: the government-branch analogy (Executive / Legislative / Judiciary) and the business-department parallels (Finance, HR, Legal, R&D, Logistics, Management) are teaching analogies from the source, not kernel architecture. The kernel has no "constitutional rules" — it has maintainers, a MAINTAINERS file, coding style, and review processes. Policies are not configs in a legislative sense, and departments are not subsystems in a corporate sense.
+- Corrected, from audit: see the Corrections list below. Only the audited, corrected version is added here, per your instruction to verify first, then proceed.
+- No diagram or essay expansion was made, per the rule book (md only, no diagram unless explicitly asked). The source offer to expand into a full visual chart or 3-page essay with diagrams was not acted on.
+
+### A. Kernel branch analogy, analogy only
+- Executive (President and Cabinet) → Kernel Core / Scheduler: executes all system tasks, manages CPU resources.
+- Legislative (Congress / Parliament) → Configuration and Build System: defines what features are included (laws → configs, as an analogy only).
+- Judicial (Courts / Auditors) → Security and Auditing Subsystem: enforces permissions, validates correctness.
+- This three-branch mapping is an analogy for teaching, not a description of kernel governance. Real kernel governance is maintainer delegation, mailing-list review, and tree integration, not executive, legislative, and judicial branches.
+
+### B. Main Linux kernel branches (subsystems), audited
+- init/ — startup and initialization process. Analogy in the source: President taking office, starts everything. Audited: init/ contains kernel initialization code, with start_kernel in init/main.c.
+- kernel/ — core logic, scheduler, signals, interrupts, timers. Analogy: executive control center. Audited: kernel/ is the core part, including process scheduling and timers, with architecture-specific process code in arch/*/kernel/.
+- mm/ — memory management (allocation, paging, swapping). Analogy: Treasury / finance ministry, allocates resources. Audited: mm/ contains architecture-independent memory management, with architecture-specific code in arch/*/mm/.
+- fs/ — file system, manages data storage and retrieval. Analogy: records ministry / public archives. Audited: fs/ holds supported filesystem code and file-operation code, each subdirectory supporting a filesystem.
+- net/ — networking stack, TCP/IP, sockets, routing. Analogy: ministry of communications / foreign affairs. Audited: net/ is the core of the network code, implementing common network protocols, each subdirectory corresponding to one aspect of networking.
+- drivers/ — hardware control modules (Ethernet, USB, GPU, sound). Analogy: infrastructure ministry, interacts with physical devices. Audited: drivers/ holds all device drivers, divided by type, with sound and networking treated differently — sound drivers live under sound/, network drivers under drivers/net/ and net/, not all under drivers/ alone.
+- security/ — SELinux, AppArmor, auditing. Analogy: judiciary / law enforcement. Audited: security/ is the Linux Security Module (LSM) framework, with SELinux, AppArmor, and other modules under it.
+- ipc/ — inter-process communication, pipes, semaphores, shared memory, as listed in the source. Analogy: inter-department communication (government briefings). Audited with correction: ipc/ contains SysV IPC (messages, semaphores, shared memory) and POSIX message queues; anonymous pipes are implemented in fs/pipe.c, not in ipc/.
+- sound/ — audio subsystem (ALSA). Analogy: media / broadcasting branch. Audited: sound/ is the sound subsystem, with ALSA in sound/, not drivers/sound/ — consistent with the earlier correction in this file.
+- crypto/ — cryptography algorithms (AES, SHA, RSA). Analogy: intelligence / defense ministry. Audited: crypto/ is the Crypto API, with algorithm implementations under it.
+- block/ — block device layer (HDDs, SSDs). Analogy: logistics and storage control. Audited: block/ is the block I/O layer, with block device driver I/O dispatch.
+- virt/ — virtualization layer (KVM, Xen, as listed in the source). Analogy: foreign embassy, creates virtual nations. Audited with correction: virt/ is virtualization infrastructure, primarily KVM (virt/kvm/); Xen as a hypervisor is not in virt/ — Linux Xen guest support lives in drivers/xen/, and Xen itself is a separate hypervisor.
+- arch/ — architecture-specific code (x86, ARM, RISC-V). Analogy: regional governance (states or provinces). Audited: arch/ contains code related to hardware architecture, each subdirectory for a supported architecture such as x86, ARM, ARM64, PowerPC, MIPS, RISC-V.
+- scripts/ — build automation and tools. Analogy: legislative aides / administrative assistants. Audited: scripts/ contains scripts used to build the kernel.
+- tools/ — diagnostic and monitoring utilities. Analogy: auditors / statistics bureau. Audited: tools/ contains tools helpful for developing Linux, including perf and self-tests.
+
+### C. Kernel networking branch breakdown (/net/), audited
+- core/ — network device registration and routing. Analogy: national post office, routes packets. Audited: net/core/ implements generic network features such as device handling, socket buffers, and multicasting.
+- ipv4/ and ipv6/ — Internet protocol stack. Analogy: mail sorting by address and zone. Audited: ipv4/ is the IPv4 stack (TCP, UDP, ICMP), ipv6/ is the IPv6 stack.
+- packet/ — raw packet sockets. Analogy: courier or express delivery service. Audited: net/packet/ is AF_PACKET, low-level packet sockets and raw socket access.
+- netfilter/ — firewall and filtering (iptables/nftables). Analogy: customs inspection / border control. Audited: net/netfilter/ is the firewall framework, with nf_tables and conntrack, and iptables/nftables as user-space front ends.
+- wireless/ — Wi-Fi stack (cfg80211/mac80211). Analogy: radio authority / spectrum management. Audited: net/wireless/ is cfg80211, with mac80211 in net/mac80211/ as the Wi-Fi MAC layer framework used by modern drivers.
+- bridge/ — Layer 2 bridging. Analogy: power grid interconnection authority. Audited: net/bridge/ is bridge and Spanning Tree protocol handling.
+- vxlan/ and geneve/ — virtual overlays. Analogy: international VPNs / cloud tunnels. Audited: net/vxlan/ and net/geneve/ are overlay encapsulation protocols for virtual networks and cloud networking.
+
+### D. Business network parallels, analogy only
+- Finance / Accounts → mm/ (Memory Management): allocates money/resources like memory pages.
+- HR / Operations → kernel/sched/ (Scheduler): assigns tasks (processes) to employees (CPUs). Audited note: in modern kernels the scheduler lives in kernel/sched/, not a single kernel/sched.c file as in older trees.
+- Legal / Compliance → security/: enforces company policies like kernel permissions.
+- R&D / IT → drivers/, net/: builds and maintains technology.
+- Logistics / Supply Chain → block/, fs/: manages goods and storage (files/data).
+- Management / CEO → init/ plus kernel/: oversees entire company (system initialization).
+- All of these are analogies from the source's BNOS framework, not a standard business or kernel model. They are kept here as analogies only, with that marking, per the rule book's analogy-only rule.
+
+### E. Governance across layers (unified model), source framework only
+- Business Kernel (CEO / Board) → Government Kernel (Executive / Legislative / Judiciary) → System Kernel (Scheduler / Memory / I/O) → Network Kernel (TCP/IP / Routing / Devices).
+- Each layer mirrors the one below, as listed in the source: Policies = Configs / Syscalls / Protocols; Departments = Subsystems; Communication = IPC or network sockets; Security checks = Access control lists / firewalls; Budgeting = Memory and process scheduling.
+- This unified model is the source's own framework, not a verified standard model from Wikipedia or kernel.org. It is kept here as a source framework, not as a verified fact about kernels, governments, or businesses.
+
+### F. Modern AI governance extension, speculative only
+- AI models act like automated advisors or governors. They can analyze system metrics (economic or computational) and recommend adjustments. Just like AI in government policy simulation, AI in kernel space (for example, self-healing OS) predicts and prevents overloads or breaches.
+- This is speculative and future-oriented, not a current mainline kernel subsystem. There is no AI governor subsystem in the Linux kernel as a standard branch, and self-healing OS behaviour is a research and product direction, not a verified kernel feature. It is kept here as speculation only, per the audit.
+
+### Corrections, cross-checked with the rule book
+- Government and business mappings are analogies, not kernel facts, and the kernel has no constitution. Maintainer governance is delegation via MAINTAINERS, mailing lists, and trees.
+- ipc/ does not contain anonymous pipes (fs/pipe.c does); ipc/ is SysV IPC and POSIX message queues.
+- virt/ is primarily KVM, not Xen as a whole; Xen guest support is in drivers/xen/.
+- sound/ is ALSA at top level, not drivers/sound/; drivers/ does not contain all drivers alone.
+- kernel/sched/ is a directory in modern kernels, not a single sched.c file as in older trees.
+- AI governance is speculative, not a current kernel branch.
+- Full section: this Technology.md section. Business angle: Bussiness.md, "Linux Kernel Branches (Subsystems) — Business Angle". Combined view: Business&Technology.md, "Linux Kernel Branches (Subsystems) — Combined View".
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -5103,6 +5174,19 @@ Only the business-relevant companion to the kernel device section is added here:
 - Governance, in business terms: IEEE and telecom regulators set the rules for hardware and spectrum; kernel maintainers and IETF set the rules for the stack and protocols; RIRs allocate IPs; ICANN manages the DNS root zone; W3C sets web standards; cloud providers operate the services on top. A product must clear each layer for its market, as in the previous hierarchy sections.
 - Full technical detail: Technology.md, "Linux Network Kernel Devices — Start, Run, Stop, Types, Directory Map, Governance". Combined view: Business&Technology.md, "Linux Network Kernel Devices — Combined View".
 
+
+## Linux Kernel Branches (Subsystems) — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the audited business companion is added here. Full technical detail is in Technology.md and is not repeated.
+
+### Kernel branches, in business terms, analogy only
+- Kernel branches are like a company's departments, as an analogy only: init/ and kernel/ as management, mm/ as finance allocating resources, kernel/sched/ as HR/operations assigning tasks to CPUs, security/ as legal/compliance, drivers/ and net/ as R&D/IT, block/ and fs/ as logistics and storage.
+- Real governance, audited: each subsystem has a maintainer, tracked in the MAINTAINERS file, with mailing-list review and tree integration — not executive, legislative, and judicial branches, and not a corporate board.
+- Networking branch, in business terms: net/core/ as device registration and routing, ipv4/ipv6 as protocol stacks, packet/ as raw sockets, netfilter/ as firewall, wireless/ as Wi-Fi stack, bridge/ as Layer 2 bridging, vxlan/geneve as overlays — all verified as real net/ directories.
+- AI governance extension, speculative only: AI as automated advisors or governors, predicting overloads or breaches, is a future direction, not a current kernel branch.
+- Full technical detail: Technology.md, "Linux Kernel Branches (Subsystems) — Audited, Then Added". Combined view: Business&Technology.md, "Linux Kernel Branches (Subsystems) — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -6067,6 +6151,20 @@ Kernel devices, types, directory map, and governance, read together, without rep
 - Governance: IEEE/FCC/TRAI/ITU (hardware, spectrum) → kernel maintainers/IETF (stack, protocols) → RIRs (IP allocation) → W3C/IANA/cloud providers (web standards, numbers, services) → ICANN/IETF/UN-ITU (root zone, RFCs, coordination, not sole governance).
 - Data flow: application → socket → TCP/IP stack → interface → driver → NIC → switch/router/ISP → backbone → destination. Analogy, analogy only: roads (physical), vehicles (virtual), traffic rules (protocols), government (authorities), citizens (end users).
 - Corrections carried over: paths are source-tree relative, not absolute `/drivers/net/`; VLAN is `net/8021q/`; loopback is virtual; NFQUEUE/XDP are not devices; eth0 is a legacy example name; no diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
+
+## Linux Kernel Branches (Subsystems) — Combined View (No Diagram)
+
+### Headline
+Audited kernel branches, read together, without repeating the full technical section.
+
+### Combined list
+- Audited true: top-level directories init, kernel, mm, fs, net, drivers, security, ipc, sound, crypto, block, virt, arch, scripts, tools; subsystems each with a maintainer in MAINTAINERS; net/ subdirectories core, ipv4, ipv6, packet, netfilter, wireless, bridge, vxlan, geneve.
+- Analogy only: government branches (executive, legislative, judicial) and business departments (finance, HR, legal, R&D, logistics, management) mapped to kernel subsystems; unified model Business Kernel → Government Kernel → System Kernel → Network Kernel is a source framework, not a standard model.
+- Corrected: ipc/ is SysV IPC and POSIX message queues, pipes are in fs/pipe.c; virt/ is primarily KVM, Xen guest support is in drivers/xen/; sound/ is top-level ALSA, not drivers/sound/; scheduler is in kernel/sched/ in modern kernels.
+- Speculative only: AI governance extension, self-healing OS predicting overloads or breaches, is future direction, not a current kernel branch.
+- No diagram or essay expansion was made, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
 ## Business Promotion — Combined View (No Diagram)
