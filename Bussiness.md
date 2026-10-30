@@ -1350,6 +1350,38 @@ Only the new business and finance material is added here: how each era made mone
 - These are source proposals and analogies, not verified revenues or business models. App-store distribution is not zero cost, and global reach still requires local compliance. One-time licences, recurring SaaS, and pay-per-use billing are distinct finance models and are kept distinct here.
 - Full technical detail: Technology.md, "Timeline + Business & Finance Mapping — Technology Angle". Combined view: Business&Technology.md, "Timeline + Business & Finance Mapping — Combined View".
 
+
+## Control Stack — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the control-stack material is added here: five layers per era, identification across eras, and product mapping. Business and finance models are in the previous section and are not repeated.
+
+### Control stack, in business terms
+- Five layers: controlling hardware → software drivers → network admins → public storage and networks → identification attributes. Each era adds a layer of abstraction, but does not remove the layer below it.
+- Identification across eras: Morse addresses → job and account IDs → MAC and IPv4 plus logins → IPs, domains, usernames and passwords → cloud IDs, OAuth tokens, IMEIs → IPv6, PKI keys, blockchain IDs, biometrics.
+- Product mapping, as source proposals: Tern — hardware, drivers, and admin APIs, platform SaaS plus API billing, with API keys, PKI certificates, and organisation IDs; GradeSpot — web and cloud drivers abstracted, school IT admins, SaaS databases and encrypted cloud storage, student IDs and OAuth, per-student licensing; HighGradesApp — mobile OS drivers and cloud APIs, app-store admins, Firebase/iCloud/Google Drive, Apple and Google IDs plus biometrics, freemium plus ads plus premium subscription.
+- Business implication: a product at the top layer still depends on the control layers below it for compliance, scaling, and trust. A failure in drivers, admins, storage, or identity stops the top-layer product, even if its UI is finished.
+
+### Corrections carried over
+- Operators are not drivers, Win32 is an API not a driver model, browser engines and CUDA/ROCm/oneAPI are not drivers themselves, KVM/Xen are open source while VMware is proprietary, IP is a locator not a stable identity, blockchain IDs are pseudonymous, biometrics are local authentication factors, and "GDPR compliance IDs" are not an ID system. Product mappings are source proposals, not verified stacks.
+- Full technical detail: Technology.md, "Control Stack — Hardware, Drivers, Admins, Storage/Networks, IDs". Combined view: Business&Technology.md, "Control Stack — Combined View".
+
+
+## Control Stack — Speed and DNS/Phone Book, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the two new layers are added here: DNS/phone book and speed. The other five control layers are in the previous section and are not repeated.
+
+### DNS/phone book and speed, in business terms
+- DNS/phone book per era: printed telephone books → HOSTS.TXT → DNS (1983) → ICANN root hierarchy → DNSSEC and Cloud DNS (Route53) → DoH/DoT and blockchain DNS alternatives (ENS, Handshake).
+- Speed per era: minutes per message → batch hours and about 56 Kbps → 10 Mbps LAN and 28–56 Kbps dial-up → 512 Kbps to 10 Mbps broadband → 4G 10–100 Mbps and about 100 ms cloud latency → 5G peak 1–10 Gbps and under 10 ms edge latency as a target.
+- Product speed, as source targets: Tern — real-time, under 10 ms AI inference; GradeSpot — around 100 ms for grading dashboards; HighGradesApp — under 100 ms for consumer user experience.
+- Business implication: speed is a product promise that must be backed by network, edge, and model choices. A latency target that cannot be met in a user's region or on a user's network is a support and reputation cost, not just a technical miss.
+
+### Corrections carried over
+- Speed figures are peaks, typicals, or targets, not guarantees. 5G typical speeds are much lower than peak, edge under 10 ms is a target not typical end-to-end latency, and ARPANET's early speed was 50 Kbps with 56 Kbps later. ICANN manages the root zone but does not operate all root servers alone; DNSSEC and Route53 are not phone books; ENS and Handshake are alternatives, not mainstream DNS replacements. Product latencies are source targets, not measured values.
+- Full technical detail: Technology.md, "Control Stack — Speed and DNS/Phone Book, New Gaps Only". Combined view: Business&Technology.md, "Control Stack — Speed and DNS/Phone Book, New Gaps Only — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.

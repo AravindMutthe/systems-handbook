@@ -566,6 +566,33 @@ Business and finance models per era, read together with the previous UI sections
 - Source proposals and analogies only, not verified live business models or revenues. App-store distribution is not zero cost, and licence, SaaS, and pay-per-use models are kept distinct. No diagram was drawn, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
+
+## Control Stack — Combined View (No Diagram)
+
+### Headline
+Five-layer control stack, read together with the previous UI and business sections, without repeating their business models.
+
+### Combined list
+- Layers: hardware → drivers → admins → public storage/networks → identification attributes.
+- Per era: telegraph (keys, switches, copper; manual; operators; telegraph lines; Morse codes, phone numbers) → mainframes (mainframes, tapes, cards; OS-integrated drivers; sysops; ARPANET beginnings, tapes; machine, account, job IDs) → client-server (PCs, NICs, LAN; Win32, Toolbox, X11; corporate IT; early ISPs, FTP, bulletin boards; MAC, IPv4, logins) → web (servers, routers, NICs; kernel NIC drivers, Gecko/WebKit; IT, hosting; web servers, DNS, early cloud hosting; IPs, domains, usernames/passwords) → mobile/cloud (phones, data centers; iOS/Android drivers, KVM/Xen/VMware; DevOps, MDM, SaaS admins; S3, Drive, OneDrive, Dropbox; cloud IDs, OAuth, IMEI) → 5G/AI (AI chips, 5G, IoT; CUDA/ROCm/oneAPI, DPDK/SR-IOV/eBPF, CNI; cloud/AI architects, slicing admins; IPFS/Filecoin, hyperscale, CDN/edge; IPv6, PKI, blockchain, biometrics).
+- Products, as source proposals: Tern — hardware, drivers, admin APIs, S3/GCS, HPC, API keys, PKI, org IDs, platform SaaS plus API billing; GradeSpot — cloud servers, browser engines, school IT admins, SaaS DBs, encrypted cloud storage, student IDs, OAuth, per-student licensing; HighGradesApp — phones, iOS/Android SDKs, app-store admins, Firebase/iCloud/Drive, Apple/Google IDs, biometrics, freemium plus ads plus premium.
+- Corrections carried over: drivers clarified (operators, Win32, browser engines, CUDA/ROCm/oneAPI, DPDK/SR-IOV/eBPF, Kubernetes are not all drivers); IP is a locator, blockchain IDs are pseudonymous, biometrics are local factors, GDPR issues no IDs; product mappings are source proposals, not verified stacks; no diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
+
+## Control Stack — Speed and DNS/Phone Book, New Gaps Only — Combined View (No Diagram)
+
+### Headline
+Two new layers only, read with the previous five-layer control stack.
+
+### Combined list
+- Full stack: Hardware → Drivers → Admins → Public Storage/Network → IDs → Public DNS/Phone Book → Speed.
+- DNS/phone book: printed books → HOSTS.TXT → DNS (1983) → ICANN root hierarchy → DNSSEC, Cloud DNS, Route53 → DoH/DoT, ENS, Handshake.
+- Speed: minutes per message → batch hours, about 56 Kbps → 10 Mbps LAN, 28–56 Kbps dial-up → 512 Kbps to 10 Mbps broadband → 4G 10–100 Mbps, about 100 ms cloud → 5G peak 1–10 Gbps, under 10 ms edge target, real-time AI.
+- Products, speed targets only: Tern — under 10 ms AI inference; GradeSpot — around 100 ms dashboards; HighGradesApp — under 100 ms user experience.
+- Corrections carried over: speeds are peaks, typicals, or targets, not guarantees; ICANN does not operate all root servers alone; ENS/Handshake are alternatives, not DNS replacements; product latencies are source targets, not measured values; no diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.
