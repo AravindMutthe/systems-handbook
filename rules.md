@@ -1103,3 +1103,7 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   recorded in branch batch3-notes.md as a site expansion
   for content chat to adopt, or the next notes pull will
   overwrite it. Main NOT pushed; production NOT deployed.
+
+## R18 clean rebuild (branch, 2026-10-30)
+
+Built from cleaned main notes/cards (main head 8cf271a3, R18 cleanup commits 303fc138–8cf271a3). Main card pages now carry no [Added] markers, no card-letter references, no "this card / that card / this section" presentation language, and no (R15)/(R17) requirement references; links and Previous/Next are by topic title only. All labelling/provenance moved into "Original images +" per page, including Tags (moved from main) and the Key points provenance footer. Sequence pages cleaned the same way, with a new "Sequence notes — archive only" dropdown carrying batch/order/provenance. Card I era examples (site expansion, 2026-10-30) preserved, heading cleaned. Homepage index tagline and New badge kept for now — homepage is an index, not a study page; owner to confirm whether R18 clean-up applies there too. Stories pages not yet built — still waiting for content chat's Story notes/cards push.

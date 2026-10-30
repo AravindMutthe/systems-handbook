@@ -17,14 +17,14 @@
         "Historical",
         "Sequence"
       ],
-      "addedExplanation": "[Added — not owner's text] Networks did not start with computers. They started with people signalling to each other, then with mechanical signals, then with the telegraph — and business needed them because a deal is only as fast as the information behind it. That need is why organisations, rules and coordination appear before any device in this sequence.",
+      "addedExplanation": "Networks did not start with computers. They started with people signalling to each other, then with mechanical signals, then with the telegraph — and business needed them because a deal is only as fast as the information behind it. That need is why organisations, rules and coordination appear before any device in this sequence.",
       "alsoTouches": [
         "industrial-business-networks",
         "institutions-markets"
       ],
       "cardId": "hb-batch1-card-A",
       "cardOrderInDomainSequence": 1,
-      "enhancedDiagram": "[Added diagram — redraw, different style from the original] A horizontal timeline: Human to human, then Mechanical signals, then Electronic telegraph, then DARPA 1960, with a second lane underneath: Business need (speed of trade) leading to Organisation, then Regulation and coordination. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
+      "enhancedDiagram": "A horizontal timeline: Human to human, then Mechanical signals, then Electronic telegraph, then DARPA 1960, with a second lane underneath: Business need (speed of trade) leading to Organisation, then Regulation and coordination. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
       "horizontalLinks": [
         {
           "concept": "Business / trading speed",
@@ -68,7 +68,8 @@
         "hb-batch1-005"
       ],
       "title": "Why networks exist: origins and business need",
-      "verticalPosition": "Ground base: why, before what."
+      "verticalPosition": "Ground base: why, before what.",
+      "archiveNotes": "Archive (Original images + only, per R18): enhanced title, detailed explanation, and diagram for this topic are [Added] material, not the owner's original text. Original headlines and original notes are the owner's, spelling preserved. Corrections and transcription markers are in the archive section, not in main presentation."
     },
     {
       "originalHeadlines": [
@@ -83,13 +84,13 @@
         "Organizational: regulates",
         "Depends on"
       ],
-      "addedExplanation": "[Added — not owner's text] Before DNS, the directory was a telephone book run by government. The internet kept the directory idea but changed who runs it and how it scales: names are delegated hierarchically, addresses are allocated in blocks by region, and both are wrapped in regulation and privacy rules. That is why naming and regulation belong in one card, not in separate ones.",
+      "addedExplanation": "Before DNS, the directory was a telephone book run by government. The internet kept the directory idea but changed who runs it and how it scales: names are delegated hierarchically, addresses are allocated in blocks by region, and both are wrapped in regulation and privacy rules. That is why naming and regulation belong in one card, not in separate ones.",
       "alsoTouches": [
         "infrastructure-operations"
       ],
       "cardId": "hb-batch1-card-B",
       "cardOrderInDomainSequence": 2,
-      "enhancedDiagram": "[Added diagram — redraw, different style from the original] Left to right: Telephone directory, then DNS in the centre, then ICANN at the top, RIRs (ARIN / RIPE / APNIC) below it, then ISP, then user. A regulator lane underneath: FCC / TRAI, with standards bodies IETF / IEEE / 3GPP beside it. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
+      "enhancedDiagram": "Left to right: Telephone directory, then DNS in the centre, then ICANN at the top, RIRs (ARIN / RIPE / APNIC) below it, then ISP, then user. A regulator lane underneath: FCC / TRAI, with standards bodies IETF / IEEE / 3GPP beside it. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
       "horizontalLinks": [
         {
           "concept": "DNS",
@@ -135,7 +136,8 @@
         "hb-batch1-010"
       ],
       "title": "Naming, addressing and regulation: directory to DNS",
-      "verticalPosition": "After the business frame: how things are named, addressed and regulated."
+      "verticalPosition": "After the business frame: how things are named, addressed and regulated.",
+      "archiveNotes": "Archive (Original images + only, per R18): enhanced title, detailed explanation, and diagram for this topic are [Added] material, not the owner's original text. Original headlines and original notes are the owner's, spelling preserved. Corrections and transcription markers are in the archive section, not in main presentation."
     },
     {
       "originalHeadlines": [
@@ -149,13 +151,13 @@
         "Organizational: regulates",
         "Sequence"
       ],
-      "addedExplanation": "[Added — not owner's text] Silicon becomes a chip, a chip becomes a vendor's device, and that device only reaches a customer through an endpoint: the NIC. Selling that endpoint is not just a shipment — it is governed, which is why the NIC chain in the notes keeps returning to government rules and to FCC.",
+      "addedExplanation": "Silicon becomes a chip, a chip becomes a vendor's device, and that device only reaches a customer through an endpoint: the NIC. Selling that endpoint is not just a shipment — it is governed, which is why the NIC chain in the notes keeps returning to government rules and to FCC.",
       "alsoTouches": [
         "industrial-business-networks"
       ],
       "cardId": "hb-batch1-card-C",
       "cardOrderInDomainSequence": 3,
-      "enhancedDiagram": "[Added diagram — redraw, different style from the original] Top to bottom: Silicon, then Intel / Broadcom / Nvidia, then Cloud / OEMs / Telco-ISP / Government labs, with the NIC as the endpoint box at the bottom, connected by PCI to the device. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
+      "enhancedDiagram": "Top to bottom: Silicon, then Intel / Broadcom / Nvidia, then Cloud / OEMs / Telco-ISP / Government labs, with the NIC as the endpoint box at the bottom, connected by PCI to the device. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
       "horizontalLinks": [
         {
           "concept": "NIC",
@@ -198,7 +200,8 @@
         "hb-batch1-004"
       ],
       "title": "Hardware supply and the NIC endpoint",
-      "verticalPosition": "After naming: what physical thing carries those names and addresses."
+      "verticalPosition": "After naming: what physical thing carries those names and addresses.",
+      "archiveNotes": "Archive (Original images + only, per R18): enhanced title, detailed explanation, and diagram for this topic are [Added] material, not the owner's original text. Original headlines and original notes are the owner's, spelling preserved. Corrections and transcription markers are in the archive section, not in main presentation."
     },
     {
       "originalHeadlines": [
@@ -212,13 +215,13 @@
         "Depends on",
         "Commands"
       ],
-      "addedExplanation": "[Added — not owner's text] This card has two lanes that must not be confused. The data lane goes customer, interface, driver, kernel, net device, TCP/IP. The management lane sits beside it: out-of-band to BMC, then CLI, web or API, and it works even when the data lane does not. Learning them as one stack hides the second lane; learning them as two lanes explains why a device can be managed while it is down.",
+      "addedExplanation": "This card has two lanes that must not be confused. The data lane goes customer, interface, driver, kernel, net device, TCP/IP. The management lane sits beside it: out-of-band to BMC, then CLI, web or API, and it works even when the data lane does not. Learning them as one stack hides the second lane; learning them as two lanes explains why a device can be managed while it is down.",
       "alsoTouches": [
         "hardware-computing"
       ],
       "cardId": "hb-batch1-card-D",
       "cardOrderInDomainSequence": 4,
-      "enhancedDiagram": "[Added diagram — redraw, different style from the original] Two parallel lanes. Data lane: End customer, Interface, Driver, Kernel stack, Net device, TCP/IP. Management lane, separate and below: OOB, BMC / ILO, then CLI / Web UI / API, then Running config, then Start up to hardware. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
+      "enhancedDiagram": "Two parallel lanes. Data lane: End customer, Interface, Driver, Kernel stack, Net device, TCP/IP. Management lane, separate and below: OOB, BMC / ILO, then CLI / Web UI / API, then Running config, then Start up to hardware. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
       "horizontalLinks": [
         {
           "concept": "NIC",
@@ -269,7 +272,8 @@
         "hb-batch1-001"
       ],
       "title": "The NIC and kernel stack, plus out-of-band management",
-      "verticalPosition": "After supply: how the endpoint actually runs inside a machine."
+      "verticalPosition": "After supply: how the endpoint actually runs inside a machine.",
+      "archiveNotes": "Archive (Original images + only, per R18): enhanced title, detailed explanation, and diagram for this topic are [Added] material, not the owner's original text. Original headlines and original notes are the owner's, spelling preserved. Corrections and transcription markers are in the archive section, not in main presentation."
     },
     {
       "originalHeadlines": [
@@ -284,14 +288,14 @@
         "Commands",
         "Depends on"
       ],
-      "addedExplanation": "[Added — not owner's text] A product closes the loop: it is built by engineering and operations, tested, sold to customers, bought from vendors who buy silicon, and it cannot enter the market until approval is granted. That approval gate is why this card comes last — it depends on every card before it, from origins to naming to the NIC stack.",
+      "addedExplanation": "A product closes the loop: it is built by engineering and operations, tested, sold to customers, bought from vendors who buy silicon, and it cannot enter the market until approval is granted. That approval gate is why this card comes last — it depends on every card before it, from origins to naming to the NIC stack.",
       "alsoTouches": [
         "institutions-markets",
         "hardware-computing"
       ],
       "cardId": "hb-batch1-card-E",
       "cardOrderInDomainSequence": 5,
-      "enhancedDiagram": "[Added diagram — redraw, different style from the original] A loop, left to right and back: C-suite and operations, then Engineering and testing, then Customers, then Vendors, then Silicon, with an FCC approval gate between Vendors / Silicon and the market, marked as a gate, not a step. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
+      "enhancedDiagram": "A loop, left to right and back: C-suite and operations, then Engineering and testing, then Customers, then Vendors, then Silicon, with an FCC approval gate between Vendors / Silicon and the market, marked as a gate, not a step. [Audit 2026-10-29: arrows in batch1-notes.md are now labelled by kind; see diagramArrowKinds.]",
       "horizontalLinks": [
         {
           "concept": "FCC approval",
@@ -335,7 +339,8 @@
         "hb-batch1-005"
       ],
       "title": "Building, operating and approving a product",
-      "verticalPosition": "Last: the product that uses all earlier layers, gated by approval."
+      "verticalPosition": "Last: the product that uses all earlier layers, gated by approval.",
+      "archiveNotes": "Archive (Original images + only, per R18): enhanced title, detailed explanation, and diagram for this topic are [Added] material, not the owner's original text. Original headlines and original notes are the owner's, spelling preserved. Corrections and transcription markers are in the archive section, not in main presentation."
     }
   ],
   "crossCheck": {
