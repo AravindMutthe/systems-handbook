@@ -16,6 +16,8 @@ Contents below are the 3 backup files in full, in order, separated by part headi
 > **Branch rule (set 2026-10-30, by Aravind):** All work stays in these 3 lines only — main, systems-evaluation-book, and research-compression-elaborated. No work outside those branches, no direct edits to main, no merge and no deploy without Aravind's tap.
 
 > **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
+> **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section.
+
 
 
 
@@ -3732,7 +3734,7 @@ This section merges three overlapping protocol notes into one list. The standing
 
 Most of this walkthrough repeats the previous sections; only its Amazon-specific steps and its errors are recorded here, so nothing is missed and nothing is duplicated.
 
-1. Type https://www.amazon.in. The device asks its recursive resolver for www.amazon.in. The resolver walks root, then the .in TLD (NIXI registry), then Amazon's authoritative name servers, which Amazon operates through Route 53. The source's result IP, 205.251.242.103, is not to be quoted as Amazon.in's web address: that range belongs to Amazon's Route 53 DNS infrastructure, and the address a browser actually connects to for amazon.in is a CloudFront edge address that varies by location and time. Treat 205.251.242.103 as a source example, not as a verified amazon.in server IP.
+1. Type https://www.amazon.in. The device asks its recursive resolver for www.amazon.in. The resolver walks root, then the .in TLD (NIXI registry), then Amazon's authoritative name servers, which Amazon operates through Route 53. The source's result IP, 205.251.242.103, is not to be quoted as Amazon.in's web address: public WHOIS records associate that address with Amazon (AS16509, hostname s3-console-us-standard.console.aws.amazon.com), not with an amazon.in web server, and the address a browser actually connects to for amazon.in is a CloudFront edge address that varies by location and time. Treat 205.251.242.103 as a source example, not as a verified amazon.in server IP.
 2. TCP connection: the standard three-way handshake, SYN, SYN-ACK, ACK, establishes a reliable, ordered connection, standardised by the IETF.
 3. TLS handshake: Amazon sends its certificate, the browser verifies it against its trust store, and the two sides derive session keys. Correction to the source: ICANN does not "indirectly manage the root of trust through IANA" for TLS. The DNS root and the TLS certificate trust store are different roots. TLS trust comes from root CA certificates shipped in browsers and operating systems, plus the chain the server presents. IANA's root zone has nothing to do with whether DigiCert or Let's Encrypt is trusted by a browser. The CA-as-RTO analogy is also corrected: a CA verifies domain control (DV) or organisation details (OV/EV); it does not verify a driving licence, and an RTO does not issue TLS certificates.
 4. HTTP request: the browser sends a GET request for the homepage and receives HTML, CSS, and JavaScript. HTTP is standardised by the IETF; W3C standardises the HTML and CSS that the response carries, not HTTP itself. Modern browsers may use HTTP/2 or HTTP/3 rather than a single plain HTTP/1.1 request.
@@ -3741,7 +3743,7 @@ Most of this walkthrough repeats the previous sections; only its Amazon-specific
 
 ### Corrections list for the walkthrough
 
-- 205.251.242.103 is a Route 53-range example, not a verified amazon.in web server address; amazon.in is served from varying CloudFront edge addresses.
+- 205.251.242.103 is an Amazon-owned address (AS16509, S3 console host in WHOIS records), not a verified amazon.in web server address; amazon.in is served from varying CloudFront edge addresses.
 - TLS trust comes from browser and operating-system CA stores, not from ICANN or IANA.
 - HTTP is IETF; W3C covers HTML and CSS, not HTTP.
 - DHCP precedes browsing; NTP runs continuously; neither is a step that follows a page load.
@@ -6841,7 +6843,7 @@ Full sections: Technology.md, "How the Internet Works — From a Name to a Page"
 - Security in one line: DNS caching speeds repeat visits but does not hide queries; TLS 1.2 and 1.3 encrypt HTTP content and authenticate the server by certificate, with DV proving domain control only; a padlock is not a trust mark, and EV company-name display in the browser bar is discontinued.
 - Protocols are open IETF standards, not owned products: TCP/IP, DNS, HTTP, TLS, BGP, DHCP, IPsec, mail, FTP, SNMP, and NTP, each with the everyday tools named in Technology.md.
 
-- Amazon.in walkthrough: DNS through root, .in (NIXI), and Amazon Route 53, then TCP handshake, TLS certificate verification against browser CA stores (not ICANN), HTTP GET, CloudFront edge delivery, with DHCP before browsing and NTP running throughout. The source IP is a Route 53-range example, not a verified amazon.in server address.
+- Amazon.in walkthrough: DNS through root, .in (NIXI), and Amazon Route 53, then TCP handshake, TLS certificate verification against browser CA stores (not ICANN), HTTP GET, CloudFront edge delivery, with DHCP before browsing and NTP running throughout. The source IP is an Amazon-owned address (AS16509, S3 console host in WHOIS records), not a verified amazon.in server address.
 
 ## Where Protocols Reside — Combined View (Condensed)
 
