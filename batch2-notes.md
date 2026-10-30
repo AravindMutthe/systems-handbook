@@ -1,3 +1,5 @@
+R18 build note: ONLY these sections are main presentation — Original headlines, Original notes, Detailed explanation, Diagram, Related topics. File headers, held-back lists, and the Archive appendix at the end are INTERNAL / ARCHIVE, not main presentation. Render the Archive appendix ONLY inside "Original images +" on that page. Main presentation must contain no [Added], labelled, this-card/that-card, or provenance language.
+
 Build note for card pages: transcription bracket markers ([cut off], [unclear], [no value...], etc.) and truncated-word corrections live ONLY inside "Original images +" dropdown, never in Detailed explanation or Key points. Main page shows corrected / as-written words, clean. Full marked transcription is in the batch intake file (archive, local). [crossed out] is kept where it is original state on the page, not a fill-in label.
 
 # Batch 2 notes — HELD, not published
@@ -37,7 +39,7 @@ Learning order, provisional: Card F → Card G → Card H.
 ### Original headline first
 **Univescal product / Business (network / Standards**
 
-### Enhanced headline [Added, labelled, related only]
+### Enhanced headline
 The universal product: four parallel flows, cross flow, and the full value chain
 
 ### Story place
@@ -58,7 +60,7 @@ infrastructure-operations, institutions-markets.
 - ④ Abstraction from goods of Spectrum
   - TO full Value chain is connec
 
-### [Added] explanation
+### Detailed explanation
 A universal product is not one thing. It is a spectrum — tech,
 manufacturing, software, and business together — and its strength
 is that it carries four things in parallel: the physical thing,
@@ -69,7 +71,7 @@ across that flow — devices on the network, ledgers, intelligence,
 and interfaces — until the product is no longer just a good, but
 a whole value chain, connected end to end.
 
-[Added, labelled distinction, under R14 — not one hierarchy:]
+
 Spectrum and standards are not one gate. FCC / TRAI regulate
 a national market and spectrum use. IETF sets Internet
 technical standards, IEEE sets electrical / electronics /
@@ -78,16 +80,16 @@ and ICANN / RIRs allocate names and number resources. The
 universal product's spectrum therefore crosses regulation,
 standards, and allocation, each with a different owner.
 
-[Added, cross-domain vocabulary, grounded in Batch 1 cards:]
+
 Signalling is the control information that makes communication
 work — it travels on the network lane, separate from the
 physical goods lane. The endpoint is the device that sends
-and receives it (Card C, the NIC), and the stack is the layers
-that carry it (Card D: driver, kernel stack, TCP/IP). Trading
-speed (Card A, Card E) is what that signalling and that stack
+and receives it (Hardware supply and the NIC endpoint, the NIC), and the stack is the layers
+that carry it (The NIC and kernel stack, plus out-of-band management: driver, kernel stack, TCP/IP). Trading
+speed (Why networks exist: origins and business need, Building, operating and approving a product) is what that signalling and that stack
 make possible in a market, not a separate product on its own.
 
-### Enhanced diagram [Added, different style, never replacing the original, arrows labelled by kind]
+### Diagram
 Spectrum (Tech + manufacturing + software + Business)
 –[Sequence]–> four parallel flows.
 [Data: trade information] communication - - > trade - - > speed,
@@ -100,10 +102,10 @@ AI/ML, APIs depend on the network flow to work across it.
 [Sequence] Abstraction from goods –> full value chain, connected.
 This last arrow is summary order, not a dependency claim.
 
-### Horizontal links
-- Trade / speed thread → Batch 1, Card A (why networks exist)
-- Spectrum / Tech + manufacturing thread → Batch 1, Card C (silicon → vendors)
-- Network integration thread → Batch 1, Card D (NIC / kernel stack)
+### Related topics
+- Trade / speed thread → Batch 1, Why networks exist: origins and business need (why networks exist)
+- Spectrum / Tech + manufacturing thread → Batch 1, Hardware supply and the NIC endpoint (silicon → vendors)
+- Network integration thread → Batch 1, The NIC and kernel stack, plus out-of-band management (NIC / kernel stack)
 
 ### Archive sources
 hb-batch2-001 — 1000103106_58_nn6i.jpg. Full transcription in
@@ -118,7 +120,7 @@ batch2-intake.md. Source date: null (no date on page).
 2. **Global Oversight** — hb-batch2-005
 3. **Govt Network Series** — hb-batch2-003
 
-### Enhanced headline [Added, labelled, related only]
+### Enhanced headline
 Who controls and who builds: government layer, global oversight, and government networks
 
 ### Story place
@@ -162,7 +164,7 @@ Govt Network Series (margin: Sep27 — month/day only, no year, NOT a source dat
 - Created private networks for business needs, reported to govt
   as per regulations
 
-### [Added] explanation
+### Detailed explanation
 Government is added as a unifying layer across all flows, from
 source to consumer, to control the public. Above countries sits
 global oversight, then international standard bodies, then
@@ -177,7 +179,7 @@ with management and public controllers from government closing
 the loop, and private networks for business reported back to
 government as per regulations.
 
-[Added, labelled distinction, under R14 — not one hierarchy:]
+
 The page draws this as one top-down chain, and that drawing is
 preserved as written. In practice these bodies have different
 legal powers and scopes: RIRs allocate regional number resources,
@@ -186,12 +188,12 @@ electrical, electronics, and computing, ICANN handles names and
 addresses, ISO/IEC set international standards, and FCC/TRAI are
 national regulators. They are not a single chain of command.
 
-[Added, labelled exclusion:] System Integrator, Operations Team,
+System Integrator, Operations Team,
 regional-office example, VLAN deployment, and link-failure
 monitoring are NOT on the original page and are NOT used here
 as if they were.
 
-### Enhanced diagram [Added, different style, never replacing the original, arrows labelled by kind]
+### Diagram
 [Organizational: controls] Govt layer (control public, unifying
 layer across all flows) ═> Global Oversight.
 [Organizational: oversees] Global Oversight ═> International
@@ -215,11 +217,11 @@ Customers / Public.
 network and the market (loop back): control flow, drawn separately
 from the supply chain above.
 
-### Horizontal links
-- FCC / TRAI thread → Batch 1, Card B (directory → DNS, FCC 1934)
-  and Card E (FCC approval gate)
-- Standards bodies thread → Batch 1, Card B, under R14
-- Vendors / manufacturers thread → Batch 1, Card C
+### Related topics
+- FCC / TRAI thread → Batch 1, Naming, addressing and regulation: directory to DNS (directory → DNS, FCC 1934)
+  and Building, operating and approving a product (FCC approval gate)
+- Standards bodies thread → Batch 1, Naming, addressing and regulation: directory to DNS, under R14
+- Vendors / manufacturers thread → Batch 1, Hardware supply and the NIC endpoint
 
 ### Archive sources
 hb-batch2-002, hb-batch2-005, hb-batch2-003. Full transcriptions
@@ -235,7 +237,7 @@ in batch2-intake.md. Source dates: null for all three.
 2. **PC & client server era** + **internet & web era (1990 – 2001)** — hb-batch2-006
 3. **mobile & cloud** + **5G & modern (2020 – Now)** — hb-batch2-004
 
-### Enhanced headline [Added, labelled, related only]
+### Enhanced headline
 How the interface changed: from telegraph keys to real-time, XR, and AI UI's
 
 ### Story place
@@ -244,7 +246,7 @@ Technical perspectives: software engineering / development
 (R16 future domain — see flag below), hardware-computing,
 infrastructure-operations.
 
-Flag [Added, for the owner, not a site change]: this batch
+Flag for the owner, not a site change: this batch
 justifies first use of software engineering / development as a
 technical perspective, grounded in these images (frameworks,
 frontend, REST / GraphQL / gRPC, cloud native backend, mobile
@@ -297,7 +299,7 @@ mobile & cloud:
   (websockets, gRPC)
 - Attributes: low latency UI, AI/ML, multi device
 
-### [Added] explanation
+### Detailed explanation
 The interface is the same question in every era, answered with
 different hardware: what medium does a person use, what framework
 is public and what is private, what architecture sits behind it,
@@ -309,36 +311,36 @@ low-latency, multi-device interfaces with XR and AI. The medium
 changes, the framework split — public standards versus private
 toolkits — stays, in every era.
 
-[Added, cross-domain vocabulary, grounded in linked cards:]
+
 Every era also has a market and a customer, a vendor who
 supplies it, and a regulator or allocator who gates it. The
 customer is the person using the interface; the vendor is the
 company that supplies the device, framework, or app store;
 allocation decides which address or number the device carries
-(Card B, RIR / ICANN); regulation decides whether it may be
-sold and used (Card E, FCC approval). Business, market,
+(Naming, addressing and regulation: directory to DNS, RIR / ICANN); regulation decides whether it may be
+sold and used (Building, operating and approving a product, FCC approval). Business, market,
 customer, vendor, allocation, and regulation are therefore
 part of the UI story, not only the hardware story.
 
-[Added, labelled distinction, under R14 — not one hierarchy:]
+
 W3C sets web standards, IETF sets Internet technical
 standards, ICANN allocates names and numbers, IEEE sets
 electrical / electronics / computing standards, and FCC /
 TRAI regulate nationally. The web era lists them together;
 their functions are distinct, as on Cards B, G, and J.
 
-[Added, labelled distinction:] Frameworks on the pages belong to
+Frameworks on the pages belong to
 different categories — Bootstrap is a CSS framework, React /
 AngularJS are UI frameworks, X11 / Motif are windowing systems —
 and REST / GraphQL / gRPC are API styles / technologies, not UI
 frameworks. The original grouping is preserved as written; this
 distinction is added, labelled.
 
-[Added, labelled exclusion:] No external images are used for
-this card, and voice / spatial interfaces not on these pages
+No external images are used for
+this topic, and voice / spatial interfaces not on these pages
 are not added as an era.
 
-### Enhanced diagram [Added, different style, never replacing the original, arrows labelled by kind]
+### Diagram
 Timeline, left to right, one row per era, four columns per era
 (UI mediums | Frameworks public/private | Arch | Attributes).
 All arrows below are [Historical] only:
@@ -355,15 +357,15 @@ a mobile app depends on its framework and on cloud native backend),
 are drawn separately inside that era's Arch column, not as the
 timeline arrow.
 
-### Horizontal links
-- Telegraph thread → Batch 1, Card A (origins, human → mechanical
+### Related topics
+- Telegraph thread → Batch 1, Why networks exist: origins and business need (origins, human → mechanical
   → electronic)
-- Hardware thread → Batch 1, Card C (NIC endpoint, the hardware
+- Hardware thread → Batch 1, Hardware supply and the NIC endpoint (NIC endpoint, the hardware
   the UI runs on)
-- Kernel / TCP/IP under the UI → Batch 1, Card D. Note, labelled:
+- Kernel / TCP/IP under the UI → Batch 1, The NIC and kernel stack, plus out-of-band management. Note, labelled:
   CLI is a UI medium here, and a management lane there — same
   word, different lane.
-- Cloud / 5G thread → Batch 1, Card D (network device, TCP/IP)
+- Cloud / 5G thread → Batch 1, The NIC and kernel stack, plus out-of-band management (network device, TCP/IP)
 
 ### Archive sources
 hb-batch2-007, hb-batch2-006, hb-batch2-004. Full transcriptions
@@ -381,3 +383,15 @@ not source dates.
   flagged, NOT made, needs owner's call.
 - No other item held back for privacy: no digit string, no
   personal-names list on these pages.
+
+## Archive — Original images + notes (R18)
+
+Per R18, all labelling and provenance below lives ONLY in "Original images +" on the presentation page, never in the main presentation above. Main text above has been cleaned of [Added], labelled, and card-reference meta language.
+
+- Enhanced headlines, detailed explanations, diagrams, and synthesis / research-dimensions sections in this file are [Added] material, not the owner's original text, unless a section is explicitly marked Original notes / Original headlines.
+- Card I Future completion (Eras 3–5, till 2026) is [Added — proposed], grounded in Cards J and H, with org structure and leadership mindset proposed, not stated on the owner's page. Original Card I page ends at 2000, hypergrowth.
+- Card I research dimensions expansion is [Added, not original].
+- Synthesis A to K is [Added, closing note, no new facts].
+- Corrections, original forms only in archive: Batch 3 Card K comput [cut off] → compute in main, schedule = with no value written, Govt projects in a bracket on the left; Card J Subsn [truncated] → subscription in main, Bussiness spelling preserved as original; Card I Centralized written diagonally, crossed through at top; Batch 2 Card F connec [cut off at page edge], intended word NOT confirmed (connected vs connecting); Batch 1 Card A source date 2025-09-29 only, Batch 1 Card D margin Sep-29/2025 NOT assigned as source date, Batch 2 Card G margin Sep27 month/day only, NOT a source date.
+- Transcription markers ([cut off], [unclear], [crossed out], [no value], and similar) are preserved in Original notes sections above and in the local intake files, for "Original images +" only, never in main presentation.
+- Relationship-kind arrow labels ([Historical], [Depends on], [Organizational: verb], [Data: …], [Commands], [Sequence]) are diagram labelling for the enhanced diagrams; in clean presentation they appear only as diagram arrow labels / in "Original images +" notes, not as bracket text in main prose.
