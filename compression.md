@@ -3363,6 +3363,15 @@ This note repeats the LVM, NFS, and AWS steps already added above, so only the n
 - File-level example content, minor: after creating `/mnt/data/shared`, the source creates `file1.txt` and `file2.txt` inside it with `echo` before exporting it by NFS. That is just test content for the share, not a new virtualization step.
 - Skills list, storage-specific: Linux disk management (`fdisk`, `lsblk`), filesystem management (`mkfs`, `mount`), LVM (`pvcreate`, `vgcreate`, `lvcreate`, plus `pvs`/`vgs`/`lvs` for verification), and file sharing (NFS or Samba).
 
+
+### Storage gaps, fourth pass — command flags and full forms only
+This note repeats the LVM, NFS, and AWS steps already added above, so only the new flag meanings and full-form corrections are added here.
+- `fdisk` actions, clarified: inside `fdisk`, `n` creates a new partition, then choosing `p` at the partition-type prompt selects a primary partition, accepting defaults uses the whole disk, and `w` writes changes. Note: `p` on its own at the main `fdisk` prompt prints the partition table — the "primary" meaning applies only inside the new-partition prompt, not everywhere in `fdisk`.
+- `lvcreate` flags, explicitly: `-L` specifies size (for example `-L 200G` for 200 GB), and `-n` specifies the name (for example `-n lv_data`). The full commands already listed are `sudo lvcreate -L 200G -n lv_data my_vg` and `sudo lvcreate -L 300G -n lv_backup my_vg`.
+- Full forms, with corrections: MBR = Master Boot Record, boot sector and partition table, supports up to 2 TB (with 512-byte sectors) and 4 primary partitions; GPT = GUID Partition Table, modern scheme, supports over 2 TB; LVM = Logical Volume Manager, manages physical volumes, volume groups, and logical volumes; NFS = Network File System, shares directories over the network.
+- Correction: the source says GPT supports "unlimited partitions". In practice, GPT as commonly implemented supports 128 partitions by default (the UEFI specification's default entry count); the standard allows more entries, but "unlimited" is not the practical limit.
+- The paths, structure table, and AWS mapping in this note are already covered above and are not repeated here.
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.
@@ -4942,6 +4951,12 @@ Virtualization, in business terms, is buying and running fewer physical machines
 - Structure table, in one line: raw `/dev/sdb` → partition `/dev/sdb1` → logical volumes `/dev/my_vg/lv_data` (200 GB) and `/dev/my_vg/lv_backup` (300 GB) → mounts `/mnt/data` and `/mnt/backup` → shared directory `/mnt/data/shared`.
 - The LVM, NFS, and AWS steps themselves are already covered above and are not repeated here.
 
+
+#### Storage gaps, fourth pass — business angle, gaps only
+- Command flags, in plain terms: in `lvcreate`, `-L` is size and `-n` is name, so a request can say "200 GB, called lv_data" in one command.
+- Full forms: MBR (Master Boot Record, up to 2 TB and 4 primary partitions), GPT (GUID Partition Table, over 2 TB, 128 partitions by default in practice, not truly unlimited), LVM (Logical Volume Manager), NFS (Network File System).
+- Steps and AWS mapping are already covered above and are not repeated here.
+
 ### User space, in business risk terms
 - User space is everything above the kernel: apps, libraries, and configs. Kernel space is the OS core that controls hardware.
 - Containers isolate user space only and share one kernel. That is cheaper and faster, but a kernel-level fault can affect all containers on that host.
@@ -5621,6 +5636,13 @@ Virtualization is one idea read two ways at once: technically, a layer that abst
 - Structure: `/dev/sdb` → `/dev/sdb1` → `/dev/my_vg/lv_data` (200 GB) at `/mnt/data` and `/dev/my_vg/lv_backup` (300 GB) at `/mnt/backup` → `/mnt/data/shared` for NFS sharing.
 - Skills: `fdisk`/`lsblk`, `mkfs`/`mount`, LVM commands plus verification, NFS/Samba.
 - Steps themselves are already covered above and are not repeated here.
+
+
+#### Storage gaps, fourth pass — combined view, gaps only
+- `fdisk`: `n` new partition, `p` primary inside the new-partition prompt (prints the table at the main prompt), `w` write.
+- `lvcreate`: `-L` size, `-n` name.
+- Full forms: MBR = Master Boot Record (2 TB, 4 primary), GPT = GUID Partition Table (>2 TB, 128 by default, not unlimited), LVM = Logical Volume Manager, NFS = Network File System.
+- Steps and AWS mapping are already covered above and are not repeated here.
 
 ### User space, combined
 - User space holds apps, libraries, configs, and processes; kernel space holds the OS core. Containers isolate user space only, so they are light and fast but share kernel risk. VMs isolate both, so they are heavier but give a stronger boundary. That single distinction explains most of the cost-versus-isolation choice in the table above.

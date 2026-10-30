@@ -1060,6 +1060,16 @@ Virtualization creates virtual versions of physical resources — servers, stora
   - Key note: The table is the whole story in one view: physical device, partition, logical volumes, mounts, and shared directory. Each row is a layer, not a separate disk.
   - Example: `/dev/sdb` → `/dev/sdb1` → `/dev/my_vg/lv_data` at `/mnt/data` and `/dev/my_vg/lv_backup` at `/mnt/backup` → `/mnt/data/shared` shared by NFS.
 
+
+#### Storage gaps, fourth pass — elaborated, deduplicated
+- `lvcreate` flags — `-L` for size, `-n` for name.
+  - Key note: Flags turn a vague request into a precise one. Size and name in the same command mean the volume is created exactly as intended, without a second step to rename or resize it.
+  - Example: `sudo lvcreate -L 200G -n lv_data my_vg` creates a 200 GB volume called `lv_data` in `my_vg`.
+  - Command: `sudo lvcreate -L 200G -n lv_data my_vg`
+- Full forms and limits — MBR, GPT, LVM, NFS.
+  - Key note: Full forms matter because they name the layer. MBR and GPT are partition-table schemes, LVM is a volume manager, NFS is a file-sharing protocol — different layers, not interchangeable terms.
+  - Example: MBR up to 2 TB and 4 primary partitions; GPT over 2 TB and 128 partitions by default, not unlimited as the source states.
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.
