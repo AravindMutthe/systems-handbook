@@ -631,6 +631,21 @@ New gaps only from the 15-part version, read with the previous timeline sections
 - Corrections carried over: first link was UCLA–SRI, layer models are not interchangeable, AI networks are a direction not a universal state, and the source's offers on kernel-level networking and hardware packet movement were not acted on.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
+
+## Linux Network Kernel Devices — Combined View (No Diagram)
+
+### Headline
+Kernel devices, types, directory map, and governance, read together, without repeating the full technical section.
+
+### Combined list
+- Start/stop: `ip link show`, `ip link set up/down`, `ip addr show/add/flush`, `systemctl restart NetworkManager`, `nmcli radio wifi on/off`, `modprobe` / `modprobe -r` — with the corrections that up does not load a driver, down does not unbind one, and `modprobe -r` fails if the interface is still up.
+- Types: physical (Ethernet, Wi-Fi, Bluetooth PAN, cellular, infrared, plus NICs, routers, switches, APs, modems, firewalls, fiber transceivers); virtual (loopback — virtual, not physical — bridge, VLAN, bond/team, dummy, TUN/TAP, veth, MACVLAN/IPVLAN, VXLAN/GRE/Geneve, Docker/Podman bridges, Open vSwitch); specialized (SR-IOV, CAN, TIPC, 6LoWPAN, CAIF, Phonet, RFCOMM; NFQUEUE and XDP/AF_XDP are mechanisms, not devices).
+- Directory map: `drivers/net/` (ethernet, wireless, wwan, bluetooth, can, phy, bonding, bridge, tun, vxlan, wireguard, macvlan, ipvlan, dummy, veth, team, openvswitch, caif, virtio_net); `net/` (core, ipv4, ipv6, packet, 8021q, bridge, sched, xfrm, netfilter, unix, wireless, mac80211, openvswitch, tipc, l2tp, vxlan, geneve, gtp, rds, caif, 6lowpan, can); `include/net/` (netdevice.h, sock.h, inet_sock.h, net_namespace.h, ip.h, tcp.h, udp.h, xfrm.h, filter.h, rtnetlink.h, sched.h); `tools/net/` and `Documentation/networking/` as the tools and documentation layer.
+- Governance: IEEE/FCC/TRAI/ITU (hardware, spectrum) → kernel maintainers/IETF (stack, protocols) → RIRs (IP allocation) → W3C/IANA/cloud providers (web standards, numbers, services) → ICANN/IETF/UN-ITU (root zone, RFCs, coordination, not sole governance).
+- Data flow: application → socket → TCP/IP stack → interface → driver → NIC → switch/router/ISP → backbone → destination. Analogy, analogy only: roads (physical), vehicles (virtual), traffic rules (protocols), government (authorities), citizens (end users).
+- Corrections carried over: paths are source-tree relative, not absolute `/drivers/net/`; VLAN is `net/8021q/`; loopback is virtual; NFQUEUE/XDP are not devices; eth0 is a legacy example name; no diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.

@@ -1409,6 +1409,20 @@ Only the new gaps from the 15-part version are added here. The full era history 
 - YouTube flow, as a simplified example: device gets IP, request via HTTP, routers, server response, video stream, all on TCP/IP plus protocols plus standards — actual delivery uses HTTPS, CDN, and adaptive streaming.
 - Full technical detail: Technology.md, "Network Evolution — Structured 15-Part Version, New Gaps Only". Combined view: Business&Technology.md, "Network Evolution — Structured 15-Part Version, New Gaps Only — Combined View".
 
+
+## Linux Network Kernel Devices — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the business-relevant companion to the kernel device section is added here: device types as products, start/stop as operations, and governance as market gates. Full technical detail is in Technology.md and is not repeated.
+
+### Device types, in business terms
+- Physical: NICs, Wi-Fi adapters, routers, switches, access points, modems, firewalls, cellular modems, fiber transceivers — sold as hardware, governed by IEEE standards and telecom regulators (FCC, TRAI, ITU), and operated by ISPs and enterprises.
+- Virtual: loopback, bridges, VLANs, bonding/teaming, TUN/TAP, veth pairs, MACVLAN/IPVLAN, VXLAN/GRE/Geneve overlays, Docker/Podman bridges, Open vSwitch, dummy interfaces — sold as software and cloud features, created and managed by the kernel and by daemons (NetworkManager, Docker, Libvirt, Kubernetes).
+- Specialized: SR-IOV virtual functions, CAN, TIPC, 6LoWPAN, CAIF, Phonet, RFCOMM — sold for automotive, industrial, telecom, and embedded markets, not as general consumer network devices.
+- Start, run, stop, in business terms: `ip link set up/down` activates or deactivates an interface, NetworkManager restarts a user-space daemon, and `modprobe` loads or unloads a driver — operations that an IT admin, a cloud operator, or a school IT admin performs, with downtime and user impact as the business cost of stopping a device.
+- Governance, in business terms: IEEE and telecom regulators set the rules for hardware and spectrum; kernel maintainers and IETF set the rules for the stack and protocols; RIRs allocate IPs; ICANN manages the DNS root zone; W3C sets web standards; cloud providers operate the services on top. A product must clear each layer for its market, as in the previous hierarchy sections.
+- Full technical detail: Technology.md, "Linux Network Kernel Devices — Start, Run, Stop, Types, Directory Map, Governance". Combined view: Business&Technology.md, "Linux Network Kernel Devices — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
