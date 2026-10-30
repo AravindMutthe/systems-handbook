@@ -1551,6 +1551,18 @@ Full section: Technology.md, "Authentication Chain — From Wi-Fi to Final Desti
 
 Full sections: Technology.md, "After AP Authentication — Switch, Router, and Where DNS Lives" and "Worked Examples — WhatsApp Call and GitHub Push". Business points only: the AP-switch-router chain is a cost and failure-domain map (a combined home box hides three failure points in one device; an enterprise chain separates them for troubleshooting and redundancy). DNS placement is a control point: a private resolver inside a VPN or enterprise can enforce internal names and filtering, while a public resolver cannot. The worked examples show why port and authentication choices are product decisions: SSH keys versus tokens for Git, and UDP real-time media versus TCP for Git transfer, each with different firewall, NAT, and support implications.
 
+## DNS Hardware/Software and Path Identity — Business Angle (Condensed, No Duplication)
+
+Full sections: Technology.md, "DNS — Hardware Path and Software Side" and "Identity Along the Path — MAC, IP, Port, FQDN, Certificate".
+
+- DNS placement is a vendor and control decision: a home router forwarder, an SD-WAN policy edge, an ISP recursive resolver, and an authoritative provider such as Route 53 are four different services with four different contracts, latencies, and failure modes. Choosing among them is not a technical detail; it decides who can see queries, who can filter them, and who is blamed when resolution fails.
+- Identity scope is a privacy and audit lesson: MAC addresses are hop-local and increasingly randomized, private IPs are LAN-local, public IPs are globally routable but NAT-shared, ports are session-local, DNS records live for a TTL, and certificates live for a validity period. No single identifier follows a user end to end, so an audit trail must join several identifiers with timestamps, and a privacy policy must not promise that a MAC alone identifies a person.
+- The access-point correction matters commercially: a vendor claiming an access point "rewrites identity" is describing bridging incorrectly; procurement should ask what the device actually forwards, filters, and logs at Layer 2 versus Layer 3.
+
+## Parallel Trace and Address Management — Business Angle (Condensed)
+
+Full sections: Technology.md, "Parallel Trace — GitHub Push (SSH) and WhatsApp Call, With Addresses at Each Hop" and "Address Management at Each Level — One Identity Versus Many Tables". Business points only: NAT and PAT tables, CAM tables, routing tables, DNS caches, and server session tables are all capacity and state limits — a table that fills up drops new sessions, which is why sizing and ageing of those tables are operations concerns, not trivia. The invalid example MAC in the source (containing non-hexadecimal characters) is a documentation-quality lesson: example data in runbooks must be valid, or it will be copied into tests and configurations that fail for the wrong reason.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.

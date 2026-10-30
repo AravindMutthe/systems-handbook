@@ -750,6 +750,18 @@ Full section: Technology.md, "Authentication Chain — From Wi-Fi to Final Desti
 - After AP authentication: laptop, AP (Layer 2), switch (MAC to port), router (Layer 3, NAT), ISP, server; DNS lives in local cache, /etc/hosts, the DHCP-supplied resolver (often the gateway as forwarder, or a private VPN resolver), and the global root, TLD, authoritative hierarchy.
 - Worked examples: WhatsApp call resolves a Meta service domain, then UDP with SRTP media and token authentication; GitHub push resolves github.com, then TCP to port 22 (SSH keys) or 443 (HTTPS tokens), with Git objects inside the encrypted session. All IPs, ports, and the example MAC are illustrations, not a captured session.
 
+## DNS Hardware/Software and Path Identity — Combined View (Condensed)
+
+Full sections: Technology.md, "DNS — Hardware Path and Software Side" and "Identity Along the Path — MAC, IP, Port, FQDN, Certificate". Business angle: Bussiness.md, "DNS Hardware/Software and Path Identity — Business Angle".
+
+- DNS software: laptop stub resolver, cache, /etc/hosts, glibc or systemd-resolved (127.0.0.53 stub on modern Ubuntu); server software BIND, NSD, PowerDNS holding A, AAAA, MX, TXT, NS, SOA, and CNAME records.
+- DNS hardware path: laptop stub, access point (Layer 2, no DNS service), switch (Layer 2, no DNS), router or SD-WAN edge (forwarder, cache, policy), ISP recursive resolver, root, TLD, authoritative.
+- Identity per hop: laptop MAC (48-bit, OUI plus vendor-assigned, randomized in modern Wi-Fi), private IP (mask-dependent split), ephemeral port (socket), access point BSSID and management IP, switch CAM table, router LAN and WAN IPs with NAT and PAT, ISP public IPs (TEST-NET examples in the source), DNS recursive and authoritative identities, destination public IP, port, and TLS or SSH cryptographic identity.
+- Corrections carried over: access points bridge without rewriting endpoint MACs or IPs; ISP core forwarding is IP-based but middleboxes can inspect more; WhatsApp ports and the GitHub nameserver example are source examples, not live-verified values.
+
+- Parallel trace: GitHub SSH from 192.168.1.101:55001 to 140.82.112.3:22, NAT to 198.51.100.10:40001, SSH key authentication; WhatsApp call from 192.168.1.101:56001 to 157.240.20.60:3478, NAT to 198.51.100.10:41001, signalling on TCP 5222 and token authentication. All values are source examples; media ports are negotiated by ICE, not fixed at 3478.
+- Address management: laptop one MAC and IP per interface with many ports; access point many client MACs; switch CAM table; router NAT table; ISP BGP prefix tables; DNS caches and zones; servers multiplexing by source IP, source port, destination IP, destination port, and protocol. The source's second switch example MAC is invalid (non-hexadecimal characters) and is corrected to a valid example in Technology.md.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.
