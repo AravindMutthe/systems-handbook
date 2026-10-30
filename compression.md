@@ -17,6 +17,8 @@ Contents below are the 3 backup files in full, in order, separated by part headi
 
 > **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
 > **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section. Scope: this applies to all notes given after the segregation of files into the 3 lines / 5 files (from 2026-10-30 about 16:47 IST onward), not only to future notes; those post-segregation batches were each verified before adding, and any error found later is corrected in place with its correction noted.
+> **Verification rule — official sources only (set 2026-10-30, by Aravind, best method):** Verify truthfulness against primary official sources only — Linux man-pages / kernel.org, kubernetes.io documentation, OCI specification, and vendor documentation. Do not use Wikipedia, blogs, Medium, secondary search cards, or random internet sites as verification sources.
+
 > **US and global perspective rule (set 2026-10-30, by Aravind):** India-perspective notes also get a US and global perspective in the same update, mapped to the same eras and layers, not as a separate later note.
 
 
@@ -4170,7 +4172,7 @@ Verified against Linux namespaces(7) man pages and Kubernetes documentation. Add
 ### Linux kernel namespaces, process-level isolation
 
 - A Linux namespace wraps a global system resource so processes inside it appear to have their own isolated instance of that resource. Changes are visible inside the namespace and invisible outside it. This is the kernel mechanism containers are built on.
-- Current types: mount (CLONE_NEWNS), PID (CLONE_NEWPID), network (CLONE_NEWNET), IPC (CLONE_NEWIPC), UTS (CLONE_NEWUTS), user (CLONE_NEWUSER), cgroup (CLONE_NEWCGROUP), and time (CLONE_NEWTIME).
+- Current types: mount (CLONE_NEWNS), PID (CLONE_NEWPID), network (CLONE_NEWNET), IPC (CLONE_NEWIPC), UTS (CLONE_NEWUTS), user (CLONE_NEWUSER), cgroup (CLONE_NEWCGROUP), and time (CLONE_NEWTIME). Note on sources: the older Linux man-pages release lists the first seven; time is a later addition (Linux 5.6), so a version difference in a man page list is not a contradiction.
 - Correction to the source: namespaces do NOT sandbox CPU and memory by themselves. Namespaces isolate views (PIDs, network stack, mount tree, IPC, hostname, user IDs). CPU and memory limits and accounting are cgroups. A container process therefore needs both: namespaces for what it can see, cgroups for what it can use.
 - Correction: namespaces are per-process, and a container is a group of processes sharing a set of namespaces, not a single process in every case.
 
@@ -4183,7 +4185,7 @@ Verified against Linux namespaces(7) man pages and Kubernetes documentation. Add
 ### Pod volumes: emptyDir, ConfigMap, Secret
 
 - A pod volume is defined in `spec.volumes` (what the storage is) and exposed to a container in `spec.containers[*].volumeMounts` (name plus mountPath). Defining a volume and mounting it are two separate steps.
-- emptyDir: created when a pod is assigned to a node, exists as long as that pod runs on that node, and is deleted when the pod is removed from the node. It is empty at creation, and containers in the same pod can read and write the same files in it, but only if they both mount it.
+- emptyDir: created when a pod is assigned to a node, exists as long as that pod runs on that node, and is deleted when the pod is removed from the node. It is empty at creation, and containers in the same pod can read and write the same files in it, but only if they both mount it. A container crashing does NOT remove the pod from the node, so emptyDir data survives container crashes; it is pod removal that deletes it.
 - ConfigMap volume: injects non-sensitive configuration as files into a pod. Secret volume: injects sensitive data such as passwords and tokens as files, backed by tmpfs so it is not written to non-volatile storage.
 - Correction to the source: ConfigMaps and Secrets are NOT purely ephemeral pod-local files. The ConfigMap and Secret objects themselves live in the cluster (in the namespace) and persist beyond any one pod; only the pod's mounted view of them is tied to the pod. Both can also be consumed as environment variables, not only as volumes.
 - Correction: "files and folders provided as volumes that are local to the Pod" is true for the mount, not for the source object. Do not use a ConfigMap or Secret volume as durable storage; for durable data use a PersistentVolumeClaim.
