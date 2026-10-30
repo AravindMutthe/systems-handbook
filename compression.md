@@ -2912,6 +2912,46 @@ Market flows move value from idea and raw material to consumer and back to recyc
 - No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The hierarchy above is in text and tables only, not as a drawn tree or org chart.
 - Full section: this Technology.md section. Business angle: Bussiness.md, "Market Flows & Global Standards — Business Angle". Combined view: Business&Technology.md, "Market Flows & Global Standards — Combined View".
 
+
+## Business Placement & UI Frameworks — Technology Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+The previous market-flows hierarchy is now applied, as a source placement, to three of Aravind's projects — Tern, GradeSpot, and HighGradesApp — and to UI frameworks across communication eras, public/open versus vendor-controlled. The placements below are the source's mapping, not verified live business facts, and several recorded facts about Tern differ from the source's generic labels.
+
+### A. Business placement in the global hierarchy (source placement, not verified)
+- Global oversight: not directly controlled by Tern, GradeSpot, or HighGradesApp. UN, WTO, and ICANN frameworks still matter for domain names (ICANN), cross-border trade, and intellectual-property protection (WTO, WIPO).
+- International standardization: ISO 27001 and SOC 2 for data security and privacy in cloud services and SaaS compliance; IETF, IEEE, and 3GPP for the networks the apps run over; EdTech standards IMS Global, SCORM, and LTI, which may apply if a product integrates with schools or universities.
+- Regional and national regulation: US and EU — GDPR and CCPA for user privacy where student data is handled, FCC and CE where any hardware component exists, FERPA in the US for education records where a school integration exists; India — DPDP Act 2023 for digital personal data; global cloud platforms (AWS, GCP, Azure) are already certified for compliance, but a product built on them inherits its own responsibilities — cloud certification does not transfer a tenant's privacy or security duties to the provider.
+- Industry and sector standards: EdTech and SaaS — data security (ISO 27001, SOC 2), privacy (GDPR, CCPA, FERPA), payment and finance (PCI-DSS, if subscriptions are monetized); AI and machine-learning systems — EU AI Act and NIST AI Risk Management Framework, as frameworks that apply to AI direction, not as already-met certifications.
+- National enforcement: if Tern, GradeSpot, or HighGradesApp are deployed in schools, government education departments may require compliance checks; if commercialized in multiple countries, each country's education ministry and data-privacy regulator applies separately.
+- Execution layer, direct space: suppliers and partners — cloud providers (Firebase, AWS), UI frameworks (Carbon, Tailwind), developer tools (GitHub, Jira); manufacturers for Tern hardware, if a physical product — chip foundries, OEM partners; distributors and platforms — app stores (Google Play, Apple App Store), web hosting; retailers and end channels — schools, universities, direct-to-student apps; consumers — students, teachers, institutions.
+- Source snapshot: Tern → infrastructure and platform (ISO, GDPR, cloud compliance); GradeSpot → SaaS, B2B EdTech (FERPA, SOC 2, LTI); HighGradesApp → consumer app (GDPR/CCPA, PCI-DSS, app-store rules).
+
+### B. UI frameworks across communication eras, public versus vendor-controlled
+- Telegraph and early telephone, 1850s–1940s: UI mediums — Morse code taps, teletype machines, rotary dials. Frameworks: hardware-only, no software frameworks. Public: International Morse Code as an open standard. Private: Western Union codes, Bell's internal switchboard systems.
+- Mainframes and early computing, 1950s–1970s: UI mediums — punch cards, command-line terminals (green screens). Public: ASCII as a text-encoding standard. Private: IBM 3270 terminal UI, DEC VT100.
+- Client-server and PC era, 1980s–1990s: UI mediums — GUI desktops (Windows, Mac, X11). Public/open: X Window System for Unix/Linux GUIs. Private: Microsoft Win32 API, Apple Toolbox. Early web: HTML 1.0, Java AWT, Swing.
+- Internet and Web 1.0/2.0, 1990s–2000s: UI mediums — web browsers, interactive websites. Public/open: HTML, CSS, JavaScript, W3C standards. Private/proprietary: Adobe Flash, Microsoft Silverlight. Public JavaScript frameworks: jQuery, Dojo Toolkit.
+- Mobile and cloud era, 2010s: UI mediums — smartphones, SaaS dashboards, app stores. Public/open: Bootstrap, AngularJS, React, Vue.js, Flutter. Private/proprietary: iOS UIKit, Android SDK, Salesforce Lightning. Hybrid: Ionic, Cordova.
+- 5G and modern networks, 2020s–now: UI mediums — AI-driven apps, real-time dashboards, XR (AR/VR). Public/open — web: React, Vue, Svelte, Next.js, Tailwind, Carbon Design; mobile: Flutter, React Native, Jetpack Compose, SwiftUI; XR/3D: Three.js, Babylon.js, WebXR. Private/proprietary — Google Material Design (semi-open, Google-led), Apple SwiftUI (Apple ecosystem), Microsoft Fluent UI (Microsoft ecosystem).
+- Public/open summary: HTML/CSS/JS (W3C), React, Vue, Svelte, Angular, Bootstrap, Tailwind, Carbon, Flutter, React Native, WebXR. Vendor-controlled summary: Apple UIKit/SwiftUI, Microsoft Fluent UI, Google Material Design, Salesforce Lightning, Oracle JET.
+- In short: from telegraph to 5G, UI moved from hardware dials to GUIs to web frameworks to mobile to AI-driven XR interfaces.
+
+### C. Fits for the three businesses (source proposals, not recorded stacks)
+- Tern, infrastructure and AI platform: enterprise-grade UI frameworks — public: React, Carbon Design (IBM), Next.js, TailwindCSS; private: AWS Amplify UI, Salesforce Lightning.
+- GradeSpot, EdTech SaaS: education-focused UI frameworks and integrations — public: React, Angular, Bootstrap, LTI/SCORM support; private: Google Classroom APIs, Microsoft Teams Edu UI kits.
+- HighGradesApp, B2C student app: mobile-first UI frameworks — public: Flutter, React Native, Jetpack Compose; private: iOS SwiftUI.
+- Source summary of best fits: React plus Tailwind/Carbon for Tern, React/Angular plus LTI/SCORM for GradeSpot, and Flutter/SwiftUI for HighGradesApp.
+
+### Corrections, cross-checked with the rule book
+- Recorded Tern, not the source label: Tern is recorded as a ternary-computing platform — base-3 chips aimed at AI workloads, with a web app, Tidal developer platform, Cyrus 1 processor and TernAct products, a ternary processor simulator, and a NestJS API backed by Firestore; its recorded frontends use Next.js and React. The source's generic "Core Tech Infrastructure & AI hardware/software platform" is a simplification, and its "Tern device prototypes" under FCC/CE are hypothetical, not a verified deployed hardware product.
+- GradeSpot and HighGradesApp placements are source proposals, not verified live facts: GradeSpot is recorded as an IT Solutions company with courses and services, not specifically verified as a B2B SaaS for schools; HighGradesApp recurs in study notes as a case study, not verified here as a live consumer app with app-store, PCI-DSS, and consumer-protection compliance in place. Do not present these placements as audited business facts.
+- Public versus private, clarified: the source's split is open/community versus vendor-controlled/platform-locked, not free versus paid. Jetpack Compose is open source (AOSP, Google-led) and Android-specific, not private in the licensed sense; Oracle JET is open source (Apache 2.0, Oracle-led), not a private licensed framework; SwiftUI is free to use but Apple-ecosystem-locked; Material Design's implementations are open source but Google-led.
+- Not frameworks: Morse code is a code, ASCII is a character encoding, HTML is a markup language, LTI and SCORM are integration standards, not UI frameworks; Google Classroom APIs and Microsoft Teams Edu kits are integration APIs, not UI frameworks; WebXR is an API standard, Three.js and Babylon.js are the libraries built on it.
+- Dated items: AngularJS is legacy (its successor is Angular, and AngularJS reached end of life in 2022); Adobe Flash and Microsoft Silverlight are discontinued; EU AI Act is a law with phased application, not a single "coming soon" event, and NIST AI Risk Management Framework is guidance, not a regulation; SOC 2 is an audit framework, not a certification a product simply holds like a licence.
+- No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The source offers to draw a 3-column diagram and a layered map were not acted on.
+- Full section: this Technology.md section. Business angle: Bussiness.md, "Business Placement & UI Frameworks — Business Angle". Combined view: Business&Technology.md, "Business Placement & UI Frameworks — Combined View".
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -4644,6 +4684,24 @@ For a business, market flows are how value moves, and standards are the gate at 
 - Standards bodies develop standards; regulators enforce law. CE is a marking, REACH and RoHS/WEEE are regulations/directives, CCC is a certification scheme, and SOC 2, PCI-DSS, Euro NCAP, and GFSI are frameworks, ratings, or benchmarking, not laws or regulators. GDPR/CCPA are laws; ISO standards are standards.
 - Full technical detail: Technology.md, "Market Flows & Global Standards — Technology Angle". Combined view: Business&Technology.md, "Market Flows & Global Standards — Combined View".
 
+
+## Business Placement & UI Frameworks — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+For a business, placement in the hierarchy is a compliance and channel question: which standard, regulator, store, and school or institution gate must be cleared before a product can be sold, and which UI framework choice locks a product into which vendor's ecosystem.
+
+### Business placement, in business terms
+- Tern (source placement): infrastructure and platform — ISO 27001, GDPR, and cloud compliance, with cloud providers (Firebase, AWS) as suppliers and GitHub/Jira as developer tools.
+- GradeSpot (source placement): B2B SaaS for schools and universities — EdTech regulation, SaaS data privacy, FERPA where US school records are involved, SOC 2, and LTI integration, sold through schools and universities.
+- HighGradesApp (source placement): B2C mobile app for students — app-store compliance, data privacy (GDPR/CCPA), and PCI-DSS if subscriptions are monetized, sold direct to students.
+- Enforcement, in business terms: school deployment brings government education-department checks; multi-country sale brings each country's education ministry and privacy regulator separately; cloud certification does not transfer a tenant's duties to AWS, GCP, or Azure.
+- UI choice, in business terms: a public/open framework (React, Flutter, Tailwind, Carbon) keeps a product portable across vendors; a vendor-controlled framework (SwiftUI, Fluent UI, Salesforce Lightning) trades portability for that vendor's ecosystem, store, and tooling. LTI/SCORM, Classroom APIs, and Teams Edu kits are integration choices, not UI frameworks, and they decide whether a school can adopt the product at all.
+- Source best fits, as proposals only: React plus Tailwind/Carbon for Tern, React/Angular plus LTI/SCORM for GradeSpot, Flutter/SwiftUI for HighGradesApp.
+
+### Corrections carried over
+- These placements are source proposals, not verified live facts. Recorded Tern is a ternary-computing platform with Next.js/React frontends, not a generic AI hardware label; GradeSpot is recorded as an IT Solutions company, not verified as B2B school SaaS; HighGradesApp is a case study in notes, not verified as a live consumer app. Jetpack Compose and Oracle JET are open source and vendor-led, not private licensed frameworks; AngularJS is legacy; Flash and Silverlight are discontinued.
+- Full technical detail: Technology.md, "Business Placement & UI Frameworks — Technology Angle". Combined view: Business&Technology.md, "Business Placement & UI Frameworks — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -5479,6 +5537,23 @@ Market flows and regulation, read together: a product moves through innovation, 
 
 ### Corrections carried over
 - Bodies, laws, markings, and frameworks are kept distinct: ISO/IEEE/IETF/3GPP/ETSI/BSI/BIS/JIS are standards bodies; FCC/FDA/NHTSA/TRAI/Ofcom/MIIT/MIC are regulators; CE is a marking; REACH/RoHS/WEEE are regulations/directives; CCC is a scheme; SOC 2, PCI-DSS, Euro NCAP, and GFSI are framework, standard, rating, or benchmarking, not laws. 6G is in progress, not deployed. No diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
+
+## Business Placement & UI Frameworks — Combined View (No Diagram)
+
+### Headline
+Business placement and UI history, read together: where a product sits in the regulation hierarchy decides which gates it must clear, and which UI framework era and licence it chooses decides how portable it stays.
+
+### Combined table
+- Placement: Tern → infrastructure/platform (ISO, GDPR, cloud compliance); GradeSpot → SaaS, B2B EdTech (FERPA, SOC 2, LTI); HighGradesApp → consumer app (GDPR/CCPA, PCI-DSS, app-store rules) — all as source placements, not verified live facts.
+- Execution channels: suppliers (Firebase, AWS, GitHub, Jira) → platforms (app stores, web hosting) → channels (schools, universities, direct-to-student) → consumers (students, teachers, institutions).
+- UI eras: telegraph hardware (Morse, teletype, rotary) → mainframe terminals (ASCII encoding, IBM 3270, VT100) → PC GUIs (X Window, Win32, Toolbox, AWT/Swing) → web (HTML/CSS/JS, W3C, jQuery, Flash/Silverlight) → mobile/cloud (Bootstrap, React, Vue, Flutter, UIKit, Android SDK, Lightning, Ionic/Cordova) → 5G/modern (React, Vue, Svelte, Next.js, Tailwind, Carbon, Flutter, React Native, Jetpack Compose, SwiftUI, Three.js, Babylon.js, WebXR, Material, Fluent).
+- Public/open versus vendor-controlled: open means community or open-source and portable (React, Vue, Flutter, Tailwind, Carbon, Jetpack Compose, Oracle JET); vendor-controlled means ecosystem-locked (SwiftUI, UIKit, Fluent UI, Salesforce Lightning), even when free to use. Material Design is semi-open, Google-led.
+- Business fits, as proposals: Tern — React, Next.js, Tailwind, Carbon; GradeSpot — React, Angular, Bootstrap, plus LTI/SCORM integration; HighGradesApp — Flutter, React Native, Jetpack Compose, SwiftUI.
+
+### Corrections carried over
+- Recorded Tern is a ternary-computing platform with Next.js/React frontends, not the source's generic label. GradeSpot and HighGradesApp placements are unverified proposals. Morse, ASCII, HTML, LTI, and SCORM are codes, encodings, markup, or integration standards, not UI frameworks. AngularJS is legacy, Flash and Silverlight are discontinued, and no diagram was drawn, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
 ## Business Promotion — Combined View (No Diagram)

@@ -6602,6 +6602,26 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
   - Key note: Each industry has its own gatekeepers, so a product cleared in one industry or market is not automatically cleared in another.
   - Example: automotive — UNECE WP.29 and ISO 26262; electronics — FCC and CE; pharma — FDA and EMA; food — Codex and EFSA; cloud/data — GDPR, CCPA, and ISO 27001.
 
+
+## Business Placement & UI Frameworks — Technology Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+- Business placement and UI history, together — where a product sits in the regulation hierarchy, and which UI framework era and licence it chooses.
+  - Key note: Placement is a gate question, and UI choice is a portability question. Both decide whether a product can be sold and where it can move.
+  - Example: a school app that cannot pass FERPA or LTI integration cannot be adopted by a school, however good its UI is.
+- Business placement, source snapshot — Tern → infrastructure/platform (ISO, GDPR, cloud compliance); GradeSpot → SaaS, B2B EdTech (FERPA, SOC 2, LTI); HighGradesApp → consumer app (GDPR/CCPA, PCI-DSS, app-store rules).
+  - Key note: These are source placements, not verified live facts. Recorded Tern is a ternary-computing platform, GradeSpot is an IT Solutions company, and HighGradesApp recurs as a case study, not a verified live app.
+  - Example: cloud certification on AWS, GCP, or Azure does not transfer a tenant's privacy duties to the provider.
+- UI eras, in order — telegraph hardware → mainframe terminals → PC GUIs → web → mobile/cloud → 5G/modern AI and XR.
+  - Key note: Each era's UI was limited by its network. Telegraph UI was hardware taps and dials, web UI needed browsers, mobile UI needed app stores, and modern UI needs real-time 5G and cloud links.
+  - Example: Morse code taps (telegraph) → IBM 3270 green screens (mainframe) → Windows/Mac GUIs (PC) → HTML/CSS/JS browsers (web) → Flutter/React Native apps (mobile) → React/Next.js dashboards and Three.js XR (modern).
+- Public/open versus vendor-controlled — open means community or open-source and portable; vendor-controlled means ecosystem-locked, even when free to use.
+  - Key note: The source's public/private split is about control and portability, not price. A free framework can still lock a product into one vendor's store and tooling.
+  - Example: React, Flutter, Tailwind, and Carbon are open and portable; SwiftUI, UIKit, and Fluent UI are vendor-ecosystem-locked; Jetpack Compose and Oracle JET are open source and vendor-led, not private licensed frameworks.
+- Business fits, as proposals — Tern: React, Next.js, Tailwind, Carbon; GradeSpot: React, Angular, plus LTI/SCORM integration; HighGradesApp: Flutter, React Native, Jetpack Compose, SwiftUI.
+  - Key note: LTI and SCORM are integration standards, not UI frameworks. They decide school adoption, while the UI framework decides how the app looks and where it runs.
+  - Example: GradeSpot with LTI support can plug into a school's learning system; without it, the same UI cannot be adopted there.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9150,6 +9170,17 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
   - Key note: Selling is itself a regulated step. A platform that lists a non-compliant product inherits the compliance problem, which is why CE, FCC, and GDPR checks sit at the retail layer.
   - Example: an electronics product needs FCC/CE clearance before online sale in the US/EU, not after.
 
+
+## Business Placement & UI Frameworks — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+- Business angle only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Placement as a business gate — Tern: infrastructure/platform compliance; GradeSpot: B2B EdTech and school gates; HighGradesApp: consumer app-store and privacy gates.
+  - Key note: Each placement changes who must approve the product — a cloud auditor, a school, an education ministry, or an app store — and that approver is part of the business model.
+  - Example: a consumer app must clear app-store rules and PCI-DSS for subscriptions before it can charge students, not after launch.
+- UI choice as a business lock-in — open frameworks keep a product portable; vendor-controlled frameworks trade portability for ecosystem tooling.
+  - Key note: Framework choice is a long-term cost. Rebuilding a UI for another vendor's ecosystem is a migration, not a re-skin.
+  - Example: a Flutter app can target Android and iOS from one codebase; a SwiftUI-only app is iOS-locked.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -10465,6 +10496,14 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 - Combined point — innovation, manufacturing, finance, and logistics flows each pass through global, international, regional, industry, and national layers before reaching consumers and recycling.
   - Key note: Reading flows and regulation together shows why a product can be technically ready and still unsellable in a market: it has not yet passed that market's layer.
   - Example: a car, a phone, a drug, and a cloud service each pass different industry gates, even though they share the same global-to-consumer hierarchy.
+
+
+## Business Placement & UI Frameworks — Combined View (No Diagram)
+
+- Combined view only — see Part 1 elaborated section above for the full technical detail, to avoid repeating it here, per the new branch rule.
+- Combined point — regulation hierarchy decides which gates a product must clear, and UI era and licence decide how portable it stays while clearing them.
+  - Key note: A product can be technically ready and still unsellable if it fails a regulatory gate, and it can be sellable and still hard to move if its UI is vendor-locked.
+  - Example: Tern, GradeSpot, and HighGradesApp each sit at a different hierarchy layer and need a different UI and integration mix, even though they share the same global-to-consumer flow.
 
 ## Business Promotion — Combined View (No Diagram)
 
