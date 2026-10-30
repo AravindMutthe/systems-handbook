@@ -696,6 +696,25 @@ Audited kernel branches, read together, without repeating the full technical sec
 - Combined corrections: pre-TCP layers are analogies; S1 and X2 are LTE, not 5G; 6G is research; eBPF is kernel technology and P4 is a language, not devices; LLM-controlled autonomous networks are a direction, not a standard; no visual timeline was built.
 - Full technical detail: Technology.md, "Communication Device and Network Stack Evolution — Pre-Telegraph to AI Era". Business angle: Bussiness.md, "Communication Device and Network Stack Evolution — Business Angle".
 
+## User Accounts and NIC Control — Combined View (Corrected, De-duplicated)
+
+- Combined rule: NIC hardware is controlled by privilege, not by job title. Root holds CAP_NET_ADMIN and CAP_SYS_MODULE; daemons such as NetworkManager and wpa_supplicant hold the privileges their service needs; regular users act through polkit, sudo, groups, or capabilities, action by action.
+- Combined corrections: netdev alone does not grant `ip link` control; sudo depends on sudoers; wireshark capture works through dumpcap with CAP_NET_RAW and CAP_NET_ADMIN; dhclient is not the Ubuntu 22.04 default; interface names are predictable, not eth0.
+- Full technical detail: Technology.md, "User Accounts and NIC Control in Ubuntu and Linux". Business angle: Bussiness.md, "User Accounts and NIC Control — Business Angle".
+
+## Evolution of American Computer Network Technology — Combined View (Corrected, De-duplicated)
+
+- Combined arc in text: ARPA 7 February 1958, ARPANET 1969 with UCLA, SRI, UCSB, and Utah, TCP/IP flag day 1 January 1983, NSFNET 1986 to decommission April 1995, ARPANET decommission 1990, Web at CERN 1989, Silicon Valley commercialization, financial networks, and hyperscale cloud.
+- Combined corrections: packet switching also comes from Davies in the United Kingdom; the Web is European, not American; SWIFT is Belgian and messaging-only; United States leadership is foundational for Internet and cloud, but not a verified claim for most global infrastructure in every area.
+- Full technical detail: Technology.md, "Evolution of American Computer Network Technology and Its Global Expansion". Business angle: Bussiness.md, "Evolution of American Computer Network Technology — Business Angle".
+
+## From DARPA to Silicon Valley — Combined View (Corrected, De-duplicated)
+
+- Combined model: five systems, government, universities, companies, finance, and global markets, in a simplified, competitive, international model, not a centrally controlled empire.
+- Combined chain in text: Industrial Revolution, Electricity and Telegraph, Telephone Exchanges, ARPANET, TCP/IP, NICs, Switches, and Routers, Internet Service Providers, Distributed Servers, Cloud Computing, Financial Networks, AI Infrastructure, as a teaching framing, not a strict causal chain.
+- Combined corrections: Ethernet is American, Xerox PARC 1973, TCP/IP is American, Linux is Finnish and global, the Web is European at CERN, SWIFT is Belgian and messaging-only, and American influence is substantial but interdependent with Taiwan, South Korea, Japan, Europe, China, India, and others.
+- Full technical detail: Technology.md, "From DARPA to Silicon Valley — How America Built a Global Technology and Financial Empire". Business angle: Bussiness.md, "From DARPA to Silicon Valley — Business Angle".
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.

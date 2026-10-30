@@ -1483,6 +1483,30 @@ Only the audited business companion is added here. Full technical detail is in T
 - Corrections: pre-TCP stack layers are analogies, not historical stacks. 6G AI-native networking is research, not deployed. S1 and X2 are LTE interfaces, not 5G. Fully autonomous LLM-controlled networks are a direction, not a standard. No visual timeline flowchart was built, under the standing no-diagram rule.
 - Full technical detail: Technology.md, "Communication Device and Network Stack Evolution — Pre-Telegraph to AI Era". Combined view: Business&Technology.md, "Communication Device and Network Stack Evolution — Combined View".
 
+## User Accounts and NIC Control — Business Angle (Corrected, De-duplicated)
+
+- Business view: NIC control is a privileged operation, not a normal user task. Root, or a process with CAP_NET_ADMIN, brings interfaces up and down, sets addresses, routes, and VLANs, and loads drivers. Regular staff use network services; they do not configure hardware unless a sudo rule, a capability, or a polkit permission grants that specific action.
+- Daemons in a business: NetworkManager as root manages day-to-day interfaces and authorizes user requests through polkit; wpa_supplicant handles Wi-Fi authentication; systemd-networkd configures interfaces where it is the renderer. None of these are login accounts for staff to use directly.
+- Groups, corrected: netdev does not by itself grant `ip link` control on Ubuntu; it is tied to D-Bus and NetworkManager access in Debian tradition, while Ubuntu polkit and console policy govern local user access. sudo group access depends on sudoers rules. wireshark group works through dumpcap with CAP_NET_RAW and CAP_NET_ADMIN, not by running Wireshark as root.
+- X1 Yoga case: only root or sudo-enabled accounts configure NIC hardware directly; NetworkManager configures NICs automatically; regular users consume services. Interface names are predictable, not eth0, and MAC changes usually need the interface down first.
+- Full technical detail: Technology.md, "User Accounts and NIC Control in Ubuntu and Linux". Combined view: Business&Technology.md, "User Accounts and NIC Control — Combined View".
+
+## Evolution of American Computer Network Technology — Business Angle (Corrected, De-duplicated)
+
+- Business arc, source: United States government research created ARPANET, universities developed TCP/IP, private companies commercialized it, the Internet spread worldwide, and cloud companies now operate global infrastructure. Cisco, Juniper, Intel, and IBM built enterprise networking businesses; AWS, Azure, and Google Cloud sell global data-center, virtual networking, and AI platforms.
+- Financial networks, corrected: NYSE and NASDAQ trading depends on ultra-low latency networks and fibre, but SWIFT is not American. SWIFT is a Belgian member-owned cooperative from 1973 that carries payment instructions; it does not move money itself.
+- Market correction: the Web was invented at CERN in Europe by Tim Berners-Lee in 1989, not in the United States. United States Web-era business came from browsers, servers, and commercialization, including Mosaic at NCSA, not from inventing the Web.
+- Present-day correction: United States leadership is strong in hyperscale cloud and several design areas, but not in every area listed. Chip fabrication leadership is in Taiwan and South Korea, telecom equipment includes non-United States vendors, and global clouds include Alibaba Cloud and regional providers.
+- Full technical detail: Technology.md, "Evolution of American Computer Network Technology and Its Global Expansion". Combined view: Business&Technology.md, "Evolution of American Computer Network Technology — Combined View".
+
+## From DARPA to Silicon Valley — Business Angle (Corrected, De-duplicated)
+
+- Business model, source: government funds research, universities supply knowledge and engineers, companies commercialize, financial institutions supply venture capital, loans, and public-market investment, and global markets buy, deploy, and improve the technology. Revenue, taxes, investment returns, and customer feedback sustain further development. This is a simplified model, not a centrally controlled system.
+- Venture capital stages, source: research funded by research funding; startup by founder capital and angel investment; growth by venture capital; expansion by sales revenue and partnerships; maturity by IPO or acquisition; reinvestment from returns into new companies. Not every startup succeeds, and government inventions do not automatically become profitable businesses.
+- India bank example, source: an Indian bank buys NICs, routers, switches, servers, software, and cloud from American suppliers, with branch networks, data centers, and cloud services, and customers use digital banking. Revenue comes from hardware sales, licences, cloud consumption, maintenance, professional services, and subscriptions. Technology sales, payment processing, and financial settlement are separate businesses.
+- Layer control, business correction: semiconductors Intel, NVIDIA, Broadcom; network equipment Cisco, Juniper, Arista, with Juniper's 2025 HPE acquisition noted; operating systems Microsoft plus the global Linux ecosystem, not an American product; cloud AWS, Azure, Google Cloud; financial networks Visa and Mastercard as United States payment networks, with SWIFT as a Belgian messaging cooperative, not a payment network in the same sense.
+- Full technical detail: Technology.md, "From DARPA to Silicon Valley — How America Built a Global Technology and Financial Empire". Combined view: Business&Technology.md, "From DARPA to Silicon Valley — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
