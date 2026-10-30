@@ -4439,6 +4439,68 @@ Verified against kubernetes.io Pods and Volumes documentation (emptyDir is creat
 - *Correction: "az aks scale --node-count" adds nodes live, but it does NOT guarantee a Pending pod provisions immediately. A pod can stay Pending for scheduling constraints, node selectors, taints, affinity, or resource requests that no new node satisfies, not only for total cluster capacity.*
 - *Correction: the "Core Connectivity Mechanism" column in the second table is source filler, not standard terminology. A JVM heap is not connected by a "CPU System Bus / MMU Channel", and a container is not connected by a "Linux Kernel VFS Driver Mapping". Those phrases are not carried as facts.*
 
+## Topologies — Physical, Logical, and the Tools That Are Not Topologies (Audited, Official Sources Only, Elaborate Only)
+
+Verified against vendor documentation for PCIe point-to-point links and IEEE 802.3ad / 802.1AX link aggregation for bonding and LACP. Added to elaborate only; book and main untouched. Segregation deferred until the owner says done. Corrections in this section are written in italic text, per the owner's rule.
+
+- *Correction: the source mixes three different layers into one table. A topology is the arrangement of nodes and links. A transmission medium (copper, fibre, radio) is what a link is made of. A protocol, system, or tool (PCIe, CAN, Ceph, Kubernetes, BGP, DNS) is what runs on a topology. Listing them in one column makes a medium look like a topology and a system look like a shape. The corrected sections below keep shape, medium, and system apart.*
+- *Correction: the source's "Broadcast" row is incomplete. Its remark ends at "Redundancy &" with nothing after the ampersand. Nothing is filled in here to complete it, because the missing text is not in the source and inventing it would be fabrication. The row is flagged incomplete.*
+
+### Point-to-point (P2P)
+
+- Shape: exactly two endpoints, one link, no shared medium, no forwarding in between.
+- Examples that stand: a veth pair between a container and its host bridge, a WireGuard tunnel between two peers, a TUN or TAP link, and a direct cable between two hosts.
+- *Correction: WireGuard, TUN, and TAP are not topologies. WireGuard is a VPN protocol that runs over a point-to-point tunnel, and TUN and TAP are virtual network device types. The topology is point-to-point; the tools are how that link is implemented.*
+
+### Bus
+
+- Shape: all nodes share one medium, and only one transmission can use it at a time without collision or arbitration.
+- Examples that stand: CAN in vehicles, I2C and SPI on a board, and the old parallel PCI bus.
+- *Correction: PCIe does NOT belong in a shared-bus row. The old PCI bus shared a parallel medium and its bandwidth. PCIe replaced it with serial, point-to-point links from each device to a switch or root complex, with a switched fabric, not a shared bus. Listing PCIe under "shared medium, arbitration" repeats the PCI property that PCIe was designed to remove.*
+- *Correction: DDR is a memory interface, not a network topology. It is a bus in the hardware sense, but it does not belong in a network-topology table alongside CAN and Ethernet without saying the domain changed from network to memory. The same applies to on-board traces in general: they are a medium, and their topology depends on how they are routed, point-to-point, bus, or star, not on the copper itself.*
+- Failure property: a break in a shared bus can affect all nodes on it, and bandwidth is shared, so arbitration and contention are the cost.
+
+### Star
+
+- Shape: every node connects to one central device, and traffic between nodes passes through the centre.
+- Examples that stand: a switch or a bridge as the centre of a LAN, and a hub in the old physical sense.
+- *Correction: a hub and a switch are not the same logical shape. A hub is physically a star and logically a bus, because it repeats every frame to every port. A switch is physically and logically a star, because it forwards a frame only to the destination port. The source's "Bridge, Switch, Hub utilities" merges them without that distinction.*
+- Failure property: the centre is a single point of failure for the nodes attached to it, while a single spoke failure affects only that node.
+
+### Mesh
+
+- Shape: nodes connect to several others, with more than one path between any two nodes. Full mesh means every node connects to every other node; partial mesh means only some pairs are directly connected.
+- Examples that stand, as uses of mesh, not as topologies themselves: BGP full-mesh peering inside an autonomous system, and a service mesh, where proxies beside each service form a mesh of control and data paths.
+- *Correction: Ceph and Kubernetes are NOT topologies. Ceph is a distributed storage system that can use a mesh-like replication network, and Kubernetes is a container orchestrator whose pod network is normally flat, not a mesh. Calling them "mesh" confuses a system that uses a mesh with the shape itself. The same applies to "Storage and cluster utilization" as a remark: it describes what the system does, not what a mesh costs, which is link count, which grows with the square of the node count in a full mesh.*
+- Failure property: a mesh survives single-link and single-node failures better than a star or bus, at the cost of many more links and more complex routing state.
+
+### Tree
+
+- Shape: a hierarchy with one root, branches, and leaves, and exactly one path from the root to any node.
+- *Correction: the DNS hierarchy is a naming tree, not a network topology. Root, TLD, and authoritative zones form a delegation tree for names, but DNS queries do not travel over a tree-shaped network, and resolvers, caches, and anycast instances do not form a tree. The source's "DNS Tree, global scope, IoT IP resolution" merges a namespace hierarchy with a network shape. It belongs in a section on naming, not in a topology table, and "IoT IP resolution" is not a property of the DNS tree.*
+- Failure property of a true tree network: a failure near the root disconnects a whole subtree, which is why real networks rarely use a pure tree without redundant links.
+
+### Broadcast: a transmission mode, not a topology
+
+- *Correction: broadcast is not a topology. Broadcast, unicast, and multicast are transmission modes: one sender to all, one sender to one, and one sender to a group. A VLAN broadcast domain is a Layer 2 boundary within which broadcast frames are flooded, not a shape of nodes and links. Bonding and LACP are also not broadcast: they aggregate several physical links into one logical link for redundancy and per-flow bandwidth, under IEEE 802.3ad, now 802.1AX, and they do not create a broadcast topology.*
+- Redundancy in a broadcast domain comes from the links and spanning-tree or equivalent loop prevention, not from broadcast itself, which by itself creates flooding, not redundancy.
+
+### Media are not topologies
+
+- Guided media, copper traces, twisted pair, coaxial, fibre, and SoC interconnects such as AXI, AMBA, and NoC, are the physical carriers a link can use. A twisted pair can carry a point-to-point link, a star spoke, or a bus segment, depending on how it is wired.
+- Unguided media, Wi-Fi, Bluetooth, 4G and 5G, satellite, LoRa, and Zigbee, are also carriers. A Wi-Fi network is normally a star around an access point, but Wi-Fi Direct and mesh Wi-Fi use the same radio medium in different shapes, which proves the medium does not decide the topology.
+- *Correction: "these are the lowest-level abstractions that everything else is built on" is overstated. Topologies sit above signalling, encoding, and physical transmission, and below routing, addressing, and application protocols. They are one abstraction layer, not the lowest, and not the foundation of protocols, buses, and fabrics in the sense the source claims. A bus, a fabric, and a network are different levels, and a topology describes only the arrangement within a level.*
+
+### Telemetry
+
+- Telemetry is what is measured to understand health and performance. For topologies, that means measuring the properties each shape is sensitive to, not one generic health number.
+- Point-to-point: link state, error rate, and utilization of that one link.
+- Bus: contention, arbitration waits, and collision or retry counts where the medium is shared.
+- Star: centre device health, per-spoke utilization, and whether the centre is a bottleneck or a single point of failure.
+- Mesh: per-link state, path count between node pairs, routing convergence time after a failure, and link count versus node count.
+- Tree, for a true tree network: root and branch utilization, and subtree impact of a branch failure. For DNS, the equivalent telemetry is query latency, cache hit rate, and resolver failure rate, which are naming metrics, not topology metrics.
+- Broadcast domain: broadcast frame rate, flooding volume, and loop or storm indicators, because an uncontrolled broadcast domain fails by flooding, not by link loss.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -6597,6 +6659,14 @@ Full sections: compression.md Part 1, "Communication Models", "Communication and
 - Kernel-space versus user-space for Kubernetes is an analogy for platform versus application responsibility, not a literal privilege split. Budget and role work should use control-plane versus workload responsibility, not kernel versus user labels.
 - Errors and isolation: survival is a property of the storage medium, not the tier name. Anything in RAM, including tmpfs, emptyDir memory, and unpersisted Redis, is lost on reboot or pod removal. Durable work needs disk, a CSI volume, or a persisted and replicated store, and runbook commands that promise instant zero-downtime recovery are overstated in every row of the source.
 
+## Topologies — Business Angle (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "Topologies — Physical, Logical, and the Tools That Are Not Topologies". Corrections in the full section are in italic text.
+
+- Topology is a cost and failure choice, not a product name. A star is cheap and simple but its centre is a single point of failure. A mesh is resilient but its link count and routing cost grow fast. A bus is cheap and shared, so contention caps its scale.
+- Buying a system because it is labelled mesh, or calling Kubernetes or Ceph a topology, misleads a purchasing decision. The question to ask a vendor is: what shape are the links, how many paths exist between two nodes, and what fails when one link or one centre device fails.
+- Telemetry follows the shape: measure contention on a bus, centre load on a star, path and convergence on a mesh, and broadcast flooding in a Layer 2 domain, not one generic health score.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -7739,6 +7809,19 @@ Full sections: compression.md Part 1, "Communication Models", "Communication and
 - Pod network: pause container holds the network namespace, app containers share one pod IP and localhost, PID sharing is opt-in only, Ingress as a resource is not the same as ingress traffic, DNS is application layer with EDNS larger UDP and TCP on truncation or zone transfer.
 - Kubernetes roles: control plane is user-space processes on control-plane nodes, worker nodes are machines, policy is enforced on nodes by the CNI, and the command for signing requests is kubectl get csr, not kubectl get certificates.
 - Errors and isolation: heap and tmpfs are lost on process death or reboot, overlay and DAS survive reboot while the container or disk exists, local PVs are node-bound, Azure ephemeral disks survive reboot but not deallocate, and every zero-downtime runbook command in the source is conditional, not guaranteed.
+
+## Topologies — Combined View (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "Topologies — Physical, Logical, and the Tools That Are Not Topologies". Corrections in the full section are in italic text.
+
+- Point-to-point: two endpoints, one link, veth pair, WireGuard tunnel, TUN/TAP.
+- Bus: shared medium, arbitration, CAN, I2C, SPI, old PCI. PCIe is switched point-to-point, not a shared bus. DDR is a memory interface, not a network topology.
+- Star: centre device, switch and bridge as logical star, hub as physical star but logical bus, centre is a single point of failure.
+- Mesh: multiple paths, full mesh link count grows with the square of nodes, BGP full mesh and service mesh are uses of mesh, Ceph and Kubernetes are systems, not topologies.
+- Tree: hierarchy, one path root to leaf, DNS is a naming tree, not a network topology.
+- Broadcast: transmission mode, not a topology. VLAN broadcast domain is a Layer 2 boundary, bonding and LACP are link aggregation, not broadcast.
+- Media: guided and unguided carriers do not decide topology. The same radio can be star, point-to-point, or mesh.
+- Telemetry: per-shape metrics, contention on a bus, centre load on a star, path and convergence on a mesh, flooding in a broadcast domain.
 
 ## Business Promotion — Combined View (No Diagram)
 

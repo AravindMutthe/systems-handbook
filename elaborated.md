@@ -6971,6 +6971,18 @@ Pointer: full sections in compression.md Part 1. Business and combined angles ar
 - Survival follows the medium, not the tier. Example: emptyDir memory and /dev/shm are lost on pod removal and reboot, while a CSI volume and a managed disk survive both.
 - Runbook commands are conditional. Example: remounting a tmpfs larger does not add RAM, and scaling an AKS node count does not schedule a pod that is Pending for a taint or affinity rule.
 
+## Topologies — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+
+- A topology is a shape, not a product. Example: calling Kubernetes a mesh does not tell you how its pods are linked; a flat pod network and a service mesh are different shapes.
+- PCIe is not a shared bus. Example: each PCIe device has its own serial link to a switch, so two devices can transfer at once, unlike old PCI where all devices shared one parallel bus.
+- A hub is a star physically and a bus logically. Example: a hub repeats a frame to every port, while a switch forwards it only to the destination port.
+- Full mesh cost grows fast. Example: 10 nodes need 45 links in a full mesh, and 20 nodes need 190, which is why most real meshes are partial.
+- DNS is a naming tree, not a network tree. Example: a resolver can query anycast root instances, and caches break the tree path, so the network path does not follow the delegation tree.
+- Broadcast is a mode, not a shape. Example: a VLAN broadcast domain can be wired as a star of switches, and bonding two links into one logical link does not make it a broadcast topology.
+- Telemetry must match the shape. Example: on a bus, watch arbitration waits; on a star, watch the centre; on a mesh, watch path count and convergence after a link fails.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9657,6 +9669,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
+
+## Batch 14 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11102,6 +11119,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 
 ## Batch 13 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
+
+## Batch 14 — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
