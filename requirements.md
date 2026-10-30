@@ -498,6 +498,31 @@ A batch is complete only when all of these are true:
   batch. A page with a diagram but no SVG redraw is
   incomplete under this requirement.
 
+## R20. Answer style — crisp and clear, keynotes and points, lengthy only where needed
+
+- Requirement: Leo's answers and explanations in chat
+  are crisp and clear, with important keynotes and
+  points, not lengthy essays.
+- Requirement: this applies across domains and across
+  topics, not only to one domain or one batch.
+- Requirement: lengthy information is allowed only
+  where it is actually needed — for example, an exact
+  transcription, a verification or cross-check report,
+  a commit / proof list, or a detailed explanation the
+  owner explicitly asked for. Length must be justified
+  by need, not by habit.
+- Requirement: this style rule does NOT flatten the
+  notes themselves. R1 stands: original notes stay
+  detailed, not abstract, and transcriptions stay
+  exact. Crisp answers are about how Leo explains
+  and reports, not about cutting original content.
+- Requirement: a crisp answer still carries what the
+  owner needs to act on: the decision, the key points,
+  the proof (commit, SHA, size, link) where relevant,
+  and what is still open or blocked. Brevity must not
+  drop a condition, a gap, or a limitation that
+  changes the decision.
+
 ## Still open — not decided by this file
 
 - Storage decision for real original images — owner to decide.
