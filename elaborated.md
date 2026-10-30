@@ -1032,6 +1032,34 @@ Virtualization creates virtual versions of physical resources — servers, stora
   - Key note: Object storage removes folders and block numbers from the user's view, but the cloud or server still stores those objects on disks underneath. Independence is about addressing, not about having no hardware.
   - Example: an S3/MinIO object is fetched by ID, while the provider stores it on its own block storage.
 
+
+#### Storage gaps, second pass — elaborated, deduplicated
+- Virtualization does not increase physical capacity — it pools, organizes, and manages storage, so a logical pool is the sum of its physical devices, not more.
+  - Key note: The gain is flexibility, not gigabytes. Pooling, resizing, and sharing make existing capacity easier to use, which can feel like more storage, but the physical total does not change.
+  - Example: a 500 GB disk divided as 200 GB + 300 GB, or 100 GB + 400 GB, in different example allocations — each totals at most the disk itself.
+- Disks and partitions — `/dev/sda` first detected, `/dev/sdb` second, partitions such as `/dev/sda1`, MBR versus GPT, and mount points.
+  - Key note: Device letters follow detection order, so they are not a stable identity for a disk. That is why inspection commands and UUID-based mounts matter more than remembering a letter.
+  - Commands: `lsblk`, `sudo fdisk -l`, `df -h`; persistent mount in `/etc/fstab`, preferably by UUID.
+- HDD structure — sectors, tracks, cylinders, and blocks, plus partition tables and filesystems.
+  - Key note: Sectors and tracks are physical layout, blocks and filesystems are logical layout. Virtualization works on the logical side, mapping logical units onto that physical layout.
+  - Example: a raw 500 GB disk with 512-byte sectors, partitioned as `/dev/sdb1`, formatted with ext4, and mounted at `/mnt/data`.
+- Logical units are LVM metadata — physical extents mapped to logical extents, not separate files.
+  - Key note: LVM's power comes from that mapping layer. Change the mapping, and a volume can grow, shrink, or move, without the user re-partitioning the physical disk by hand.
+  - Example: `/dev/my_vg/lv_data` mounted at `/mnt/data`, backed by physical extents on `/dev/sdb1`.
+- AWS mapping — EBS for block, EFS for file, S3 for object.
+  - Key note: The cloud services reuse the same three layer ideas, so local LVM, NFS, and object practice transfers conceptually. They are not implemented with local LVM or NFS, and that distinction matters for design.
+  - Example: create an EBS volume for a system, mount EFS for shared files, and use S3 buckets for objects.
+
+
+#### Storage gaps, third pass — elaborated, deduplicated
+- Verification commands — `pvs`, `vgs`, and `lvs` after each LVM step.
+  - Key note: Verification turns a storage change from a hope into a checkable state. Each command shows the layer just created, before the next layer is built on it.
+  - Example: `pvs` shows a 500 GB physical volume, `vgs` shows `my_vg` with that volume, `lvs` shows `lv_data` at 200 GB and `lv_backup` at 300 GB.
+  - Commands: `sudo pvs`, `sudo vgs`, `sudo lvs`.
+- Structure table — raw disk to shared directory, in order.
+  - Key note: The table is the whole story in one view: physical device, partition, logical volumes, mounts, and shared directory. Each row is a layer, not a separate disk.
+  - Example: `/dev/sdb` → `/dev/sdb1` → `/dev/my_vg/lv_data` at `/mnt/data` and `/dev/my_vg/lv_backup` at `/mnt/backup` → `/mnt/data/shared` shared by NFS.
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.

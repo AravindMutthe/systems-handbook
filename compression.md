@@ -3317,6 +3317,52 @@ This recap note repeats most of the storage detail and practical steps already a
 - Object storage independence, clarified: object storage is independent logically — it does not need a file system hierarchy for the user — but it is not independent physically. Objects are still stored on block devices underneath, in the provider's or server's storage. That is why the earlier correction stands: object storage virtualizes addressing and organization for the user, not the absence of disks.
 - Example-name variant only, not a new concept: the recap uses logical volumes named `lv_data` (200 GB) and `lv_backup` (100 GB) instead of the earlier `my_lv1`/`my_lv2`. The steps are identical; the names are not added as a separate procedure.
 
+
+### Storage gaps, second pass — capacity, disks, HDD structure, and AWS mapping
+These three notes repeat the LVM/NFS/MinIO steps already added above, so only the points not already in this section are added here.
+
+#### Does virtualization increase capacity?
+- No, not physically. Virtualization abstracts, organizes, and manages storage; it does not create new physical capacity.
+- Pooling combines devices, so a logical pool's size is the sum of its physical devices (minus metadata and filesystem overhead), not more than that. Flexibility, resizing, and easier management are the gains, not extra gigabytes.
+- What you see after virtualization, in the source's words: block — logical volumes such as `/dev/my_vg/lv_data` instead of raw disks; file — shared directories such as `/mnt/data` abstracting physical storage; object — object IDs such as `12345-image.jpg` hiding file systems and raw storage.
+- Allocation examples vary between notes and are not a single fixed plan: earlier examples used 200 GB + 100 GB, then 200 GB + 300 GB, then 100 GB + 400 GB, all totalling at most the 500 GB disk. Treat each as an example allocation, not as one disk partitioned three ways at once.
+
+#### Disks, partitions, and mount points — sda, sdb, and friends
+- Block devices in Linux represent drives such as HDDs, SSDs, or USB drives, for example `/dev/sda` and `/dev/sdb`. A block device can be split into partitions, for example `/dev/sda1` and `/dev/sda2`.
+- Naming: `sd` historically means SCSI disk, plus a letter in detection order — `sda` is the first detected drive, `sdb` the second. Detection order can change, so always verify with `lsblk` and `fdisk -l` before acting on a device name.
+- Partition tables: MBR (Master Boot Record) is older and limited to 4 primary partitions; GPT (GUID Partition Table) is modern, supports more partitions and large disks.
+- Filesystems: ext4 is the common Linux default, xfs is a high-performance Linux filesystem, and vfat/exFAT are for cross-platform compatibility. NTFS is a Windows filesystem, mentioned in the source for comparison.
+- Mount points: a partition must be mounted to a directory to be usable, for example `/dev/sda1` mounted at `/` (root), or `/dev/sdb1` mounted at `/mnt/mydisk`.
+- Inspecting, with examples from the source: `lsblk` shows devices, sizes, and mount points; `sudo fdisk -l` shows partition tables; `df -h` shows filesystem usage and mount points.
+- Persistent mounting: add a line to `/etc/fstab` for auto-mounting at boot, for example `/dev/sdb1 /mnt/mydisk ext4 defaults 0 0` in the source. Correction: in real use, prefer the partition's UUID in `/etc/fstab` over a device name, because `sda`/`sdb` letters can change on reboot or when drives are added.
+- Correction, example consistency: the source's `lsblk`, `fdisk -l`, and `df -h` examples do not describe one coherent disk — for example, a partition shown as 100 GB in one table and 100 MB in another, and an `lsblk` output showing `sda` while the text calls the raw disk `/dev/sdb`. Treat those tables as illustrative examples, not as output from a single real disk.
+
+#### What a 500 GB HDD contains, before virtualization
+- Physical structure: sectors are the smallest addressable units, typically 512 bytes or 4 KB; tracks are circular paths on a platter; cylinders are groups of tracks stacked across platters; blocks are logical groups of sectors that the OS reads or writes as one unit.
+- Logical structure: a raw HDD starts with no partitions and no filesystem. Once partitioned and formatted, it has a partition table (GPT or MBR), a filesystem (for example ext4 or NTFS) inside partitions, and directories and files as the actual stored data.
+- Example from the source, before virtualization: `sudo fdisk -l` showing `Disk /dev/sdb: 500 GB`, sector size 512 bytes, with `/dev/sdb1` spanning the disk as a Linux filesystem.
+
+#### Where logical units are stored
+- Logical units are not separate files. They are metadata inside the volume group, managed by LVM, mapping physical volumes to logical volumes.
+- Mapping, in LVM terms: physical extents (PEs) on physical volumes are mapped to logical extents (LEs) in logical volumes. That mapping layer is how abstraction, resizing, and migration work without touching the physical disk layout directly.
+- Paths, before and after, from the source: before — `/dev/sdb`, raw, no partitions, no mount points; after block virtualization — `/dev/my_vg/lv_data` mounted at `/mnt/data`; after file virtualization — `/mnt/data/shared` exposed as a shared namespace for remote access.
+
+#### AWS mapping, from the source
+- EBS (Elastic Block Store) corresponds to block-level storage virtualization.
+- EFS (Elastic File System) corresponds to file-level virtualization.
+- S3 (Simple Storage Service) corresponds to object-level storage.
+- Practical consequence, as stated in the source: understanding local LVM, NFS, and object steps makes EBS volumes, EFS mounts, and S3 buckets and objects easier to work with, because they use the same layer ideas. This is an analogy of layers, not a claim that AWS services are implemented with local LVM or NFS.
+- Correction, NFS option: the source's later NFS exports use `no_root_squash`. That option lets a remote root user act as root on the server's files, which is a security risk and is not the default. Use it only in a lab, and prefer the default root squashing for real shares.
+
+
+### Storage gaps, third pass — verification commands and structure table only
+This note repeats the LVM, NFS, and AWS steps already added above, so only the new verification and structure details are added here.
+- Verification commands, in LVM order: after `pvcreate`, check with `sudo pvs` (shows PV, VG, format, size, free — example: `/dev/sdb1`, 500.00g, 500.00g free before any volume group); after `vgcreate`, check with `sudo vgs` (shows VG, number of PVs/LVs, total and free — example: `my_vg`, 1 PV, 0 LV, 500.00g total, 500.00g free); after `lvcreate`, check with `sudo lvs` (shows LV, VG, attributes, size — example: `lv_data` 200.00g and `lv_backup` 300.00g in `my_vg`).
+- MBR detail, expanded: MBR stores both the partition table and bootloader code in the first sector of the disk. GPT is the newer standard for more partitions and larger drives, as already stated.
+- Structure and paths, as a table, for the 200 GB + 300 GB example used in this note: raw HDD `/dev/sdb` (entire 500 GB disk); partitioned `/dev/sdb1` (single 500 GB partition); block-level `/dev/my_vg/lv_data` (200 GB logical unit) and `/dev/my_vg/lv_backup` (300 GB logical unit); mounted `/mnt/data` (for `lv_data`) and `/mnt/backup` (for `lv_backup`); file-level `/mnt/data/shared` (virtualized directory for sharing).
+- File-level example content, minor: after creating `/mnt/data/shared`, the source creates `file1.txt` and `file2.txt` inside it with `echo` before exporting it by NFS. That is just test content for the share, not a new virtualization step.
+- Skills list, storage-specific: Linux disk management (`fdisk`, `lsblk`), filesystem management (`mkfs`, `mount`), LVM (`pvcreate`, `vgcreate`, `lvcreate`, plus `pvs`/`vgs`/`lvs` for verification), and file sharing (NFS or Samba).
+
 ### OS-level vs application-level — why they are not the same
 - Scope: OS-level isolates whole user-space environments (containers) that can run multiple apps; application-level isolates a single app and its dependencies.
 - Virtualized object: containers contain app code, dependencies, and configs, but no kernel; virtualized apps contain the app binary, libraries, configs, and a runtime layer, also no kernel of their own.
@@ -4881,6 +4927,21 @@ Virtualization, in business terms, is buying and running fewer physical machines
 - Object storage, in business terms: it looks independent to the user (no folders to manage), but the provider still pays for physical block storage underneath. Cloud object pricing therefore covers that underlying storage, plus the object service itself.
 - The rest of this recap — general virtualization types, block/file/object definitions, and the LVM/NFS/MinIO steps — is already in this file's Virtualization section and is not repeated here.
 
+
+#### Storage gaps, second pass — business angle, gaps only
+- Capacity: virtualization does not physically increase capacity. It pools devices and makes capacity easier to assign, resize, and share. A 500 GB disk pooled with others gives a pool equal to the sum of the devices, minus overhead — not more.
+- Disks in business terms: `sda` is the first detected drive, `sdb` the second, and partitions split a drive into usable sections. MBR is older and limited to 4 primary partitions; GPT is the modern choice for more partitions and large disks. For persistent mounts, use a partition UUID in `/etc/fstab`, not a device name that can change.
+- HDD structure, in one line: sectors, tracks, and cylinders are the physical layout; blocks, partition tables, and filesystems are the logical layout that makes that physical layout usable.
+- Where logical volumes live: not as separate files, but as LVM metadata mapping physical volumes to logical volumes. That mapping is what lets capacity be resized and moved without re-partitioning by hand.
+- AWS mapping, from the source: EBS for block, EFS for file, S3 for object. In business terms, that means the same three buying choices recur in the cloud: raw volumes for systems, shared file systems for people, and object stores for backups and media.
+- The LVM, NFS, and MinIO steps themselves are already in this file's Virtualization section and are not repeated here.
+
+
+#### Storage gaps, third pass — business angle, gaps only
+- Verification, in business terms: after each LVM step, an admin can prove the state with `pvs` (physical volumes), `vgs` (volume groups), and `lvs` (logical volumes), instead of trusting that a command worked. That check is what makes a storage change auditable.
+- Structure table, in one line: raw `/dev/sdb` → partition `/dev/sdb1` → logical volumes `/dev/my_vg/lv_data` (200 GB) and `/dev/my_vg/lv_backup` (300 GB) → mounts `/mnt/data` and `/mnt/backup` → shared directory `/mnt/data/shared`.
+- The LVM, NFS, and AWS steps themselves are already covered above and are not repeated here.
+
 ### User space, in business risk terms
 - User space is everything above the kernel: apps, libraries, and configs. Kernel space is the OS core that controls hardware.
 - Containers isolate user space only and share one kernel. That is cheaper and faster, but a kernel-level fault can affect all containers on that host.
@@ -5542,6 +5603,24 @@ Virtualization is one idea read two ways at once: technically, a layer that abst
 - NFS: `exportfs -a` after editing `/etc/exports`, as an alternative to restarting NFS.
 - Object storage: logically independent (ID-based, no hierarchy), physically dependent (objects still sit on block devices underneath).
 - Rest of the recap is already covered in the Virtualization section above and is not repeated here.
+
+
+#### Storage gaps, second pass — combined view, gaps only
+- Capacity: no physical increase; pooling sums devices, flexibility and management are the gains.
+- Disks: `/dev/sda` first detected, `/dev/sdb` second; partitions `/dev/sda1`, etc.; MBR 4 primary partitions, GPT modern and larger; mount points attach a partition to a directory; `lsblk`, `fdisk -l`, `df -h` for inspection; `/etc/fstab` for persistent mounts, preferably by UUID.
+- HDD: physical — sectors (512 B / 4 KB), tracks, cylinders; logical — partition table, filesystem (ext4, xfs, NTFS, vfat/exFAT), directories and files.
+- Logical units: LVM metadata in the volume group, physical extents mapped to logical extents, not separate files.
+- AWS: EBS = block, EFS = file, S3 = object — same layer ideas, not the same local tools.
+- NFS caution: `no_root_squash` in the source is a lab option with security risk, not a default.
+- LVM/NFS/MinIO steps are already covered above and are not repeated here.
+
+
+#### Storage gaps, third pass — combined view, gaps only
+- Verification: `pvs` after `pvcreate`, `vgs` after `vgcreate`, `lvs` after `lvcreate`.
+- MBR: partition table plus bootloader code in the first sector; GPT: newer, more partitions, larger drives.
+- Structure: `/dev/sdb` → `/dev/sdb1` → `/dev/my_vg/lv_data` (200 GB) at `/mnt/data` and `/dev/my_vg/lv_backup` (300 GB) at `/mnt/backup` → `/mnt/data/shared` for NFS sharing.
+- Skills: `fdisk`/`lsblk`, `mkfs`/`mount`, LVM commands plus verification, NFS/Samba.
+- Steps themselves are already covered above and are not repeated here.
 
 ### User space, combined
 - User space holds apps, libraries, configs, and processes; kernel space holds the OS core. Containers isolate user space only, so they are light and fast but share kernel risk. VMs isolate both, so they are heavier but give a stronger boundary. That single distinction explains most of the cost-versus-isolation choice in the table above.
