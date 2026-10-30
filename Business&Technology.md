@@ -5,6 +5,8 @@
 > **Branch rule (set 2026-10-30, by Aravind):** All work stays in these 3 lines only — main, systems-evaluation-book, and research-compression-elaborated. No work outside those branches, no direct edits to main, no merge and no deploy without Aravind's tap.
 
 > **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
+> **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section.
+
 
 
 
@@ -725,7 +727,7 @@ Full sections: Technology.md, "How the Internet Works — From a Name to a Page"
 - Security in one line: DNS caching speeds repeat visits but does not hide queries; TLS 1.2 and 1.3 encrypt HTTP content and authenticate the server by certificate, with DV proving domain control only; a padlock is not a trust mark, and EV company-name display in the browser bar is discontinued.
 - Protocols are open IETF standards, not owned products: TCP/IP, DNS, HTTP, TLS, BGP, DHCP, IPsec, mail, FTP, SNMP, and NTP, each with the everyday tools named in Technology.md.
 
-- Amazon.in walkthrough: DNS through root, .in (NIXI), and Amazon Route 53, then TCP handshake, TLS certificate verification against browser CA stores (not ICANN), HTTP GET, CloudFront edge delivery, with DHCP before browsing and NTP running throughout. The source IP is a Route 53-range example, not a verified amazon.in server address.
+- Amazon.in walkthrough: DNS through root, .in (NIXI), and Amazon Route 53, then TCP handshake, TLS certificate verification against browser CA stores (not ICANN), HTTP GET, CloudFront edge delivery, with DHCP before browsing and NTP running throughout. The source IP is an Amazon-owned address (AS16509, S3 console host in WHOIS records), not a verified amazon.in server address.
 
 ## Where Protocols Reside — Combined View (Condensed)
 
