@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 666" role="img" aria-label="Who leads — organisation, era by era">
+<rect x="0" y="0" width="760" height="666" fill="#F8FAFC"/>
+<text x="20" y="38" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#10233F">Who leads — organisation, era by era</text>
+<rect x="20" y="70" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="70" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="113" r="18" fill="#10233F"/><text x="54" y="119" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">1</text>
+<text x="84" y="96" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">TELEGRAPH</text>
+<text x="84" y="120" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">Western Union central company</text>
+<text x="84" y="140" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">One centre decides</text>
+<path d="M380 160 L380 186" stroke="#D9A441" stroke-width="3"/><path d="M373 180 L380 188 L387 180" fill="none" stroke="#D9A441" stroke-width="3"/>
+<rect x="20" y="190" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="190" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="233" r="18" fill="#10233F"/><text x="54" y="239" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">2</text>
+<text x="84" y="216" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">DISTRIBUTION</text>
+<text x="84" y="240" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">Central team over distributed systems</text>
+<text x="84" y="260" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">Heterogeneous systems, one team</text>
+<path d="M380 280 L380 306" stroke="#D9A441" stroke-width="3"/><path d="M373 300 L380 308 L387 300" fill="none" stroke="#D9A441" stroke-width="3"/>
+<rect x="20" y="310" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="310" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="353" r="18" fill="#10233F"/><text x="54" y="359" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">3</text>
+<text x="84" y="336" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">INTERNET / WEB / CLOUD</text>
+<text x="84" y="360" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">Distributed product teams over central</text>
+<text x="84" y="378" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">standards</text>
+<text x="84" y="398" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">ICANN, IETF, W3C above the teams</text>
+<path d="M380 400 L380 426" stroke="#D9A441" stroke-width="3"/><path d="M373 420 L380 428 L387 420" fill="none" stroke="#D9A441" stroke-width="3"/>
+<rect x="20" y="430" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="430" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="473" r="18" fill="#10233F"/><text x="54" y="479" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">4</text>
+<text x="84" y="456" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">MOBILE &amp; CLOUD</text>
+<text x="84" y="480" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">Small teams under a platform gate</text>
+<text x="84" y="500" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">App-store / Cloud IAM gates</text>
+<path d="M380 520 L380 546" stroke="#D9A441" stroke-width="3"/><path d="M373 540 L380 548 L387 540" fill="none" stroke="#D9A441" stroke-width="3"/>
+<rect x="20" y="550" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="550" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="593" r="18" fill="#10233F"/><text x="54" y="599" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">5</text>
+<text x="84" y="576" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">5G &amp; AI</text>
+<text x="84" y="600" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">AI / platform / data / edge teams</text>
+<text x="84" y="618" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">under central company rules</text>
+<text x="84" y="638" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">Distributed edge, central rules</text>
+</svg>

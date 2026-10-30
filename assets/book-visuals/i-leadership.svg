@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 666" role="img" aria-label="Leadership — what the leader must do">
+<rect x="0" y="0" width="760" height="666" fill="#F8FAFC"/>
+<text x="20" y="38" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#10233F">Leadership — what the leader must do</text>
+<rect x="20" y="70" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="70" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="113" r="18" fill="#10233F"/><text x="54" y="119" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">1</text>
+<text x="84" y="96" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">ERA 1 · TELEGRAPH</text>
+<text x="84" y="120" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">Control</text>
+<text x="84" y="140" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">Establish the link, the protocol, the state</text>
+<path d="M380 160 L380 186" stroke="#D9A441" stroke-width="3"/><path d="M373 180 L380 188 L387 180" fill="none" stroke="#D9A441" stroke-width="3"/>
+<rect x="20" y="190" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="190" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="233" r="18" fill="#10233F"/><text x="54" y="239" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">2</text>
+<text x="84" y="216" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">ERA 2 · DISTRIBUTION</text>
+<text x="84" y="240" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">Coordination</text>
+<text x="84" y="260" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">Coordinate heterogeneous, distributed systems</text>
+<path d="M380 280 L380 306" stroke="#D9A441" stroke-width="3"/><path d="M373 300 L380 308 L387 300" fill="none" stroke="#D9A441" stroke-width="3"/>
+<rect x="20" y="310" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="310" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="353" r="18" fill="#10233F"/><text x="54" y="359" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">3</text>
+<text x="84" y="336" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">ERA 3 · INTERNET / WEB / CLOUD</text>
+<text x="84" y="360" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">Scaling</text>
+<text x="84" y="380" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">Hypergrowth — build for scale</text>
+<path d="M380 400 L380 426" stroke="#D9A441" stroke-width="3"/><path d="M373 420 L380 428 L387 420" fill="none" stroke="#D9A441" stroke-width="3"/>
+<rect x="20" y="430" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="430" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="473" r="18" fill="#10233F"/><text x="54" y="479" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">4</text>
+<text x="84" y="456" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">ERA 4 · MOBILE &amp; CLOUD</text>
+<text x="84" y="480" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">Platform governance</text>
+<text x="84" y="500" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">Govern a platform, not just a team</text>
+<path d="M380 520 L380 546" stroke="#D9A441" stroke-width="3"/><path d="M373 540 L380 548 L387 540" fill="none" stroke="#D9A441" stroke-width="3"/>
+<rect x="20" y="550" width="720" height="86" rx="10" fill="#FFFFFF" stroke="#E2E8F0"/>
+<rect x="20" y="550" width="6" height="86" rx="3" fill="#D9A441"/>
+<circle cx="54" cy="593" r="18" fill="#10233F"/><text x="54" y="599" text-anchor="middle" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#FFFFFF">5</text>
+<text x="84" y="576" font-family="system-ui,sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#8A6D1B">ERA 5 · 5G &amp; AI</text>
+<text x="84" y="600" font-family="system-ui,sans-serif" font-size="16" font-weight="700" fill="#1E293B">AI oversight</text>
+<text x="84" y="620" font-family="system-ui,sans-serif" font-size="13" fill="#64748B">Decide what AI, humans and the edge decide</text>
+</svg>
