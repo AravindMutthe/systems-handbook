@@ -534,6 +534,38 @@ Business placement and UI history, read together: where a product sits in the re
 - Recorded Tern is a ternary-computing platform with Next.js/React frontends, not the source's generic label. GradeSpot and HighGradesApp placements are unverified proposals. Morse, ASCII, HTML, LTI, and SCORM are codes, encodings, markup, or integration standards, not UI frameworks. AngularJS is legacy, Flash and Silverlight are discontinued, and no diagram was drawn, per the rule book.
 - Full detail: Technology.md. Business angle: Bussiness.md.
 
+
+## UI Frameworks — Full-Stack View, New Gaps Only — Combined View (No Diagram)
+
+### Headline
+New gaps only: architecture per era and generalized attributes, read together with the previous UI section.
+
+### Combined table
+- Architecture: telegraph (hardware-only) → mainframe (thin UI, heavy backend) → PC (monolithic OS UI, client-server; Motif, MFC) → web (browser → HTTP → server) → mobile/cloud (component-based, REST/GraphQL, cloud-native; Ionic as open-source hybrid) → 5G/modern (micro-frontends, cloud + edge + AI, WebSockets/gRPC).
+- Attributes: openness (open/portable vs vendor-locked) → architecture type (procedural, event-driven, component-based, declarative) → distribution (hardware, OS, browser, app store/SaaS) → performance (latency-sensitive, network-dependent, hardware-optimized).
+- Business fits, as proposals: Tern — React, Next.js, Carbon, Tailwind; GradeSpot — React, Angular, Bootstrap, SCORM/LTI; HighGradesApp — Flutter, React Native, SwiftUI.
+- Corrections carried over: Motif was originally proprietary, later open-sourced; MFC is a library over Win32; low latency and AI personalization are network/edge/backend properties, not UI-framework properties alone; no diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
+
+## Timeline + Business & Finance Mapping — Combined View (No Diagram)
+
+### Headline
+Business and finance models per era, read together with the previous UI sections, without repeating their timeline.
+
+### Combined list
+- Telegraph: infra monopoly, CapEx → subscription billing — Tern infra.
+- Mainframes: hardware plus service, upfront plus maintenance — Tern enterprise AI infra.
+- Client-server: software licensing, one-time plus upgrades, ecosystem lock-in — GradeSpot SaaS.
+- Web: ads, subscriptions, e-commerce, scalable low-cost global — HighGradesApp freemium.
+- Mobile/cloud: SaaS recurring, monthly/annual, usage-based cloud — all three products.
+- 5G/AI: AI-first, marketplace, usage billing (API calls, inference), freemium, upsell — future model for all three.
+- Summary: Tern — infra/platform, enterprise SaaS plus API billing; GradeSpot — B2B SaaS, seat licences plus analytics upsell; HighGradesApp — B2C, freemium plus ads plus premium AI features.
+
+### Corrections carried over
+- Source proposals and analogies only, not verified live business models or revenues. App-store distribution is not zero cost, and licence, SaaS, and pay-per-use models are kept distinct. No diagram was drawn, per the rule book.
+- Full detail: Technology.md. Business angle: Bussiness.md.
+
 ## Business Promotion — Combined View (No Diagram)
 
 Full business layers are in Bussiness.md; full channel technology is in Technology.md. This section is only the combined flow and timeline, as md lists/tables — no diagram.

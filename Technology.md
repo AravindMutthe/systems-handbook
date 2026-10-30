@@ -3356,6 +3356,77 @@ The previous market-flows hierarchy is now applied, as a source placement, to th
 - No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The source offers to draw a 3-column diagram and a layered map were not acted on.
 - Full section: this Technology.md section. Business angle: Bussiness.md, "Business Placement & UI Frameworks — Business Angle". Combined view: Business&Technology.md, "Business Placement & UI Frameworks — Combined View".
 
+
+## UI Frameworks — Full-Stack View, New Gaps Only (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+This section adds only what the previous "Business Placement & UI Frameworks" section did not already cover: architecture per era, and generalized attributes of UI frameworks. The timeline, the public-versus-vendor-controlled lists, and the business fits are not repeated here in full — see that previous section.
+
+### A. Architecture per era (new material)
+- Telegraph and early networks, 1850s–1940s: hardware-only, mechanical interfaces. No graphical abstraction, no software framework layer.
+- Mainframe and early computing, 1950s–1970s: client-terminal architecture — thin UI, heavy backend. Batch-driven punch cards first, then interactive terminals.
+- PC and client-server era, 1980s–1990s: monolithic OS UI plus client-server apps. New names here, not in the previous section: Motif (Unix/Linux GUI toolkit, later open-sourced as Open Motif) on the public side, and Microsoft MFC (Microsoft Foundation Classes, a C++ library over Win32) on the private side.
+- Internet and web era, 1990s–2000s: client-server architecture — browser → HTTP → server. Universal rendering in HTML, with scripting for interactivity.
+- Mobile and cloud era, 2010s: frontend frameworks, component-based; REST and GraphQL APIs; cloud-native backend. Ionic is listed here in the source as public; in the previous section it was listed as hybrid — both are correct in different senses, as Ionic is open source but its apps are hybrid web-native wrappers.
+- 5G and modern networks, 2020s–now: micro-frontend apps; cloud plus edge plus AI integration; real-time APIs (WebSockets, gRPC).
+
+### B. Generalized attributes of UI frameworks (new material)
+- Openness: public (open source, community-driven) versus private (vendor-owned, locked) — clarified in the previous section as open/portable versus vendor-controlled/platform-locked, not free versus paid.
+- Architecture types: procedural (CLI), event-driven (GUI), component-based (React, Flutter), declarative (SwiftUI, Jetpack Compose).
+- Distribution: hardware-embedded, OS-integrated, browser-delivered, app store and SaaS.
+- Performance: latency-sensitive (5G, XR), network-dependent (web apps), hardware-optimized (native apps).
+- Attributes per era, in brief: telegraph — one-way or point-to-point, human-encoded input (taps, dials), no graphical abstraction; mainframe — text-only, batch then interactive, early system-call APIs; PC — event-driven (mouse, keyboard), windowed multitasking, vendor lock-in (Windows-only versus Mac-only apps); web — universal rendering, cross-platform reach, JavaScript interactivity; mobile/cloud — responsive design, component reusability, app-store distribution; 5G/modern — low-latency UI enabled by 5G, AI/ML personalization, multi-device (phone, VR headset, IoT).
+
+### C. Business fits, full-stack summary (source labels, not verified)
+- Tern: enterprise-grade, open frameworks (React, Next.js, Carbon, Tailwind) plus optional private cloud UI kits. The source label "AI Infra & Carbon UI Platform" is a source label, not a recorded Tern description — recorded Tern is a ternary-computing platform with Next.js/React frontends.
+- GradeSpot: public frameworks (React, Angular, Bootstrap) with EdTech integrations (SCORM, LTI); private APIs if integrating with Google Classroom or Teams.
+- HighGradesApp: public cross-platform (Flutter, React Native) plus private iOS SwiftUI for Apple-specific UX.
+- In short, as the source puts it: UI frameworks evolved from hardware Morse keys to text terminals to GUIs to web standards to mobile frameworks to 5G AI/XR frameworks, and the three products sit in the latest 5G cloud-native, component-based UI layer, mixing public (React, Flutter, Tailwind, Carbon) with vendor-controlled (SwiftUI, Material Design, Fluent UI) frameworks.
+
+### Corrections, cross-checked with the rule book
+- Motif was originally proprietary and later open-sourced; it is not purely public in the same sense as X11 from the start. MFC is a library over Win32, not a separate UI framework layer on its own. Ionic's placement as public versus hybrid depends on whether the criterion is licence (open source) or runtime (hybrid wrapper) — both labels in the two notes are noted, not silently merged.
+- Low latency in 5G UI is enabled by the network and by edge placement, not by the UI framework alone; a framework cannot create low latency on a high-latency link. AI personalization is a backend and data feature, not a property of a UI framework by itself.
+- No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The source offer to lay this out as a layered architecture diagram was not acted on.
+- Full section: this Technology.md section. Business angle: Bussiness.md, "UI Frameworks — Full-Stack View, New Gaps Only — Business Angle". Combined view: Business&Technology.md, "UI Frameworks — Full-Stack View, New Gaps Only — Combined View".
+
+
+## Timeline + Business & Finance Mapping — Technology Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+This section adds only the new material in the latest note: what each UI era meant as a business model and as a finance model, and how the source maps those models to Tern, GradeSpot, and HighGradesApp. Era UI mediums, framework lists, and business fits are already in the previous two sections and are not repeated here in full.
+
+### A. Business and finance model per era
+- Telegraph and early telephone, 1850s–1940s: business — centralized network operators (Western Union, Bell), infrastructure monopoly; finance — CapEx-heavy (wires, poles, switchboards), recovered as operating expense via subscription billing, per message or per minute.
+- Mainframes and early computing, 1950s–1970s: business — hardware sales (IBM mainframes) plus service contracts; finance — CapEx upfront for mainframes, then operating-expense licensing and service support.
+- Client-server and PC era, 1980s–1990s: business — software licensing (Microsoft Office, Windows); finance — one-time licence plus upgrades (Windows 95, Office 97); shift to ecosystem lock-in (Apple, Microsoft).
+- Internet and web 1.0/2.0, 1990s–2000s: business — ad-based (Google, Yahoo) plus subscription and e-commerce; finance — scalable, low-cost distribution, huge reach, ad revenue, and the beginnings of SaaS.
+- Mobile and cloud era, 2010s–now: business — SaaS subscription plus cloud hosting; finance — recurring revenue (monthly SaaS), usage-based cloud pricing.
+- 5G and modern AI era, 2020s–next: business — AI-first platforms, edge services, real-time apps; finance — SaaS plus AI add-ons, pay-per-use (API calls, ML inference), marketplace ecosystems (plugins, integrations).
+
+### B. Source mapping to Tern, GradeSpot, and HighGradesApp, per era
+- Telegraph fit: Tern as infra — model as platform owner, revenue from long-term contracts and subscription per usage.
+- Mainframe fit: Tern as AI infra product (hardware plus OS/UI layer), like IBM of AI in the source's analogy — finance as high R&D cost, offset by enterprise licensing and long-term SaaS contracts.
+- Client-server fit: GradeSpot as B2B SaaS for schools and universities — finance as subscription per student or teacher licence, with possible long-term lock-in through APIs and integrations (SCORM, LTI).
+- Web fit: HighGradesApp as B2C freemium app — finance as free core product for students, revenue from ads, premium upgrades, or affiliate and education partners; scaling through global reach with near-zero distribution cost via app stores.
+- Mobile/cloud fit: Tern as infrastructure SaaS (B2B, platform fees); GradeSpot as B2B SaaS (per-seat licensing, schools); HighGradesApp as B2C freemium plus ads plus upsell.
+- 5G/AI fit: Tern as AI infra marketplace (like AWS plus Carbon UI plus AI agents, in the source's analogy); GradeSpot as SaaS with AI grading and analytics as a premium upsell; HighGradesApp as AI tutor or friend, freemium with subscription for AI features.
+
+### C. Final summary, as a list (not a drawn chart)
+- Telegraph — Bell, Western Union — infra monopoly — CapEx infra → operating-expense billing — fit: Tern infra.
+- Mainframes — IBM, DEC — hardware plus service — upfront plus maintenance — fit: Tern enterprise AI infra.
+- Client-server — Microsoft, Apple — software licensing — one-time plus upgrade cycle — fit: GradeSpot SaaS.
+- Web 1.0/2.0 — Google, Yahoo, Amazon — ads, subscriptions, e-commerce — scalable, low-cost global — fit: HighGradesApp freemium.
+- Cloud/mobile — Salesforce, AWS — SaaS recurring — monthly or annual SaaS — fit: all three products.
+- 5G/AI — OpenAI, Nvidia, Meta — AI-first, marketplace, usage billing — API calls, freemium, upsell — fit: future model for all three.
+- In short, as the source puts it: Tern is the infra/platform layer → enterprise SaaS plus API billing; GradeSpot is B2B SaaS for institutions → seat licences plus analytics upsell; HighGradesApp is B2C → freemium plus ads plus premium AI features; all three evolve with each UI era, from infra monopoly to SaaS to AI-first platforms.
+
+### Corrections, cross-checked with the rule book
+- All business and finance mappings here are source proposals and analogies, not verified live revenues, costs, or business models for Tern, GradeSpot, or HighGradesApp. Recorded Tern is a ternary-computing platform, not a verified "IBM of AI" or "AWS plus Carbon UI plus AI agents" marketplace; GradeSpot is recorded as an IT Solutions company, not verified as per-seat B2B school SaaS with AI grading; HighGradesApp is a case study in notes, not verified as a live freemium app with ads and AI tutor revenue.
+- Analogies are analogies: "like IBM of AI" and "like AWS" compare a model shape, not size, market position, or revenue. Near-zero distribution cost via app stores is not zero cost — app-store fees, cloud hosting, and support remain, and "global reach" still requires local compliance, language, and payment handling, as in the previous hierarchy section.
+- Finance terms clarified: CapEx is upfront capital spend on infrastructure or hardware; operating expense here is recurring billing and support. A one-time licence plus upgrade cycle is not the same as recurring SaaS revenue, and pay-per-use API or inference billing is not the same as a flat subscription — the summary keeps those models distinct, as the source's table does.
+- No diagram was drawn for this note, per the rule book (md only, no diagram unless explicitly asked). The source offer to draw a vertical timeline chart with era, UI, business, finance, and "Your Fit" columns was not acted on.
+- Full section: this Technology.md section. Business angle: Bussiness.md, "Timeline + Business & Finance Mapping — Business Angle". Combined view: Business&Technology.md, "Timeline + Business & Finance Mapping — Combined View".
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.

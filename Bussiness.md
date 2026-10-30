@@ -1318,6 +1318,38 @@ For a business, placement in the hierarchy is a compliance and channel question:
 - These placements are source proposals, not verified live facts. Recorded Tern is a ternary-computing platform with Next.js/React frontends, not a generic AI hardware label; GradeSpot is recorded as an IT Solutions company, not verified as B2B school SaaS; HighGradesApp is a case study in notes, not verified as a live consumer app. Jetpack Compose and Oracle JET are open source and vendor-led, not private licensed frameworks; AngularJS is legacy; Flash and Silverlight are discontinued.
 - Full technical detail: Technology.md, "Business Placement & UI Frameworks — Technology Angle". Combined view: Business&Technology.md, "Business Placement & UI Frameworks — Combined View".
 
+
+## UI Frameworks — Full-Stack View, New Gaps Only — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the new gaps are added here: architecture per era and generalized attributes. Timeline and business fits are in the previous section and are not repeated.
+
+### Architecture and attributes, in business terms
+- Architecture per era: telegraph — hardware-only; mainframe — thin terminal, heavy backend; PC — monolithic OS UI plus client-server apps (Motif and MFC are new names here); web — browser → HTTP → server; mobile/cloud — component-based frontends, REST/GraphQL APIs, cloud-native backend; 5G/modern — micro-frontends, cloud plus edge plus AI, real-time APIs (WebSockets, gRPC).
+- Generalized attributes: openness (open/portable versus vendor-locked), architecture type (procedural, event-driven, component-based, declarative), distribution (hardware-embedded, OS-integrated, browser-delivered, app store/SaaS), performance (latency-sensitive, network-dependent, hardware-optimized).
+- Business implication: architecture choice decides where cost sits — backend-heavy (mainframe), OS-locked (PC), browser-delivered (web), app-store-distributed (mobile), or edge-plus-AI (5G/modern). Low latency and AI personalization are network, edge, and backend properties, not UI-framework properties alone.
+- Source fits, as proposals only: Tern — React, Next.js, Carbon, Tailwind, plus optional cloud UI kits; GradeSpot — React, Angular, Bootstrap, plus SCORM/LTI; HighGradesApp — Flutter, React Native, plus SwiftUI for iOS.
+- Full technical detail: Technology.md, "UI Frameworks — Full-Stack View, New Gaps Only". Combined view: Business&Technology.md, "UI Frameworks — Full-Stack View, New Gaps Only — Combined View".
+
+
+## Timeline + Business & Finance Mapping — Business Angle (Corrected, De-duplicated, Cross-checked with Rule Book)
+
+### Headline
+Only the new business and finance material is added here: how each era made money, and how the source maps that to the three products. Era UI and fits are in the previous sections and are not repeated.
+
+### Business and finance models, in business terms
+- Telegraph: infra monopoly, CapEx-heavy, recovered by subscription billing per message or minute — source fit: Tern infra, long-term contracts, subscription per usage.
+- Mainframes: hardware sales plus service contracts, upfront CapEx plus maintenance — source fit: Tern enterprise AI infra, high R&D offset by enterprise licensing.
+- Client-server: software licensing, one-time licence plus upgrades, ecosystem lock-in — source fit: GradeSpot B2B SaaS, per-student or per-teacher licences, lock-in via SCORM/LTI integrations.
+- Web: ads, subscriptions, e-commerce, scalable low-cost distribution — source fit: HighGradesApp B2C freemium, free core, ads, premium upgrades, affiliate or education partners.
+- Mobile/cloud: SaaS subscription plus cloud hosting, recurring monthly revenue, usage-based cloud pricing — source fit: all three, as platform fees, per-seat licences, and freemium plus ads plus upsell respectively.
+- 5G/AI: AI-first platforms, edge services, SaaS plus AI add-ons, pay-per-use API and inference billing, marketplace ecosystems — source fit: Tern as AI infra marketplace, GradeSpot with AI grading and analytics upsell, HighGradesApp as AI tutor with subscription for AI features.
+- Summary, as the source puts it: Tern — infra/platform, enterprise SaaS plus API billing; GradeSpot — B2B SaaS, seat licences plus analytics upsell; HighGradesApp — B2C, freemium plus ads plus premium AI features.
+
+### Corrections carried over
+- These are source proposals and analogies, not verified revenues or business models. App-store distribution is not zero cost, and global reach still requires local compliance. One-time licences, recurring SaaS, and pay-per-use billing are distinct finance models and are kept distinct here.
+- Full technical detail: Technology.md, "Timeline + Business & Finance Mapping — Technology Angle". Combined view: Business&Technology.md, "Timeline + Business & Finance Mapping — Combined View".
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
