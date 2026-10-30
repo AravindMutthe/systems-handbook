@@ -1,4 +1,0 @@
-Source: File:Spinner.jpg
-File page: https://commons.wikimedia.org/wiki/File:Spinner.jpg
-License: CC BY-SA 3.0, author Alison Chaiken, photo at HP Labs
-Description: A spinner applies photoresist to a 6 inch silicon wafer so a circuit pattern can be fabricated.
