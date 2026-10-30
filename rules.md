@@ -939,9 +939,22 @@ In practice: the Handbook keeps its own repo, Vercel project, design and content
   edge, corrected to "compute" in the main page; schedule =
   has no value after it; and Govt projects is in a left
   bracket, on the original page.
-- Original image is never changed. The [Added] label on the
-  enhanced headline stays on the main page, so readers can
-  tell enhanced from original.
+- Original image is never changed. R18 (owner order
+  2026-10-30, chosen as the standing rule 2026-10-30
+  on owner instruction "choose best one"): the [Added]
+  label does NOT stay on the main page. All labelling
+  and provenance — [Added], "labelled", "this card /
+  that card", original-vs-enhanced discussion — moves
+  ONLY to "Original images +" on that same page, in
+  full. Main presentation shows headlines, key points,
+  detailed explanation, diagrams, and links by topic
+  title, clean. The enhanced headline is shown in a
+  different style from the original, and its status is
+  recorded only in "Original images +". This
+  supersedes, for presentation only, the earlier
+  "[Added] stays on main" line in this section; R15
+  substance (original first, enhanced never replacing)
+  stands.
 - Posters: no empty placeholder caption bars. Either a real
   caption goes in them, or the bars are removed — on Card K
   and all cards, the bars were removed.
