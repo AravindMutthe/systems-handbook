@@ -1,4 +1,4 @@
-# compression.md
+# comprehensive.md
 
 Separate copy only. This file was made from the pre-reorder backups of 2026-10-30 11:49, in the original order the notes were given, before the learning-sequence reorder at 11:47-11:49 IST.
 
@@ -11,11 +11,11 @@ Contents below are the 3 backup files in full, in order, separated by part headi
 
 ---
 
-> **New rule (set 2026-10-30, by Aravind, for the 5 files and the new branch):** Every time these 5 files are updated, the rule book applies. Compression.md must carry all original shared notes, in full. Elaborated.md must remove the redundant notes found in compression.md, and elaborate only the remaining, non-redundant points with key notes — about 2 lines per point, plus an example, and a command or protocol only where applicable, as discussed earlier for one-liner points.
+> **New rule (set 2026-10-30, by Aravind, for the 5 files and the new branch):** Every time these 5 files are updated, the rule book applies. Compression.md must carry all original shared notes, in full. Elaborated.md must remove the redundant notes found in comprehensive.md, and elaborate only the remaining, non-redundant points with key notes — about 2 lines per point, plus an example, and a command or protocol only where applicable, as discussed earlier for one-liner points.
 
 > **Branch rule (set 2026-10-30, by Aravind):** All work stays in these 3 lines only — main, systems-evaluation-book, and research-compression-elaborated. No work outside those branches, no direct edits to main, no merge and no deploy without Aravind's tap.
 
-> **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
+> **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, comprehensive.md and elaborated.md, live.
 > **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section. Scope: this applies to all notes given after the segregation of files into the 3 lines / 5 files (from 2026-10-30 about 16:47 IST onward), not only to future notes; those post-segregation batches were each verified before adding, and any error found later is corrected in place with its correction noted.
 > **Corrections format rule (set 2026-10-30, by Aravind):** Corrections are written in italic text, so a corrected statement is visible as corrected.
 
@@ -7001,7 +7001,7 @@ Full section: Technology.md, "Kernel Architecture Evolution — Before Kernels t
 
 ## Namespaces, Pod Volumes, and Shipping Versus Containerization — Business Angle (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "Linux Kernel Namespaces Versus Kubernetes Namespaces, and Pod Volumes" and "Physical Shipping Versus Software Containerization".
+Full section: comprehensive.md Part 1, "Linux Kernel Namespaces Versus Kubernetes Namespaces, and Pod Volumes" and "Physical Shipping Versus Software Containerization".
 
 - Namespaces are a cost and risk boundary: Linux namespaces isolate what a process can see, Kubernetes namespaces organize who can use what, but neither alone is a security boundary. Real isolation budgets need NetworkPolicy, RBAC, and quotas on top, which is a platform-team cost, not a free property of naming.
 - Pod volumes are an operations choice: emptyDir is free scratch space that dies with the pod, ConfigMap and Secret volumes inject configuration without rebuilding images, and durable data still needs a PersistentVolumeClaim. Treating a ConfigMap volume as storage is a design error.
@@ -7009,7 +7009,7 @@ Full section: compression.md Part 1, "Linux Kernel Namespaces Versus Kubernetes 
 
 ## IP Identity Matrix — Business Angle (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "IP Identity Matrix — Cluster, Node, Pod, Service, and External IPs". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "IP Identity Matrix — Cluster, Node, Pod, Service, and External IPs". Corrections in the full section are in italic text.
 
 - Five IP identities, not four and not six: control-plane API, node, pod, ClusterIP service, and external edge. The source's summary drops the API IP; the corrected list keeps all five.
 - Business point: only two of the five are stable enough to build on directly — the ClusterIP (stable for a Service's lifetime) and a reserved external IP. Pod IPs and unreserved node IPs change, so any contract, firewall rule, or customer integration that hard-codes a pod IP will break on rescheduling.
@@ -7017,7 +7017,7 @@ Full section: compression.md Part 1, "IP Identity Matrix — Cluster, Node, Pod,
 
 ## IPC Mechanisms — Business Angle (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Queues, Shared Memory, Sockets". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Queues, Shared Memory, Sockets". Corrections in the full section are in italic text.
 
 - Pipes and FIFOs are the cheap, built-in, same-machine channel with kernel flow control. Good for pipelines and producer-consumer work, bad for anything that must cross hosts or keep message boundaries.
 - Message queues are the discrete-message choice, with POSIX priority ordering, useful where a job, event, or notification must arrive whole and in order of importance.
@@ -7026,7 +7026,7 @@ Full section: compression.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Q
 
 ## Batch 13 — Business Angles (Condensed, Elaborate Only)
 
-Full sections: compression.md Part 1, "Communication Models", "Communication and Data Flow Models", "Kubernetes Pod Network Namespace", "Kubernetes Kernel Space and User Space", and "Errors and Isolation". Corrections in the full sections are in italic text.
+Full sections: comprehensive.md Part 1, "Communication Models", "Communication and Data Flow Models", "Kubernetes Pod Network Namespace", "Kubernetes Kernel Space and User Space", and "Errors and Isolation". Corrections in the full sections are in italic text.
 
 - Message passing versus shared memory is a cost and isolation trade, not a speed contest alone. Message passing isolates processes and scales across machines, at the cost of copies. Shared memory is fastest locally, at the cost of synchronization discipline and no cross-machine use.
 - Pull versus push is a latency versus control trade. Polling lets the consumer control rate and costs empty requests. Webhooks push instantly per event, but delivery is at-least-once in practice, so consumers must handle duplicates, and a webhook is a pattern on HTTP POST, not a standard protocol.
@@ -7036,7 +7036,7 @@ Full sections: compression.md Part 1, "Communication Models", "Communication and
 
 ## Topologies — Business Angle (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "Topologies — Physical, Logical, and the Tools That Are Not Topologies". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "Topologies — Physical, Logical, and the Tools That Are Not Topologies". Corrections in the full section are in italic text.
 
 - Topology is a cost and failure choice, not a product name. A star is cheap and simple but its centre is a single point of failure. A mesh is resilient but its link count and routing cost grow fast. A bus is cheap and shared, so contention caps its scale.
 - Buying a system because it is labelled mesh, or calling Kubernetes or Ceph a topology, misleads a purchasing decision. The question to ask a vendor is: what shape are the links, how many paths exist between two nodes, and what fails when one link or one centre device fails.
@@ -7044,7 +7044,7 @@ Full section: compression.md Part 1, "Topologies — Physical, Logical, and the 
 
 ## Kernel Objects for a Pod — Business Angle (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "Kernel Objects for a Pod — Runtime-Created Versus Application-Created". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "Kernel Objects for a Pod — Runtime-Created Versus Application-Created". Corrections in the full section are in italic text.
 
 - The business split is: the platform creates the sandbox, the application creates its own work inside it. Platform cost and failure live in namespaces, cgroups, and CNI interfaces. Application cost and failure live in processes, file descriptors, sockets, and memory areas.
 - That split matters for support boundaries. A pod that cannot start, has no IP, or hits a cgroup limit is a platform and runtime problem. A pod that runs but leaks file descriptors, binds the wrong port, or grows its virtual memory until it is killed is an application problem, even though the kernel reports both.
@@ -7052,7 +7052,7 @@ Full section: compression.md Part 1, "Kernel Objects for a Pod — Runtime-Creat
 
 ## IBM Sterling B2B Integrator Networking — Business Angle (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "IBM Sterling B2B Integrator Networking — Four-Layer Deployment Model". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "IBM Sterling B2B Integrator Networking — Four-Layer Deployment Model". Corrections in the full section are in italic text.
 
 - The four levels are a useful support boundary, not a product standard. Level 1 is partner and user entry, Level 2 is internal application traffic, Level 3 is database, MQ, and storage dependencies, and Level 4 is external partner traffic in both directions.
 - The business risk is in the missing mapping. Until the actual Services, Ingress or Routes, firewall rules, and partner endpoints are attached to each level, the model cannot be used for troubleshooting or for an audit, because a failure cannot be assigned to a level.
@@ -7060,7 +7060,7 @@ Full section: compression.md Part 1, "IBM Sterling B2B Integrator Networking —
 
 ## WhatsApp Notes — Business Angles (Condensed, Elaborate Only)
 
-Full sections: compression.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persistence, Flush, Backup, Archive, and B2Bi" and "WhatsApp Notes — Source Code Repositories Versus Artifact Repositories". Corrections in the full sections are in italic text.
+Full sections: comprehensive.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persistence, Flush, Backup, Archive, and B2Bi" and "WhatsApp Notes — Source Code Repositories Versus Artifact Repositories". Corrections in the full sections are in italic text.
 
 - Storage is a ladder with a price and a failure mode at each rung. RAM is fastest and lost on pod removal, node disk is tied to one node, PVC is network or cloud disk that survives the pod, and object storage is the durable and archival rung. Calling a PVC shared memory breaks that ladder and will mislead a cost and durability decision.
 - Flush, backup, and archive are three different budgets. Flush is a movement to durability, backup is a point-in-time copy for recovery, and archive is cold long-term retention. Funding one does not buy the other two.
@@ -7069,7 +7069,7 @@ Full sections: compression.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persi
 
 ## WhatsApp Notes — Business Angles (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "WhatsApp Notes — Databases by Memory and Disk, and the IBM Suite". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "WhatsApp Notes — Databases by Memory and Disk, and the IBM Suite". Corrections in the full section are in italic text.
 
 - Database choice is a durability choice, not a speed choice alone. Redis and HANA are fast because data is in memory, but both still need disk persistence, RDB and AOF for Redis, data and log volumes for HANA, or a restart loses the data the speed was bought for.
 - Distributed storage is a failure-domain choice. Cassandra, Ceph, HDFS, and MinIO survive a node loss by replication across nodes, while a single-node Redis or a hostPath volume does not, no matter how fast its local disk is.
@@ -7077,7 +7077,7 @@ Full section: compression.md Part 1, "WhatsApp Notes — Databases by Memory and
 
 ## WhatsApp Notes — Business Angles (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "WhatsApp Notes — CNCF and OCI Open Standards, Kubernetes Interfaces, and Observability". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "WhatsApp Notes — CNCF and OCI Open Standards, Kubernetes Interfaces, and Observability". Corrections in the full section are in italic text.
 
 - Standards are a switching cost reducer, not a lock-in eliminator. OCI, CRI, CNI, and CSI let a workload move between runtimes, networks, and storage drivers, but managed-service features and proprietary extensions can still lock a deployment in.
 - Maturity matters more than the acronym list. CRI, CNI, and CSI are stable core interfaces. COSI is alpha, NRI is emerging, SMI is archived, and SMP is a benchmark, not a standard. Choosing an alpha or archived interface for a production platform, because it appeared in the same matrix as CRI, is the main business risk in this note.
@@ -7085,7 +7085,7 @@ Full section: compression.md Part 1, "WhatsApp Notes — CNCF and OCI Open Stand
 
 ## WhatsApp Notes — Business Angles (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "WhatsApp Notes — Systems Lifecycle, Cluster Anatomy, XSI Interfaces, Repositories, systemd, Kernel Structures, and Config Writers". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "WhatsApp Notes — Systems Lifecycle, Cluster Anatomy, XSI Interfaces, Repositories, systemd, Kernel Structures, and Config Writers". Corrections in the full section are in italic text.
 
 - The lifecycle matrix is a hiring and interview asset, not a product. The same nine stages, birth to destruction, run from a local file to a Kubernetes pod to an OpenShift project, and being able to map a stage across all three layers is the skill the matrix is actually teaching.
 - For platform choices, maturity beats completeness. DeploymentConfig, AuditSink, SMI, and CPI all appear in the source lists, and all four are deprecated, alpha, archived, or not a real standard. A platform built on them today inherits migration work tomorrow, while Deployment, Gateway API, static audit policy, and Cloud Controller Manager are the current choices.
@@ -7093,7 +7093,7 @@ Full section: compression.md Part 1, "WhatsApp Notes — Systems Lifecycle, Clus
 
 ## K8 Admin — Business Angles (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "K8 Admin Should Be Aware — Blueprints and Laws". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "K8 Admin Should Be Aware — Blueprints and Laws". Corrections in the full section are in italic text.
 
 - HA is a quorum purchase, not a second master. Three control plane nodes and three etcd members, odd numbers, plus a load balancer, is the minimum that actually survives a node loss, and that is a cost decision, not just a redundancy slogan.
 - GitOps is a control purchase. The value is not a Git repository, it is a controller that continuously reconciles live state to Git, so drift is corrected without a manual apply.
@@ -8204,7 +8204,7 @@ Full sections: Bussiness.md, "India Business, Finance, and Supply Chain — US a
 
 ## Namespaces, Pod Volumes, and Shipping Versus Containerization — Combined View (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "Linux Kernel Namespaces Versus Kubernetes Namespaces, and Pod Volumes" and "Physical Shipping Versus Software Containerization".
+Full section: comprehensive.md Part 1, "Linux Kernel Namespaces Versus Kubernetes Namespaces, and Pod Volumes" and "Physical Shipping Versus Software Containerization".
 
 - Linux namespaces (kernel, per-process views) and Kubernetes namespaces (cluster, logical grouping with soft isolation) share a name and nothing else in implementation. Confusing them is the main interview and design error in this note.
 - Pod volumes follow one rule: define in spec.volumes, mount in volumeMounts. emptyDir dies with the pod, ConfigMap and Secret volumes inject files from cluster objects that outlive the pod.
@@ -8212,7 +8212,7 @@ Full section: compression.md Part 1, "Linux Kernel Namespaces Versus Kubernetes 
 
 ## IP Identity Matrix — Combined View (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "IP Identity Matrix — Cluster, Node, Pod, Service, and External IPs". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "IP Identity Matrix — Cluster, Node, Pod, Service, and External IPs". Corrections in the full section are in italic text.
 
 - Control plane: API IP, cluster lifetime, authentication plus RBAC plus admission.
 - Node: VPC address, node lifetime, cloud and DHCP, firewalls as filters.
@@ -8222,7 +8222,7 @@ Full section: compression.md Part 1, "IP Identity Matrix — Cluster, Node, Pod,
 
 ## IPC Mechanisms — Combined View (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Queues, Shared Memory, Sockets". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Queues, Shared Memory, Sockets". Corrections in the full section are in italic text.
 
 - Pipe: byte stream, unidirectional, kernel buffer, default 65,536 bytes, adjustable, shared file descriptors, kernel flow control.
 - FIFO: same byte-stream semantics, named pathname, any process with permission, two FIFOs for bidirectional use.
@@ -8233,7 +8233,7 @@ Full section: compression.md Part 1, "IPC Mechanisms — Pipes, FIFOs, Message Q
 
 ## Batch 13 — Combined Views (Condensed, Elaborate Only)
 
-Full sections: compression.md Part 1, "Communication Models", "Communication and Data Flow Models", "Kubernetes Pod Network Namespace", "Kubernetes Kernel Space and User Space", and "Errors and Isolation". Corrections in the full sections are in italic text.
+Full sections: comprehensive.md Part 1, "Communication Models", "Communication and Data Flow Models", "Kubernetes Pod Network Namespace", "Kubernetes Kernel Space and User Space", and "Errors and Isolation". Corrections in the full sections are in italic text.
 
 - Message passing: explicit send and receive, no shared memory, copies through buffers, works across machines, ordering and duplication still need handling.
 - Shared memory: same physical region mapped into several processes, fastest locally, same machine only, synchronization required, setup needs the kernel.
@@ -8244,7 +8244,7 @@ Full sections: compression.md Part 1, "Communication Models", "Communication and
 
 ## Topologies — Combined View (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "Topologies — Physical, Logical, and the Tools That Are Not Topologies". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "Topologies — Physical, Logical, and the Tools That Are Not Topologies". Corrections in the full section are in italic text.
 
 - Point-to-point: two endpoints, one link, veth pair, WireGuard tunnel, TUN/TAP.
 - Bus: shared medium, arbitration, CAN, I2C, SPI, old PCI. PCIe is switched point-to-point, not a shared bus. DDR is a memory interface, not a network topology.
@@ -8257,7 +8257,7 @@ Full section: compression.md Part 1, "Topologies — Physical, Logical, and the 
 
 ## Kernel Objects for a Pod — Combined View (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "Kernel Objects for a Pod — Runtime-Created Versus Application-Created". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "Kernel Objects for a Pod — Runtime-Created Versus Application-Created". Corrections in the full section are in italic text.
 
 - Runtime-created: namespaces (network shared, IPC shared, UTS for hostname, mount per container, PID per container unless shareProcessNamespace, plus user, cgroup, and time), cgroups (CPU, memory, process count, I/O, device limits in v2), and veth interfaces created by the CNI, one end in the pod namespace.
 - Application-created: processes and threads, file descriptors for open files and sockets (not for volume mounts), inodes looked up on open not created on open, sockets bound in the pod network namespace, and virtual memory areas with anonymous pages faulted in on first touch, not on allocation.
@@ -8265,7 +8265,7 @@ Full section: compression.md Part 1, "Kernel Objects for a Pod — Runtime-Creat
 
 ## IBM Sterling B2B Integrator Networking — Combined View (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "IBM Sterling B2B Integrator Networking — Four-Layer Deployment Model". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "IBM Sterling B2B Integrator Networking — Four-Layer Deployment Model". Corrections in the full section are in italic text.
 
 - Level 1, ingress, user-facing: external into the cluster, Ingress or Route plus Service, HTTP and non-HTTP listeners both needed for partner protocols.
 - Level 2, internal: pod-to-pod by pod IP, pod-to-Service by ClusterIP and DNS, NetworkPolicy by labels.
@@ -8275,7 +8275,7 @@ Full section: compression.md Part 1, "IBM Sterling B2B Integrator Networking —
 
 ## WhatsApp Notes — Combined Views (Condensed, Elaborate Only)
 
-Full sections: compression.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persistence, Flush, Backup, Archive, and B2Bi" and "WhatsApp Notes — Source Code Repositories Versus Artifact Repositories". Corrections in the full sections are in italic text.
+Full sections: comprehensive.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persistence, Flush, Backup, Archive, and B2Bi" and "WhatsApp Notes — Source Code Repositories Versus Artifact Repositories". Corrections in the full sections are in italic text.
 
 - tmpfs: RAM, fast, volatile, /tmp is commonly tmpfs, /var/tmp is normally disk.
 - emptyDir default: node disk. emptyDir Memory: tmpfs, counts against container memory limit, sizeLimit set always, survives container crash, deleted on pod removal.
@@ -8287,7 +8287,7 @@ Full sections: compression.md Part 1, "WhatsApp Notes — tmpfs, emptyDir, Persi
 
 ## WhatsApp Notes — Combined Views (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "WhatsApp Notes — Databases by Memory and Disk, and the IBM Suite". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "WhatsApp Notes — Databases by Memory and Disk, and the IBM Suite". Corrections in the full section are in italic text.
 
 - Redis: single-node or small sharded, in-memory, strings, hashes, lists, sets, sorted sets, streams, JSON, vectors, RDB snapshots plus AOF log to durable SSD or DAS, never to tmpfs for durability, SAN atypical.
 - Cassandra: multi-node, disk-based, DAS per node, replicated across nodes.
@@ -8300,7 +8300,7 @@ Full section: compression.md Part 1, "WhatsApp Notes — Databases by Memory and
 
 ## WhatsApp Notes — Combined Views (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "WhatsApp Notes — CNCF and OCI Open Standards, Kubernetes Interfaces, and Observability". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "WhatsApp Notes — CNCF and OCI Open Standards, Kubernetes Interfaces, and Observability". Corrections in the full section are in italic text.
 
 - OCI: Runtime Spec for runc, Image Spec for layers and manifests, Distribution Spec for registry push and pull.
 - CRI: kubelet to runtime gRPC, containerd and CRI-O. CNI: pod IPs and routes, Cilium, Calico, Flannel. CSI: block and file provisioning, AWS EBS, Rook, Longhorn.
@@ -8311,7 +8311,7 @@ Full section: compression.md Part 1, "WhatsApp Notes — CNCF and OCI Open Stand
 
 ## WhatsApp Notes — Combined Views (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "WhatsApp Notes — Systems Lifecycle, Cluster Anatomy, XSI Interfaces, Repositories, systemd, Kernel Structures, and Config Writers". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "WhatsApp Notes — Systems Lifecycle, Cluster Anatomy, XSI Interfaces, Repositories, systemd, Kernel Structures, and Config Writers". Corrections in the full section are in italic text.
 
 - Cluster anatomy: worker kubelet, containerd or CRI-O, kube-proxy, CNI agent; control plane apiserver, etcd, scheduler, kube-controller-manager, cloud-controller-manager; kubeadm static pods in /etc/kubernetes/manifests.
 - XSI: OCI image and runtime, CRI kubelet to runtime, CNI pod networking, CSI storage lifecycle, CDI device injection, CCM not CPI for cloud, CNI binaries /opt/cni/bin, CSI sidecars provisioner, attacher, resizer, CDI files /etc/cdi.
@@ -8326,7 +8326,7 @@ Full section: compression.md Part 1, "WhatsApp Notes — Systems Lifecycle, Clus
 
 ## K8 Admin — Combined Views (Condensed, Elaborate Only)
 
-Full section: compression.md Part 1, "K8 Admin Should Be Aware — Blueprints and Laws". Corrections in the full section are in italic text.
+Full section: comprehensive.md Part 1, "K8 Admin Should Be Aware — Blueprints and Laws". Corrections in the full section are in italic text.
 
 - Blueprints: HA control plane, stacked or external etcd, minimum three nodes, odd etcd quorum, API load balancer; GitOps, Git as desired state plus ArgoCD or Flux reconciliation; Ingress and Gateway API for north-south, service mesh for east-west; CSI storage interface, CNI network interface.
 - Laws: requests for scheduling, limits for cgroup enforcement, CPU throttles, memory OOMKills; NetworkPolicy namespace-scoped, default allow, enforced by Calico or Cilium, not by the object alone; probes liveness restarts, readiness removes from endpoints, startup delays the other two; RBAC Role, ClusterRole, RoleBinding, ClusterRoleBinding, API authorization only.

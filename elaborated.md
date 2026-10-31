@@ -1,17 +1,17 @@
 # elaborated.md
 
-New separate file only. The 3 source md files and compression.md were NOT modified to make this file.
+New separate file only. The 3 source md files and comprehensive.md were NOT modified to make this file.
 
 Method: every dash bullet point from the 3 source files, in learning-sequence order, section by section, is kept verbatim as the bullet head below, followed by a key note of about 2 lines, plus an example where the point naturally has one, and a command and/or protocol ONLY where it is standard and applicable (for example Linux driver / network commands, TCP, UDP, BGP, DNS, TLS, HTTP). For business / ERP / market points, a business example is given instead — no invented CLI commands.
 
 No new topics and no new sections were added. Analogies stay analogies, forecasts stay forecasts, and source-only examples (GradeSpot Bank of America, gsitssolutions.com, OPT / visa claims) keep their original flags exactly as in the source — they are not upgraded to verified facts. Corrections lists from the source are kept in place as bullet heads. Non-bullet paragraphs, tables and numbered lists are kept verbatim as context, not elaborated, so the sequence stays readable.
 
 ---
-> **New rule (set 2026-10-30, by Aravind, for the 5 files and the new branch):** Every time these 5 files are updated, the rule book applies. Compression.md must carry all original shared notes, in full. Elaborated.md must remove the redundant notes found in compression.md, and elaborate only the remaining, non-redundant points with key notes — about 2 lines per point, plus an example, and a command or protocol only where applicable, as discussed earlier for one-liner points.
+> **New rule (set 2026-10-30, by Aravind, for the 5 files and the new branch):** Every time these 5 files are updated, the rule book applies. Compression.md must carry all original shared notes, in full. Elaborated.md must remove the redundant notes found in comprehensive.md, and elaborate only the remaining, non-redundant points with key notes — about 2 lines per point, plus an example, and a command or protocol only where applicable, as discussed earlier for one-liner points.
 
 > **Branch rule (set 2026-10-30, by Aravind):** All work stays in these 3 lines only — main, systems-evaluation-book, and research-compression-elaborated. No work outside those branches, no direct edits to main, no merge and no deploy without Aravind's tap.
 
-> **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, compression.md and elaborated.md, live.
+> **Ownership rule (set 2026-10-30, by Aravind):** Technology.md, Bussiness.md, and Business&Technology.md belong to systems-evaluation-book branch only. They are not separate files in main or in research-compression-elaborated; in the research line, only their derived copies, comprehensive.md and elaborated.md, live.
 > **Sanitize rule (set 2026-10-30, by Aravind):** Sanitize, clean, and correct every given note and summary by verifying it against trusted sources (Wikipedia, kernel.org, IETF, ICANN/IANA, vendor documentation) before adding it; remove conversational filler, emojis in prose, and embedded offers; keep only verified content, or content clearly flagged as analogy, source-only, or speculative, with a corrections list in the new section. Scope: this applies to all notes given after the segregation of files into the 3 lines / 5 files (from 2026-10-30 about 16:47 IST onward), not only to future notes; those post-segregation batches were each verified before adding, and any error found later is corrected in place with its correction noted.
 > **Corrections format rule (set 2026-10-30, by Aravind):** Corrections are written in italic text, so a corrected statement is visible as corrected.
 
@@ -6784,7 +6784,7 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
 - Stack evolution, ARPANET: the first ARPANET message on 29 October 1969 was "lo", the first two letters of "login", before the SRI host crashed. Example: UCLA to SRI was the first host-to-host link, and the four-node network was complete by 5 December 1969.
 - Stack evolution, cellular: 1G was analog voice, 2G digital voice plus SMS, 3G packet data, 4G all-IP, and 5G slicing and edge, while 6G is still research. Example: S1 and X2 are LTE interfaces, not 5G interfaces, so do not group them as general 5G protocols.
 - Stack evolution, AI direction: intent-based networking, telemetry, and closed-loop control are real directions, but LLM-controlled autonomous networks are not a deployed standard. Example: a controller can auto-apply an intent policy today, but that is not the same as a network governed by a large language model.
-- Full versions: compression.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
+- Full versions: comprehensive.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
 
 ## User Accounts and NIC Control, and American Network Technology — Elaborated Key Points (New Gaps Only)
 
@@ -6798,7 +6798,7 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
 - American networks, Web correction: the Web was invented by Tim Berners-Lee at CERN in 1989, in Europe, not in the United States. Example: the first United States web server came later, at SLAC in December 1991.
 - American networks, SWIFT correction: SWIFT is a Belgian cooperative from 1973 that carries payment instructions and does not move money. Example: a bank sends a SWIFT message, then settlement moves through correspondent accounts separately.
 - American networks, cloud: AWS, Azure, and Google Cloud operate global data centers and virtual networking, but they are not the only global clouds. Example: Alibaba Cloud and regional clouds also operate globally, and some systems stay on premises for sovereignty.
-- Full versions: compression.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
+- Full versions: comprehensive.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
 
 ## From DARPA to Silicon Valley — Elaborated Key Points (New Gaps Only)
 
@@ -6808,7 +6808,7 @@ Key Takeaway (technology): NDN is one possible successor to ASN/BGP Internet —
 - Layer control: semiconductors, network equipment, operating systems, protocols, coordination, cloud, financial networks, and capital markets each have different controllers. Example: IETF and IEEE set open protocol standards that nobody owns, while AWS sells cloud infrastructure as a subscription.
 - X1 Yoga chain: Firefox or SSH, Ubuntu TCP/IP stack, iwlwifi or e1000e driver, physical NIC, access point, switch, router, ISP and Internet exchange, and cloud or enterprise server. Example: one banking website visit crosses all of those layers and organizations.
 - Final chain framing: Industrial Revolution to telegraph to telephone to ARPANET to TCP/IP to NICs and routers to ISPs to distributed servers to cloud to financial networks to AI infrastructure. Example: use it as a teaching timeline, not as proof that each step caused the next in a straight line.
-- Full versions: compression.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
+- Full versions: comprehensive.md carries the full sections in each Part. Business unique points: Bussiness.md angles in compression Part 2. Combined view: Business&Technology.md angles in compression Part 3.
 
 ## How the Internet Works and Who Coordinates It — Elaborated Key Points (New Gaps Only)
 
@@ -6925,7 +6925,7 @@ Pointer: full sections in Bussiness.md and Technology.md. Business and combined 
 
 ## Namespaces, Pod Volumes, and Shipping Versus Containerization — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full sections in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Segregation deferred until the owner says done.
+Pointer: full sections in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Segregation deferred until the owner says done.
 
 - Linux namespaces isolate views, cgroups limit resources. Example: a PID namespace gives a container PID 1, but a memory limit comes from a cgroup, not from any namespace.
 - Kubernetes namespaces do not block traffic by themselves. Example: two pods in different namespaces can still communicate unless a NetworkPolicy blocks it; RBAC, not the namespace name, controls API access.
@@ -6937,7 +6937,7 @@ Pointer: full sections in compression.md Part 1. Business and combined angles ar
 
 ## IP Identity Matrix — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
 
 - Cluster API IP lasts for the cluster, not forever. Example: recreating a cluster can change its API endpoint, even though the workloads are the same.
 - Node IP lasts for the node, not permanently. Example: replacing a node in an autoscaling group gives the new node a new IP unless a static address was reserved.
@@ -6947,7 +6947,7 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 
 ## IPC Mechanisms — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
 
 - Pipe is a byte stream, not a message stream. Example: two writes of 10 bytes can be read back as one read of 20 bytes, or as reads of 5, 5, and 10 bytes.
 - Pipe capacity is a default, not a law. Example: `fcntl(fd, F_GETPIPE_SZ)` returns 65,536 by default, and `F_SETPIPE_SZ` can raise it up to the pipe-max-size limit.
@@ -6958,7 +6958,7 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 
 ## Batch 13 — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full sections in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text. Segregation deferred until the owner says done. The pause-container note was re-sent at 22:00 IST and is not duplicated.
+Pointer: full sections in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text. Segregation deferred until the owner says done. The pause-container note was re-sent at 22:00 IST and is not duplicated.
 
 - Message passing has no single send call. Example: pipes use write, POSIX queues use mq_send, sockets use sendmsg, and each is a different channel for the same pattern.
 - Message passing does not remove all races. Example: two senders can still race on message order, and a receiver waiting on a message another process never sends can still deadlock.
@@ -6973,7 +6973,7 @@ Pointer: full sections in compression.md Part 1. Business and combined angles ar
 
 ## Topologies — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
 
 - A topology is a shape, not a product. Example: calling Kubernetes a mesh does not tell you how its pods are linked; a flat pod network and a service mesh are different shapes.
 - PCIe is not a shared bus. Example: each PCIe device has its own serial link to a switch, so two devices can transfer at once, unlike old PCI where all devices shared one parallel bus.
@@ -6985,7 +6985,7 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 
 ## Kernel Objects for a Pod — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
 
 - Namespaces are not all shared in a pod. Example: all containers share the pod IP and localhost, but each has its own PID namespace unless shareProcessNamespace is true.
 - Cgroups limit more than CPU and memory. Example: a cgroup can also cap process count, so a fork bomb hits a pids limit before it exhausts the node.
@@ -6996,7 +6996,7 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 
 ## IBM Sterling B2B Integrator Networking — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done.
 
 - Four levels are a deployment model, not a Kubernetes standard. Example: Kubernetes defines Ingress, Service, and NetworkPolicy, but it does not define a four-level B2Bi stack.
 - Ingress is two things. Example: an HTTP Ingress resource routes web traffic, while ingress traffic in a NetworkPolicy is any traffic entering a pod, and partner protocols such as SFTP are not HTTP Ingress.
@@ -7006,7 +7006,7 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 
 ## WhatsApp Notes — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full sections in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30.
+Pointer: full sections in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30.
 
 - emptyDir Memory is tmpfs, emptyDir default is disk. Example: setting medium Memory changes the backing from node disk to RAM, and the files then count against the container memory limit.
 - emptyDir survives a container crash, not a pod deletion. Example: a restarted JVM can read a crash dump from emptyDir, but a deleted pod loses the whole directory permanently.
@@ -7018,7 +7018,7 @@ Pointer: full sections in compression.md Part 1. Business and combined angles ar
 
 ## WhatsApp Notes — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30.
 
 - Redis persistence is disk, not tmpfs. Example: an RDB snapshot and an AOF log written to tmpfs disappear on reboot, which is exactly the failure persistence is meant to survive.
 - tmpfs is RAM, not disk. Example: a file in tmpfs uses memory, counts against memory limits where charged, and is gone on reboot, while a file on DAS survives a reboot.
@@ -7029,7 +7029,7 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 
 ## WhatsApp Notes — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30.
 
 - OCNF is a typo, CNCF is the foundation. Example: a search for OCNF finds no foundation, while CNCF is the Linux Foundation project that hosts Kubernetes.
 - OCI has three specs, not one. Example: an image built to the Image Spec can be pulled through the Distribution Spec and run by a Runtime Spec runtime, and each spec can change independently.
@@ -7041,7 +7041,7 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 
 ## WhatsApp Notes — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30, sequences 70436 to 70458, deduplicated and merged.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: WhatsApp channel, checked 2026-10-30, sequences 70436 to 70458, deduplicated and merged.
 
 - Control plane is four parts, not three. Example: without kube-controller-manager, no controller reconciles node, replication, or endpoint state, even if apiserver, etcd, and scheduler are running.
 - CPI is not a standard, CCM is the component. Example: an AWS cluster runs aws-cloud-controller-manager, not a CPI driver, and it owns node, route, and load-balancer controllers.
@@ -7056,7 +7056,7 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 
 ## K8 Admin — Elaborated Key Points (New Gaps Only, Elaborate Only)
 
-Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: user note in this chat, 2026-10-31.
+Pointer: full section in comprehensive.md Part 1. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: user note in this chat, 2026-10-31.
 
 - HA needs three, not two. Example: a three-node etcd cluster survives one node loss with quorum, while a two-node cluster can lose quorum when one node dies.
 - GitOps needs a controller. Example: ArgoCD watching Git and correcting drift is GitOps, while a Git repository that is only applied by hand is not.
@@ -9694,13 +9694,13 @@ Key Takeaway (business, corrected): Start today — register, build a cloud-host
 
 ## Extension, Architecture Paper, Models, TCP/IP, and Stack Evolution — Business Angle (Pointer, New Gaps Only)
 
-- Business unique points, elaborated in full in compression.md Part 2: business extension steps, business-type network architectures, business-as-mini-government analogy, NOS choice by business type, and permissions by role.
-- Full elaborated key points: this elaborated.md Part 1 section. Full business sections: compression.md Part 2.
+- Business unique points, elaborated in full in comprehensive.md Part 2: business extension steps, business-type network architectures, business-as-mini-government analogy, NOS choice by business type, and permissions by role.
+- Full elaborated key points: this elaborated.md Part 1 section. Full business sections: comprehensive.md Part 2.
 
 ## User Accounts and NIC Control, and American Network Technology — Business Angle (Pointer, New Gaps Only)
 
-- Business unique points, elaborated in full in compression.md Part 2: NIC privilege by role, daemon model, group corrections, the American commercialization arc, SWIFT correction, Web correction, and present-day market correction.
-- Full elaborated key points: this elaborated.md Part 1 section. Full business sections: compression.md Part 2.
+- Business unique points, elaborated in full in comprehensive.md Part 2: NIC privilege by role, daemon model, group corrections, the American commercialization arc, SWIFT correction, Web correction, and present-day market correction.
+- Full elaborated key points: this elaborated.md Part 1 section. Full business sections: comprehensive.md Part 2.
 
 
 ## How the Internet Works and Who Coordinates It — Pointer (New Batch, 2026-10-30)
@@ -9735,62 +9735,62 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 ## Namespaces, Pod Volumes, and Shipping Versus Containerization — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings.
 
 
 ## IP Identity Matrix — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
 
 
 ## IPC Mechanisms — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
 
 
 ## Batch 13 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 14 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 15 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 16 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 17 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 18 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 19 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 20 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 21 — Pointer (New Batch, 2126-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
@@ -11182,13 +11182,13 @@ Ownership shifted from Government + chip makers + telcos → Cloud + AI giants +
 
 ## Extension, Architecture Paper, Models, TCP/IP, and Stack Evolution — Combined View (Pointer, New Gaps Only)
 
-- Combined unique points, elaborated in full in compression.md Part 3: the combined extension pattern, combined NOS choice by platform, combined telegraph-to-AI arc, combined system-model table, combined device view, and combined stack evolution timeline.
-- Full elaborated key points: this elaborated.md Part 1 section. Full combined sections: compression.md Part 3.
+- Combined unique points, elaborated in full in comprehensive.md Part 3: the combined extension pattern, combined NOS choice by platform, combined telegraph-to-AI arc, combined system-model table, combined device view, and combined stack evolution timeline.
+- Full elaborated key points: this elaborated.md Part 1 section. Full combined sections: comprehensive.md Part 3.
 
 ## User Accounts and NIC Control, and American Network Technology — Combined View (Pointer, New Gaps Only)
 
-- Combined unique points, elaborated in full in compression.md Part 3: privilege as the combined rule, the combined ARPA-to-cloud arc, and the combined DARPA-to-Silicon Valley chain.
-- Full elaborated key points: this elaborated.md Part 1 section. Full combined sections: compression.md Part 3.
+- Combined unique points, elaborated in full in comprehensive.md Part 3: privilege as the combined rule, the combined ARPA-to-cloud arc, and the combined DARPA-to-Silicon Valley chain.
+- Full elaborated key points: this elaborated.md Part 1 section. Full combined sections: comprehensive.md Part 3.
 
 
 ## How the Internet Works and Who Coordinates It — Pointer (New Batch, 2026-10-30)
@@ -11223,62 +11223,62 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 ## Namespaces, Pod Volumes, and Shipping Versus Containerization — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings.
 
 
 ## IP Identity Matrix — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
 
 
 ## IPC Mechanisms — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text.
 
 
 ## Batch 13 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 14 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 15 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 16 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 17 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 18 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 19 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 20 — Pointer (New Batch, 2026-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
 ## Batch 21 — Pointer (New Batch, 2126-10-30)
 
-See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 ## Business Promotion — Combined View (No Diagram)
 
