@@ -4850,6 +4850,32 @@ Source: the user's WhatsApp channel, checked 2026-10-30, all notes after batch 1
 - IBM Sterling B2B Integrator config: customer_overrides.properties for localized parameter overrides, sandbox.cfg for installer and environment parameters, and setupfiles scripts for merging templates with live properties. Configuration covers database pool tuning, transport and retry parameters, server bindings, host paths, ports, and cluster parameters.
 - *Correction: sandbox.cfg and the setupfiles script are source-only in this batch, not verified against IBM documentation here, while customer_overrides.properties as the override location was verified in batch 17. They are kept as source items, not as verified IBM facts.*
 
+## K8 Admin Should Be Aware — Blueprints and Laws (Audited, Official Sources Only, Elaborate Only)
+
+Source: the user's note in this chat, 2026-10-31, filed in elaborate only, with corrections applied. Verified against kubernetes.io documentation for probes (three kinds, kubelet-managed) and for highly available topology (stacked versus external etcd, minimum three nodes, odd number for quorum). Added to elaborate only; book and main untouched. Segregation deferred until the owner says done, and, per the owner's 2026-10-31 rule, only notes go into compression and elaborated for future segregation, no messages and no replies. Corrections in this section are written in italic text, per the owner's rule.
+
+### The Blueprints (Architectural Patterns)
+
+- High Availability (HA) Control Plane: redundant control plane nodes, so the cluster keeps running if one control plane node dies.
+- *Correction: "if one master server dies, the city still runs" is true only with a quorum design, not with any two masters. Kubernetes HA topology, per kubernetes.io, is stacked etcd, where etcd members are colocated with control plane nodes, or external etcd, where etcd runs on separate hosts. Both require a minimum of three control plane nodes, and an odd number of etcd members for optimal voting quorum. A two-master cluster does not give etcd quorum, and losing one of two can lose quorum. The correct HA rule is three or more, odd, with a load balancer in front of the API servers, not simply "redundant masters".*
+- GitOps (Infrastructure as Code): cluster designs stored in a version control system such as Git, so changes are reviewed before reaching production.
+- *Correction: GitOps is more than storing designs in Git and reviewing them. The defining part is continuous reconciliation: a controller such as ArgoCD or Flux watches the Git repository as the desired state and continuously drives the live cluster toward it, correcting drift. A Git repository with manual kubectl apply is versioned infrastructure, not GitOps, because nothing reconciles it automatically.*
+- Ingress and Service Mesh: the entry points and internal traffic routing that guide external user traffic to the right service.
+- *Correction: Ingress and service mesh are not one pattern, and the source merges them. Ingress, and its successor the Gateway API, handles north-south traffic, external users into the cluster, through a reverse proxy. A service mesh handles east-west traffic, service to service inside the cluster, with mTLS, retries, and traffic splitting. An administrator needs both, but for different directions, and configuring an Ingress does not give mesh features, and a mesh does not replace an Ingress.*
+- CSI and CNI (Pluggable Infrastructure): standard interfaces for hooking storage and networking into the cluster.
+- *Correction: CSI and CNI are interfaces, not blueprints. CSI is the Container Storage Interface for provisioning, attaching, and mounting volumes, and CNI is the Container Network Interface for pod networking and IP allocation. Calling them blueprints understates them: they are the contracts that let third-party drivers plug in without changing Kubernetes core, and the same point was corrected in batches 19 and 20 for CPI, which is really the Cloud Controller Manager.*
+
+### The Laws (Policies and Resource Management)
+
+- Resource Requests and Limits: the rules dictating how much CPU and memory a container can consume, so one workload does not starve others.
+- *Correction: requests and limits do different jobs, and CPU and memory do not behave the same when a limit is hit. A request is the amount the scheduler guarantees and uses for placement, and a limit is the maximum enforced by cgroups. Exceeding a CPU limit throttles the container, because CPU is compressible, while exceeding a memory limit kills the container with OOMKilled, because memory is not compressible. The source's "fuel" analogy hides that difference, and it is the difference an administrator is most often asked about in troubleshooting.*
+- Network Policies: security barriers that dictate which pods are allowed to talk to each other, for example preventing front-end pods from directly accessing database pods.
+- *Correction: a NetworkPolicy object alone does not block anything. NetworkPolicy is namespace-scoped, and by default, if no policy selects a pod, all traffic to and from that pod is allowed. Enforcement depends on the CNI plugin: Calico and Cilium enforce policies, while a basic CNI such as Flannel does not. The correct statement is that NetworkPolicy declares the rule, and the CNI plugin enforces it, and the front-end to database example only works if a policy selects the database pods and the plugin enforces it.*
+- Probes (Liveness and Readiness): health mandates that test if a container is running smoothly or needs to be replaced.
+- *Correction: there are three probes, not two, per kubernetes.io. LivenessProbe asks whether the container is running, and if it fails the kubelet kills the container under its restart policy. ReadinessProbe asks whether the container is ready to receive traffic, and if it fails the EndpointSlice controller removes the pod IP from Service endpoints, without restarting it. StartupProbe asks whether the application has started, and while it is configured, liveness and readiness probes are disabled until it succeeds, which protects slow-starting applications from being killed before they are ready. The source omits startupProbe, and without it, a slow start looks like a liveness failure.*
+- RBAC (Role-Based Access Control): the permission system defining which users and service accounts can modify cluster resources.
+- *Correction: RBAC is API authorization, not a general licensing system for the highway. It authorizes requests to the Kubernetes API, through Role and ClusterRole objects that list verbs on resources, and RoleBinding and ClusterRoleBinding objects that attach them to users, groups, or service accounts. It does not, by itself, control network traffic, node SSH access, or cloud IAM, and a user with no RBAC role can still be blocked or allowed by those other layers. The correct scope is API access only.*
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -7065,6 +7091,14 @@ Full section: compression.md Part 1, "WhatsApp Notes — Systems Lifecycle, Clus
 - For platform choices, maturity beats completeness. DeploymentConfig, AuditSink, SMI, and CPI all appear in the source lists, and all four are deprecated, alpha, archived, or not a real standard. A platform built on them today inherits migration work tomorrow, while Deployment, Gateway API, static audit policy, and Cloud Controller Manager are the current choices.
 - For security, the two corrections that matter most are Secrets and shred. Secrets are base64, not encrypted, until encryption at rest is enabled, and shred is not a secure erase on SSDs. Both are easy to get wrong in a design review, and both are cheap to fix if caught early.
 
+## K8 Admin — Business Angles (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "K8 Admin Should Be Aware — Blueprints and Laws". Corrections in the full section are in italic text.
+
+- HA is a quorum purchase, not a second master. Three control plane nodes and three etcd members, odd numbers, plus a load balancer, is the minimum that actually survives a node loss, and that is a cost decision, not just a redundancy slogan.
+- GitOps is a control purchase. The value is not a Git repository, it is a controller that continuously reconciles live state to Git, so drift is corrected without a manual apply.
+- RBAC, NetworkPolicy, and probes are the three controls an auditor asks about first, because they answer who can change the cluster, who can talk to whom, and how a broken container is detected and removed.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -8289,6 +8323,13 @@ Full section: compression.md Part 1, "WhatsApp Notes — Systems Lifecycle, Clus
 - File syscalls: openat O_CREAT, mkdir, symlink, mkfifo, rename, write, fallocate pre-allocates, truncate sparse, mknod, unlink, rmdir.
 - Transfer: cp, mv, rsync -avP over SSH, scp over SFTP protocol, sftp, wget -c, curl -O, smbclient, mount cifs, mount nfs.
 - Config writers: compilers write artifacts, interpreters execute, Kafka and databases write through WAL, K8s ConfigMap, Secret, CRD, declarative apply, imperative create, B2Bi customer_overrides, sandbox.cfg source-only, setupfiles source-only.
+
+## K8 Admin — Combined Views (Condensed, Elaborate Only)
+
+Full section: compression.md Part 1, "K8 Admin Should Be Aware — Blueprints and Laws". Corrections in the full section are in italic text.
+
+- Blueprints: HA control plane, stacked or external etcd, minimum three nodes, odd etcd quorum, API load balancer; GitOps, Git as desired state plus ArgoCD or Flux reconciliation; Ingress and Gateway API for north-south, service mesh for east-west; CSI storage interface, CNI network interface.
+- Laws: requests for scheduling, limits for cgroup enforcement, CPU throttles, memory OOMKills; NetworkPolicy namespace-scoped, default allow, enforced by Calico or Cilium, not by the object alone; probes liveness restarts, readiness removes from endpoints, startup delays the other two; RBAC Role, ClusterRole, RoleBinding, ClusterRoleBinding, API authorization only.
 
 ## Business Promotion — Combined View (No Diagram)
 

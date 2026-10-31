@@ -7054,6 +7054,18 @@ Pointer: full section in compression.md Part 1. Business and combined angles are
 - shred is not secure erase on SSDs. Example: overwriting a file on an SSD may leave the old data in over-provisioned blocks that wear levelling never rewrites.
 - kubectl get has no --recursive. Example: use kubectl get across namespaces, or k9s, for hierarchy, and reserve -R for apply, create, and delete with directories.
 
+## K8 Admin — Elaborated Key Points (New Gaps Only, Elaborate Only)
+
+Pointer: full section in compression.md Part 1. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full section are in italic text. Segregation deferred until the owner says done. Source: user note in this chat, 2026-10-31.
+
+- HA needs three, not two. Example: a three-node etcd cluster survives one node loss with quorum, while a two-node cluster can lose quorum when one node dies.
+- GitOps needs a controller. Example: ArgoCD watching Git and correcting drift is GitOps, while a Git repository that is only applied by hand is not.
+- Ingress is north-south, mesh is east-west. Example: Gateway API routes external users in, while a mesh adds mTLS and retries between services inside the cluster.
+- CPU throttles, memory kills. Example: a container over its CPU limit slows down, while a container over its memory limit is OOMKilled.
+- NetworkPolicy needs an enforcing plugin. Example: a policy blocking front-end to database traffic works on Calico or Cilium, but not on a basic CNI that does not enforce policies.
+- Three probes, not two. Example: a startupProbe lets a slow application finish starting before liveness and readiness probes begin, so it is not killed for being slow.
+- RBAC is API only. Example: a RoleBinding can allow kubectl get pods, but it does not grant SSH to a node or network access to a database.
+
 ## Business Promotion — Technology Angle (Corrected, De-duplicated)
 
 Full business promotion layers and timeline are in Bussiness.md; combined flow/timeline are in Business&Technology.md. This section is only promotion channels as technology. No diagram — md lists only.
@@ -9775,6 +9787,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
+
+## Batch 21 — Pointer (New Batch, 2126-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
 ## Business Promotion (External Layer) — Business Angle (Corrected, De-duplicated)
 
 Technology channels are in Technology.md; combined flow/timeline are in Business&Technology.md. This section is only business promotion. Era promotion already in the consolidated era framework is not repeated — only new promotion detail from this note is added.
@@ -11255,6 +11272,11 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 
 
 ## Batch 20 — Pointer (New Batch, 2026-10-30)
+
+See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
+
+
+## Batch 21 — Pointer (New Batch, 2126-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in compression.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
