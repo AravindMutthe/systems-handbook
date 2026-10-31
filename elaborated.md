@@ -11693,3 +11693,43 @@ Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehen
 - Middleware W/R/E: WRITE bonding — KRaft consensus, replication, upstream farms (/etc/kafka/, Helm values.yaml); WRITE binding — L7 rewrite targets, routing keys, connection strings (/etc/nginx/, /etc/rabbitmq/, /etc/redis/); READ — nginx -t, rabbitmqctl list_queues, kafka-topics --describe, redis-cli info; EXECUTE — Kafka broker, Redis engine, RabbitMQ daemon, nginx ingress controller.
 - UI W/R/E: WRITE bonding — module federation layouts (webpack.config.js, vite.config.ts); WRITE binding — two-way template sync, event listener mappings (App.tsx); READ — devtools console, network panel, react-devtools; EXECUTE — V8, Blink/Chromium DOM rendering, layout engine.
 - *Correction — source contradiction, kept visible: the source's diagram orders the loop WRITE → EXECUTE → READ, while its one-liner orders it WRITE → READ → EXECUTE. This filing keeps 70962's order, WRITE → READ → EXECUTE, for consistency; a loop has no true start, but one order must be kept.*
+
+## Batch 25 — Virtualization, Process, Memory, and Linux as Cloud, Elaborated Key Points (WhatsApp seq 70980–70987, Chat Sequence)
+
+Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehensive.md, Batch 25, appended at the end. Corrections in the full sections are in italic text. Only genuinely new gaps are elaborated below; overlaps with earlier batches are kept once, with pointers.
+
+### 70980 — Virtualization and the Cloud Service Models
+
+- One server, one app wasted the machine; virtualization shares one server among many isolated VMs.
+- IaaS pillars: compute (VM/bare metal), storage (block/file), network (VPCs, subnets, routing).
+- *Corrections: SAN and NAS are both storage, block vs file — NAS is not the network server; OpenStack listed three times is merged into one entry (Nova, Cinder/Swift, Neutron, Keystone, Horizon, Glance as the VM-image store).*
+- Ladder: bare metal → VMs (IaaS) → containers (Kubernetes) → PaaS → BaaS/FaaS → SaaS.
+- *Corrections: SaaS = finished software you use; BaaS = backend APIs (auth, DB, storage); FaaS = event-driven functions, no servers to manage.*
+- Pointer: virtualization types, KVM, and container vs VM isolation were covered in earlier batches; only the IaaS pillars, the open-source platform merge, and the SaaS/BaaS/FaaS ladder are new here.
+
+### 70984 — Process: The Running Task
+
+- A process is a program in execution with its own virtual address space; every task believes it owns all RAM.
+- Styles: independent/async/event-driven (slow I/O), cooperative/sync/clock-driven (fast I/O), hybrid.
+- task_struct: one per task, created by fork + exec, PID 1 (systemd) as the userspace root.
+- *Corrections: each task_struct describes one task, not all processes; process state lives in RAM, the CPU only executes its threads; /sys is not read-only — writable knobs exist; PID 2 is kthreadd, not a driver manager — PID 0 idle, PID 1 systemd, PID 2 kthreadd, parent of kernel threads.*
+- USB flow, corrected: interrupt → kworker thread → sysfs kobject under /sys/bus/usb/ → systemd-udevd creates /dev/input/ node → desktop session (descendant of PID 1) moves the cursor.
+- Pointer: process/thread lifecycle, fork/clone, namespaces, and cgroups were covered in earlier batches; only the task_struct, PID map, and corrected USB flow are new here.
+
+### 70985 — Memory: Virtual Addresses, Pages, and the Translators
+
+- VAS per process, MMU translates virtual → physical via page tables; RAM holds page frames, disk holds swapped-out pages.
+- *Correction: 64-bit architectural ceiling 16 EB is not practice — current x86-64 uses 48-bit (256 TB) or 57-bit (128 PB) virtual addresses.*
+- TLB miss (mapping missing, in RAM, nanoseconds) ≠ page fault (data missing, on disk, milliseconds); minor fault = already in RAM, microseconds; major fault = fetched from disk, milliseconds.
+- IMC owns DRAM timing (low CPU burden), IC moves only interrupt vectors (0 data bytes), DMA streams whole pages with near-zero burden during transfer.
+- *Corrections: the source's IMC CPU burden was backwards, and DMA's burden is not literally zero — the CPU programs it and handles completion.*
+- Pointer: memory/VAS/TLB/MMU material was introduced in earlier batches; only the minor/major fault split, the IMC/IC/DMA matrix, and the practical address limits are new here.
+
+### 70987 — Linux as Cloud: Files, Databases, and Identity
+
+- Computing = state (files/databases) + execution (processes/workloads); everything is a file, exposed through VFS.
+- System databases are plain files: /etc/passwd and /etc/shadow (identity), /etc/sudoers and /etc/group (permissions/authorization).
+- *Correction: the IAM mapping is an analogy, not identity — UID is numeric on Linux, but it plays the GUID/object-ID role; the daemon is systemd-udevd on modern systems.*
+- /sys = model/topology view, /dev = doorway view via devtmpfs, udevd applies rules.
+- Device cardinality: one device, one active driver at a time; one driver, many devices; one bus, many devices; one class, many devices; one stack, many user-facing interfaces.
+- Pointer: /sys, /dev, /proc, and udev material were covered in earlier batches; only the state-plus-execution frame, the DB tables, and the IAM analogy are new here.
