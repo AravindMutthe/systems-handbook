@@ -11574,3 +11574,50 @@ Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehen
 - Part 3, genuinely new — North-South vs East-West: north-south carries JWT and plaintext prompts over HTTP/2 and SSE, where the edge gateway terminates TLS, authenticates, and runs guardrails; east-west is the deterministic internal loop (agent JSON-RPC, Top-K retrievals, CXL KV offload, GPUDirect RDMA).
 - Part 4, genuinely new — IAM blind spot: Layers 1 and 2 cannot decode a JWT or check permissions, so auth, guardrails, and tenant metadata injection must happen at the gateway, with HTTP 401 on failure and tenant-scoped vector search on success.
 - *Correction carried forward: context window is a token allocation envelope, not a VPC boundary.*
+## Batch 23 — Managers, Segmentation, Data Planes, and Switches, Elaborated Key Points (WhatsApp seq 70919–70933, Chat Sequence)
+
+Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehensive.md, Batch 23, appended at the end. Corrections in the full sections are in italic text. Only genuinely new gaps are elaborated below; overlaps are kept once, with pointers.
+
+### 70919 — Linux Manager Taxonomy: 8 Layers
+
+- Eight layers, kernel to cloud: core resource managers (MM, I/O scheduler, EEVDF CPU scheduler), device/interface managers (udev, display, window, audio), process/service managers (systemd, cgroups, top/htop), network managers (NetworkManager, firewall tools), storage managers (mdadm, LVM, ZFS/Btrfs), identity/security managers (PAM, SSSD, SELinux/AppArmor), package managers (APT/DNF/Pacman, Docker/Flatpak), orchestration/cloud managers (Terraform, Kubernetes, OpenStack).
+- *Correction: the 8 layers are the source's teaching taxonomy, not a kernel or vendor standard; individual tool facts stand, layer numbering does not.*
+
+### 70924 — Network Segmentation
+
+- Segment = distinct physical or logical network section; devices in one segment talk directly, no router needed.
+- Three slices: physical (separate hardware, each its own broadcast domain), virtual VLAN (one switch, many broadcast domains), logical subnet (IP blocks, routing tables).
+- *Corrections: usable VLAN IDs are 1–4094, not 0–4094 (0 priority tag, 4095 reserved); intra-VLAN traffic needs no gateway.*
+
+### 70929 — Network Data Plane Pillars
+
+- Data plane at Layers 2–4 moves and filters bytes; to chips it is raw numbers (IPs, ports, MACs).
+- Three pillars: plumbing (boundary, interfaces, switch, router, route table, southbound), gatekeepers (stateful security groups, stateless NACLs, envelope only), guards (STP/MAC learning, eBPF/XDP, libvirt filtering, VXLAN/Geneve).
+- Seven building blocks, management planes (architect = config, brain = control in RAM, translation = northbound/southbound), pipeline config → interface → control model → runtime state.
+- *Corrections: data-plane chips cannot read usernames or JWTs — IAM is a Layer 7/gateway job, analogy only; VXLAN/Geneve isolate but do not encrypt.*
+
+### 70930 — 4 Runtime Environments
+
+- Same pillars and blocks, mapped to four runtimes: standalone desktop (netplan, bridge.ko, ip_forward, kernel RIB/FIB), centralised VM (libvirt, ovs-vswitchd, guest gateway, vFIB), Kubernetes cluster (CNI net.d, netns/veth, eBPF/IPVS, namespace tables + BGP), public cloud (Terraform/CloudFormation, Nitro/SmartNIC, Transit Gateway, TCAM route tables).
+- *Corrections: Proxmox boundary is /etc/network/interfaces, not vzdump.conf (backup config); eBPF reduces CPU overhead, it does not eliminate it; Calico's default BGP speaker is BIRD, not FRR/GoBGP.*
+- Comparison and tool-suite matrices are in comprehensive.md, Batch 23, under 70930.
+
+### 70931 — User-Space Tools and Daemons (Consolidation Noted)
+
+- Consolidation note: this note's tool suite is the same suite as seq 70930, organized by tool role rather than by environment, so it is NOT elaborated again here. Its full text is in comprehensive.md, Batch 23, under 70931.
+- *Correction carried forward: user-space tools run in user space and issue ioctl/Netlink syscalls; they do not run in kernel space.*
+
+### 70932 — Switch, CAM, VLAN, Firewalls, VIPs, Service Endpoints
+
+- Switch builds a LAN on point-to-point links, forwarding by MAC; CAM table is MAC learning, not a routing table; one broadcast domain per VLAN, not per switch when VLANs are used.
+- Access = one VLAN, untagged, endpoint doorway; trunk = many VLANs, 802.1Q tagged, infrastructure highway; trunk is not LAG (802.3ad bundles links).
+- VLANs across media: tags travel on guided trunks, are mapped to SSIDs on wireless, and move as tagged frames in vSwitch/bridge port groups.
+- Intra-VLAN = MAC only, no router; inter-VLAN = through an SVI, router subinterface, firewall interface, or cloud vRouter; route lookup is longest-prefix match, not top-to-bottom scanning; vNICs are software interfaces tied to VM lifecycle, not permanent hardware.
+- Firewalls, corrected: AWS security groups stateful, allow-only, inbound denied/outbound allowed by default; Azure NSGs stateful and support deny rules; AWS NACLs and switch ACLs stateless; NGFWs (AWS Network Firewall, Azure Firewall) stateful plus deep packet inspection. Packet walk: internet gateway → central firewall → vRouter → vSwitch → vNIC security group → OS interface.
+- VIP = single floating IP for distribution or HA failover; service endpoint = subnet-level private shortcut to managed cloud services (AWS gateway/interface endpoints, Azure Storage/RDS) without the public internet.
+
+### 70933 — Physical and Virtual Switch Ports (Consolidation Noted)
+
+- Consolidation note: access/trunk, VLAN, vSwitch/bridge, and switch-tier substance here is the same as seq 70932, organized by physical vs virtual port role, so it is NOT elaborated again here. Its full text is in comprehensive.md, Batch 23, under 70933.
+- *Correction carried forward: access port = one VLAN, trunk port = multiple VLANs (802.1Q tagged); trunk is not LAG.*
+
