@@ -9790,7 +9790,7 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
-## Batch 21 — Pointer (New Batch, 2126-10-30)
+## Batch 21 — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
@@ -11278,7 +11278,7 @@ See Part 1 of this file for the elaborated key points. Business and combined ang
 See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
 
-## Batch 21 — Pointer (New Batch, 2126-10-30)
+## Batch 21 — Pointer (New Batch, 2026-10-30)
 
 See Part 1 of this file for the elaborated key points. Business and combined angles are in comprehensive.md Parts 2 and 3 under the same headings. Corrections in the full sections are in italic text.
 
