@@ -9075,3 +9075,59 @@ Appended at the end in chat sequence, 2026-10-31. Source offers for diagrams, PD
 - Logs and monitoring map to observability: Prometheus, Fluentd (system logs and performance monitoring, OS-style).
 - Hardware setup maps to provisioning: Crossplane, IaC (automated provisioning replacing physical setup).
 - *Note: this table is a teaching mapping, not a one-to-one equivalence — a CNCF project does not replace the OS concept it is mapped to; it plays the analogous role in a cluster. It mirrors the OS layers already filed (hardware, kernel, device, network, storage, process, middleware, application, cloud, UI), and the same W/R/E loop governs both.*
+
+## Batch 27 — Azure Compute, Chip-to-Azure, and Chip-to-CNCF (WhatsApp, seq 71031–71041, Audited, Official Sources Only, Elaborate Only)
+
+Appended at the end in chat sequence, 2026-10-31. Source closing disclaimer and closing offers were not carried as content, and no diagrams or PDFs were built. Corrections are in italic text.
+
+### 71031 — Azure Compute Services, Grouped
+
+- Virtual Machines (IaaS) — full control over OS, filesystem, networking, and runtime.
+  - Azure Virtual Machines — Windows/Linux servers. Use cases: databases, custom apps, legacy workloads, domain controllers.
+  - VM Scale Sets — auto-scaling VM groups. Use cases: web farms, microservices, batch processing.
+  - Azure Dedicated Host — a physical server dedicated to you. Use cases: compliance, licensing, isolation.
+  - Azure Spot VMs — cheap unused capacity, evictable. Use cases: batch jobs, CI/CD, rendering, ML training.
+- Containers and Kubernetes — Azure managed orchestration.
+  - Azure Kubernetes Service (AKS) — microservices, distributed apps, HA clusters.
+  - Azure Container Instances (ACI) — serverless containers, short jobs.
+  - Azure Container Apps — serverless microservices, Dapr apps, event-driven apps.
+  - Azure Container Registry (ACR) — private registry, image scanning.
+- Serverless Compute — no servers to manage, auto-scale.
+  - Azure Functions — event-driven apps, APIs, automation.
+  - Azure App Service — web apps, REST APIs, mobile backends.
+  - Azure Logic Apps — workflows, integrations, automation.
+  - Azure Static Web Apps — frontend hosting, JAMstack.
+- Categories 4–8, headings only in the source, with no service examples given in this note: AI and ML Compute; HPC (High Performance Computing); Enterprise PaaS Compute; Edge and Hybrid Compute; Specialized Compute.
+- Three levels of control in Azure compute, as stated in the source, with only level 1 spelled out in this note: full OS plus full management control (IaaS — you manage everything: OS, patches, runtime, apps, networking inside the VM). The other two levels are named in the source as platform control and serverless code-only control, and are completed from the same grouping in the elaborated key points below; the source's repeated grouping block inside this same message is merged once here, not carried twice.
+- *Correction: ACR is a container registry, not a compute service that runs workloads. It belongs in the containers grouping as image storage and scanning only; it does not itself run a container, an app, or a job.*
+- *Correction: AKS is a managed control plane, not fully managed compute end to end. The customer still sizes and manages node pools, workloads, networking choices, and cluster configuration, so it does not sit at the same control level as Functions or Static Web Apps.*
+- *Correction: the three control levels are a spectrum, not a claim that every service fits only one level without nuance. AKS straddles managed control plane with customer-managed nodes, and Container Apps sits between simple container execution and full Kubernetes orchestration.*
+
+### 71035 — Azure Compute Services, Renumbered (Duplicate Paste)
+
+- Duplicate paste record only: seq 71035 is the same Azure compute note as seq 71031, renumbered, with the same service groupings and the same three control levels. It is not duplicated in full here. Full section: comprehensive.md, Batch 27, under 71031. The WhatsApp assistant likewise recorded nothing new to append for it.
+
+### 71040 — Chip Functions Mapped to Azure Services (Analogy Only)
+
+- *Analogy warning: the whole mapping below is an analogy only. A cloud service is not literally the chip function it is mapped to. DRAM is not literally Azure Cache for Redis, EEPROM is not literally ARM templates, a voltage regulator is not literally Autoscale, cost management is not literally battery management, and an ADC is not literally Azure IoT Edge. The mapping is a teaching comparison, not literal equivalence.*
+- Logic and processing, mapped to Azure Compute: CPU (general purpose) to Azure Virtual Machines (A-series, D-series); GPU (visual and AI) to Azure N-Series VMs, powered by NVIDIA GPUs for rendering and machine learning; MCU (mini computer / embedded) to Azure Sphere for secured IoT edge processing; ASIC (built for one job) to Azure FPGA (Project Catapult) or specialized hardware in Azure infrastructure for networking and encryption.
+- Memory chips, mapped to Azure storage and caching: DRAM (system memory) to Azure Cache for Redis, a high-speed in-memory data store; SRAM (cache) to managed internally by Azure underlying hardware hosts to speed up compute; NAND flash (permanent) to Azure Managed Disks (Premium SSDs) or Azure Blob Storage; EEPROM (startup settings) to Azure Resource Manager (ARM) templates or Azure configuration services that define how an environment boots up.
+- Power management (PMICs), mapped to Azure Resource Manager and Cost Management: voltage regulators / VRM to Azure Autoscale, regulating the flow of compute resources based on demand; battery management to Azure Cost Management, ensuring you do not drain budget or resources.
+- Communication and interface chips, mapped to Azure networking: RF transceivers (5G / Wi-Fi) to Azure Private 5G Core or Azure IoT Hub; Ethernet controller to Azure Virtual Network (VNet) and ExpressRoute (dedicated private connections); audio / display drivers to Azure Media Services (handling encoding and delivery of sight and sound).
+- Linear and timer chips, mapped to Azure Monitor and Scheduler: clock to Azure Scheduler or Logic Apps (triggering actions based on specific time intervals); ADC (analog to digital) to Azure IoT Edge (translating real-world sensor data into digital cloud data).
+- *Correction: Azure Sphere is an IoT security solution — a certified MCU plus Azure Sphere OS plus a cloud security service — not a general MCU equivalent. It fits the embedded row only as a secured-IoT analogy.*
+- *Correction: an FPGA is programmable hardware, the opposite of a fixed ASIC. Project Catapult is Microsoft FPGA acceleration for networking and AI, so the analogy holds for specialized silicon only, not literally for ASIC.*
+- *Correction: Azure Media Services is retired. Microsoft retired it on 30 June 2024; it is not a current service to list for encoding and delivery. Current paths are partner solutions or Azure AI Video Indexer for analysis workflows.*
+- *Correction: Azure Scheduler is retired. Microsoft records it as fully retired on 31 January 2022, replaced by Logic Apps. Logic Apps is the current time-based trigger service, not Scheduler.*
+- *Correction: SRAM has no purchasable Azure service in this mapping. It is CPU cache managed inside host hardware, not a service you provision.*
+
+### 71041 — Chip Functions Mapped to CNCF (Companion to 71040, Analogy Only)
+
+- *Analogy warning: as with 71040, this is an analogy only. A CNCF project is not literally the chip function it is mapped to. Prometheus and Grafana capturing metrics is not literally an ADC, and a service mesh is not literally a driver for an IC.*
+- Logic and processing, mapped to scheduling and runtime: CPUs, GPUs, and ASICs are managed as resources by Kubernetes; hardware acceleration is handled via device plugins to expose GPUs or ASICs to containers; serverless tools such as Knative abstract processing units into on-demand functions.
+- Memory chips, mapped to cloud-native storage: DRAM and SRAM are managed as memory limits and requests within container runtimes (for example containerd); NAND flash and NVMe are governed by CSI (Container Storage Interface). Projects such as Rook, Longhorn, or OpenEBS turn physical storage into persistent volumes for cloud apps.
+- Power management, mapped to provisioning and observability: sustainability — Kepler (Kubernetes Efficient Power Level Exporter) uses eBPF to report energy consumption based on hardware power data; provisioning — Tinkerbell or Metal3 manage the lifecycle of the physical servers these chips power.
+- Communication and interface, mapped to cloud-native networking: Ethernet controllers are abstracted by CNI (Container Network Interface), for example Cilium, Calico, and Flannel; interfaces — service meshes such as Istio or Linkerd act as the logic for how services interface with each other, similar to how a driver handles an IC.
+- Linear and timer, mapped to observability and analysis: clocks are vital for distributed tracing and log sequencing; monitoring — Prometheus and Grafana capture the analog signals of the cluster (metrics) and turn them into actionable digital data.
+- *Correction: Kepler uses eBPF to probe CPU performance counters and kernel tracepoints and estimates energy consumption, using hardware sensors such as RAPL where available and models where they are not. It does not directly meter PMIC hardware as a meter, and its per-pod figures are estimates, not direct hardware readings.*
+- *Correction: DRAM and SRAM do not map to separate CNCF storage services. In Kubernetes they appear as memory requests and limits enforced through the container runtime and cgroups — the memory a container sees — not as a storage project.*

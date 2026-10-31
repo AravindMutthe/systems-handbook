@@ -11782,3 +11782,38 @@ Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehen
 
 - One-line map: modules/drivers → Falco/Cilium; package manager → Helm/Artifact Hub; libraries → Linkerd/Istio/gRPC; packages → containerd/CRI-O; frameworks → Kubernetes; process/VM → KubeVirt/Flatcar; logs/monitoring → Prometheus/Fluentd; hardware setup → Crossplane/IaC.
 - *Correction: this is a teaching mapping, not a one-to-one equivalence — a CNCF project plays the analogous role in a cluster, it does not replace the OS concept.*
+
+## Batch 27 — Azure Compute, Chip-to-Azure, and Chip-to-CNCF, Elaborated Key Points (WhatsApp seq 71031–71041, Chat Sequence)
+
+Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehensive.md, Batch 27, appended at the end. Corrections in the full sections are in italic text. Only genuinely new gaps are elaborated below; overlaps are kept once, with pointers.
+
+### 71031 — Azure Compute Services, Grouped
+
+- IaaS, full control: VMs, VM Scale Sets, Dedicated Host, Spot VMs — you manage OS, patches, runtime, and in-VM networking.
+- Containers and Kubernetes, managed orchestration: AKS, ACI, Container Apps, plus ACR as the registry (storage and scanning, not compute).
+- Serverless, code-only control: Functions, Logic Apps, Static Web Apps, plus App Service as managed web hosting.
+- Categories 4–8 (AI/ML, HPC, Enterprise PaaS, Edge/Hybrid, Specialized) were headings only in the source — no new service examples elaborated here.
+- Three control levels: IaaS full OS control → PaaS platform control (provider manages OS and runtime, you manage app and data) → serverless code-only (provider manages everything below your code).
+- *Corrections: ACR does not run workloads; AKS is a managed control plane with customer-managed nodes, not fully managed compute; the control levels are a spectrum, not rigid boxes.*
+
+### 71035 — Duplicate Paste, Pointer Only
+
+- Consolidation note: seq 71035 is the same Azure compute note as seq 71031, renumbered. It is NOT elaborated again here. Its full text is in comprehensive.md, Batch 27, under 71031, with a duplicate-paste record under 71035.
+
+### 71040 — Chip Functions Mapped to Azure Services (Analogy Only)
+
+- Logic: CPU to VMs, GPU to N-Series, MCU to Azure Sphere, ASIC to FPGA (Project Catapult) — all as analogy.
+- Memory: DRAM to Cache for Redis, SRAM to host CPU cache (not a service), NAND to Managed Disks or Blob Storage, EEPROM to ARM templates or App Configuration.
+- Power: VRM to Autoscale, battery management to Cost Management — analogy only.
+- Networking: RF to Private 5G Core or IoT Hub, Ethernet to VNet and ExpressRoute, audio/display to Media Services.
+- Timer: clock to Scheduler or Logic Apps, ADC to IoT Edge — analogy only.
+- *Corrections: the whole map is analogy, not literal equivalence; Azure Sphere is an IoT security solution, not a general MCU; FPGA is programmable, opposite of a fixed ASIC; Media Services retired 30 June 2024; Scheduler fully retired 31 January 2022, Logic Apps is the current trigger service.*
+
+### 71041 — Chip Functions Mapped to CNCF (Analogy Only)
+
+- Logic: Kubernetes schedules CPU/GPU/ASIC resources, device plugins expose accelerators, Knative abstracts serverless.
+- Memory: requests/limits via runtime and cgroups, CSI governs NAND/NVMe, Rook/Longhorn/OpenEBS provide persistent volumes.
+- Power: Kepler reports energy via eBPF, Tinkerbell/Metal3 provision bare metal.
+- Networking: CNI (Cilium, Calico, Flannel) abstracts Ethernet, service meshes (Istio, Linkerd) act as interface logic.
+- Timer: clocks underpin tracing and log sequencing, Prometheus/Grafana capture metrics as the observability ADC.
+- *Corrections: the map is analogy only; Kepler estimates energy from counters and RAPL where available, it does not directly meter PMIC hardware; DRAM/SRAM are not storage projects, they are memory requests and limits.*
