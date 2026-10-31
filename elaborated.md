@@ -11524,3 +11524,53 @@ Audit verdict table (combined):
 Scope limit: This audit checked key pillars, not every line in the three files (5,108 lines before audit appendix). Analogies, forecasts, and source examples were not upgraded to verified facts by this audit — they remain marked as such in their sections.
 
 ---
+
+## Batch 22 — AI Systems, Elaborated Key Points (WhatsApp seq 70886–70913, Chat Sequence)
+
+Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehensive.md, Batch 22, appended at the end. Corrections in the full sections are in italic text. Only genuinely new gaps are elaborated below; overlaps are kept once, with pointers.
+
+### 70886 — AI Ecosystem: Brains and Muscle
+
+- Python steers, C does the work: NumPy and Pandas are fast because heavy loops run in compiled C; PyTorch and TensorFlow follow the same pattern on C++ and CUDA cores.
+- Brains (Python: PyTorch, Hugging Face, LangChain, CrewAI) think and act; muscle (Kubernetes: Kubeflow, KEDA, vLLM) scales, gives GPU access, and keeps workloads alive.
+- *Correction: vLLM is an inference engine on Kubernetes, not an orchestrator. Kubeflow orchestrates, KEDA autoscales and is general-purpose.*
+
+### 70894 — OCI Registries for AI Models
+
+- Weights are the code: multi-gigabyte to multi-terabyte .safetensors shards, config, and tokenizer files replace small application binaries.
+- Two pathways: Hugging Face Enterprise Hub with Artifactory proxy caching and pickle scanning; OCI ModelKits (KitOps, CNCF, Kitfile, `kit pack`, standard registry push) stored as OCI 1.1 artifacts in Harbor, ECR, or Google Artifact Registry.
+- Ingestion: Kubernetes image volumes (from 1.31) can mount an OCI artifact as a volume; otherwise ORAS or init-container pull, then load to VRAM.
+- *Corrections: no June 2026 mandate; Hugging Face shard default is 5 GB, not 10 GB; the SDK downloads to disk or cache first, it does not stream straight into VRAM.*
+
+### 70898 — AI vs Enterprise Cluster
+
+- Enterprise cluster: CPUs, structured strings, DDR5, Ethernet and TCP/IP, concurrency and ACID consistency.
+- AI cluster: GPU tensor cores or ASICs, vectors and weight tensors, HBM, InfiniBand or Ultra Ethernet with GPUDirect RDMA or NVLink, ultra-low latency and high throughput.
+- Metrics: MFU, TTFT, and interconnect bandwidth for AI; use cases split accordingly (pre-training, LoRA fine-tuning, trillion-parameter inference vs ACID backends, checkout, CRM and ERP).
+- *Correction: DDR5 multi-channel aggregate is several hundred GB/s, not about 100 GB/s; the gap to HBM still stands.*
+
+### 70900 — AI Systems: Tokens, Weights, and Guardrails
+
+- Six-layer stack, silicon to agent: silicon chips, GPU scale-up meshes, hardware memory pools, scale-out fabrics, application containers, multi-agent ecosystems.
+- Three pillars: plumbing (tokenizers, context windows, embeddings, attention), gatekeepers (Top-K filters, system prompts, Llama Guard), guards (graph cycle detection, Wasm and Docker sandboxes, KV cache tagging).
+- *Corrections: token/packet, weights/routing-table, and guardrail/firewall are analogies only; MCP is a protocol for tool and data connections, not a Netlink or gRPC transport; KV cache tagging is metadata isolation, not cryptographic segregation by itself.*
+
+### 70904 — AI Control Plane Matrix
+
+- One matrix, six layers: each layer has its managed files, runtime daemons, connectivity interfaces, state store, and log locations, from nvidia.ko and PTX at Layer 1 to graph.json and LangSmith at Layer 6.
+- Administration modes: AgentOps at Layer 6, LLMOps and GitOps at Layer 5, CLI fabric tools at Layer 4, driver and kernel configuration at Layer 3, CLI monitoring at Layer 2, driver execution at Layer 1.
+- *Corrections: Slurm job files are .slurm scripts, not .slurmcards; NVLink inspection is nvidia-smi nvlink, not a standalone nvlink CLI; nccl-tests benchmarks bandwidth, it does not calculate next-token hops.*
+
+### 70909 — Plumbing, Gatekeepers, Guards, and the Data Journey
+
+- Plumbing: context window set by manifests and runtime configuration, route table as attention maps over .safetensors weights, MCP as JSON-RPC 2.0 over stdio.
+- Gatekeepers: guardrails before tokenization, tenant scopes appended at vector search; guards: graph step limits against loop storms, sandboxes for agent-generated code.
+- Data journey: prompt → Ingress and Envoy → LangGraph runtime → east-west JSON-RPC → NVLink fabric → InfiniBand HCA → CXL memory expansion → tensor-core math.
+- *Correction: 512 GPUs is training-scale; a single inference request does not span 512 GPUs in the normal case. The 1.8 TB/s NVSwitch figure is source-stated, not verified here.*
+
+### 70913 — AI Platform Engineering: Only the New Gaps
+
+- Consolidation note: Parts 1, 2, and 5 of seq 70913 restate 70900, 70904, and 70909 respectively, so they are NOT elaborated again here. Their full text is in comprehensive.md, Batch 22, under 70913.
+- Part 3, genuinely new — North-South vs East-West: north-south carries JWT and plaintext prompts over HTTP/2 and SSE, where the edge gateway terminates TLS, authenticates, and runs guardrails; east-west is the deterministic internal loop (agent JSON-RPC, Top-K retrievals, CXL KV offload, GPUDirect RDMA).
+- Part 4, genuinely new — IAM blind spot: Layers 1 and 2 cannot decode a JWT or check permissions, so auth, guardrails, and tenant metadata injection must happen at the gateway, with HTTP 401 on failure and tenant-scoped vector search on success.
+- *Correction carried forward: context window is a token allocation envelope, not a VPC boundary.*
