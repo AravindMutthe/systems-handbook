@@ -11733,3 +11733,52 @@ Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehen
 - /sys = model/topology view, /dev = doorway view via devtmpfs, udevd applies rules.
 - Device cardinality: one device, one active driver at a time; one driver, many devices; one bus, many devices; one class, many devices; one stack, many user-facing interfaces.
 - Pointer: /sys, /dev, /proc, and udev material were covered in earlier batches; only the state-plus-execution frame, the DB tables, and the IAM analogy are new here.
+## Batch 26 — ConfigMaps, Orchestration, OpenShift, Tenants, and OS-to-CNCF Mappings, Elaborated Key Points (WhatsApp seq 71004–71018, Chat Sequence)
+
+Appended at the end in chat sequence, 2026-10-31. Full sections are in comprehensive.md, Batch 26, appended at the end. Corrections in the full sections are in italic text. Only genuinely new gaps are elaborated below; overlaps are kept once, with pointers.
+
+### 71004 — ConfigMaps vs Secrets: Only the New Gaps
+
+- ConfigMaps hold non-sensitive config (key-value pairs or whole files); Secrets hold sensitive data (credentials, TLS, binary, up to 1 MiB per object).
+- Ingestion is the interview point: env injection does not update without a pod restart and is visible in /proc/<pid>/environ; volume mounts live on tmpfs and do update automatically (kubelet sync, about a minute).
+- Native Linux has no ConfigMap/Secret object: env vars, config files, chmod 400 paths, and a real secret manager (Vault, AWS Secrets Manager, Azure Key Vault) for production.
+- *Corrections: base64 is encoding, not encryption — a Secret is access-controlled, not encrypted, unless KMS encryption at rest is configured; source typo tlb.key is tls.key; the source's repeated second half is merged to one copy. No credential value from the source is carried into the files; the mechanism is described only.*
+
+### 71009 — Orchestration, Two Layers: Only the New Gaps
+
+- One line: IaC is transactional (builds the stage, exits); workload orchestration is continuous (manages the performance, 24/7).
+- Node layer: provisioning (Terraform, OpenTofu, CloudFormation), configuration (Ansible, Puppet, Chef), cluster lifecycle (CAPI, kOps, Kubespray), auto-scalers (Karpenter, Cluster Autoscaler).
+- Workload layer: Kubernetes recreates, not moves, pods when a node dies; state follows only via a persistent volume.
+- Registry as source of truth: one cluster to one registry, one image to many clusters; OCI is the standard, Harbor is one CNCF-graduated implementation, not any cluster's default.
+- *Corrections: "CPI" is not a formal interface (use cloud provider APIs); IaC references images, it does not deploy them into the registry; upstream Kubernetes is not lightweight (k3s is), and "OS agnostic" needs care — nodes are overwhelmingly Linux; Podman does not use containerd or CRI — libpod, conmon, crun/runc directly.*
+
+### 71013 — OCP Stack in YAML/Helm and Linux Terms: Only the New Gaps
+
+- Mental model: oc apply = dnf install + systemctl enable, but declarative and cluster-wide.
+- Layer map in one line: MachineConfig, Infrastructure (read-only), KubeletConfig/MachineConfigPool, Route, Service, NetworkPolicy, PVC, StorageClass, Secret, SCC, Deployment, StatefulSet, HPA, ImageStream, Subscription.
+- *Corrections: SCC has no single Linux equivalent — it is admission control over UID, capabilities, SELinux context, and volumes; the dnf lines are analogies only — ICR serves container images, not RPM packages.*
+
+### 71014 — OC by CoreOS = RHCOS: Pointer
+
+- Consolidation note: this note's OCP/RHCOS substance (immutable container-optimized OS from CoreOS Container Linux, HA as the reason clusters exist, Kubernetes raw foundation vs OpenShift pre-packaged product, built-in registry, Tekton/ArgoCD operators, S2I, SCC defaults, Prometheus/Grafana, dual-perspective console) overlaps 71013 and the 71009/71016 OpenShift entries, so it is NOT elaborated again here. Its full text is in comprehensive.md, Batch 26, under 71014.
+
+### 71015 — IaC Orchestration: Pointer
+
+- Consolidation note: this note is a near-duplicate of 71009 (same node-orchestration opening, same Terraform-transactional vs Kubernetes-continuous contrast, same static hardware allocation point), so it is NOT elaborated again here. Its full text is in comprehensive.md, Batch 26, under 71015; the master orchestration key points under 71009 stand.
+
+### 71016 — Container Orchestration: Only the New Gaps
+
+- Container orchestration is dynamic lifecycle management: pull from a registry, restart on crash, replicate on traffic spike, reschedule on node death.
+- Managed vs lightweight split is new here: ECS/EKS/GKE/AKS (control plane managed) versus Swarm, k3s, Podman Compose (lightweight/developer).
+- *Corrections carried forward: Kubernetes recreates pods, it does not move containers; Podman uses its own stack, not containerd/CRI.*
+
+### 71017 — Tenants: Only the New Gaps
+
+- Software tenancy: shared cluster, logical separation by Namespaces, NetworkPolicies, RBAC, OPA/Gatekeeper — Team A cannot deploy into Team B's namespace or read Team B's passwords when policy is enforced.
+- Hardware tenancy: shared silicon, separation by hypervisor into VMs, one corporation per VM.
+- *Correction: namespace separation is soft multitenancy, not hard multitenancy by itself. Hard tenancy needs dedicated node pools, separate clusters, or vCluster per tenant.*
+
+### 71018 — OS Concepts to CNCF Mappings: Only the New Gaps
+
+- One-line map: modules/drivers → Falco/Cilium; package manager → Helm/Artifact Hub; libraries → Linkerd/Istio/gRPC; packages → containerd/CRI-O; frameworks → Kubernetes; process/VM → KubeVirt/Flatcar; logs/monitoring → Prometheus/Fluentd; hardware setup → Crossplane/IaC.
+- *Correction: this is a teaching mapping, not a one-to-one equivalence — a CNCF project plays the analogous role in a cluster, it does not replace the OS concept.*

@@ -8968,3 +8968,110 @@ Appended at the end in chat sequence, 2026-10-31. Source offers for diagrams, PD
 - *Correction: the daemon is systemd-udevd on modern systems. udevd is the same thing under its current name.*
 - Device cardinality rules: one device is bound to one active driver at a time on a given bus path; one driver can handle many devices; one bus can host many devices; one class can group many devices; one higher-level software stack can expose many user-facing interfaces for one physical device.
 - Processes vs devices, the two halves: processes provide execution — they run code, manage control flow, implement application logic. Devices provide interaction with the physical world — storage, networking, display, keyboard input, USB, GPUs, sensors, clocks. Linux connects them through drivers, kernel objects (kobjects), VFS-style interfaces, sysfs metadata, and device nodes — which is why the same file-based model covers both halves.
+## Batch 26 — ConfigMaps, Orchestration, OpenShift, Tenants, and OS-to-CNCF Mappings (WhatsApp, seq 71004–71018, Audited, Official Sources Only, Elaborate Only)
+
+Appended at the end in chat sequence, 2026-10-31. Source offers for diagrams, PDFs, scripts, and expansions were not acted on. Corrections are in italic text. No credential value from the source is carried into this file; the base64 mechanism is described only.
+
+### 71004 — ConfigMaps: What They Contain, and Secrets Beside Them
+
+- ConfigMaps hold plain-text, non-sensitive configuration that changes application behaviour without recompiling code.
+- Key-value pairs: individual variables. Kubernetes example: database_port "5432". Linux equivalent: environment variables (export DB_PORT=5432).
+- Entire configuration files: a full nginx.conf or config.json embedded in the YAML. Linux equivalent: standard configuration text files in /etc/ or /app/config/.
+- A ConfigMap holding a database address is plain text, non-sensitive: DB_HOST as a cluster DNS name, DB_PORT "5432".
+- The running application process (nginx, node, python, java) is the primary consumer; it reads environment variables or configuration files at startup to know how to behave.
+- Secrets hold sensitive data protected from unauthorised access and accidental exposure: authentication credentials (database passwords, SSH keys, API tokens), TLS certificates (tls.crt and tls.key), and binary data up to 1 MiB per Secret object, automatically base64-encoded.
+- Linux equivalents for Secrets: a .env file (plain text, only safe with strict permissions and never committed), dynamic fetch from HashiCorp Vault, /etc/ssl/certs/ and /etc/ssl/private/ for certificates, and restricted file paths (chmod 400, e.g. /etc/secrets).
+- *Correction: the source repeated its ConfigMap/Secret sections verbatim at the end; the repetition is merged to one copy here.*
+- *Correction: the source typo "tlb.key" is tls.key.*
+- *Correction: base64 is encoding, not encryption. A Secret value is base64-encoded, not encrypted, by default; anyone who can read the Secret can decode it. Encryption at rest requires a KMS/encryption-provider configuration (EncryptionConfiguration, ideally KMS-backed); without it, "Secret" means access-controlled, not encrypted.*
+- Linking into a Deployment: a container takes DATABASE_URL and DATABASE_PORT from configMapKeyRef, and mounts a Secret as a volume at /etc/app/secrets, read-only, defaultMode 0400 (native Linux read-only-by-owner).
+- Two ingestion paths, two properties:
+  - Env injection (ConfigMap/Secret): values land in the process environment. They do not update when the source changes — the pod must restart. They are also visible in /proc/<pid>/environ to anyone who can inspect the process.
+  - Volume mounts (Secret): files mounted read-only from a tmpfs — in-memory, never written to disk. Mounted secrets do update automatically when the Secret changes (kubelet syncs them, typically within about a minute). This is the safer path for credentials.
+- Native Linux has no single ConfigMap/Secret object; it achieves the same decoupling with env vars, files, and permissions: ConfigMap maps to host config files and environment variables (systemd EnvironmentFile=, Docker -v host-path mounts); Secret maps to restricted file paths, Vault, AWS Secrets Manager, or Azure Key Vault; ingestion maps to process env vars or mounted bind directories.
+- Production rule: native Linux config is not encrypted, so production systems use a dedicated secret manager (Vault, AWS Secrets Manager, Azure Key Vault) with rotation, not raw files, for anything sensitive.
+
+### 71009 — Orchestration (Fleet Management): Node Orchestration and IaC
+
+- Node orchestration tools manage automated provisioning, configuration, security, and scaling of physical or virtual servers; they build and maintain the actual cluster machines (nodes). Kubernetes orchestrates what runs (containers/workloads) inside the cluster.
+- *Core contrast: IaC tools are transactional — they build the stage and exit. Workload orchestrators are continuous — they manage the performance on that stage in real time.*
+- IaC is static hardware allocation: an IaC script talks to a cloud provider API and builds a specific number of VMs. Once built, those nodes sit statically until the script runs again.
+- Provisioning tools — communicate with cloud provider APIs or hypervisors to create, delete, and scale VMs, networks, and storage: HashiCorp Terraform (multi-cloud declarative provisioning), OpenTofu (community open-source fork of Terraform), AWS CloudFormation / Google Cloud Deployment Manager (native, single-provider).
+- *Correction: "CPI" is not a formal interface name here; the correct phrase is cloud provider APIs (the cloud-controller component is the CCM, as corrected in batch 19). IaC tools do not "deploy disk images into the registry" — they reference images that already live in a registry or cloud image store.*
+- Configuration management — once a machine exists, log in and install software (docker, kubeadm), configure SSH, partition storage, enforce security policy: Ansible (agentless over SSH, YAML playbooks), Puppet / Chef (agent-based, continuously enforce desired state).
+- Cluster lifecycle managers — combine provisioning and configuration to deploy, upgrade, and maintain production-grade Kubernetes nodes: Cluster API (CAPI) plus Ansible, kOps, Kubespray.
+- Cloud auto-scalers — watch workload demand and add or remove node servers: Karpenter (provisions nodes directly on demand, no pre-made node groups), Kubernetes Cluster Autoscaler (scales existing node groups up and down).
+- Example at production scale: Terraform/OpenTofu/CloudFormation calls cloud APIs to build VMs, VPCs, NAT gateways, internet-facing load balancers, and attached network storage volumes.
+- Registry as the source of truth for versions: clusters pull images and upgrades from a registry — pull-only; the registry controls who can push artifacts in and who can pull them down to execute on live nodes. Rule of thumb: one cluster to one registry; one image to many clusters.
+- Harbor treats container images, VM disk images, and cluster packages as OCI artifacts under one roof: VM/node layer via KubeVirt packaging of VM disks (.qcow2, .raw, .vmdk) as OCI containers, plus OS snapshots and Wasm/edge artifacts; cluster layer via standard container images, Helm charts, and declarative GitOps policies as artifacts.
+- *Correction: Harbor is not the "default inbuilt storage for clusters" — no cluster ships with Harbor by default; it is a popular self-hosted add-on. There is no "definitive CNCF-standard solution" — OCI is the standard; Harbor is one (CNCF-graduated) implementation of it.*
+- Registry categories (names corrected): open-source self-hosted — Harbor, Zot, CNCF Distribution (reference implementation, formerly Docker Registry), Red Hat Quay, Sonatype Nexus Repository OSS, Trow; private/commercial — JFrog Artifactory, Sonatype Nexus Pro, SUSE Registry; integrated DevOps — GHCR (GitHub Container Registry), GitLab Container Registry, JFrog Container Registry; managed cloud (private by default, IAM-integrated) — ACR (Azure), ECR (AWS), GAR (Google Artifact Registry), OCIR (Oracle).
+- Orchestration security, by layer: node layer — machine identity (cloud instance profiles / managed identities for disks, VPCs, load balancers), host access via asymmetric SSH keys or session managers, cluster joining via short-lived cryptographic tokens from kubeadm init; container layer — cluster RBAC (ServiceAccounts, Roles, ClusterRoles), human auth via OIDC to external identity providers (Okta, Keycloak, Entra ID), pod/workload identity bridging container to cloud IAM (a ServiceAccount assumes a cloud IAM role without hardcoded keys in the container); storage layer (registry) — project isolation / multi-tenant RBAC (app developers: container images; platform engineers: VM/OS images), robot accounts issuing short-lived tokens for CI/CD (GitHub Actions, GitLab CI), supply-chain trust — Cosign/Sigstore signing and Trivy scanning gate what is allowed to run.
+
+### 71013 — OCP: The Same Stack in YAML/Helm and in Linux yum/dnf Terms
+
+- Mental model: oc apply = dnf install + systemctl enable — but declarative and cluster-wide. helm install / oc apply installs, enables, and reloads across the cluster the way dnf plus systemd plus a service reload do on one machine.
+- Infra: MachineConfig via oc apply -f 99-si-tuning.yaml; Linux equivalent: dnf install tuned-profiles-realtime and echo 'vm.max_map_count=262144' > /etc/sysctl.d/99.conf.
+- Infra: Infrastructure is read-only: oc get infrastructure cluster -o yaml; Linux equivalent: cat /etc/os-release plus dmidecode.
+- Runtime: node tuning / kubelet via KubeletConfig.yaml, managed by MachineConfigPool; Linux equivalent: /etc/systemd/system/kubelet.service.d/override.conf and systemctl enable --now kubelet.
+- Network: Route via Route.yaml or helm install si-ui ./chart; Linux equivalent: cat > /etc/nginx/conf.d/si.conf and nginx -s reload.
+- Network: Service via Service.yaml or oc expose deployment/si --port=8443; Linux equivalent: ipvsadm -A -t 172.30.1.5:8443 -s rr (kube-proxy IPVS mode).
+- Network: NetworkPolicy via oc apply -f si-netpol.yaml; Linux equivalent: nft add rule inet filter input ip saddr 10.0.0.0/8 tcp dport 1414 accept.
+- Storage: PersistentVolumeClaim via oc apply -f si-pvc.yaml; Linux equivalent: lvcreate -L 100G -n si_data vg0 and mkfs.xfs /dev/vg0/si_data.
+- Storage: StorageClass via oc apply -f ibmc-block-gold.yaml; Linux equivalent: an /etc/fstab template used by xfs_growfs.
+- Security: Secret via oc create secret generic si-license --from-file=license.xml; Linux equivalent: chmod 600 /etc/sterling/license.xml and chown 1001:1001.
+- Security: SCC via oc adm policy add-scc-to-user anyuid -z si-sa; *correction: there is no single Linux equivalent — SCC is admission control over UID, capabilities, SELinux context, and volumes; a setsebool is only one piece of it.*
+- Workload: Deployment via Deployment.yaml or helm install sterling oci://icr.io/ibm-sterling/sterling-integrator-chart; Linux equivalent: cat > /etc/systemd/system/si@.service and systemctl daemon-reload.
+- Workload: StatefulSet via StatefulSet.yaml for MQ/MessageStore; Linux equivalent: systemd template si@1.service with stable /var/lib/si.
+- Workload: HPA via HorizontalPodAutoscaler.yaml; Linux equivalent is a loose analogy only: crontab plus autoscale.sh (cron polls; HPA reacts to metrics).
+- Apps: ImageStream via oc import-image sterling:6.4; Linux equivalent: createrepo /var/www/html/sterling-repo.
+- Apps: Subscription (OLM) via oc apply -f ibm-sterling-sub.yaml; Linux equivalent: dnf config-manager --add-repo and dnf install ibm-sterling-operator.
+- End-to-end example, IBM Sterling Integrator 6.4: oc/Helm YAML — Deployment (replicas 3, serviceAccount si-sa, image icr.io/ibm-sterling/sterling-integrator:6.4.0.4, volume at /opt/ibm/sterling/integration) plus PVC (ibmc-block-gold, ReadWriteOnce, 200Gi) plus Route (host si.apps.cluster.com, edge TLS termination). Linux equivalent: repo plus package install; lvcreate -L 200G, mkfs.xfs, fstab entry, mount -a; systemd template sterling@.service (User=1001, ExecStart with java -Xmx8g -jar /opt/ibm/sterling/si.jar, Restart=always), enabled as sterling@1/2/3; nginx reverse proxy to 127.0.0.1:8443, nginx -s reload.
+- *Correction: the dnf lines are analogies, not literal commands — ICR (IBM Cloud Registry) serves container images, not RPM packages; there is no real dnf install of ibm-sterling-integrator from icr.io.*
+
+### 71014 — OC by CoreOS = RHCOS, and Why Clusters Exist (HA)
+
+- OC by CoreOS = RHCOS: OpenShift nodes run Red Hat Enterprise Linux CoreOS, the immutable, container-optimized OS descended from CoreOS Container Linux.
+- Why clusters exist: high availability. A single VM or container dies with its host; a cluster keeps applications online when servers, networks, or power supplies fail.
+- Kubernetes vs OpenShift: Kubernetes is the raw foundation you assemble; OpenShift is the pre-packaged, enterprise-ready product — raw parts to build a house versus a move-in-ready home, engine versus entire car.
+- Developer-first features: built-in internal image registry (no external Docker Hub/Quay needed); automated pipelines — Tekton (OpenShift Pipelines) and ArgoCD (OpenShift GitOps), shipped as operators via OperatorHub, enabled rather than literally pre-running; Source-to-Image (S2I): push raw source code, OpenShift builds it into a secure container image.
+- Operations and security enhancements: strict security defaults — SCC (SecurityContextConstraints) enforced by default, preventing containers from running as root unnecessarily; full-stack monitoring — pre-configured Prometheus plus Grafana; unified web console with separate Administrator and Developer perspectives.
+- *Note: this note overlaps 71013 on OCP/RHCOS; the overlap is kept in full here because comprehensive carries the full copy with redundancy allowed, and is kept once in elaborated.*
+
+### 71015 — IaC Orchestration (Near-Duplicate of 71009)
+
+- This note repeats 71009: node orchestration tools manage provisioning, configuration, security, and scaling of servers; Kubernetes orchestrates what runs inside the cluster; IaC tools like Terraform are transactional — they build the stage and exit; workload orchestrators like Kubernetes are continuous — they manage the performance on that stage in real time; IaC is static hardware allocation, a script talks to a cloud provider API, builds a specific number of VMs, and those nodes sit statically until the script runs again.
+- *Correction carried forward from 71009: "CPI" is not a formal interface name (use cloud provider APIs); IaC tools reference images that already live in a registry or cloud image store, they do not deploy disk images into the registry.*
+- *Note: because this note is a near-duplicate of 71009, it is kept in full here (comprehensive, redundancy allowed) and kept once, as a pointer, in elaborated.*
+
+### 71016 — Container Orchestration: Dynamic Lifecycle Management
+
+- Container/workload orchestration tools automate deployment, scaling, networking, and lifecycle management of containerised applications. They sit on top of servers (nodes) and treat them as a single pool of compute power to run software reliably.
+- Container orchestration is dynamic lifecycle management: they pull container images from a registry. Kubernetes does not just deploy a container and walk away; it continuously watches applications in real time (kubelet plus Deployment). If a container crashes, it restarts it. If traffic spikes, it clones it. If a node dies, it reschedules its pods onto a healthy node.
+- *Correction: Kubernetes does not "move" a running container to a healthy node — it recreates the pod elsewhere. State moves only if a persistent volume follows.*
+- Production and enterprise standards: Kubernetes (K8s), the industry standard; Red Hat OpenShift, enterprise Kubernetes with security tooling, RHCOS nodes, and oc (see 71013/71014); HashiCorp Nomad, flexible, orchestrates containers and non-containerized legacy apps.
+- *Correction: upstream Kubernetes is not lightweight, and "OS agnostic" needs care — nodes are overwhelmingly Linux (Windows nodes are supported but secondary). The lightweight distribution is k3s.*
+- Managed cloud services (control plane managed for you): Amazon ECS (AWS-native container orchestrator, deep AWS integration); Amazon EKS / Google GKE / Azure AKS (managed upstream Kubernetes).
+- Lightweight / developer-focused: Docker Swarm (clustering built into Docker Engine, swarm mode via dockerd, simplest learning curve); K3s (lightweight Kubernetes for IoT/edge/resource-constrained nodes); Podman Compose (daemonless multi-container apps).
+- *Correction: Podman does not work "with containerd or CRI" — it uses its own stack (libpod, conmon, OCI runtimes like crun/runc) directly. Daemonless independence from containerd is the entire point of Podman.*
+- IaC vs workload orchestration, side by side: primary unit — server/node (VMs, networks, disks, VPCs) versus application (containers, pods, services); execution state — static / point-in-time (runs, matches desired state, exits) versus dynamic / continuous (24/7 loop of monitoring, scaling, self-healing); view of a node — final output (a machine to patch, name, secure, configure) versus disposable resource (a pool of CPU/memory/storage); failure reaction — manual/triggered (human or alert must re-run IaC) versus automated self-healing (reschedule onto a healthy node); what it builds — hosts, networks, disks versus containers, routing paths, storage claims; if a node/VM dies — Terraform sits idle until triggered versus Kubernetes detects and reschedules automatically.
+
+### 71017 — Tenants: Software Multi-Tenancy vs Hardware Multi-Tenancy
+
+- Software multi-tenancy (logical layer): inside a Kubernetes cluster, different teams (or customers) share the same cluster, separated logically by Namespaces, NetworkPolicies, RBAC, and OPA/Gatekeeper rules. Even on shared cloud hardware, software tenancy must still be configured: OPA policies ensure Team A's Helm charts cannot deploy into Team B's namespace or read Team B's database passwords.
+- *Correction: namespaces plus NetworkPolicy plus OPA/Gatekeeper give logical separation, not hard multitenancy by themselves. Hard multitenancy adds dedicated node pools (taints/tolerations), separate clusters, or virtual clusters (vCluster) per tenant, chosen when compliance or noisy-neighbour risk demands real isolation, not just policy.*
+- Hardware multi-tenancy (physical layer): different companies share the same physical server (CPU, RAM, disks) in a cloud data center. The provider buys a massive server and uses a hypervisor to slice it into VMs: your company owns VM #1, Company B owns VM #2, Company C owns VM #3 — all on the same silicon and motherboard.
+- Comparison: what is shared — physical hardware, power, cooling, network cables versus control plane, API server, cluster nodes; who are the tenants — different corporations versus different teams/apps inside one company; how separated — hypervisors / virtualization (EC2, Compute Engine VMs) versus Namespaces, RBAC, OPA policies; security risk — very low, needs a rare hypervisor-escape bug, versus medium, a compromised container can reach further if RBAC/NetworkPolicy/OPA are weak.
+
+### 71018 — OS Equivalent: CNCF Mappings for OS Concepts
+
+- Kubernetes functions like the "OS for the cloud": it schedules and runs processes (containers) across a cluster the way an OS schedules processes on a machine.
+- Modules and drivers map to infrastructure and runtime security: Falco (kernel-level runtime monitoring), Cilium (eBPF-extended kernel networking).
+- Package manager maps to app definition and packaging: Helm (the package manager for Kubernetes applications), Artifact Hub.
+- Libraries map to service mesh / SDKs: Linkerd, Istio (abstracted common networking logic), gRPC (standardized communication libraries).
+- Packages map to container runtimes / images: containerd, CRI-O (manage bundled containerized software).
+- Frameworks map to application platforms: Kubernetes (the primary orchestration framework).
+- Process / VM maps to orchestration and virtualization: KubeVirt (VMs inside Kubernetes), Flatcar Container Linux (OS optimized for containers).
+- Logs and monitoring map to observability: Prometheus, Fluentd (system logs and performance monitoring, OS-style).
+- Hardware setup maps to provisioning: Crossplane, IaC (automated provisioning replacing physical setup).
+- *Note: this table is a teaching mapping, not a one-to-one equivalence — a CNCF project does not replace the OS concept it is mapped to; it plays the analogous role in a cluster. It mirrors the OS layers already filed (hardware, kernel, device, network, storage, process, middleware, application, cloud, UI), and the same W/R/E loop governs both.*
