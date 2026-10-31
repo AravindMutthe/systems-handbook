@@ -9131,3 +9131,14823 @@ Appended at the end in chat sequence, 2026-10-31. Source closing disclaimer and 
 - Linear and timer, mapped to observability and analysis: clocks are vital for distributed tracing and log sequencing; monitoring — Prometheus and Grafana capture the analog signals of the cluster (metrics) and turn them into actionable digital data.
 - *Correction: Kepler uses eBPF to probe CPU performance counters and kernel tracepoints and estimates energy consumption, using hardware sensors such as RAPL where available and models where they are not. It does not directly meter PMIC hardware as a meter, and its per-pod figures are estimates, not direct hardware readings.*
 - *Correction: DRAM and SRAM do not map to separate CNCF storage services. In Kubernetes they appear as memory requests and limits enforced through the container runtime and cgroups — the memory a container sees — not as a storage project.*
+
+---
+
+# Image Notes appended — INbatch1 to INbatch53 (notes 1-398)
+
+Appended 2026-10-31 from imagenotes.md (staging file, local only), on the user's order to append to comprehensive first. The full staged content follows verbatim below, in chat sequence. Note: the per-batch lines inside saying "staging only, not yet appended" are historical — they describe the state before this append. One numbering gap carried over as-is: note 240 was never filed (INbatch32 holds notes 232-239); numbering continues from 241.
+
+# imagenotes.md
+
+Staging file for notes received as images, set 2026-10-31 by Aravind.
+
+Rule: image notes are transcribed and gathered here first, in the order received.
+Extract each note with its headings and headlines AS IS, exactly as they appear in the image.
+If any topic or concept is missing from a note, fill that missing topic or concept into that note here, clearly marked as filled/added, and verified against official sources only — never present a filled part as if it were in the original image.
+Once all image notes are gathered, they are verified, then appended to comprehensive.md (full copy, with corrections as is, in chat sequence) and to elaborated.md (same sequence, no redundant notes), on Aravind's say-so.
+Image notes are NOT filed directly into comprehensive.md or elaborated.md one by one while gathering.
+Diagrams in images are described in words only, not copied as pictures into md files.
+Fill rule, set 2026-10-31 09:46 IST by Aravind, applied from INbatch1 onward until he says finished: understand the subject and its concept or topic, and if anything in an image is unclear, cut off, or missing, proceed yourself and add/fill the missing content — do not leave it blank waiting for a clearer photo. Filled parts are still marked [Filled] as added, never presented as if they were in the original image, and are verified against official sources only at the final verification step before append to comprehensive.
+Only notes go into comprehensive.md and elaborated.md for future segregation — no messages, no replies.
+Duplicate rule, set 2026-10-31: duplicate images and their content are NOT allowed — once a note is taken once, any duplicate image of it is simply skipped, with no second copy of its content. In delivery, duplicates are only counted as skipped, not re-listed in full.
+
+---
+
+# INbatch1 — Image Notes 1–6 (handwritten, as is)
+
+## Image Note 1 — Mobile & Cloud, and 5G & Modern (handwritten, as is)
+
+### 4 — mobile & cloud
+
+- 1. UI mediums — mobile apps, SaaS
+- 2. Frameworks
+  - public = Bootstrap, AngularJS
+  - private = iOS UIKit, Android SDK, Salesforce [as written]
+- 4. Arch
+  - frontend frameworks (component based)
+  - REST / GraphQL / gRPC
+  - cloud native backend
+- 3. attribut [attributes, as written]
+  - responsive design
+  - component reusability
+  - app store distns [distributions]
+
+Note on order: the original numbers Arch as 4 before attributes as 3; kept as written.
+
+### 5 — 5G & modern (2020 — Now)
+
+- 1. UI — Real time dashboards, XR, AI UI's
+- 2. Frameworks
+  - public
+    - web — React, Next.js, Carbon Design [IBM]
+    - mobile — Flutter, Jetpack, React Native
+    - XR — WebXR, Three.js
+  - Private
+    - Apple Swift UI
+    - Google [name unclear in image]
+    - MS Fluent UI [written "ms flu UI"]
+- Arch
+  - micro frontend apps
+  - cloud + Edge + AI
+  - Real time (websockets, gRPC)
+- attributes
+  - low latency UI
+  - AI/ML
+  - multi device
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- SaaS = software delivered over the internet, no local install; mobile apps are distributed through app stores.
+- Component-based frontend = UI built from reusable components with their own state and rendering.
+- REST = resource-based HTTP APIs; GraphQL = query-based API where the client asks for exactly the fields it needs; gRPC = high-performance RPC using Protocol Buffers, suited to service-to-service calls.
+- Responsive design = layout adapts to screen size and device; low latency UI in the 5G era depends on edge compute and fast networks, not on the UI framework alone.
+- Jetpack = Jetpack Compose (Android UI toolkit); Swift UI = SwiftUI (Apple UI framework); Carbon Design = IBM Carbon Design System.
+
+---
+
+## Image Note 2 — Global Oversight (handwritten, as is)
+
+### Global Oversight — world
+
+- 1. UN-agencies
+- 2. FAO
+- 3. WTO / WCO
+- 4. Codex
+- 1. regulated trading (frameworks)
+  - ISO, IEC, IEEE, IETF, IAPP, ICANN / RIR
+
+### International standard bodies (2)
+
+- EU — CE, GDPR, Reach, ETS
+- FCC, FDA, NHISA [as written], NIST
+
+### Regional Regulation (3)
+
+- countries
+  - GDPR / CCPA
+  - FCC / CE
+  - FERPA
+
+### National Enforcement & Certification
+
+- 1. CBP, National bodies + labs
+- 2. Intertek
+- 3. Cybersecurity
+- States [as written, role unclear in image]
+
+### Industry & Sector Standards
+
+- 1. Automotive
+- 2. Electronics / IT (UL, RoHS, PCI DSS)
+- 3. Health / Pharma
+- 4. Cloud / data — ISO, SOC2
+- 5. Food / Agriculture
+
+### Market Flow
+
+- actors, work, C-suite
+- idea [as written, next to Industry & Sector Standards]
+- Suppliers & vendors → Manufacturer → Distribution & Logistics → Retailers / platform → Consumers
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- ISO = International Organization for Standardization; IEC = International Electrotechnical Commission; IEEE = Institute of Electrical and Electronics Engineers; IETF = Internet Engineering Task Force; ICANN = Internet Corporation for Assigned Names and Numbers; RIR = Regional Internet Registry (APNIC, ARIN, RIPE NCC, LACNIC, AFRINIC).
+- GDPR = EU General Data Protection Regulation (law); CCPA = California Consumer Privacy Act (law); FERPA = US Family Educational Rights and Privacy Act (law for education records).
+- CE is a conformity marking, not a regulator; REACH is an EU chemicals regulation; RoHS restricts hazardous substances in electronics; PCI DSS is an industry payment-card security standard; SOC 2 is an audit framework, not a law.
+- The flow above is a hierarchy in the image: global oversight → international standard bodies → regional regulation → national enforcement and certification → industry and sector standards → market flow. Standards bodies set standards; regulators enforce law; they are not the same role.
+
+---
+
+## Image Note 3 — Govt Network Series, Sep 27 (handwritten, as is)
+
+### Govt Network Series
+
+- routers, switches, firewalls, radio comm gear, video surveillance eq [equipment]
+
+### Manufacturers
+
+- Vendors, H/W, Business
+- makers (make finished or unfinished equipment)
+- they give contracts to, including all govt contracts: Cisco, Juniper N/W, Arista, Fortinet, Dell EMC, also (Huawei, ZTE, Hikvision)
+
+### Implementations
+
+- suppliers
+- govt agencies (Network Deploy, They deploy Networks for communication)
+- modern [word unclear in image] — Deploys public managed N/W
+- buyers / sellers
+- layers / between govt & public
+
+### Customers / Public
+
+- buyers — customers
+- management
+- public controllers from govt
+- Era of [incomplete in image]
+- Created private networks (for business needs & report them to govt as per regulations)
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Government network procurement typically runs through vendors and system integrators, with manufacturers supplying hardware and government agencies or their contractors deploying and operating the networks.
+- Private networks built for business use are still subject to national telecom and spectrum regulation, which is why reporting and licensing appear in the note.
+- Vendor names above are as written in the image; inclusion in a list is not a claim of a current contract with any particular government.
+
+---
+
+## Image Note 4 — Project Scheduler (handwritten, as is)
+
+### Project Scheduler
+
+- Tasks + Resources => schedule project
+- Tasks + resources = electric flows
+- scheduler =
+
+### Analogies in the note
+
+- electricity = generators flows → ISO schedule → concern [word unclear]
+- networking = routers packets → ISP schedule bandwidth
+- Tasks = jobs, contracts, transactions
+- resource = money, labor, raw material, compute
+- schedulers = entity → allocates these resources fairly / efficiently
+
+### Who schedules / Scheduler owns
+
+- ISO / RTO (ISO) — indept / semi / public [as written]
+- BGP + ISP route (WAN) — CANN [as written, likely ICANN], ISP (carrier)
+- (VISA, SWIFT) — private / central group banks
+- Business projects — Schedule allocate resou... [incomplete in image]
+- govt agency / Company
+- semi public
+- ICANN (semi), ISPs (private) N/W
+- M... [unclear in image]
+- Business projects
+- megaprojects by govt
+- corporate / ERP projects
+- semi (PPP / consortia)
+- Govt projects [bracketed on the left of the page]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- A scheduler is an entity or algorithm that decides which task gets which resource, when, and for how long, under fairness and efficiency constraints.
+- Electricity scheduling in the note's analogy is done by grid operators (ISO/RTO in the US), networking scheduling by ISPs and routing protocols (BGP for inter-domain routing), and payment scheduling by card networks and messaging networks (Visa, SWIFT) — these are analogies across domains, not the same mechanism.
+- PPP = public-private partnership; ERP = enterprise resource planning.
+
+---
+
+## Image Note 5 — Universal Product / Business (Network / Standards) (handwritten, as is)
+
+### Universal product / Business (Network / Standards)
+
+### Thier strengths [sic, as written]
+
+- 1. Four parallel flows (communication)
+  - trade => speed → Tech [as written]
+  - Spectrum = Tech + manu + N/W + Business
+- 2. Cross Flow
+  - physical
+  - informational (packet [word unclear])
+  - financial
+  - rules
+- 3. Tech Integration (N/W)
+  - mapping → IOT (Devices) across flow
+  - Blockchain
+  - AI / ML
+  - APIs
+- 4. Abstraction from goods of Spectrum
+  - TO full value chain is connec... [incomplete at the bottom of the image — marked incomplete, not completed by guessing]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Four parallel flows in this note's model are the flows that run alongside trade: the communication flow, the physical flow of goods, the informational flow, and the financial flow, governed by rules.
+- Tech integration across the network means IoT devices, blockchain, AI/ML, and APIs are layered onto the same network and value chain, not separate from it.
+- Abstraction here means moving from individual goods in a spectrum of products to the full value chain that connects them; the final words of the note are cut off in the image, so the exact conclusion is not filled in.
+
+---
+
+## Image Note 6 — Eras: UI Frameworks + Hardware Controlled / SW Driven, and Business Controller (handwritten, as is)
+
+### Eras — UI Frameworks + Hardware controlled / SW driven
+
+- 1. Telegraph → Govt PTT, Circuit switching
+- 2. OEM mainframes → Batch processing sched, Corporate IT Dept
+- 3. Client server → N/W OS, IT manager / LAN Admin
+- 4. Web 1.0 / 2.0, browsers + Datacen... [truncated in image] → Web servers, ICANN, IETF, Apache, MySQL, W3C, bodies; Infra / signals (broad... [unclear])
+- 5. Mobile & / Cloud → App stores, Cloud IAM; API + microservices + Smart... [unclear]; Cloud arch (Kube + Terra)
+- 6. 5G & AI → AI models (GPT 4, Claude); GPU + IoT sensors + Edge nodes; AI pipeline, MEC orchestration; (PyTorch, TensorFlow) service mesh
+
+### Business Controller (Private) (company rules)
+
+- Circuit swi... [circuit switching]: 1. Telegraph → usage duration
+- Batch... [batch]: 2. Mainframes → Accounting chargeback
+- NOS: 3. Client-server, Software licence → contracts
+- Apache MySQL: 4. Web servers → Ad N/W / Subs... [subscription, as written]
+- 5. Mobile / Cloud / IoT → SaaS + usage
+- 6. AI → API Token
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- PTT = Posts, Telegraphs and Telephones (the historic state telecom operator model); circuit switching reserves a dedicated path for the duration of a call, which is why billing was by usage duration.
+- Mainframe batch processing ran jobs on a schedule, and costs were charged back to departments by accounting — the business controller for that era.
+- Client-server licensing moved billing to software licences and contracts; web moved it to advertising networks and subscriptions; mobile/cloud moved it to SaaS plus usage; AI moves it to API tokens (pay per token / per call).
+- Kube = Kubernetes, Terra = Terraform; MEC = Multi-access Edge Computing; service mesh is the infrastructure layer for service-to-service communication in the AI era note.
+
+---
+
+# INbatch2 — Image Notes 7–12 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written; unclear handwriting is marked [unclear], not guessed.
+
+## Image Note 7 — Govt Layer (To control public) / Market Flows (handwritten, as is)
+
+### Labels as written in the diagram
+
+- Govt Layer (To control public)
+- Market Flows
+- Top Layer
+- Global oversight
+- ISB [International Standard Bodies, as abbreviated in the image]
+- Regional Regulation
+- Industry Sector
+- Certification
+- Trade
+- Market
+- National Enforcement & Certification
+- Industry Sector Standards
+
+### Flow as drawn
+
+- Top layer: Global oversight → ISB → Regional Regulation → Industry Sector → Certification → Trade → Market
+- Govt Layer (To control public) sits above / controls the regional and national layers below it
+- National Enforcement & Certification and Industry Sector Standards feed into Trade and Market at the bottom
+
+Note: arrow directions between individual boxes are partly unclear in the image; the layer order above is the order the labels appear, not a reconstructed arrow-by-arrow diagram.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Government layer control means the state sets the rules (licensing, spectrum, trade, certification) that the market layers below it must follow.
+- ISB = International Standard Bodies; regional regulation adapts global standards to a region (for example EU, US); national enforcement is carried out by national bodies and certified labs.
+- This note is the government-control counterpart to Image Note 2 (Global Oversight): Note 2 lists the bodies, Note 7 shows the layering from global oversight down to market.
+
+---
+
+## Image Note 8 — UI frameworks Evaluation (Virtualization) (handwritten, as is)
+
+### 1. Telegraph Networks (1850–1940)
+
+- UI framework: none, manual, paper
+- UI medium: telegraph key, paper tape
+- UI controls: morse code, key, sounder
+- UI language: morse code
+- UI mediums: message
+- Architecture: circuit switched networks
+- Framework
+  - public: telegraph protocols, govt
+  - private: proprietary [word unclear in image]
+- Attributes: text only, slow, manual
+
+### 2. Mainframe & Early computing (1940s–1970s)
+
+- UI framework: none, command line
+- UI medium: punched cards, terminals
+- UI controls: keyboard, printer
+- UI language: assembly, COBOL, Fortran
+- UI mediums: batch jobs
+- Architecture: centralized mainframes
+- Framework
+  - public: [unclear in image]
+  - private: IBM OS/360, DEC [as written, second name partly unclear]
+- Attributes: text only, batch, expert only
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Evaluation here means judging each era by the same UI dimensions: framework, medium, controls, language, architecture, public vs private, and attributes.
+- Telegraph had no UI framework in the modern sense — the operator and the Morse key were the interface, and messages were text only and manual.
+- Mainframe UI moved to punched cards and terminals, still text only, with batch jobs: work was submitted, queued, and printed later, not interactive in the modern sense.
+- Virtualization in the title is the note's later-era lens: the same evaluation is to be applied forward to virtualized and cloud interfaces, where the terminal is replaced by remote and browser interfaces — that forward application is not written out in this image.
+
+---
+
+## Image Note 9 — Centralized Tech leadership Era (handwritten, as is)
+
+### Centralized Tech leadership Era
+
+- 1. 1940s — Telegraph [era label as written, partly unclear]
+  - Govt, PTT, AT&T, Bell Labs
+- 2. 1980–1990 — Distribution Era
+  - Microsoft, Intel, IBM PC, client-server
+- 3. 2000 — Internet / Web / Cloud Era
+  - Google, Amazon, Microsoft, Apple, open source, cloud
+
+### Leadership shift as written
+
+- Centralized → Distributed → Open / Cloud
+- Who controls: Govt → Corporations → Platforms / Open source [as written, wording partly unclear]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Centralized leadership = a state operator or a single monopoly (PTT, AT&T/Bell System) controlled the network and the technology.
+- Distribution era = leadership spread to PC-era corporations (IBM, Intel, Microsoft) with client-server computing.
+- Internet/Web/Cloud era = leadership spread further to platform companies and open-source communities, with cloud as the delivery model.
+- This is a leadership-history note, not a claim that any one company controlled the whole internet in the 2000 era.
+
+---
+
+## Image Note 10 — PC & Client Server era, and Internet & Web era (1990–2000) (handwritten, as is)
+
+### PC & Client Server era
+
+- UI: GUI, Windows, Mac
+- Frameworks: MFC, Motif, Visual Basic
+- Arch: client-server, LAN
+- Attributes: desktop, mouse, icons
+
+### Internet & Web era (1990–2000)
+
+- UI: browsers, HTML pages
+- Frameworks: HTML, CSS, JavaScript, Apache, PHP [last name partly unclear in image]
+- Arch: web servers, internet
+- Attributes: hyperlinks, global, static / dynamic
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- GUI = graphical user interface: windows, icons, mouse, menus replacing command-line-only interaction.
+- MFC = Microsoft Foundation Classes (Windows application framework); Motif = Unix workstation widget toolkit; Visual Basic = rapid Windows application development tool of the PC era.
+- Client-server architecture splits work between a client (desktop, GUI) and a server over a LAN; web architecture splits work between a browser and a web server over the internet, with HTML for structure, CSS for presentation, and JavaScript for interaction.
+- Static pages are fixed content; dynamic pages are generated per request or per user.
+
+---
+
+## Image Note 11 — Global Business / Silicon product (handwritten, as is)
+
+### Title as written
+
+- [Title partly unclear in image: reads as "Global Business supp..." / "High-Finan..." — marked unclear, not guessed]
+
+### Silicon product
+
+- Intel, Broadcom, Nvidia, AMD, Qualcomm, TSMC, Samsung
+- Chip design, fab, packaging, testing [as written]
+
+### S/W
+
+- OS, drivers, firmware
+
+### NIC
+
+- Ethernet, Wi-Fi, 5G
+
+### FCC
+
+- spectrum, licensing
+
+### Business
+
+- OEMs, ODMs, distributors, retailers
+
+### Market
+
+- global supply chain, trade, standards
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Silicon product chain: design (Intel, AMD, Nvidia, Qualcomm, Broadcom) → fabrication (TSMC, Samsung) → packaging and testing → OEM/ODM assembly → distribution and retail.
+- OEM = original equipment manufacturer; ODM = original design manufacturer.
+- NIC = network interface card/controller: Ethernet for wired, Wi-Fi for local wireless, 5G for cellular.
+- FCC = US Federal Communications Commission, which licenses spectrum; other countries have their own spectrum regulators (for example TRAI/DoT in India).
+- Software (OS, drivers, firmware) is the layer that makes the silicon usable; without drivers and firmware, the hardware cannot be driven by the operating system.
+
+---
+
+## Image Note 12 — Market rules (handwritten, as is)
+
+### Market rules
+
+- Anti trust
+  - break monopolies
+  - Bell breakup 1984
+  - Microsoft antitrust [as written]
+- Net neutrality
+  - ISPs cannot block / throttle [as written]
+  - FCC rules [as written, dates partly unclear in image]
+- Govt Telephone Dir [Directory, as written]
+  - directory, numbering, allocation
+- Device
+  - Telegraph / phone, switchboard control, FCC / TRAI
+- DNS
+  - ICANN, root, registrars
+- Switchboard control
+  - operators, manual, automated
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Antitrust = competition law against monopolies and anti-competitive conduct; the Bell System divestiture (1 January 1984) is the classic telecom example, and the Microsoft antitrust case is the classic software-platform example.
+- Net neutrality = the principle that ISPs should treat internet traffic without blocking or throttling lawful content; its regulatory status in the US has changed across FCC administrations, so no single current status is claimed here without a date.
+- Government telephone directory / numbering = the state-managed allocation of telephone numbers and directories, the predecessor in function to DNS for names on the internet.
+- DNS control is split: ICANN coordinates the root, registries run top-level domains, registrars sell names to the public — no single body runs all of DNS.
+- Switchboard control moved from manual operators, to automated switches, to software-controlled switching — the same control-function evolution as in the eras notes.
+
+---
+
+# INbatch3 — Image Notes 13–18 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written; unclear handwriting is marked [unclear], not guessed.
+Sanitize note for this batch: a long numeric string and a short alphanumeric code written in Image Note 18 are omitted from this transcription (they look like a personal identifier / code, not study content), and personal names written in the margin of Image Note 15 are summarised, not listed. Nothing else was removed.
+
+## Image Note 13 — Silicon, DARPA, Before Agencies of Networks, Business & Finance, Why Needed (handwritten, as is)
+
+### Headings as written
+
+- Silicon → (layered global systems) (ecosystem [partly unclear])
+- (1960) DARPA — US Defense Agency N/W
+- Physical infra [circled, top right]
+- Date — 29 Sep 2025 [written vertically in the margin]
+
+### ① Before Agencies of Networks
+
+- ① H → H (oral language, signals, & written text)
+- ② mechanical — signaling systems (fire beacons, drums)
+- ③ Electronic — telegraph (real data Network)
+  - (group of people to [unclear] — to form N/W)
+
+### ① Business & finance (needs communication)
+
+- establishment (files storage) (fast into Exchange)
+- In business ore [as written, likely "core"]
+- (Business & Finance) (needs communication & then Security) to share at the our Business & Storage for files.
+
+### Why Needed
+
+- ① Speed of Trade → Business = exchange into
+  - faster info = faster deals
+- Telegraph & phone → reduced delays from days to minutes
+- ② Finance: (Banks & stock markets relay on Instant prices)
+  - without communication arbitrage & trading impossible
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- DARPA = Defense Advanced Research Projects Agency (US); ARPANET, its network project, is the predecessor of the internet — the 1960 date in the image is the agency era, not the ARPANET first-link date (1969).
+- Before formal agencies, communication moved from human-to-human oral and written signals, to mechanical signalling (fire beacons, drums), to electronic telegraph — each step increased speed and distance.
+- Business needs communication for exchange itself: trade is exchange of goods, money, and information, and finance needs instant prices, so delay directly costs deals and makes arbitrage impossible.
+- Security and storage are paired in the note: sharing business information requires both a secure channel and a place to store files.
+
+---
+
+## Image Note 14 — DNS, TLD, FCC, Telecom (handwritten, as is)
+
+### DNS / ownership chain as drawn
+
+- DNS → owners — www — Global
+- TLD → shareholders
+- TLD → Board of Dir → private N/W
+- Board of Dir → Executives → Employees, partners sub / N/W
+- Size — IPV6 public N/W, IPV4 [as written]
+
+### FCC — Telecom Regulator
+
+- 1934 [as written next to FCC]
+- Device [crossed out, then written again as] remote
+- remote options
+  - radio, TV, satellite, wireline, wireless, broadband, spectrum, Internet + tele
+- Communication / regulation
+
+### FCC → Telecom com chain as drawn
+
+- FCC → Telecom com → AT&T [words "time war" partly unclear]
+- Board [of] ... [partly unclear]
+- Decisions — spectrum modes, options, infra, versions
+- Device rules
+- Admin — C-suite — implementation, contracts, authorities / funds, partner
+- Emergency 911 [written at the bottom left]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- DNS chain in the note is an ownership/governance chain, not a query chain: owners and shareholders sit above TLDs, a board directs executives, executives direct employees and partners.
+- TLD = top-level domain (.com, .org, country codes); IPv4 and IPv6 are the two address versions of the public network.
+- FCC = US Federal Communications Commission, created by the Communications Act of 1934 — that is the 1934 in the image.
+- FCC regulation covers radio, TV, satellite, wireline, wireless, broadband, and spectrum, and its decisions include spectrum modes and device rules; 911 is the emergency-services obligation on telecom providers.
+- This note pairs with Image Note 12 (Market rules): the regulator (FCC) is the enforcement side, DNS/ICANN is the naming-coordination side — they are different functions.
+
+---
+
+## Image Note 15 — C-suite, Middle Management, FCC Approval, Vendors, Silicon (handwritten, as is)
+
+### C-suite chain as drawn
+
+- C-suite — Product Dev, Admin, Deploy's service [as written]
+- Kernel [written at the side, as a label] → middle mang [management]
+- GPM's [as written]
+- Engin [Engineering] — Operation Dev — Marketing
+- Supervisors → handles projects → Team lead → Testing
+- RF exposure limits, tower sitting [as written, next to Team lead → Employees]
+- Employees / workers
+- Technology, Engine, customers
+- Switches, Routers, N/W
+- FCC → Customers → Vendors → NTC — Silicon
+  - Intel, Broadcom, Nvidia [in the silicon circle]
+
+### FCC Approval notes as written
+
+- Equipment certification (routers / phones must) [sentence incomplete in image]
+- Broadband speed report (commun... [incomplete in image])
+
+### Margin notes as written
+
+- Several personal names are written in the margin of this image; they are not study content and are not listed here.
+- Nokia, Ericsson [written in the margin]
+- Pizza share, @Sri... [partly unclear, margin]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- C-suite = chief executives (CEO, CFO, CTO, CMO, COO); below them are middle management, then supervisors, team leads, and employees/workers.
+- Product development, operations, and marketing are the three functions shown under middle management; engineering feeds technology and customers through switches, routers, and networks.
+- FCC approval in the note means equipment certification before routers and phones can be sold, and broadband speed reporting — both are regulatory gates between vendors and customers.
+- Silicon vendors (Intel, Broadcom, Nvidia) supply the chips that vendors build into network equipment; NTC in the image is written as the layer between vendors and silicon, role unclear in the image and not expanded here.
+
+---
+
+## Image Note 16 — Why needed: Comm to Business, Speed of Business = Trading (handwritten, as is)
+
+### Why needed — Comm to Business
+
+- Speed of Business = Trading
+- Speed of Trading = Exchange info
+- Business = exchange info (communication)
+
+### Business / ownership chain as drawn
+
+- Business → owner
+- Govt Regul — Regulation, Monopolies
+- IETF — Coordination
+- Telegram should be [partly unclear] — Trust & fee, web, HTTP / TLS
+- Govt funded — Physical N/W, Infra Projects
+- monopoly market [written at the top right]
+
+### Regulation / coordination chain as drawn
+
+- FCC, Govt, TRAI
+- ICANN — RIR
+- ICANN — Global Phonebook
+- about companies who followed Regulators — Register your Business [as written]
+- N/W device of com — Device which com language
+- IETF — language — Regional Area codes
+- Device — Defines laws / protocols [partly unclear]
+- N/W — Defines work (IEEE) infra
+- Device ... (3GPP) [as written, partly unclear]
+- Business — Regu, Coordination
+- 420 / 5 [numbers at the bottom, meaning unclear in image — kept as written, not interpreted]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Speed of business is speed of trading, and trading is exchange of information — so communication speed is business speed, restating Image Note 13's "why needed" in trading terms.
+- Three different jobs are shown and must not be merged: government regulation (FCC, TRAI, monopolies), coordination (IETF for protocols, ICANN/RIR for names and numbers, IEEE for network work, 3GPP for mobile standards), and the business itself (registering, following regulators, trading).
+- ICANN as "Global Phonebook" is the note's analogy: DNS maps names to addresses the way a phonebook maps names to numbers — it is not a literal phonebook, and ICANN does not own the names (registrars and registries operate them).
+- HTTP/TLS in the note is the web's trust layer: HTTP carries the web, TLS secures it; trust and fees are the business side of that same exchange.
+
+---
+
+## Image Note 17 — Why needed: Speed of Trade, Business Ownership, Tech Standards (handwritten, as is)
+
+### Why needed
+
+- ① Speed of trade
+- Business = exchange (money, visionary, profit-seeking, risk tolerant [models])
+- Business → ownership / founders / shareholders
+- Business → Board of Dir → Investors
+- Board of Dir → Executive team
+- Executive team — C-suite: CEO, CFO, CTO, CMO, COO — Executives
+- VP [written at the side] → middle manager → Department Heads
+- +HR, sales, IT, Product [written next to Department Heads, partly unclear]
+
+### Strategy / funding notes as written
+
+- Strategy — form N/W (partners), allocate resources (CPU, RAM), chase markets
+- Govt funds for research (DARPA) → world N/W
+- Use of internet is Business [as written, with a star]
+- Rules & Requ [requirements] of N/W — rulebook
+- Regulators — FCC (phone... [incomplete]), communication via (MSG / phone), govt telecom infra
+
+### Tech stands [standards, as written]
+
+- ① Speed, Storage, Apps [as written]
+- ② Govern & Coordi [coordination]
+- ③ National & International Reg [regulation]
+- ④ Privacy & Security
+- ⑤ Market Rules — antitrust / monopoly control
+- IETF, IEEE, 6G, TCP / IP [written around the standards list, partly unclear]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Business ownership chain: founders/shareholders own, board directs, executive team (C-suite) runs, middle managers and department heads execute — the same chain as Image Note 15, here tied to speed of trade.
+- Business traits in the note (visionary, profit-seeking, risk-tolerant) are the motive for speed: faster information means faster deals, which is why the note starts with speed of trade.
+- Government funding for research (DARPA) is shown as the origin of the world network — a funding fact, distinct from the business ownership chain above it.
+- The five standards in the note are a checklist, not a single body: speed/storage/apps are performance, governance/coordination is IETF/ICANN's job, national/international regulation is FCC/TRAI and equivalents, privacy/security is a separate requirement, and market rules (antitrust/monopoly control) are competition law.
+
+---
+
+## Image Note 18 — Market Vendors, Cloud, OEMs, Telcos, Network Hierarchy, OOB (handwritten, as is)
+
+### Market vendors → supply
+
+- Market vendors: Intel, Broadcom, Nvidia
+- They supply — Hardware controlled by [software, as written, word partly unclear]
+- All publ [public] (Emulators)
+- ① Hardware controlled by S/W
+- [A long numeric string and a short alphanumeric code written here are omitted — see sanitize note at the top of INbatch3]
+
+### NIC → buyers → cloud / OEMs / telcos
+
+- NIC + SNICs [as written, second term partly unclear]
+- Direct buyers → Cloud (AWS, GCP, ... [third name partly unclear])
+- OEMs → (Dell, HPE, Lenovo, Cisco)
+- Telcos & ISPs → AT&T, Verizon, Jio
+- Govt Labs
+- Virtual [written at the side]
+- Customers (Assemblers ↔ NIC integrated into Devices)
+- DARPA — TCP / IP — Remote connections
+- S2V... virtual Devices [partly unclear], Device options
+
+### Org Business N/W — hierarchy as drawn
+
+- N/W Device — HW + SW — OEM
+- N/W hierarchy — Product + custom — LFS [as written]
+- File system — OOB [out-of-band, as written]
+- BMC, IDC, ILO [as written — BMC/IPMI-style management interfaces]
+- Number → CLI → router, route
+- Web 22 [as written] — Nginx, Apache, DNS book
+- Switch — API — restful / netconf — communication — proc / sys
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Supply chain in the note: silicon vendors (Intel, Broadcom, Nvidia) supply hardware, which is controlled by software; direct buyers are cloud providers, OEMs, telcos/ISPs, and government labs; customers are assemblers who integrate NICs into devices.
+- OOB = out-of-band management: BMC, iDRAC (Dell), iLO (HPE) let an administrator manage a server even when its main operating system is down — that is why they appear under the network hierarchy, separate from the data path.
+- CLI, router, and route are the device-management layer: a numbered interface and command line configure routing; Nginx and Apache are web servers, DNS book is the naming record, and APIs (RESTful, NETCONF) are the programmatic management layer above them.
+- TCP/IP from DARPA is the protocol foundation for the remote connections in the note; it is not a vendor product.
+
+---
+
+# INbatch4 — Image Notes 19–20, plus duplicate records (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md.
+Count note, stated openly: this set contains 6 image files, but only 2 distinct new notes. The other 4 are duplicates of notes already filed, so they are recorded as duplicate-paste records below, not copied in full again — the same dedup rule used for text notes earlier in this chat.
+
+## Image Note 19 — Phone Book, ICANN, IP, Govt Authority, FCC, Hierarchy, DNS, RIR (handwritten, as is)
+
+### Phone book → company exchange
+
+- Phone book → (Comp. exchange) info
+- ICANN → start busi [business] (Register ID)
+- IP → start into ex [exchange] (RIR) → virtual site / device
+- [A heavily scribbled centre circle is unreadable — marked unreadable, not guessed]
+
+### Govt authority
+
+- Govt authority → FCC
+- FCC → ICANN — Identity — Business — RIR
+  - ICANN — Non profit, multi stakeholder
+  - IP — Regulate Business
+  - regional cooperation [as written]
+- FCC → ARIN, RIPE, APNIC — IP — blocks allocation
+- FCC → ICANN — Domain (Company names)
+
+### Tech — hierarchy
+
+- Hierarchical [as written, with "country codes / Area code" crossed out above it]
+- TLD — Type
+- IP Ranges — ID [as written]
+- Telecom regul... (ICANN / IETF / RIR)
+- DNS — TRAI / FCC
+- web access — Coordination
+- Registration — Rules
+- DNSsec — Trust & Security, Owner key, Pin lock [as written]
+- GDPR, CCPA, NIST, ISO, Priv... [privacy, as written]
+- Public — air / Jio [as written, partly unclear]
+- RIR — ISP Amazon
+- N/W — TCP / IP — IETF — Identity (MAC / IP)
+- Infra → Company Device — MAC — ICANN → Business (ARIN)
+- Infra → ① Physical switches, ② ... [second item unclear in image]
+- Country code — TLD — DNSsec (ARIN) — MAC
+- ① ... Registries, ② DNS server [as written, first word partly unclear]
+- Track [written at the bottom right, incomplete]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Phone book is the note's analogy for DNS: names map to addresses, companies register names to be found — the same analogy as Image Note 16.
+- Starting a business in this model needs two registrations: a domain name through ICANN's system, and IP address space through a Regional Internet Registry (RIR).
+- RIRs: ARIN (North America), RIPE NCC (Europe/Middle East/Central Asia), APNIC (Asia-Pacific), plus LACNIC and AFRINIC — the image names the first three.
+- ICANN is a non-profit multi-stakeholder body for names; RIRs allocate IP blocks; FCC (US) and TRAI (India) are telecom regulators — coordination, allocation, and regulation are three different jobs, and the note keeps them in separate boxes for that reason.
+- DNSSEC adds trust and security to DNS (signed records, owner keys); GDPR/CCPA are privacy laws, NIST/ISO are standards/frameworks — they sit beside DNS in the note as rules, not as part of DNS itself.
+- Identity in the note has three layers that must not be merged: MAC (device hardware identity), IP (network locator), and domain/company name (human identity).
+
+---
+
+## Image Note 20 — End Customers, NIC, Kernel Stack, OEM, OOB, Business Port (handwritten, as is)
+
+### End customers → NIC stack
+
+- NIC — own infra [as written at the top left]
+- End customers → Interfaces — NIC → Drivers — Implement [as written] → Kernel stack → Net device → TCP / IP
+- Sep — 29 2025 [written vertically in the margin]
+- cloud, ISP to EMS, Labs [written at the top right]
+
+### OOB / management chain as drawn
+
+- N/W → /Root → OOB (manat [management])
+- OOB → BMC — Power
+- /sbin / init — BMC → CLI — Admin
+- /IP / route, Device — Config files to start / busi [business]
+- /etc config, startup.config [as written]
+
+### OEM / business chain as drawn
+
+- Computer — Storage [arrow up, as written]
+- H/W — C-suite / Root — OEM → mounted title system [as written, partly unclear]
+- OEM → driven by S/W for fast trading / comm
+- OEM → Device — Emulators
+- switch → Transp... [transport, as written]
+- router — private IP
+- NIC → public IP
+- Device — Core functions, Business — ASIC H/W
+- Core functions, Business → Shared Component
+- Kernel — libraries (Firmware) [as written]
+- NICs — Drivers, Kernel, Net device [written at the side]
+- N/W — OOB, BMC, CLI [written at the side]
+- Port → Business → N/W → customer
+- OOB → BMC / iDRAC / iLO → API — /proc / sys — Start up / Hardware
+- API → Web UI — Running config
+- CLI, router [written at the bottom left]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- End-customer path: a customer-facing interface uses a NIC, the NIC is driven by a driver, the driver talks to the kernel network stack, the stack presents a network device, and TCP/IP runs on top of it.
+- OEM path: hardware from an OEM is driven by software; switches forward transport traffic, routers separate private IP (inside) from public IP (outside), and the NIC is the boundary device.
+- OOB path, restating Image Note 18: root → OOB → BMC (power) → CLI (admin) → config files and startup config — management that works even when the main system is down, with iDRAC/iLO as vendor BMC implementations, and Web UI / API / /proc / sys as the running-config views.
+- ASIC hardware is the fixed-function silicon under core network functions; kernel libraries and firmware are the software layers that drive it — hardware controlled by software, as in Image Note 18.
+- Port → Business → Network → Customer is the note's summary: a port is not just a socket, it is the point where business traffic enters the network and reaches the customer.
+
+---
+
+## INbatch4 duplicate-paste records (not copied in full)
+
+- Image file 1000101727 (4th in this set) is a second photograph of the same Phone Book / ICANN page as Image Note 19 above — kept once, here.
+- Image file 1000101725 (3rd in this set) is a duplicate photograph of INbatch3 Image Note 13 (Silicon, DARPA, Before Agencies of Networks, Business & Finance) — already filed, not repeated.
+- Image file 1000101753 (5th in this set) is a duplicate photograph of INbatch3 Image Note 16 (Why needed: Comm to Business, Speed of Business = Trading) — already filed, not repeated.
+- Image file 1000101726 (6th in this set) is a duplicate photograph of INbatch3 Image Note 17 (Why needed: Speed of Trade, Business Ownership, Tech Standards) — already filed, not repeated.
+
+---
+
+# INbatch5 — Image Notes 21–24, plus duplicate records (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md.
+Count note, stated openly: this set contains 7 image files, but only 4 distinct new notes. The other 3 are duplicate photographs of notes already filed, recorded as duplicate-paste records below, not copied in full again.
+
+## Image Note 21 — PC & Client Server era, and Internet & Web era (1990–2000), detailed version (handwritten, as is)
+
+### PC & Client Server era
+
+- ① UI mediums — GUI Desktops (mac, windows)
+- ② Frameworks
+  - Public → X11 (Linux GUI), Motif
+  - Private → MS Win 32, Apple toolbox
+- ③ Arch — monolithic UI → client ↔ server
+- ④ Attributes
+  - Event driven (mouse, keyboard)
+  - multitasking [written "multitalkin"]
+  - Vendor lock-in (win only + mac only)
+
+### Internet & web era (1990–2000)
+
+- ① UI mediums → web browsers, interactive sites
+- ② Frameworks
+  - Public (W3C → HTML / CSS / JS), JQuery, Dojo
+  - Private (Adobe, MS)
+- ③ Arch (client — server) (Chrome → HTTP [cut off at the edge of the image])
+- ④ Attributes — HTML, Cross platform, Scripting (interactive)
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This note is the detailed version of Image Note 10 (PC & Client Server / Internet & Web, summary form). It is filed as its own note because it adds framework names, not as a replacement for Note 10.
+- X11 = the X Window System, the Linux/Unix GUI foundation; Motif = the Unix workstation widget toolkit; Win32 = the Windows API; Apple Toolbox = the classic Macintosh application framework.
+- Monolithic UI → client ↔ server means the desktop application was one program talking to a server, unlike the later component-based and micro-frontend models in Notes 1 and 6.
+- Event-driven = the interface reacts to mouse and keyboard events, rather than running a fixed batch sequence — the break from the mainframe batch model.
+- Vendor lock-in (Windows-only or Mac-only) is the attribute that the web era breaks: HTML/CSS/JS run cross-platform in any browser, and scripting makes pages interactive.
+
+---
+
+## Image Note 22 — Centralized Tech leadership Era, expanded version (handwritten, as is)
+
+### Centralized Tech leadership (Era)
+
+- 1940's Telegraph → connectivity function (dev)
+  - Focus & core Business → Establishing comm protocols
+  - Org Structure (centralized) → [unclear in image]
+  - Tech strategy → protocols
+  - Leadership mindset → Link State → Adaptability
+  - Adaptability = work life balance, maintaining work life balance [as written]
+
+### ② 1980–1990 Distribution era
+
+- Core focus = managing Decentralization
+- Decentralization = centralized team → Distribution
+- (heterogeneous sys [systems])
+- Dev Protocols = Interoperability Protocols
+
+### 2000 ③ Internet / web / cloud era
+
+- Core focus = Building hypergrowth
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This note is the expanded version of Image Note 9 (Centralized Tech leadership Era, summary form). It is filed as its own note because it adds the leadership and decentralization detail, not as a replacement for Note 9.
+- Centralized era leadership: one organisation structure, one tech strategy (protocols), and a leadership mindset measured by link state and adaptability — adaptability here is written as work-life balance, which is the note's own definition, not a standard leadership metric.
+- Distribution era core focus shifts to managing decentralization: heterogeneous systems must interoperate, so developer protocols become interoperability protocols.
+- Internet/web/cloud era core focus shifts again to building hypergrowth: the network effect, not protocol establishment, is the leadership task.
+
+---
+
+## Image Note 23 — Employer — Employee (handwritten, as is)
+
+### Employer — Employee
+
+- In a special report, govt regulation are to the top as the most influential external factor behind an org & workforce ability to thrive [as written]
+- Regulation
+  - 1. type
+  - 2. consistency
+  - 3. speed
+  - 4. effectiveness
+- → govt action [as written, arrow partly unclear]
+- govt action could all influence the [worker — employer] relationship [as written, bracketed in the image]
+
+Note on condition: this page is heavily scribbled over with crossing lines, and much of the writing under the scribbles is unreadable. Only the lines above could be read with confidence; nothing under the scribbles was guessed.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Employer-employee relationship here is the note's subject, not a network topic: government regulation is presented as the top external factor shaping whether an organisation and its workforce can thrive.
+- The four regulation dimensions in the note are a test: what type of regulation, how consistently it is applied, how fast it changes, and how effective it is — each changes the employer-employee relationship differently.
+- This note connects to the regulation notes (Notes 7, 12, 14, 19): the same regulators (FCC, TRAI, and equivalents) that govern networks also govern employment conditions through labour regulation — the note does not name a specific labour law, and none is filled in here.
+
+---
+
+## Image Note 24 — Authority Agency FCC, About Radio Stations (handwritten, as is)
+
+### Authority Agency FCC: 2025 June 18 / 25 [as written, second date partly unclear] — RFC [as written]
+
+- Independent FCC = 1939 [as written — see discrepancy note below]
+- FCC is an ... communications act = into legislative debate = Congress [sentence partly unclear in image]
+- Debate in congress = makes act
+- legislative debate — Act (communications) = FCC govt agency
+- other debates
+- FCC = regulates communications across USA
+- Communications = by radio, television, wire, internet, wifi, satellite and cable
+- Radio Transmissions
+
+### Communications list as written
+
+- 1. radio
+- 2. television
+- 3. wire
+- 4. internet
+- 5. wifi
+- 6. satellite
+- 7. cable
+
+### About Radio Stations
+
+- broadcasting → Radio Waves, Receiver, Radio stations, Sender broadcast, channel, Receiver broad [as written]
+- FCC → Executive → Congress → [Judiciary, as written, partly unclear] → US gov → FCC → FRC
+- FRC = Regulates radio communication
+- Radio broadcasting is the transmission of Electromagnetic radio station as radio waves over TO Receiver (audio + metadata embedded) [as written, grammar as in the image]
+
+### Discrepancy to verify before append to comprehensive
+- This image writes "Independent FCC = 1939", while Image Note 14 writes "1934" next to FCC. [Filled per the 2026-10-31 09:46 fill rule: the Communications Act of 1934 created the FCC, so 1934 is the correct creation year and Note 14 is right; 1939 in this image is filled as a miswriting, not a second date — the FCC's predecessor, the Federal Radio Commission, was created in 1927, and no FCC creation event falls in 1939. The original "1939" is kept as written above, and the corrected year 1934 is what goes forward to comprehensive.]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- FCC = Federal Communications Commission, an independent US government agency created by legislation (Congress debates and makes the Act, the executive and judiciary sit in the chain the note draws, and the FCC then regulates).
+- FRC in the note is the Federal Radio Commission, the FCC's predecessor body for radio regulation — the note draws FCC → FRC as a lineage, not as two current bodies.
+- Radio broadcasting in the note's model: a station sends electromagnetic radio waves, a receiver picks them up, and the received signal carries audio plus embedded metadata.
+
+---
+
+## INbatch5 duplicate-paste records (not copied in full)
+
+- Image file 1000101715 (2nd in this set) is a clearer photograph of INbatch1 Image Note 1 (Mobile & Cloud, and 5G & Modern) — same content, already filed. This clearer copy confirms the earlier readings "Carbon Design (IBM)", "Jetpack", and "MS Fluent UI" in Note 1.
+- Image file 1000101748 (3rd in this set) is a clearer photograph of INbatch1 Image Note 6 (Eras: UI Frameworks + Hardware Controlled / SW Driven, and Business Controller) — same content, already filed.
+- Image file 1000101747 (5th in this set) is a clearer photograph of INbatch1 Image Note 4 (Project Scheduler) — same content, already filed. This clearer copy confirms the earlier readings "ISO/RTO", "BGP + ISP route", and "PPP / consortia" in Note 4.
+
+---
+
+# INbatch6 — Image Notes 25–30 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. This batch is a new technical series in a different hand (blue pen, Golkonda notebook) from the earlier batches. Headings and headlines as written; unclear handwriting is marked [unclear], not guessed.
+
+## Image Note 25 — Physical terms, Virtual terms, Drivers / Modules / Devices (handwritten, as is)
+
+### Physical terms
+
+- 1. Port → Hardware socket (RJ45, PCIe slot, SFP)
+- 2. Plug → the connector into a port (ethernet plug, etc)
+- 3. Cable → medium carrying signals (copper, fiber)
+- 4. Interface → Device's connection point, Exposed to OS
+- 5. Link → physical path b/w 2 interfaces (up / down [partly cut off at the edge])
+
+### Virtual
+
+- ① Virtual Port → S/W defined End Point (TCP / UDP)
+- ② Virtual Interface → logical rep of NIC (vnic, veth, lo, tun)
+- ③ Virtual Socket → S/W Endpoint defined IP : Port [numbering in the image is ③ after ②, then ④, ⑤ — kept as written]
+- ④ Virtual Link → logical path
+- ⑤ Virtual Plug → mapping vinterface into ns [namespace, as written]
+
+### Drivers / Modules / Devices (boxed section)
+
+- ① Drivers → lsmod, modprobe, dmesg, udev — Map to physical Ports (NIC, PCIe slots)
+- ② Modules → insmod, rmmod, modinfo — map to logical interfaces
+- ③ Devices → /dev / eth0, /sys / class / net — represents Sockets / cables
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Physical vs virtual is the whole point of this note: a physical port is a hardware socket you can touch; a virtual port is a software endpoint (a TCP/UDP port number) you cannot.
+- A physical interface is the device's connection point exposed to the operating system (for example eth0); a virtual interface is a logical representation of a NIC (veth for container pairs, lo for loopback, tun for tunnel devices).
+- A link in the physical sense is the path between two interfaces (cable up/down); in the virtual sense it is a logical path (a VLAN, a VPN tunnel, a veth pair).
+- Drivers map to physical ports: lsmod lists loaded modules, modprobe loads/removes them, dmesg shows kernel messages, udev creates device nodes. Modules (insmod/rmmod/modinfo) are the loadable kernel code that creates logical interfaces. Devices appear under /dev and /sys/class/net.
+
+---
+
+## Image Note 26 — N/W Topologies, Arch, Interfaces, Media (handwritten, as is)
+
+### Headings as written
+
+- N/W Topologies (shapes)
+- N/W Arch (designs)
+- N/W Interfaces (End points)
+- N/W media (highways)
+
+Note on the page: the rest of the page is blank except for faint show-through from writing on the other side of the paper. That show-through was not transcribed — it is not content of this page.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This note is a definitions header, not a full note: it names four things that must not be merged, and the rest of the batch (Notes 27–30) fills them in.
+- Topology = shape (star, mesh, ring, bus — how nodes are arranged).
+- Architecture = design (client-server, peer-to-peer, tiered — how work is organised).
+- Interfaces = endpoints (ports, NICs, sockets — where traffic enters and leaves).
+- Media = highways (copper, fiber, radio — what carries the signals).
+- The earlier topologies note in the text batches (Batch 14) already warned against mixing these layers; this image note restates that warning as four separate headings.
+
+---
+
+## Image Note 27 — Media DAC cables, Tier 3 Distributed cloud N/Ws (handwritten, as is)
+
+### Media DAC cables
+
+- Tier 3 — Distributed cloud N/Ws
+- represents hyperscale public clouds
+- Topology
+  - mesh mesh N/W &
+  - multi tier service mesh
+  - & S/W defined service mesh
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- DAC = Direct Attach Copper cable: a short, fixed-length copper cable with transceivers built into both ends, used for short server-to-switch links inside a rack or data centre — the "media" heading of this page.
+- Tier 3 in this series = distributed cloud networks: hyperscale public clouds, where the topology is mesh (many interconnections) and multi-tier service mesh (services talking to services across tiers), with software-defined service mesh as the control layer.
+- Missing concept in this batch, flagged, not invented as original: Tier 2 is absent from the images in this batch. Between Tier 1 (local, Note 30) and Tier 3 (distributed cloud, this note), a middle tier is expected — campus, enterprise, or regional multi-site networks — but no Tier 2 page was included here, so its content is not filled in as if it were in the original. If you have a Tier 2 page, send it and it will slot in between Notes 30 and 27.
+
+---
+
+## Image Note 28 — AS, IANA / RIRegistry, Corporate N/W, Local subnet, Physical nodes (handwritten, as is)
+
+### AS
+
+- AS — joint independent N/W / collection of N/Ws controlled by a single organization
+- has an unique ID called ASN
+- types — one other AS, multihome AS, Transit AS [as written]
+
+### IANA / RIRegistry chain as drawn
+
+- IANA / RIRegistry → Hands over ASN & IP block to independent N/W operators (google, jio)
+- AS / 188 [as written, number partly unclear]
+- Internet — Public cloud — 192.0.2.0 / 16 [as written, partly unclear]
+- Intranet
+- Corporate N/W — Internal infra of a business — CIDR / VLSM to run their private intra
+- local subnet — broadcast domain inside a company (HR, finance, server room)
+- Physical nodes — Unique IPs assigned or handed out to individual [as written, sentence incomplete in image]
+
+### Side labels as written
+
+- Internet, Intranet, [SAN zones, as written, partly unclear], [NAS, as written, partly unclear]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- AS = Autonomous System: a collection of networks under one organisation's control, with one unique ASN (Autonomous System Number) for BGP routing.
+- Types in the note, expanded: a single-homed AS connects through one provider; a multihomed AS connects through multiple providers; a transit AS carries traffic for other networks.
+- IANA allocates to Regional Internet Registries (RIRs), which hand ASN and IP blocks to operators (the note's examples are Google and Jio) — the same allocation chain as Notes 14 and 19, here shown down to corporate level.
+- Corporate network = a business's internal infrastructure, run with CIDR/VLSM subnetting for its private address space; a local subnet is one broadcast domain inside the company (HR, finance, server room are separate subnets); physical nodes are the individual machines that get unique IPs handed out inside those subnets.
+- [Filled per the 2026-10-31 09:46 fill rule: 192.0.2.0/16 as written is filled as a miswriting of the documentation example 192.0.2.0/24 (TEST-NET-1, RFC 5737) — a /16 would cover 192.0.0.0–192.0.255.255, which is not a documentation range. The original "/16" is kept as written above, and 192.0.2.0/24 is what goes forward to comprehensive.]
+
+---
+
+## Image Note 29 — Port / Interface / Link / Socket / Bandwidth table, and N/W Traffic (handwritten, as is)
+
+### Table as written — columns: Linux [as written, first column heading partly unclear], Physical [as written at the top right]
+
+- Port (H/W) — lshw, /sys / class / net — (PCIe, NIC, RJ45)
+- Interface (logical) — ip link — eth0, wlan0, tun, br [last entry partly cut off]
+- Link (path) — ethtool, ip route — cable, VLAN, VPN
+- Socket (S/W) — ss, netstat, lsof — IP + Port End, static / dynam [dynamic, cut off]
+- Bandwidth (QoS) — tc, ethtool — static / dynam [dynamic, cut off]
+
+### N/W Traffic — web traffic
+
+- Cables — physical mediums — Sockets
+- Interfaces — physical ports for cables — Connections
+- Ports — Destinations — Routes
+- configs — Settings to h/w [hardware]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This table is the Linux-command version of Note 25: each row gives the concept, the Linux tool that shows it, and the physical or logical thing it maps to.
+- Port (hardware) is inspected with lshw and /sys/class/net; interface (logical) with ip link; link (path) with ethtool and ip route; socket (software) with ss, netstat, and lsof; bandwidth/QoS with tc and ethtool.
+- A socket is an IP + port endpoint — the software end of a connection, distinct from a hardware port (a physical socket) even though both are called "port" in different contexts; the note's two columns exist to keep that distinction visible.
+- N/W traffic in the note's second half is a reading order: cables carry, interfaces connect, ports are destinations, configs are the settings applied to hardware — and the web-traffic column (sockets, connections, routes) is the software-side mirror of the same traffic.
+
+---
+
+## Image Note 30 — Tier 1 standalone & local N/W (handwritten, as is)
+
+### Tier 1 standalone & local N/W
+
+- represents Local physical h/w & Deployments
+  - home networks
+  - small office N/W
+  - bare metal servers
+
+### Star topology
+
+- Every local End Points connects directly to a central local switch / a WAP
+
+### Arch
+
+- client-server / peer-peer
+- pull resources from a central local NAS / communicate dire [direct, cut off]
+
+### Interfaces
+
+- physical
+  - ethernet ports (eth0, enp3s0)
+  - wifi (wlan)
+- virtual
+  - local S/W loopback (lo) / local N/W
+
+### Media
+
+- cat6 / Radio waves
+- NIC to Local switch / router
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Tier 1 in this series = standalone and local networks: home networks, small-office networks, and bare-metal servers — the smallest tier, before any cloud distribution.
+- Star topology: every endpoint connects directly to one central switch or wireless access point (WAP) — the centre is the single point of failure, but also the single point of control, which is why home and small-office networks use it.
+- Architecture is client-server (pull resources from a central local NAS) or peer-to-peer (endpoints communicate directly) — both fit inside one local network.
+- Physical interfaces are ethernet ports (eth0, enp3s0 — the predictable Linux naming) and wifi (wlan); the virtual interface is loopback (lo), the local software-only interface.
+- Media are Cat6 copper cable and radio waves (wifi); the path is NIC → local switch/router, and no further.
+
+---
+
+# INbatch7 — Image Notes 31–36 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written; unclear handwriting is marked [unclear], not guessed.
+Duplicate rule applied: no duplicate images in this set — all 6 pages are new pages, even where topics overlap earlier notes. Overlap is not duplication; only a second photograph of the same page is skipped.
+
+## Image Note 31 — Tier 2 Enterprise Data centers & private clouds (handwritten, as is)
+
+### Tier 2 — Enterprise Data centers & private clouds
+
+- Scales up
+- TOR Switches [circled]
+- This scales up to
+  - Corporate on premises Data Centers
+  - Virtualization Clusters
+  - Containerized microservices
+
+### Topology
+
+- leaf spine (Clos)
+- Every leaf switch connects to every spine switch
+
+### Arch
+
+- monolithic → Tiered / cluster Arch
+- apps divided into web, app & DB Layers
+- managed via automated private cloud Stack like openstack
+
+### Interface & media
+
+- Physical — High speed fiber optic ports built into servers
+- Virtual
+  - Hypervisor managed vNIC (vnet0)
+  - Virtual bridges (br0)
+  - Virtual ethernet pairs (veth) linking Docker / Kub containers
+  - SR-IOV → To bypass all to access H/W Directly
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This note closes the Tier 2 gap flagged in INbatch6 Note 27: Tier 2 is now filled from this page, not invented. Tier 1 (local) → Tier 2 (enterprise/private cloud) → Tier 3 (distributed/hyperscale cloud) is now a complete series in imagenotes.
+- TOR = Top of Rack switch: the switch at the top of a server rack that connects all servers in that rack.
+- Leaf-spine (Clos) topology: leaf switches connect to servers, spine switches connect to leaves, and every leaf connects to every spine — so any server can reach any other server in two hops with equal-cost paths.
+- Tiered architecture: an application is divided into web, application, and database layers, instead of one monolithic program.
+- OpenStack is the example private-cloud stack in the note: it automates provisioning of compute, network, and storage in an on-premises data centre.
+- SR-IOV = Single Root I/O Virtualization: a physical NIC is presented directly to a virtual machine or container, bypassing the hypervisor's virtual switch for lower latency.
+
+---
+
+## Image Note 32 — N/W Topologies, N/W Architectures, N/W media (handwritten, as is)
+
+### N/W Topologies
+
+- Star
+  - Every node connects directly to a central hub, switch, AP
+  - copper, fiber optic or wifi (RF)
+  - NIC → central switch port
+- Bus topo
+  - nodes share single backbone cable
+- Ring
+  - each node connects exactly 2 neighbors
+- Mesh
+  - High redundancy [star symbol in the image]
+
+### N/W Architectures
+
+- Client — Server (routing layers)
+- Peer — Peer (internet connections)
+- Client → server
+- Peer → peer node
+- Controller → Switch
+- SDN virtual interfaces (API calls / overlays)
+
+### N/W media
+
+- guided → wired
+- unguided → wireless
+  - radio waves, microwaves, cellular, wifi / blue [bluetooth, as written], cell towers
+
+Note on reading: this page is photographed rotated; the transcription above is in reading order by column, not by photograph orientation.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This note fills in Image Note 26 (Topologies / Arch / Interfaces / Media, headings only): star, bus, ring, and mesh are the four topologies; client-server and peer-to-peer are the two architectures; guided (wired) and unguided (wireless) are the two media families.
+- Star's centre is a hub, switch, or access point; bus's shared backbone is a single point of contention; ring's two-neighbour rule means a break can isolate a segment unless it is a dual ring; mesh's high redundancy comes from many alternative paths.
+- SDN = Software-Defined Networking: a controller programs switches through APIs, and virtual interfaces/overlays run on top of the physical network — the architecture layer above the topology layer.
+
+---
+
+## Image Note 33 — AS, Three foundational routing policies (handwritten, as is)
+
+### AS (1)
+
+- under the control of one or more N/W operators (like google, ISPs or massive university)
+- presents a common routing policy to the global Internet using BGP
+
+### Three foundational routing policies [as written, heading]
+
+- ① Transit policy
+  - AS agrees to carry traffic based on business relationship
+  - ① provider → customer
+  - ② customer → provider (cof [as written, partly unclear])
+- ② Peering policy P2P
+  - AS agrees to exchange traffic btw their customers for free
+  - ① mutual Benefit
+  - ② non transitive
+- ③ Stub policy
+  - [Heading only in the image — no content under it could be read; marked incomplete, not completed by guessing]
+
+Note on reading: this page is photographed rotated; the transcription above is in reading order.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This note expands Image Note 28 (AS definition): an AS is not just a collection of networks, it is a routing-policy unit — it presents one common policy to the internet, and that policy is carried by BGP (Border Gateway Protocol).
+- Transit policy: a provider AS carries traffic for a customer AS, and the direction of payment follows the provider → customer relationship.
+- Peering policy (P2P): two ASes exchange traffic between their own customers for free, for mutual benefit, and it is non-transitive — A peering with B, and B peering with C, does not give A a route through B to C.
+- Stub policy is the missing third policy in the image: a stub AS is an edge AS that carries only its own traffic and does not transit traffic for others — that definition is filled here, marked as filled, because the image gives only the heading.
+
+---
+
+## Image Note 34 — Govt / research → Semiconductor → Silicon → Boards → OEM / ODM → Cloud / telecom / Enterprise / govt → End users (handwritten, as is)
+
+### Chain as drawn (reading order, page photographed rotated)
+
+- Govt / research / standards — enables
+- Semiconductor Ecosystem — produces
+- Silicon chips — become
+- Boards & Devices — Assembled by
+- OEM / ODM — brought by
+- Cloud, telecom, Enterprise, govt — End users through
+- Devices, N/Ws
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This note is the supply-chain version of Image Note 18 (Market Vendors → Cloud / OEMs / Telcos) and Image Note 11 (Silicon product): the same chain, now drawn from government/research at the start to end users at the end.
+- Government/research/standards enable the chain (funding, standards, regulation); the semiconductor ecosystem produces silicon chips; chips become boards and devices; OEMs/ODMs assemble them; cloud, telecom, enterprise, and government buy them; end users reach them through devices and networks.
+- OEM = original equipment manufacturer, ODM = original design manufacturer — the assemblers in the middle of the chain, distinct from the chip producers at the start and the cloud/telecom buyers at the end.
+
+---
+
+## Image Note 35 — US govt, FCC Act, FRC Agency, Radio broadcast, Commercial / NCE, Analog / Digital (handwritten, as is)
+
+### Chain as drawn
+
+- US govt → FCC Act → FCC Agency → FRC Agency → Radio broadcast → Radio waves → Radio stations → Sender / Receiver
+- Public N/W, Private N/Ws
+- TV programs, radio programs
+- AM, FM, DAB, DRM [as written]
+- Terrestrial, digital / analog [as written]
+- Spectrum
+
+### Broadcast types as written
+
+- Commercial broadcast ①
+- NCE (Non comm Educa) ②
+- Public NCE
+- Private [as written, partly unclear]
+
+### Content / distribution as written
+
+- provides contents
+- broadcast syndication and / or Simulcasting
+- Analog Radio + NTSC TV
+- Radio ... + AM, FM
+- analog modulation / Digital modulation → Signals
+- FRC — Radio stations, Radio NTSC TV → digital, FCC
+
+Note on condition: this page is heavily crossed with blue lines, and several words under the crossings are unreadable. Only the lines above could be read with confidence; nothing under the crossings was guessed.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- This note is the radio-broadcast version of Image Note 24 (FCC Authority / Radio Stations): US government → FCC Act → FCC Agency → (FRC lineage) → radio broadcast → radio waves → radio stations → sender/receiver.
+- Commercial broadcast is advertising-funded; NCE = Non-Commercial Educational broadcast, which is public/educational and not advertising-funded — the two broadcast types in the note.
+- AM/FM are analog radio modulations; DAB/DRM are digital radio standards; NTSC is the analog television standard the note pairs with analog radio, with digital as its successor.
+- Syndication = distributing the same programme to many stations; simulcasting = broadcasting the same programme on two channels at once (for example analog and digital).
+
+---
+
+## Image Note 36 — Pre-radio, Current distribution, US govt, FCC Act, NCE Radio (handwritten, as is)
+
+### Pre-radio
+
+- Electronic distribution → Then radio casting → Net work ... [last words partly unclear]
+- Limited extent
+
+### Current
+
+- 1 electronic distribution — limited → by telegraph net
+- 2 radio distribution — global →
+- 3 Network distribution
+- 4 Network Affiliated N/W ... [partly unclear]
+
+### US govt chain as drawn
+
+- US govt → FCC Act → Communications → broadcasting signals → radio waves → radio station
+- AM, FM, DAB, Terrestrial, Programs, Radio broadcast
+- No ads Radio, NCE Radio, Non comm Educa, Public, Private radio stations
+- NCE → for educational programming as part whole of ... [partly unclear]
+- NCE Radio Stations → Don't pay broadcasting license fees for their non profit uses org [as written]
+
+### Spectrum note as written
+
+- Spectrum — radio stations [as written at the bottom right]
+
+Note on condition: this page is heavily crossed with blue lines, like Note 35, and several words are unreadable under the crossings. Only the lines above could be read with confidence.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Distribution eras in the note: pre-radio electronic distribution (telegraph net, limited extent) → radio distribution (global, broadcast) → network distribution (affiliated networks, internet-era distribution).
+- The current distribution model in the note is layered: electronic (telegraph-era), radio (broadcast-era), and network (internet-era) distribution coexist, they do not simply replace each other.
+- NCE radio's economics in the note: non-commercial educational stations do not pay broadcasting licence fees for their non-profit uses — the regulatory distinction that makes NCE a separate broadcast type from commercial, as in Note 35.
+
+---
+
+# INbatch8 — Image Notes 37–38 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written; unclear handwriting is marked [unclear], not guessed.
+Duplicate rule applied (set 2026-10-31): this set contains 7 image files, 5 of which are duplicate photographs of notes already taken, and those 5 were simply skipped — no content copied from them. Only the 2 new notes below are filed.
+
+## Image Note 37 — Radio Waves, Terrestrial, Satellite, Orbits, IN Law (handwritten, as is)
+
+### Radio Waves = Radio broadcasting
+
+- Radio Waves = Radio broadcasting → broadcasts stations of radio
+- Radio ... Sender broadcaster → radio station → Receiver broadca [broadcast, cut off]
+
+### Broadcast = Terrestrial
+
+- broadcast = Terrestrial
+- Terrestrial = AM, FM and DAB
+- Stations = originate sign [signal, cut off]
+- Signals from a land Transmitter
+
+### Satellite
+
+- But Satellite = satellite radio in earth orbit
+- Satellite radio = earth
+- earth = orbit = range → distance
+- orbit = regular paths, repeating paths
+- mutual gravitational attraction
+- one revolution = body
+- Class = group of ... [partly unclear]
+
+### Paths / Objects / Space / Orbits
+
+- Paths = object
+- Object = space
+- Space = takes object around
+- Objects = orbit
+- Orbits = satellite
+- Satellites = natural (earth + moon)
+- Earth = satellite stations
+- Satellites = earth
+- Sun = ... satellites = ... orbit [partly unclear under crossings]
+
+### Object in motion, No shape (elliptical)
+
+- Object = in motion, No shape (elliptical) = ellipse
+- in motion object = stays in motion until someone pushes or pulls
+- variables (objects) in class ... are in ... [partly unclear]
+
+### IN Law
+
+- IN Law [heading as written]
+- without gravity = earth orbit goes off into space a straight [as written]
+- with gravity = pulled by to the ... network [partly unclear]
+
+Note on condition: this page is heavily crossed with blue lines, and several words under the crossings are unreadable. Only the lines above could be read with confidence; nothing under the crossings was guessed.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Terrestrial vs satellite is the note's split: terrestrial stations originate signals from a land transmitter (AM, FM, DAB); satellite radio originates from a satellite in earth orbit.
+- Orbit in the note's chain: a path is an object's route, space takes the object around, and an orbit is a regular, repeating path held by mutual gravitational attraction — one revolution is one full body cycle around the central body.
+- Natural satellites (Earth's Moon is the note's example) follow the same orbit rule as artificial satellites; the difference is origin, not mechanics.
+- "IN Law" in the note is Newton's first law (inertia) as applied to orbits: an object in motion stays in motion until pushed or pulled; without gravity an earth orbit would go off in a straight line, with gravity it is pulled into a curved, elliptical path. Elliptical = oval, not circular — that is the "no shape" phrase in the image, meaning not a perfect circle.
+- This note is the physics foundation for Note 35/36's satellite and terrestrial broadcast pages: it explains why a satellite stays up, which the broadcast pages assume.
+
+---
+
+## Image Note 38 — NP radio stations, NPR programming, US govt / FCC Act chain, Commercial vs non-edu (handwritten, as is)
+
+### US govt chain as drawn
+
+- Ex Congress, Leg... [Legislature, as written, partly unclear]
+- US govt → FCC Act → communications → broadcasting signals
+- TV Radio
+- US govt derived fee [as written]
+- non edu broadcast [as written, circled]
+- Not Ads fee & TV, Radio — we can use fee broadcast stations for broadcasting [as written]
+
+### NP radio stations
+
+- NP radio stations
+- NPR = programming
+- N/W Programs → 1 call signs, 2 frequency, 3 band, 4 ... of [partly unclear], 5 crate [as written, partly unclear]
+- N/W channel
+- Public
+- NPR stations = Radio programs, N/W channel
+- HD radio + Translator [as written]
+
+### Commercial media
+
+- Commercial media Signals [as written]
+
+Note on condition: this page is also crossed with blue lines, though less heavily than Note 37. Only the lines above could be read with confidence.
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- NP = non-profit radio stations; NPR = National Public Radio, the US public-radio programming network — distinct from a single station, NPR supplies programmes to member stations.
+- A station's identity in the note is its programming metadata: call sign, frequency, band, and channel — the four (plus one unclear) items listed under N/W Programs.
+- HD Radio + translator: HD Radio is digital radio carried alongside analog FM, and a translator is a low-power rebroadcaster that extends a station's coverage — both are ways a public station reaches more listeners without a new full-power licence.
+- Commercial vs non-edu in the note restates Notes 35/36: commercial stations are advertising-funded, non-educational broadcast in this page is written as fee-based ("we can use fee broadcast stations"), and non-profit/public stations are the third model — the note does not settle which fee model applies to which, and none is filled in beyond what is written.
+
+---
+
+# INbatch9 — Image Notes 39–44 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written; unclear handwriting is marked [unclear], not guessed.
+Duplicate rule applied: no duplicate images in this set — all 6 pages are new pages, even where topics overlap earlier notes.
+
+## Image Note 39 — Developer, /usr/local, scripts (rotated, faint — partial transcription only)
+
+### Condition note, stated openly
+
+- This page is photographed upside down and the ink is very faint, with show-through from the other side of the paper. Only the lines below could be read with confidence from the image itself. Per the fill rule set 2026-10-31 09:46 IST, the rest of this note is filled below by understanding the subject, marked [Filled], not left blank for a clearer photo.
+
+### Lines as read (rotated 180° to read)
+
+- Developer ... (??)
+- compiling ... from source code
+- Where you put scripts & small ...
+- Comp... under /usr/local/bin
+- Scripts installed by sys ... /usr/bin
+- /usr/local/bin, /usr/local/lib, /usr/local/etc
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Subject of this note, filled from its readable fragments: where a developer puts software they build themselves, versus where the system puts software it installs.
+- Developer compiling from source code: after ./configure && make, `make install` by default installs into /usr/local — binaries to /usr/local/bin, libraries to /usr/local/lib, configuration to /usr/local/etc, documentation to /usr/local/share. That is the /usr/local tree's whole purpose: locally built software, outside the package manager's tree.
+- Where you put scripts & small programs: personal scripts and small tools go under /usr/local/bin (for all users) or ~/bin (for one user) — never into /usr/bin, which belongs to the distribution's package manager.
+- Scripts installed by the system: distribution packages install to /usr/bin (binaries), /usr/lib (libraries), /etc (configuration) — the paths in Note 40's "Who uses /usr" table. A later package update can overwrite /usr/bin, but it will not touch /usr/local — that separation is why /usr/local exists.
+- So the note's rule, filled in full: build it yourself → /usr/local; install it from the distro → /usr; write it for yourself only → ~/bin. No clearer photograph is needed to state this, because it is the standard Filesystem Hierarchy meaning of the paths the image itself names.
+
+---
+
+## Image Note 40 — IPC blueprints in /usr, Who uses /usr (handwritten, as is)
+
+### IPC blueprints in /usr
+
+- Kernel object definitions
+- ① headers files — /usr/include/sys/*.h
+- ② management tools of IPC
+- process blueprints (execut... [cut off in image])
+- /usr/bin, /usr/sbin
+
+### Who uses /usr
+
+- Normal user → /usr/bin
+- (root) Sys Admin → /usr/bin & /usr/local
+- Sys user → /usr/lib/systemd/system
+- systemd & demons [daemons, as written]
+- S/W Dev & compilers → /usr as repo, /usr/include, /usr/lib
+- package managers → primarily writer / maintainer of /usr dir, /usr entire dir
+- /usr ⇒ read only to write into it [as written — see filled note below]
+
+### Interfaces to /usr as written
+
+- ① CLI for human interface
+  - /usr/local → writing
+  - /usr/share/app → editing
+- ② automated interface for package man
+  - apt, dnf automatically writes & edits
+  - /usr/bin, /usr/share/man
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- /usr = Unix System Resources: the read-mostly tree holding system data, user utilities, and applications — the note's "read only to write into it" means ordinary users read it and do not write into it directly; only package managers (and root, in /usr/local) write there.
+- IPC = inter-process communication: its kernel object definitions live in headers under /usr/include/sys, and its management tools live in /usr/bin and /usr/sbin.
+- Who uses what: normal users run binaries in /usr/bin; sysadmins (root) also use /usr/local; system users (services) use libraries and systemd units under /usr/lib/systemd/system; developers and compilers use /usr/include (headers) and /usr/lib (libraries) as their repository.
+- CLI is the human interface (writing in /usr/local, editing in /usr/share/app); apt/dnf are the automated interface, writing and editing /usr/bin and /usr/share/man on the user's behalf.
+
+---
+
+## Image Note 41 — Hardware / Physical layer, Firmware, /usr holds (handwritten, as is)
+
+### Hardware / Physical layer
+
+- Hardware / Physical layer
+- Firmware — ROM, UEFI, blob
+- Read only [circled]
+
+### /usr = Unix sys resources
+
+- /usr = Unix sys resources
+- contains sys related data
+- user utilities, applications
+
+### /usr holds
+
+- ① Kernel headers ⇒ define interface b/w kernel & sys lib (glibc)
+- ② kernel source code ⇒ /usr/src/linux — actual code used to build or modify kernel
+- ③ User space land ⇒ holds user land side of sys operations
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Stack in the note, bottom to top: hardware/physical layer → firmware (ROM, UEFI, binary blob) → kernel → user space. Firmware is read-only in the note's sense: it is flashed, not written by ordinary users.
+- Kernel headers define the interface between kernel and system library (glibc): user-space programs call glibc, glibc calls the kernel through those headers — that is why headers live in /usr.
+- Kernel source code under /usr/src/linux is the actual code used to build or modify the kernel; it is not the running kernel itself.
+- User space land holds the user-space side of system operations: utilities and applications that run on top of the kernel, not inside it.
+
+---
+
+## Image Note 42 — /proc, /cgroup, /sys, kernfs, debugfs, binfmt (handwritten, as is)
+
+### Header as written
+
+- /proc fs for watching
+- /cgroup is for commanding [as written]
+- below are pseudo fs drivers provides interface kernel / user
+
+### ① procfs (process / task filesystem)
+
+- most essential built in driver for process mgmt
+- It creates /proc dir
+- /proc act as real time window into every running task state, memory, limits
+
+### ② cgroupfs: control group filesystem
+
+- driver manages cgroups (v1, v2)
+- Enforce resource limits on group of tasks
+
+### ③ sysfs: A virtual file system
+
+- mounted as /sys
+- Exports info about device drivers & kernel subsystems, including how they relate to specific task
+
+### ④ kernfs: Helper Driver
+
+- provides the underlying infrastructure for sysfs & cgroup to display their files & dir
+
+### ⑤ debugfs
+
+- used by developers to trace task execution & kernel behaviour
+- exposes ftrace api for deep debugging
+
+### ⑥ binfmt_elf
+
+- built in binary format driver [as written — see filled note below]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Pseudo filesystems are not on disk: they are kernel interfaces presented as files. /proc is for watching (reading task state), /cgroup is for commanding (setting limits) — the note's two verbs are the distinction.
+- procfs: /proc/<pid> is a real-time window into each running task (state, memory, limits); it is built into the kernel, not a disk filesystem.
+- cgroupfs: cgroups v1 and v2 enforce resource limits (CPU, memory, I/O) on groups of tasks — the mechanism containers use for limits.
+- sysfs: mounted at /sys, it exports device drivers and kernel subsystems and how they relate to tasks — the /sys view from Note 25's devices section.
+- kernfs: the helper driver underneath sysfs and cgroupfs, providing the infrastructure for displaying their files and directories.
+- debugfs: the developer tracing filesystem, exposing ftrace for deep debugging of task execution and kernel behaviour.
+- binfmt_elf as written is the ELF binary-format handler; the general mechanism is binfmt (with binfmt_misc for custom formats) — the note's "binfmt_elf" is kept as written, and the generalisation is marked as filled, not original.
+
+---
+
+## Image Note 43 — Memory Management, Process mngt, CPU scheduling (handwritten, as is)
+
+### Memory Management — How the OS controls RAM [heading crossed out in the image, kept as written]
+
+### Process mngt
+
+- first program (ls cmd) to perform a job [as written]
+- ① process can be ① independent ② cooperative (IPC)
+- ② process scheduling: Tells which process gets to run
+  - ① Primitive → can move process state [as written — see filled note below]
+  - ② non-primitive → cant move
+
+### ③ Process mngt (memory layout as written)
+
+- 1 stack
+- 2 heap
+- 3 link [as written]
+- 4 data
+
+### ④ CPU scheduling
+
+- determining which process will own CPU to run
+- ① scheduler → selects process from ready to run
+- ② dispatcher → switch process, gives control of CPU to a process selected by scheduler
+
+### ⑤ Scheduling algo
+
+- FCFS, SJF, SRTF
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- "Primitive / non-primitive" in the image is the note's spelling of preemptive / non-preemptive scheduling: preemptive scheduling can move (preempt) a running process off the CPU, non-preemptive cannot — the correction is marked as filled, and the original spelling is kept above.
+- Process memory layout in the note (stack, heap, link, data): stack = function-call frames, heap = dynamic allocation, data = initialised globals/statics, and "link" as written is likely text/code segment — the mapping is filled, not original, because the image writes only "link".
+- Independent processes do not share memory; cooperative processes communicate through IPC (the subject of Note 40).
+- Scheduler selects from the ready queue; dispatcher performs the context switch and hands the CPU to the selected process — selection and switching are two different jobs.
+- Scheduling algorithms: FCFS (first-come, first-served), SJF (shortest job first), SRTF (shortest remaining time first).
+
+---
+
+## Image Note 44 — Memory Managed by OS, Core Concepts (handwritten, as is)
+
+### Memory Managed by OS
+
+- Memory mngt is the art of illusion
+- Kernel creates a magical theatre where every running process (task) believes it has Entire Computer memory itself
+- System stores all currently running processes in the main memory or RAM
+- RAM provides temporary saving & working with any runtime data on the system at acceptable speed
+- Memory mngt is the process of controlling & coordinating computer memory (RAM), assigning portions (blocks) to various running programs (tasks) to optimize overall sys performance
+- Physical RAM is finite (32 GB)
+- but every process thinks it has access to a massive contiguous blocks of memory (Eg 256TB)
+- This illusion is called Virtual Memory
+- memory mngt entirely handled by kernel with Memory Management (MM) subsystem
+
+### Core Concepts
+
+- ① RAM = actual H/W that sticks on motherboard
+- ② virtual memory = Technique kernel plays on processes (tasks)
+  - Every process thinks it has a massive continuous block of memory all to itself
+- ③ MMU = H/W component in CPU, that acts the translator, mapping ... [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image, to be verified before append to comprehensive]
+- Virtual memory is the illusion: physical RAM is finite (32 GB in the note's example), but each process sees a massive contiguous address space (256 TB in the note's example) all to itself.
+- RAM is the actual hardware on the motherboard, temporary storage for runtime data at acceptable speed; virtual memory is the kernel technique that presents RAM (plus swap/disk backing) as that contiguous space.
+- MMU = Memory Management Unit, the hardware component in the CPU that translates virtual addresses to physical addresses (mapping virtual pages to physical frames) — the sentence cut off at the bottom of the image is completed here as filled, not as original text.
+- Memory management is entirely handled by the kernel's MM subsystem, assigning blocks (pages) to running tasks to optimise overall system performance — the same MM/TLB/MMU material as the earlier text batches, here in the note's "art of illusion" framing.
+
+---
+
+# INbatch10 — Image Notes 45–50 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+
+## Image Note 45 — Drivers (interface) (handwritten, as is)
+
+- File system based & VFS interfaces that expose Kernel internals to user space (/proc, cgroups, etc)
+- There are kernel File system drivers that Expose process / task data in user space
+- These are usually built in
+- These act as the bridge b/w kernel internal data & your terminal commands
+- * procfs: Driver (fs/proc) : its code generates /proc directory
+- * cgroup: driver (kernel/cgroup) — Subsystem that enforces resource limits, exposed via sys/fs/cgroup
+- * binfmt_elf.c : Driver — Crucial for task management
+- * In Linux file is just an Interface
+- * kernel Drivers (procfs, cgroupfs) of the file system act like translators
+- * when you interact with files in /proc, /sys/fs/cgroup, you are not reading bytes from storage, you are sending req to kernel
+- It acts as live translator & generates fresh info on spot
+
+### [Filled — added, not in the original image]
+- VFS = Virtual File System: the kernel layer that lets different filesystems (disk, procfs, sysfs, cgroupfs) all appear as ordinary files and directories to user space.
+- procfs (fs/proc) generates /proc on the fly: reading /proc/<pid>/status does not read a disk file, it asks the kernel to format that task's current state at that moment — that is why the note calls it a live translator.
+- cgroupfs (kernel/cgroup) exposes /sys/fs/cgroup, where writing a limit (for example memory.max) is a command to the kernel, not a file edit — reading it back shows the enforced limit.
+- binfmt_elf.c is the ELF loader: when you exec a binary, this driver reads its ELF headers, sets up its memory layout, and hands it to the kernel as a new task — hence "crucial for task management", and it completes Note 42's binfmt_elf entry.
+- This note is the interface version of Note 42 (pseudo filesystems): same drivers, here explained as the bridge between kernel internals and terminal commands.
+
+---
+
+## Image Note 46 — Module & Libraries used for process Managt (handwritten, as is)
+
+- Process mngt is not a single isolated subsystem
+- Its tightly integrated with across: 1 kernel core data structures, 2 Scheduling, 3 Memory Managt, 4 signals, namespaces & cgroups
+- Everything revolves around struct task_struct
+- 1 Kernel core (built in logic): There are not separate modules you can modprobe — They are compiled into vmlinuz binary — heart of process / task life cycle, scheduling, task state mngt — compiled statically into vmlinuz, which means can't unload — No loadable kernel module implements core logic — Its part of ... or brain
+- Loadable kernel module is a plug in
+- PID 1 = 'init' system (systemd) — This takes total control of the system
+- PID 0 = (idle / swapper)
+- PID 1 = primary user-space process / task manager — It supervises all other processes & manages their cgroups (Quotas)
+
+### [Filled — added, not in the original image]
+- "Part of ... or brain" in the image is filled as: the kernel core is the brain of the system — process lifecycle, scheduling, and task-state management are built into vmlinuz itself, not plug-ins, so they cannot be unloaded with modprobe/rmmod the way a driver module can.
+- Loadable modules are plug-ins by contrast: device drivers, filesystems, and network protocols can be loaded and unloaded at runtime; core process management cannot.
+- PID 0 (idle/swapper) is the kernel's idle task, the first task, which runs when no other task is ready; PID 1 (systemd on modern Linux, written 'init' in the note) is the first user-space process, parent of all others, and the one that supervises them and manages their cgroup quotas — the same PID 0/1/2 chain as Note 25's process note (PID 2 = kthreadd, parent of kernel threads, is the missing middle step, filled here).
+- struct task_struct is the process descriptor (PCB): every task, process or thread, is one task_struct, and everything in process management revolves around it — the subject of Note 49.
+
+---
+
+## Image Note 47 — ⑫ Monitoring & Observability for process or tasks, and Process Management in VM vs Containers (handwritten, as is)
+
+### ⑫ Monitoring & Observability for process or tasks
+
+- 1 Host level / Node level: prometheus, netdata, htop, ps, top
+- 2 Container / K8 Level: cAdvisor, prometheus, grafana
+- 3 Full stack: Datadog, New relic, Dynatrace, Splunk
+- 4 Cloud: AWS CloudWatch, Azure Monitor
+
+### Process Management in VM vs Containers
+
+- VM: own kernel + full guest OS (2 level scheduling), host process
+  - Hypervisor (VMM) — KVM sees the VM as task / processes on the host / physical machine
+  - Inside VM lives a guest kernel with its own process states, scheduler, /proc (VFS) etc
+  - Full isolation (separate kernel, memory, devices)
+- Containers: are just ordinary process with kernel Isolation primitives applied at creation time
+  - No second kernel
+  - Core primitives (7 types ns proxy in task_struct): ① Namespaces, ② cgroups = resource limits
+
+### [Filled — added, not in the original image]
+- Monitoring levels in the note are a stack: host/node tools (htop, ps, top for live view; Prometheus, Netdata for metrics) → container/Kubernetes tools (cAdvisor for per-container metrics, Prometheus + Grafana for collection and dashboards) → full-stack commercial platforms (Datadog, New Relic, Dynatrace, Splunk) → cloud-native monitoring (AWS CloudWatch, Azure Monitor).
+- "2 level scheduling" for VMs: the host hypervisor schedules the VM as a task on physical CPUs, and the guest kernel schedules its own processes on virtual CPUs — two schedulers, one inside the other.
+- Containers have only one scheduler (the host kernel's) because there is no second kernel: a container is an ordinary process with namespaces (isolation of view) and cgroups (limits on resources) applied at creation time — the same two primitives as Note 48, here as the container definition.
+- "7 types ns proxy in task_struct" is filled as: the namespace types are recorded in task_struct's nsproxy (the namespace proxy structure) — the 8 types are listed in Note 48, the note's "7" counts the original seven before time was added.
+
+---
+
+## Image Note 48 — ⑧ cgroups Quotas, ⑨ kernel threads, ⑩ Namespaces, ⑪ cgroups (handwritten, as is)
+
+### ⑧ (control groups cgroups) Quotas
+
+- resource limiting / accounting (CPU, memory, I/O, N/W)
+- combined with cgroups
+
+### ⑨ (kernel threads)
+
+- Special tasks that run only in kernel mode
+
+### ⑩ Namespaces & cgroups (view) ⇒ for resource isolation — Kernel Level
+
+- They give a process (group of process) its own isolated view of resources
+
+### Namespace Types — Isolates
+
+- 1. PID — process ID's
+- 2. Mount (mnt) — mount points
+- 3. Network (net) — Network stack
+- 4. UTS — hostname & NIS Domain name
+- 5. IPC — System V IPC, POSIX msg Ques, semaphores
+- 6. User — [isolates: user and group IDs, filled — see below]
+- 7. cgroup — [isolates: cgroup membership view, filled — see below]
+- 8. Time — [isolates: system clocks, filled — see below]
+- namespaces are hierarchical (PID & user)
+- most containers share the n/w namespace in pod
+- inspect namespace with lsns, /proc/PID/ns or nsenter
+
+### ⑪ cgroups (Resource managt) Quotas
+
+- organize process into hierarchical groups & apply controllers (subsystems) to limit resources
+- Two versions exist
+- old cgroup1: a task can belong to different cgroups for different resources — more complex, multiple hierarchies
+- modern cgroup2: all controllers under one tree — /sys/fs/cgroup
+
+### [Filled — added, not in the original image]
+- The image lists namespace types 6, 7, 8 by name only, with no "Isolates" column entry — filled from the subject: user namespace isolates user and group IDs (a root inside a user namespace is unprivileged outside it); cgroup namespace isolates the cgroup path a process sees; time namespace isolates the system clocks (CLOCK_MONOTONIC, CLOCK_BOOTTIME) a process sees.
+- Namespace vs cgroup, the note's core distinction: namespaces give a process its own isolated *view* of resources (what it can see); cgroups give a process a *quota* on resources (how much it can use). View vs limit is the whole model.
+- Kernel threads (⑨) are special tasks that run only in kernel mode — no user-space memory, parented to kthreadd (PID 2) — for example kworker, kswapd, and migration threads.
+- Hierarchical namespaces: PID and user namespaces nest — a child PID namespace's processes are invisible to the parent namespace's numbering, and a child user namespace is subordinate to its parent.
+- cgroup v1 vs v2: v1 has one hierarchy per controller (a task can be in different groups for CPU vs memory), v2 has one unified tree at /sys/fs/cgroup with all controllers under it — the modern default, and the one Kubernetes uses.
+
+---
+
+## Image Note 49 — Tasks, task_struct, process States, Identifiers, Scheduling, /proc, Signals, Namespaces (handwritten, as is)
+
+- Treat process & threads as "Tasks"
+- Managing Tasks through a unified DS within kern
+- process management handles life cycle of processes / tasks (Creation, scheduling, resource allocation, context switching & termination)
+- Threads are simply tasks that share certain resources (Address space) with others in the same thread group
+- All tasks are represented by a struct task_struct — a (PCB) struct task_struct defined in "include/linux/sched.h" — This is a large data structure contains everything the kernel needs to know about a process / task
+- ① process States: current condition of the process / task — A task state stored in "task_struct → state"
+  - ① Task_Running, ② Task_Interruptible, ③ Task_Uninterruptible, ④ Task_Stopped, ⑤ Task_Zombie, ⑥ Task_Dead, ⑦ Task_Wake
+- ② Identifiers: unique identifiers like PID & TGID (represents the PID of main thread)
+- ③ Scheduling: default scheduler for normal tasks is the CFS (kernel/sched/fair.c)
+- ④ Creation Life cycle
+- ⑤ /proc file system, userface interface to task data
+- ⑥ Signals: used for IPC "way to talk to a process"
+- ⑦ Namespaces: Task isolation mechanism
+
+### [Filled — added, not in the original image]
+- PCB = Process Control Block: task_struct is Linux's PCB, defined in include/linux/sched.h, and it holds everything the kernel needs — state, identifiers, scheduling data, memory map, open files, signal handlers, namespace pointers.
+- Task states in plain terms: Running = on a CPU or ready to run; Interruptible = sleeping, can be woken by a signal; Uninterruptible = sleeping in a kernel operation (usually disk I/O), cannot be interrupted; Stopped = paused by a signal (SIGSTOP); Zombie = finished but its exit status not yet collected by its parent; Dead = fully gone; Wake (⑦ in the image) is filled as the waking transitional state — a task being woken from sleep back toward Running, not a steady state like the other six.
+- PID vs TGID: PID identifies one task (thread); TGID identifies the thread group (the process as a whole) and equals the PID of the main thread — that is how the kernel tells "one process with many threads" from "many processes".
+- CFS = Completely Fair Scheduler (kernel/sched/fair.c): the default scheduler for normal tasks, which distributes CPU time fairly among tasks — the same scheduler the earlier text batches named, here tied to its source file.
+- Signals as IPC: a signal is the kernel's way to talk to a process — SIGTERM to ask it to stop, SIGKILL to force it, SIGSTOP/SIGCONT to pause and resume — distinct from pipes, queues, and shared memory, which carry data.
+
+---
+
+## Image Note 50 — Operating system, Core functions, ① Process Management (handwritten, as is)
+
+- Heading "Spring boot" is crossed out in the image; the actual heading is Operating system [kept as written, with the crossing noted]
+- Operating system: A software that acts an intermediary between hardware & user applications
+- It provides manages hardware resources (CPU, RAM, storage, peripherals) and provides stable, consistent Env for programs to run
+- "Starts / stops programs & decides which CPU core runs which task"
+- Core functions: ① Process Management
+  - process is nothing but a program in execution
+  - process needs certain resources including CPU time, memory, files & I/O Devices to accomplish a task
+  - OS Responsible for: process creation & deletion, scheduling & termination; process synchronization; process communication (IPC)
+  - A process is a running instance of a program with its own "Virtual Address Space", open files, registers & resources (CPU, RAM, storage, I/O)
+  - process management is core responsibility for creating, scheduling, executing & terminating process
+  - Its a core subsystem responsible for creating, execution & termination of tasks
+  - Linux treats both process & threads as tasks
+  - Ensures CPU time is fairly distributed among tasks
+
+### [Filled — added, not in the original image]
+- This note is the foundation page for the whole INbatch9–10 Linux series: it defines the operating system as intermediary between hardware and user applications, then defines process management as its first core function — everything in Notes 43, 44, 46, and 49 hangs off this definition.
+- "Program in execution" vs "running instance": a program is a static file on disk; a process is that program loaded, with its own virtual address space, open files, registers, and resources — the same virtual-memory illusion as Note 44, here as the process definition.
+- Process management's full job list, filled from the note's fragments: creation and deletion, scheduling, execution, termination, synchronisation (so cooperating processes do not corrupt shared data), and communication (IPC, so they can cooperate at all).
+- Fair distribution of CPU time is CFS's job (Note 49) — the note's last line is the scheduler's promise, not a separate mechanism.
+
+---
+
+# INbatch11 — Image Notes 51–54 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: this set contains 6 image files, 2 of which are duplicate photographs of notes already taken, and those 2 were simply skipped — no content copied from them. Only the 4 new notes below are filed.
+
+## Image Note 51 — OS stack, Process mgnt core mechanism (handwritten, as is)
+
+### OS stack diagram (described in words, not copied as a picture)
+
+- Top: User programs
+- OS layer, containing, top to bottom: User interface → System calls → File | memory | process | N/W | Power
+- Bottom: Hardware
+
+### Quote as written
+
+- "Process mgnt is the core mechanism by which kernel controls, schedules, monitors running processes to ensure efficient resource allocation & stability, achieved through kernel level DS (task_struct) (PCB), Scheduling algo & Sys calls"
+
+### Core mechanisms to achieve ps mngt
+
+- ① process rep: PCB or task_struct — which contains everything about processes: PID, memory, current state (running, sleeping, zombie...)
+- ② Creation (fork() / exec())
+- ③ Process scheduling: Decides which runs next — CFS
+- ④ process states
+- ⑤ signals: kernel communicates with processes using signals, which are s/w interrupts
+- Systemd / init default process → root for all other processes [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- Stack reading, top to bottom: user programs talk to the OS through the user interface (shell, GUI); the interface makes system calls; system calls reach the kernel's managers for files, memory, processes, network, and power; those managers drive the hardware. That is the same stack as Note 41 (hardware → firmware → kernel → user space), here drawn from the top down.
+- The cut-off last line is filled as: systemd (PID 1, the init process) is the default first process and the root (parent) of all other user-space processes — the same PID 1 role as Note 46, here stated as the end of the core-mechanisms list.
+- Core mechanisms in order: represent the process (task_struct/PCB) → create it (fork to copy, exec to replace the image) → schedule it (CFS decides which runs next) → track its state (running, sleeping, zombie, and the rest from Note 49) → communicate with it (signals as software interrupts).
+
+---
+
+## Image Note 52 — User Accounts, OS, Kernel, Distributed systems, Single Host, Multihost, Multi program, Multi task (handwritten, as is)
+
+- 0. User Accounts
+- 1. Operating systems
+- 2. kernel
+- 3. Distributed systems
+- 4. Single Host / Node / Server Admin — Managing & maintaining single server — Managing dedicated server (physical or virtual) — Monolithic Arch
+- 5. Multihost (Distributed system)
+- 6. OS is a s/w which manages h/w — Controls allocation of resources, services
+- 7. Multi program (1 CPU, many s/w run) — Single CPU runs many programs
+- 8. Multi task (1 CPU, many users can use) — Multiple users can run 1 CPU — Time sharing, batch processing [last line partly unclear in the image]
+
+### [Filled — added, not in the original image]
+- This note is the scope ladder for the whole OS series: it starts at user accounts (who uses the system), then the operating system, then the kernel inside it, then distributed systems (many machines acting as one), then administration of a single host/node/server (one dedicated physical or virtual server, monolithic architecture), then multihost administration (a distributed system of many hosts).
+- Single host vs multihost is the admin split: single-host admin maintains one server; multihost admin maintains a fleet that must coordinate (the Kubernetes/cluster world of the earlier batches).
+- Multi program vs multi task, the note's distinction, filled in plain terms: multiprogramming = one CPU runs many programs by switching between them so the CPU is never idle waiting on I/O; multitasking = one CPU serves many users/tasks, each getting a time slice — time sharing (interactive, each user feels alone on the machine) and batch processing (jobs queued and run without interaction) are the two multitasking modes, which is what the partly unclear last line is filled as.
+- The note's item 6 is the OS definition restated from Note 50: software that manages hardware and controls allocation of resources and services.
+
+---
+
+## Image Note 53 — Virtualization (handwritten, as is)
+
+- ① Hardware / Kernel Level — VM = KVM
+- ② OS level shared kernel — container = docker
+- ③ Storage level (SDS) — Ceph: Block storage = SAN (fiber), File storage = NAS (TCP/IP)
+- ④ Network — SDN = NFV, OVS
+- Table as written (layer → tool → result):
+  - CPU / Kernel — KVM — VM
+  - OS / User space — Docker — container
+  - Storage — Ceph — SDS
+  - Network — OVS — SDN
+  - Peripherals — virtio — IOV
+
+### [Filled — added, not in the original image]
+- Four virtualization levels in the note, each with its tool and its result: hardware/kernel level virtualizes the whole machine (KVM → VM, with its own kernel); OS level virtualizes on a shared kernel (Docker → container, no second kernel, as in Note 47); storage level virtualizes disks (Ceph → SDS, Software-Defined Storage); network level virtualizes the network (OVS, Open vSwitch → SDN, Software-Defined Networking, with NFV, Network Functions Virtualization, as its companion).
+- Ceph's split, filled: block storage over SAN (Fibre Channel, as written "fiber") presents raw disk blocks to a host; file storage over NAS (TCP/IP, NFS/SMB) presents files over the network — the same block/file/object split as the earlier storage batches, here in one line.
+- Peripherals row, filled: virtio is the paravirtualized device standard for VMs, and IOV (SR-IOV, from Note 31) is the hardware path that lets a VM access a physical device directly — the two ways a VM reaches peripherals, virtualized vs direct.
+- "Hardware" crossed out and replaced by "CPU / Kernel" in the table is kept as a correction in the transcription: the first level is CPU/kernel virtualization, not hardware in general.
+
+---
+
+## Image Note 54 — Tools: iptables, Netfilter, sshd / cockpit (handwritten, as is)
+
+### ① iptables (Rules Enforcement)
+
+- for configuring Netfilter (Address family)
+- tool to add, delete, modify rules in kernel space
+- used to define netfilter rules
+- Setting routes [as written]
+- iptables.service to save rules
+
+### ② Netfilter — real firewall
+
+- kernel space tool
+- performs: packet filtering based on iptables rules, NAT, packet mngt
+- universal interface for packets which comes from any drivers which belongs to /net/device
+
+### ③ sshd / cockpit = for n/w security & firewall
+
+- Remote access = sshd / cockpit
+- web / app server = www-data, httpd, nginx
+- Database = mariadb (mysql), postgres
+- firewall security = ufw / fail2ban
+- job scheduling = cron
+- N/W, DHCP = nmcli, dhcpd, networkd
+
+### [Filled — added, not in the original image]
+- iptables vs Netfilter, the note's core pair, filled in plain terms: Netfilter is the kernel-space firewall framework (the hooks in the network stack that inspect packets); iptables is the user-space tool that writes rules into it — iptables does not filter packets itself, it configures the kernel's Netfilter to do so. "Setting routes" in the iptables section is filled as a loose phrase: iptables sets packet-handling rules, routing itself is the kernel routing table (ip route), not iptables.
+- Address family in the iptables line means iptables handles IPv4 (ip6tables handles IPv6, nftables handles both) — the family the rules apply to.
+- Netfilter's three jobs in the note: packet filtering (allow/deny by rule), NAT (rewriting addresses, the masquerading that lets private networks reach the internet), and packet management (connection tracking, mangling) — all on packets arriving from any driver under /net/device.
+- The sshd/cockpit section is the admin's tool map, filled: remote access via sshd (secure shell) or Cockpit (web console); web/app servers run as www-data (Debian/Ubuntu) under httpd (Apache) or nginx; databases are MariaDB (MySQL-compatible) or PostgreSQL; firewall security is ufw (Uncomplicated Firewall, a frontend to iptables/nftables) or fail2ban (bans IPs after failed logins); job scheduling is cron; network and DHCP are nmcli (NetworkManager CLI), dhcpd (DHCP server daemon), and networkd (systemd-networkd).
+
+---
+
+# INbatch12 — Image Notes 55–60 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicate images in this set — all 6 pages are new pages, even where topics overlap earlier notes.
+
+## Image Note 55 — Seccomp, CNI, cgroups, Pod resource limits (handwritten, as is)
+
+- So one way is Seccomp (restricting sys calls) — How k8 locks down, networks & pod limits at kernel level
+
+### CNI
+
+- CNI = plugging into kernel n/w namespace
+- setups n/w interfaces in pods using linux kernel n/w features
+- Kubelet calls CNI plugin (calico, cilium, flannel)
+- CNI creates a veth pair
+- CNI assigns IP from node's pod CIDR
+- CNI setups routing + iptables
+
+### Cgroups — limiting CPU / memory per pod
+
+- Limits accounts & isolates resource usage per pod of processes (pods) at kernel level
+- each pod gets its own cgroup slice
+- Resources you can limit:
+  - 1. CPU → CFS Quota → enforces cpu limits
+  - 2. memory → OOM killer + limit → pod killed if exceeds
+  - 3. Storage → BlkIO cgroup → I/O throttling
+  - 4. PID → PID cgroup → limits no processes inside pod
+  - 5. Huge pages → HugeTLB cgroup → limits huge page usage
+
+### Exam — Resources
+
+- Hard limit (limits): CPU = 500m → CFS Quota; memory = 512M → hard limit of RAM for pod
+- Soft limit (requests): CPU = 250m → guaranteed minimum; mem = 256 [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- The cut-off request memory is filled as 256Mi (the usual companion to a 512Mi limit in the note's example): requests are the guaranteed minimum the scheduler reserves, limits are the hard ceiling the kernel enforces — CPU over limit throttles, memory over limit gets the container OOM-killed.
+- CNI flow in order: kubelet asks the CNI plugin to set up networking for a new pod → plugin creates a veth pair (one end in the pod's network namespace, one end on the host) → assigns an IP from the node's pod CIDR → sets up routing and iptables rules so the pod can reach the cluster and the outside.
+- Seccomp, CNI, and cgroups are the note's three kernel-level lockdowns: seccomp restricts which system calls a pod may make, CNI controls its network, cgroups limit its resources — the same three mechanisms, here as the Kubernetes pod-lockdown set.
+
+---
+
+## Image Note 56 — Verify on your cluster, higher-level abstractions, Seccomp profiles (handwritten, as is)
+
+### How to verify this on your cluster directly
+
+- kubectl api-resources --verbatim=false [as written]
+- Specific: kubectl api-resources | grep -E 'pod'
+
+### Higher-level abstractions
+
+- higher level abstractions like all except pod dont run containers themselves
+- instead they create & manage pods to achieve desired behavior
+- so when you creating Deployment your not directly creating containers, your defining desired state, k8 automatically spins up & manage pods to match that state
+- pods = workers
+- workloads = supervisors who assign, monitor, replace workers as needed
+
+### Seccomp profile in workloads
+
+- So the Seccomp profile is set within the security context section in workloads
+- It can applied at Pod level or individual container level (where container settings overrides pods)
+- Seccomp filter → restricts system calls or blocks per pod profile
+- Per pod profile, those profiles are:
+  - 1. RuntimeDefault = safe sys calls for pods, blocks 40+ dangerous sys calls
+  - 2. Localhost = custom JSON policy you define on each node
+  - 3. Unconfined = no filtering
+- Spec as written: securityContext: seccompProfile: type RuntimeDefault / Localhost / Unconfined
+
+### [Filled — added, not in the original image]
+- kubectl api-resources lists every API resource the cluster knows; grepping for 'pod' shows the pod resource and its verbs — the note's verification step for "pod is the core primitive, everything else manages pods".
+- Pods = workers, workloads = supervisors is the note's analogy, filled in plain terms: a Deployment, DaemonSet, or StatefulSet never runs a container directly; it declares a desired state (how many pods, which image, which limits), and the controller creates, monitors, and replaces pods until reality matches that state.
+- Seccomp profile precedence: container-level securityContext overrides pod-level — a container can loosen or tighten its own profile relative to the pod's.
+- RuntimeDefault is the container runtime's default profile (safe system calls only, dangerous calls like mount, reboot, and kernel-module loading blocked); Localhost is a custom JSON profile stored on each node and referenced by path; Unconfined disables seccomp filtering entirely.
+
+---
+
+## Image Note 57 — Intra / node workloads, Batch & automation workloads, 7 native workload kinds (handwritten, as is)
+
+### ④ Intra / node workloads (Static pods)
+
+- DaemonSet: Ensures a copy of a specific pod runs on all or selected nodes in the cluster (common for monitoring or logging agents)
+- automatically adds pods to new nodes as they join in cluster
+- common for logging agents (fluentd) & monitoring tools (prometheus, node exporter)
+
+### ⑤ Batch & automation workloads
+
+- Job — yaml (apiVersion: batch/v1): it runs pods until a task is completed then terminates them (pods) — it creates one or more pods, tracks their successful execution & stops when the task is done — Ex db migrations, backups
+- CronJob (apiVersion: batch/v1): schedule jobs to run at specific time — schedules & runs jobs periodically based on cronjob time schedule (Ex running cleanup script every midnight)
+- These 7 are native workload kinds built into a standard k8 cluster
+- you can add custom workload kinds via (CRD)
+- Ex Argo Rollout = for Canary / Blue-Green [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- The "7 native workload kinds" in the note are filled as: Pod, Deployment, ReplicaSet, DaemonSet, StatefulSet, Job, CronJob — the built-in controllers of a standard cluster (the note covers ④ DaemonSet and ⑤ Job/CronJob on this page, and ①–③ on Note 58).
+- DaemonSet's rule is "one pod per node": when a new node joins, the DaemonSet controller automatically adds the pod there; when a node leaves, its pod goes with it — that is why logging (Fluentd) and monitoring (Prometheus node exporter) are DaemonSets, not Deployments.
+- Job vs CronJob: a Job runs pods once until the task completes, then terminates them; a CronJob is a Job on a schedule, creating a new Job at each cron time (midnight cleanup is the note's example).
+- CRD = Custom Resource Definition: the way to add a custom workload kind (Argo Rollout is the note's example, for canary and blue-green deployments) without changing Kubernetes itself — the cut-off line is filled as "Argo Rollout = for canary / blue-green deployments", the two progressive-delivery strategies.
+
+---
+
+## Image Note 58 — Deployment, DaemonSet, Network plugin, Core primitive Pod, Stateless vs Stateful workloads (handwritten, as is)
+
+### Add-on mapping as written
+
+- ① Deployment (Core DNS) — Handles name resolution
+- ② DaemonSet (kube proxy) — Handles n/w rules
+- ③ DaemonSet / Deployment (Network plugin) — implements CNI for container communication
+- All Workloads 7 built into the native k8 cluster
+
+### ① Core primitive = pod (apiVersion: v1)
+
+- all other workloads manage pods under the hood because pod runs one or more containers
+- (deployments / daemonset etc) higher level abstractions dont directly run containers themselves, instead they create & manage pods to achieve their desired behaviour
+
+### ② Stateless workloads = doesnt remember connections
+
+- Deployment (apiVersion: apps/v1): most common one, used for stateless apps like web servers — It handles rolling updates, rollbacks & scaling — Ensures a specified number of identical pods are running by ReplicaSet
+
+### ③ Stateful workloads = remembers connections
+
+- StatefulSet, yaml (apiVersion: apps/v1): Manage pods that need stable, unique identities and persistent storage (like db) — used for applications that require a unique, stable identity or persistent storage (like db's, kafka, redis) — Pods created sequentially & keep fixed names (db0, db1)
+
+### [Filled — added, not in the original image]
+- The add-on mapping at the top is filled in plain terms: CoreDNS (usually a Deployment) handles name resolution inside the cluster; kube-proxy (a DaemonSet, one per node) handles network rules (Service forwarding); the network plugin (CNI, often a DaemonSet) implements pod-to-pod communication — three cluster add-ons, each itself a workload.
+- Stateless vs stateful is the note's split: stateless workloads (Deployment) do not remember connections or identity — any pod can replace any other, so rolling updates, rollbacks, and scaling by ReplicaSet are safe; stateful workloads (StatefulSet) remember — each pod gets a stable, unique identity and persistent storage, pods are created sequentially (db0, then db1), and a replacement pod keeps the same name and storage.
+- ReplicaSet is the Deployment's worker: the Deployment declares the desired replica count, the ReplicaSet maintains that many identical pods, and the Deployment manages ReplicaSets across updates and rollbacks.
+
+---
+
+## Image Note 59 — In Linux vs In k8, Seccomp, Default workloads (handwritten, as is)
+
+### In Linux vs In k8
+
+- In Linux: one kernel, one userspace
+- In k8: one kernel, many userspaces (isolated) — one host kernel shared by many pods, but each pod thinks it has own OS via Namespace isolation
+
+### How k8 locks down, networks & limits pods at kernel level
+
+- Seccomp (Secure computing mode) = restricting system calls
+- it filters which sys calls a pod can make to the host kernel via (conf in yaml) Runtime (Node / VM)
+- Pod app syscalls / cmds (mount, reboot) → Seccomp filters syscalls (per pod profile) → Allowed → executes kernel; Denied → killed or logged
+- Seccomp profiles are assigned to your 'pods and containers' by you, the user define them in your workload's yaml
+- (workload's yaml)
+- Default workloads (platform dependent): Distribution provider you use will provides (AKS, EKS, GKE, k3s)
+
+### [Filled — added, not in the original image]
+- One kernel, one userspace (Linux) vs one kernel, many userspaces (Kubernetes) is the note's whole model: the host kernel is shared by all pods, but namespace isolation makes each pod think it has its own OS — the same namespace view from Note 48, here as the cluster definition.
+- Seccomp flow in the note, filled in order: pod app attempts a system call (mount, reboot are the dangerous examples) → seccomp filter checks the pod's profile → allowed calls execute in the kernel, denied calls kill the process or log the attempt, depending on the profile's action.
+- "Default workloads (platform dependent)" is filled as: managed distributions (AKS, EKS, GKE, k3s) ship their own default add-on workloads (CoreDNS, kube-proxy, CNI, metrics) — the platform chooses them, the user does not install them by hand.
+
+---
+
+## Image Note 60 — Server OS = Linux vs K8-cluster OS, Pod shared IP / storage / atomic deployment (handwritten, as is)
+
+### Server OS = Linux vs K8-cluster OS
+
+- ① Physical Server OS is Linux
+- CSI Drivers mount storage
+- CNI setups N/wing
+- Containers inside Pod has User space + Kernel space
+- Pods: Shares the same network namespace + storage, moving service [as written]
+
+### Container vs Pod
+
+- Container designed to run a single process, in real world apps require related helper process to work alongside the main application
+- A Pod solves this by grouping related helper process into single [unit, cut off]
+
+### Shared N/W IP
+
+- Containers inside the same pod talk to each other instantly over "localhost", eliminates external n/w setup
+
+### Shared Storage volumes
+
+- multiple containers can read / write to the same folder simultaneously without permissions conflict
+
+### Atomic deployment
+
+- All containers in a pod are guaranteed to schedule "start, stop, live together" on the exact same physical / virtual machine as a single unit on server [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- The cut-off sentence is filled as: a pod groups related helper processes (sidecar, adapter, ambassador patterns from the earlier batches) into a single unit, so the main application and its helpers share a fate.
+- Why a pod exists, in the note's logic: a container is designed for one process, but real applications need helpers (a log shipper, a proxy, a config reloader) alongside the main process — a pod is the unit that lets them run together.
+- Shared network IP: all containers in a pod share one network namespace, so they share one IP and talk over localhost with no external networking — the same pod IP model as Note 55's CNI setup, here as the benefit.
+- Shared storage volumes: containers in a pod can mount the same volume (emptyDir is the usual one) and read/write the same folder — the sidecar pattern's data path.
+- Atomic deployment: all containers in a pod are scheduled, started, stopped, and moved together, on the exact same node, as one unit — a pod is never split across nodes.
+- CSI drivers mount storage (the storage counterpart to CNI for networking): CSI = Container Storage Interface, the plugin system that lets a pod's volumes come from cloud disks, NFS, Ceph, or any other storage backend.
+
+---
+
+# INbatch13 — Image Notes 61–66 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicate images in this set — all 6 pages are new pages, even where topics overlap earlier notes.
+
+## Image Note 61 — Kernal: core OS component, airport analogy (handwritten, as is)
+
+- Kernal: core OS component
+- collection of system calls
+- System call interface between process & OS [cut off at the right edge]
+- Responsible for managing system resources (CPU, memory, storage, Network, I/O Devices) [partly cut off at the right edge]
+- purpose is to provide services to other s/w [cut off at the right edge]
+- Control hardware resources
+
+### Airport analogy as written
+
+- kernal = The controller
+- apps = planes
+- sys cal = signals
+- H/W = runway
+
+### [Filled — added, not in the original image]
+- Cut-off lines at the right edge are filled from the subject: the system-call interface sits between processes and the OS; the kernel manages CPU, memory, storage, network, and I/O devices; its purpose is to provide services to other software and to control hardware resources — the same kernel definition as Note 50, here in one list.
+- Airport analogy, filled in plain terms: the kernel is the air-traffic controller, applications are planes, system calls are the signals (radio instructions) planes send to the controller, and hardware is the runway they land on and take off from. The controller does not fly the planes, it decides who uses the runway and when — just as the kernel does not run applications, it decides which task gets the CPU, memory, and devices.
+- This note is the kernel counterpart to Note 51's OS stack: the kernel is the core component inside the OS, not the whole OS.
+
+---
+
+## Image Note 62 — /etc/group, /etc/gshadow (handwritten, as is)
+
+- /etc/group — group definitions containing:
+  - 1 group name
+  - 2 password placeholder
+  - 3 GID
+  - 4 member list
+- /etc/gshadow — group password storage
+
+### [Filled — added, not in the original image]
+- /etc/group is the group database, one line per group, colon-separated: group name, password placeholder (x, meaning the real password, if any, is in /etc/gshadow), GID (group ID number), and member list (comma-separated usernames in the group).
+- /etc/gshadow is the secure companion, readable only by root, holding group passwords (usually unused — group passwords are rare) and group administrators — the group equivalent of /etc/shadow for users, which is Note 63's second half.
+- Why two files, filled: /etc/group is world-readable (programs need to resolve GIDs to names), so secrets cannot live in it; /etc/gshadow is root-only, so group passwords can live there safely — the same split as /etc/passwd vs /etc/shadow.
+
+---
+
+## Image Note 63 — User accounts database file: /etc/passwd, /etc/shadow (handwritten, as is)
+
+- Linux stores user accounts info in /etc/passwd file
+- It is a primary database containing:
+  - 1. Username
+  - 2. Password placeholder (x)
+  - 3. UID
+  - 4. GID
+  - 5. Gecos
+  - 6. Home Directory
+  - 7. Login shell
+- Format as written: username : x : UID : GID : Gecos : home-dir : shell
+- /etc/shadow: secure password storage, with these fields:
+  - 1. Username
+  - 2. Encrypted password or special values like ! or * for locked accounts
+  - 3. Last password change date (since [epoch, filled below])
+  - 4. min password age (change allowed)
+  - 5. max password age (change required)
+  - 6. warning period (expiry) [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- "Since" in field 3 is filled as: days since 1 January 1970 (the Unix epoch) — all shadow date fields count days from the epoch, not calendar dates.
+- The cut-off bottom of the shadow list is filled with the remaining standard fields: 7. inactivity period (days after expiry before the account is disabled), 8. account expiry date (days since epoch), 9. reserved field (unused) — so the full shadow record is 9 fields, the image gives the first 6.
+- Gecos (field 5 of passwd) is filled as: the comment field, usually the user's full name and contact details — a historical name from the General Electric Comprehensive Operating System.
+- Why x in passwd, filled: the password placeholder x means "the real hash is not here, look in /etc/shadow" — /etc/passwd is world-readable, so storing hashes there would let anyone attempt offline cracking; /etc/shadow is root-only.
+- Locked accounts: ! or * in the password field means no password login is possible for that account (used for system/service accounts) — the note's field 2, filled in plain terms.
+
+---
+
+## Image Note 64 — User Accounts in Linux (handwritten, as is)
+
+- User account is an identity assigned to a
+  - User-Person — Human user (aravind) [example name as written in the image]
+  - task-Process — Running program (firefox)
+  - Demon-Service — background program (demon) that interacts with system
+- each Account has:
+  - UID
+  - authentication credentials
+  - associated privileges
+  - Resource ownership
+  - Environment config
+
+### Types of Users
+
+- 1. Root user → UID 0
+- 2. System user — UID 1–999 (for services / demons)
+- 3. Regular user — UID 1000+ (for humans)
+- 4. Network user = authenticated through LDAP, NIS or (Directory Service) [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- Identity in the note has three forms, filled in plain terms: a human person logs in as a user; a running program runs as a user (so its files and permissions belong to that user); a daemon/service runs as a system user so it has only the privileges its service needs, not root's.
+- Each account's five attributes, filled: UID (the number the kernel actually checks), authentication credentials (password hash in /etc/shadow), associated privileges (group memberships, capabilities), resource ownership (files owned by that UID), and environment config (home directory, login shell, from /etc/passwd).
+- UID ranges, filled: 0 is root, the superuser with all privileges; 1–999 are system users for services/daemons (no login by design); 1000+ are regular human users, created in order.
+- Network user, filled from the cut-off line: an account authenticated through a directory service (LDAP, NIS, or a modern directory) instead of local /etc/passwd — the same user can log into many machines, and the directory, not each machine, holds the account.
+
+---
+
+## Image Note 65 — Security concept, Data states, volumes (handwritten, as is)
+
+### Security concept — Data states
+
+- Stored = at rest
+- running = in use
+- travelling = in motion
+
+### ① data in use: Code or data loaded into RAM
+
+- Libraries
+- modules
+
+### ② Data at rest: files stored on disk (SSD, DB, SAN, HDD)
+
+- .so — /usr/lib/libm.so
+- .ko — /lib/modules
+- or shared memory → /usr, /bin, /usr/bin, /sbin, /lib, /usr/lib [as written]
+
+### ③ Data in motion: data travelling b/w End Points
+
+- Packets, IPC messages, remote file transfer
+- Data moving b/w locations, systems, N/Ws, folders or services
+
+### Volumes line at the bottom
+
+- volumes = EmptyDir (folders) at pod level for this container [partly cut off]
+- attached individual pods [partly cut off]
+
+### [Filled — added, not in the original image]
+- Three data states, filled in plain terms: data at rest is stored data (files on disk, databases, SAN/HDD/SSD) and is protected by encryption at rest; data in use is code or data loaded into RAM (libraries, kernel modules, shared memory) and is protected by memory isolation (namespaces, permissions); data in motion is data travelling between endpoints (packets, IPC messages, remote file transfers) and is protected by encryption in transit (TLS, SSH).
+- .so and .ko in the note, filled: .so = shared object (user-space library, for example /usr/lib/libm.so, the math library); .ko = kernel object (kernel module, under /lib/modules) — the two library/module forms from Note 40's IPC blueprints, here as data-at-rest examples that become data-in-use when loaded.
+- The volumes lines, filled from the cut-off text: volumes = EmptyDir folders at pod level, attached to individual pods — the pod-local volume from Notes 55/60, here as the storage form that holds data at rest inside a pod's lifetime, deleted when the pod is removed.
+
+---
+
+## Image Note 66 — cmds → shell → syscalls → kernel (H/W), index table (handwritten, as is)
+
+### Chain at the top
+
+- cmds → shell → syscalls → kernel (H/W)
+
+### Index table as written
+
+- ① kernal: Set of cmds / sys calls — Interface b/w H/w resources & shell — only one kernel on system
+- ② shell: accepts cmds, convert them to binary — interacts with users — Many shells in action, each user = shell — Interface b/w kernel & user apps
+- ③ process = a program to perform some job (mem + exe) [as written]
+- ④ user account: who can log into the system — attributes → UID, uname, GID, home, shell
+- ⑤ docker = interacts with kernel via (namespace & cgroups) [cut off at the right edge]
+- ⑥ kernel space (modules) + (drivers) + (processes) [s/w, dev, as written]
+- ⑦ System Libraries (frameworks, shared) = (libraries + frameworks) [as written]
+- ⑧ user space (libraries) — Apps, springboot, k8 [as written]
+
+### [Filled — added, not in the original image]
+- Chain reading, filled: a user types a command → the shell accepts it and converts it to binary/system-call form → the system call crosses into the kernel → the kernel acts on hardware. That is the whole user-to-hardware path in four steps, and it is the index for Notes 61–65.
+- "Only one kernel on system" (①) is filled as: one kernel per machine (or per VM), no matter how many shells or users — the same one-kernel rule as Note 59's Linux vs Kubernetes split.
+- "Many shells in action, each user = shell" (②) is filled as: each logged-in user runs their own shell process (bash, sh, zsh), and each shell is an interface between that user and the kernel — shells are many, the kernel is one.
+- Process as "mem + exe" (③) is filled as: a process is a program loaded into memory (mem) and executing (exe) — the Note 50 definition in shorthand.
+- Docker's cut-off line (⑤) is filled as: Docker interacts with the kernel via namespaces and cgroups — the same two primitives as Notes 47/48, here as Docker's whole mechanism in one line.
+- Kernel space (⑥) vs system libraries (⑦) vs user space (⑧), filled: kernel space holds modules, drivers, and kernel processes; system libraries/frameworks (shared) sit between kernel and applications; user space holds applications and their libraries (Spring Boot apps, Kubernetes tools are the note's examples) — the three layers of Note 51's OS stack, here as the index's last three entries.
+
+---
+
+# INbatch14 — Image Notes 67–72 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicate images in this set — all 6 pages are new pages, even where topics overlap earlier notes.
+Sanitize note: the Helm secret page (Note 68) writes placeholder field values next to server/username/password labels; only the field names and the mechanism are transcribed here, no credential-shaped value is copied.
+
+## Image Note 67 — Cluster, IBM certified container image, Assembly process, Storing & publishing & pulling (handwritten, as is)
+
+### Cluster (1) [heading partly cut off at the top]
+
+- IBM distributes a base certified container image along with an official Helm chart (ibm-b2bi-prod)
+- you dont change this core image, instead you build a custom "init container package" — act as dependency injector using "docker, podman or buildah tools"
+
+### Assembly process
+
+- you package third party resources like (Jdbc drivers, security providers or xml tools) into independent Alpine container image
+- "bcz you cant modify the official signed IBM images, you write separate docker file to pack third party files (JDBC drivers, custom security policies) into alpine container"
+
+### ② Storing & publishing & pulling
+
+- storage hub / registry: an OCI registry like AWS ECR, IBM Cloud container registry — holds image package .tar.gz [as written]
+- Push: Extract the archive & run commands to publish the s/w package — destinations internal Enterprise Catalog [as written]
+
+### [Filled — added, not in the original image]
+- The rule in this note, filled in plain terms: IBM's signed B2Bi image is immutable — you never edit it, because editing would break its signature and support. Instead you build a separate init container (an Alpine image) that carries your third-party dependencies (JDBC drivers, security providers, XML tools), and that init container injects them into the B2Bi pod at startup. Init container = a container that runs to completion before the main container starts, here acting as a dependency injector.
+- Assembly process in order: write a separate Dockerfile → build an Alpine image containing only the third-party files → the init container copies them into a shared volume → the main B2Bi container mounts that volume and uses them.
+- Storing & publishing & pulling, filled: the built image package is pushed to an OCI registry (AWS ECR or IBM Cloud Container Registry are the note's examples), and from there it is pulled by the cluster or published to an internal Enterprise Catalog for other teams to consume — the same registry model as Note 17's artifact-repository note, here for the B2Bi init image.
+- ".tar.gz" in the registry line is filled as: the image is stored as OCI layers (tarballs) in the registry, not as a single .tar.gz file — the note's shorthand for the packaged image artifact.
+
+---
+
+## Image Note 68 — Automating on cluster (Helm path) (handwritten, as is)
+
+- for container you dont write script, instead you feed IBM key directly into kub cluster as a secret object, allowing helm to pull automatically & spin up deployment
+- ① register IBM cred inside cluster: kubectl create secret — secret.yaml, with fields server, username, password [field names only; placeholder values in the image are not copied, per sanitize rule]
+- ② create the automate values — override blueprint (values.yaml)
+- ③ execute helm deploy command
+- ingress / route: cluster IP (API pod) / loadbalancer / nodeport (API pod) / cluster IP (API pod) Backend [as written]
+
+### [Filled — added, not in the original image]
+- The Helm path, filled in order: create a Kubernetes Secret holding the IBM registry credentials (server, username, password) → reference that secret as an imagePullSecret so the cluster can pull the signed IBM image → write a values.yaml that overrides the chart's defaults (image tag, resources, ingress, environment) → run helm install/upgrade with those values → Helm creates the Deployment, Services, and Ingress/Route.
+- "You dont write script" is filled as: on a cluster you do not hand-write an install script as on a VM; the Helm chart is the install script, parameterised by values.yaml, and the Secret is how credentials reach it without being written into the chart.
+- Ingress/route types in the note, filled: ClusterIP (internal only, API pod reachable inside the cluster), LoadBalancer/NodePort (external access to the API pod), and ClusterIP again for the backend pod — three Service types exposing the same pods at different scopes.
+
+---
+
+## Image Note 69 — Elements required for deployment of package (handwritten, as is)
+
+- ① Env variables & secrets
+- ② Target Environment / Dest Env: ① networked (VM), ② Distributed (cluster)
+- ③ healthchecks & probes [numbered ③ in the image, written as 3 with a circled 5 — kept as third element]
+- ④ rollout strategy
+- IBM Sterling Integrator from IBM Passport: ① Application Installer archive (s/w)
+- IBM certified Container Image Archive (platform) — appliance [as written] — from IBM Registry
+- To make Enterprise packages automatically install using a single script or execution command, you must convert the credentials & download tokens you got from IBM into automated variables within your deployment engines
+- For VM → (script path): you cant run apt get or dnf install to fetch file — script must explicitly handle 3 tasks: ① authentication, ② downloading or fetching from artifact, ③ executing or running silent install — Save file as /install.sh [as written]
+
+### [Filled — added, not in the original image]
+- Four deployment elements, filled: environment variables and secrets (configuration that changes per environment, never baked into the image); target environment (a networked VM for single-host, or a distributed cluster for multi-host); healthchecks and probes (liveness/readiness, from the earlier probe batches, proving the deployed package actually runs); rollout strategy (how the new version replaces the old — rolling, blue-green, canary).
+- IBM Passport vs IBM Registry, filled: IBM Passport (now IBM My Products / Passport Advantage) is where you download the Application Installer archive (the traditional software package); IBM Registry (IBM Cloud Container Registry) is where you pull the certified container image archive (the platform/appliance form) — two distribution channels for the same product, one for VMs, one for clusters.
+- "Convert credentials & download tokens into automated variables" is filled as: the IBMid credentials and entitlement tokens you get from IBM must be stored as variables/secrets in your deployment engine (Ansible variables, Helm values, CI secrets), not typed interactively — that is what makes a single-script install possible.
+- VM script path, filled: a VM has no package manager entry for IBM software, so apt/dnf cannot fetch it; install.sh must do all three jobs explicitly — authenticate to IBM, download the artifact, then run the silent (unattended) install.
+
+---
+
+## Image Note 70 — Packages are platform specific, Artifactory core repo types, Packages (handwritten, as is)
+
+### ① Packages are platform specific
+
+- must match specific system Env where they will be installed
+- 2 main platform factors are: ① OS distribution — .deb for Ubuntu, .rpm for RedHat; ② CPU Arch — 86x64 is different, ARM is different [cut off at the right edge]
+
+### Artifactory: core repo types
+
+- ① Local repos: private physical repos (internal N/W storage) — you deploy your own internal builds, custom packages, proprietary code
+- ② Remote Repo: caching proxies — point to public registries
+
+### Packages
+
+- ① Lang specific package repos (App & Dev Dependency): maven, gradle, ivy; npm / yarn / pnpm; pypi — all libraries
+- ② Container & cloud native images: OCI, docker, Helm charts — app runtimes, orchestrators [DevOps, as written]
+- ③ Infra & OS packages: .deb, .rpm, .tf [terraform, filled below] — sys level [DevOps, as written]
+
+### [Filled — added, not in the original image]
+- Platform factors, filled from the cut-off lines: a package must match both the OS distribution (deb for Debian/Ubuntu, rpm for RedHat/Fedora) and the CPU architecture (x86-64 binaries do not run on ARM, and vice versa) — a package built for one combination will not install on the other.
+- Artifactory repo types, filled: local repos store your own builds (internal, private, proprietary code); remote repos are caching proxies that point at public registries (Maven Central, npmjs, Docker Hub) so builds do not hit the internet directly and keep working if the public registry is down; the third standard type, virtual repos (not on this page, filled here), aggregates local and remote repos behind one URL.
+- ".tf" in the infra list is filled as Terraform files (.tf) — infrastructure-as-code packages at system level, alongside deb/rpm OS packages.
+- Package types by layer, filled: language packages (Maven/Gradle/Ivy for Java, npm/yarn/pnpm for JavaScript, PyPI for Python) are application and developer dependencies; container/cloud-native images (OCI, Docker, Helm charts) are application runtimes and orchestrators; infra/OS packages (deb, rpm, Terraform) are system-level — the same three layers as Note 53's virtualization levels, here for packages.
+
+---
+
+## Image Note 71 — Package: compressed archive, Structural Anatomy, Payload, Metadata, Lifecycle scripts (handwritten, as is)
+
+- Package: just a compressed archive (tar.gz or zip)
+- package contains 2 things: ① payload (files to install), ② metadata (instructions on how to install them)
+- no matter the Env (standalone, networked or distributed) or the package (system, lang, user), Structural Anatomy is the same
+
+### ① What package actually contains
+
+- If you extract any s/w package, it has 3 elements inside:
+  - ① Payload (binaries files)
+  - ② metadata (package information)
+  - ③ lifecycle scripts (runs during install / uninstall)
+
+### Payload
+
+- Package files / Image layers [as written]
+- assets your app needs to run: Executable binaries / code scripts (py, c, java); config files (.conf, .yaml); assets (images, icons, docs, man pages)
+
+### Metadata
+
+- manifest / config: text file acts as identity card for package manager
+- [cut off at the right edge]
+
+### Lifecycle scripts (hooks)
+
+- Small scripts (bash) that run at specific moment
+- Entrypoint or CMD [as written at the bottom]
+
+### [Filled — added, not in the original image]
+- Two things vs three elements, filled: a package contains two things at the top level (payload + metadata), and when extracted it shows three elements — payload, metadata, and lifecycle scripts — because lifecycle scripts are the executable part of the metadata, split out for clarity. The note's "2" and "3" are the same anatomy counted two ways, not a contradiction.
+- Metadata as identity card, filled from the cut-off line: name, version, architecture, dependencies, maintainer, and description — everything the package manager needs to decide whether this package can install here, and what else it must install first (Note 72's dependencies and file mapping).
+- Lifecycle scripts (hooks), filled: small bash scripts that run at specific moments — pre-install, post-install, pre-remove, post-remove — for example creating a user, starting a service, or cleaning up on uninstall; in a container image the equivalent is ENTRYPOINT/CMD, the command that runs when the container starts (the note's bottom line).
+- Package files vs image layers, filled: in a traditional package the payload is files; in a container image the payload is layers — each layer is a tarball of files, stacked, so the same payload concept covers both.
+
+---
+
+## Image Note 72 — Elements to build a package (handwritten, as is)
+
+- To build package for any Env, must define the following core parameters in build configuration (.spec for RPM, control file for deb)
+- ① Unique identified (name): lowercase name without spaces — nginx, my-app
+- ② Version & release: Semantic versioning (version: 1.2-1, release: 1) — This allows package managers to know if they are performing upgrade or downgrade
+- ③ Target arch: H/W compatibility — common values: x86-64 → Intel / AMD; aarch64 → ARM; all / noarch → run anywhere [as written]
+- ④ dependencies: list of other packages that must be installed first — requires:
+- ⑤ file mapping: where to unpack each file on target system
+
+### [Filled — added, not in the original image]
+- Build configuration files, filled: RPM uses a .spec file, Debian uses a control file (debian/control) — both declare the same five parameters, in different syntax.
+- Version vs release, filled: version (1.2) is the upstream software version, release (1) is the packager's build number for that version — so 1.2-1 means "first packaging of upstream 1.2", and a rebuild without upstream change becomes 1.2-2. Semantic versioning (major.minor.patch) is what lets the manager tell upgrade from downgrade.
+- Target arch values, filled: x86-64 (Intel/AMD 64-bit), aarch64 (ARM 64-bit), all/noarch (architecture-independent — scripts, documentation, pure Python/Java that run anywhere, hence "run anywhere").
+- Dependencies, filled from the cut-off "requires:" line: the requires list names every other package that must be installed first (for example nginx requires openssl libraries) — the package manager installs them in dependency order, or refuses to install if one is missing.
+- File mapping, filled: the build declares where each file unpacks on the target system (binaries to /usr/bin, libraries to /usr/lib, configs to /etc) — the same /usr layout as Notes 40/41, here as a build-time declaration, not a runtime discovery.
+
+---
+
+# INbatch15 — Image Notes 73–82 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicate images in this set — all 10 pages are new pages, even where topics overlap earlier notes.
+
+## Image Note 73 — Cloud deployment, IBM certified containers, Helm charts (handwritten, as is)
+
+- when deploying IBM certified containers using helm charts
+
+### Target Registry
+
+- Helm chart tells cluster to look at artifactory for OCI registry path
+
+### Extraction Location
+
+- CRI-O / docker on worker nodes pulls the OCI image layers from artifactory
+- caches & extracts these layers locally onto worker node root fs /var/lib/containers or docker
+
+### OCI (diagram, described in words)
+
+- app code — /opt/ibm — from artifactory (read only)
+- payload data — /mnt/payload — shared PVC (read write)
+- App logs — /var/log/ibm — dedicated log PVC
+
+### [Filled — added, not in the original image]
+- Deployment flow in order: Helm chart declares the image reference → cluster looks at Artifactory's OCI registry path → the container runtime (CRI-O or Docker) on each worker node pulls the OCI image layers → the runtime caches and extracts them locally onto the node's root filesystem (/var/lib/containers for CRI-O/Podman, Docker's own storage for Docker).
+- The three mounts in the diagram, filled: /opt/ibm is the application code, mounted read-only from the image (never written by the app); /mnt/payload is payload data on a shared PVC (read-write, shared across pods); /var/log/ibm is application logs on a dedicated log PVC (so logs survive pod restarts and are separate from payload data).
+- Read-only vs read-write is the note's point: code is immutable (from the signed image), data and logs are writable volumes — the same immutability rule as Note 67's signed IBM image, here at mount level.
+
+---
+
+## Image Note 74 — Packages = compressed Archives (handwritten, as is)
+
+### ① Traditional (Native) Packages
+
+- Debian .deb — dpkg, apt
+- RPM .rpm — zypper, DNF, yum
+- Arch packages .pkg.tar — pacman
+
+### ② Universal (cross) packages — Source Packages [heading crossed out and rewritten, kept as written]
+
+- Tarballs (.tar.gz, .tgz)
+- Source RPM (.src.rpm)
+- Debian Source (.dsc)
+
+### ③ Universal packages — Sandboxed
+
+- flatpak
+- snap
+- AppImage
+
+### How
+
+- 1. makefile builds source code into binaries
+- 2. source code files compressed into tarball [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- Three package families, filled: traditional native packages are tied to one distribution (deb for Debian/Ubuntu with dpkg/apt, rpm for RedHat/Fedora/SUSE with DNF/yum/zypper, pkg.tar for Arch with pacman); source packages are distribution-independent source (tarballs, source RPMs, Debian source packages) that must be built before installing; universal sandboxed packages (Flatpak, Snap, AppImage) bundle the application with its dependencies and run on any distribution, sandboxed from the host.
+- "Universal (cross)" crossed out and rewritten as "Source Packages" is kept as a correction in the transcription: the second family is source packages, not a second universal family — the third family (sandboxed) is the true universal one.
+- How a package is made, filled from the cut-off bottom: a Makefile builds source code into binaries → the binaries, configs, and assets are compressed into a tarball (or wrapped in a native format) → metadata and lifecycle scripts are added (Note 71's anatomy) → the package manager installs it.
+
+---
+
+## Image Note 75 — Traditional VM deployment, automated script (handwritten, as is)
+
+- Using automated script to install the IBM package on VM
+
+### Target dir (downloads)
+
+- script runs on the target VM
+- reaches out artifactory over subnet
+- downloads the massive installation zip or tar.gz archive
+
+### Extraction Location
+
+- file temp downloaded & extracted into a local dir on VM — /tmp or /opt/ibm [as written]
+
+### Installation Location
+
+- automation script (bash) executes IBM IMM, which installs binary files into a dedicated permanent disk dir on VM disk — /opt/IB/sterling [as written]
+
+### Data volume mount
+
+- Installation Dir mapped to a secondary enterprise block storage disk (AWS EBS volume attached to that VM, SAN Disk) — separate OS disk, app disk [as written]
+
+### [Filled — added, not in the original image]
+- VM deployment flow in order: the automation script runs on the target VM → reaches Artifactory over the subnet → downloads the massive installation archive (zip or tar.gz) → extracts it into a temporary local directory (/tmp or /opt/ibm) → the bash automation script executes the IBM Installation Manager (IMM) → IMM installs the binary files into a dedicated permanent directory on the VM disk (/opt/IBM/Sterling, the note's "/opt/IB/sterling" filled with the full product name).
+- Data volume mount, filled: the installation directory is mapped to a secondary enterprise block storage disk (AWS EBS volume or SAN disk attached to that VM) — separate from the OS disk, so the application disk and the OS disk are independent: the OS can be rebuilt without losing the application, and the application disk can be snapshotted or moved.
+- This is the VM counterpart to Note 73's cloud deployment: same package, same Artifactory source, but on a VM the steps are script → download → extract → install → mount, where on a cluster they are Helm chart → pull → extract layers → mount volumes.
+
+---
+
+## Image Note 76 — Generic repos, OCI repositories, automated Sterling installation (handwritten, as is)
+
+### Generic repos
+
+- holds massive monolithic installation files
+- zip archives
+- db drivers
+- VM's pull them locally without touching internet [as written]
+
+### OCI repositories
+
+- stores, manages, builds container images, layers, helm charts for cluster platform like Redhat, kub [cut off at the right edge]
+
+### Automated installation of Sterling
+
+- for automated installation of Sterling package or OCI container using script on VM installation / Helm charts on cluster installation
+- pipeline pulls deployment packages from artifactory via internal network
+- once downloaded, they are extracted & installed onto completely different target disks depending on VM or cluster [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- Generic repos vs OCI repos, filled: generic repositories hold monolithic installation files (zip archives, DB drivers, the massive IBM installer) that VMs pull locally; OCI repositories hold container images, layers, and Helm charts for cluster platforms (Red Hat OpenShift, Kubernetes) — the same Artifactory server, two repository types, matching Note 77's split.
+- "VM's pull them locally without touching internet" is filled as: the VM pulls from the internal Artifactory over the internal network, never from the public internet — Artifactory stands between the machines and the outside internet (Note 77's proxy role).
+- "Completely different target disks depending on VM or cluster" is filled from the cut-off bottom: on a VM the target disk is the VM's own disk (or attached EBS/SAN volume, Note 75); on a cluster the target is the worker node's filesystem plus PVCs (Note 73) — same package, different landing place, which is why the pipeline must know which target it is deploying to.
+
+---
+
+## Image Note 77 — Artifactory: internal vs external, generic vs OCI repositories (handwritten, as is)
+
+### Artifactory
+
+- local storage for internal network
+- standing b/w machines and outside internet
+
+### For internal
+
+- internal DNS, inbound path [as written]
+
+### For external
+
+- act as (proxy) a single web client — requests files on behalf of your company
+- outbound firewall rules
+- blocked inbound [as written]
+
+### Artifactory
+
+- ① generic Repositories (binaries): file storage for monolithic files — .zip, .tar.gz, .jar — accessed with wget, curl
+- ② (OCI Repository) (micro services): image registry for manifests — accessed with helm, podman / docker
+
+### Artifactory is a local storage for
+
+- ① generic repos (for monolithic binaries)
+- ② OCI repos (for microservices containers)
+
+### [Filled — added, not in the original image]
+- Artifactory's position, filled: it is local storage for the internal network, standing between internal machines and the outside internet — internal machines talk to Artifactory, Artifactory talks to the internet, so no internal machine needs direct internet access.
+- Internal vs external access, filled: internally, machines reach Artifactory by internal DNS on an inbound path (inside the network); externally, Artifactory acts as a proxy — a single web client that requests files from public registries on behalf of the company, under outbound firewall rules, with inbound traffic blocked (nothing from the internet can initiate a connection inward).
+- Access tools, filled: generic repositories (monolithic binaries — zip, tar.gz, jar) are accessed with plain HTTP tools (wget, curl); OCI repositories (microservice container images and manifests) are accessed with container tools (Helm, Podman, Docker) — the tool matches the repository type.
+- Summary line, filled: Artifactory is one local storage serving two worlds — generic repos for monolithic binaries, OCI repos for microservice containers — the same split as Notes 70 and 76, here as the closing definition.
+
+---
+
+## Image Note 78 — All repos share one IP, Artifactory infra (handwritten, as is)
+
+- All repos in a artifactory server share exact same IP, not separate
+- if you install artifactory app on:
+  - ① Host / VM → machine IP for all repos
+  - ② guest / container → guest IP for all repos
+  - ③ platform / load balancer → if you deploy it as a cluster, platform IP / URL of load balancer [as written]
+
+### Infra
+
+- ① VM → you install artifactory app
+- ② container → you deploy artifactory as container
+- ③ cluster → you run multiple instances of artifactory across cluster of VMs or artifactory as helm charts
+
+### [Filled — added, not in the original image]
+- One IP for all repos, filled: Artifactory is one application serving many repositories, and repositories are distinguished by URL path (artifactory/host/repo-name), not by IP address — so every repo on one server shares that server's IP, whether it is a generic repo or an OCI repo.
+- Three install forms, filled: on a VM you install the Artifactory application directly (machine IP); as a container you deploy the Artifactory container (guest/container IP); as a cluster you run multiple Artifactory instances across a cluster of VMs, or deploy Artifactory itself via Helm charts, fronted by a load balancer whose platform IP/URL is the single address clients use.
+- This note is the addressing counterpart to Note 79's identity note: the server identity (IP/FQDN/port) is one, the repository identity (URL path) is many — one server, many repos, one IP.
+
+---
+
+## Image Note 79 — Kubernetes: Repository, Artifactory, Identities (handwritten, as is)
+
+### Kubernetes
+
+### ① Repository — a central hub where digital assets are stored & versioned
+
+- 1 Github, 2 gitlab, 3 Bitbucket, 4 Azure repos, 5 AWS codecommit
+- Repositories 2 categories:
+  - ① Source code repo: (Github or gitlab) — store human readable code written by devs
+  - ② Artifact / binary Repo: JFrog, AWS code artifact, Azure artifacts, Gitlab — store compiled outputs of that source code — .jar, .war, docker images, npm packages
+
+### ② Artifactory (JFrog) — Enterprise tool to host, manage & secure binary repositories
+
+- You can create & manage 3 distinct types of repositories simultaneously:
+  - ① Local Repositories → internal folders
+  - ② Remote Repositories → caching proxies
+  - ③ Virtual Repositories → local + remote under one URL
+
+### Identities
+
+- ① Artifactory identity (server layer) — SSL / TLS, IP, FQDN, N/W port
+- ② Repository identity (path layer) — access token, API key, URL, no IP / MAC [as written]
+
+### [Filled — added, not in the original image]
+- Two repository categories, filled: source-code repositories (GitHub, GitLab, Bitbucket, Azure Repos, AWS CodeCommit) store human-readable code written by developers, versioned by Git; artifact/binary repositories (JFrog Artifactory, AWS CodeArtifact, Azure Artifacts, GitLab's registry) store the compiled outputs of that code — jars, wars, Docker images, npm packages — which is the source-vs-artifact split from the earlier batch 17 note, here as the Kubernetes chapter's opening.
+- Three repository types, filled: local repositories are internal folders holding your own builds; remote repositories are caching proxies to public registries (Note 70); virtual repositories combine local and remote under one URL, so a client asks one URL and Artifactory serves from local first, remote cache second.
+- Two identity layers, filled: the Artifactory server identity is the network layer — IP, FQDN, port, protected by SSL/TLS; the repository identity is the path layer — the URL path plus an access token or API key for authentication. A repository has no IP or MAC of its own (the note's "no IP / MAC") because it is not a machine, it is a path on a server — the same one-IP rule as Note 78, here as identity.
+
+---
+
+## Image Note 80 — Device communication types in motherboard, 8bit (handwritten, as is)
+
+### # Device communication types in motherboard — 8bit [top right, as written]
+
+### ① Inter-system (different devices) — Communication done by inter bus system, wired
+
+- Device ↔ Device [side label, as written]
+- ① UART: Embedded devices, 2 wired [as written]
+- ② USART: Embedded devices [as written]
+- ③ USB: Plug & Play Devices (reg driver) [as written]
+- dumb devices: (LED, switch, button) GPIO (on / off) [as written]
+- Simple device: UART
+- medium Embedded: USART (Embedded comm)
+- smart device: USB (External Device)
+
+### ② Intra-system (within device) or circuit board
+
+- Chip ↔ Chip [side label, as written]
+- ① I2C: master / slave protocol (SDA, SCL) — connects low speed peripherals, multi device comm, 2 wire
+- ② SPI: Master controlled — CPU to peripherals, 4 wire
+- ③ CAN: communicate multiple devices [cut off at the bottom of the image]
+
+### ③ IoT
+
+- wifi, bluetooth, NFC, MQTT [as written]
+
+### [Filled — added, not in the original image]
+- Inter-system vs intra-system, filled: inter-system communication is between different devices (device ↔ device) over an external bus, wired; intra-system is within one device or circuit board (chip ↔ chip) over an internal bus; IoT is the wireless third family.
+- Inter-system protocols, filled: UART is the basic asynchronous serial link (2 wires, transmit/receive) for embedded devices; USART adds synchronous clocking to UART for embedded communication; USB is the plug-and-play external bus with a regular driver model for smart/external devices; GPIO (on/off) is not a protocol at all, it is a single pin driven high or low for dumb devices (LED, switch, button).
+- Device ladder, filled: dumb device → GPIO, simple device → UART, medium embedded → USART, smart device → USB — each step adds protocol complexity as the device gets smarter.
+- Intra-system protocols, filled: I2C is a master/slave protocol on 2 wires (SDA data, SCL clock) connecting low-speed peripherals, many devices on one bus; SPI is master-controlled, CPU to peripherals, on 4 wires (faster than I2C, one select line per device); CAN is the multi-device bus (the note's cut-off line, filled as: a robust multi-master bus for many devices, originally automotive, where any node can transmit and all nodes receive).
+- IoT family, filled: Wi-Fi, Bluetooth, NFC (near-field, tap-range), and MQTT (the lightweight publish/subscribe messaging protocol for IoT, usually over Wi-Fi or cellular) — wireless communication beyond the board.
+- "8bit" at the top is filled as: the note's label for the 8-bit microcontroller world these buses belong to — small embedded systems, not the 64-bit server world of the earlier notes.
+
+---
+
+## Image Note 81 — Firmware (continuation page) (handwritten, as is)
+
+- Permanently or semi stored on flash memory (h/w) to control its basic operations / functions [first line partly crossed out and rewritten, kept as written]
+- firmware provides immutable instructions for h/w initialization
+- stored in non volatile memory (flash memory chip) [crossed-out words in the image are not copied]
+- firmware: Embedded controller, microcontrollers of Device
+- firmware has FAT32 filesystem (UEFI) [as written]
+
+### [Filled — added, not in the original image]
+- Permanently or semi-permanently stored, filled: firmware lives in flash memory on the hardware itself, so it survives power-off — permanently in the sense that it is not lost when the device is switched off, semi-permanently in that it can be updated (flashed) but is not meant to change during normal use.
+- Immutable instructions for hardware initialization, filled: on power-on, the firmware runs first and initialises the hardware (CPU, memory, peripherals) before any operating system loads — the same "runs before OS" point as Note 82, here as the continuation page's opening.
+- Embedded controller / microcontrollers, filled: firmware is the software of embedded controllers and microcontrollers inside a device — small processors whose whole job is controlling that device's hardware, not running general applications.
+- FAT32 filesystem (UEFI), filled: the UEFI system partition (ESP) that holds the bootloader is formatted FAT32, so UEFI firmware can read it without a filesystem driver — that is why the note ties FAT32 to UEFI, not because firmware itself is a filesystem.
+
+---
+
+## Image Note 82 — Firmware = stable / Entry / unshakable (handwritten, as is)
+
+- Firmware wakes up CPU
+- low level s/w stored inside h/w (ROM)
+- firmware is microcode runs before OS
+- firmware embedded in ROM
+- UEFI is motherboard firmware stored inside ROM / EEPROM or flash chip
+- firmware takes (blob.hex) electric pulses & groups them into binary words
+- Software code stored in h/w component, Bios chip tied to h/w
+- standard s/w stored in h/w, easily modified or replaced but (firmware) s/w for h/w stored in permanent memory
+- It handles initial power (initialization) before OS loading
+- Firmware switch on h/w
+
+### [Filled — added, not in the original image]
+- Title meaning, filled: firmware = stable (it does not change during normal use), entry (it is the entry point — the first code that runs), unshakable (it survives power-off and OS reinstalls) — the note's three-word definition.
+- Wakes up CPU, filled: on power-on, firmware is the first code the CPU executes — it wakes the CPU from reset, initialises memory and peripherals, then hands control to the bootloader and the OS.
+- ROM / EEPROM / flash chip, filled: firmware is stored inside hardware — historically ROM (read-only, never changeable), then EEPROM (electrically erasable, updateable), today usually a flash chip on the motherboard (UEFI is the modern motherboard firmware, replacing BIOS, stored in that flash chip).
+- Blob.hex and electric pulses, filled: firmware is delivered as a binary blob (a .hex file is one distribution format) — electric pulses on the hardware are grouped into binary words, which the firmware interprets as instructions — the lowest level of the hardware/software boundary, below even the kernel.
+- Standard software vs firmware, filled: standard software is stored on disk and easily modified or replaced; firmware software for hardware is stored in permanent (non-volatile) memory on the hardware component itself (the BIOS/UEFI chip tied to that hardware) — that permanence is what makes it firmware rather than software.
+- Switch on hardware, filled: firmware is what switches the hardware on in an orderly way — initial power and initialization before OS loading — the same power-on sequence as Note 81, here as the closing line.
+
+---
+
+# INbatch16 — Image Notes 83–92 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicate images in this set — all 10 pages are new pages, even where topics overlap earlier notes.
+
+## Image Note 83 — Procedural vs OOP Language (handwritten, as is)
+
+### Procedural (left column)
+
+- follows top to bottom approach
+- breaks large program into smaller sub programs called 'functions'
+- data is usually global or passed around these functions
+- each & every function treated as separate module
+- functions are there [as written, cut off mid-thought]
+- local & global variables
+- doesnt support Polymorphism (overloading)
+- doesnt support message passing
+- doesnt support inheritance
+
+### OOP Language (right column)
+
+- follows bottom to top approach
+- focus on data (objects) rather logic — It binds the data & functions that operate [on it, cut off]
+- group of functions can be designed under single unit called class
+- classes are there [as written, cut off mid-thought]
+- High modularity [as written]
+- private & public members
+- supports polymorphism [as written "polumo", filled below]
+
+### [Filled — added, not in the original image]
+- "Supports polumo" is filled as "supports polymorphism" — the OOP column's counterpart to the procedural column's "doesnt support Polymorphism (overloading)".
+- Procedural vs OOP in one line, filled: procedural programming organises code around procedures/functions that act on (often global) data, top-down; OOP organises code around objects that bind data and the functions operating on it together, bottom-up from small objects to larger systems.
+- Cut-off lines, filled: procedural "functions are there" = functions exist as independent units with local and global variables; OOP "classes are there" = classes exist as the single unit grouping data and functions, with private members (hidden inside the class) and public members (exposed outside), giving high modularity.
+- Message passing and inheritance, filled: OOP supports message passing (objects communicate by calling each other's methods) and inheritance (a class reuses and extends another class) — both absent in pure procedural programming, which is why the left column lists them as "doesnt support".
+
+---
+
+## Image Note 84 — Java, Software map, definitions (handwritten, as is)
+
+### Map (described in words, not copied as a picture)
+
+- Java [written at the top of the page]
+- S/W splits into: System S/W and Application S/W
+- System S/W → Translators (High level lang to low level lang) → compiler, interpreter; System S/W → OS → single user, multi user
+- Application S/W → Languages (Python, Java) and Packages (MS Office, AutoCAD, Photoshop)
+
+### Definitions
+
+- ① S/W: set of programs
+- ② program: set of instructions
+- ③ Languages: provides facilities to write code / programs
+- ④ packages: contains readymade programs / softwares [as written]
+- ⑤ procedure language: each function treated as [separate module, cut off] — follows top to bottom approach
+- ⑥ OOP language: follows bottom to top approach — group of [functions under a class, cut off]
+
+### [Filled — added, not in the original image]
+- Map reading, filled: software is a set of programs; a program is a set of instructions; system software (OS, translators) runs and manages the machine; application software (languages, packages) does user work. Translators convert high-level language to low-level language — compilers translate the whole program at once, interpreters translate line by line. An OS serves a single user or multiple users.
+- Languages vs packages, filled: languages (Python, Java) provide the facilities to write code; packages (MS Office, AutoCAD, Photoshop) are readymade programs/software you use, not write — the same language/package split as Note 70's package types, here at the software-taxonomy level.
+- Cut-off definitions ⑤ and ⑥, filled from Note 83: a procedure language treats each function as a separate module and follows a top-to-bottom approach; an OOP language follows a bottom-to-top approach, grouping functions and data under a class.
+
+---
+
+## Image Note 85 — Huge data carriers (storage & bus), Small data carriers (signals & status), N/W packets, Cloud (handwritten, as is)
+
+### Huge data carriers (storage & bus)
+
+- ① internal NVMe SSD → local NVMe = physically attached to host
+- ② External SSD / HDD → Block storage = Network Attached / Managed Disk, virtual Drives
+- ③ Huge blobs → object storage = Buckets / S3, for Data lakes, unstructured
+- ④ PCIe Bus → Direct connect = private high speed pipe
+
+### Small data carriers (signals & status)
+
+- ① I2C → Cloud watch / monitor = metrics; Thermal sensors [side label, as written]
+- ② SPI → AMI / Gold image = snapshot / image used to wakeup CPU / VM; Boot firmware [side label, as written]
+- ③ HID (key & mouse) → SSH / virtual console = bits sent over N/W
+
+### N/W (packets) — Cloud
+
+- ① wifi / ethernet → VPC / VNet
+- ② N/W packets → inbound / outbound traffic
+
+### [Filled — added, not in the original image]
+- Huge vs small carriers, filled: huge data carriers move bulk data (storage and buses); small data carriers move signals and status (metrics, snapshots, keystrokes) — the same data, two scales, two kinds of channel.
+- Huge carriers, filled: internal NVMe SSD is local storage physically attached to the host (fastest, no network hop); external SSD/HDD is block storage as network-attached managed disks (virtual drives, the cloud block-storage model); huge blobs are object storage (buckets/S3) for data lakes and unstructured data; the PCIe bus is the direct-connect private high-speed pipe between CPU and devices.
+- Small carriers, filled: I2C carries sensor signals (thermal sensors) that become CloudWatch/monitoring metrics; SPI carries boot firmware that becomes an AMI/gold image (a snapshot used to wake up a CPU/VM); HID (keyboard and mouse) input travels as bits over SSH or a virtual console to a remote machine.
+- Network/cloud lines, filled: Wi-Fi/Ethernet are the physical links into a VPC (AWS) or VNet (Azure) — the cloud's private network; network packets are the inbound/outbound traffic inside that network — the same packet model as the earlier networking batches, here as the cloud half of the carrier map.
+
+---
+
+## Image Note 86 — Memory Controller (IMC integrated memory control) (handwritten, as is)
+
+- Memory Controller (IMC integrated memory control) [heading, as written]
+- defines the max supported memory type (DDR5, DDR4), capacity & speed of a system
+- inside CPU manages memory / RAM sticks DIMM
+
+### [Filled — added, not in the original image]
+- IMC = Integrated Memory Controller, filled: the memory controller built into the CPU (not a separate northbridge chip, as in older systems) that manages the RAM sticks (DIMMs).
+- What it defines, filled: the maximum supported memory type (DDR4 vs DDR5 — a CPU's IMC supports one generation, not both), the maximum capacity (how much RAM the system can hold), and the speed (the memory frequency/timing the system can run at) — three limits that come from the IMC, not from the motherboard alone.
+- This note is the memory counterpart to Note 87's pins and Note 88's address space: the IMC is the controller that drives the address/data pins, and the address-pin count (Note 88) is what sets the capacity the IMC can actually address.
+
+---
+
+## Image Note 87 — Direction, pins, Fetch–Decode–Execute, Address bus, Data bus (handwritten, as is)
+
+### Direction table
+
+- Address pins — outbound only — writing Add on Env [analogy, as written]
+- Data pins — both — letter in Envelope [analogy, as written]
+- Control pins — in / out — instructions (priority mail) [analogy, as written]
+- Power pins — inbound — Electricity [analogy, as written]
+
+### All pins work together
+
+- Fetch → decode → Execute [cycle, as written]
+
+### ① Fetch (Get instruction)
+
+- Address → sends location of code
+- Control → signal a read cmd
+- Data → instructions (ADD) travels from RAM to CPU
+
+### ② Decode (work)
+
+- CPU logic finds what it is [partly unclear at the right edge]
+
+### ③ Execute (Move the vars) [as written]
+
+### Buses at the bottom
+
+- ① Address bus: finds data on RAM
+- ② data bus: moves that data from RAM
+- ③ [numbered but blank in the image]
+
+### [Filled — added, not in the original image]
+- Pin directions, filled with the note's envelope analogies: address pins are outbound only (CPU writes the address on the envelope — it only sends addresses out, never receives them); data pins are both directions (the letter inside the envelope travels both ways — CPU reads data from RAM and writes data to RAM); control pins are in/out (instructions, like priority-mail markings, telling RAM what to do — read, write — and reporting back); power pins are inbound only (electricity flows into the CPU, never out).
+- Fetch–Decode–Execute, filled: fetch gets the instruction (address pins send the code's location, control pins signal a read, data pins carry the instruction, e.g. ADD, from RAM to CPU); decode is the CPU logic working out what the instruction is; execute moves the variables and performs the operation — then the cycle repeats for the next instruction.
+- The blank ③ bus is filled as the control bus: it carries the control signals (read/write commands) that tell RAM and peripherals what to do — completing the three-bus set (address, data, control) that Note 88's bus definition assumes.
+
+---
+
+## Image Note 88 — Map-targets, Containerization, Address space, Physical vs Virtual address (handwritten, as is)
+
+### Map-targets / Containerization [heading, as written]
+
+- Address pins: Defines where data is (map)
+- Data pins: How much data moves / read (payload)
+- Control pins: defines what to do (cmd pins)
+- Power pins: provide electricity (utility)
+- Bus = collection of pins
+
+### Address space
+
+- Total num of address CPU can handle
+
+### Physical Address
+
+- Address pins (32, 48–56) [as written]
+- defines the maximum amount of RAM the CPU can physically reach
+- System can't use more than that
+- 2³² = 4GB — 32 pins can install 4GB RAM
+- 2⁴⁸ = 256TB [as written] — 48 pins can install 256TB RAM on motherboard
+- actual Address in RAM chip
+
+### Virtual / logical
+
+- logical Address / map given to each program by the OS
+- fake map stored inside RAM, page tables [as written]
+- OS defines it for process
+- virtual view given by OS
+
+### [Filled — added, not in the original image]
+- Map-targets, filled: the four pin types restated as their jobs — address pins are the map (where data is), data pins are the payload (how much data moves), control pins are the commands (what to do), power pins are the utility (electricity) — the same four pins as Note 87, here as a target map for the address-space discussion that follows.
+- Physical address, filled: the number of address pins sets the maximum RAM the CPU can physically reach — 32 pins give 2³² addresses = 4 GB, 48 pins give 2⁴⁸ addresses = 256 TB (the note's "256TB" is the 2⁴⁸ value; the "48–56" range covers newer CPUs with up to 52–57 physical address bits, whose theoretical maxima are larger, but the note's working examples are 32 → 4 GB and 48 → 256 TB).
+- Virtual/logical address, filled: the OS gives each program its own logical address map (a fake map, stored as page tables inside RAM) — the program sees its own virtual view, not the physical RAM chip addresses, and the OS (via the MMU, Note 92) translates between them. A system cannot use more physical RAM than its address pins allow, no matter how much is plugged into the motherboard — the same limit as Note 89's 32-bit example.
+
+---
+
+## Image Note 89 — Address space size, physical space, logical address space (handwritten, as is)
+
+- Address space size: unique locations a process can access or see
+- range of address available to a process
+- Address pins (Address bus) limits how much memory the CPU can talk to
+- each pin is one bit
+- 2ⁿ unique signals [as written, exponent partly unclear — filled below]
+
+### Physical space
+
+- CPU pins & Address bus defines how much physical RAM can be plugged into motherboard
+
+### Logical Address space
+
+- register define logical address — how much memory a s/w program can use
+- 32 bit system can't use more than 4GB of RAM, no matter how much plugged into motherboard [as written]
+
+### [Filled — added, not in the original image]
+- "2ⁿ unique signals" is filled as: with n address pins, each pin carrying one bit, the CPU can produce 2ⁿ unique address signals — so the address-bus width is the address-space size. For n = 32, that is 2³² = 4 GB; for n = 48, 2⁴⁸ = 256 TB (Note 88's numbers).
+- Physical vs logical space, filled: physical space is how much RAM can actually be plugged into the motherboard (set by CPU pins and the address bus); logical space is how much memory a software program can use (set by registers — a 32-bit register set gives a 32-bit logical space, a 64-bit set gives a far larger one).
+- The 32-bit example, filled: a 32-bit system cannot use more than 4 GB of RAM, no matter how much is plugged into the motherboard, because its address bus and registers can only name 2³² locations — the same limit as Note 88, here as the closing rule.
+
+---
+
+## Image Note 90 — Address space size, virtual address, physical address, page table, MMU, descriptors (handwritten, as is)
+
+- ① Address space size: Total Range of frames can read [as written]
+- ② virtual Address: pages on disk — block of data waiting to read
+- ③ Physical Address: page frames on RAM — fixed slot
+- ④ page table (MAP): pages and frames managed by page table — it's a DS — logical / virtual Address = CPU generates, physical Address = location on RAM, MMU translates Addresses
+- ⑤ MMU (MAP translator): Takes page num in page table, Maps to [frame, cut off] — CPU knows virtual address / pages, does not know where in frames, page table provides map to frame
+- ⑥ Descriptors: let apps use h/w they don't own
+
+### [Filled — added, not in the original image]
+- Six concepts in order, filled: address space size is the total range a process can address; a virtual address names a page on disk (a block of data waiting to be read); a physical address names a page frame on RAM (a fixed slot where data actually sits); the page table is the data structure (DS) mapping pages to frames, managed by the OS; the MMU (Memory Management Unit, the map translator) takes the page number, looks it up in the page table, and maps it to a frame — the CPU knows only virtual addresses, the page table tells it where in RAM the frame is; descriptors let applications use hardware they do not own (a descriptor is a capability/handle the OS hands an app so it can use a device or memory region without owning it directly).
+- Pages vs frames, filled: a page is a fixed-size block of virtual memory (4 KB in Note 92); a frame is the same-sized slot in physical RAM — the page table maps each page to one frame, or marks it as on disk (waiting to be read in).
+- This note is the vocabulary page for Notes 91–92: the same six items return there as privacy/efficiency/speed/security roles and as the MMU connection diagram.
+
+---
+
+## Image Note 91 — Virtual address for privacy, page tables (efficiency), MMU (speed), descriptors (security) (handwritten, as is)
+
+- ① Virtual add for privacy: apps dont see others physical locations — pages on RAM, can't see each other — gives every app its own physical location [as written]
+- ② Page tables (efficiency): using every location / pages of RAM — gives key for connecting MMU / RAM pages [as written]
+- ③ MMU (speed) [heading only, no body on this page]
+- ④ Descriptors (security): apps cant touch h/w directly
+
+### [Filled — added, not in the original image]
+- Four roles, one per concept, filled: virtual addresses give privacy (each app sees only its own virtual space, never another app's physical pages on RAM, so apps cannot see each other); page tables give efficiency (every location/page of RAM is used, and the table is the key connecting the MMU to RAM pages — no RAM wasted on fixed partitions); the MMU gives speed (hardware translation, cached in the TLB, so address translation costs almost nothing per access — the body Note 92 supplies); descriptors give security (apps cannot touch hardware directly, they go through descriptors the OS controls).
+- "Gives every app its own physical location" is filled as: gives every app its own virtual view that maps to its own physical pages — the privacy is in the separation, not in giving each app a fixed physical region (physical pages are shared and reused by the OS).
+- This note is the "why" page for Note 90's "what" page: same four concepts, now with the reason each exists — privacy, efficiency, speed, security.
+
+---
+
+## Image Note 92 — Virtual address space (lives in OS), MMU connection inside CPU (handwritten, as is)
+
+### ② Virtual Address space (lives in OS) — pages [circled, as written]
+
+- imaginary provided by the OS
+- VAS can be larger than total RAM
+- This is the address an app sees
+- data on liquid [side label, partly unclear, kept as written]
+
+### ④ MMU connection inside CPU
+
+- bridge between or connects [as written]
+- MMU uses page tables (inside RAM) to map physical & virtual address
+- RAM = collection of pages / cells
+- each page size = 4KB
+- page frame = 4KB
+- page table [as written]
+- MMU used to translate page table to page frames / locations on RAM
+- CPU TLB checks page table inside RAM
+
+### [Filled — added, not in the original image]
+- Virtual address space, filled: it lives in the OS (the OS creates and maintains it, it is not hardware) and is made of pages; it is imaginary in the sense that it is provided by the OS, not by physical RAM — and it can be larger than total RAM, because pages not currently in RAM live on disk and are loaded on demand (the Note 44 virtual-memory illusion, here with numbers).
+- MMU connection, filled: the MMU is the bridge inside the CPU connecting virtual addresses to physical addresses — it uses page tables stored inside RAM to map between them; RAM itself is a collection of pages/cells, each page and each frame 4 KB; the MMU translates a page-table entry to a page frame (a location on RAM); the CPU's TLB (Translation Lookaside Buffer) caches recent translations so it does not have to check the page table inside RAM on every access — TLB hit means fast, TLB miss means a page-table walk.
+- Numbering note, filled: this page is numbered ② and ④ because it continues Note 90's list (② virtual address space, ④ MMU) with the detail those entries promised — it is not a standalone list starting at 2.
+- "Data on liquid" side label is filled as unclear in the image and not interpreted — it may be a margin note about data fluidity, but it is not part of the virtual-address-space definition and is not carried forward as content.
+
+---
+
+# INbatch17 — Image Notes 93–102 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicate images in this set — all 10 pages are new pages, even where topics overlap earlier notes.
+
+## Image Note 93 — Types: block level, file level, object level (handwritten, as is)
+
+### Types
+
+- ① block level = lower level [as written]
+- ② file level
+- ③ object level
+
+### Block level = abstract raw blocks
+
+- virtualizes physical storage (HDD, SSD etc)
+- combines raw blocks into logical storage unit
+- doesnt organize data into files & dir
+- It manages underlying physical storage (blocks) [as written]
+- thats why file level comes in
+- It manages "organization & access to files & dir" on top of storage
+
+### File level
+
+- Storage devices provide [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- Three levels, filled: block level is the lowest level — raw blocks with no file concept; file level sits on top of block storage and adds files and directories with organization and access; object level (the third type, heading only on this page) stores data as objects with IDs and metadata, at cloud scale — the same block/file/object split as the earlier storage batches, here as the level ladder.
+- File level's cut-off line, filled: storage devices provide block storage, and the file system on top of them provides files and directories — which is exactly why the note says "thats why file level comes in": block level alone cannot give you a file to open.
+
+---
+
+## Image Note 94 — Storage virtualization (handwritten, as is)
+
+- combines multiple physical storage devices into single virtual storage unit
+- Main purpose of storage virtualization is to "raw physical (HDD raw blocks) storage into logical units" (virtual storage / memory) by combining physical storage blocks
+- logical units easily managed, resized, distributed
+- once you have logical units you can manage, organize & share flexibly
+- in Linux storage dev represented as files in /dev (/dev/sda, /dev/sdb)
+- HDD is /dev/sda
+- "Storage virtualization abstracts physical storage devices, presenting them as single storage pool by combining multiple storage devices" [quoted in the image]
+- It virtualizes logical storage unit users & systems can access that without knowing the underlying physical H/W [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- Cut-off ending, filled: "...without knowing the underlying physical hardware" — the user or system sees one logical unit and never needs to know which physical disks, or how many, back it.
+- Linux representation, filled: in Linux every storage device appears as a file under /dev — the first disk is /dev/sda, the second /dev/sdb, and so on — so storage virtualization's logical units also appear as /dev entries or mount points, indistinguishable to the user from a physical disk.
+- Purpose in one line, filled: turn many raw physical blocks into one manageable logical unit — manage, resize, distribute, and share flexibly, instead of managing each disk separately.
+
+---
+
+## Image Note 95 — OS virtualization (Containers) (OS kernel is shared) (handwritten, as is)
+
+- isolating apps & their dependencies within containers without needing full VMs
+- purpose is for portable & faster deployment of apps across different Env
+- Docker, Kuber, OpenVZ, Podman [tools to achieve OS virtualization, as written]
+- abstracts OS kernel providing isolated multiple user spaces (container / VM) [as written]
+- Replicates h/w Env through containers
+- It virtualizes applications & their dependencies as containers running on same host kernel
+- each container has its own file system — AUFS / overlay fs — and OS (shared kernel, isolated FS)
+- In OS virtualization has host shared kernel
+- containers are multiple isolated services, run a single control host / node & those services can access kernel
+
+### [Filled — added, not in the original image]
+- "Kuber" is filled as Kubernetes (the orchestration tool, not a container runtime itself — Docker/Podman run containers, Kubernetes manages them).
+- Shared kernel, isolated filesystem, filled: every container on a host shares the host kernel (unlike VMs, Note 96, which have their own kernels), but each container has its own isolated filesystem (AUFS/overlayfs layers) and its own user space — so apps are isolated from each other while sharing one kernel.
+- "Replicates h/w Env" is filled as: containers replicate the application's environment (libraries, dependencies, filesystem view), not the hardware itself — hardware replication is the VM's job (Note 96); the container's isolation primitives are namespaces and cgroups (Notes 47–48).
+
+---
+
+## Image Note 96 — Types: H/W virtualization (VM) (handwritten, as is)
+
+- To run multiple OS by abstracting the H/W resources (RAM, CPU, storage)
+- Purpose → efficient use of physical h/w by running VM
+- Tools to achieve H/W virtualization: KVM, Hyper-V, Oracle, Hypervisor [boxed in the image]
+- virtualizes entire machine with their own independent (H/W) & OS
+- each VM has a virtual Disk file .vmdk / .vdi that act as its Hard drive
+- each VM has its own file system
+- H/W virtualization (VM) has its own isolated kernels, full control over system H/W
+
+### Need
+
+- VM is a s/w based computer that runs within a physical host machine
+- multiple OS can be hosted on a same machine with complete isolation
+- Reduces total no of physical machines
+
+### [Filled — added, not in the original image]
+- "Oracle" in the tools box is filled as Oracle VM VirtualBox (the Oracle hypervisor product) — alongside KVM (Linux) and Hyper-V (Microsoft); "Hypervisor" in the box is the category name, not a fourth product.
+- Entire machine, filled: a VM virtualizes the whole machine — its own virtual CPU, memory, disk, network, and its own kernel — so each VM has full control over its (virtual) system hardware and complete isolation from other VMs, at the cost of running a full OS per VM (unlike containers, Note 95, which share one kernel).
+- Virtual disk file, filled: the VM's hard drive is a single file on the host (.vmdk for VMware, .vdi for VirtualBox) that acts as its hard drive — delete the file and the VM's disk is gone, copy it and the VM's disk moves.
+
+---
+
+## Image Note 97 — Functions of OS (two versions on one page) (handwritten, as is)
+
+### Functions of OS — first version [crossed out in the image, kept as written]
+
+- ① memory management: (accessed by CPU) — Management of primary or main memory — Its a computers fast volatile and directly accessible storage that holds data & programs (var + fun) currently in use by CPU — (Allocation, Deallocation) done by OS
+- ② process management (traffic controller) — OS acts as admin that creates schedulers to ensure CPU is used efficiently — It allocates processor (CPU) to process / programs — done by OS scheduler & dispatcher
+- ③ Device [cut off, crossed out]
+
+### Functions of OS — second version [as written]
+
+- ① process management (CPU scheduling)
+- ② memory mgmt (memory mapping)
+- ③ file system mgmt (Access control, Permissions)
+- ④ device mgmt (data transfers)
+- ⑤ security and access control (authentication)
+- ⑥ user interface (GUI, CLI)
+- ⑦ network mgmt (data security)
+- ⑧ job scheduling (process scheduling)
+- ⑨ performance monitoring (health check)
+- ⑩ error detection & handling (logging records)
+
+### [Filled — added, not in the original image]
+- Two versions, filled: the first version is the detailed draft (memory and process management explained, device cut off) that was crossed out and replaced by the second version — the clean ten-function list. The second version is the note's final list; the first version's explanations are kept here because they explain the first two functions.
+- Crossed-out "③ Device" is filled as device management (data transfers) — the second version's ④ — so the first version was heading toward the same list.
+- Overlaps in the second version, filled: ① process management and ⑧ job scheduling both say "process scheduling" because job scheduling is process scheduling at batch/job granularity; ⑤ security/access control (authentication) and ⑦ network management (data security) overlap because network security is one application of access control — the list counts functions, not mutually exclusive subsystems.
+
+---
+
+## Image Note 98 — OS, application s/w, system services, common services (handwritten, as is)
+
+- 1. OS — main s/w managing H/W resources
+- 2. Application s/w = user specific
+- 3. system services / utilities = background tool (device drivers)
+- 4. system files & libraries = files used by OS and applications to function
+
+### Common services to compute programs
+
+- ① program execution (RAM)
+- ② memory management (Allocation)
+- ③ file system manipulation (storage)
+- ④ I/O operations
+- ⑤ IPC: exchange data b/w programs using shared memory, message passing
+- ⑥ resource allocation (scheduling)
+- ⑦ error detection & handling
+- ⑧ protection & security
+
+### Stack diagram (described in words, drawn in the Diagrams & Tables section below)
+
+- User on top, Application below it, OS below that (both inside one rounded box), Hardware at the bottom
+
+### [Filled — added, not in the original image]
+- Four software layers, filled: the OS is the main software managing hardware resources; application software is user-specific (what the user actually wants to do); system services/utilities are background tools (including device drivers); system files and libraries are the files both the OS and applications need to function.
+- Eight common services, filled: the OS provides the same services to every program — execution in RAM, memory allocation, file-system manipulation on storage, I/O operations, IPC (shared memory, message passing), resource allocation (scheduling), error detection and handling, and protection and security — the same service list as Note 97's ten functions, condensed to eight.
+- The stack diagram is drawn in the Diagrams & Tables section below (Note 98 diagram), per the 2026-10-31 diagram instruction.
+
+---
+
+## Image Note 99 — Operating systems, hardware resources, software resources (handwritten, as is)
+
+- "Manages computer Hardware and software resources & provides common services for computer programs" [definition, quoted in the image]
+
+### Hardware Resources: tangible components (CPU, RAM, storage, peripherals)
+
+- peripherals are external h/w components connected to a computer
+- connected via USB or networking [circled in the image]
+- peripherals categorized by functionality:
+  - Input Dev: sends data to computer — keyboard, scanner, mouse, microphone, webcam
+  - Output: receive data from computer to display or create physical copies — monitor, printer, speakers
+  - I/O & storage: perform both — modem, external HDD, N/W adapter
+- peripherals connected via wired cables (USB), wireless Bluetooth or wifi [cut off at the right edge]
+
+### Software Resources: logical components
+
+- They are intangible instructions, programs & data that tell the H/W what to do
+- OS — main s/w managing everything
+- app software — user specific
+- System [cut off at the bottom of the image]
+
+### [Filled — added, not in the original image]
+- Cut-off "System" at the bottom is filled as system services/utilities and system files/libraries (Note 98's items 3 and 4) — the software-resources list was heading into the same four-way split as Note 98.
+- I/O & storage category, filled: a modem, an external HDD, and a network adapter both send data to the computer and receive data from it, so they are neither pure input nor pure output — the third category exists for exactly these dual-direction devices.
+- Tangible vs intangible, filled: hardware resources are tangible (you can touch CPU, RAM, storage, peripherals); software resources are intangible (instructions, programs, data) that tell the hardware what to do — the OS manages both, which is why the definition says "hardware and software resources".
+
+---
+
+## Image Note 100 — Two kernel stack diagrams (handwritten, as is)
+
+### Diagram ① (described in words, drawn in the Diagrams & Tables section below)
+
+- applications on top, kernel in the middle, CPU / Memory / Storage / Devices at the bottom, with two-way arrows between layers
+
+### Diagram ② (described in words, drawn in the Diagrams & Tables section below)
+
+- software / userspace on top, kernel in the middle, hardware at the bottom (CPU, memory, Disk, Devices, N/W), with two-way arrows between layers
+
+### [Filled — added, not in the original image]
+- Both diagrams say the same thing, filled: applications (or software/userspace) never touch hardware directly — they go through the kernel, which sits between user space and hardware and translates requests in both directions (the two-way arrows). Diagram ① names the hardware as CPU/Memory/Storage/Devices; diagram ② adds Disk and N/W to the same hardware box — same stack, second version with network included.
+- Both diagrams are drawn in the Diagrams & Tables section below (Note 100 diagrams), per the 2026-10-31 diagram instruction.
+
+---
+
+## Image Note 101 — Virtualization (Hardware – VM, Software – OS), Kernel (handwritten, as is)
+
+- Virtualization (Hardware – VM, Software – OS) [heading, as written]
+
+### Kernel: invisible engine under the hood of your OS
+
+- its monolithic kernel, handles everything — CPU, memory, driver devices — with a single large process [as written]
+- Kernel space: Doer (touches the chips / H/W)
+- User space: Asker
+- Kernel handles H/W resources: compute (CPU, GPU, TPU), storage, N/W, Devices
+
+### [Filled — added, not in the original image]
+- "Single large process" is filled as: a monolithic kernel runs all core services (CPU scheduling, memory, drivers) in one large kernel address space, as a single privileged unit — as opposed to a microkernel, which splits services into separate user-space processes. The note's "process" here means one kernel image, not one Linux task.
+- Doer vs Asker, filled: kernel space is the doer (it touches the chips/hardware directly); user space is the asker (applications ask the kernel, via system calls, and the kernel does it) — the same asker/doer split as Note 100's two-way arrows, here as the kernel's own definition.
+- Compute list, filled: CPU, GPU, and TPU are the three compute resources the kernel handles, plus storage, network, and devices — the modern compute set (TPU for AI acceleration) added to the classic CPU/storage/network/device set.
+
+---
+
+## Image Note 102 — Hypervisor, Type-1, AWS example (handwritten, as is)
+
+### Hypervisor
+
+- its a low level software suite which runs and creates VM
+- its a virtual machine monitor
+- Its a s/w that runs the virtual machines
+- software that organizes VMs into high availability groups (cluster mgmt)
+- hypervisor responsible for slicing up CPU / RAM to create the actual VM
+- other management s/w creates clusters, you need separate mgmt layer to combine multiple hypervisors into a single cluster
+- Hypervisor can create / have many VMs
+- one node has one hypervisor
+- group of nodes / H/W physical server manages all hypervisors together
+
+### Stack diagram (described in words, drawn in the Diagrams & Tables section below)
+
+- Top: apps (P1, app, app, app) each on its own OS/kernel, each OS on its own VM
+- Middle: Hypervisor (KVM, Xen, etc)
+- Bottom: H/W — storage (SAN / NAS / DAS), servers (rackmount, blade), N/W (Ethernet, fibre channel) — inside Data center / cluster
+- Side labels: OpenStack / Cloud, Cluster [as written]
+
+### Type-1 [heading, as written]
+
+### AWS example
+
+- Region — Area
+- AZ — data centers
+- Node — physical server
+- Hypervisor — runs one node [cut off]
+- VM — EC2 inst [cut off]
+
+### [Filled — added, not in the original image]
+- Type-1, filled: this whole note is about Type-1 (bare-metal) hypervisors — the hypervisor runs directly on the hardware with no host OS between it and the machine, which is why the diagram shows hypervisor sitting straight on the hardware box. (Type-2 hypervisors, by contrast, run as an application on a host OS.)
+- Slicing, filled: the hypervisor slices up physical CPU and RAM and hands each slice to a VM, so many VMs share one node — one node has one hypervisor, but one hypervisor has many VMs, and a separate management layer groups many hypervisors (many nodes) into one cluster.
+- AWS example, filled: Region = a geographic area; AZ (Availability Zone) = one or more data centers; Node = one physical server; Hypervisor = runs on one node (the cut-off line, filled as "runs on one node"); VM = an EC2 instance (the cut-off "EC2 inst", filled as EC2 instance) — the cloud mapping of the same stack: region → AZ → node → hypervisor → VM.
+- The stack diagram is drawn in the Diagrams & Tables section below (Note 102 diagram), per the 2026-10-31 diagram instruction.
+
+---
+
+# Diagrams & Tables — drawn from all INbatches (added 2026-10-31)
+
+Per the 2026-10-31 instruction: every diagram or table drawn in the image notes, from INbatch1 onward, is drawn here in imagenotes.md. Earlier batches described diagrams in words only — those descriptions are kept in their notes, and the drawn versions are added here, note by note, so nothing is drawn twice in the wrong place and nothing drawn in an image is missing.
+Diagrams are ASCII drawings and tables are markdown tables. Headings and labels are as written in the images; filled parts are marked [Filled].
+
+## INbatch1
+
+### Note 1 — Mobile & Cloud and 5G & Modern, UI mediums (table, drawn)
+
+| Era | UI mediums | Public frameworks | Private frameworks |
+|---|---|---|---|
+| Mobile & Cloud | Mobile apps, SaaS | Bootstrap, AngularJS | iOS UIKit, Android SDK, Salesforce |
+| 5G & Modern (2020–Now) | Real-time dashboards, XR, AI UIs | React, Next.js, Carbon Design | Apple SwiftUI, Google [unclear in image], MS Fluent UI |
+
+### Note 4 — Project Scheduler (diagram, drawn)
+
+```
+Tasks + Resources  =>  Scheduler  =>  Schedule (project)
+Electricity:  Generators  =>  ISO schedule  =>  Power delivered
+Networking:   Routers / packets  =>  ISP schedule  =>  Bandwidth delivered
+```
+
+### Note 6 — Eras: UI Frameworks + Hardware controlled / SW driven (table, drawn)
+
+| Era | Control | UI / Framework side | Business controller (private) |
+|---|---|---|---|
+| Telegraph | Govt PTT, circuit switching | — | Usage duration |
+| OEM mainframes | Batch processing, Corporate IT Dept | — | Accounting chargeback |
+| Client server | N/W OS, IT manager, LAN Admin | — | Software licence / contracts |
+| Web 1.0 / 2.0 | Web servers, ICANN, IETF, Apache, MySQL, W3C | Browsers | Ad networks / subscriptions |
+| Mobile & Cloud | App stores, Cloud IAM, API + microservices, Kube + Terra | — | SaaS + usage |
+| 5G & AI | AI models (GPT 4, Claude), GPU + IoT sensors + Edge nodes, AI pipeline / MEC, PyTorch / TensorFlow, service mesh | — | API token |
+
+## INbatch2
+
+### Note 7 — Govt Layer / Market Flows (diagram, drawn)
+
+```
+Govt Layer (to control public)
+        |
+Global oversight
+        |
+ISB (International Standard Bodies)
+        |
+Regional Regulation
+        |
+Industry Sector
+        |
+Certification
+        |
+Trade
+        |
+Market
+```
+
+### Note 9 — Centralized Tech leadership Era (diagram, drawn)
+
+```
+1940s Telegraph:      Govt / PTT / AT&T / Bell Labs     (centralized)
+1980–1990 Distribution: Microsoft / Intel / IBM PC, client-server (distributed)
+2000 Internet/Web/Cloud: Google / Amazon / Microsoft / Apple, open source, cloud (open/cloud)
+Leadership shift: Centralized -> Distributed -> Open/Cloud
+Control shift:    Govt -> Corporations -> Platforms / Open source
+```
+
+### Note 11 — Global Business / Silicon product (diagram, drawn)
+
+```
+Silicon product: Intel / Broadcom / Nvidia / AMD / Qualcomm / TSMC / Samsung
+        |  chip design -> fab -> packaging -> testing
+S/W: OS, drivers, firmware
+NIC: Ethernet / Wi-Fi / 5G
+FCC: spectrum / licensing
+Business: OEMs / ODMs / distributors / retailers
+Market: global supply chain / trade / standards
+```
+
+## INbatch3
+
+### Note 14 — DNS, TLD, FCC, Telecom (diagram, drawn)
+
+```
+DNS -> owners -> www (global)
+TLD -> shareholders -> Board of Directors (private network)
+        -> Executives -> Employees / partners (sub-networks)
+FCC (Telecom Regulator, 1934)
+  -> Telecom companies -> AT&T
+  -> Decisions: spectrum modes / options / infra / versions
+  -> Device rules
+  -> Admin: C-suite / implementation / contracts / authorities-funds / partner
+  -> Emergency: 911
+```
+
+### Note 15 — C-suite, Middle Management, FCC Approval, Vendors, Silicon (diagram, drawn)
+
+```
+C-suite (Product Dev / Admin / Deploy's service)
+        |
+Middle management (GPMs)
+        |
+Engineering / Operations / Dev / Marketing
+        |
+Supervisors (handle projects)
+        |
+Team lead -> Testing
+        |
+Employees / workers
+        |
+Technology / Engineers / customers
+        |
+Switches / Routers / Network
+        |
+FCC -> Customers -> Vendors -> NTC -> Silicon (Intel / Broadcom / Nvidia)
+FCC Approval: equipment certification (routers / phones must pass)
+              broadband speed report
+```
+
+### Note 17 — Business Ownership, Tech Standards (diagram, drawn)
+
+```
+Ownership: founders / shareholders
+        |
+Board of Directors -> Investors
+        |
+Executive team: CEO / CFO / CTO / CMO / COO
+        |
+VP -> Middle manager -> Department Heads (HR / sales / IT / Product)
+        |
+Strategy: form network (partners) / allocate resources (CPU, RAM) / chase markets
+Govt funds for research (DARPA) -> world network
+Tech standards: 1 Speed / Storage / Apps
+                2 Governance & Coordination
+                3 National & International Regulation
+                4 Privacy & Security
+                5 Market Rules (antitrust / monopoly control)
+```
+
+### Note 18 — Market Vendors, Cloud, OEMs, Telcos, Network Hierarchy, OOB (diagram, drawn)
+
+```
+Market vendors: Intel / Broadcom / Nvidia (supply, hardware controlled by S/W)
+        |
+Direct buyers -> Cloud (AWS, GCP, ...)
+        |
+OEMs (Dell / HPE / Lenovo / Cisco)
+        |
+Telcos & ISPs (AT&T / Verizon / Jio)
+        |
+Govt Labs, Virtual, Customers (Assemblers <-> NIC integrated into Devices)
+        |
+DARPA TCP/IP remote connections, virtual devices / device options
+Org / Business network: Network device HW+SW (OEM)
+        Network hierarchy: product + custom LFS
+        File system OOB: BMC / iDRAC / iLO
+        Number -> CLI -> router / route
+        Web: Nginx / Apache / DNS book, Switch / API RESTful / Netconf / proc / sys
+```
+
+## INbatch4
+
+### Note 19 — Phone Book, ICANN, IP, Govt Authority, FCC, Hierarchy, DNS, RIR (diagram, drawn)
+
+```
+Phone book -> (computer exchange) info
+ICANN -> start business (register ID)
+IP -> start into exchange (RIR) -> virtual site / device
+Govt authority -> FCC
+FCC -> ICANN identity / business / RIR (ICANN non-profit, multi-stakeholder)
+FCC -> ARIN / RIPE / APNIC (IP blocks allocation)
+FCC -> ICANN domain (company names)
+Tech hierarchy: TLD type, IP ranges ID, telecom regulation (ICANN / IETF / RIR),
+                DNS (TRAI / FCC), web access coordination, registration rules,
+                DNSSEC trust & security (owner key / pin lock), GDPR / CCPA / NIST / ISO
+```
+
+### Note 20 — End Customers, NIC, Kernel Stack, OEM, OOB, Business Port (diagram, drawn)
+
+```
+End customers -> Interfaces -> NIC -> Drivers (implement) -> Kernel stack
+        -> Net device -> TCP/IP
+        -> Cloud / ISP -> EMS / Labs
+OOB chain: Network -> /Root -> OOB (management) -> BMC power
+        /sbin/init -> BMC -> CLI Admin
+        /IP / route, device config files to start / business
+        /etc config, startup.config
+OEM chain: Computer storage, H/W C-suite / Root OEM
+        OEM driven by S/W for fast trading / communication
+        Device emulators, switch, router (private IP), NIC (public IP)
+        Device core functions: business ASIC H/W, shared component,
+        kernel libraries (firmware)
+        Port -> Business -> Network -> customer
+        OOB -> BMC / iDRAC / iLO -> API / proc / sys, startup / hardware,
+        web UI running config, CLI router
+```
+
+## INbatch5
+
+### Note 21 — PC & Client Server era, Internet & Web era (table, drawn)
+
+| Era | UI mediums | Public frameworks | Private frameworks | Architecture | Attributes |
+|---|---|---|---|---|---|
+| PC & Client Server | GUI desktops (Mac, Windows) | X11 (Linux GUI), Motif | MS Win32, Apple toolbox | Monolithic UI, client <-> server | Event driven (mouse, keyboard), multitasking, vendor lock-in (Win only + Mac only) |
+| Internet & Web (1990–2000) | Web browsers, interactive sites | W3C (HTML / CSS / JS), jQuery, Dojo | Adobe, MS | Client-server (Chrome -> HTTP) | HTML, cross platform, scripting (interactive) |
+
+### Note 24 — Authority Agency FCC, Radio Stations (diagram, drawn)
+
+```
+US govt -> FCC Act -> FCC Agency -> FRC Agency -> Radio broadcast
+        -> Radio waves -> Radio stations -> Sender / Receiver
+FCC regulates: radio, television, wire, internet, wifi, satellite, cable
+Broadcasting: radio waves / receiver / radio stations / sender broadcast / channel
+```
+
+## INbatch6
+
+### Note 25 — Physical terms, Virtual terms, Drivers / Modules / Devices (table, drawn)
+
+| | Physical | Virtual |
+|---|---|---|
+| Port | Hardware socket (RJ45, PCIe slot, SFP) | S/W defined end point (TCP / UDP) |
+| Plug | Connector into a port (ethernet plug) | Mapping a virtual interface into a namespace |
+| Cable / Link | Medium carrying signals (copper, fiber); physical path between 2 interfaces | Logical path |
+| Interface | Device's connection point exposed to OS | Logical representation of NIC (vnic, veth, lo, tun) |
+| Socket | — | S/W endpoint defined as IP:Port |
+
+```
+Drivers -> lsmod, modprobe, dmesg, udev -> map to physical ports (NIC, PCIe slots)
+Modules -> insmod, rmmod, modinfo -> map to logical interfaces
+Devices  -> /dev/eth0, /sys/class/net -> represent sockets / cables
+```
+
+### Note 28 — AS, IANA / RIRegistry, Corporate Network, Local subnet, Physical nodes (diagram, drawn)
+
+```
+Internet (public cloud) -> AS (autonomous system, unique ASN)
+        -> IANA / RIRegistry hands ASN & IP block to independent operators (Google, Jio)
+        -> Intranet
+        -> Corporate network (internal infra, CIDR / VLSM, private intra)
+        -> Local subnet (broadcast domain inside a company: HR, finance, server room)
+        -> Physical nodes (unique IPs assigned to individuals)
+```
+
+### Note 29 — Port / Interface / Link / Socket / Bandwidth table (table, drawn)
+
+| Item | Tool | Examples |
+|---|---|---|
+| Port (H/W) | lshw, /sys/class/net | PCIe, NIC, RJ45 |
+| Interface (logical) | ip link | eth0, wlan0, tun, br |
+| Link (path) | ethtool, ip route | Cable, VLAN, VPN |
+| Socket (S/W) | ss, netstat, lsof | IP + Port end point, static / dynamic |
+| Bandwidth (QoS) | tc, ethtool | — |
+
+### Note 30 — Tier 1 standalone & local network (diagram, drawn)
+
+```
+Star topology: every local end point -> central local switch / WAP
+Architecture: client-server / peer-to-peer
+        pull resources from a central local NAS / communicate directly
+Interfaces: physical ethernet ports (eth0, enp3s0), wifi (wlan)
+        virtual local S/W loopback (lo) / local network
+Media: cat6 / radio waves
+NIC -> local switch / router
+```
+
+## INbatch7
+
+### Note 31 — Tier 2 Enterprise Data centers & private clouds (diagram, drawn)
+
+```
+Leaf-spine (Clos) topology: every leaf switch connects to every spine switch
+Architecture: monolithic -> tiered / cluster architecture
+        apps divided into web, app & DB layers
+        managed via automated private cloud stack (e.g. OpenStack)
+Interfaces & media: physical high-speed fiber optic ports built into servers
+        virtual: hypervisor-managed vNIC (vnet0), virtual bridges (br0),
+        virtual ethernet pairs (veth) linking Docker / Kubernetes containers
+        SR-IOV -> bypass all to access H/W directly
+Tier ladder: Tier 1 (local) -> Tier 2 (enterprise / private cloud) -> Tier 3 (distributed / hyperscale cloud)
+```
+
+### Note 32 — Network Topologies, Architectures, Media (table, drawn)
+
+| Topology | Shape | Media |
+|---|---|---|
+| Star | Every node to central hub / switch / AP | Copper, fiber optic, wifi RF; NIC -> central switch port |
+| Bus | Nodes share a single backbone cable | — |
+| Ring | Each node connects exactly 2 neighbours | — |
+| Mesh | High redundancy | — |
+
+```
+Architectures: Client-Server (routing layers), Peer-to-Peer (internet connections)
+        Client -> server, Peer -> peer node, Controller -> switch
+        SDN virtual interfaces (API calls / overlays)
+Media: guided -> wired, unguided -> wireless (radio waves, microwaves, cellular, wifi / bluetooth, cell towers)
+```
+
+### Note 33 — AS, Three foundational routing policies (diagram, drawn)
+
+```
+AS under control of one or more network operators (Google, ISPs, large university)
+        presents a common routing policy to the global Internet using BGP
+  1 Transit policy: AS agrees to carry traffic based on business relationship
+        provider -> customer, customer -> provider
+  2 Peering policy (P2P): AS agrees to exchange traffic between their customers for free
+        mutual benefit, non-transitive
+  3 Stub policy: [heading only in image; filled in Note 33]
+        an edge AS carrying only its own traffic, not transiting others'
+```
+
+### Note 34 — Govt/research -> Semiconductor -> Silicon -> Boards -> OEM/ODM -> Cloud/telecom/Enterprise/govt -> End users (diagram, drawn)
+
+```
+Govt / research / standards
+        | enables
+Semiconductor ecosystem
+        | produces
+Silicon chips
+        | become
+Boards & Devices
+        | assembled by
+OEM / ODM
+        | brought by
+Cloud / telecom / Enterprise / govt
+        | through
+Devices / Networks
+        | to
+End users
+```
+
+### Note 35 — US govt, FCC Act, FRC Agency, Radio broadcast, Commercial / NCE, Analog / Digital (diagram, drawn)
+
+```
+US govt -> FCC Act -> FCC Agency -> FRC Agency -> Radio broadcast
+        -> Radio waves -> Radio stations -> Sender / Receiver
+Public network, private networks
+TV programs, radio programs
+AM, FM, DAB, DRM
+Terrestrial, digital / analog, spectrum
+Commercial broadcast (1), NCE — Non-commercial Educational (2), public NCE, private
+Content: broadcast syndication and/or simulcasting
+Analog radio + NTSC TV (analog modulation) / digital modulation -> signals
+```
+
+## INbatch8
+
+### Note 37 — Radio Waves, Terrestrial, Satellite, Orbits, IN Law (diagram, drawn)
+
+```
+Radio broadcasting -> broadcast stations of radio
+Sender (broadcaster) -> radio station -> receiver (broadcast)
+Broadcast = terrestrial = AM, FM, DAB
+        signals from a land transmitter
+Satellite = satellite radio in earth orbit
+Earth orbit: regular paths, repeating paths, mutual gravitational attraction
+        one revolution = one body around another
+        objects in motion stay in motion until pushed or pulled (Newton's first law)
+        without gravity, an earth orbit goes off into space in a straight line
+        with gravity, pulled back into orbit
+Satellites: natural (earth + moon), artificial (earth stations)
+```
+
+## INbatch9
+
+### Note 40 — IPC blueprints in /usr, Who uses /usr (table, drawn)
+
+| Who | Uses |
+|---|---|
+| Normal user | /usr/bin |
+| Root / Sys Admin | /usr/bin & /usr/local |
+| Sys user (systemd & daemons) | /usr/lib/systemd/system |
+| S/W Dev & compilers | /usr as repo, /usr/include, /usr/lib |
+| Package managers | Primarily writer / maintainer of /usr dir |
+
+```
+/usr/bin, /usr/sbin: process blueprints, management tools of IPC
+/usr/include/sys/*.h: kernel object definitions (header files)
+/usr/local -> writing, /usr/share/app -> editing (CLI for human interface)
+/usr/bin, /usr/share/man: apt, dnf automatically write & edit (automated package-manager interface)
+```
+
+### Note 41 — Hardware / Physical layer, Firmware, /usr holds (diagram, drawn)
+
+```
+Hardware / Physical layer
+        |
+Firmware (ROM, UEFI blob) — read only
+        |
+/usr = Unix system resources (system-related data, user utilities, applications)
+        holds: 1 Kernel headers -> interface between kernel & system library (glibc)
+               2 Kernel source code -> /usr/src/linux, code used to build or modify kernel
+               3 User space land -> user-land side of system operations
+```
+
+### Note 42 — /proc, /cgroup, /sys, kernfs, debugfs, binfmt (table, drawn)
+
+| Pseudo filesystem | Driver | Job |
+|---|---|---|
+| procfs | fs/proc | Creates /proc dir, real-time window into every running task state, memory, limits |
+| cgroupfs | kernel/cgroup | Manages cgroups (v1, v2), enforces resource limits on groups of tasks |
+| sysfs | — | Virtual filesystem mounted as /sys, exports info about device drivers & kernel subsystems |
+| kernfs | — | Helper driver, underlying infrastructure for sysfs & cgroup to display files & dirs |
+| debugfs | — | Developer tracing of task execution & kernel behaviour, exposes ftrace API |
+| binfmt_elf | — | Built-in binary format driver (ELF loader) |
+
+### Note 43 — Process management layout (diagram, drawn)
+
+```
+Process management layout: 1 Stack, 2 Heap, 3 Link (text/code segment), 4 Data
+Process scheduling: scheduler selects a process from ready to run
+        dispatcher switches the process, gives control of CPU to the selected process
+Scheduling algorithms: FCFS, SJF, SRTF
+Preemptive (primitive): can move a process state
+Non-preemptive (non-primitive): cannot move
+```
+
+## INbatch10
+
+### Note 45 — Drivers (interface) (diagram, drawn)
+
+```
+User space (terminal commands)
+        |
+VFS interfaces (files that expose kernel internals)
+        |
+procfs (fs/proc) -> generates /proc directory
+cgroupfs (kernel/cgroup) -> enforces limits, exposed via /sys/fs/cgroup
+binfmt_elf.c -> ELF loader, crucial for task management
+        |
+Kernel internal data (live, generated fresh on request, not bytes from storage)
+```
+
+### Note 47 — Monitoring & Observability, VM vs Containers (table, drawn)
+
+| Level | Tools |
+|---|---|
+| Host / Node level | Prometheus, Netdata, htop, ps, top |
+| Container / Kubernetes level | cAdvisor, Prometheus, Grafana |
+| Full stack | Datadog, New Relic, Dynatrace, Splunk |
+| Cloud | AWS CloudWatch, Azure Monitor |
+
+```
+VM: own kernel + full guest OS (2-level scheduling), host process
+        hypervisor (VMM, KVM) sees the VM as task/processes on the host
+        inside VM: guest kernel with its own process states, scheduler, /proc (VFS)
+        full isolation (separate kernel, memory, devices)
+Container: ordinary process with kernel isolation primitives applied at creation
+        no second kernel; primitives: namespaces, cgroups
+```
+
+### Note 48 — Namespace types (table, drawn)
+
+| Namespace | Isolates |
+|---|---|
+| PID | Process IDs |
+| Mount (mnt) | Mount points |
+| Network (net) | Network stack |
+| UTS | Hostname & NIS domain name |
+| IPC | System V IPC, POSIX message queues, semaphores |
+| User | UIDs / GIDs [Filled] |
+| Cgroup | Cgroup path view [Filled] |
+| Time | System clocks [Filled] |
+
+```
+cgroup v1: a task can belong to different cgroups for different resources, multiple hierarchies
+cgroup v2: all controllers under one tree, /sys/fs/cgroup
+Inspect namespaces: lsns, /proc/PID/ns, nsenter
+```
+
+### Note 49 — Tasks, task_struct, process states (diagram, drawn)
+
+```
+All tasks represented by struct task_struct (PCB), defined in include/linux/sched.h
+Process states (task_struct -> state):
+        1 Task_Running, 2 Task_Interruptible, 3 Task_Uninterruptible,
+        4 Task_Stopped, 5 Task_Zombie, 6 Task_Dead, 7 Task_Wake
+Identifiers: PID & TGID (PID of the main thread)
+Scheduling: default scheduler for normal tasks is CFS (kernel/sched/fair.c)
+Lifecycle: creation, scheduling, resource allocation, context switching, termination
+/proc filesystem: user-space interface to task data
+Signals: IPC, a way to talk to a process
+Namespaces: task isolation mechanism
+```
+
+### Note 50 — Operating system, Core functions (diagram, drawn)
+
+```
+OS: software acting as intermediary between hardware & user applications
+        provides / manages hardware resources (CPU, RAM, storage, peripherals)
+        provides a stable, consistent environment for programs to run
+        starts / stops programs, decides which CPU core runs which task
+Core functions: 1 Process management (creation, scheduling, termination,
+        synchronization, communication / IPC)
+```
+
+## INbatch11
+
+### Note 51 — OS stack, Process management core mechanism (diagram, drawn)
+
+```
+User programs
+        |
+OS: User interface
+        -> System calls
+        -> File | Memory | Process | Network | Power
+        |
+Hardware
+Process management is the core mechanism by which the kernel controls, schedules,
+monitors running processes to ensure efficient resource allocation & stability,
+achieved through kernel-level data structures (task_struct / PCB),
+scheduling algorithms & system calls.
+Core mechanisms: 1 Process representation (PCB / task_struct: PID, memory, current state)
+                 2 Creation (fork() / exec())
+                 3 Process scheduling (CFS decides which runs next)
+                 4 Process states
+                 5 Signals (software interrupts)
+Systemd / init = default process, root for all other processes (PID 1)
+```
+
+### Note 53 — Virtualization (table, drawn)
+
+| Layer | Technology | Result |
+|---|---|---|
+| CPU / Kernel | KVM | VM |
+| OS / User space | Docker | Container |
+| Storage | Ceph | SDS (software-defined storage) |
+| Network | OVS | SDN |
+| Peripherals | virtio | IOV |
+
+```
+Storage level (SDS) Ceph: Block storage = SAN (fiber), File storage = NAS (TCP/IP)
+Network SDN = NFV, OVS
+Hardware / kernel level VM = KVM
+OS level shared-kernel container = Docker
+```
+
+### Note 54 — Tools: iptables, Netfilter, sshd / cockpit (diagram, drawn)
+
+```
+iptables (rules enforcement): tool to add / delete / modify rules in kernel space
+        used to define Netfilter rules, iptables.service to save rules
+        [Filled: iptables configures Netfilter, it does not itself filter;
+         routing is ip route, not iptables]
+Netfilter (real firewall): kernel-space tool, packet filtering based on iptables rules,
+        NAT, packet management, universal interface for packets from any driver in /net/device
+Remote access: sshd / cockpit
+Web / app server: www-data, httpd, nginx
+Database: mariadb (mysql), postgres
+Firewall security: ufw / fail2ban
+Job scheduling: cron
+Network, DHCP: nmcli, dhcpd, networkd
+```
+
+## INbatch12
+
+### Note 55 — Seccomp, CNI, cgroups, Pod resource limits (table, drawn)
+
+| Resource | Mechanism |
+|---|---|
+| CPU | CFS quota |
+| Memory | OOM killer + limit |
+| Storage | BlkIO cgroup, I/O throttling |
+| PID | PID cgroup |
+| Huge pages | HugeTLB cgroup |
+
+```
+CNI: plugs into the kernel network namespace, sets up network interfaces in pods
+        using Linux kernel networking features
+        kubelet calls a CNI plugin (Calico, Cilium, Flannel)
+        CNI creates a veth pair, assigns an IP from the node's pod CIDR,
+        sets up routing + iptables
+Cgroups: limit CPU / memory per pod, each pod gets its own cgroup slice
+Exam: hard limit CPU = 500m -> CFS quota, memory = 512M
+      soft limit (requests) CPU = 250m guaranteed minimum, memory = 256Mi
+Seccomp: restricts system calls, how Kubernetes locks down / networks / pod limits at kernel level
+```
+
+### Note 56 — Seccomp profiles (table, drawn)
+
+| Profile | Meaning |
+|---|---|
+| RuntimeDefault | Safe system calls, blocks 40+ dangerous calls |
+| Localhost | Custom JSON policy you define on each node |
+| Unconfined | No filtering |
+
+```
+Seccomp profile set within the security context in workloads,
+applied at pod level or individual container level (container overrides pod)
+spec.securityContext.seccompProfile.type: RuntimeDefault / Localhost / Unconfined
+Higher-level abstractions (all except pod) do not run containers themselves;
+they create & manage pods. Creating a Deployment = defining a desired state,
+Kubernetes spins up & manages pods. Pods = workers, workloads = supervisors.
+```
+
+### Note 58 — Deployment, DaemonSet, Network plugin, Core primitive Pod, Stateless vs Stateful (diagram, drawn)
+
+```
+Core primitive = pod (apiVersion: v1)
+        all other workloads manage pods under the hood
+Stateless workloads (do not remember connections):
+        Deployment (apiVersion: apps/v1) — web servers, rolling updates,
+        rollbacks & scaling, ensures a specified number of identical pods
+        running via ReplicaSet
+Stateful workloads (remember connections):
+        StatefulSet (apiVersion: apps/v1) — databases, Kafka, Redis
+        pods created sequentially, keep fixed names (db0, db1),
+        stable unique identities and persistent storage
+Add-on mapping: Deployment (CoreDNS) handles name resolution
+        DaemonSet (kube-proxy) handles network rules
+        DaemonSet / Deployment (network plugin) implements CNI
+```
+
+### Note 59 — In Linux vs In Kubernetes, Seccomp (diagram, drawn)
+
+```
+In Linux: one kernel, one userspace
+In Kubernetes: one kernel, many userspaces (isolated)
+        one host kernel shared by many pods, but each pod thinks it has
+        its own OS via namespace isolation
+Seccomp (secure computing mode) = restricting system calls
+        filters which system calls a pod can make to the host kernel
+        (configured in YAML)
+Pod app syscalls / commands (mount, reboot)
+        -> Seccomp filters
+        -> Allowed: executes on kernel
+        -> Denied: killed or logged
+Default workloads: platform-dependent, distribution provider provides (AKS, EKS, GKE, k3s)
+```
+
+### Note 60 — Server OS = Linux vs Kubernetes-cluster OS, Pod shared IP / storage / atomic (diagram, drawn)
+
+```
+Physical server OS is Linux
+        CSI drivers mount storage, CNI sets up networking
+        containers inside a pod have user space + kernel space
+        pods share the same network namespace + storage
+Container: designed to run a single process; real-world apps need related helper processes
+Pod solves this by grouping related helper processes into a single unit
+Shared network IP: containers inside the same pod talk instantly over localhost,
+        eliminating external network setup
+Shared storage volumes: multiple containers read / write the same folder simultaneously
+Atomic deployment: all containers in a pod are guaranteed to schedule, start, stop
+        and live together on the exact same physical / virtual machine as a single unit
+```
+
+## INbatch13
+
+### Note 61 — Kernel: core OS component, airport analogy (diagram, drawn)
+
+```
+Kernel = controller
+Apps = planes
+System calls = signals
+Hardware = runway
+Kernel: collection of system calls, system-call interface between process & OS,
+        responsible for managing system resources (CPU, memory, storage, network, I/O devices),
+        purpose is to provide services to other software and control hardware resources
+```
+
+### Note 62 — /etc/group, /etc/gshadow (tables, drawn)
+
+```
+/etc/group — group definitions:
+| Field | Meaning |
+|---|---|
+| 1 | Group name |
+| 2 | Password placeholder |
+| 3 | GID |
+| 4 | Member list |
+
+/etc/gshadow — group password storage (same group, password/shadow fields)
+```
+
+### Note 63 — /etc/passwd, /etc/shadow (tables, drawn)
+
+```
+/etc/passwd — primary user database:
+Format: username:x:UID:GID:Gecos:home-dir:shell
+| Field | Meaning |
+|---|---|
+| 1 | Username |
+| 2 | Password placeholder (x) |
+| 3 | UID |
+| 4 | GID |
+| 5 | Gecos |
+| 6 | Home directory |
+| 7 | Login shell |
+
+/etc/shadow — secure password storage:
+| Field | Meaning |
+|---|---|
+| 1 | Username |
+| 2 | Encrypted password, or special values ! or * for locked accounts |
+| 3 | Last password change date (days since epoch) |
+| 4 | Minimum password age |
+| 5 | Maximum password age |
+| 6 | Warning period |
+| 7 | Inactivity period [Filled] |
+| 8 | Account expiry date [Filled] |
+| 9 | Reserved [Filled] |
+```
+
+### Note 64 — User Accounts in Linux (table, drawn)
+
+| Account type | Identity | UID range |
+|---|---|---|
+| Root user | Human admin | UID 0 |
+| System user | Services / daemons | UID 1–999 |
+| Regular user | Humans | UID 1000+ |
+| Network user | Authenticated through LDAP, NIS or a directory service | — |
+
+```
+Each account has: UID, authentication credentials, associated privileges,
+resource ownership, environment configuration
+Identity assigned to: User-Person (human user), Task-Process (running program, e.g. Firefox),
+Demon-Service (background program)
+```
+
+### Note 66 — cmds -> shell -> syscalls -> kernel (H/W), index table (diagram and table, drawn)
+
+```
+Commands -> Shell -> Syscalls -> Kernel (Hardware)
+```
+
+| # | Item | Meaning |
+|---|---|---|
+| 1 | Kernel | Set of commands / system calls, interface between hardware resources & shell, only one kernel on a system |
+| 2 | Shell | Accepts commands, converts them to binary, interacts with users, many shells in action, each user = a shell, interface between kernel & user apps |
+| 3 | Process | A program to perform some job (memory + execution) |
+| 4 | User account | Who can log into the system: UID, username, GID, home, shell |
+| 5 | Docker | Interacts with the kernel via namespaces & cgroups |
+| 6 | Kernel space | Modules + drivers + processes |
+| 7 | System libraries | Frameworks, shared libraries (libraries + frameworks) |
+| 8 | User space | Libraries — apps, Spring Boot, Kubernetes |
+
+## INbatch14
+
+### Note 67 — Cluster, IBM certified container image, Assembly process, Storing & publishing & pulling (diagram, drawn)
+
+```
+IBM distributes: base certified container image + official Helm chart (ibm-b2bi-prod)
+        you do not change this core image
+        instead you build a custom "init container package" as a dependency injector
+        using docker, podman or buildah
+Assembly process: package third-party resources (JDBC drivers, security providers,
+        XML tools) into an independent Alpine container image
+        because you cannot modify the official signed IBM images,
+        you write a separate Dockerfile to pack third-party files
+        (JDBC drivers, custom security policies) into an Alpine container
+Storing & publishing & pulling: storage hub / registry, an OCI registry
+        (AWS ECR, IBM Cloud Container Registry) holds the image package
+        Push: extract the archive and run commands to publish the software package
+        Destination: internal enterprise catalog
+```
+
+### Note 68 — Automating on cluster (Helm path) (diagram, drawn)
+
+```
+1 Register IBM credentials inside the cluster:
+        kubectl create secret (secret.yaml)
+        fields: server, username, password [field names only, values not copied]
+2 Create the automated values, override the blueprint (values.yaml)
+3 Execute the Helm deploy command
+Ingress / route: cluster IP (API pod), loadbalancer / nodeport (API pod),
+        cluster IP (API pod) backend
+```
+
+### Note 69 — Elements required for deployment of a package (diagram, drawn)
+
+```
+1 Environment variables & secrets
+2 Target environment / destination environment:
+        1 Networked (VM)
+        2 Distributed (cluster)
+3 Healthchecks & probes
+4 Rollout strategy
+IBM Sterling Integrator from IBM Passport:
+        1 Application installer archive (software)
+        2 IBM certified container image archive (platform) appliance — from IBM Registry
+For VM (script path): you cannot run apt-get or dnf install to fetch the file;
+        the script must explicitly handle 3 tasks:
+        1 Authentication, 2 Downloading / fetching from the artifact, 3 Executing / running silent install
+        Save the file as /install.sh
+To make enterprise packages install automatically using a single script or execution
+command, convert the credentials & download tokens from IBM into automated variables
+within your deployment engines
+```
+
+### Note 70 — Packages are platform specific, Artifactory core repo types, Packages (table, drawn)
+
+| Platform factor | Values |
+|---|---|
+| OS distribution | .deb for Ubuntu, .rpm for RedHat |
+| CPU architecture | x86-64 (Intel / AMD), ARM — different, not interchangeable |
+
+| Artifactory core repo type | Meaning |
+|---|---|
+| Local repos | Private physical repos (internal network storage), your own internal builds, custom packages, proprietary code |
+| Remote repos | Caching proxies, pointing to public registries |
+
+| Package family | Repos | For |
+|---|---|---|
+| Language-specific package repos (app & dev dependencies) | Maven, Gradle, Ivy; npm / yarn / pnpm; PyPI | Libraries |
+| Container & cloud-native images | OCI, Docker, Helm charts | App runtimes, orchestration (DevOps) |
+| Infrastructure & OS packages | .deb, .rpm, Terraform (.tf) | System level (DevOps) |
+
+### Note 71 — Package: compressed archive, Structural Anatomy, Payload, Metadata, Lifecycle scripts (diagram, drawn)
+
+```
+Package = compressed archive (tar.gz or zip)
+        contains 2 things: 1 Payload (files to install)
+                           2 Metadata (instructions on how to install them)
+        no matter the environment (standalone, networked or distributed)
+        or the package (system, language, user), the structural anatomy is the same
+Extract any software package and it has 3 elements inside:
+        1 Payload (binaries / files)
+        2 Metadata (package information)
+        3 Lifecycle scripts (run during install / uninstall)
+Payload: package files / image layers, assets the app needs to run
+        executable binaries / code scripts (Python, C, Java),
+        config files (.conf, .yaml),
+        assets (images, icons, docs, man pages)
+Metadata: manifest / config, a text file acting as the identity card for the package manager
+Lifecycle scripts (hooks): small scripts (bash) that run at specific moments,
+        entrypoint or CMD
+```
+
+## INbatch15
+
+### Note 73 — Cloud deployment, IBM certified containers, Helm charts (diagram, drawn)
+
+```
+Helm chart -> cluster looks at Artifactory for the OCI registry path
+        -> CRI-O / Docker on worker nodes pulls the OCI image layers from Artifactory
+        -> caches & extracts these layers locally onto the worker node root filesystem
+           (/var/lib/containers or Docker storage)
+Mounts:
+        App code    /opt/ibm      <- from Artifactory (read only)
+        Payload     /mnt/payload  <- shared PVC (read write)
+        App logs    /var/log/ibm  <- dedicated log PVC
+```
+
+### Note 74 — Packages = compressed Archives (table, drawn)
+
+| Family | Formats | Tools |
+|---|---|---|
+| Traditional (native) packages | Debian .deb, RPM .rpm, Arch .pkg.tar | dpkg / apt, zypper / DNF / yum, pacman |
+| Source packages | Tarballs (.tar.gz, .tgz), source RPM (.src.rpm), Debian source (.dsc) | Built before installing |
+| Universal (sandboxed) packages | Flatpak, Snap, AppImage | Run on any distribution, sandboxed |
+
+```
+How: 1 Makefile builds source code into binaries
+     2 Source code files compressed into tarball
+     3 Metadata and lifecycle scripts added (Note 71 anatomy)
+     4 Package manager installs it
+```
+
+### Note 75 — Traditional VM deployment, automated script (diagram, drawn)
+
+```
+Automation script runs on the target VM
+        -> reaches out to Artifactory over the subnet
+        -> downloads the massive installation zip or tar.gz archive
+        -> file temp downloaded & extracted into a local dir on the VM (/tmp or /opt/ibm)
+        -> automation script (bash) executes IBM IMM
+        -> IMM installs binary files into a dedicated permanent disk dir on the VM disk
+           (/opt/IBM/Sterling)
+        -> installation dir mapped to a secondary enterprise block storage disk
+           (AWS EBS volume attached to that VM, SAN disk)
+           separate OS disk, separate app disk
+```
+
+### Note 77 — Artifactory: internal vs external, generic vs OCI repositories (diagram, drawn)
+
+```
+Internal machines -> internal DNS, inbound path -> Artifactory (local storage, internal network)
+Artifactory -> proxy, a single web client -> requests files on behalf of the company
+        -> outbound firewall rules, inbound blocked
+        -> outside internet / public registries
+Artifactory serves:
+        1 Generic repositories (binaries): file storage for monolithic files
+          .zip, .tar.gz, .jar — accessed with wget, curl
+        2 OCI repositories (microservices): image registry for manifests
+          accessed with Helm, Podman / Docker
+```
+
+### Note 78 — All repos share one IP, Artifactory infra (diagram, drawn)
+
+```
+One Artifactory server, one IP, many repositories (distinguished by URL path, not IP)
+Install forms:
+        1 Host / VM -> install the Artifactory app -> machine IP for all repos
+        2 Guest / container -> deploy Artifactory as a container -> guest IP for all repos
+        3 Platform / load balancer -> deploy as a cluster -> platform IP / URL of the load balancer
+Infra:
+        1 VM -> install the Artifactory app
+        2 Container -> deploy Artifactory as a container
+        3 Cluster -> run multiple Artifactory instances across a cluster of VMs,
+          or Artifactory as Helm charts
+```
+
+### Note 79 — Kubernetes: Repository, Artifactory, Identities (diagram, drawn)
+
+```
+Repository = central hub where digital assets are stored & versioned
+        1 Source code repo: GitHub, GitLab, Bitbucket, Azure Repos, AWS CodeCommit
+          stores human-readable code written by developers
+        2 Artifact / binary repo: JFrog, AWS CodeArtifact, Azure Artifacts, GitLab
+          stores compiled outputs of that source code
+          (.jar, .war, Docker images, npm packages)
+Artifactory (JFrog) = enterprise tool to host, manage & secure binary repositories
+        1 Local repositories -> internal folders
+        2 Remote repositories -> caching proxies
+        3 Virtual repositories -> local + remote under one URL
+Identities:
+        1 Artifactory identity (server layer): SSL / TLS, IP, FQDN, network port
+        2 Repository identity (path layer): access token, API key, URL, no IP / MAC
+```
+
+### Note 80 — Device communication types in motherboard (table, drawn)
+
+| Family | Protocol | Wires / model | Devices |
+|---|---|---|---|
+| Inter-system (device <-> device, wired) | UART | 2 wires, asynchronous serial | Embedded devices, simple devices |
+| Inter-system | USART | Synchronous clocking added to UART | Medium embedded devices |
+| Inter-system | USB | Plug & play, regular driver | Smart / external devices |
+| Inter-system (not a protocol) | GPIO | Single pin, on / off | Dumb devices (LED, switch, button) |
+| Intra-system (chip <-> chip) | I2C | 2 wires (SDA, SCL), master / slave | Low-speed peripherals, multi-device |
+| Intra-system | SPI | 4 wires, master-controlled | CPU to peripherals |
+| Intra-system | CAN | Multi-master bus | Multiple devices |
+| IoT (wireless) | Wi-Fi, Bluetooth, NFC, MQTT | Wireless | IoT devices |
+
+### Note 82 — Firmware = stable / Entry / unshakable (diagram, drawn)
+
+```
+Power on
+        |
+Firmware wakes up CPU (first code the CPU executes)
+        |
+Firmware initialises hardware (memory, peripherals)
+        |  stored in ROM / EEPROM / flash chip (UEFI = modern motherboard firmware)
+        |  delivered as a binary blob (.hex): electric pulses grouped into binary words
+        |
+Bootloader
+        |
+Operating system loading
+Firmware = stable (does not change during normal use)
+         = entry (the entry point, first code that runs)
+         = unshakable (survives power-off and OS reinstalls)
+Standard software: stored on disk, easily modified or replaced
+Firmware software: stored in permanent (non-volatile) memory on the hardware component itself
+```
+
+## INbatch16
+
+### Note 83 — Procedural vs OOP Language (table, drawn)
+
+| | Procedural | OOP Language |
+|---|---|---|
+| Approach | Top to bottom | Bottom to top |
+| Focus | Functions, logic | Data (objects), binds data & functions that operate on it |
+| Unit | Functions, each treated as a separate module | Classes, a group of functions designed under a single unit |
+| Variables / members | Local & global variables | Private & public members |
+| Modularity | Separate modules | High modularity |
+| Polymorphism (overloading) | Does not support | Supports |
+| Message passing | Does not support | Supports |
+| Inheritance | Does not support | Supports |
+
+### Note 84 — Java, Software map (diagram, drawn)
+
+```
+Software = set of programs; Program = set of instructions
+Software
+  |-- System software
+  |     |-- Translators (high-level language -> low-level language)
+  |     |     |-- Compiler, Interpreter
+  |     |-- OS
+  |           |-- Single user, Multi user
+  |-- Application software
+        |-- Languages (Python, Java)
+        |-- Packages (MS Office, AutoCAD, Photoshop)
+Languages: provide facilities to write code / programs
+Packages: contain readymade programs / software
+```
+
+### Note 85 — Huge data carriers, Small data carriers, Network / Cloud (table, drawn)
+
+| Carrier size | Carrier | Cloud / system counterpart |
+|---|---|---|
+| Huge (storage & bus) | Internal NVMe SSD | Local NVMe, physically attached to host |
+| Huge | External SSD / HDD | Block storage, network-attached / managed disk, virtual drives |
+| Huge | Huge blobs | Object storage, buckets / S3, data lakes, unstructured |
+| Huge | PCIe bus | Direct connect, private high-speed pipe |
+| Small (signals & status) | I2C | CloudWatch / monitor metrics, thermal sensors |
+| Small | SPI | AMI / gold image, snapshot used to wake up CPU / VM, boot firmware |
+| Small | HID (keyboard & mouse) | SSH / virtual console, bits sent over network |
+| Network / Cloud | Wi-Fi / Ethernet | VPC / VNet |
+| Network / Cloud | Network packets | Inbound / outbound traffic |
+
+### Note 87 — Direction, pins (table, drawn)
+
+| Pins | Direction | Analogy |
+|---|---|---|
+| Address pins | Outbound only | Writing the address on the envelope |
+| Data pins | Both directions | Letter inside the envelope |
+| Control pins | In / out | Instructions (priority mail) |
+| Power pins | Inbound only | Electricity |
+
+```
+Fetch -> Decode -> Execute
+Fetch (get instruction): Address sends the location of code
+        Control signals a read command
+        Data carries the instruction (ADD) from RAM to CPU
+Decode (work): CPU logic finds what the instruction is
+Execute (move the variables): performs the operation
+Buses: 1 Address bus — finds data on RAM
+       2 Data bus — moves that data from RAM
+       3 Control bus — carries control signals (read / write commands) [Filled]
+```
+
+### Note 88 — Map-targets, Address space, Physical vs Virtual address (diagram, drawn)
+
+```
+Pins as jobs: Address pins = map (where data is)
+              Data pins = payload (how much data moves)
+              Control pins = commands (what to do)
+              Power pins = utility (electricity)
+Bus = collection of pins
+Address space = total number of addresses the CPU can handle
+Physical address: address pins (32, 48-56) set the maximum RAM the CPU can physically reach
+        2^32 = 4 GB (32 pins -> 4 GB RAM)
+        2^48 = 256 TB (48 pins -> 256 TB RAM on the motherboard)
+        actual address in the RAM chip
+Virtual / logical address: logical map given to each program by the OS
+        fake map stored inside RAM as page tables, OS defines it for the process
+        virtual view given by the OS
+```
+
+### Note 89 — Address space size (diagram, drawn)
+
+```
+Address space size = unique locations a process can access or see
+        = range of addresses available to a process
+Address pins (address bus) limit how much memory the CPU can talk to
+        each pin = one bit, 2^n unique signals
+Physical space: CPU pins & address bus define how much physical RAM
+        can be plugged into the motherboard
+Logical address space: registers define the logical address,
+        how much memory a software program can use
+        32-bit system cannot use more than 4 GB of RAM,
+        no matter how much is plugged into the motherboard
+```
+
+### Note 90 — Address space size, virtual address, physical address, page table, MMU, descriptors (diagram, drawn)
+
+```
+1 Address space size: total range of frames that can be read
+2 Virtual address: pages on disk, blocks of data waiting to be read
+3 Physical address: page frames on RAM, fixed slots
+4 Page table (MAP): data structure managing pages and frames
+        logical / virtual address = generated by the CPU
+        physical address = location on RAM
+        MMU translates addresses
+5 MMU (MAP translator): takes the page number in the page table, maps it to a frame
+        CPU knows virtual addresses / pages, does not know where in frames
+        page table provides the map to the frame
+6 Descriptors: let apps use hardware they do not own
+```
+
+### Note 92 — Virtual address space (lives in OS), MMU connection inside CPU (diagram, drawn)
+
+```
+Virtual address space (lives in OS) — pages:
+        imaginary, provided by the OS
+        can be larger than total RAM
+        this is the address an app sees
+RAM = collection of pages / cells, each page = 4 KB, each page frame = 4 KB
+MMU connection inside CPU (bridge):
+        MMU uses page tables (inside RAM) to map physical & virtual addresses
+        MMU translates a page-table entry to a page frame / location on RAM
+        CPU TLB checks the page table inside RAM
+        (TLB hit = fast, TLB miss = page-table walk) [Filled]
+```
+
+## INbatch17
+
+### Note 93 — Types: block level, file level, object level (diagram, drawn)
+
+```
+Block level (lower level) = abstract raw blocks
+        virtualizes physical storage (HDD, SSD)
+        combines raw blocks into a logical storage unit
+        does NOT organize data into files & directories
+        manages the underlying physical storage (blocks)
+                |
+                | that is why file level comes in
+                v
+File level = manages organization & access to files & directories on top of storage
+        storage devices provide [cut off in the image]
+Object level = [heading only on this page; filled in Note 93]
+        data stored as objects with IDs and metadata, at cloud scale
+```
+
+### Note 95 — OS virtualization (Containers) (diagram, drawn)
+
+```
+Host kernel (shared by all containers)
+  |-- Container 1: app + dependencies, own filesystem (AUFS / overlayfs), own user space
+  |-- Container 2: app + dependencies, own filesystem, own user space
+  |-- Container 3: app + dependencies, own filesystem, own user space
+Tools: Docker, Kubernetes, OpenVZ, Podman
+Purpose: portable & faster deployment of apps across different environments,
+        without needing full VMs
+Containers = multiple isolated services, running on a single control host / node,
+        those services can access the kernel
+```
+
+### Note 96 — H/W virtualization (VM) (diagram, drawn)
+
+```
+Physical hardware (RAM, CPU, storage)
+        |
+Hypervisor (KVM, Hyper-V, Oracle VM VirtualBox)
+        |
+  |-- VM 1: own kernel, own OS, own filesystem, virtual disk file (.vmdk / .vdi)
+  |-- VM 2: own kernel, own OS, own filesystem, virtual disk file
+  |-- VM 3: own kernel, own OS, own filesystem, virtual disk file
+Purpose: efficient use of physical hardware by running VMs
+        multiple OS on the same machine with complete isolation
+        reduces the total number of physical machines
+```
+
+### Note 98 — User / Application / OS / Hardware stack (diagram, drawn)
+
+```
+        +----------+
+        |   User   |
+        +-----+----+
+              |
+  +-----------+-----------+
+  |      Application      |
+  |                       |
+  |  +-----------------+  |
+  |  |       OS        |  |
+  |  +-----------------+  |
+  +-----------+-----------+
+              |
+        +-----+----+
+        | Hardware |
+        +----------+
+```
+
+### Note 100 — Two kernel stack diagrams (diagrams, drawn)
+
+```
+Diagram 1:
+        +--------------+
+        | Applications |
+        +------+-------+
+               |  ^
+               v  |
+        +------+-------+
+        |    Kernel    |
+        +------+-------+
+               |  ^
+               v  |
+        +------+-------+
+        | CPU, Memory, |
+        | Storage,     |
+        | Devices      |
+        +--------------+
+
+Diagram 2:
+        +------------------+
+        | Software /       |
+        | userspace        |
+        +--------+---------+
+                 |  ^
+                 v  |
+        +--------+---------+
+        |     Kernel       |
+        +--------+---------+
+                 |  ^
+                 v  |
+        +--------+---------+
+        | Hardware:        |
+        | CPU, Memory,     |
+        | Disk, Devices,   |
+        | Network          |
+        +------------------+
+```
+
+### Note 102 — Hypervisor stack, Type-1, AWS example (diagram, drawn)
+
+```
+Top:    [App / OS / Kernel]  [App / OS / Kernel]  [App / OS / Kernel]  [App / OS / Kernel]
+                |                      |                      |                      |
+        [VM]                   [VM]                   [VM]                   [VM]
+                +--------------+-------+--------------+-------+
+                               | Hypervisor (KVM, Xen, etc) |
+                +--------------+-------+--------------+-------+
+                               | Hardware / Node / Physical server |
+        +----------------------+----------------------+----------------------+
+        | Storage: SAN / NAS / DAS | Servers: rackmount, blade |
+        | Network: Ethernet, fibre channel                        |
+        +---------------------------------------------------------+
+        | Data center / cluster                                   |
+        +---------------------------------------------------------+
+Side labels: OpenStack / Cloud, Cluster
+Type-1: hypervisor runs directly on hardware, no host OS between it and the machine [Filled]
+Hypervisor can create / have many VMs; one node has one hypervisor;
+a group of nodes / physical servers manages all hypervisors together
+AWS example: Region (area) -> AZ (data centers) -> Node (physical server)
+        -> Hypervisor (runs on one node) -> VM (EC2 instance)
+```
+
+### Notes with no diagram or table in the image
+
+The following notes had no diagram or table drawn in the image, so nothing is drawn for them here — their text transcription in their own batch section is complete: INbatch1 Notes 2, 3, 5; INbatch2 Notes 8, 10, 12; INbatch3 Notes 13, 16; INbatch4 (both notes are chains, drawn above); INbatch5 Notes 22, 23; INbatch6 Notes 26, 27; INbatch7 Notes 36; INbatch8 Note 38; INbatch9 Note 44; INbatch10 Note 46; INbatch11 Note 52; INbatch12 Note 57; INbatch13 Note 65; INbatch14 Notes 70 (table drawn above), 71 (diagram drawn above), 72; INbatch15 Notes 76, 79 (diagram drawn above); INbatch16 Notes 86, 91; INbatch17 Notes 94, 97, 99, 101.
+
+---
+
+# INbatch18 — Image Notes 103–111 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 1 of the 10 images is a duplicate of content already taken (Note 95) and is skipped entirely, no content copied — see the duplicate record below. 9 new notes filed.
+Diagram rule applied as refined 2026-10-31 10:12 IST (keep the description too, along with the drawn version): from this batch onward, each note keeps BOTH its word description AND its drawn diagram/table, together in the same note.
+
+## Duplicate record — INbatch18, image 1 (skipped, no content copied)
+
+- The first image in this set is a second writing of the OS virtualization (Containers) page already taken as Note 95 (INbatch17): isolating apps & dependencies within containers without full VMs, portable & faster deployment across environments, tools Docker / Podman / OpenVZ. Per the duplicate rule it is skipped entirely; nothing from it is copied here. The rest of that page is show-through from the other side, not content of the page.
+
+## Image Note 103 — Virtualization, Hosted vs Bare metal, Hypervisor types, Traffic cop, Resources (handwritten, as is)
+
+- "Technology that allows you to create virtual representation of physical resources such as"
+- ① CPU — servers
+- ② HDD — storage
+- ③ — N/Ws
+- ④ — devices
+
+### Stack diagrams (described in words AND drawn below, per the keep-both rule)
+
+- Hosted stack: OS1 / OS2 on top, VMM in the middle, Host OS below it, H/W at the bottom
+- Bare metal stack: OS1 / OS2 on top, VMM in the middle, H/W at the bottom (no host OS)
+
+```
+Hosted:     OS1 | OS2
+            ---------
+                VMM
+            ---------
+             Host OS
+            ---------
+               H/W
+
+Bare metal: OS1 | OS2
+            ---------
+                VMM
+            ---------
+               H/W
+```
+
+- Virtualization: it enables you to run multiple VMs on same physical machine
+- each VM can have its own OS & apps
+- VM has its own resources such as CPU, H/W, storage, Networks, memory
+
+### Hypervisor: a software layer that creates & manages VMs on a physical machine
+
+- Eg: VMware ESXi, Hyper-V — Type 1; KVM, VirtualBox, VMware Workstation — Type 2 [grouping as written]
+- Hypervisor: ① baremetal (run directly on H/W, no middleman), ② hosted (run as app on OS)
+- It acts as traffic cop distributing the physical hardware resources to various VMs
+- without it an OS can talk directly to H/W
+- It allocates physical resources to VMs:
+  - ① compute (CPU) — GPU, TPU, DPU, FPGA [side label: brain]
+  - ② memory — RAM, PMem, SSD, HDD, Tape [side label: memo]
+  - ③ N/W — NIC (port), switches & routers, load balancer, cabling, firewalls [side label: nervous]
+  - ④ [numbered ⑤ in the image, cut off at the bottom] Hypervisor enables VMs to communicate with external world through N/Ws & virtual devices
+
+### [Filled — added, not in the original image]
+- "VMM" is filled as Virtual Machine Monitor — another name for the hypervisor, the layer in both stack diagrams.
+- Type 1 vs Type 2 grouping, filled: Type 1 (bare metal) hypervisors run directly on hardware with no host OS — VMware ESXi, Hyper-V, and KVM (in its usual bare-metal use) belong here; Type 2 (hosted) hypervisors run as an application on a host OS — VirtualBox and VMware Workstation belong here. The image groups KVM with the Type 2 examples; KVM is listed here as written, with the standard grouping noted for the final verification step.
+- Traffic cop, filled: the hypervisor sits between guest operating systems and physical hardware, deciding which VM gets which CPU time, memory, and device access — without it, an OS talks directly to hardware and cannot share the machine.
+- The cut-off ④/⑤ line is filled as: the hypervisor also enables VMs to communicate with the external world through networks and virtual devices (virtual NICs, virtual switches) — the network counterpart to allocating compute and memory.
+
+---
+
+## Image Note 104 — User space, Kernel space, Kernel mode, User mode, How works (handwritten, as is)
+
+### User space: where apps & process run separate from kernel
+
+- doesn't have direct access to h/w
+- /usr, /home, /var, /bin
+
+### Kernel space: contains core OS functions (mem mgmt, process sched etc)
+
+- /lib/modules, /boot
+
+### Modes
+
+- Kernel mode = privileged mode = OS level, UID = 0
+- User mode = restricted mode = app level / process
+- These modes enforce OS security, stability, controlled access → to H/W resource
+
+### How works
+
+- User → Kernel transition (CPU switch to kernel mode to execute user req)
+- Kernel → User transition (OS switches back to user mode, returning control)
+- Mechanism to achieve: (security, stability, controlled access)
+
+### [Filled — added, not in the original image]
+- Directories, filled: user space lives in /usr (user programs), /home (user files), /var (variable data), /bin (essential commands); kernel space is backed by /lib/modules (loadable kernel modules) and /boot (kernel image and bootloader files) — the filesystem view of the two spaces.
+- UID = 0, filled: kernel mode runs with full privilege, the same privilege level as the root user (UID 0) — user mode runs restricted, so a crashing or malicious app cannot touch hardware directly.
+- Transition cycle, filled: an app in user mode needs hardware → makes a system call → CPU switches to kernel mode → kernel executes the request → OS switches back to user mode and returns control to the app. Every system call is one round trip through this cycle, which is what enforces security, stability, and controlled access.
+- The circled numbers and reversed words at the right edge of the image are show-through from the other side of the page, not content of this note, and are not transcribed.
+
+---
+
+## Image Note 105 — Distributed computing model (handwritten, as is)
+
+- multiple independent nodes work together over a n/w to achieve a common goal
+- These systems overcome physical limits of individual processor to provide massive scalability & availability [cut off at the right edge]
+
+### System structure
+
+- ① client-server
+- ② three tier / N-tier
+- ③ peer-peer
+- ③ microservices [numbered ③ twice in the image, kept as written]
+
+### Protocols & communication
+
+- communication of [nodes / machines, partly unclear] governed by protocols
+- ① TCP/IP — foundation
+- ② app protocols: HTTP / REST, gRPC / HTTP2, MQTT
+- ③ guided or unguided media: wifi, 5G, satellite [cut off at the bottom]
+
+### [Filled — added, not in the original image]
+- Scalability & availability, filled: one processor has physical limits (speed, memory, failure); many independent nodes over a network overcome them — add nodes for massive scalability, and if one node fails others continue for availability.
+- System structures, filled: client-server (clients ask, servers answer), three-tier/N-tier (presentation, application, and data layers separated, N tiers for larger systems), peer-to-peer (nodes equal, no central server), microservices (the application split into small independent services) — the second ③ is filled as the fourth structure, numbered ④ in sequence.
+- Protocols, filled: TCP/IP is the foundation every distributed system runs on; application protocols on top of it are HTTP/REST, gRPC over HTTP/2, and MQTT (for IoT messaging); the media carrying them are guided (cables, fiber) or unguided (Wi-Fi, 5G, satellite).
+
+---
+
+## Image Note 106 — Architecture / protocol / topology / media / network-ID / interface matrix (handwritten, as is)
+
+- Page photographed rotated; the table is transcribed below as written, column by column, with the drawn table alongside the description per the keep-both rule.
+
+### Description (words)
+
+- Columns: Arch style, Layers protocol, Topology Zone, Physical media, N/W IDs, Interface / Device, Arch S/W [last header partly unclear]
+- Rows, as combinations in the image:
+  - Client/server — HTTP/REST, GraphQL — Public (VLAN 10) — unguided — Host ID — Router / Firewall
+  - Component — Web sockets — Public (VLAN 10) — unguided — Public IP — Router / AP
+  - Microservices / Macro — gRPC — Private APP (VLAN 20) — Guided / virtual media — Private Sub ID, Host ID — L3 switch / SVI
+  - EDA / SOA — AMQP, Kafka, SOAP — Private APP (VLAN 20) — Guided media — Broker Sub & Host ID — Layers [partly unclear]
+  - Space based / P2P — gRPC / SOA [partly unclear] — Isolated storage (VLAN 30) — Guided / fiber — VLAN ID, Broadcast ID, Host ID — Managed L2 switch, SVI 20
+  - Modular monolith — Shared mem — Local, Host only — Virtual media / RAM — None (Bypass wire) — Server node, CPU & RAM
+
+### Drawn table
+
+| Arch style | Layers protocol | Topology Zone | Physical media | N/W IDs | Interface / Device |
+|---|---|---|---|---|---|
+| Client/server | HTTP/REST, GraphQL | Public (VLAN 10) | Unguided | Host ID | Router / Firewall |
+| Component | Web sockets | Public (VLAN 10) | Unguided | Public IP | Router / AP |
+| Microservices / Macro | gRPC | Private APP (VLAN 20) | Guided / virtual media | Private Sub ID, Host ID | L3 switch / SVI |
+| EDA / SOA | AMQP, Kafka, SOAP | Private APP (VLAN 20) | Guided media | Broker Sub & Host ID | Layers [partly unclear] |
+| Space based / P2P | gRPC / SOA [partly unclear] | Isolated storage (VLAN 30) | Guided / fiber | VLAN ID, Broadcast ID, Host ID | Managed L2 switch, SVI 20 |
+| Modular monolith | Shared mem | Local, Host only | Virtual media / RAM | None (Bypass wire) | Server node, CPU & RAM |
+
+### [Filled — added, not in the original image]
+- Reading the matrix, filled: each row is one complete stack choice — pick an architecture style, and the row gives its protocol, its network zone (VLAN), its media, the network IDs it needs, and the device that serves it. Public-facing styles sit in VLAN 10 on unguided media; private application styles sit in VLAN 20 on guided media; isolated storage sits in VLAN 30 on fiber; the monolith needs no network at all (shared memory, local host only, bypassing the wire).
+- VLAN numbers, filled: VLAN 10 = public/DMZ zone, VLAN 20 = private application zone, VLAN 30 = isolated data/storage zone — the same three zones as Notes 108–109, here as the matrix's zone column.
+- The partly unclear cells (EDA/SOA interface, Space-based protocol) are kept as partly unclear, not guessed — they are the two cells to re-check against a clearer photograph if one comes, per the fill rule's honesty limit (fills explain, they do not invent table entries).
+
+---
+
+## Image Note 107 — Media / Key H/W-S/W / Traffic / Arch table, Req-Res, Message driven, P2P (handwritten, as is)
+
+### Description (words)
+
+- Table columns: Media, Key / H/W-S/W, Traffic, Arch
+- Guided media — Fiber optics, L1/L2 switch, router — Internal N/W traffic — P2P, SOA
+- Unguided media — AP, WLC, cellular — External web traffic — Client server, Component based [partly unclear]
+- Virtual media — Docker N/Ws, Cloud VPC, VSwitches — Internal N/W & web traffic — Microservices, EDA
+
+### Drawn table
+
+| Media | Key / H/W, S/W | Traffic | Arch |
+|---|---|---|---|
+| Guided | Fiber optics, L1/L2 switch, router | Internal N/W traffic | P2P, SOA |
+| Unguided | AP, WLC, cellular | External web traffic | Client server, Component based |
+| Virtual | Docker N/Ws, Cloud VPC, VSwitches | Internal N/W & web traffic | Microservices, EDA |
+
+### ① Req-Res (synchronous) protocols
+
+- tightly bound to standard client-server
+- depend on CPU addressing for data fetching
+- Subnet ID ✓, Broadcast ID ✗, VLAN ID ✓
+- (router, L3 switches)
+
+### ② Message driven (Async) = centralized protocols
+
+- Subnet ID needed: yes ✓ for broker only
+- Broadcast ID ✓, VLAN ID ✓
+- (L2 / L3 switches)
+
+### ③ (P2P & decentralized) = no central servers
+
+- Subnet ID ✓, uses STUN / TURN servers
+- Broadcast ID ✓, VLAN ID ✓
+- (AP, WLC, L2 switch)
+
+### [Filled — added, not in the original image]
+- Media rows, filled: guided media (fiber, switches, routers) carries internal network traffic for P2P and SOA styles; unguided media (access points, wireless controllers, cellular) carries external web traffic for client-server styles; virtual media (Docker networks, cloud VPCs, virtual switches) carries both internal and web traffic for microservices and event-driven styles.
+- Req-Res checkmarks, filled: request-response protocols need a subnet ID (to route to the target) and a VLAN ID (to stay in the right zone) but do NOT use a broadcast ID (✗) — a request goes to one server, not to the whole broadcast domain, and it runs on routers/L3 switches.
+- Message-driven checkmarks, filled: the subnet ID is needed only for the broker (the central hub), while broadcast and VLAN IDs apply — the broker fans messages out, so broadcast reach and VLAN containment both matter, on L2/L3 switches.
+- P2P checkmarks, filled: all three IDs apply, and STUN/TURN servers are the exception that proves the decentralization — peers find each other directly, but when direct connection fails they fall back to STUN/TURN relay servers, on APs, wireless controllers, and L2 switches.
+
+---
+
+## Image Note 108 — Public internet / WAN diagram, Router, L3 switch, L2 switch, Node level (handwritten, as is)
+
+### Description (words)
+
+- Public internet / WAN at the top, arrow down to a router, router connecting distinct subnets and handling Layer 3 routing, router branching to two switches: Switch A (subnet 1) leading down to microservices, Switch B (subnet 2) handling Layer 2 VLANs and building the local network, leading down to DB nodes.
+
+### Drawn diagram
+
+```
+[Public internet / WAN]
+            |
+            v
+        [Router] -> connects distinct subnets, handles Layer 3 routing
+            |
+      +-----+-----+
+      |           |
+      v           v
+[Switch A]    [Switch B]
+ subnet 1      subnet 2 -> handles Layer 2 VLANs, builds local N/W
+      |           |
+      v           v
+Microservices   DB nodes
+```
+
+### Router: subnet IDs, public routing handles web traffic, uses HTTP / REST, GraphQL, websockets
+
+### L3 switch: handles subnet ID, inter-VLAN routing, internal N/W traffic, gRPC, SOAP, AMQP, Kafka
+
+### L2 switch: VLAN ID, broadcast ID, local area N/W, local N/W traffic
+
+### Node level: local OS, no N/W, sockets, named pipes, shared mem [cut off at the right edge]
+
+### [Filled — added, not in the original image]
+- Three device layers, filled: the router is the Layer 3 boundary (public routing, web traffic, HTTP/REST, GraphQL, websockets); the L3 switch is the inter-VLAN boundary inside (subnet IDs, inter-VLAN routing, internal traffic, gRPC/SOAP/AMQP/Kafka); the L2 switch is the local boundary (VLAN ID, broadcast ID, local-area traffic only).
+- Node level, filled: below the L2 switch is the node itself — a local OS with no network of its own, where processes communicate by sockets, named pipes, and shared memory (the local IPC mechanisms of Note 110's centralized list) — the bottom of the stack, where networking stops and local communication takes over.
+- The diagram's two branches, filled: subnet 1 (Switch A) hosts microservices, subnet 2 (Switch B) hosts DB nodes — application traffic and database traffic on separate subnets, the same separation as Note 109's VLAN 20 vs VLAN 30.
+
+---
+
+## Image Note 109 — Public internet → DMZ → Private APP → Isolated Data flow (handwritten, as is)
+
+### Description (words)
+
+- Public internet at the top, arrow down (web traffic only) to the DMZ zone / public subnets (VLAN 10) holding client-server, HTTP/REST, websockets, GraphQL; arrow down (internal network traffic) to private APP subnets (VLAN 20, private IPs) holding microservices (gRPC), SOA (SOAP/JMS), EDA (Kafka), AMQP; arrow down (ultra-low DB traffic) to the isolated data subnet (VLAN 30, dedicated backend) holding DB sync, gossip, shared memory.
+
+### Drawn diagram
+
+```
+[Public internet]
+        |  web traffic only
+        v
+[DMZ zone / public subnets (VLAN 10)]
+ client-server, HTTP/REST, websockets, GraphQL
+        |  internal N/W traffic
+        v
+[Private APP subnets (VLAN 20)]  private IPs
+ microservices (gRPC), SOA (SOAP/JMS), EDA (Kafka), AMQP
+        |  ultra low DB traffic
+        v
+[Isolated Data subnet (VLAN 30)]  dedicated backend
+ DB sync, gossip, shared memory
+```
+
+### [Filled — added, not in the original image]
+- Three zones, one direction, filled: traffic flows inward only — web traffic from the internet reaches only the DMZ (VLAN 10); the DMZ talks internal network traffic to private application subnets (VLAN 20, private IPs, never exposed); private apps talk ultra-low database traffic to the isolated data subnet (VLAN 30, dedicated backend) — each zone narrows what the next zone may receive.
+- Protocols per zone, filled: DMZ speaks web protocols (HTTP/REST, websockets, GraphQL); private apps speak service protocols (gRPC for microservices, SOAP/JMS for SOA, Kafka/AMQP for event-driven); the data zone speaks data protocols (DB sync, gossip, shared memory) — the same protocol-per-zone mapping as Notes 106–108, here as a flow.
+- "Ultra low DB traffic" is filled as: database traffic is kept minimal and low-volume by design — only sync and replication cross into VLAN 30, never bulk application traffic.
+
+---
+
+## Image Note 110 — Centralized local machine IPC (OS level), Decentralized & web scale (handwritten, as is)
+
+### ③ Centralized local machine IPC — OS level
+
+- Unix domain sockets
+- Named pipes
+- Shared mem
+- Signals
+
+### ④ Decentralized & web scale
+
+- Web sockets
+- Web RTC
+- Gossip protocol
+
+### [Filled — added, not in the original image]
+- Numbering, filled: this page continues a list numbered ① and ② on an earlier page (request-response and message-driven, Notes 107/111) — ③ is the centralized local-machine family and ④ is the decentralized web-scale family.
+- Centralized local IPC, filled: all four mechanisms work on one machine under the OS — Unix domain sockets (socket API without a network), named pipes (FIFOs with a filesystem name), shared memory (a memory region two processes both map), signals (a notification to a process) — the same local mechanisms as Note 108's node level, here as the numbered list.
+- Decentralized web-scale, filled: web sockets (persistent two-way browser/server channels), WebRTC (browser-to-browser real-time media/data with no central server in the media path), gossip protocol (nodes spreading state by telling random peers, who tell others, until all nodes converge) — the peer-to-peer counterpart to centralized IPC, matching Note 111's P2P family.
+
+---
+
+## Image Note 111 — Network mapping: Routers & L3 switches, Distributed switches, L2 APs; Req-Res, Message driven, P2P (handwritten, as is)
+
+### Description (words)
+
+- Circled device groups: Routers & L3 switches, Distributed switches, L2 / APs.
+
+### ① Req Res protocols (Routers & L3 switches)
+
+- Roles of: Subnet ID — identifies target APP, ties [cut off]; Broadcast ID — it doesn't used in client server (P2P) [as written]; VLAN ID — separates public DMZ from private apps
+
+### ② Message driven (Distributed switches)
+
+- Subnet ID — pinpoints centralized broker
+- Broadcast ID — used only in UDP setups
+- VLAN ID — lockdown backend hubs
+
+### ③ P2P (L2, APs)
+
+- Subnet ID — exchanged dynamically via discovery
+- Broadcast — used for node auto discovery
+- VLAN — restricts gossip noise to local area [cut off at the right edge]
+
+### Ladder diagram (described in words AND drawn below, per the keep-both rule)
+
+- Circled at the bottom of the page: sockets at the top, arrow down to RPC, arrow down to P2P, arrow down to microservices.
+
+```
+Sockets
+   |
+   v
+  RPC
+   |
+   v
+  P2P
+   |
+   v
+Microservices
+```
+
+### [Filled — added, not in the original image]
+- Req-Res roles, filled: the subnet ID identifies the target application (which subnet the app lives in); the broadcast ID is not used in client-server (a request is unicast to one server, not broadcast); the VLAN ID separates the public DMZ from private apps (VLAN 10 vs VLAN 20, Note 109) — on routers and L3 switches, which route between subnets and VLANs.
+- Message-driven roles, filled: the subnet ID pinpoints the centralized broker (one address to find the hub); the broadcast ID is used only in UDP setups (UDP multicast/broadcast fan-out); the VLAN ID locks down backend hubs (brokers live in a contained VLAN) — on distributed switches.
+- P2P roles, filled: the subnet ID is exchanged dynamically via discovery (peers learn each other's subnets as they join); broadcast is used for node auto-discovery (a new node announces itself); the VLAN restricts gossip noise to the local area (gossip stays inside its VLAN instead of flooding the network) — on L2 switches and access points, which is why P2P needs no router.
+- Ladder, filled: sockets are the lowest communication primitive, RPC builds remote calls on sockets, P2P builds peer discovery and messaging on RPC-style calls, microservices build the application architecture on P2P-capable communication — each layer using the one below it, from raw sockets up to the service architecture.
+
+---
+
+# INbatch19 — Image Notes 112–120 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 1 of the 10 images is a duplicate of content already taken (Note 110) and is skipped entirely, no content copied — see the duplicate record below. 9 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Duplicate record — INbatch19, image 1 (skipped, no content copied)
+
+- The first image in this set is a second photograph of the Centralized local machine IPC / Decentralized & web scale page already taken as Note 110 (INbatch18): ③ Centralized local machine IPC (OS level) — Unix domain sockets, named pipes, shared mem, signals; ④ Decentralized & web scale — web sockets, Web RTC, gossip protocol. Per the duplicate rule it is skipped entirely; nothing from it is copied here.
+
+## Image Note 112 — P2P & client server, IPC protocols & mechanisms used across diff S/W Arch (handwritten, as is)
+
+### ⑤ P2P & client server
+
+- Client server = central server distributed to nodes
+- P2P = decentralized
+
+### IPC protocols & mechanisms — used across diff S/W Arch
+
+### ① Req-Res protocols (synchronous) — Sequential Access workflow — blocking / non-blocking
+
+- ① HTTP / REST = text based (JSON / XML)
+- ② gRPC / RPC = binary protocol
+- ③ GraphQL = query lang protocol
+- ④ RMI / IIOP = Java specific obj invocation protocol
+- ⑤ SOAP = XML based protocol
+
+### ② Message based (Async) — Direct Access workflow — blocking / non-blocking
+
+- AMQP = programmable queue proto for brokers
+- MQTT = pub/sub lightweight protocol
+- Kafka = high throughput binary protocol
+- JMS = JAVA API
+- STOMP = text based msg protocol
+
+### [Filled — added, not in the original image]
+- Side labels, filled: "polling mode" written beside Req-Res (the client polls/asks and waits for the answer) and "Event driven" beside Message based (the sender fires an event and moves on, the receiver reacts when it arrives) — the two workflow styles of the two families.
+- Sequential vs direct access, filled: request-response is sequential access — one request, one response, in order, the workflow blocks (or polls) until the answer returns; message-based is direct access — the sender puts a message on a queue or topic and moves on, the workflow is asynchronous, blocking only if the receiver chooses to wait.
+- Protocol one-liners, filled: HTTP/REST is text-based (JSON/XML) — human-readable, web-native; gRPC/RPC is binary — compiled, compact, fast; GraphQL is a query language protocol — the client asks for exactly the fields it needs; RMI/IIOP is Java-specific object invocation — remote method calls between Java objects; SOAP is XML-based — the older enterprise contract protocol. AMQP is a programmable queue protocol for brokers; MQTT is a lightweight pub/sub protocol (IoT); Kafka is a high-throughput binary log protocol; JMS is the Java API for messaging (not a wire protocol itself); STOMP is a text-based messaging protocol.
+- Client server vs P2P, filled: client-server centralizes on a server that distributes to nodes; P2P decentralizes — every node is both client and server, no central server, matching Note 107's P2P family.
+
+---
+
+## Image Note 113 — S/W Arch styles (handwritten, as is)
+
+### ① Component based & Distributed
+
+- micro Arch — ① microservices = communicating over N/W's API
+- macro Arch — ② SOA = Enterprise services
+- ③ serverless / FAAS
+- ④ Space Based Arch = Monolithic [as written]
+
+### ② Structure & layering
+
+- N-Tier = Horizontal layers
+- Onion Arch
+- component based Arch / modules
+
+### ③ Data Flow messaging styles
+
+- Event driven
+- Pipe & Filter
+- Pub & Sub
+
+### ④ Data centric styles
+
+- CQRS
+- Event sourcing
+- shared mem / blackboard
+
+### [Filled — added, not in the original image]
+- Component based & distributed, filled: micro architecture splits into microservices communicating over network APIs; macro architecture is SOA — enterprise services, larger-grained services for the whole enterprise; serverless/FaaS runs functions on demand with no server to manage; space-based architecture is listed here as monolithic — one deployable unit scaled by copying the whole space [the image's equation is kept as written; the standard space-based style is a distributed, tuple-space style, and this pairing is flagged for the final verification step, not silently corrected].
+- Structure & layering, filled: N-tier is horizontal layers (presentation, application, data stacked); onion architecture layers inward with dependencies pointing to the center (domain core); component-based architecture / modules divide the system into replaceable components.
+- Data flow messaging, filled: event-driven (components react to events), pipe & filter (data flows through a chain of processing stages), pub & sub (publishers send to topics, subscribers receive) — the same pub/sub as Note 112's MQTT.
+- Data centric, filled: CQRS (command and query responsibility segregated — separate models for writes and reads), event sourcing (state stored as a sequence of events, not current values), shared memory / blackboard (components communicate through a common shared data space) — matching Note 109's isolated-data-zone mechanisms.
+
+---
+
+## Image Note 114 — Communication Matrix: package level comm, server level (handwritten, as is)
+
+### ① Package level comm = code to code
+
+- inside the App layer
+- How S/W packages, libraries, objects talk to each other
+- RMI
+- RPC / gRPC — package level — compiler
+- Sockets — package level API — library
+
+### ② Server level = Across N/W infra (Machine to Machine) via
+
+- microservices → interacting with N/W
+- MPI → syncing data
+- Cloud / grid → N/W's nodes
+- P2P → autonomous server nodes
+
+### Bottom lines
+
+- gRPC = compiled code libraries streaming binary data
+- Sockets = code level API opening TCP / UDP IP conne [cut off at the right edge]
+
+### Side labels
+
+- S/W — S/W, APP — APP (beside package level)
+- Server — Server, M — M (beside server level)
+
+### [Filled — added, not in the original image]
+- Package level, filled: code-to-code communication inside the application layer — how software packages, libraries, and objects talk to each other without a network: RMI (remote method invocation between objects), RPC/gRPC at package level via the compiler (stubs generated from an interface definition), sockets at package level via a library API.
+- Server level, filled: machine-to-machine communication across network infrastructure — microservices interacting over the network, MPI (Message Passing Interface) syncing data between compute nodes, cloud/grid using the network's nodes, P2P as autonomous server nodes.
+- Cut-off line, filled: sockets are a code-level API opening a TCP/UDP IP connection — the socket is the endpoint through which code reaches the network, matching Note 111's ladder (sockets at the bottom, RPC above).
+- Matrix reading, filled: the two levels are the matrix's two rows — same mechanisms (RMI, RPC, sockets) appear at package level inside one app, and the same ideas scale to server level across machines; the side labels (S/W–S/W, APP–APP, Server–Server, M–M) mark which two things are talking at each level.
+
+---
+
+## Image Note 115 — Security privileges for access: NAS, DAS, CAN, Ceph (handwritten, as is)
+
+- Top labels: segment / VLAN tag, LAN, Security privileges for access
+
+### NAS
+
+- Regular users & userspace physical processes
+- these processes can't talk H/W directly
+
+### DAS
+
+- System users & local APP demons running in kernel space processes
+- OS manages H/W granting for raw speed
+
+### CAN [as written] — WAN
+
+- Root users & virtual processes
+
+### Ceph
+
+- LDAP / IAM users running service processes
+- Across kernel, virtual & user spaces
+
+### Side labels
+
+- segment / VLAN tag (top left)
+- Dedicated switch (left, beside DAS)
+- IO [partly unclear] (left, beside DAS)
+
+### [Filled — added, not in the original image]
+- Privilege ladder, filled: each storage type maps to who may touch hardware — NAS (network-attached storage) serves regular users in user space, whose processes cannot talk to hardware directly and must go through the OS; DAS (direct-attached storage) serves system users and local application daemons running in kernel space, where the OS manages hardware access directly for raw speed; the "[CAN]" entry is filled as most likely SAN (storage area network) — root users and virtual processes over a dedicated WAN/fabric, matching the dedicated-switch side label; Ceph serves LDAP/IAM users running service processes across kernel, virtual, and user spaces (a distributed store spanning all three).
+- Why privileges differ, filled: the closer a process sits to hardware (kernel space, direct attachment), the more privilege it needs and the faster it runs; the further away (user space, network attachment), the more the OS mediates, trading raw speed for safety — the same user/kernel space split as Note 104, here applied to storage access.
+- The "[CAN]" reading is kept as written and flagged, not silently rewritten to SAN — if a clearer photograph comes, this one cell is the one to re-check.
+
+---
+
+## Image Note 116 — DAS / NAS / SDN / Ceph: devices, processes, binaries (handwritten, as is)
+
+### Devices
+
+- DAS — kernel devices → /dev
+- NAS → physical devices
+- SDN → virtual hosts
+- Ceph → virtual Dev + networks
+
+### Processes
+
+- DAS → processes in the same OS
+- NAS → for processes in different OS within the N/W
+- SAN → for processes in hypervisors
+- Distributed → processes in microservices, container VM across virtual N/W
+
+### Binaries
+
+- DAS → for binaries in same OS
+- NAS → for binaries in different OS within [cut off at the right edge]
+- SAN → [cut off, no entry written]
+
+### [Filled — added, not in the original image]
+- Devices, filled: DAS appears as kernel devices under /dev (the local device files of Note 94's storage note); NAS appears as physical devices reached over the network; SDN (software-defined networking) appears as virtual hosts; Ceph appears as virtual devices plus networks (a distributed store, not one device).
+- Processes, filled: DAS serves processes in the same OS (local, direct); NAS serves processes in different OSes within the network (shared over the wire); SAN serves processes in hypervisors (virtual machines needing block storage over a fabric); distributed storage serves processes in microservices and container VMs across a virtual network (the cloud-native case).
+- Binaries, filled: the same three-way split for binaries — DAS for binaries in the same OS, NAS for binaries in different OSes within the network, SAN for binaries in hypervisors [the SAN binaries line is cut off in the image and is filled by the same pattern as the processes row, marked here as filled, not original].
+- The pattern, filled: three lenses (devices, processes, binaries) over the same four storage families — each row answers "who uses this storage, from where" at a different layer.
+
+---
+
+## Image Note 117 — One to one / 2 ports = multiport; Repeater, Extender, Bridge, Switch, and modern equivalents (handwritten, as is)
+
+### Header
+
+- one to one / 2 ports = multiport
+
+### Device chain
+
+- 1 Repeater → Hub
+- 2 Extender → wifi (AP)
+- Bridge → connects 2 n/w segments
+- Switch → multipoint bridge
+
+### Modern equivalents
+
+- Bridge / NIC / HBA ↔ Access switch
+- IDS / IPS / HSM ↔ NGFW
+- Modem / cellular Gateway ↔ Edge router, OLT, gNodeB
+
+### [Filled — added, not in the original image]
+- One-to-one to multiport, filled: a repeater (one-to-one, regenerating a signal) grows into a hub (one-to-many, repeating to all ports); an extender grows into a Wi-Fi access point; a bridge connecting two network segments grows into a switch — a multipoint bridge connecting many segments at once. The header's equation is the whole page: two-port devices become multiport devices.
+- Modern equivalents, filled: bridge/NIC/HBA (the host's connection hardware) maps to the access switch (the first switch a host meets); IDS/IPS/HSM (intrusion detection/prevention, hardware security module) maps to the NGFW (next-generation firewall, which bundles inspection and security); modem/cellular gateway maps to the edge router, OLT (optical line terminal, fiber edge), and gNodeB (5G base station) — the old edge devices reappearing as modern edge devices.
+- The numbering 1 and 2, filled: 1 = wired side (repeater → hub), 2 = wireless side (extender → Wi-Fi AP) — the wired and wireless parallels of the same one-to-one → multiport growth.
+
+---
+
+## Image Note 118 — DB's / memory, Identities: AS → Network → subnets → … → port/socket (handwritten, as is)
+
+### Description (words)
+
+- Top labels: DB's / memory (left), Identities (right)
+- Tree, top to bottom: AS → Network (intra LAN / WAN) → subnets → broadcast Domain → collision Domain → segment → micro segment → End dev / nodes → vnodes → port / socket
+- Identities, matched to tree levels: ASN / public IP block (AS), N/W ID / Route ID (Network), subnet mask / gateway IP (subnets), VLAN ID (broadcast Domain), BSSID / switch port (collision Domain), VNI (VXLAN) (micro segment), MAC + host IP (End dev / nodes), vMAC / UUID (vnodes), PID / UID / IP:port (port / socket)
+- DB's / memory, matched to tree levels: IRR (AS), RIB / FIB (Network), DHCP lease pool / IPAM (subnets), VLAN DB (broadcast Domain), CAM table (collision Domain), VTEP table (micro segment), ARP / DNS cache (End dev / nodes), vSwitch (vnodes), socket buffer table (port / socket)
+
+### Drawn tree (with identities and DBs alongside)
+
+```
+AS                          [ASN / public IP block]        [IRR]
+  |
+  v
+Network (intra LAN/WAN)     [N/W ID / Route ID]            [RIB / FIB]
+  |
+  v
+subnets                     [subnet mask / gateway IP]     [DHCP lease pool / IPAM]
+  |
+  v
+broadcast Domain            [VLAN ID]                      [VLAN DB]
+  |
+  v
+collision Domain            [BSSID / switch port]          [CAM table]
+  |
+  v
+segment                     [—]                            [—]
+  |
+  v
+micro segment               [VNI (VXLAN)]                  [VTEP table]
+  |
+  v
+End dev / nodes             [MAC + host IP]                [ARP / DNS cache]
+  |
+  v
+vnodes                      [vMAC / UUID]                  [vSwitch]
+  |
+  v
+port / socket               [PID / UID / IP:port]          [socket buffer table]
+```
+
+### [Filled — added, not in the original image]
+- Reading the tree, filled: each level of the network has one identity (how it is named) and one database/memory (where that naming is stored) — the AS is named by its ASN/public IP block and recorded in the IRR (Internet Routing Registry); the network is named by network/route IDs and recorded in RIB/FIB (routing/forwarding tables); subnets are named by subnet mask/gateway IP and recorded in the DHCP lease pool/IPAM; the broadcast domain is named by VLAN ID and recorded in the VLAN database; the collision domain is named by BSSID/switch port and recorded in the CAM table; the micro segment is named by VNI (VXLAN network identifier) and recorded in the VTEP table; end devices are named by MAC + host IP and recorded in ARP/DNS caches; virtual nodes are named by vMAC/UUID and recorded in the vSwitch; ports/sockets are named by PID/UID/IP:port and recorded in the socket buffer table.
+- Segment level, filled: the segment row has no identity or database written in the image — it sits between collision domain and micro segment as the plain network section, before VXLAN virtualization adds the VNI/VTEP pair; the blanks are kept as blanks, not filled with invented entries.
+- The tree, filled: it runs from the largest scope (AS, the whole autonomous system) down to the smallest (port/socket, one process's doorway) — the same top-to-bottom narrowing as Note 119's AS diagram, here with the identity and database columns added.
+
+---
+
+## Image Note 119 — AS → Network → Subnetworks → Broadcast domain → Collision domain → segment → micro segment → End dev → vnodes → port/socket, two versions (handwritten, as is)
+
+### Description (words) — version 1 (diagram, top half)
+
+- AS → Network (VPN BGP) → Subnetworks (SVI, VLAN interf) → broadcast domain (Trunk Port, LAG) → collision Domain (LAG) → N/W segment → micro segment (Security zones, RBAC) → End dev / nodes → vnodes → port / socket (micro services)
+- Side labels: CIDR, subnet mask / sq [partly unclear], VLAN ID / SVI, Switch port no, LLA, MAC + Host IP
+
+### Drawn diagram — version 1
+
+```
+(AS) --VPN BGP--> (Network) --SVI, VLAN interf--> (Subnetworks)
+   --Trunk Port, LAG--> (broadcast domain) --LAG--> (collision Domain)
+   --> N/W segment --Security zones, RBAC--> micro segment
+   --> End dev / nodes --> vnodes --> port / socket (micro services)
+```
+
+### Description (words) — version 2 (list, bottom half)
+
+- AS — ASN
+- MPLS / VPN / SD-WAN → N/W entire infra (LAN / WAN)
+- routing tables → subnets — CIDR
+- trunk ports → broadcast Domain — VLAN tagging (802.1Q)
+- copper / fiber → collision Domain — full duplex ethernet
+- Access Port → segment — Ethernet 802.3 / wifi 802.11
+- Micro segment
+- NIC → End dev / nodes / host — TCP/IP stack
+- vNIC → vnode
+- port / socket
+
+### Drawn list — version 2
+
+```
+AS (ASN)
+  | MPLS / VPN / SD-WAN
+  v
+N/W entire infra (LAN/WAN)
+  | routing tables
+  v
+subnets (CIDR)
+  | trunk ports
+  v
+broadcast Domain (VLAN tagging 802.1Q)
+  | copper / fiber
+  v
+collision Domain (full duplex ethernet)
+  | Access Port
+  v
+segment (Ethernet 802.3 / wifi 802.11)
+  |
+  v
+Micro segment
+  | NIC
+  v
+End dev / nodes / host (TCP/IP stack)
+  | vNIC
+  v
+vnode
+  |
+  v
+port / socket
+```
+
+### [Filled — added, not in the original image]
+- Two versions, one tree, filled: version 1 is the diagram form (circled nodes with arrows and device labels), version 2 is the list form (same levels, each with the device or technology that creates it) — both describe the identical descent from AS to port/socket, and version 2's technology column explains version 1's arrows: MPLS/VPN/SD-WAN builds the whole LAN/WAN, routing tables build subnets (CIDR), trunk ports build the broadcast domain (VLAN tagging 802.1Q), copper/fiber builds the collision domain (full-duplex ethernet ends collisions as a problem), access ports build the segment (Ethernet 802.3 / Wi-Fi 802.11), NICs build end devices (TCP/IP stack), vNICs build virtual nodes.
+- Security zones / RBAC, filled: at the micro-segment level, security zones and role-based access control decide which micro segments may talk — the zero-trust perimeter of Note 120, here placed at its tree level.
+- "subnet mask / sq" is kept partly unclear as written; the CIDR label beside it covers the same meaning (subnet mask in CIDR notation), so nothing is lost by the unclear abbreviation.
+
+---
+
+## Image Note 120 — Micro segment (N/W segment) (RBAC) (Zones); End devices / nodes / Host; Port / socket (handwritten, as is)
+
+### ⑥ Micro segment (N/W segment) (RBAC) (Zones)
+
+- S/W defined zero trust perimeter
+- Isolates devices at h/w switch level
+- physical or logical section of a N/W
+
+### ⑦ End devices / nodes / Host
+
+- This is the smallest individual section of a N/W
+- A node is any active physical electronic device attached to a N/W, capable of sending, receiving & forwarding information
+- physical or virtual Asset
+- where business data is processed
+
+### ⑧ Port / socket — microservices & service delivery
+
+- specific doorway into a server or device
+
+### [Filled — added, not in the original image]
+- Numbering, filled: ⑥, ⑦, ⑧ continue the numbered descent of Notes 118–119 — micro segment, end device, port/socket are the last three levels of the AS → port/socket tree, here given their definitions instead of just their names.
+- Micro segment, filled: a software-defined zero-trust perimeter — it isolates devices at the hardware switch level, and is a physical or logical section of a network; zero trust means no device is trusted by position alone, every micro segment enforces its own access (RBAC zones), matching Note 119's security-zones label at this level.
+- End device / node / host, filled: the smallest individual section of a network — a node is any active physical electronic device attached to a network, capable of sending, receiving, and forwarding information; it is a physical or virtual asset, and it is where business data is processed (the endpoint where data finally becomes useful).
+- Port / socket, filled: the specific doorway into a server or device — the level where microservices and service delivery actually happen, a port number plus a socket identifying one service on one device (PID/UID/IP:port from Note 118).
+
+---
+
+# INbatch20 — Image Notes 121–130 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 121 — Tier 2, Enterprise Data centers & private clouds, TOR switches, Leaf spine, Tiered/cluster Arch, Interface & media (handwritten, as is)
+
+### Header
+
+- Scales up — Tier 2 — Enterprise Data centers & private clouds
+- TOR switches
+
+### Scale
+
+- This scales up to
+- Corporate on premises Data Centers
+- Virtualization Clusters
+- Containerized microservices
+
+### Topology
+
+- Leaf spine (Clos)
+- every leaf switch connects to every spine switch
+
+### Drawn topology
+
+```
+Leaf 1   Leaf 2   Leaf 3
+  | \    / | \    / |
+  |  \  /  |  \  /  |
+Spine 1  Spine 2  Spine 3
+(every leaf connects to every spine)
+```
+
+### Arch
+
+- monolithic — to Tiered / cluster Arch
+- apps divided into web, app & DB layers
+- managed via automated private cloud stack like OpenStack
+
+### Interface & media
+
+- Physical — High speed fiber optic ports built into servers
+- Virtual
+  - Hypervisor managed vNIC (vnet0)
+  - virtual bridges (br0)
+  - virtual ethernet pairs (veth) linking Docker / kube containers
+  - SR-IOV → to bypass all to access H/W directly
+
+### [Filled — added, not in the original image]
+- TOR, filled: top-of-rack switches — the switch at the top of each server rack, aggregating that rack's servers before uplinking to the spine layer; the "scales up" jump from Tier 1 (single switch, Note 122) to Tier 2 (racks of servers, leaf-spine fabric).
+- Leaf-spine (Clos), filled: a two-layer fabric where every leaf switch connects to every spine switch — any leaf reaches any other leaf in exactly two hops (leaf → spine → leaf), giving predictable latency and full bisection bandwidth, the standard data-center fabric replacing the old three-tier core/aggregation/access tree.
+- Tiered/cluster architecture, filled: the monolith splits into web, application, and database layers, each layer scaled as its own cluster, and the whole private cloud is managed by an automated stack like OpenStack (compute, networking, storage as APIs).
+- Virtual interfaces, filled: the hypervisor manages virtual NICs (vnet0) for VMs, virtual bridges (br0) switching VM traffic, virtual ethernet pairs (veth) linking Docker/Kubernetes containers to the bridge — and SR-IOV (single-root I/O virtualization) bypasses all of it, letting a VM/container access hardware directly for near-native network speed.
+- The crossed-out word after "leaf" is kept as crossed out, not transcribed — the sentence reads cleanly without it.
+
+---
+
+## Image Note 122 — Tier 1, standalone & local N/W, Star topology, Arch, Interfaces, Media (handwritten, as is)
+
+### Tier 1 — standalone & local N/W
+
+- represents local physical h/w & deployments such as
+  - home networks
+  - small office N/W
+  - bare metal servers
+
+### Star topology
+
+- Every local end points connects directly to a central local switch / a WAP
+
+### Drawn topology
+
+```
+      Endpoint
+          |
+Endpoint--Switch--Endpoint
+   (central local switch / WAP)
+          |
+      Endpoint
+```
+
+### Arch
+
+- client-server / peer-peer
+- pull resources from a central local NAS / communicate direct
+
+### Interfaces
+
+- physical
+  - ethernet ports (eth0, enp3s0)
+  - wifi (wlan)
+- virtual
+  - local S/W loopback (lo) / local N/W
+
+### Media
+
+- cat6 / Radio waves
+
+### NIC to local switch / router
+
+### [Filled — added, not in the original image]
+- Tier 1 vs Tier 2, filled: Tier 1 is the smallest scale — one local network, one central switch or wireless access point, local physical hardware and deployments (home, small office, bare-metal servers); Tier 2 (Note 121) scales this up to racks, leaf-spine fabrics, and private clouds.
+- Star topology, filled: every endpoint connects directly to the central switch/WAP and to nothing else — all traffic passes through the center, so one cable failure isolates one endpoint, not the network, unlike a bus where one break can take down the segment.
+- Architecture, filled: client-server pulls resources from a central local NAS (one shared file server); peer-to-peer communicates directly endpoint-to-endpoint with no central server — the same two patterns as Note 112, here at home/office scale.
+- Interface names, filled: eth0 (first ethernet interface, classic naming), enp3s0 (predictable naming: ethernet, PCI bus 3, slot 0), wlan (wireless LAN interface), lo (loopback, the local software interface that never leaves the machine).
+- Media, filled: cat6 (category 6 twisted-pair copper cable, wired) and radio waves (wireless) — the two physical media of a Tier 1 network, matching Note 107's guided vs unguided split at the smallest scale.
+
+---
+
+## Image Note 123 — 1 Switch = one n/w segment, VLAN, VSI, access ports, trunk port (handwritten, as is)
+
+- 1 Switch = one n/w segment
+- multiple switches = multiple phy. n/w segments
+- VLAN = logical rep of n/w segment
+- VLAN = group of devices connected to switch
+- VSI = gateway for VLAN
+- 1 VLAN = many devices via access ports
+- 1 VLAN tag = many VLAN tags via trunk port
+
+### Drawn relations
+
+```
+1 Switch  = 1 n/w segment
+many Switches = many physical n/w segments
+VLAN = logical representation of a n/w segment
+VLAN = group of devices connected to a switch
+VSI (SVI) = gateway for a VLAN
+1 VLAN -> many devices (via access ports)
+1 trunk port -> many VLAN tags (via trunk port)
+```
+
+### [Filled — added, not in the original image]
+- Physical vs logical segments, filled: one switch is one physical network segment; multiple switches are multiple physical segments — but a VLAN is the logical representation of a segment, so one physical switch can hold many logical segments (VLANs), and one VLAN can span many switches.
+- VSI, filled: written "VSI" in the image, filled as SVI (switched virtual interface) — the virtual interface that acts as the gateway for a VLAN, letting VLAN members route out of their VLAN; the image's "VSI" spelling is kept as written above and the standard expansion noted here.
+- Access vs trunk, filled: an access port carries one VLAN (many devices of that one VLAN attach through access ports); a trunk port carries many VLAN tags at once (the link between switches that must pass several VLANs together) — the same access/trunk pair as Note 119's broadcast-domain row.
+- The chain, filled: switch → segment → VLAN → gateway (SVI) → ports — the physical device, the logical grouping, the gateway out, and the two port types that attach devices and switches to the VLAN.
+
+---
+
+## Image Note 124 — N/W interfaces, Physical: NIC, wifi Adapter, WWAN (handwritten, as is)
+
+### N/W interfaces
+
+- connect h/w or processes to the broader N/W using specific mediums
+- Physical interfaces use tangible cables or waves
+- Virtual interfaces use system memory & CPU cycles as medium
+
+### ① Physical — connect local h/w to an ext N/W
+
+- ① NIC (Ethernet)
+  - medium → copper / fiber cable (cat)
+  - port to switch / router port
+- ② wifi Adapter
+  - medium: Radio waves
+  - Antenna to router
+- ③ WWAN (cellular modem)
+  - medium: Radio signals (LTE / 5G)
+  - modem to base station
+
+### Side label
+
+- router / switch ports
+
+### [Filled — added, not in the original image]
+- Interface definition, filled: a network interface is the boundary where hardware or a process meets the broader network, and each interface is defined by its medium — what physically carries the bits.
+- Physical media, filled: the NIC uses copper or fiber cable (Cat cable) from its port to a switch/router port; the Wi-Fi adapter uses radio waves from its antenna to the router; the WWAN cellular modem uses radio signals (LTE/5G) from the modem to the base station — wired, wireless-local, and wireless-wide, the same three physical families as Note 107's guided/unguided rows, here as three interface types.
+- Physical vs virtual, filled: physical interfaces use tangible cables or waves; virtual interfaces (Note 125) use system memory and CPU cycles as their medium — no cable, no waves, just kernel memory moving packets between software layers.
+- The router/switch ports side label is filled as: the NIC's cable lands on a router or switch port — the far end of every physical interface is a port on a network device.
+
+---
+
+## Image Note 125 — Virtual (SD interfaces): Loopback, veth pair, TUN/TAP, VLAN interface (handwritten, as is)
+
+### ② Virtual (SD interfaces)
+
+- exist inside OS kernel to route traffic internally or b/w S/W layers
+
+### List
+
+- ① Loopback (lo) → app / service — RAM / CPU medium
+- ② veth pair (br0) — medium kernel memory pipe — (Bridge / switch)
+- ③ TUN / TAP — medium packets
+- ④ VLAN interface (eth0.10)
+
+### [Filled — added, not in the original image]
+- Virtual interfaces, filled: software-defined interfaces that exist inside the OS kernel to route traffic internally or between software layers — no hardware, no cable; the kernel itself is the medium.
+- Loopback (lo), filled: traffic sent to lo never leaves the machine — an app talks to a service on the same host through RAM/CPU as the medium, the same lo as Note 122's Tier 1 virtual interface, here as the first virtual type.
+- veth pair (br0), filled: a virtual ethernet pair — two virtual interfaces connected like a cable, one end in a container/namespace, the other on a bridge (br0) acting as a virtual switch; the medium is a kernel memory pipe, matching Note 121's veth linking Docker/Kubernetes containers.
+- TUN/TAP, filled: TUN carries IP packets (layer 3, used by VPNs), TAP carries ethernet frames (layer 2, used by virtual machines and bridges) — both present a virtual device to the OS that a program reads and writes as packets.
+- VLAN interface (eth0.10), filled: eth0.10 is the VLAN 10 sub-interface of eth0 — one physical interface split into tagged logical interfaces, one per VLAN, the interface-level form of Note 123's VLAN (access/trunk) story.
+- Numbering, filled: ② continues Note 124's ① Physical — physical interfaces first, virtual (software-defined) interfaces second, the two halves of the network-interface picture.
+
+---
+
+## Image Note 126 — Tools: IPtables (Rules Enforcement), Netfilter (handwritten, as is)
+
+### Tools
+
+- IPtables (Rules Enforcement)
+  - for configuring Netfilter (Address fami [cut off at the right edge])
+  - Kernel space config
+  - Used to define netfilter rules
+  - IPtable-service to save rules
+- Netfilter — real firewall
+
+### [Filled — added, not in the original image]
+- IPtables, filled: the user-space tool that configures netfilter — it defines the firewall rules (which packets to accept, drop, or forward), runs as a kernel-space configuration (the rules live in the kernel, where packets are actually filtered), and iptables-service (the service/utility) saves the rules so they survive a reboot.
+- Netfilter, filled: the real firewall — the packet-filtering framework inside the Linux kernel that iptables configures; iptables is the tool, netfilter is the engine, the same tool-vs-engine split as the hypervisor/VMM pair in Note 103.
+- Cut-off text, filled: "Address fami…" is filled as "Address families" — iptables configures netfilter for address families (IPv4 via iptables, IPv6 via ip6tables), the standard completion of the cut-off phrase, marked here as filled.
+- The page is headed "Tools" like Note 127 — the tools pages collect the user-space utilities (iptables) beside the kernel mechanisms (netfilter) they drive.
+
+---
+
+## Image Note 127 — Tools: Network Arch, Network media, Network Topology (handwritten, as is)
+
+### Tools
+
+- (Network Arch, Network media, Network Topology)
+
+### Arch
+
+- SAN, P2P, client-server, Hybrid, SDN (frame) [SDN with "(frame)" as written]
+
+### Media
+
+- guided & unguided, virtual
+
+### Topology
+
+- star / bus / ring / mesh
+
+### [Filled — added, not in the original image]
+- Three lenses, filled: the tools page sorts networks by three questions — architecture (how nodes relate: SAN, P2P, client-server, hybrid, SDN), media (what carries the bits: guided, unguided, virtual), and topology (how nodes are arranged: star, bus, ring, mesh) — the same three columns as Note 106's matrix (arch style, physical media, topology zone), here as a compact tools-page summary.
+- Architecture entries, filled: SAN (storage area network, block storage over a fabric), P2P (decentralized, Note 112), client-server (central server, Note 112), hybrid (mix of centralized and decentralized), SDN (software-defined networking, the control plane separated from forwarding — "(frame)" kept as written, most likely marking the frame/forwarding plane SDN separates from).
+- Media entries, filled: guided (cables, fiber), unguided (radio, wireless), virtual (Docker networks, VPCs, vSwitches) — Note 107's three media rows, here in one line.
+- Topology entries, filled: star (all endpoints to a center, Note 122), bus (one shared cable), ring (each node to two neighbors in a loop), mesh (many interconnections, Note 128's mesh row) — the four classic topologies in one line.
+
+---
+
+## Image Note 128 — Topology / mechanism / benefit table, plus utilization lines (handwritten, as is)
+
+### Description (words)
+
+- A ruled table, columns partly cut off at the edges; rows as written:
+  - P2P — veth pair / wired VPN — container N/W [cut off at the right edge]
+  - Star — bridge utilities — VM / N/W [cut off]
+  - Mesh — Ceph, Kubernetes etc — Cluster — High Avail [cut off]
+  - Hierarchical — DNS, CRUSH map, Tree — Global scaling
+  - Parallel — Bonding / LACP — N/W redun [cut off]
+- Below the table: CPU utilization, N/W utilization (if TOP [partly unclear]), Storage utilization (10 TOP [partly unclear])
+
+### Drawn table
+
+| Topology | Mechanism | Cluster / use | Benefit |
+|---|---|---|---|
+| P2P | veth pair / wired VPN | — | container N/W [cut off] |
+| Star | bridge utilities | — | VM / N/W [cut off] |
+| Mesh | Ceph, Kubernetes etc | Cluster | High Avail [cut off] |
+| Hierarchical | DNS, CRUSH map, Tree | — | Global scaling |
+| Parallel | Bonding / LACP | — | N/W redun [cut off] |
+
+### [Filled — added, not in the original image]
+- Reading the table, filled: each topology row pairs with the mechanism that builds it and the benefit it buys — P2P via veth pairs / wired VPNs for container networking; star via bridge utilities for VM networking; mesh via Ceph and Kubernetes clusters for high availability; hierarchical via DNS, CRUSH maps, and trees for global scaling; parallel via bonding/LACP for network redundancy.
+- Mechanism notes, filled: veth pairs link containers point-to-point (Note 125); bridge utilities build the star's center (Note 121's br0); Ceph and Kubernetes are the mesh examples — Ceph's CRUSH map (also in the hierarchical row) distributes data without a central lookup, and Kubernetes clusters mesh nodes for high availability; bonding/LACP aggregates parallel links into one logical link for redundancy and throughput.
+- Utilization lines, filled: CPU utilization, network utilization, and storage utilization are the three resources to watch ("TOP" read as the top/utilization monitor family — top for CPU, iftop/nload for network, iotop for storage — the monitoring triplet, marked here as partly unclear in the image and filled by the standard tool mapping, not as original text).
+- Cut-off cells are kept as cut off, not completed — the right-edge column (benefit for P2P, star, mesh, parallel rows) is the part a clearer photograph would need to finish.
+
+---
+
+## Image Note 129 — Index-page chain: govt/research/standards → Semiconductor Ecosystem → Silicon chips → Boards & Devices → OEM/ODM → Cloud/telecom/enterprise/govt → End users (handwritten, as is)
+
+### Description (words)
+
+- A chain written on an index page, top to bottom, each step circled with an arrow to the next:
+  - govt / research / standards enables → Semiconductor Ecosystem produces → Silicon chips become → Boards & Devices assembled by → OEM / ODM companies brought by → Cloud, telecom, enterprise, govt used by → End users through Devices, N/Ws
+
+### Drawn chain
+
+```
+govt / research / standards
+        | enables
+        v
+Semiconductor Ecosystem
+        | produces
+        v
+Silicon chips
+        | become
+        v
+Boards & Devices
+        | assembled by
+        v
+OEM / ODM companies
+        | brought by
+        v
+Cloud, telecom, enterprise, govt
+        | used by
+        v
+End users
+  through: Devices, N/Ws
+```
+
+### [Filled — added, not in the original image]
+- The chain, filled: the full supply chain from policy to pocket — government research and standards enable the semiconductor ecosystem; the ecosystem produces silicon chips; chips become boards and devices; OEM/ODM companies assemble them; cloud, telecom, enterprise, and government buy them; end users finally use them through devices and networks.
+- OEM/ODM, filled: OEM (original equipment manufacturer) brands and sells the device; ODM (original design manufacturer) designs and builds it for the brand — the two roles that turn boards into products.
+- The chain's shape, filled: it is the same supply-chain direction as the earlier INbatch notes' chains (Notes 14, 15, 19, 20, 34, 35), here in its shortest form — seven steps, each step's verb (enables, produces, become, assembled by, brought by, used by) naming the relationship, not just the items.
+- The index-page format is kept as written — the chain is written in the Title/Description column of an index page, not on a ruled notebook page, which is why it has no page number or date box.
+
+---
+
+## Image Note 130 — Data Transfer: Archive data, Data backup, Data active state, Storage classification (handwritten, as is)
+
+### Data Transfer
+
+### Archive data
+
+- moving data
+- indexed / searchable
+- Data inactive, long term
+
+### Data backup / backup data = both for Data preservation
+
+- copying data to secure place
+
+### Data active state
+
+- Short term retention
+- media = NAS (HDD), SDD [as written, filled as SSD below]
+- Hot cloud storage
+
+### Protocols
+
+- NAS → SMB / NFS
+- SAN → iSCSI / FC / NVMeoF
+- cloud → S3 API / REST
+
+### Tools
+
+- NDMP, LTFS, Rsync / ssh [as written "Rsync / sslt"]
+
+### Storage classified as
+
+- how it connects (Topology)
+- how it formats data (Arch)
+- physical media inside
+
+### By N/W (Topology) — How connects
+
+- DAS — plugged into server
+- NAS — file server connected to a LAN
+- SAN — [no entry written]
+
+### By Arch — How organized
+
+- File storage
+- block storage
+- object
+
+### By physical media
+
+- SSD
+- HDD
+- magnetic tape
+
+### [Filled — added, not in the original image]
+- Archive vs backup, filled: both are for data preservation, but they differ — archive data is moved (not copied) data, inactive and long-term, indexed and searchable for retrieval; backup data is copied data, kept in a secure place for recovery, short-term retention while the data is still active; hot cloud storage holds the active state.
+- "SDD", filled: read as SSD (solid-state drive) — the image writes "SDD" beside NAS (HDD); the standard pair is HDD/SSD, and the physical-media list at the bottom of the same page confirms SSD, so the fill is grounded in the page itself.
+- Protocols, filled: NAS speaks file protocols (SMB/NFS — the file server's language); SAN speaks block protocols (iSCSI, Fibre Channel, NVMe over Fabrics — the fabric's language); cloud speaks S3 API/REST (the object store's language) — the protocol follows the storage class, file vs block vs object.
+- Tools, filled: NDMP (network data management protocol, NAS backup), LTFS (linear tape file system, tape as files), rsync/ssh (copy over a secure shell) — the three transfer tools for the three media families.
+- Classification, filled: storage is classified three ways — by network/topology (how it connects: DAS plugged into the server, NAS as a file server on a LAN, SAN over a fabric [entry blank in the image, filled by the pattern, marked here as filled]); by architecture (how it is organized: file, block, object — Note 93's three levels); by physical media (SSD, HDD, magnetic tape — fastest to slowest, cheapest per byte in reverse).
+- The SAN topology entry is left blank as written above — the fill for it (dedicated fabric, Fibre Channel/iSCSI) lives only in this [Filled] section, not in the original list.
+
+---
+
+# INbatch21 — Image Notes 131–140 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 131 — Types of RTOS, Sys process, User process, Independent, Cooperative, Threaded process (handwritten, as is)
+
+### Types of RTOS
+
+- ① Hard real time: missing deadline is [cut off at the right edge]
+- ② Soft real time: some delay is tolerable
+
+### ⑥ Sys process
+
+- created & managed by OS
+- supports sys functions
+- ex: process scheduler, memory manager
+
+### ⑦ User process
+
+- created by user to perform tasks
+- ex: running MS Word, Chrome
+
+### ⑧ Independent process
+
+- doesn't depend on other process
+- runs its own [cut off]
+
+### ⑨ Cooperative process
+
+- can share data & synchronize with other process
+- ex: producer-consumer process
+
+### ⑩ Threaded process (multithread)
+
+- A process contains multiple threads
+- Threads share memory but run independently
+- ex: web browser with multiple tabs
+
+### [Filled — added, not in the original image]
+- RTOS types, filled: hard real-time — missing a deadline is a system failure (the cut-off line's only sensible completion, and the direct contrast to the soft line beside it); soft real-time — some delay is tolerable, quality degrades but nothing fails. Examples by the same contrast: hard — airbag control, pacemaker, flight control; soft — video streaming, online games (Note 132's interactive/real-time pair).
+- Numbering, filled: ⑥–⑩ continue Note 132's ①–⑤ — the same "types of process" list, here by who owns the process and how processes relate, after Note 132's list by how the process runs.
+- Sys vs user, filled: system processes are created and managed by the OS and support system functions (scheduler, memory manager — the kernel's own workers); user processes are created by the user to perform tasks (Word, Chrome — the applications).
+- Independent vs cooperative, filled: an independent process does not depend on any other process and runs on its own; a cooperative process shares data and synchronizes with other processes — the producer-consumer example (one process produces items, another consumes them, synchronized so the consumer never reads an empty buffer).
+- Threaded, filled: a multithreaded process contains multiple threads sharing the process's memory but running independently — a web browser with multiple tabs is the example, each tab a thread (or process in modern browsers, but the note's model is threads sharing memory).
+
+---
+
+## Image Note 132 — Process = running instance/object, Types in OS: Foreground, Background, Batch, Interactive, Real time (handwritten, as is)
+
+### Process = running instance / object
+
+### Types in OS
+
+- ① Foreground: runs directly under user control, interacts with the user (keyboard, screen), ex: typing in a terminal, running browser
+- ② Background: runs without user interaction, performs tasks silently or in background, eg antivirus, sys updates
+- ③ Batch process: executes a group (batch) of jobs without user interaction, efficient for large repetitive tasks, ex: payroll processing
+- ④ Interactive process: requires continuous input from the user, responds quickly, eg online apps, games
+- ⑤ Real time process: must finish within a strict time limit, used in critical systems, ex: air traffic, medical sys
+
+### [Filled — added, not in the original image]
+- Process definition, filled: a process is a running instance (object) of a program — the program on disk plus its memory, registers, and state while it executes, the same definition as the earlier task_struct notes (Notes 45–50), here as the list's header.
+- Five types, filled: foreground runs under direct user control and interacts (terminal typing, browser); background runs without interaction, silently (antivirus scans, system updates); batch executes a group of jobs without interaction, efficient for large repetitive work (payroll processing — thousands of identical calculations, no human in the loop); interactive requires continuous user input and responds quickly (online apps, games — responsiveness is the requirement); real-time must finish within a strict time limit in critical systems (air traffic, medical systems — the hard real-time of Note 131).
+- Foreground vs interactive, filled: foreground is about control (the process the user is directly driving); interactive is about responsiveness (the process must answer continuously) — a foreground process is usually interactive, but a background process can also be interactive to another user or service; the two lists classify by different axes, which is why both appear.
+
+---
+
+## Image Note 133 — Arch must design / config manually: Distributed & system level, Parallel & large scale, Load balancing, Cloud/modern (handwritten, as is)
+
+### ③ Arch must design / config manually
+
+- Not exist automatically at sys level
+
+### Distributed & system level
+
+- 1. Distributed memory systems
+- 2. Cluster Arch
+- 3. Microservice arch
+- 4. Client server arch
+- 5. P2P
+- requires: n/w setup, multiple sys, coordination logic
+
+### Parallel & large scale systems
+
+- 1. MIMD
+- 2. MPP
+
+### Load balancing (Distributed)
+
+- 1. NGINX
+- 2. HAProxy
+- 3. ELB
+
+### Cloud / modern Arch
+
+- K8s clusters
+- serverless sys
+- autoscaling archs
+
+### [Filled — added, not in the original image]
+- Level ③, filled: this page is the third level of Notes 134–136's ladder — architectures that do NOT exist automatically at system level and must be designed and configured manually, unlike the built-in defaults (level ①) and the tunable defaults (level ②).
+- Distributed & system level, filled: distributed memory systems, cluster architecture, microservice architecture, client-server architecture, and P2P — none of these appear by installing an OS; each requires network setup, multiple systems, and coordination logic (how nodes find each other, agree, and recover).
+- Parallel & large scale, filled: MIMD (multiple instruction, multiple data — many processors, many tasks, Note 139) and MPP (massively parallel processing — many processors working together, Note 139) — the parallel forms that must be designed, not defaulted.
+- Load balancing, filled: NGINX, HAProxy, and ELB (Elastic Load Balancer) — the distributed load balancers that spread traffic across the manually designed systems above; without them a cluster is just separate machines, not one system.
+- Cloud/modern, filled: Kubernetes clusters, serverless systems, and autoscaling architectures — the modern forms of the same manual-design level, where the design work moves from machines to declarations (cluster specs, function configs, scaling rules).
+
+---
+
+## Image Note 134 — Architectures come by default (automatic), Arch exist by default but need tuning (handwritten, as is)
+
+### ① Architectures comes by default (automatic)
+
+- these built into hardware (OS + CPU)
+- they exist on machine, no design them
+- automatic = CPU Arch / processing
+
+### Memory Arch
+
+- paging, virtual mem, cache, basic segmentation, UMA
+- present for: laptops, VM, servers
+
+### CPU Arch (right side)
+
+- RISC / CISC
+- multi core processing
+- super scalar execution
+- basic SIMD
+- comes with CPU design
+
+### H/W Arch
+
+- von Neumann
+- CISC
+
+### ② Arch exist by default but need tuning
+
+- shared memory (multi threading)
+- cache usage (performance tuning)
+- virtual mem (swap tuning)
+- NUMA (in large machines)
+- OS enables them, you optimize performance
+
+### [Filled — added, not in the original image]
+- Level ①, filled: architectures that come by default, automatic — built into the hardware (OS + CPU), existing on the machine with no design work: memory architecture (paging, virtual memory, cache, basic segmentation, UMA — present on laptops, VMs, and servers alike), CPU architecture (RISC/CISC, multi-core processing, superscalar execution, basic SIMD — all coming with the CPU design), and hardware architecture (von Neumann, CISC — the base machine model).
+- Level ②, filled: architectures that exist by default but need tuning — shared memory (multithreading), cache usage (performance tuning), virtual memory (swap tuning), NUMA (in large machines) — the OS enables all of them, but you optimize performance by tuning them; the default works, the tuned version is fast.
+- Ladder, filled: ① default-automatic (this page, top), ② default-but-tuned (this page, bottom), ③ must-design-manually (Note 133), advanced (Note 135) — four levels from "it just works" to "you must engineer it", and the same items (NUMA, shared memory, distributed memory) climb the ladder as the system grows: NUMA is a tuning item at level ② and an advanced configuration at level ④ (Note 135).
+- "von Neumann, CISC" under H/W Arch is kept as written — the note pairs the stored-program model (von Neumann) with the instruction style (CISC) as the hardware-architecture defaults.
+
+---
+
+## Image Note 135 — Advanced = need config / balancing / customization: NUMA, Distributed memory systems, Shared memory (handwritten, as is)
+
+### Advanced = need config / balancing / customization
+
+- These become default or expertise for [cut off]
+
+### ① NUMA = multi CPU servers (DB), high end cloud instances
+
+- nodes: single host, multiple VMs
+- needs
+  - memory placement
+  - CPU affinity tuning
+  - OS level tuning
+  - for DB servers
+
+### ② Distributed memory systems
+
+- for clusters (Hadoop, K8s, Spark)
+- multiple hosts, multiple nodes
+- needs
+  - n/w for communication
+  - data partitions
+  - load balancing
+
+### ③ Shared memory = concurrency tuning
+
+- used: Java apps, high performance servers
+
+### [Filled — added, not in the original image]
+- Advanced level, filled: the fourth level of the ladder — architectures needing configuration, balancing, and customization, which become default only with expertise (the cut-off completion, grounded in the page's own "need config" header).
+- NUMA, filled: non-uniform memory access — multi-CPU servers (database servers, high-end cloud instances), one host running multiple VMs; it needs memory placement (which CPU's memory a process uses), CPU affinity tuning (pinning processes to CPUs near their memory), and OS-level tuning — for database servers, where remote-memory latency directly costs queries.
+- Distributed memory, filled: for clusters (Hadoop, Kubernetes, Spark), multiple hosts and multiple nodes; it needs a network for communication, data partitions (splitting data across nodes), and load balancing — the same three needs as Note 133's distributed level, here at advanced depth.
+- Shared memory, filled: concurrency tuning — used by Java apps and high-performance servers, where many threads share memory and the tuning is about locks, contention, and consistency, not about adding hardware.
+- The three advanced items, filled: NUMA (one machine, many CPUs), distributed memory (many machines, one system), shared memory (many threads, one memory) — the three scales at which "just add hardware" stops working and configuration becomes the architecture.
+
+---
+
+## Image Note 136 — Comes default in physical server or VM: Basic mem Arch, Default Access model, CPU Arch (handwritten, as is)
+
+### Comes default in physical server or VM
+
+### ① Basic mem Arch
+
+- paging + virtual mem = disk + RAM
+- cache (L1, L2, L3)
+- shared memory (multicore CPU) use same RAM
+- OS + CPU (MMU) handle them automatically
+
+### ② Default Access model
+
+- UMA = one CPU access all RAM equally
+- No special RAM
+- Standard RAM usage
+- Laptops, servers, EC2 UMA based
+
+### ③ CPU Arch
+
+- x86 / ARM comes pre defined
+- just choose the type of instance
+
+### [Filled — added, not in the original image]
+- Default in server or VM, filled: this page restates level ① (Note 134) from the point of view of what you actually get when you boot a physical server or a VM — no design, no tuning, just defaults.
+- Basic memory architecture, filled: paging plus virtual memory (disk + RAM together — pages spill to disk when RAM fills), cache (L1, L2, L3 — the CPU's layered fast memory), shared memory (a multicore CPU's cores using the same RAM) — all handled automatically by the OS plus the CPU's MMU (memory management unit), the hardware that translates virtual addresses to physical ones.
+- Default access model, filled: UMA (uniform memory access) — one CPU accesses all RAM equally, no special RAM, standard RAM usage; laptops, servers, and EC2 instances are UMA-based by default, which is why NUMA (Note 135) is an advanced topic, not a default.
+- CPU architecture, filled: x86/ARM comes predefined — in the cloud you just choose the instance type (x86 or ARM) and the architecture comes with it; the choice is a menu item, not a design task.
+
+---
+
+## Image Note 137 — Design patterns: Memory Archs, CPU Arch, Hardware Arch (handwritten, as is)
+
+### Design patterns
+
+- Memory Archs = how data is stored / accessed
+  - focus on memory org (flat, paging, segment, hybrid, UMA / NUMA, distributed, shared (SMP))
+- CPU Arch = how instructions processed
+  - focus on execution instructions execution (CISC, RISC, ARM, x86, SIMD, MI [cut off])
+- Hardware Arch = how whole sys is structured
+  - focus on overall system design (Von, Neumann, MIMD, SMP, MPP)
+
+### [Filled — added, not in the original image]
+- Three design-pattern questions, filled: memory architecture answers "how is data stored and accessed" (focus: memory organization — flat, paging, segment, hybrid, UMA/NUMA, distributed, shared/SMP); CPU architecture answers "how are instructions processed" (focus: instruction execution — CISC, RISC, ARM, x86, SIMD, and the cut-off "MI…" filled as MIMD/MISD, the parallel instruction models of Note 139); hardware architecture answers "how is the whole system structured" (focus: overall system design — von Neumann, MIMD, SMP, MPP).
+- The three patterns, filled: they are three views of the same machine — memory view (where data lives), CPU view (how instructions run), hardware view (how the whole system fits together) — and every later note (138–140) is an expansion of one of these three lines.
+- "Von, Neumann" is kept as written (the comma is the note's own split of "von Neumann"); "MI" is kept cut off in the original list and filled as MIMD/MISD only in this [Filled] section.
+
+---
+
+## Image Note 138 — Sys / Hardware Arch summary (rotated page): Memory based, Instruction level, Parallel processing, Multiprocessing, System/Deployment (handwritten, as is)
+
+### Description (words)
+
+- Page photographed rotated; transcribed column by column, left to right in the rotated view:
+- Sys / Hardware Arch = defined overall sys design (CPU + memory + interaction)
+- Memory based Arch: ① Von Neumann, ② Harvard, ③ modified Harvard
+- Instruction level Arch: RISC for ARM → virtualization [partly unclear], CISC for x86 → [cut off]
+- Parallel processing Arch: SISD → sequential processing, SIMD → parallel data processing, MISD → [blank], MIMD → independent memory / process
+- Multiprocessing Arch: SMP → shared memory for multiple CPU, MPP → distributed / shared
+- System / Deployment Archs: 1. Client-server → centralized control for clients, 2. P2P → distributed nodes (CPU + mem), 3. Cluster → distributed memory N/W nodes, 4. Microservices → distributed memory, 5. Monolithic → unified system
+
+### Drawn table
+
+| Family | Members | Notes |
+|---|---|---|
+| Memory based Arch | ① Von Neumann, ② Harvard, ③ modified Harvard | how memory is organized |
+| Instruction level Arch | RISC (ARM), CISC (x86) | RISC → virtualization [partly unclear] |
+| Parallel processing Arch | SISD, SIMD, MISD, MIMD | SISD sequential; SIMD parallel data; MIMD independent memory/process |
+| Multiprocessing Arch | SMP, MPP | SMP shared memory, multiple CPU; MPP distributed/shared |
+| System / Deployment Archs | Client-server, P2P, Cluster, Microservices, Monolithic | client-server centralized; P2P distributed nodes; cluster distributed-memory N/W nodes; microservices distributed memory; monolithic unified system |
+
+### [Filled — added, not in the original image]
+- Five families, filled: this rotated page is the master summary of Notes 137–140 — memory-based (how memory is organized: one store, separate stores, modified separate), instruction-level (how instructions are encoded: RISC for ARM, CISC for x86), parallel-processing (Flynn's taxonomy: SISD one instruction one data, SIMD one instruction many data, MISD many instructions one data, MIMD many instructions many data), multiprocessing (SMP shared memory vs MPP distributed memory), and system/deployment (client-server, P2P, cluster, microservices, monolithic — the deployment forms of Note 139's list).
+- MISD blank, filled: MISD (multiple instructions on the same data) is the rare fourth Flynn class — few real systems are pure MISD, which is why the cell is blank; pipelined and fault-tolerant systems are the usual partial examples, marked here as filled, not original.
+- The partly unclear "RISC → virtualization" is kept partly unclear — the ARM/RISC association with virtualization (ARM servers in cloud, virtualization extensions) is plausible but the exact word is not legible, so it is not asserted as original text.
+
+---
+
+## Image Note 139 — Hardware system Arch = overall system design: device mapping + 16-item list (handwritten, as is)
+
+### Device mapping (top of page)
+
+- Laptops + PC → x86 AMD / Intel
+- Smartphones → ARM
+- Cloud servers → x86 + ARM
+- AI / ML systems → SIMD, many core
+- Embedded system → ARM, MIPS, MCU
+
+### Rules — Hardware system Arch = overall system design = computer systems
+
+- Shared: ① Von Neumann → 1 RAM for data + instructions
+- Separate: ② Harvard Arch → separate mem for data & instructions
+- ③ modified Harvard → separate caches but UMA
+- ④ RISC → simple instructions → load / store arch
+- ⑤ CISC → complex instructions → variable size
+- ⑦ SISD → one instruction, one data stream
+- ⑧ MISD → multiple instructions on same data
+- ⑨ MIMD → multiple processor → high scalable, multiple tasks
+- ⑩ SMP → multiple CPU, same memory → shared memory
+- ⑪ MPP → many processors work together → distributed memory
+- ⑫ Cluster Arch → multiple computers act as 1 → N/W nodes
+- ⑬ Client server → client req from servers → central control
+- ⑭ P2P → no central server → distributed N/W
+- ⑮ Microservices → app split into services
+- ⑯ Monolithic arch → single large app
+
+### [Filled — added, not in the original image]
+- Numbering, filled: the list skips ⑥ (④ RISC, ⑤ CISC, then ⑦ SISD) — ⑥ is missing in the image, kept missing, not invented; the sequence is otherwise continuous ①–⑯, and the missing number is the one item a clearer photograph would need to supply.
+- Device mapping, filled: laptops/PCs run x86 (AMD/Intel); smartphones run ARM; cloud servers run both x86 and ARM (the two instance families of Note 136); AI/ML systems run SIMD with many cores (one instruction over many data — the GPU/accelerator pattern); embedded systems run ARM, MIPS, or MCU (microcontroller units) — the architecture follows the device's constraints (power, cost, performance).
+- Shared vs separate, filled: von Neumann shares one RAM for data and instructions (simple, but one bottleneck); Harvard separates memory for data and instructions (parallel fetch, but two stores); modified Harvard separates caches but keeps UMA (uniform access underneath — the modern compromise, separate L1 caches, one main memory).
+- RISC vs CISC, filled: RISC uses simple instructions in a load/store architecture (only load/store touch memory); CISC uses complex instructions of variable size (one instruction can do what RISC does in several) — the same pair as Note 138's instruction-level row, here with their defining traits.
+- Flynn + deployment, filled: SISD/MISD/MIMD are Flynn's parallel classes (⑦–⑨, with SIMD implied by the AI/ML mapping above); SMP/MPP are the multiprocessing pair (⑩–⑪, shared vs distributed memory); cluster/client-server/P2P/microservices/monolithic (⑫–⑯) are the deployment forms — the same five as Note 138's last row, here as numbered items.
+
+---
+
+## Image Note 140 — Memory Arch = how access of organized RAM; CPU Arch types (rotated page) (handwritten, as is)
+
+### Description (words)
+
+- Page photographed rotated; transcribed column by column:
+- Memory Arch = how access of organized RAM
+- Linear → single block
+- Segmented → logical divisions called segments
+- Paging → fixed size blocks (pages + frames)
+- Hybrid → (seg + paging)
+- UMA → equal access time for all CPUs
+- NUMA → separate memory per CPU (node) [wording partly unclear, "depends on CPU locality" in the margin]
+- Distributed → common memory for all processors
+- Shared (SMP) → multiple CPU shared one memory
+- Java apps [margin note beside Shared]
+- MPP → shared + distributed
+- Paging is universal = used in all env
+- NUMA & distributed → prod env
+- UMA & [partly unclear] → dev env
+- Shared → imp for multi threaded apps
+- CPU Arch types: ① CISC, ② RISC, ③ x86, ④ ARM, ⑤ MIPS, ⑥ SPARC, ⑦ Power PC, ⑧ Superscalar, ⑨ Multicore, ⑩ Many core, ⑪ SIMD, ⑫ VLIW, ⑬ MCU
+
+### Drawn table — Memory Arch
+
+| Memory Arch | Meaning |
+|---|---|
+| Linear | single block |
+| Segmented | logical divisions called segments |
+| Paging | fixed size blocks (pages + frames) |
+| Hybrid | seg + paging |
+| UMA | equal access time for all CPUs |
+| NUMA | separate memory per CPU (node), access time depends on CPU locality |
+| Distributed | common memory for all processors |
+| Shared (SMP) | multiple CPU shared one memory |
+| MPP | shared + distributed |
+
+### Drawn list — CPU Arch types
+
+```
+① CISC, ② RISC, ③ x86, ④ ARM, ⑤ MIPS, ⑥ SPARC, ⑦ Power PC,
+⑧ Superscalar, ⑨ Multicore, ⑩ Many core, ⑪ SIMD, ⑫ VLIW, ⑬ MCU
+```
+
+### [Filled — added, not in the original image]
+- Memory organization ladder, filled: linear (one single block — the simplest), segmented (logical divisions called segments — code, data, stack as separate segments), paging (fixed-size blocks, pages in virtual memory mapping to frames in physical memory), hybrid (segmentation plus paging together — the x86 classic), then the access models: UMA (equal access time for all CPUs), NUMA (separate memory per CPU/node — access time depends on which CPU's memory you touch), distributed (common memory for all processors across nodes), shared/SMP (multiple CPUs sharing one memory), MPP (shared plus distributed combined).
+- Environment notes, filled: paging is universal — used in all environments; NUMA and distributed belong to production environments (where scale forces them); UMA and the partly unclear entry belong to development environments (where simplicity wins); shared memory is important for multithreaded apps (Java apps in the margin — threads sharing one memory is the Java concurrency model).
+- CPU type list, filled: CISC and RISC are the instruction philosophies; x86, ARM, MIPS, SPARC, PowerPC are the architectures; superscalar (multiple instructions per cycle), multicore, and many-core are the parallelism scales; SIMD is the data-parallel model; VLIW (very long instruction word) bundles many operations into one word; MCU (microcontroller unit) is the embedded end of the scale — thirteen types from philosophy to chip, the same list shape as Note 139's device mapping, here as pure types.
+- The partly unclear "UMA & … → dev env" second item is kept partly unclear — the visible UMA plus one illegible partner; the dev/prod split itself is clear and is what the fill preserves.
+
+---
+
+# INbatch22 — Image Notes 141–150 (handwritten, as is, plus one printed diagram)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 141 — Linux Networking Stack on Lenovo X1 Yoga (Ubuntu 22.04), End-to-End Data Flow (printed diagram, as is)
+
+### Description (words)
+
+- A printed stacked diagram, hardware at the top, applications at the bottom, titled "Linux Networking Stack on Lenovo X1 Yoga (Ubuntu 22.04) — End-to-End Data Flow":
+  - NIC Hardware — Intel Wireless-AC 8265 (Wi-Fi), Intel Ethernet PRO/1000 (Wired)
+  - NIC Driver — iwlwifi + iwlvm, e1000e
+  - Wireless Stack — cfg80211, mac80211
+  - Link Layer (L2) — Ethernet frames, Wi-Fi MAC
+  - Network Layer (L3) — IPv4, IPv6, Routing
+  - Transport Layer (L4) — TCP, UDP
+  - Socket Layer (glibc) — System calls: socket(), bind(), connect()
+  - User Applications — Firefox, Curl, GradSpot App, etc.
+
+### Drawn stack
+
+```
++--------------------------------------------------+
+| NIC Hardware                                     |
+| Intel Wireless-AC 8265 (Wi-Fi)                   |
+| Intel Ethernet PRO/1000 (Wired)                  |
++--------------------------------------------------+
+| NIC Driver                                       |
+| iwlwifi + iwlvm, e1000e                          |
++--------------------------------------------------+
+| Wireless Stack                                   |
+| cfg80211, mac80211                               |
++--------------------------------------------------+
+| Link Layer (L2)                                  |
+| Ethernet frames, Wi-Fi MAC                       |
++--------------------------------------------------+
+| Network Layer (L3)                               |
+| IPv4, IPv6, Routing                              |
++--------------------------------------------------+
+| Transport Layer (L4)                             |
+| TCP, UDP                                         |
++--------------------------------------------------+
+| Socket Layer (glibc)                             |
+| System calls: socket(), bind(), connect()        |
++--------------------------------------------------+
+| User Applications                                |
+| Firefox, Curl, GradSpot App, etc.                |
++--------------------------------------------------+
+```
+
+### [Filled — added, not in the original image]
+- End-to-end flow, filled: a user application (Firefox, curl, GradSpot app) calls socket(), bind(), connect() through glibc — the socket layer; the transport layer adds TCP or UDP; the network layer adds IPv4/IPv6 and routing; the link layer frames it as Ethernet frames or Wi-Fi MAC; the wireless stack (cfg80211/mac80211) handles Wi-Fi only; the NIC driver (iwlwifi/iwlmvm for wireless, e1000e for wired) drives the hardware; the NIC hardware (Intel Wireless-AC 8265, Intel Ethernet PRO/1000) puts it on the wire or the air — and the same stack in reverse on receipt.
+- Driver mapping, filled: iwlwifi + iwlmvm drive the Intel Wireless-AC 8265; e1000e drives the Intel Ethernet PRO/1000 — wireless and wired have separate drivers but share everything above the driver layer.
+- Wireless-only layer, filled: the wireless stack (cfg80211/mac80211) exists only on the Wi-Fi path — wired Ethernet goes from the e1000e driver straight to the link layer, which is why the diagram places the wireless stack between driver and link layers.
+- This is a printed diagram, not a handwritten page — the only printed item in this batch, filed here like any other image note, with its title and stack as printed.
+
+---
+
+## Image Note 142 — UMA, NUMA, Distributed mem Arch, Shared mem Arch (SMP, MPP) (handwritten, as is)
+
+### ⑤ UMA (Unified mem Access)
+
+- All CPU access memory at the same speed
+- simple Arch, easy implem
+- for small multi processor systems
+
+### ⑥ NUMA (Non UMA)
+
+- memory is divided among processors
+- used in High performance servers & multicore systems
+
+### ⑦ Distributed mem Arch
+
+- each processor has its own private memory
+- processors communicate via n/w
+- high scalable
+- used in clusters, super computer
+
+### ⑧ Shared mem Arch
+
+- All processors share the same memory space
+- ① SMP — symmetric multi processor, equal CPUs
+- ② MPP — massively parallel process, large scale system
+
+### [Filled — added, not in the original image]
+- Numbering, filled: ⑤–⑧ continue Note 143's ①–④ — the same physical-memory-architecture list, here the access models after the organization models (linear, segmented, paged, hybrid).
+- UMA, filled: unified memory access — every CPU accesses memory at the same speed; simple architecture, easy to implement, for small multiprocessor systems — the default of Notes 134/136, here as item ⑤.
+- NUMA, filled: non-uniform memory access — memory is divided among processors, so access time depends on which processor's memory you touch (local fast, remote slow); used in high-performance servers and multicore systems — the advanced topic of Note 135, here as item ⑥.
+- Distributed, filled: each processor has its own private memory and processors communicate via the network; highly scalable; used in clusters and supercomputers — the scale-out end, where shared memory stops working.
+- Shared, filled: all processors share the same memory space, split into SMP (symmetric multiprocessing — equal CPUs, the classic multicore server) and MPP (massively parallel processing — large-scale systems, the note's "process" read as "processing" by the MPP expansion, kept as written above and expanded here).
+- The four, filled: UMA (one speed, small), NUMA (divided, fast servers), distributed (private, clusters), shared (same space, SMP/MPP) — four answers to "how do many processors share memory", from simplest to most scalable.
+
+---
+
+## Image Note 143 — Physical Memory Arch: Linear, Segmented, Paged, Segmentation with paging (handwritten, as is)
+
+### Physical Memory Arch
+
+- means how main memory (RAM) is organized & accessed in computer system
+- these arch impact performance, scalability & system design
+
+### ① Linear (Flat) memory = continuous block
+
+### ② Segmented memory Arch
+
+- memory divided into segments (code, data, heap, stack etc)
+- address given as segment num + offset
+- for logical program organization
+- has fragmentation issues
+- side note: Intel 8086
+
+### ③ Paged mem
+
+- memory divided into fixed size blocks
+- pages (virtual mem) VA
+- frames (physical mem) PA
+- VA → page table → PA
+
+### ④ Segmentation with paging = hybrid
+
+- combines both seg + paging
+- each segment (code, data, stack) further divided into pages
+- provides logical org + efficient allocation
+- side note: x86 = modern
+
+### [Filled — added, not in the original image]
+- Physical memory architecture, filled: how main memory (RAM) is organized and accessed in a computer system — and these architectures impact performance, scalability, and system design, the header's own claim, which is why the same four items recur across Notes 137–140 and 142.
+- Linear/flat, filled: one continuous block — the simplest organization, every address directly maps, no divisions; the early model before segmentation.
+- Segmented, filled: memory divided into segments (code, data, heap, stack), an address given as segment number + offset — logical program organization (each part of the program gets its own segment), with fragmentation issues (segments of different sizes leave unusable holes); the Intel 8086 side note grounds it — the 8086's segment:offset addressing is the classic segmented machine.
+- Paged, filled: memory divided into fixed-size blocks — pages in virtual memory (virtual addresses) mapping through the page table to frames in physical memory (physical addresses): VA → page table → PA — fixed sizes end the fragmentation problem, at the cost of the page-table lookup.
+- Hybrid, filled: segmentation with paging combines both — each segment (code, data, stack) is further divided into pages, giving logical organization plus efficient allocation; the x86 = modern side note grounds it — modern x86 uses segmentation with paging (segmentation mostly flattened, paging doing the real work).
+
+---
+
+## Image Note 144 — Backups (information), RAM (DRAM/SRAM) = Transit hub (rotated page) (handwritten, as is)
+
+### Description (words)
+
+- Page photographed rotated; transcribed column by column:
+- Backups (information) — RAM (DRAM / SRAM) = Transit hub
+- Engine used to process & create backups
+- Backups contains only software data, not h/w data
+- Backing up information related to (processes & devices)
+- Backups saves: state config, sys logs, env variables, device drivers, process & app state
+- H/W & device config: etc / fstab, etc / udev / rules, etc / modprobe
+- RAM driven engines handles backups
+- Redis / keyDB → outputs .rdb, .aof files
+- tmpfs / ramfs → a segment of physical RAM, allow to mount as file dir
+- mount -t tmpfs -o size=2G
+- tmpfs / tmpfs = writes files into ram (high speed computing, dynamic, volatile)
+- memdump / dd = forensic tools
+- memdump / dd = extracts a copy out of RAM, static, non volatile
+
+### [Filled — added, not in the original image]
+- RAM as transit hub, filled: RAM (DRAM/SRAM) is the transit hub of backups — the engine that processes and creates backups runs in RAM, and a backup passes through RAM on its way from source to destination; nothing is backed up without transiting RAM.
+- Software data only, filled: backups contain only software data, not hardware data — what is backed up is information related to processes and devices (state config, system logs, environment variables, device drivers, process and application state), plus hardware/device configuration files (/etc/fstab, /etc/udev/rules, /etc/modprobe) — the configuration that describes hardware, not the hardware itself.
+- RAM-driven engines, filled: Redis/keyDB output .rdb and .aof files (snapshot and append-only log — the in-RAM database's own backup formats); tmpfs/ramfs are segments of physical RAM mounted as file directories (mount -t tmpfs -o size=2G mounts 2 GB of RAM as a filesystem) — writing files into RAM for high-speed, dynamic, volatile computing, where speed matters and loss on reboot is acceptable.
+- Forensic pair, filled: memdump/dd are forensic tools that extract a copy out of RAM — static, non-volatile output (a disk file) from volatile input (live RAM), the one direction in the page where RAM content becomes permanent instead of transiting.
+- "tmpfs / tmpfs" in the second tmpfs line is kept as written — the first is the filesystem name, the second the mount usage; the meaning (writes files into RAM) is clear without resolving the repetition.
+
+---
+
+## Image Note 145 — About data: Active (RAM), Inactive (Storage) (handwritten, as is)
+
+### About data
+
+### Active — RAM (DRAM / SRAM) — volatile & temp storage
+
+- is for speed & calculation (processing the backup) data
+- Dynamic storage (live workspace & backups)
+- Dynamic repos — dynamically changes
+- PCIe protocol high speed backup
+- SAS [as written "SASCSI"] for both archive & backup
+
+### Side notes
+
+- sync → on time, rsync → continuous
+- free, vmstat
+- tar, gzip, bzip / xz, dd
+
+### Inactive — Storage (NAND / NOR Flash chips) — non volatile, permanent storage
+
+- is for safety & retention data (holding the backup)
+- static storage for archives
+- static repos — code will not change
+
+### [Filled — added, not in the original image]
+- Active vs inactive, filled: the same data has two lives — active data lives in RAM (DRAM/SRAM), volatile and temporary, for speed and calculation (processing the backup); inactive data lives in storage (NAND/NOR flash chips), non-volatile and permanent, for safety and retention (holding the backup).
+- Dynamic vs static, filled: active means dynamic storage (a live workspace and live backups) and dynamic repos (content that changes — code in development, live data); inactive means static storage for archives and static repos (code that will not change — released, archived, read-only).
+- Protocols and tools, filled: PCIe is the high-speed backup protocol for active data (the fast lane between RAM and devices); SAS (the image writes "SASCSI", filled as SAS — serial attached SCSI, the storage protocol) serves both archive and backup; sync copies on time (one shot), rsync copies continuously (incremental, ongoing); free and vmstat watch memory; tar, gzip, bzip/xz, and dd package and compress the backup itself.
+- The pair, filled: active RAM is where backups are processed, inactive storage is where backups are held — Note 144's transit hub (RAM) feeding Note 130's archive/backup split, here as the active/inactive frame.
+
+---
+
+## Image Note 146 — RAM to motherboard & CPU, Page Allocator Engine, Page struct, Tempfs (handwritten, as is)
+
+### RAM — to motherboard & CPU
+
+- it's just an array of storage cells grouped into physical frames (4KB)
+- logically collection of buffers
+- it understands only 2 operations
+  - ① read from Address X
+  - ② write to Address X
+
+### Page Allocator Engine: hand out physical memory
+
+- allocates
+- Page struct → tracks every 4KB page frame in RAM physical memory
+- Tempfs → allocates on demand
+
+### [Filled — added, not in the original image]
+- RAM's simplicity, filled: to the motherboard and CPU, RAM is just an array of storage cells grouped into physical frames of 4 KB — logically a collection of buffers — and it understands only two operations, read from address X and write to address X; everything else (paging, caching, allocation) is built above this by the OS and CPU.
+- Page allocator engine, filled: the kernel component that hands out physical memory — it allocates frames on request, and it tracks them with a page struct (one struct per 4 KB page frame in physical RAM, recording each frame's state: free, used, by whom).
+- Tempfs, filled: tmpfs allocates on demand — memory is only consumed when files are actually written to the tmpfs mount, unlike a fixed reservation; the on-demand counterpart to the page allocator's frame-by-frame tracking, and the same tmpfs as Note 144's RAM filesystem.
+- 4 KB, filled: the page/frame size that recurs across the notes (Notes 140, 143) — the unit the page struct tracks, the unit paging moves, and the unit the allocator hands out, all the same 4 KB.
+
+---
+
+## Image Note 147 — Kernel Memory: hierarchical structure, pages, segments, nodes, zones (handwritten, as is)
+
+### Kernel — Memory
+
+- Memory structured hierarchically to balance fast access with vast storage
+- Different S/W & H/W layers manage memory using specific abstractions
+  - ① pages → virtual memory unit
+  - ② segments → logical program unit
+  - ③ nodes → NUMA unit
+  - ④ zones → physical capability unit
+
+### Segments
+
+- Text — fixed size
+- Data — read only
+- BSS — symbol
+- Heap — upward growing pool
+- Stack — downward growing block
+
+### Pages
+
+- Anonymous page
+- file backed (page-cache)
+- Huge pages → TLB
+- movable pages → userspace apps
+- unmovable page — core kernel infra pages
+
+### Nodes
+
+- local
+- remote
+
+### [Filled — added, not in the original image]
+- Hierarchical structure, filled: memory is structured hierarchically to balance fast access with vast storage — small fast memory near the CPU, vast slower memory further away — and different software/hardware layers manage it using specific abstractions, one unit per layer: pages (the virtual memory unit), segments (the logical program unit), nodes (the NUMA unit), zones (the physical capability unit).
+- Segments, filled: text (fixed size — the program's code), data (read only — initialized constants), BSS (symbols — uninitialized data, zero-filled at start), heap (upward-growing pool — dynamic allocation), stack (downward-growing block — function calls and locals) — the same five as Note 143's segmented list, here with their growth directions (heap up, stack down, growing toward each other).
+- Pages, filled: anonymous pages (no file behind them — heap, stack, process-private memory), file-backed pages (the page cache — file contents cached in RAM), huge pages (large pages that reduce TLB pressure — fewer translations to cache), movable pages (userspace apps — the kernel can relocate them for compaction), unmovable pages (core kernel infrastructure pages — pinned, cannot move, because the kernel itself runs from them).
+- Nodes and zones, filled: nodes are local or remote (NUMA — local memory fast, remote memory slow, Note 142's NUMA); zones are physical capability units (the kernel's division of physical memory by what it can do — DMA-capable, normal, high memory — the capability split the allocator respects when handing out frames, Note 146).
+
+---
+
+## Image Note 148 — Engine / Controller Manager / Firmware: Compute, Storage, N/W, I/O (handwritten, as is)
+
+### Columns
+
+- Engine → Controller Manager → Firmware
+
+### Rows
+
+- ① Compute → Hypervisor (KVM, XEN) → UEFI / BIOS — initializes h/w
+- ② Storage → VSA or RAID controller → HBA / RAID firmware — warehouse
+- ③ N/W → SDN / vSwitch controller → NIC / PXE — manages physical link
+- ④ I/O → virtIO / IOMMU → PCIe controller firmware — manages switching data b/w CPU & peripherals
+
+### Bottom restatement
+
+- ① Compute (KVM) engine → UEFI is firmware
+- ② Storage (VSA) engine → HBA / RAID is firmware
+- ③ Network [cut off, no entry written]
+
+### [Filled — added, not in the original image]
+- Three columns, filled: every resource has an engine (the software that slices and presents it), a controller/manager (the layer that manages it), and firmware (the hardware's own software) — compute, storage, network, and I/O each run the same three-column pattern.
+- Rows, filled: compute's engine is the hypervisor (KVM, Xen), its firmware is UEFI/BIOS, which initializes the hardware; storage's engine is the VSA (virtual storage appliance) or RAID controller, its firmware is HBA/RAID firmware, its role the warehouse (where data rests); network's engine is the SDN/vSwitch controller, its firmware is NIC/PXE (the network card and its boot), managing the physical link; I/O's engine is virtIO/IOMMU (virtual I/O and I/O memory management), its firmware is the PCIe controller firmware, managing the switching of data between CPU and peripherals.
+- Bottom restatement, filled: the bottom lines restate the engine→firmware pairs — compute (KVM) engine → UEFI is firmware; storage (VSA) engine → HBA/RAID is firmware; network's restatement is cut off in the image and is filled by the row above it (network engine → NIC/PXE is firmware), marked here as filled, not original.
+- The pattern, filled: engine slices, controller manages, firmware initializes — the same layering as Note 149's kernels (compute/storage/network engines) and Note 141's stack (driver above hardware), here as the engine/controller/firmware frame.
+
+---
+
+## Image Note 149 — Control plane, N/W kernels: Standard, SDN, Data plane; KVM, VSA, VLAN/bridge, I/O engines (handwritten, as is)
+
+### Control plane — ⑦ N/W kernels
+
+- these manage packet switching, routing tables, firewall state
+- we bypass the OS kernel to gain speed [with "fast" written below]
+
+### ① Standard N/W
+
+- Linux N/W stack, FreeBSD (PF)
+- Cisco IOS / IOS-XE, Juniper Junos
+
+### ② SDN
+
+- OVS, VPP
+- VMware NSX, Arista EOS
+
+### ③ Data plane
+
+- DPDK, eBPF
+- Broadcom SDK, Nvidia Mellanox
+
+### Bottom — engines
+
+- ① KVM = compute engine, takes physical CPU RAM & slices them up
+- VSA = storage engine, builds LUN, volumes
+- VLAN / bridge = N/W engine builds N/Ws (vNIC)
+- I/O (virtIO) = PCIe bus
+
+### [Filled — added, not in the original image]
+- Network kernels, filled: network kernels manage packet switching, routing tables, and firewall state — and the note's key move is bypassing the OS kernel to gain speed (the "fast" annotation): the standard kernel stack is correct but slow, so data-plane tools bypass it.
+- Three network-kernel families, filled: standard networking (Linux network stack, FreeBSD with PF packet filter; Cisco IOS/IOS-XE, Juniper Junos — the vendor OSes); SDN (OVS — Open vSwitch, VPP — vector packet processing; VMware NSX, Arista EOS — the software-defined controllers); data plane (DPDK — data plane development kit, eBPF — extended Berkeley packet filter; Broadcom SDK, Nvidia Mellanox — the hardware-accelerated SDKs).
+- Control plane label, filled: the page is headed "control plane" — packet switching, routing tables, and firewall state are control-plane state (decisions about where packets go), while the data plane (DPDK/eBPF) is the fast path that executes those decisions without the kernel.
+- Engines, filled: KVM is the compute engine (takes physical CPU and RAM and slices them up — Note 102's hypervisor slicing, restated); VSA is the storage engine (builds LUNs and volumes — the storage counterpart); VLAN/bridge is the network engine (builds networks and vNICs); I/O (virtIO) is the PCIe bus (the transport underneath virtual I/O) — the same four engines as Note 148, here as one-line definitions.
+- Numbering, filled: "⑦ N/W kernels" continues a kernels list whose ① is compute kernels and ② is storage kernels (Note 150) — network kernels are item ⑦ in a longer list, with items ③–⑥ on pages not in this set; the number is kept as written, not renumbered.
+
+---
+
+## Image Note 150 — Compute kernels, Storage kernels: monolithic, micro, hypervisor; OS, distributed, acceleration (handwritten, as is)
+
+### ① Compute kernels (processing & virtualization)
+
+- focus on CPU scheduling, memory mgmt, process isolation
+
+### Monolithic / micro / hypervisor
+
+- ① monolithic → Linux kernel, FreeBSD, Win NT [plus a "paid" side note]
+- ② micro kernel → L4 (seL4), QNX, IBM zOS
+- ③ Hypervisor → KVM, Xen, Hyper-V, VMware
+
+### Data plane — ② Storage kernels — zero-copy data paths
+
+- prioritize I/O throughput
+- data integrity (ZFS)
+- RAID calculations
+
+### Storage kernel families
+
+- ① OS → FreeBSD (ZFS), TrueNAS, OpenE [cut off]
+  - paid: NetApp ONTAP, Dell EMC
+- ② Distributed → Ceph (RADOS kernel), GlusterFS
+  - Nutanix AOS, Pure Storage
+- ③ Acceleration → SPDK, IBM Spectrum
+
+### [Filled — added, not in the original image]
+- Compute kernels, filled: processing and virtualization kernels focused on CPU scheduling, memory management, and process isolation — in three forms: monolithic (Linux kernel, FreeBSD, Windows NT — everything in one kernel, the "paid" side note marking the commercial members), microkernel (L4/seL4, QNX, IBM z/OS — minimal kernel, services in userspace), hypervisor (KVM, Xen, Hyper-V, VMware — the kernel that runs other kernels, Note 103's hypervisor types, here as the third compute-kernel form).
+- Storage kernels, filled: data-plane kernels with zero-copy data paths (data moves without being copied between buffers — the speed trick behind Note 149's bypass), prioritizing I/O throughput, data integrity (ZFS — checksummed, self-healing storage), and RAID calculations.
+- Storage families, filled: OS-embedded (FreeBSD with ZFS, TrueNAS, OpenE — cut off, most likely OpenE DSS/Jovian, kept cut off and not asserted; paid: NetApp ONTAP, Dell EMC); distributed (Ceph with its RADOS kernel, GlusterFS; Nutanix AOS, Pure Storage); acceleration (SPDK — storage performance development kit, IBM Spectrum — the userspace/NVMe fast path, the storage counterpart to DPDK).
+- The pair, filled: compute kernels schedule and isolate (CPU, memory, processes); storage kernels move and protect (throughput, integrity, RAID) — the two kernel families of this page, with network kernels (Note 149's ⑦) as the third family that completes the set.
+
+---
+
+# INbatch23 — Image Notes 151–160 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 151 — Instructions → Thread → Process → Container → Pod → VM → Node → Cluster → Distributed system (handwritten, as is)
+
+### Description (words)
+
+- A vertical ladder, top to bottom, with side labels: Instructions → Thread → Process (Code, Data, Heap, Stack, Resources) → Container (Shared FS, Shared Buffers, Namespaces, Cgroup) → Pod (Shared N/W, Shared volumes, Shared lifecycle) → VM (vCPU, vRAM, Guest kernel) → Node (Real CPU, RAM, Disk, NIC) → Cluster → Distributed system.
+- Side labels, left: app (against Process), isolated process (against Container), grouped NS (against Pod), KVM/Qemu (against VM).
+- Bottom equivalences: File = inode; N/W = socket buffer; memory = mapped pages; storage = block I/O.
+
+### Drawn ladder
+
+```
+Instructions
+    ↓
+Thread
+    ↓
+Process (Code, Data, Heap, Stack, Resources)      [app]
+    ↓
+Container (Shared FS, Shared Buffers,             [isolated process]
+           Namespaces, Cgroup)
+    ↓
+Pod (Shared N/W, Shared volumes,                  [grouped NS]
+     Shared lifecycle)
+    ↓
+VM (vCPU, vRAM, Guest kernel)                      [KVM/Qemu]
+    ↓
+Node (Real CPU, RAM, Disk, NIC)
+    ↓
+Cluster
+    ↓
+Distributed system
+
+File    = inode
+N/W     = socket buffer
+memory  = mapped pages
+storage = block I/O
+```
+
+### [Filled — added, not in the original image]
+- The ladder, filled: each level groups the one below — instructions run in threads, threads run in processes, processes are isolated in containers, containers are grouped in pods, pods run in VMs, VMs run on nodes, nodes form clusters, clusters form a distributed system — the whole stack from one instruction to a distributed system in nine steps.
+- Level contents, filled: a process owns code, data, heap, stack, and resources; a container shares a filesystem and buffers and adds namespaces and cgroups (the isolation); a pod shares network, volumes, and lifecycle (the Kubernetes grouping); a VM adds vCPU, vRAM, and its own guest kernel (the isolation a container lacks); a node is the real hardware — real CPU, RAM, disk, NIC.
+- Bottom equivalences, filled: at every level the same four resources appear in kernel form — a file is an inode, a network connection is a socket buffer, memory is mapped pages, storage is block I/O — the kernel's own units behind the ladder's abstractions.
+- "Grouped NS" side label, filled: the pod's grouping is by namespace — containers in a pod share namespaces (network, IPC), which is why the pod is labelled "grouped NS" rather than just "grouped containers".
+
+---
+
+## Image Note 152 — ③ Node → physical Execution provider, not a real machine; ④ Kernel objects = kernel infrastructure, visible in /sys (handwritten, as is)
+
+### ③ Node → physical Execution provider, not a real machine
+
+### Drawn tree — Node
+
+```
+Node
+├── Motherboard
+├── CPU
+├── RAM
+├── NVMe / SATA
+├── NIC
+├── BIOS / UEFI
+├── Kernel
+└── Drivers
+```
+
+### ④ Kernel objects = kernel infrastructure — visible in /sys
+
+### Drawn tree — Kernel
+
+```
+Kernel
+├── Devices
+├── Drivers
+├── Buses
+├── FS
+├── CPU
+├── memory zones
+├── cgroups
+└── namespace   [cut off at page edge]
+```
+
+### [Filled — added, not in the original image]
+- Node, filled: a node is a physical execution provider, not a real machine — the distinction is the provider role: in a cluster, a node is whatever provides execution (it may itself be a VM, Note 151's VM→Node step), so "node" names the role, not the bare metal.
+- Node contents, filled: motherboard, CPU, RAM, NVMe/SATA storage, NIC, BIOS/UEFI firmware, kernel, drivers — hardware at the top of the tree, firmware and kernel below, drivers at the bottom (the same stack as Note 148's engine/controller/firmware, here as one tree).
+- Kernel objects, filled: kernel objects are the kernel's infrastructure — devices, drivers, buses, filesystems, CPU, memory zones, cgroups, namespaces — and they are visible in /sys (sysfs), the filesystem that exposes kernel objects to userspace, which is why /sys is the note's proof point.
+- The cut-off, filled: the last kernel-tree entry is "namespace" cut off at the page edge — filled as namespaces (plural, matching the cgroups entry above it and Note 154's container ingredients), marked here as filled.
+
+---
+
+## Image Note 153 — Process — runtime object in Linux; Process VM layout (ELF) (handwritten, as is)
+
+### Process — runtime object in Linux
+
+- process = program + memory + resources + identity + state [last word cut off at page edge]
+
+### Process VM layout (ELF)
+
+- Code segment (machine instructions)
+- Data segment (initialized vars)
+- BSS segment (uninitialized vars)
+- Heap (dynamic runtime)
+- Shared libraries
+- Stack
+- Kernel context
+
+### Process owns runtime resources
+
+- ① FD
+- ② Mem mappings (vir to phy pages)
+- ③ Scheduling context
+
+### Drawn layout
+
+```
+Process VM layout (ELF)
+├── Code segment   (machine instructions)
+├── Data segment   (initialized vars)
+├── BSS segment    (uninitialized vars)
+├── Heap           (dynamic runtime)
+├── Shared libraries
+├── Stack
+└── Kernel context
+```
+
+### [Filled — added, not in the original image]
+- Process definition, filled: a process is a runtime object in Linux — program + memory + resources + identity + state (the cut-off word is filled as "state", the standard fifth element and the one that completes program/memory/resources/identity).
+- VM layout, filled: the ELF layout is the process's virtual memory — code segment (machine instructions, Note 147's text), data segment (initialized variables), BSS segment (uninitialized variables), heap (dynamic runtime allocation), shared libraries (code shared between processes), stack (function calls and locals), kernel context (the kernel-side state the process needs to run).
+- Owned resources, filled: a process owns its runtime resources — file descriptors (FDs, its open files and sockets), memory mappings (virtual to physical pages, Note 143's paging), and scheduling context (what the scheduler needs to run it: priority, state, CPU time).
+- Heap vs stack, filled: heap grows upward, stack grows downward (Note 147) — the two dynamic regions of this layout, growing toward each other inside the same virtual address space.
+
+---
+
+## Image Note 154 — Container = a controlled group of process created using namespaces, cgroups, capabilities, overlayfs; Container layout (handwritten, as is)
+
+### Container = A controlled group of process created using
+
+- namespaces
+- cgroups
+- capabilities
+- overlayfs
+
+### Container layout
+
+- processes
+- Shared FS → Rootfs for all processes inside container
+- Shared Buffers → kernel mmap buffers shared processes
+- Shared N/W stack
+- Shared IPC
+- Cgroup limits — Resource boundaries
+- Namespace isolation
+
+### Drawn layout
+
+```
+Container layout
+├── processes
+├── Shared FS       → Rootfs for all processes inside container
+├── Shared Buffers  → kernel mmap buffers shared processes
+├── Shared N/W stack
+├── Shared IPC
+├── Cgroup limits   — Resource boundaries
+└── Namespace isolation
+```
+
+### [Filled — added, not in the original image]
+- Container definition, filled: a container is a controlled group of processes created using namespaces (what each process can see), cgroups (how much each process can use), capabilities (what each process is allowed to do), and overlayfs (the layered filesystem it sees) — four kernel mechanisms, no guest kernel, which is the whole difference from Note 151's VM.
+- Layout, filled: inside the container, processes share a filesystem (the rootfs, one root filesystem for all processes inside), share buffers (kernel mmap buffers shared between processes), share a network stack, share IPC — and are bounded by cgroup limits (resource boundaries) and separated by namespace isolation.
+- Shared vs isolated, filled: the layout is both shared and isolated at once — shared inside (FS, buffers, network, IPC are common to the container's processes) and isolated outside (namespaces hide the rest of the system, cgroups cap the resources) — the two directions that make a container "controlled" rather than just grouped.
+
+---
+
+## Image Note 155 — Interface layer: switch ports, router ports, virtual switch, tun/tap, veth pairs (rotated page) (handwritten, as is)
+
+### Description (words)
+
+- Page photographed rotated; transcribed in reading order:
+- Layer labels: I/O layer → N/W layer → interface layer; also MAC, IP, gateway, interface, veth pair annotations.
+- Switch ports: eth cable plugin; links physical infra; connects virtual dev to physical N/W; switch creates N/W by connecting dev.
+- Router ports: links N/Ws; point-2-point link; connects IP N/Ws; router links N/Ws.
+- Virtual: virtual switch; virtual cable; N/Ws connect [partly unclear]; virtual cable serial [partly unclear]; Vlan? [unclear annotation].
+- Tun / Tap: for kernel namespace [annotation]; veth pairs for kernel space [annotation]; Tun/Tap and veth pairs are the virtual interface pair for namespaces.
+
+### [Filled — added, not in the original image]
+- Interface layer, filled: the interface layer is where physical and virtual meet — switch ports (ethernet cable plugins) link the physical infrastructure and connect virtual devices to the physical network; a switch creates a network by connecting devices.
+- Router ports, filled: router ports link networks (not devices) — point-to-point links connecting IP networks, so a router links networks the way a switch links devices; the two port types are the layer's two jobs.
+- Virtual interfaces, filled: the virtual switch and virtual cable are the software equivalents of the physical switch and cable; tun/tap and veth pairs are the virtual interface pair for kernel namespaces — tun for VPN-style tunnels, tap for virtual devices, veth pairs for connecting two namespaces (the container pair of Note 154's shared network stack).
+- Partly unclear, filled and flagged: two virtual-side annotations are partly unclear in the image (a "virtual cable serial" phrase and a VLAN-related annotation) — filled here only as "virtual cable" and "VLAN interfaces" in the description above, and flagged as partly unclear rather than asserted; the MAC/IP/gateway annotations mark the three identities a port carries (device, network, exit).
+
+---
+
+## Image Note 156 — Data types; volatile vs non-volatile; ④ Comm & Interface & Connectivity chips (handwritten, as is)
+
+### Data types
+
+- instructions (machine code cmds)
+- values (variables, photos, configs)
+
+### Volatile vs non-volatile
+
+- Volatile → lose all data when power off
+- Non volatile → retain data without electricity
+
+### ④ Comm & Interface & Connectivity chips
+
+- Hardware translators
+- Translates binary data into protocols
+
+### ① Guided + internal (PCB traces)
+
+- PCIe controller
+- SATA / NVMe controller
+- (side: NPU)
+
+### ② Guided + external (Plugs & cables)
+
+- Display controller
+- Ethernet controller (PHY)
+- USB controller
+- CAN Bus controller
+- (side: SmartNIC / DPU)
+
+### ③ Unguided + external (Airways)
+
+- modem, wifi, bluetooth
+
+### [Filled — added, not in the original image]
+- Data types, filled: data is two things — instructions (machine code commands, what the CPU executes) and values (variables, photos, configs — what the instructions operate on); the same split as Note 158's processing/memory division, here at the data level.
+- Volatility, filled: volatile memory loses all data when power is off (RAM); non-volatile retains data without electricity (flash, ROM) — the Note 145 active/inactive pair, here as a property of the chips themselves.
+- Connectivity chips, filled: communication, interface, and connectivity chips are hardware translators — they translate binary data into protocols (Ethernet, USB, PCIe, Wi-Fi), the chip-level job behind every interface in Notes 155 and 159.
+- Three media, filled: guided + internal (PCB traces — PCIe controller, SATA/NVMe controller, with NPU noted alongside as the on-board accelerator); guided + external (plugs and cables — display, Ethernet PHY, USB, CAN bus controllers, with SmartNIC/DPU noted alongside as the offload engine); unguided + external (airways — modem, Wi-Fi, Bluetooth) — internal traces, external cables, and air, the same guided/unguided frame as Note 164's physical media.
+
+---
+
+## Image Note 157 — ③ Power Management chips (Regulators) (Distributors); Memory & Storage chips (handwritten, as is)
+
+### ③ Power Management chips (Regulators) (Distributors)
+
+- Act as electrical gatekeepers of devices
+- they take high, unstable voltage from battery or wall charger & distribute power to silicon components
+- dynamic power
+
+### Static power
+
+- PMIC, DCPC, PSIC → low power for memory chips
+
+### High power
+
+- VRM, Battery charging IC → high power regulators for processing chips
+
+### Side notes (partly unclear placement)
+
+- for web traffic, virtual & API, monitoring & telemetry
+- for N/W traffic, RAW media (guided/unique), protocols, processing workloads
+
+### Memory & Storage chips
+
+- define how data (instructions / cmds) is handled inside a machine or device
+- define how data (instructions & values) → (code / cmds) & (var / files)
+
+### [Filled — added, not in the original image]
+- Power management, filled: power management chips (regulators, distributors) act as electrical gatekeepers of devices — they take high, unstable voltage from the battery or wall charger and distribute clean power to the silicon components, at dynamic power (varying with load, not fixed).
+- Static vs high power, filled: static (low) power — PMIC, DCPC, PSIC — for memory chips (which sip power); high power — VRM (voltage regulator module) and battery charging IC — high-power regulators for processing chips (which gulp power) — the two power domains, memory and compute, each with its own regulators.
+- Side notes, filled and flagged: the side annotations ("for web traffic, virtual & API, monitoring & telemetry" and "for N/W traffic, RAW media, protocols, processing workloads") read as workload labels for the power domains — web/API/telemetry workloads on one side, network/RAW-media/protocol/processing workloads on the other — flagged as partly unclear in placement, since the image does not draw the arrows to either regulator group.
+- Memory & storage chips, filled: they define how data is handled inside a machine or device — how instructions/commands and values become code/commands and variables/files — the chip-level version of Note 156's data types, closing the page's loop from power (what runs the chips) to memory (what the chips hold).
+
+---
+
+## Image Note 158 — Chips category: ① Processing / Computing chips, ② Memory & Storage chips (rotated page) (handwritten, as is)
+
+### Chips category
+
+### ① Processing / Computing chips = The brain
+
+- CPU, GPU, MCU, TPU, NPU, DSP, ASIC, FPGA
+- Executes instructions
+- Performs calc
+- Run OS / S/W
+- Control logic
+- Manage system state
+
+### ② Memory & Storage chips
+
+- The working & persistent memory
+- Defines execution & how to retain data
+- holds active data
+
+### Volatile working memory
+
+- RAM (SRAM) → SRAM, EDO, SDRAM, DDRAM, DRAM → LPDDR, GDDR, SRAM
+
+### Non volatile persistent memory
+
+- ROM, PROM, EPROM, EEPROM
+- Flash memory (NOR, NAND SLC, MLC, TLC, etc)
+
+### Volatile vs non-volatile
+
+- volatile = loses data when power off
+- non volatile = keeps data, retains data indefinitely
+
+### [Filled — added, not in the original image]
+- Two chip categories, filled: processing/computing chips are the brain (CPU, GPU, MCU, TPU, NPU, DSP, ASIC, FPGA — executing instructions, performing calculations, running OS/software, control logic, managing system state); memory & storage chips are the working and persistent memory (defining execution and how to retain data, holding active data).
+- Volatile line, filled: RAM's family — SRAM, EDO, SDRAM, DDRAM, DRAM, branching to LPDDR (low-power DDR, mobile) and GDDR (graphics DDR) and back to SRAM — the working-memory lineage from early EDO to modern DDR variants.
+- Non-volatile line, filled: ROM, PROM, EPROM, EEPROM, then flash memory (NOR, NAND in SLC/MLC/TLC variants) — the persistent lineage from mask ROM to multi-level flash.
+- The frame, filled: volatile loses data when power is off, non-volatile keeps data and retains it indefinitely — the same rule as Notes 145 and 156, here as the closing line of the chip taxonomy; this page is the taxonomy (processing vs memory) that Notes 156–157 detail (connectivity, power).
+
+---
+
+## Image Note 159 — Physical Device — virtual; Physical device/port/cable/path/plug/signal/N/W mappings (handwritten, as is)
+
+### Physical Device — virtual
+
+| Physical | Virtual |
+|---|---|
+| 1 Server | VM / node / instance |
+| 2 NIC | eth0 / ens160 / vNIC |
+| 3 Switch | vSwitch / bridge (VMM / OS) |
+| 4 Router | vRouter / route table |
+| 5 Firewall | security group / firewall policy |
+| 6 Load balancer | VIP / service endpoint |
+| 7 Storage dev | volume / LUN / PVC |
+
+### Second mapping
+
+| Physical | Virtual |
+|---|---|
+| 1 Physical Device | virtual resource |
+| 2 Physical port | interface |
+| 3 Physical cable | link |
+| 4 Physical path | attachment route |
+| 5 Physical plug | attachment |
+| 6 Physical signal | packet / frame |
+| 7 Physical N/W | logical N/W |
+
+### [Filled — added, not in the original image]
+- Two mappings, filled: the first maps devices (server → VM/node/instance, NIC → eth0/ens160/vNIC, switch → vSwitch/bridge, router → vRouter/route table, firewall → security group/firewall policy, load balancer → VIP/service endpoint, storage device → volume/LUN/PVC); the second maps the primitives underneath (device → virtual resource, port → interface, cable → link, path → attachment route, plug → attachment, signal → packet/frame, network → logical network).
+- The pattern, filled: every physical thing has a virtual twin at two levels — the device level (what you buy) and the primitive level (what it is made of) — so virtualization is not one trick but seven, one per primitive, and the second table is the key to the first.
+- Names, filled: eth0/ens160 are Linux's physical NIC names (eth0 the classic name, ens160 the predictable name); vNIC is the virtual NIC; PVC is the Kubernetes persistent volume claim (the storage device's virtual twin in the pod world, Note 151's pod level).
+
+---
+
+## Image Note 160 — Electronic digital Devices; Physical media; Virtual Equivalent; one port = many logical N/Ws (rotated page) (handwritten, as is)
+
+### Electronic digital Devices
+
+- Devices → routers, switches, firewalls, APs, modem, NIC, load balancer, IDS, IPS, repeaters / extenders, etc.
+
+### Physical media → cables
+
+- Cat, fiber, DSL, RF spectrum, PCIe lanes, transmitter
+
+### Virtual Equivalent →
+
+- VLANs, VPN tunnels, VXLAN / generic, SSID, vNIC, VIP, iSCSI / FCoE
+
+### Closing rules
+
+- Every physical port is a multiplexer
+- Cable / radio is the substrate
+- VLAN, VPN, VXLAN, SSID, vNIC, VIP = one port equals many logical N/Ws
+
+### [Filled — added, not in the original image]
+- Three columns, filled: devices (routers, switches, firewalls, APs, modem, NIC, load balancer, IDS, IPS, repeaters/extenders), physical media (Cat cables, fiber, DSL, RF spectrum, PCIe lanes, transmitter — the tangible pathways), virtual equivalents (VLANs, VPN tunnels, VXLAN/generic overlays, SSIDs, vNICs, VIPs, iSCSI/FCoE — the logical pathways on top of them).
+- The closing rules, filled: every physical port is a multiplexer (one port carries many logical streams); cable/radio is the substrate (everything virtual rides on something physical); VLAN, VPN, VXLAN, SSID, vNIC, VIP are all instances of one rule — one port equals many logical networks — the page's thesis, and the bridge to Note 159's device→virtual mapping.
+- "Generic" in the virtual list, filled: read as Geneve (the generic overlay encapsulation, alongside VXLAN) — the note writes "VXLAN / generic", and Geneve is the generic network virtualization encapsulation; kept as "generic" above and expanded here, flagged as a reading, not an assertion about the handwriting.
+
+---
+
+# INbatch24 — Image Notes 161–170 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 161 — Common interfaces: ISP Backbone → OLT → modem → Edge Router → firewall → core → distribution → access → AP/NIC/gateway → IDS/IPS/HSM → ADC (handwritten, as is)
+
+### Description (words)
+
+- A vertical flow, top to bottom: ISP Backbone → OLT ISP side → modem → Edge Router (WAN Entry) → firewall cluster → core switches (VLAN ID, Trunk Port) → distribution switch (VLAN assignment) → access switches → AP (wifi) / NIC's / industrial gateway → IDS / IPS / HSM → ADC.
+- Left-side list: loopback, physical wired ethernet, physical wireless ethernet, N/W bridge / cables, virtual ethernet, tunnel / VPN.
+- Boxes: Device identity — MAC, serial; N/W identity — IP, VLAN, SSID routing; IP's, SSID's (against the AP step).
+
+### Drawn flow
+
+```
+ISP Backbone
+    ↓
+OLT ISP side
+    ↓
+modem
+    ↓
+Edge Router            [WAN Entry]
+    ↓
+firewall cluster
+    ↓
+Core switches          [VLAN ID, Trunk Port]
+    ↓
+Distribution switch    [VLAN assignment]
+    ↓
+Access switches
+    ↓
+AP (wifi) / NIC's / industrial gateway    [IP's, SSID's]
+    ↓
+IDS / IPS / HSM
+    ↓
+ADC
+
+Interfaces: loopback, physical wired ethernet,
+  physical wireless ethernet, N/W bridge/cables,
+  virtual ethernet, tunnel/VPN
+Device identity: MAC, serial
+N/W identity: IP, VLAN, SSID routing
+```
+
+### [Filled — added, not in the original image]
+- The flow, filled: the ISP backbone feeds the OLT (optical line terminal, ISP side), then the modem, then the edge router (the WAN entry), then the firewall cluster, then core switches (VLAN IDs, trunk ports), then the distribution switch (VLAN assignment), then access switches, then the edge devices (Wi-Fi APs, NICs, industrial gateways), then IDS/IPS/HSM (detection, prevention, hardware security), then the ADC (application delivery controller) — the full path from the ISP to the application, in order.
+- Interfaces, filled: the left list is the interface inventory at every hop — loopback (self), physical wired ethernet, physical wireless ethernet, network bridge/cables, virtual ethernet, tunnel/VPN — the same interface family as Notes 125 and 155, here as the common set.
+- Identities, filled: device identity is MAC and serial (what the device is); network identity is IP, VLAN, and SSID routing (where the device sits) — the two identity planes, one per device and one per network, carried through the whole flow.
+
+---
+
+## Image Note 162 — Edge router, Firewall, Switch/core switch, NIC/HBA, Load balancers (Linux equivalents) (handwritten, as is)
+
+### Edge router (ingress controller)
+
+- iptables / nftables → routing + NAT
+- ip route → for static routes
+- eth0, eth1 → like WAN / LAN ports
+
+### Firewall (Network policies)
+
+- Netfilter subsystem — managed by iptables, firewalld, nftables
+
+### Switch / core switch
+
+- Linux bridges
+- ip link
+- (side: CNI, ENI)
+
+### NIC / HBA
+
+- tun (VPN), tap (devices)
+- veth pairs (containers)
+
+### Load balancers
+
+- HAProxy, nginx
+
+### [Filled — added, not in the original image]
+- Linux equivalents, filled: every physical device in Note 161 has a Linux equivalent — the edge router is iptables/nftables (routing + NAT), ip route (static routes), and eth0/eth1 as WAN/LAN ports; the firewall is the netfilter subsystem, managed by iptables, firewalld, or nftables; the switch/core switch is Linux bridges plus ip link (with CNI and ENI noted as the container/cloud network interfaces that consume them); the NIC/HBA is tun (VPN), tap (devices), and veth pairs (containers); the load balancer is HAProxy or nginx.
+- The frame, filled: this page is the software mirror of the hardware flow — the same five devices, rebuilt from kernel primitives, which is why it pairs with Note 161 (the flow) and Note 166 (the Kubernetes equivalents).
+- CNI/ENI, filled: CNI (container network interface) is how Kubernetes wires pods to the Linux bridge; ENI (elastic network interface) is the cloud equivalent — both noted here as the consumers of the switch row, not as separate devices.
+
+---
+
+## Image Note 163 — All Device connections: Modem, Edge Router, Firewall, Core, Access, Distributed, AP/NIC/HBA/gateway, IDS/IPS/HSM, ADC (handwritten, as is)
+
+### All Device connections
+
+### ① Modem
+
+- connects directly to ISP, line can be Telephone copper, fiber optic, cellular
+- usually connects to edge router via Ethernet
+
+### ② Edge Router
+
+- upstream to the modem (WAN port)
+- downstream to switches or Firewall
+
+### ③ Firewall
+
+- Enforce security zones (DMZ, LAN, WAN)
+- upstream: Edge router
+- down: Core switches
+
+### ④ Core switches
+
+- backbone connecting distributed switches
+- upstream: Firewalls (zones)
+- downstream: DVS, NIC, HBA / SAN
+
+### ⑥ Access switch [numbered ⑥ before ⑤ in the image, kept as written]
+
+- Edge switch connecting end devices, AP, IoT
+- upstream: Distributed switches
+- downstream: PCs, servers (NIC), APs, IoT gateway
+
+### ⑤ Distributed switch
+
+- aggregating access switches
+- upstream: core switches
+- down: Access switches, APs, IoT gateways
+
+### ⑦ APs / NIC / HBA / Industrial gateway
+### ⑧ IDS / IPS / HSM
+### ⑨ ADC
+
+### [Filled — added, not in the original image]
+- Upstream/downstream, filled: each device is defined by its neighbours — modem upstream is the ISP, downstream is the edge router; edge router upstream is the modem (WAN port), downstream is switches or firewall; firewall upstream is the edge router, downstream is core switches; core upstream is firewalls (zones), downstream is DVS, NIC, HBA/SAN; distributed upstream is core, downstream is access; access upstream is distributed, downstream is PCs, servers (NIC), APs, IoT gateways.
+- Numbering, filled: the image numbers access as ⑥ before distributed as ⑤ — kept as written above, not renumbered; the order in the flow is core → distributed → access regardless of the numbers, and the upstream/downstream lines confirm that order.
+- The last three, filled: APs/NIC/HBA/industrial gateway (⑦), IDS/IPS/HSM (⑧), and ADC (⑨) are listed without upstream/downstream lines in the image — filled by Note 161's flow, where they sit after access switches (edge devices, then detection/prevention/security, then application delivery).
+
+---
+
+## Image Note 164 — Physical & Virtual Media; Router, Switch, Firewall, WiFi Access Point, Modem, NIC/HBA (handwritten, as is)
+
+### Physical & Virtual Media = Tangible pathway to transfer data signal from one dev to other
+
+- guided = wired, unguided = wireless
+- ISP line → modem → Router → firewall → core switch → Access switch → wifi
+
+### Router — connects N/W
+
+- Directs traffic b/w different IP networks (LAN, WAN)
+- Performs NAT, chooses best path using routing tables
+- for WAN Routing
+
+### Switch — creates N/W
+
+- connects devices within LAN, frames forwarding based on MAC
+- supports VLAN & Link Aggregation
+- for LAN Traffic Segmentation
+
+### Firewall
+
+- Acts as security gate, inspecting traffic & enforcing rules to block threats, allows session
+- Perimeter security
+
+### WiFi Access Point
+
+- provides wifi connectivity to wireless clients
+- Broadcasts SSID's & manage radio comm
+
+### Modem
+
+- Converts digital signals to analog (vice versa) to connect your network to the ISP
+
+### NIC / HBA
+
+- A H/W interface in servers / PC that connects them to the N/W
+- for virtualization & storage
+- Servers connect via NIC / HBA to switches & SAN
+
+### [Filled — added, not in the original image]
+- Media, filled: physical & virtual media are the tangible pathway to transfer a data signal from one device to another — guided means wired, unguided means wireless — and the example path (ISP line → modem → router → firewall → core switch → access switch → Wi-Fi) is Note 161's flow compressed to one line.
+- Router vs switch, filled: the router connects networks (directs traffic between different IP networks, LAN and WAN, performs NAT, chooses the best path using routing tables, for WAN routing); the switch creates networks (connects devices within a LAN, forwards frames based on MAC, supports VLAN and link aggregation, for LAN traffic segmentation) — the pair that defines the two device jobs.
+- The rest, filled: the firewall is the security gate (inspects traffic, enforces rules to block threats, allows sessions, perimeter security); the Wi-Fi access point provides Wi-Fi connectivity to wireless clients (broadcasts SSIDs, manages radio communication); the modem converts digital signals to analog and vice versa to connect the network to the ISP; the NIC/HBA is the hardware interface in servers/PCs connecting them to the network (for virtualization and storage — servers connect via NIC/HBA to switches and SAN).
+
+---
+
+## Image Note 165 — ④ iSCSI / FCoE LUNs (storage N/W); Load balancer (ADC) driven by DP/DK (rotated page) (handwritten, as is)
+
+### ④ iSCSI / FCoE LUNs (storage N/W) → PV & PVCs
+
+- CSI maps SAN endpoint containers as PV
+
+### Load balancer (ADC) driven by DP / DK → PMD
+
+- Network load (TCP / UDP) → N/W traffic (packets)
+- Application load (HTTP / HTTPS) → web traffic (req)
+- Monitoring health
+- PMD → DP / DK → ADC
+- down: library, NAPE / SW, broadcast [partly unclear]
+
+### [Filled — added, not in the original image]
+- Storage network, filled: iSCSI/FCoE LUNs are the storage network — and CSI (container storage interface) maps a SAN endpoint to containers as a PV (persistent volume, claimed as a PVC) — the storage device's virtual twin from Note 159, here as the CSI mapping.
+- ADC, filled: the load balancer (ADC — application delivery controller) is driven by DP/DK (data plane development kit, the DPDK family) through PMD (poll mode driver) — the fast packet path that bypasses the kernel, Note 149's bypass applied to load balancing.
+- Load types, filled: network load (TCP/UDP) is network traffic (packets); application load (HTTP/HTTPS) is web traffic (requests); plus monitoring health (the ADC's health checks deciding which backends receive traffic) — the three ADC jobs.
+- Partly unclear, filled and flagged: the "down" line (library, NAPE/SW, broadcast) is partly unclear in the image — filled only as "downstream components (library, network application engine/switch, broadcast)" and flagged as partly unclear rather than asserted.
+
+---
+
+## Image Note 166 — Kubernetes equivalent: Modem, Firewall, Router, Switch, Server NIC, Physical media, VLAN, LAG (handwritten, as is)
+
+### Kubernetes equivalent
+
+### ① Modem (Edge gate)
+
+- → Ingress controller / Cloud gateway → Point of entry
+
+### ② Firewall
+
+- → N/W policies / Service mesh → K8s uses S/W firewalls called N/W policies, regulates pods
+- (side: nftables / iptables / UFW)
+
+### ③ Router (memory controller)
+
+- → kube-proxy / CNI Routing Engine → iptables / eBPF maps on every server node across cluster
+
+### ④ Switch (bro) (ip link)
+
+- → K8s service layer (cluster IP) → Cluster IP load balances traffic of worker containers
+
+### ⑤ Server NIC / HBA — DMA (eth0, enp3s0)
+
+- → Pod N/W interface (eth0-pod) → cluster wide private IP
+
+### ① Physical media (cat / fiber)
+
+- → Overlay N/W (VXLAN, eBPF) — CNI creates virtual overlay N/W running over physical wires (N/W switch)
+
+### ② VLAN interfaces / sub-interfaces
+
+- → Kubernetes namespaces — instead of VLAN tags onto switch ports, you logically partition a single cluster into separate virtual env (namespaces) using S/W policies
+
+### ③ Link Aggregation (LAG)
+
+- → ReplicaSets & service load balancing — Instead of bonding physical copper cables to scale bandwidth, K8s scales capacity by replica [cut off]
+
+### [Filled — added, not in the original image]
+- Kubernetes equivalents, filled: the modem becomes the ingress controller/cloud gateway (the point of entry); the firewall becomes network policies/service mesh (software firewalls called network policies, regulating pods, enforced by nftables/iptables/UFW); the router becomes kube-proxy/CNI routing engine (iptables/eBPF maps on every server node across the cluster); the switch becomes the Kubernetes service layer (cluster IP load-balancing traffic of worker containers); the server NIC/HBA becomes the pod network interface (eth0-pod, cluster-wide private IP).
+- Media equivalents, filled: physical media (Cat/fiber) becomes the overlay network (VXLAN, eBPF — CNI creates a virtual overlay network running over physical wires); VLAN interfaces/sub-interfaces become Kubernetes namespaces (instead of VLAN tags on switch ports, you logically partition a single cluster into separate virtual environments using software policies); link aggregation becomes ReplicaSets and service load balancing (instead of bonding physical copper cables to scale bandwidth, Kubernetes scales capacity by replicas).
+- The cut-off, filled: the LAG line is cut off at "by replica" — filled as "by replicas" (ReplicaSets adding pod replicas to scale capacity), marked here as filled.
+- The frame, filled: this page is the third mirror of the device list — Note 161 (hardware flow), Note 162 (Linux equivalents), this page (Kubernetes equivalents) — the same devices, three layers up.
+
+---
+
+## Image Note 167 — Device table 6–12: NIC/HBA, Repeater/extender, Load balancer, IDS/IPS, Load balancer (ADC), HSM, Industrial gateway (rotated page, partly unclear) (handwritten, as is)
+
+### Table (as written, with unclear cells flagged)
+
+| # | Device | Physical | Virtual media |
+|---|---|---|---|
+| 6 | NIC / HBA | bare metal internally, SFP+ fiber or copper ethernet external | vNICs — S/W N/W cards created inside VM (KVM, Hyper-V) that map back to physical NIC; iSCSI / FCoE LUNs mapping virtual hard disk over N/W, looks like physically attached disk to server |
+| 7 | Repeater / Extender (router / modem) | Cat6 / Cat6a twisted pair cables, coax? / wireless radio frequencies | virtual SSID, RF channels |
+| 8 | Load balancer (APP delivery control) | high dens 10 / 100 Gbps fiber optics [partly unclear] | VPC & VLB, mapped scaling, server pools |
+| 9 | IDS / IPS Appliance | physical N/W taps, bypass switches, inline cables | PPR / VNet, SFP+ QSFP optic cables |
+| 10 | Load balancer (ADC) | PHY: SFP+ QSFP optic cables | VLAN N/W, NIC / VIR |
+| 11 | HSM | PCIe switch, flash memory chips | [blank / unclear in image] |
+| 12 | Industrial gateway | [blank / unclear in image] | Route gateway, DLT [partly unclear] |
+
+### [Filled — added, not in the original image]
+- NIC/HBA, filled: physical is bare metal internally with SFP+ fiber or copper ethernet externally; virtual is vNICs (software network cards created inside VMs — KVM, Hyper-V — mapping back to the physical NIC) and iSCSI/FCoE LUNs (a virtual hard disk mapped over the network that looks like a physically attached disk to the server).
+- Repeater/extender, filled: physical is Cat6/Cat6a twisted pair, coaxial, and wireless radio frequencies; virtual is virtual SSIDs and RF channels (the extended wireless network's logical form).
+- Load balancers, filled: the APP-delivery load balancer's physical side is high-density 10/100 Gbps fiber optics (partly unclear in the image — the rate is read as 10/100 Gbps, flagged); its virtual side is VPC and VLB (virtual load balancer) with mapped scaling and server pools; the ADC's physical side is PHY SFP+/QSFP optic cables, its virtual side VLAN networks and NIC/VIR (virtual interfaces).
+- IDS/IPS and the gaps, filled and flagged: IDS/IPS physical is network taps, bypass switches, and inline cables; virtual is PPR/VNet with SFP+/QSFP optic cables; the HSM virtual cell and the industrial gateway physical cell are blank/unclear in the image — left blank above and flagged here rather than invented; the industrial gateway virtual cell reads as "route gateway, DLT" (partly unclear — DLT's expansion is not asserted).
+
+---
+
+## Image Note 168 — Physical & Virtual Media of N/W Devices: Router, Switch, Firewall, Access point, Modem (handwritten, as is)
+
+### Physical & Virtual Media of N/W Devices
+
+### ① Router (vRouter)
+
+- Physical: Cat6 / Cat7 ethernet cables, fiber optic cable
+- Virtual: VLAN interfaces / subnets → splitting port into multiple virtual network paths; VPN tunnels → encrypted virtual pathways (IPsec, WireGuard)
+
+### ② Switch L2 / L3 (DVS)
+
+- Physical: twisted pair ethernet cables, DAC cables, fiber optics
+- Virtual: Trunk ports / VLANs → defined broadcast domain sharing same physical switch; LAG / EtherChannel → combining multiple physical cables into a single link
+
+### ③ Firewall (UTM) (vFW / NGFW)
+
+- Physical: Eth cables, fiber uplinks to ISP
+- Virtual: v-wires → logically binding 2 ports; security zones → virtual groupings assigned to virtual / physical interfaces to apply firewall rules (firewall policies)
+
+### ④ Access point (wifi) (VAP, WLC)
+
+- Physical: RF, PoE
+- Virtual: virtual SSIDs → broadcasting multiple separate N/W names from a single physical antenna
+
+### ⑤ Modem DSL / fiber / 5G
+
+- Physical: Tele lines (DSL), cellular radio spectrum, fiber optic
+- Virtual: PVC / SVC (virtual circuits), PPP tunnels (PPPoE) → virtual authentication sessions to allocate an external IP
+
+### Side note
+
+- S/W gateway: API gateway, N/W / VPN gateway
+
+### [Filled — added, not in the original image]
+- Router, filled: physical is Cat6/Cat7 ethernet and fiber optic; virtual is VLAN interfaces/subnets (splitting one port into multiple virtual network paths) and VPN tunnels (encrypted virtual pathways — IPsec, WireGuard).
+- Switch, filled: physical is twisted pair ethernet, DAC cables, and fiber optics; virtual is trunk ports/VLANs (a defined broadcast domain sharing the same physical switch) and LAG/EtherChannel (combining multiple physical cables into a single link).
+- Firewall, filled: physical is ethernet cables and fiber uplinks to the ISP; virtual is v-wires (logically binding two ports) and security zones (virtual groupings assigned to virtual/physical interfaces to apply firewall rules — firewall policies).
+- Access point and modem, filled: the AP's physical is RF and PoE, its virtual is virtual SSIDs (multiple separate network names from a single physical antenna); the modem's physical is tele lines (DSL), cellular radio spectrum, and fiber optic, its virtual is PVC/SVC virtual circuits and PPP tunnels (PPPoE — virtual authentication sessions to allocate an external IP).
+- Side note, filled: the software gateway (API gateway, network/VPN gateway) is the software counterpart to these five hardware devices — the gateway that lives in software rather than in a box.
+
+---
+
+## Image Note 169 — Physical Network Devices built around communication chips; virtual media of them (handwritten, as is)
+
+### Physical Network Devices — built around communication chips
+
+- Engine / port / plug (column labels)
+
+### ① Router (ASIC + PHY + Fiber optic) or SFP+
+### ② Switch (ASIC + PHY + Fiber optic transceiver) (SFP+ QSFP)
+### ③ Firewall (UTM) [ASIC + PCIe switch + PHY chip]
+### ④ Access point (wifi) [modem / RFFE + PHY chip]
+### ⑤ Modem (DSL / fiber / 5G) [modem chip + PHY chip]
+### ⑥ Server NIC / HBA [PCIe switch + PHY chip + FOT]
+
+### Virtual media of them
+
+- 1 vSwitch = physical switch
+- 2 vBridges / veth pairs = patch cables
+- 3 Overlay N/Ws (VXLAN / Geneve) = tunnel inside packets
+
+### ⑦ Repeater / Extender (router / modem)
+### ⑧ Load balancer ADC
+### ⑨ IPS / IDS
+### ⑩ HSM
+### ⑪ Industrial gateway
+### ⑫ Cellular router / gateway
+
+### Side mappings
+
+- router → VPC; switch → VPC subnets; firewall → security groups; AP → IGW NAT gateway; NIC → ENI / vNIC
+
+### [Filled — added, not in the original image]
+- Chip recipes, filled: every physical network device is built around communication chips — router is ASIC + PHY + fiber optic (or SFP+); switch is ASIC + PHY + fiber optic transceiver (SFP+/QSFP); firewall (UTM) is ASIC + PCIe switch + PHY chip; access point is modem/RFFE + PHY chip; modem is modem chip + PHY chip; server NIC/HBA is PCIe switch + PHY chip + FOT (fiber optic transceiver) — the same ASIC/PHY pattern with one variation per device.
+- Virtual media, filled: vSwitch is the physical switch; vBridges/veth pairs are patch cables; overlay networks (VXLAN/Geneve) are tunnels inside packets — the three virtual media that rebuild the whole device list in software.
+- The rest, filled: repeater/extender, load balancer ADC, IPS/IDS, HSM, industrial gateway, and cellular router/gateway are listed (⑦–⑫) without chip recipes in the image — filled only by their side mappings (router → VPC, switch → VPC subnets, firewall → security groups, AP → IGW/NAT gateway, NIC → ENI/vNIC), which map the first six devices to their cloud counterparts; the ⑦–⑫ recipes are left unfilled, not invented.
+
+---
+
+## Image Note 170 — Comm & connectivity chips: Wireless connectivity, Wired infra, N/W infra (rotated page) (handwritten, as is)
+
+### Comm & connectivity chips
+
+### ① Wireless connectivity
+
+- (modem) RF front end (RFFE) chip → smartphones & watches
+- UWB chip (device tracking) → SPI / I2C bus media
+- Satellite modem chip → P2P protocol / SOS
+
+### ① Wired infra [numbered ① again in the image, kept as written]
+
+- ① Fiber optic transceiver chip (SFP+ QSFP) / eth0
+- ② PCIe switch chip (PCIe slots) → connecting local HW
+- ③ Thunderbolt controller chip (USB4) (DMA …) [cut off]
+
+### ② N/W infra
+
+- ① Network chip (ASIC) → route data center traffic
+- ② PHY chip & flash memory chip or … [partly unclear]
+- ③ Switch ASIC, server PHY (NIC) — PHY-ethernet chip, ASIC switch / N/W provider
+
+### Side notes
+
+- TCP / UDP ports (end point)
+- VLAN / NIC annotations
+
+### [Filled — added, not in the original image]
+- Wireless, filled: RF front end (RFFE) chips in smartphones and watches (the modem's radio front end); UWB (ultra-wideband) chips for device tracking over SPI/I2C bus media; satellite modem chips for peer-to-peer protocol/SOS — the three wireless connectivity chips, from everyday radio to emergency satellite.
+- Wired, filled: fiber optic transceiver chips (SFP+/QSFP, the eth0 physical layer); PCIe switch chips (PCIe slots, connecting local hardware); Thunderbolt controller chips (USB4, DMA-based — cut off in the image, filled as DMA, the Thunderbolt transport, marked as filled).
+- Network infra, filled: network chips (ASICs) routing data center traffic; PHY chips and flash memory chips (partly unclear in the image — the pairing reads as PHY for the wire and flash for the firmware/config, flagged as a reading); switch ASICs and server PHYs (NICs) — the PHY-ethernet chip and the ASIC switch from the network provider.
+- The frame, filled: this page is the chip-level detail behind Note 156's connectivity chips and Note 169's device recipes — wireless, wired, and network infrastructure, each with three chips, closing the chip taxonomy that runs from Notes 156 to 170.
+
+---
+
+# INbatch25 — Image Notes 171–180 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 171 — All chips can be integrated = SoC; RISC / CISC / ASIC / FPGA powered devices (handwritten, as is)
+
+### Top lines [partly cut off at page top]
+
+- All chips can be integrated = SoC chip
+- modular approach = motherboard
+- simple = MCU
+
+### RISC Powered Devices (Battery focused) [side: efficient]
+
+- These chips form the backbone of mobile, embedded & modern computing (VMs / nodes)
+
+### CISC Powered Devices (High performance / multitask) [side: performance]
+
+- chips utilized when raw computational power is the primary requirement
+- Enterprise & mainframes
+
+### ASIC Powered Devices (Single purpose / extra speed) [side: speed]
+
+- do not run general purpose apps
+- ① N/W infra ② Embedded & automotive
+
+### FPGA Powered Devices (Reconfigurable)
+
+- ① Telecom ② Military & aerospace ③ H/W Dev
+
+### [Filled — added, not in the original image]
+- Three placements, filled: all chips integrated on one die is the SoC chip; the modular approach is the motherboard (separate chips on a board); the simple form is the MCU (one chip doing one job) — the same placement split as Note 178's SoC/PCB/MCU.
+- Four powered-device families, filled: RISC devices are battery-focused and efficient — the backbone of mobile, embedded, and modern computing (VMs/nodes); CISC devices are high-performance/multitask — used when raw computational power is the primary requirement, in enterprise and mainframes; ASIC devices are single-purpose and extra-fast — they do not run general-purpose apps, used in network infrastructure and embedded/automotive; FPGA devices are reconfigurable — used in telecom, military & aerospace, and hardware development.
+- Side labels, filled: efficient (RISC), performance (CISC), speed (ASIC) — the one-word trade each family optimizes; FPGA's word is reconfigurability, given in its heading rather than as a side label.
+
+---
+
+## Image Note 172 — Processing chips Design philosophies; Architectures; ASIC & FPGA, ASIC & RISC, RISC & CISC pairings (handwritten, as is)
+
+### Processing chips Design philosophies — Architectures
+
+### Logic & processing chips
+
+- General purpose (programmable)
+  - CISC → Intel / AMD x86-64
+  - RISC → Apple, ARM, RISC-V
+- Application specific (fixed program)
+  - ASIC → can't be reprogrammed
+  - FPGA (can be reprogrammed / reconfigured)
+
+### Side boxes
+
+- ASIC — SoC: CISC / RISC
+- FPGA — CISC / RISC, modular
+
+### Device mapping
+
+- ① Complex Devices → CPU / SoC
+- ② Simple Devices → MCU (microcontroller)
+- ③ Single task Devices → Hardware controller (ASIC / FPGA)
+
+### Pairings
+
+- ASIC & FPGA → kings N/W world (deployments)
+- ASIC & RISC → critical in Data storage
+- RISC & CISC → S/W Dev & Execution
+- FPGA → ultimate I/O solution
+- ASIC → performance I/O engine
+- RISC — I/O coordination [side annotation]
+- CISC — I/O consumer [side annotation]
+
+### [Filled — added, not in the original image]
+- Two philosophies, filled: general-purpose (programmable) — CISC (Intel/AMD x86-64) and RISC (Apple, ARM, RISC-V); application-specific (fixed program) — ASIC (can't be reprogrammed) and FPGA (can be reprogrammed/reconfigured) — the same four as Note 171, here as a design-philosophy tree with vendor/architecture examples.
+- Side boxes, filled: ASICs sit in SoCs built on CISC or RISC cores; FPGAs sit as modular CISC/RISC companions — the placement note that ASIC/FPGA are not standalone philosophies but companions to the general-purpose cores.
+- Device mapping, filled: complex devices get a CPU/SoC, simple devices get an MCU, single-task devices get a hardware controller (ASIC/FPGA) — the device-complexity ladder matching Note 171's SoC/motherboard/MCU placements.
+- Pairings, filled: ASIC & FPGA are the kings of the networking world (deployments); ASIC & RISC are critical in data storage; RISC & CISC are for software development and execution; FPGA is the ultimate I/O solution; ASIC is the performance I/O engine; RISC coordinates I/O and CISC consumes I/O (the side annotations, pairing the two general-purpose families to the I/O plane).
+
+---
+
+## Image Note 173 — Every digital electronic Device has these chips: processing, memory, power, comm, timer (handwritten, as is)
+
+### Every digital electronic Device has these chips
+
+### ① Processing chips (The system brain)
+
+- Executes S/W code, run calc, mng logic
+
+### ② Memory chips (Storage infra)
+
+- holds active code, assets or permanent files need to Read / Write
+
+### ③ Power mngt chips (Electrical Regulators)
+
+- handle power from a wall outlet or battery & cleanly distribute to sensitive silicon components
+
+### ④ Comm interface & connectivity chips (messengers)
+
+- sensory organs, enabling the device to speak to outer N/W, H/W peripherals
+
+### ⑤ Timer / liner chips (Synchronization element)
+
+- manage continuous real analog signals or generate timing signals
+
+### [Filled — added, not in the original image]
+- Five chips in every device, filled: the processing chip (the system brain — executes software code, runs calculations, manages logic); the memory chip (storage infrastructure — holds active code, assets, or permanent files needing read/write); the power management chip (electrical regulator — handles power from a wall outlet or battery and cleanly distributes it to sensitive silicon components); the communication/interface/connectivity chip (messenger — sensory organ enabling the device to speak to the outer network and hardware peripherals); the timer/liner chip (synchronization element — manages continuous real analog signals or generates timing signals).
+- The frame, filled: this is the master five-chip list that Notes 174–180 detail one by one — brain, storage, power, messengers, timing — and the same five as Note 181's classification by function and Note 216's continuation.
+- "Liner", filled: read as the timer/liner (linear) chip family — linear circuits plus timer circuits, the analog/timing pair; kept as "timer / liner" above and expanded here, flagged as a reading.
+
+---
+
+## Image Note 174 — Logic & processing chips: root chip, master brain, master–slave / planner–messenger / driver–fuel pump / user–tools (handwritten, as is)
+
+### Logic & processing chips
+
+- CPU, GPU, MCU, TPU / NPU, SoC, ASIC, DSP, FPGA
+- Root chip that drives, runs, commands all other chips like (memory, power mngt, comm & interface, timer chips)
+- Processing chips function as master brain
+- All other act as specialized infra, support workers, sensory organs on a circuit board
+
+### Pairings
+
+- ① Processing – Memory chips ↔ master – slave, active – passive
+- ② Processing – Comm ↔ planner – messenger
+- ③ Processing – Power mngt ↔ driver – fuel pump
+- ④ Processing – Timer chips ↔ user – tools
+
+### Root vs others
+
+- Root: generates logic, cmds, & S/W execution
+- Memory chips — passively store data (permanent files)
+- Comm — transmits & receives data (handle signals)
+- Power mngt — feeds precise electricity
+- Timer / liner — provides raw physical cadence (rhythm, timing, speed)
+
+### [Filled — added, not in the original image]
+- Root chip, filled: the logic & processing chips (CPU, GPU, MCU, TPU/NPU, SoC, ASIC, DSP, FPGA) are the root chip — the one that drives, runs, and commands all other chips (memory, power management, communication & interface, timer), functioning as the master brain while all others act as specialized infrastructure, support workers, and sensory organs on a circuit board.
+- Four pairings, filled: processing–memory is master–slave (active–passive — the processor acts, memory holds); processing–communication is planner–messenger (the processor plans, the comm chip carries); processing–power is driver–fuel pump (the processor drives, power feeds); processing–timer is user–tools (the processor uses, the timer provides).
+- The division of labour, filled: the root generates logic, commands, and software execution; memory passively stores data (permanent files); communication transmits and receives data (handles signals); power management feeds precise electricity; timer/liner provides the raw physical cadence (rhythm, timing, speed) — the whole device as one sentence.
+
+---
+
+## Image Note 175 — Chipset = Traffic controller on motherboard; cache, IMC, storage controllers; USB/Ethernet ports (handwritten, as is)
+
+### Chipset = Traffic controller on motherboard [right edge cut off]
+
+- High speed lanes, CPU, RAM
+- Low speed lanes
+
+### Controllers
+
+- Cache controller → L1 / L2 & L3 → on Die SRAM chips
+- IMC controller → sys RAM → motherboard DRAM chips
+- Storage controller → Built-in SSD (NVMe / USB), External Drives → NAND flash chips
+
+### Ports
+
+- USB Port, Ethernet Port
+  - → Master / slave
+  - → Peer-peer N/W
+
+### [Filled — added, not in the original image]
+- Chipset, filled: the chipset is the traffic controller on the motherboard — high-speed lanes for CPU and RAM, low-speed lanes for everything else — the lane split that decides which traffic gets priority.
+- Three controllers, filled: the cache controller manages L1/L2/L3 cache (on-die SRAM chips); the IMC (integrated memory controller) manages system RAM (motherboard DRAM chips); the storage controller manages built-in SSDs (NVMe/USB) and external drives (NAND flash chips) — cache, RAM, and storage, each with its own controller and its own chip type.
+- Ports, filled: USB and Ethernet ports complete the picture — USB as master/slave (one host, many devices), Ethernet as peer-to-peer network (equals talking to equals) — the two port topologies, matching Note 110's port/socket frame.
+
+---
+
+## Image Note 176 — Power management IC PMIC: integrated PMICs, VRM / Driver ICs (rotated page) (handwritten, as is)
+
+### Power management IC PMIC
+
+- complex chips housing multiple voltage controllers
+
+### ① Integrated PMICs
+
+- lives in microcontrollers & personal [cut off at page edge]
+
+### ② VRM / Driver ICs: High current power controllers
+
+- lives in cloud data centers
+
+### [Filled — added, not in the original image]
+- PMIC, filled: a power management IC is a complex chip housing multiple voltage controllers — one chip doing the work of many regulators, the integrated form of Note 157's power management chips.
+- Two forms, filled: integrated PMICs live in microcontrollers and personal devices (the cut-off word is filled as "devices" — personal computing devices, the small-power home of the integrated PMIC); VRM/driver ICs are high-current power controllers living in cloud data centers (the big-power home, feeding server processors).
+- The split, filled: small power integrated (one chip, many small rails, personal devices) versus high power discrete (VRM/driver ICs, high current, data centers) — the same static/high-power split as Note 157, here as two PMIC forms.
+
+---
+
+## Image Note 177 — Memory chips: SRAM, DRAM, HBM, NAND Flash, EEPROM / NOR Flash (handwritten, as is)
+
+### Memory chips
+
+### ① SRAM → transistor based, low latency
+
+- lives in every tier
+- serves as L1 / L2 / L3 cache blocks
+
+### ② DRAM → capacitor based, volatile system memory [DDR4, DDR5, LPDDR]
+
+- lives personal computing, cloud data center devices
+
+### ③ HBM → 3D stacked DRAM modules, built vertically on top of processors
+
+- lives in cloud data centers & supercomputer
+
+### ④ NAND Flash chips: non volatile block based mass storage
+
+- lives in NVMe SSDs — personal comp, Storage Arrays — cloud data [cut off]
+
+### ⑤ EEPROM / NOR Flash: Byte Addressable, permanent memory for booting, firmware
+
+- lives in microcontrollers, motherboard BIOS / UEFI chips
+- firmware communicates: with RAM — DMA; with CPU — interrupts & mailbox; with peripherals — bus protocols I2C, SPI, PCIe
+
+### [Filled — added, not in the original image]
+- Five memory chips, filled: SRAM (transistor-based, low latency, in every tier, serving as L1/L2/L3 cache blocks); DRAM (capacitor-based, volatile system memory — DDR4, DDR5, LPDDR — in personal computing and cloud data center devices); HBM (3D-stacked DRAM modules built vertically on top of processors, in cloud data centers and supercomputers); NAND flash (non-volatile, block-based mass storage, in NVMe SSDs for personal computing and storage arrays for cloud data — the cut-off ending filled as "cloud data centers"); EEPROM/NOR flash (byte-addressable, permanent memory for booting and firmware, in microcontrollers and motherboard BIOS/UEFI chips).
+- Firmware communication, filled: firmware communicates with RAM via DMA, with the CPU via interrupts and mailbox, and with peripherals via bus protocols (I2C, SPI, PCIe) — the three channels by which the boot/firmware chip talks to the rest of the device.
+- The ladder, filled: SRAM (fastest, smallest, cache) → DRAM (system memory) → HBM (stacked, bandwidth) → NAND (mass storage) → EEPROM/NOR (boot, byte-addressable) — speed falling and permanence rising down the list, the memory hierarchy in one page.
+
+---
+
+## Image Note 178 — Directory of IC: logic & processing chips; placement SoC / PCB / MCU (handwritten, as is)
+
+### Directory of IC — categorized by functional S/W & Data tasks they execute
+
+### ① Logic & processing chips
+
+- ① CPUs: personal / cloud / distributed computing
+- ② GPUs: personal / cloud / supercomputers
+- ③ MCU: single chip → micro standalone
+- ④ NPU / TPU: for machine learning
+- ⑤ FPGA: reprogrammed for manufacture, edge computing (5G N/W equipment)
+- ⑥ ASIC: hardwired chips for specific job — cloud (N/W routing ASICs), microcontroller, for custom H/W products
+
+### ② Placement
+
+- SoC → all in one integration
+- PCB → modular integration
+- MCU — all in one
+
+### [Filled — added, not in the original image]
+- Directory, filled: ICs categorized by the functional software and data tasks they execute — logic & processing chips first: CPUs (personal/cloud/distributed computing), GPUs (personal/cloud/supercomputers), MCUs (single chip, micro standalone), NPU/TPU (machine learning), FPGAs (reprogrammed for manufacture, edge computing, 5G network equipment), ASICs (hardwired for a specific job — cloud network-routing ASICs, microcontrollers, custom hardware products).
+- Placement, filled: SoC is all-in-one integration (everything on one die); PCB is modular integration (separate chips on a board); MCU is all-in-one (one chip, standalone) — the same three placements as Notes 171–172, here as the directory's second axis.
+- The directory's shape, filled: function (what the chip does) crossed with placement (how it is packaged) — the two axes that organize every chip page in this run, from Note 171's families to Note 180's mainframe chips.
+
+---
+
+## Image Note 179 — Processing chips, Memory chips, Communication chips & protocols (wired / wireless) (handwritten, as is)
+
+### Processing chips
+
+- CPU → runs OS & applications
+- GPU → accelerate specific workloads (graphics & AI)
+- MCU → runs programmed instructions or firmware stored in its memory
+- NPU → accelerates neural N/Ws
+- ASIC → hardware logic fixed after fabrication
+- MCU → hardware fixed, S/W editable
+- FPGA → H/W reconfigurable after fabrication [annotation: design to two pieces — partly unclear]
+
+### Memory chips
+
+- RAM → DRAM, SRAM
+- ROM → mask ROM, PROM, EPROM, EEPROM (stores firmware & boot instructions)
+- Flash → (non volatile, rewritable) NAND, NOR
+- Cache → ultra fast SRAM inside CPU
+- Video RAM → (RAM for GPUs) GDDR5, GDDR6, HBM
+
+### Communication chips & protocols
+
+- Wired:
+  - PCIe → serial bus for CPU / GPU / SSD / NIC
+  - USB → for peripherals (USB2, USB4, Thunderbolt)
+  - Ethernet → via RJ45 port — IEEE 802.3
+  - Storage → SSD / HDD → SATA, NVMe
+  - I2C / SPI → low speed serial bus
+- Wireless:
+  - WiFi — IEEE 802.11 (RFFE)
+  - Bluetooth — BLE (RFFE)
+  - Modems — RFFE
+  - NFC
+  - GPS
+
+### [Filled — added, not in the original image]
+- Processing, filled: CPU runs OS and applications; GPU accelerates specific workloads (graphics and AI); MCU runs programmed instructions or firmware stored in its memory (hardware fixed, software editable — the MCU line appears twice in the image, once for firmware and once for the fixed/editable split, kept as two lines above); NPU accelerates neural networks; ASIC has hardware logic fixed after fabrication; FPGA has hardware reconfigurable after fabrication.
+- Memory, filled: RAM is DRAM and SRAM; ROM is mask ROM, PROM, EPROM, EEPROM (storing firmware and boot instructions); flash is non-volatile and rewritable (NAND, NOR); cache is ultra-fast SRAM inside the CPU; video RAM is RAM for GPUs (GDDR5, GDDR6, HBM).
+- Communication, filled: wired — PCIe (serial bus for CPU/GPU/SSD/NIC), USB (peripherals — USB2, USB4, Thunderbolt), Ethernet (RJ45 port, IEEE 802.3), storage (SSD/HDD via SATA, NVMe), I2C/SPI (low-speed serial bus); wireless — Wi-Fi (IEEE 802.11, RFFE), Bluetooth (BLE, RFFE), modems (RFFE), NFC, GPS — the full protocol inventory behind Note 156's guided/unguided split.
+- Partly unclear, filled and flagged: the FPGA annotation ("design to two pieces") is partly unclear in the image — left as written above and flagged, not expanded into an assertion.
+
+---
+
+## Image Note 180 — Mainframes / Distributed Supercomp: global cred processing, IBM z system, chips inside (handwritten, as is)
+
+### Mainframes / Distributed Supercomp
+
+- Handling Global cred processing or distributed clusters, IBM z system
+
+### Chips inside
+
+- Processing: mainframe CPU
+- Memory: HBM (High bandwidth) vertical
+- Power / com: switch chips (InfiniBand …) [cut off]
+
+### [Filled — added, not in the original image]
+- Mainframes, filled: mainframes and distributed supercomputers handle global credit-card processing or distributed clusters — the IBM z system as the example — the highest-throughput, highest-reliability end of the device spectrum.
+- Chips inside, filled: processing is the mainframe CPU; memory is HBM (high-bandwidth memory, vertical/stacked — Note 177's HBM, here as the mainframe's memory); power/communication is switch chips (InfiniBand — cut off in the image, filled as InfiniBand, the high-speed cluster interconnect, marked as filled).
+- The frame, filled: even the mainframe is the same five chips (Note 173) at maximum scale — mainframe CPU, stacked HBM, InfiniBand switch chips — the taxonomy closing at the top end, from MCU (Note 171's simple) to mainframe (this page's complex).
+
+---
+
+# INbatch26 — Image Notes 181–190 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 181 — Classification of IC (chips) by function: logic, memory, power, comm, linear & timer (handwritten, as is)
+
+### Classification of IC (chips) by function
+
+### ① Logic & processing = Thinking H/W
+
+- CPU — General purpose
+- GPU — visual & AI — graphic processor
+- MCU — mini computer / embedded
+- ASIC — built for 1 job
+
+### ② Memory chips — responsible for storing data
+
+- DRAM → temp for sys memory modules
+- SRAM → cache memory for cores
+- NAND Flash → permanently hold (NVMe)
+- EEPROM → hold startup settings (SPI / BIOS)
+
+### ③ Power mngmt chips — PMICs = Traffic cop for electricity
+
+- Voltage regulators (VRM)
+- Switch regulators
+- Battery mngt ICs (RAID controller) [as written]
+
+### ④ Comm & interface chips — used to talk to users / other devices
+
+- RF Transceivers = antenna for 5G, WiFi, Bluetooth
+- Ethernet controller = wired internet cables connect
+- Display Drivers
+- Audio codec
+- (side: SmartNIC, BMC)
+
+### ⑤ Linear & Timer chips
+
+- ADC
+- Clock
+
+### Side annotations
+
+- Data storage, cache hierarchy (against memory)
+- Power distribution & reliability (against power)
+
+### [Filled — added, not in the original image]
+- Five functions, filled: logic & processing (the thinking hardware — CPU general-purpose, GPU visual & AI, MCU mini-computer/embedded, ASIC built for one job); memory (responsible for storing data — DRAM temporary for system memory modules, SRAM cache memory for cores, NAND flash permanently holding, e.g. NVMe, EEPROM holding startup settings, e.g. SPI/BIOS); power management (PMICs, the traffic cop for electricity — voltage regulators/VRM, switch regulators, battery management ICs); communication & interface (used to talk to users and other devices — RF transceivers as antennas for 5G/Wi-Fi/Bluetooth, Ethernet controller for wired internet cables, display drivers, audio codec, with SmartNIC and BMC noted alongside); linear & timer (ADC, clock).
+- Side annotations, filled: data storage and cache hierarchy annotate the memory row (the storage-vs-cache split); power distribution and reliability annotate the power row (the two jobs of power management).
+- "RAID controller" in the battery row, filled and flagged: kept as written above — it reads as a misplaced annotation (RAID belongs to storage control, Note 175) rather than a battery-management IC, flagged here rather than silently corrected.
+
+---
+
+## Image Note 182 — Classification of circuits by design: analog, digital, mixed-signal, power (handwritten, as is)
+
+### Classification of circuits by design — Every electric pathway belongs to one of these
+
+### ① Analog circuits (Amplifier, filter, oscillators)
+
+- Handles continuous waves
+
+### ② Digital — Handle strict on / off signals
+
+- 0 / 1; AND, OR, NOT → logic gates circuits — basic decisions (true / false)
+- Flip-flops, registers → sequential circuits → remember states
+- Combinational circuits → combines input
+
+### ③ Mixed signal circuits → Translate b/w digital & analog waves
+
+- ADC, DAC
+
+### ④ Power circuits = manage heavy current
+
+### [Filled — added, not in the original image]
+- Four circuit designs, filled: every electric pathway belongs to one of these — analog circuits (amplifier, filter, oscillators) handling continuous waves; digital circuits handling strict on/off signals (0/1), built from logic gates (AND, OR, NOT — basic true/false decisions), sequential circuits (flip-flops, registers — remembering states), and combinational circuits (combining inputs); mixed-signal circuits translating between digital and analog waves (ADC, DAC); power circuits managing heavy current.
+- The pair with Note 181, filled: circuits by design (this page — analog/digital/mixed/power) is the design axis, while chips by function (Note 181 — logic/memory/power/comm/timer) is the function axis; the same device is classified twice, once by what its circuits are and once by what its chips do.
+- Side annotations, filled and flagged: faint side words ("boosters, firewall, repeaters") are not legible enough to attribute — left out of the transcription above and flagged here rather than guessed.
+
+---
+
+## Image Note 183 — ④ Interface & comm chips (connectors); ⑤ Programmable logic chips = blank slate chips (handwritten, as is)
+
+### ④ Interface & comm chips (Connectors) = talks outside
+
+- 1 WiFi / Bluetooth modems
+- 2 Display Drivers
+
+### ⑤ Programmable logic chips = blank slate chips
+
+- FPGA
+
+### [Filled — added, not in the original image]
+- Continuation, filled: this page continues Note 181's numbering (④ and ⑤) — interface & communication chips as connectors that talk outside (Wi-Fi/Bluetooth modems, display drivers), and programmable logic chips as blank-slate chips (FPGA) — the same two families, restated as a continuation page, not a duplicate: the wording is shorter and the framing (connectors, blank slate) is new.
+- The pair, filled: connectors talk outside (the device's mouth and ears) while blank-slate chips are programmed after manufacture (the device's rewritable logic) — the two families that make a device both connected and adaptable.
+
+---
+
+## Image Note 184 — 4 Types of circuits (by design); 5 main types of IC (by function) (handwritten, as is)
+
+### 4 Types of circuits (by design)
+
+- ① Analog circuits: continuous
+- ② Digital circuits: distinct (on / off)
+- ③ Mixed-signal circuits: both
+- ④ Power circuits: High vol pathways to deliver & mng heavy electricity
+
+### 5 main types of IC (by function)
+
+- ① Processors (chips) → execute S/W instructions
+  - 1. CPU → General purpose
+  - 2. GPU → rendering
+  - 3. MCU → specific purpose (Embedded)
+- ② Memory chips → hold data either temp / permanent while working
+  - 1. RAM → temp mem, erases when turned off
+  - 2. Flash / ROM → permanent, used in SSD, USB drives
+- ③ Power management ICs → control electricity distribution
+  - 1. Voltage regulators
+  - 2. Battery chargers
+
+### [Filled — added, not in the original image]
+- Two classifications on one page, filled: four circuit types by design (analog continuous, digital distinct on/off, mixed-signal both, power as high-voltage pathways delivering and managing heavy electricity) and five main IC types by function — of which three are detailed here (processors executing software instructions: CPU general-purpose, GPU rendering, MCU specific-purpose/embedded; memory holding data temporary or permanent while working: RAM temporary, erasing when turned off, flash/ROM permanent, used in SSDs and USB drives; power management controlling electricity distribution: voltage regulators, battery chargers).
+- The missing two, filled and flagged: the page is headed "5 main types" but details only three — the remaining two are communication/interface and linear/timer (Notes 181 and 183's ④ and ⑤), filled here by cross-reference and flagged as filled from the companion pages, not as text on this page.
+- The restatement, filled: this page restates Notes 181–182 in compressed form (four circuits, five IC types) — a summary page, filed as its own note because the compression and the "while working" framing are new, not copied from either source page.
+
+---
+
+## Image Note 185 — ① Circuit; ② Integrated circuit / IC; Chip = N/W of circuits (handwritten, as is)
+
+### ① Circuit → complete path through which electricity can flow
+
+- Functional pathway to flow electricity to perform a task
+- It can be any size: massive (electric grid), large (battery), microscopic
+- Circuit requires: Power source, Path (wires / traces), Load
+
+### ② Integrated circuit / IC — piece of silicon, contains billions of electric components (transistors, resistors)
+
+- Circuits create a chip (CPU, MCU etc)
+- Chip placed on green board called (PCB)
+- Copper lines on board connect the chip to other parts, creating a larger circuit that powers your phone / computer
+
+### Chip → N/W of circuits, execute complex data instructions
+
+### [Filled — added, not in the original image]
+- Circuit, filled: a complete path through which electricity can flow — a functional pathway to flow electricity to perform a task — at any size (massive like an electric grid, large like a battery, microscopic like a chip trace), requiring three things: a power source, a path (wires/traces), and a load.
+- IC, filled: an integrated circuit is a piece of silicon containing billions of electric components (transistors, resistors); circuits create a chip (CPU, MCU, etc.); the chip is placed on a green board called a PCB; copper lines on the board connect the chip to other parts, creating a larger circuit that powers a phone or computer.
+- Chip, filled: a chip is a network of circuits executing complex data instructions — the closing line that turns the circuit definition into the chip definition, and the foundation for every chip page from Note 171 onward.
+
+---
+
+## Image Note 186 — Computer chips: 4 primary types (microprocessors, microcontrollers, memory, DSPs) + specialized chips (handwritten, as is)
+
+### Computer chips — 4 primary types based on Arch & fun
+
+- ① Microprocessors (CPUs) = brains, General tasks [side: CPUs]
+- ② Microcontrollers = self-contained chips, Specific tasks [side: MCUs]
+- ③ Memory chips = RAM / Flash / ROM [side: DRAM]
+- ④ Digital signal processors DSPs [side: DSPs]
+
+### Specialized chips
+
+- GPUs = parallel workloads
+- ASICs = one purpose / custom chips
+- FPGAs = blank slate chips
+- SoC = All in one chips
+- NOC = All in one [as written]
+
+### [Filled — added, not in the original image]
+- Four primary types, filled: microprocessors (CPUs — brains, general tasks), microcontrollers (self-contained chips, specific tasks), memory chips (RAM/flash/ROM), and digital signal processors (DSPs) — the four primary types based on architecture and function, with the side labels (CPUs, MCUs, DRAM, DSPs) marking the exemplar of each.
+- Specialized chips, filled: GPUs (parallel workloads), ASICs (one-purpose/custom chips), FPGAs (blank-slate chips), SoC (all-in-one chips), NOC (all-in-one, as written — the note's "NOC" reads as network-on-chip, the all-in-one interconnect, kept as written and expanded here with that reading flagged).
+- The frame, filled: primary types (the four every computer needs) versus specialized chips (the accelerators and integrations) — the same primary/specialized split as Note 178's directory, here as the computer-chip version.
+
+---
+
+## Image Note 187 — CPU core = functional blocks; Die = multiple cores working together (rotated page) (handwritten, as is)
+
+### ① CPU core = functional blocks
+
+- ① ALU
+- ② CU
+- ③ MU (registers) / L1 cache
+
+### ② Die = multiple cores working together
+
+- cores don't work alone
+- cores talk to shared resources (L3 cache, IMC, I/O)
+- cores linked together by a ring bus / mesh
+
+### [Filled — added, not in the original image]
+- Core, filled: a CPU core is functional blocks — ALU (arithmetic logic unit, the calculator), CU (control unit, the director), MU (memory unit — registers, with L1 cache alongside) — the three blocks that make one core, matching Note 190's processor-blocks-to-core ladder.
+- Die, filled: a die is multiple cores working together — cores don't work alone, they talk to shared resources (L3 cache, IMC, I/O) and are linked together by a ring bus or mesh — the interconnect that turns cores into a die, and the die into Note 188's package.
+- Side annotations, filled and flagged: faint side words on this rotated page are not legible enough to attribute — left out of the transcription and flagged here rather than guessed.
+
+---
+
+## Image Note 188 — Inside Die; On CPU package; On motherboard: active & passive components (rotated page) (handwritten, as is)
+
+### # Inside Die
+
+- ① Active compo: billions of transistors make up CPU cores, logic gates, SRAM cache blocks
+- ② Passive: directly etched into silicon [as written]
+
+### # On CPU package
+
+- Active compo: die mounted to substrate board
+- Passive compo [listed, no detail]
+
+### # On motherboard
+
+- Active: UEFI / BIOS chip, voltage controller, IC & CPU package — plugged into CPU socket
+- Passive: capacitors, inductors, resistors
+
+### Side note
+
+- Where active & passive stored [as written]
+
+### [Filled — added, not in the original image]
+- Three levels, filled: inside the die — active components (billions of transistors making up CPU cores, logic gates, SRAM cache blocks) and passive components directly etched into silicon; on the CPU package — active component (the die mounted to the substrate board) and passive components (listed without detail in the image); on the motherboard — active components (UEFI/BIOS chip, voltage controller, IC & CPU package plugged into the CPU socket) and passive components (capacitors, inductors, resistors).
+- Active vs passive, filled: active components control or amplify (transistors, chips); passive components store or resist without control (capacitors, inductors, resistors) — the distinction the page tracks across all three levels, from die to board.
+- The side note, filled and flagged: "where active & passive stored" reads as the page's organizing question (where each kind lives at each level) — kept as written above and flagged as a heading-style note, not expanded into an answer the image does not give.
+
+---
+
+## Image Note 189 — CPU Package: PCB substrates, processing circuits, sys memory chain, circuit components table (handwritten, as is)
+
+### CPU Package — mounted on PCB substrates
+
+- Links die to external capacitors, memory bus, wires
+
+### Processing circuits
+
+- Transistor → logic gates → functional unit → CPU core → the Die → package [last step cut off, filled below]
+
+### Sys memory chain
+
+- C + IT → memory cell → memory array → DRAM die → DRAM chip → DIMM (stick)
+
+### Circuit components / CPU execution
+
+- Power source → provides voltage / power / data
+- Conductors → paths (wires)
+- Load → CPU core consumes energy
+- Switch → on / off
+- Protective dev → fuse
+
+### Table — Active / Passive / Conductors
+
+| Active | Passive | Conductors |
+|---|---|---|
+| stored in SRAM | resistors | wires |
+| diodes | capacitors | PCB traces |
+| transistors | inductors | link die to external cap |
+| transformers | | memory bus |
+| | | registers |
+
+### [Filled — added, not in the original image]
+- Package, filled: the CPU package is mounted on PCB substrates and links the die to external capacitors, the memory bus, and wires — the bridge between the die (Note 188) and the motherboard.
+- Two chains, filled: processing — transistor → logic gates → functional unit → CPU core → die → package (the last step is cut off in the image and filled as "package", the page's own subject, marked as filled); system memory — cell → memory array → DRAM die → DRAM chip → DIMM stick (the "C + IT" opening is kept as written and read as the cell's components, flagged as a reading).
+- Circuit components, filled: power source (provides voltage/power/data), conductors (paths/wires), load (the CPU core consuming energy), switch (on/off), protective device (fuse) — the same three requirements as Note 185's circuit (source, path, load) plus switch and protection.
+- Table, filled: active components (stored in SRAM, diodes, transistors, transformers), passive components (resistors, capacitors, inductors), conductors (wires, PCB traces, the link from die to external capacitor, memory bus, registers) — the active/passive/conductor split at package level, matching Note 188's three-level version.
+
+---
+
+## Image Note 190 — CPU made of billions of transistors: fetch / decode / execute; transistor → gates → circuits → blocks → core → die (handwritten, as is)
+
+### CPU made of billions of transistors
+
+- To process data — fetch
+- To perform calc — decode
+- To run S/W — execute
+
+### ① 1T → 0 or 1 switch
+### ② 2–4T → logic gates [count as written]
+### ③ Logic gates create specialized circuits
+
+- Adders → for math
+- Multiplexers — routes power / data
+- Latches / flip-flops → temp 1 bit storage
+
+### ④ Circuit groups → processor blocks from circuits
+
+- ALU → for calc
+- CU → brain mngr → decisions
+- Registers / MU → storage fast access
+
+### ⑤ Processor blocks → a CPU core made from blocks
+
+- ALU → for calc
+- CU → brain
+- L1 cache → storage / access
+
+### ⑥ Silicon die = multiple cores, shared L3 cache, IMC, IGPU, I/O control
+
+### [Filled — added, not in the original image]
+- Fetch/decode/execute, filled: the CPU's three jobs map to the instruction cycle — to process data is fetch, to perform calculations is decode, to run software is execute — the cycle the whole ladder below serves.
+- The ladder, filled: one transistor is a 0-or-1 switch; 2–4 transistors make logic gates (the count as written); logic gates create specialized circuits (adders for math, multiplexers routing power/data, latches/flip-flops for temporary 1-bit storage); circuit groups become processor blocks (ALU for calculation, CU as brain manager for decisions, registers/MU for fast-access storage); processor blocks become a CPU core (ALU, CU, L1 cache); and the silicon die is multiple cores plus shared L3 cache, IMC, integrated GPU, and I/O control.
+- The frame, filled: transistor → gate → circuit → block → core → die — the six-step ladder from one switch to a whole die, closing the chip run that began at Note 171's device families and ends here at the transistor itself.
+
+---
+
+# INbatch27 — Image Notes 191–199 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 1 duplicate in this set — the first image (file 236) is the same "Physical Network Devices built around communication chips" page already filed as Note 169 (INbatch24). Skipped entirely: no content copied, no note number consumed. 9 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 191 — ④ Architecture blocks = circuit groups; ⑤ CPU core = formed from blocks; ⑥ Silicon Die; ⑦ CPU Package (handwritten, as is)
+
+### ④ Architecture blocks = circuit groups
+
+- Circuits grouped into the main functional blocks of a processor, includes
+  - 1. ALU → for calculations
+  - 2. CU → brain's manager
+  - 3. Registers → internal storage
+
+### ⑤ CPU core = formed from blocks
+
+- combining functional blocks can make a core, it's a smallest unit capable of executing a complete computer program instruction on its own
+- ALU + CU + L1 Cache = core
+
+### ⑥ Silicon Die = multiple cores
+
+- shared L3 cache
+- IMC
+- integrated GPU
+- I/O controllers
+- (side: silicon slice)
+
+### ⑦ CPU Package
+
+- mounted onto a green substrate PCB
+
+### [Filled — added, not in the original image]
+- The ladder, filled: architecture blocks are circuit groups (ALU for calculations, CU as the brain's manager, registers as internal storage); combining functional blocks makes a CPU core — the smallest unit capable of executing a complete computer program instruction on its own (ALU + CU + L1 cache = core); multiple cores make a silicon die (shared L3 cache, IMC, integrated GPU, I/O controllers); the die mounted onto a green substrate PCB is the CPU package — the same ladder as Note 190, here numbered ④–⑦ continuing from ① transistor, ② gates, ③ circuits.
+- "Silicon slice", filled: the side note names the die's material form — a slice of silicon, the wafer cut that becomes the die.
+
+---
+
+## Image Note 192 — Transistor → binary switch; scale up to logic gates, ALU, specialized circuits, functional units (rotated page) (handwritten, as is)
+
+### 1. Transistor → binary switch — on / off (states)
+
+- Controls the flow of electric current
+- Creates binary states (on / off) that allow a computer to process data, perform calc & run S/W
+
+### Scale up
+
+- 2–4 transistors can create logic gates [XOR, NAND, AND, OR, NOT, XOR, NO — as written, with repetitions]
+
+### Ladder
+
+- ① 1T = binary switch (0 or 1)
+- ② 2–4T = logic gates (decisions)
+- millions of gates = ALU (calculations)
+- ③ 100's logic gates combined to create specialized circuits
+  - Adders = for math
+  - Multiplexers = for routing data
+  - Latches / flip flops = 1 bit memory
+- ④ Functional units (circuits) [continuation cut off at page edge]
+
+### [Filled — added, not in the original image]
+- Transistor, filled: a binary switch with on/off states — it controls the flow of electric current, and those binary states are what allow a computer to process data, perform calculations, and run software.
+- Scale-up, filled: 2–4 transistors create logic gates (the gate list as written repeats XOR and adds "NO" — kept as written above; the standard set is AND, OR, NOT, NAND, XOR, and the repetitions are the handwriting's, not corrected here); millions of gates make an ALU (calculations); hundreds of logic gates combined create specialized circuits (adders for math, multiplexers for routing data, latches/flip-flops for 1-bit memory); those circuits become functional units — the same ladder as Note 190's ①–④, here in rotated-page form with the binary-switch framing.
+- The cut-off, filled: item ④ (functional units) is cut off at the page edge — filled by Note 191's continuation (functional blocks → core → die → package), marked here as filled.
+
+---
+
+## Image Note 193 — User process / kernel / device address spaces; Circuit components: active, passive, conductors (handwritten, as is)
+
+### Address spaces
+
+- User process → process VA + buffers
+- Kernel → kernel VA + kernel objects
+- Device → IOVA / DMA + rings / buffers / descriptors
+- CPU subsystem & cache lines
+
+### Circuit components
+
+- 1. Power source → provides voltage / power / data
+- 2. Conductors → pathways (wires)
+- 3. Load → consumes energy → CPU core
+- 4. Switch → on / off
+- 5. Protective dev → fuse (short circuit)
+
+### Functional controllable circuit components
+
+- ① Active components: diodes, transistors, transformers (SRAM stored in)
+- ② Passive components: resistors, capacitors, inductors; non-volatile: ROM / BIOS chip
+- ③ Conductors (paths): wires, PCB traces on green package link silicon, connects CPU to RAM, die to the external capacitors
+
+### [Filled — added, not in the original image]
+- Three address spaces, filled: the user process sees process virtual addresses plus buffers; the kernel sees kernel virtual addresses plus kernel objects (Note 152's /sys objects); the device sees I/O virtual addresses/DMA plus rings, buffers, and descriptors — three views of memory, one per actor, with the CPU subsystem and cache lines underneath all three.
+- Circuit components, filled: power source (voltage/power/data), conductors (pathways/wires), load (consumes energy — the CPU core), switch (on/off), protective device (fuse, against short circuits) — the same five as Note 189, here with the load named as the CPU core.
+- Component families, filled: active components (diodes, transistors, transformers — SRAM stored in, the note's annotation tying active storage to SRAM); passive components (resistors, capacitors, inductors; non-volatile ROM/BIOS chip noted alongside); conductors/paths (wires, PCB traces on the green package linking silicon, connecting CPU to RAM and die to external capacitors) — the active/passive/conductor split of Notes 188–189, here with the conductor paths named.
+
+---
+
+## Image Note 194 — Communication Matrix: package level comm, server level, gRPC, sockets (handwritten, as is)
+
+### Communication Matrix
+
+### ① Package level comm = code to code, inside the App layer
+
+- How S/W packages, libraries, objects talk to each other
+- RMI
+- RPC / gRPC — package level compiler
+- Sockets — package level API library
+- (side: S/W – S/W, APP – APP)
+
+### ② Server level = across N/W infra (machine to machine)
+
+- Microservices → interacting with N/W via [cut off]
+- MPI → syncing data
+- Cloud / grid → N/W nodes
+- P2P → autonomous server nodes
+- (side: Server – Server, M – M)
+
+### Definitions
+
+- gRPC = compiled code libraries streaming binary data
+- Sockets = code level API opening TCP / UDP IP connections
+
+### [Filled — added, not in the original image]
+- Two levels, filled: package-level communication is code to code inside the application layer — how software packages, libraries, and objects talk to each other (RMI, RPC/gRPC via a package-level compiler, sockets via a package-level API library); server-level communication is across network infrastructure, machine to machine — microservices interacting with the network, MPI syncing data, cloud/grid as network nodes, peer-to-peer as autonomous server nodes.
+- The pair, filled: package level is software-to-software and app-to-app (same machine, same application layer); server level is server-to-server and machine-to-machine (across the network) — the same two-level split as Note 113's package vs server communication matrix, here restated with gRPC and sockets defined.
+- Definitions, filled: gRPC is compiled code libraries streaming binary data; sockets are code-level APIs opening TCP/UDP IP connections — the two mechanisms, one compiled and binary, one API and connection-oriented.
+
+---
+
+## Image Note 195 — DB's / memory and Identities: AS tree with network, subnets, broadcast, collision, segment, micro-segment, end devices, vnodes, ports (handwritten, as is)
+
+### Tree — AS → identities
+
+| Level | Identity |
+|---|---|
+| Network (intra LAN / WAN) | N/W ID / Route ID, ASN / public IP block |
+| Subnets | subnet mask / gateway |
+| Broadcast Domain | VLAN ID |
+| Collision Domain | BSSID / switch port |
+| Segment | — |
+| Micro segment | VNI (VXLAN) |
+| End dev / nodes | MAC + host IP |
+| vNodes | vMAC / UUID |
+| Port / socket | PID / UID / IP : port |
+
+### Left column — DB's / memory (as written)
+
+- IRR, RIB / FIB, DHCP lease pool / IPAM, VLAN DB, CAM table, VTEP table, ARP / DNS cache, vswitch, socket buffer table
+
+### [Filled — added, not in the original image]
+- The tree, filled: the AS (autonomous system) breaks down into network (intra LAN/WAN — network ID/route ID, ASN/public IP block), subnets (subnet mask/gateway), broadcast domain (VLAN ID), collision domain (BSSID/switch port), segment, micro-segment (VNI, the VXLAN identifier), end devices/nodes (MAC + host IP), virtual nodes (vMAC/UUID), and port/socket (PID/UID/IP:port) — every level of the network with the identity that names it, from the AS down to a single socket.
+- The DB column, filled: each level is backed by a database or memory — IRR (internet routing registry), RIB/FIB (routing/forwarding information base), DHCP lease pool/IPAM (address management), VLAN database, CAM table (MAC addresses), VTEP table (VXLAN endpoints), ARP/DNS cache, vSwitch, socket buffer table — the left column is the memory that holds the right column's identities, which is why the page is headed "DB's / memory" on one side and "Identities" on the other.
+- The frame, filled: this page pairs with Note 196's AS diagrams — the same AS-to-socket ladder, here as a tree with its backing databases listed alongside.
+
+---
+
+## Image Note 196 — AS → Network → subnetworks → broadcast domain → collision domain → segments → end devices → vnodes → port/socket (two diagrams) (handwritten, as is)
+
+### Upper diagram
+
+- AS → Network (VPN BGP)
+- Network → subnetworks (SVI, VLAN interface)
+- Subnetworks → broadcast domain
+- LAG → collision domain
+- Security zones, RBAC → N/W segment, micro segment, end dev / nodes, vnodes, port / socket
+- Micro services [annotation]
+- Side labels: CIDR, subnet mask, VLAN ID / SVI, switch port no, LLA, MAC + host IP
+
+### Lower diagram
+
+- AS (ASN): MPLS / VPN / SD-WAN → N/W entire infra (LAN / WAN)
+- Routing tables → subnets (CIDR)
+- Trunk ports → broadcast domain (VLAN tagging)
+- Copper / fiber → collision domain (full duplex Ethernet)
+- Access port → segment (Ethernet 802.3 / WiFi)
+- NIC → end dev / nodes / host (TCP / IP stack)
+- vNIC → vnode
+- → port / socket
+
+### [Filled — added, not in the original image]
+- Two diagrams, same ladder, filled: the upper diagram traces AS → network (via VPN/BGP) → subnetworks (SVI, VLAN interfaces) → broadcast domain → collision domain (via LAG) → segments → micro-segments → end devices/nodes → vnodes → port/socket, with security zones and RBAC gating the segment steps and microservices annotated at the end; the lower diagram traces the same ladder with the mechanism at each step — MPLS/VPN/SD-WAN for the entire infrastructure, routing tables for subnets (CIDR), trunk ports for broadcast domains (VLAN tagging), copper/fiber for collision domains (full-duplex Ethernet), access ports for segments (Ethernet 802.3/Wi-Fi), NICs for end devices/hosts (TCP/IP stack), vNICs for vnodes, ending at port/socket.
+- The pair, filled: the upper diagram names the levels, the lower diagram names the mechanisms — together they are the AS-to-socket ladder with both the "what" and the "how", and the companion to Note 195's tree-plus-databases version.
+- Side labels, filled: CIDR, subnet mask, VLAN ID/SVI, switch port number, LLA (link-local address), MAC + host IP — the identities of the upper diagram's levels, matching Note 195's identity column.
+
+---
+
+## Image Note 197 — ⑦ End devices / nodes / host; ⑧ Port / socket; ⑥ Micro segment (N/W segment) (RBAC) (zones) (rotated page) (handwritten, as is)
+
+### ⑦ End devices / nodes / host
+
+- This is the smallest individual section of a N/W
+- A node is any active physical / electronic device attached to a N/W, capable of sending, receiving & forwarding information
+- Physical or virtual asset
+
+### ⑧ Port / socket
+
+- Microservices & service delivery
+- Specific doorway into a server or device where business data is processed
+
+### ⑥ Micro segment (N/W segment) (RBAC) (zones)
+
+- S/W defined, zero trust perimeter
+- Isolated devices at H/W switch level
+- Physical or logical section of a N/W [cut off]
+
+### [Filled — added, not in the original image]
+- End devices, filled: the smallest individual section of a network — a node is any active physical or electronic device attached to a network, capable of sending, receiving, and forwarding information, a physical or virtual asset — the bottom of the AS ladder (Notes 195–196), defined here in words.
+- Port/socket, filled: microservices and service delivery — a specific doorway into a server or device where business data is processed — the very bottom of the ladder, where the network meets the application.
+- Micro-segment, filled: a software-defined, zero-trust perimeter — isolated devices at the hardware switch level, a physical or logical section of a network (cut off in the image, completed from the section's own heading) — the segmentation level above end devices, governed by RBAC and zones.
+- Numbering, filled: the page numbers micro-segment ⑥ before end devices ⑦ and port/socket ⑧ — the ladder order (segment → device → port), kept as written, not renumbered.
+
+---
+
+## Image Note 198 — ② N/W (LAN or WAN), ③ Subnet, ④ Broadcast domain, ⑤ Collision domain, ⑥ Micro segments (rotated page) (handwritten, as is)
+
+### ② N/W (LAN or WAN) — VPN tunnels
+
+- Self-contained infrastructure belonging to an org or home
+- Encompasses all (servers, switches, routers, endpoints) within that boundary
+
+### ③ Subnet (sub network)
+
+- A logical visible subdivision of an IP N/W, to improve security, organize & reduce traffic, per size, per segment
+- Regulatory compliance; SLA's, VLAN trunk [annotations]
+
+### ④ Broadcast domain
+
+- A logical division of a computer N/W in which all nodes can reach each other by broadcast at data link layer
+
+### ⑤ Collision domain
+
+- Logical N/W section where data packets can collide during transmission
+
+### ⑥ Micro segments
+
+- RBAC, ZTA, VLAN
+
+### [Filled — added, not in the original image]
+- The ladder's middle, filled: network (LAN or WAN, via VPN tunnels) is self-contained infrastructure belonging to an organization or home, encompassing all servers, switches, routers, and endpoints within that boundary; a subnet is a logical, visible subdivision of an IP network, to improve security, organize and reduce traffic, per size and per segment (with regulatory compliance and SLAs/VLAN trunks annotated); a broadcast domain is a logical division of a computer network in which all nodes can reach each other by broadcast at the data link layer; a collision domain is a logical network section where data packets can collide during transmission; micro-segments are governed by RBAC, ZTA (zero trust architecture), and VLAN.
+- Numbering, filled: the page numbers these ②–⑥, continuing a ladder whose ① is the AS (Note 199) and whose ⑦–⑧ are end devices and port/socket (Note 197) — the middle of the same AS-to-socket ladder, filed here as its own page because the definitions are new.
+- The frame, filled: network → subnet → broadcast domain → collision domain → micro-segment — each step a smaller, more controlled section, from the whole infrastructure down to the zero-trust segment.
+
+---
+
+## Image Note 199 — ① AS: transit policy, peering policy, stub policy (rotated page) (handwritten, as is)
+
+### ① AS (under the control of one or more N/W operators, like Google, ISPs or massive university)
+
+- Presents a common routing policy to the internet
+- Three foundational routing policies
+- These policies govern how data traffic enters, exits, passes through the N/W, based on business relationship
+
+### ① Transit policy
+
+- AS agrees to carry traffic b/w 2 other N/Ws for free [as written — see Filled]
+- ① provider → customer (P-C)
+- ② customer → provider (C-P)
+
+### ② Peering policy P2P
+
+- AS agrees to exchange traffic b/w their customers for free
+- ① mutual benefit
+- ② non-transitive
+
+### ③ Stub policy [listed, no detail in the image]
+
+### [Filled — added, not in the original image]
+- AS, filled: an autonomous system is under the control of one or more network operators (like Google, ISPs, or a massive university) and presents a common routing policy to the internet — three foundational routing policies governing how data traffic enters, exits, and passes through the network, based on business relationship.
+- Transit, filled: an AS agrees to carry traffic between two other networks — the note writes "for free", kept as written above; in the standard model transit is the paid service (provider carries a customer's traffic to the rest of the internet) and peering is the free exchange, so the "for free" here is flagged as the note's wording, not silently corrected — the provider→customer and customer→provider directions are the transit relationship in both directions.
+- Peering, filled: ASes agree to exchange traffic between their customers for free, for mutual benefit, and non-transitively (an AS does not forward its peer's traffic onward to a third network) — the settlement-free exchange that keeps the internet's core cheap.
+- Stub, filled: listed without detail in the image — filled as the AS that connects to only one upstream provider and carries no transit traffic (the single-homed edge, e.g. a small organization), marked here as filled, not original.
+
+---
+
+# INbatch28 — Image Notes 200–209 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 200 — AS: joint independent N/W / collection of N/Ws; IANA/RIR → AS/ISP → corporate N/W → local subnet → physical nodes (handwritten, as is)
+
+### AS — joint independent N/W / collection of N/Ws controlled by a single organization
+
+- has an unique ID called ASN
+- Types: one other AS, multihome AS, transit AS
+
+### Drawn flow
+
+```
+IANA / RIR registry
+    ↓  (hands over ASN & IP block
+    ↓   to independent N/W operators — Google, Jio)
+AS / ISP
+    ↓
+Corporate N/W     (internal infra of a business,
+                   CIDR / VLSM to run their private infra)
+    ↓
+Local subnet      (broadcast domain inside a company:
+                   HR, finance, server room)
+    ↓
+Physical / nodes  (unique IPs assigned or handed
+                   out to individual)
+```
+
+### Side annotations
+
+- Internet — public cloud, 192.0.2.0 / 16 [as written]
+- Intranet, firewall, SDN (zones), NAS, DAS
+
+### [Filled — added, not in the original image]
+- AS, filled: a joint independent network, a collection of networks controlled by a single organization, with a unique ID called the ASN (autonomous system number); types are single-homed (the note writes "one other AS", kept as written and read as single-homed — one upstream), multihome (multiple upstreams), and transit (carrying others' traffic).
+- The flow, filled: the IANA/RIR registry hands over ASNs and IP blocks to independent network operators (Google, Jio as examples); the AS/ISP serves a corporate network (the internal infrastructure of a business, using CIDR/VLSM to run its private infrastructure); the corporate network divides into local subnets (broadcast domains inside a company — HR, finance, server room); the subnets hand unique IPs out to individual physical nodes.
+- Side annotations, filled: internet/public cloud on one side, intranet on the other — the public-vs-private split the flow walks down; firewall, SDN zones, NAS, DAS are the corporate-network technologies noted alongside.
+- "192.0.2.0 / 16" kept as written and flagged: the TEST-NET-1 documentation range is 192.0.2.0/24 (Note 129's earlier fill corrected /16 to /24 in a different note); this page writes /16 again, kept as written here and flagged rather than silently re-corrected, since the fill rule marks fills, and this is the original's own text.
+
+---
+
+## Image Note 201 — Port / interface / link / socket / bandwidth table; N/W traffic vs web traffic (handwritten, as is)
+
+### Table (as written)
+
+| Concept | Linux view | Physical view |
+|---|---|---|
+| Port (H/W) | lshw, /sys/class/net | PCIe, NIC, RJ45 |
+| Interface (logical) | ip link | eth0, wlan0, tun, br [cut off] |
+| Link (path) | ethtool, ip route | cable, VLAN, VPN |
+| Socket (S/W) | ss, netstat, lsof | IP + port & end, static / dynamic |
+| Bandwidth (QoS) | tc, ethtool | [blank in image] |
+
+### N/W traffic vs web traffic
+
+- Cables — physical mediums (sockets)
+- Interfaces — physical ports for cables (connections)
+- Ports — destinations (routes)
+- Configs — settings to H/W
+
+### [Filled — added, not in the original image]
+- Five concepts, filled: port (hardware — seen via lshw and /sys/class/net, physically PCIe, NIC, RJ45); interface (logical — seen via ip link, physically eth0, wlan0, tun, bridge); link (path — seen via ethtool and ip route, physically cable, VLAN, VPN); socket (software — seen via ss, netstat, lsof, physically IP + port and endpoint, static or dynamic); bandwidth/QoS (seen via tc and ethtool; the physical cell is blank in the image, left blank above, not invented).
+- Traffic pair, filled: network traffic is the lower layers (cables as physical mediums, interfaces as physical ports for cables, ports as destinations, configs as settings to hardware) and web traffic rides on top (sockets, connections, routes — the right-hand annotations) — the same stack as Note 141's Linux networking stack, here as a traffic split.
+- The table's frame, filled: each row is one concept in three views — what it is, how Linux sees it, what it is physically — the pattern that runs through Notes 202 and 207's physical/virtual tables.
+
+---
+
+## Image Note 202 — Physical terms (port, plug, cable, interface, link); Virtual terms; Drivers / Modules / Devices box (handwritten, as is)
+
+### Physical terms
+
+- 1. Port → Hardware socket (RJ45, PCIe slot, SFP)
+- 2. Plug → the connector into a port (ethernet plug, etc)
+- 3. Cable → medium carrying signals (copper, fiber)
+- 4. Interface → Device's connection point exposed to OS
+- 5. Link → physical path b/w 2 interfaces (up / down)
+
+### Virtual
+
+- ① Virtual Port → S/W defined End Point (TCP / UDP)
+- ② Virtual Interface → logical rep of NIC (vNIC, veth, lo, tun)
+- ③ Virtual Socket → S/W End Point defined IP : port
+- ④ Virtual Link → logical path
+- ⑤ Virtual Plug → mapping vInterface into NS
+
+### Box
+
+- ① Drivers → lsmod, modprobe, dmesg, udev — Map to physical ports (NIC, PCIe slots)
+- ② Modules → insmod, rmmod, modinfo — map to logical interfaces
+- ③ Devices → /dev/eth0, /sys/class/net — represents sockets / cables
+
+### [Filled — added, not in the original image]
+- Physical, filled: port is the hardware socket (RJ45, PCIe slot, SFP); plug is the connector into a port (ethernet plug); cable is the medium carrying signals (copper, fiber); interface is the device's connection point exposed to the OS; link is the physical path between two interfaces (up/down state).
+- Virtual, filled: virtual port is a software-defined endpoint (TCP/UDP); virtual interface is the logical representation of a NIC (vNIC, veth, loopback, tun); virtual socket is a software endpoint defined by IP:port; virtual link is a logical path; virtual plug is mapping a virtual interface into a namespace (the container attachment, Note 154's namespace isolation applied to interfaces).
+- Box, filled: drivers (lsmod, modprobe, dmesg, udev) map to physical ports (NIC, PCIe slots); modules (insmod, rmmod, modinfo) map to logical interfaces; devices (/dev/eth0, /sys/class/net) represent sockets/cables — the kernel-side mapping that turns the physical/virtual terms into inspectable objects.
+
+---
+
+## Image Note 203 — Media DAC cables; Tier 3 distributed cloud N/Ws; mesh / service mesh topology (handwritten, as is)
+
+### Media — DAC cables
+
+### Tier 3 — Distributed cloud N/Ws
+
+- represents hyperscale public clouds
+
+### Topology
+
+- mesh mesh N/W &
+- multi tier service mesh
+- & S/W defined service mesh
+
+### [Filled — added, not in the original image]
+- Tier 3, filled: distributed cloud networks representing hyperscale public clouds — the top tier of the tier ladder (Tier 1 local, Note 205; Tier 2 enterprise/private cloud, Note 204; Tier 3 distributed cloud, this page).
+- Media, filled: DAC (direct attach copper) cables are the page's media heading — the short, cheap copper links between switches and servers inside the hyperscale data center, the physical medium of the mesh.
+- Topology, filled: mesh networks, multi-tier service mesh, and software-defined service mesh — the topologies of the distributed cloud, where every service connects to many others and the mesh itself is software-defined (the service-mesh idea from Note 162's firewall row, here as topology).
+
+---
+
+## Image Note 204 — Scales up: Tier 2 enterprise Data centers & private clouds; leaf-spine; tiered/cluster arch; interfaces & media (handwritten, as is)
+
+### Scales up — Tier 2 — Enterprise Data centers & private clouds
+
+- TOR switches: This scales up to corporate on-premises data centers, virtualization clusters, containerized microservices
+
+### Topology — leaf spine (Clos)
+
+- every leaf switch connects to every spine switch
+
+### Arch — monolithic → tiered / cluster Arch
+
+- apps divided into web, app & DB layers
+- managed via automated private cloud stack like OpenStack
+
+### Interface & media
+
+- Physical: high speed fiber optic ports built into servers
+- Virtual: hypervisor managed vNIC (vnet0), virtual bridges (br0), virtual ethernet pairs (veth) linking Docker / K8s containers, SR-IOV → to bypass all to access HW directly
+
+### [Filled — added, not in the original image]
+- Tier 2, filled: enterprise data centers and private clouds — the scale-up from Tier 1 (Note 205), via top-of-rack switches, to corporate on-premises data centers, virtualization clusters, and containerized microservices.
+- Topology, filled: leaf-spine (Clos) — every leaf switch connects to every spine switch — the non-blocking fabric that replaces the Tier 1 star at data-center scale.
+- Architecture, filled: monolithic applications become tiered/cluster architecture, divided into web, app, and DB layers, managed via an automated private cloud stack like OpenStack.
+- Interfaces & media, filled: physical is high-speed fiber optic ports built into servers; virtual is hypervisor-managed vNICs (vnet0), virtual bridges (br0), virtual ethernet pairs (veth) linking Docker/Kubernetes containers, and SR-IOV to bypass all of it and access hardware directly — the virtual stack of Note 121's Tier 2 page, here with the SR-IOV bypass named.
+
+---
+
+## Image Note 205 — Tier 1 standalone & local N/W: star topology, client-server / peer-peer arch, interfaces & media (handwritten, as is)
+
+### Tier 1 — standalone & local N/W
+
+- represents local physical H/W & deployments
+  - home networks
+  - small office N/Ws
+  - bare metal servers
+
+### Star topology
+
+- Every local end point connects directly to a central local switch / a WAP
+
+### Arch — client-server / peer-peer
+
+- pull resources from a central local NAS / communicate directly [cut off at page edge]
+
+### Interfaces
+
+- Physical: ethernet ports (eth0, enp3s0), wifi (wlan)
+- Virtual media: local S/W loopback (lo) / local N/W, cat? / radio waves [partly unclear]
+- NIC to local switch / router
+
+### [Filled — added, not in the original image]
+- Tier 1, filled: standalone and local networks representing local physical hardware and deployments — home networks, small office networks, bare metal servers — the bottom tier of the ladder (Tier 2, Note 204; Tier 3, Note 203).
+- Star, filled: every local endpoint connects directly to a central local switch or wireless access point — the star topology of Note 122's Tier 1 page, here as the Tier 1 topology.
+- Architecture, filled: client-server and peer-to-peer — pulling resources from a central local NAS, or communicating directly (cut off at the page edge, completed from the peer-to-peer half of the heading, marked as filled).
+- Interfaces & media, filled: physical is ethernet ports (eth0, enp3s0) and Wi-Fi (wlan); virtual media is the local software loopback (lo) and the local network, with radio waves as the wireless medium (the "cat? / radio waves" line is partly unclear — filled as radio waves, flagged); the NIC connects to the local switch/router.
+
+---
+
+## Image Note 206 — N/W Topologies (shapes), N/W Arch (designs), N/W Interfaces (end points), N/W media (highways) (handwritten, as is)
+
+### N/W Topologies (shapes)
+### N/W Arch (designs)
+### N/W Interfaces (end points)
+### N/W media (highways)
+
+### [Filled — added, not in the original image]
+- Four lenses, filled: network topologies are the shapes (star, bus, ring, mesh — Note 207); network architectures are the designs (client-server, peer-to-peer, SDN — Note 207); network interfaces are the endpoints (ports, NICs, sockets — Notes 201–202); network media are the highways (cables, radio — Notes 203–205) — the four words that organize the whole Tier 1–3 run, one line each, on a single summary page.
+- The page's role, filled: a section header page for the four topics that Notes 203–205 and 207 detail — filed as its own note because the shapes/designs/endpoints/highways framing is new, not because it adds new facts.
+
+---
+
+## Image Note 207 — N/W topologies (star, bus, ring, mesh); N/W architectures; N/W media (rotated page) (handwritten, as is)
+
+### N/W topologies
+
+- Star: Every node connects directly to a central hub, switch, AP; copper, fiber optic or WiFi (RF); NIC → central switch port
+- Bus topology: nodes share single backbone cable
+- Ring: each node connects exactly 2 neighbors
+- Mesh: High redundancy
+
+### N/W architectures
+
+- Client → server
+- Peer → peer node
+- Peer-peer (internet connections)
+- Controller → switch
+- SDN virtual interfaces (API calls / overlays)
+
+### N/W media
+
+- Guided → wired
+- Unguided → wireless: radio waves, microwaves, cellular, WiFi / Bluetooth, cell towers
+
+### [Filled — added, not in the original image]
+- Topologies, filled: star (every node directly to a central hub/switch/AP, over copper, fiber optic, or Wi-Fi RF, NIC to central switch port); bus (nodes sharing a single backbone cable); ring (each node connecting exactly two neighbors); mesh (high redundancy) — the four shapes of Note 206's first lens.
+- Architectures, filled: client → server, peer → peer node, peer-to-peer (internet connections), controller → switch, SDN virtual interfaces (API calls/overlays) — the five designs of Note 206's second lens, from classic client-server to SDN.
+- Media, filled: guided means wired; unguided means wireless (radio waves, microwaves, cellular, Wi-Fi/Bluetooth, cell towers) — the guided/unguided split of Notes 156 and 164, here as the media lens.
+
+---
+
+## Image Note 208 — Govt / research / standards → semiconductor ecosystem → silicon chips → boards & devices → OEM / ODM → cloud / telecom / enterprise / govt → end users (rotated page) (handwritten, as is)
+
+### Chain (as written, left to right)
+
+- Govt / research / standards enables
+- Semiconductor ecosystem produces
+- Silicon chips become
+- Boards & devices assembled by
+- OEM / ODM companies brought by
+- Cloud, telecom, enterprise, govt
+- End users through devices, N/Ws
+
+### [Filled — added, not in the original image]
+- The chain, filled: government/research/standards enable the semiconductor ecosystem, which produces silicon chips, which become boards and devices assembled by OEM/ODM companies, which are brought by cloud, telecom, enterprise, and government buyers, reaching end users through devices and networks — the full supply chain from policy to pocket, in seven links.
+- The frame, filled: this is the silicon supply chain of Note 129 (government → ecosystem → chips → boards → OEM/ODM → cloud/telecom/enterprise/government → end users) restated as a single chain diagram — filed as its own note because the "enables/produces/become/assembled by/brought by" verb framing is new, not copied from Note 129.
+- The loop, filled: government appears twice — enabling at the start (research/standards) and buying at the end (government as customer) — the chain's loop, where the enabler is also a buyer.
+
+---
+
+## Image Note 209 — US govt → FCC Act → communications → broadcasting signals → TV / radio; NP / NPR stations; N/W programs & channels (handwritten, as is)
+
+### Description (words)
+
+- A hand-drawn diagram with crossed lines, transcribed in reading order:
+- Ex: Congress, Legislature → US govt → FCC Act → communications → broadcasting signals → TV, radio
+- US govt defines fee / non-edu broadcast [partly unclear]
+- Commercial media signals
+- NP radio stations; NPR = programming
+- N/W programs, N/W channels: 1. call signs, 2. frequency, 3. band, 4. city of license, 5. state
+- Public NPO stations, N/W channels
+- HD radio + translator
+- Side notes: "Nor, Ads, fee & TV, radio, we can use fee broadcast stations for broadcasting" [partly unclear]
+
+### [Filled — added, not in the original image]
+- The chain, filled: Congress/legislature → US government → FCC Act → communications → broadcasting signals → TV and radio — the regulatory chain from lawmaker to broadcast, the government side of Note 208's supply chain applied to media.
+- Stations, filled: non-profit (NP) radio stations and NPR (programming) on one side; commercial media signals on the other; public non-profit stations with network channels between them; HD radio plus translators extending the signal — the station taxonomy the diagram maps.
+- Channels, filled: network programs and network channels are identified by five things — call signs, frequency, band, city of license, state — the FCC identity tuple for a broadcast station.
+- Partly unclear, filled and flagged: the fee/non-edu broadcast definition and the side note ("Nor, Ads, fee & TV, radio, we can use fee broadcast stations for broadcasting") are partly unclear in the image — kept as written above and flagged here rather than expanded into an assertion about broadcast fee rules.
+
+---
+
+# INbatch29 — Image Notes 210–213 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 6 duplicates in this set, all skipped entirely with no content copied and no note numbers consumed — files 256, 257, 258 are the same N/W topologies, govt→semiconductor chain, and US govt→FCC Act pages already filed as Notes 207, 208, 209 (INbatch28); files 263, 264, 265 repeat the same three pages again (the FCC Act page, the pre-radio page, and the FCC Agency page of this set's new notes). 4 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 210 — Radio waves = radio broadcasting; sender → radio station → receiver; terrestrial vs satellite; orbit physics (handwritten, as is)
+
+### Radio waves = Radio broadcasting → broadcast stations of radio
+
+### Diagram
+
+```
+Radio waves (sender / broadcaster) → radio station → receiver broadcast
+```
+
+### Broadcast types
+
+- Broadcasts = Terrestrial
+- Terrestrial = AM, FM and DAB — stations = originate signals
+- Signals from a land transmitter
+- But satellite = satellite radio in earth orbit
+- Satellite radio = earth
+
+### Orbit physics
+
+- Earth = orbit = range → distance
+- Orbit = regular repeating paths, mutual gravitational attraction
+- One revolution = body
+- Class = group of [cut off]
+- Paths = object
+- Object = space
+- Space = takes object around
+- Objects = orbit
+- Orbits = satellite
+- Satellites = natural (earth + moon)
+- Earth = satellite stations
+- Satellites = earth
+- Sun = [?] satellites = regular paths [partly unclear]
+- Object = in motion, no shape (elliptical) = ellipse
+- In law: in motion object = stay in motion in motion object = stay in motion until someone pushes or pulls [Newton's first law, as written, partly garbled]
+- Variables (objects) in class [crossed out, partly unclear]
+- Without gravity = earth orbit goes off into the space a straight [line]
+- With gravity = pulled by [?] network [partly unclear]
+
+### [Filled — added, not in the original image]
+- The chain, filled: radio waves are radio broadcasting — broadcast stations of radio; the sender/broadcaster sends to a radio station, which broadcasts to the receiver — the sender → station → receiver chain of the diagram.
+- Terrestrial vs satellite, filled: terrestrial broadcasts are AM, FM, and DAB stations originating signals from a land transmitter; satellite radio is satellite radio in earth orbit — the two broadcast paths, land-based and orbit-based.
+- Orbit physics, filled: an orbit is a regular repeating path, held by mutual gravitational attraction; one revolution is a body's full circuit; paths belong to objects, objects move in space, space takes the object around, objects orbit, orbits belong to satellites; satellites are natural (earth + moon) or artificial; without gravity an earth orbit goes off into space in a straight line; with gravity it is pulled back — the gravity-vs-inertia balance that keeps a satellite in orbit.
+- Newton's law, filled: the garbled "in motion object stays in motion until someone pushes or pulls" is Newton's first law (inertia) — an object in motion stays in motion until acted on by a push or pull — marked here as filled, not original, since the image's wording is garbled.
+- Partly unclear, flagged: the sun/satellites line, the crossed-out variables line, and the "pulled by" line are partly unclear in the image — kept as written above and flagged rather than expanded.
+
+---
+
+## Image Note 211 — FCC: 2025, June 18/25, broadcasting ads; FCC regulates communications; radio broadcasting = transmission of electromagnetic waves (handwritten, as is)
+
+### Header (as written)
+
+- Author? FCC: 2025 June 18/25 → broadcasting ads [partly unclear]
+- REC [circled]
+
+### Points (as written)
+
+- Independent FCC = 1939 [as written — see Filled]
+- FCC & all communication all = into legislative [partly unclear]
+- Congress [circled]
+- Debates in Congress → make out legislative debate, other debates
+- FCC Communications = FCC
+- FCC = regulates communications across... [across radio, television, wire, internet, wifi, satellite, cable — as listed below]
+- FCC → FRC [Federal Radio Commission, as written]
+- FRC → FCC [as written]
+- Broadcasting = sender broadcast, radio waves receiver, channel
+- Radio broadcasting = transmission of electromagnetic radio waves over... [cut off] radio station → receiver (audio + metadata embedded)
+- FRC = regulate radio communication
+- Company, Jurisdiction [partly unclear, circled]
+
+### Media list (as written)
+
+1. radio, 2. television, 3. wire, 4. internet, 5. wifi, 6. satellite, 7. cable
+
+### [Filled — added, not in the original image]
+- FCC, filled: the Federal Communications Commission, an independent agency — the note writes "Independent FCC = 1939", kept as written above and flagged: the earlier text-batch fill corrected an FCC 1939 claim to 1934 (the Communications Act of 1934 created the FCC, succeeding the Federal Radio Commission of 1927); this page writes 1939 again, kept as written here and flagged rather than silently re-corrected, since the fill rule marks fills and this is the original's own text.
+- The chain, filled: Congress debates → legislative debate → the FCC Act → the FCC as the agency regulating communications across radio, television, wire, internet, Wi-Fi, satellite, and cable; the FRC (Federal Radio Commission) preceded the FCC and the FCC succeeded it — the note writes both directions (FCC → FRC and FRC → FCC), kept as written, with the historical direction filled here as FRC → FCC.
+- Broadcasting, filled: broadcasting is sender broadcast, radio waves, receiver, channel; radio broadcasting is the transmission of electromagnetic radio waves from a radio station to a receiver, carrying audio plus embedded metadata — the medium of Note 210's sender → station → receiver chain, now with the regulator named.
+- Partly unclear, flagged: the header (author, June 18/25, broadcasting ads), the "all communication all = into legislative" line, and the company/jurisdiction circles are partly unclear in the image — kept as written above and flagged.
+
+---
+
+## Image Note 212 — Pre-radio: electronic distribution → radiocasting → network casting; NCE radio stations, public & private stations (handwritten, as is)
+
+### Pre-radio
+
+- Electronic distribution → then radio casting → network casting
+- Limited extent
+
+### Current
+
+- 1. electronic distribution — limited → by telegraph net
+- 2. radio distribution — global →
+- 3. network distribution
+- 4. network affiliated N/W distribution
+- Current supplied stockholders [partly unclear]
+- Distributed audio, radio station, network [partly unclear]
+
+### Chain (as written, left side)
+
+- US govt → FCC Act → communications → broadcasting signals → radio waves → radio station
+
+### NCE (non-commercial educational)
+
+- NCE → for educational programming as part / whole of its program
+- NCE radio stations → don't pay broadcasting license fees for their non-profit uses [as written — see Filled]
+- NCE radio, non-commercial education, public radio stations → radio broadcast → terrestrial → AM FM DAB
+- Private radio stations → radio broadcast
+- Commercial ads [annotation]
+- Spectrum → radio stations [annotation]
+
+### [Filled — added, not in the original image]
+- Pre-radio to current, filled: electronic distribution (limited extent, by telegraph network) → radio casting (global) → network casting — the distribution ladder from wired telegraph to radio to networked distribution, with network-affiliated distribution as the fourth current form.
+- The chain, filled: US government → FCC Act → communications → broadcasting signals → radio waves → radio station — the same regulatory chain as Note 209, here ending at the radio station instead of TV/radio.
+- NCE, filled: non-commercial educational stations exist for educational programming as part or whole of their program; NCE radio stations don't pay broadcasting license fees for their non-profit uses (kept as written — the standard model is that NCE stations are licensed non-commercially and funded otherwise, not fee-exempt in the way commercial stations pay; the note's wording is kept and flagged here, not silently corrected); NCE radio and public radio stations broadcast terrestrially (AM, FM, DAB), while private radio stations broadcast commercially with ads — the public/private split, with spectrum feeding radio stations on both sides.
+- Partly unclear, flagged: the "current supplied stockholders" line and the distributed-audio line are partly unclear in the image — kept as written above and flagged.
+
+---
+
+## Image Note 213 — US govt → FCC Act → FCC Agency → FRC Agency → radio broadcast; commercial vs NCE; sender / receiver; analog & digital modulation (handwritten, as is)
+
+### Chain (as written, top)
+
+- US govt → FCC Act → FCC Agency → FRC Agency → radio broadcast
+- Commercial broadcast ①, NCE (non-commercial education) public ②
+- NCE, commercial → private N/Ws → TV programs / radio programs
+- Public N/W [annotation]
+
+### Broadcast path (as written)
+
+- Radio broadcast → terrestrial → AM / FM / DAB / DRM (digital / analog)
+- Radio broadcast → radio waves → radio stations → sender / receiver
+- Spectrum → radio stations
+
+### Programming (as written)
+
+- Individual programming N/W, affiliated N/W with a radio
+- Provides content: broadcast syndication and/or simulcasting
+- Analog = radio stations + NTSC TV
+- FRC, radio stations, radio NTSC TV → digital
+- FCC [box]
+
+### Modulation (as written)
+
+- Analog modulation, digital modulation → signals
+- DAB / HD / DRM [annotations]
+
+### [Filled — added, not in the original image]
+- The chain, filled: US government → FCC Act → FCC Agency → FRC Agency → radio broadcast — the note writes FCC Agency before FRC Agency, kept as written; the historical direction (FRC preceding the FCC, Note 211) is filled here as context, not as a correction of the image's order.
+- Two kinds, filled: commercial broadcast (①) and NCE non-commercial educational public broadcast (②) — NCE and commercial feeding private networks and TV/radio programs, with public networks annotated alongside.
+- The path, filled: radio broadcast goes terrestrially (AM, FM, DAB, DRM — digital and analog), via radio waves to radio stations, splitting into sender and receiver, with spectrum feeding the stations.
+- Programming, filled: individual programming networks and affiliated networks with a radio provide content through broadcast syndication and/or simulcasting; analog is radio stations plus NTSC TV, and FRC-era radio stations and NTSC TV moved toward digital — the analog-to-digital arc, with analog modulation and digital modulation both producing signals (DAB, HD, DRM as the digital formats).
+- The frame, filled: this page is the full radio-broadcast map — regulator, two station kinds, terrestrial path, sender/receiver, programming, and modulation — the companion to Notes 210–212's single-aspect pages.
+
+---
+
+# INbatch30 — Image Notes 214–221 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 2 duplicates in this set, both skipped entirely with no content copied and no note numbers consumed — file 267 is the same FCC page already filed as Note 211 (INbatch29); file 275 is the same mobile & cloud + 5G & modern page filed as Note 218 in this same batch. 8 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 214 — Employer – Employee: govt regulation as most influential external factor; regulation type / consistency / speed / effectiveness (heavily scribbled) (handwritten, as is)
+
+### Employer – Employee
+
+- In a special report, govt regulation are to the top as the most influential external factor behind an org & workforce ability to thrive
+- Regulation: 1. type, 2. consistency, 3. speed, 4. effectiveness
+- → than govt action
+- Govt action could all influence the worker – employee relationship
+
+### [Filled — added, not in the original image]
+- The claim, filled: in a special report, government regulation ranks at the top as the most influential external factor behind an organization's and workforce's ability to thrive — regulation measured on four dimensions: type, consistency, speed, and effectiveness.
+- The link, filled: government action, more than any other external factor, influences the worker–employee relationship — the regulation dimensions (what kind, how consistent, how fast, how effective) are what make that influence help or hurt a workforce's ability to thrive.
+- Partly unclear, flagged: the page is heavily scribbled over, and the "→ than govt action" line is partly unclear — kept as written above and flagged rather than expanded into an assertion about which report or which regulation.
+
+---
+
+## Image Note 215 — Centralized Tech Leadership Era (dev): Telegraph → Distribution era → Internet/web/cloud era (handwritten, as is)
+
+### Centralized Tech Leadership Era (dev)
+
+- 1940's Telegraph → connectivity function
+- Focus & core business → establishing comm protocols
+- Org structure (centralized) → link state → Tech strategy protocols → Leadership mindset → adaptability, maintaining work-life balance
+- Adaptability = work-life balance
+
+### ② 1980–1990 Distribution era
+
+- Core focus = managing decentralization
+- Decentralization = centralized team → distribution
+- (Heterogeneous sys) → dev protocols = interoperability protocols
+
+### ③ 2000 Internet / web / cloud era
+
+- Core focus = Building hypergrowth
+
+### [Filled — added, not in the original image]
+- Era 1, filled: the centralized tech leadership era — 1940s telegraph as the connectivity function, focus and core business on establishing communication protocols, a centralized org structure with link state, tech strategy protocols, and a leadership mindset whose adaptability shows as maintaining work-life balance (adaptability = work-life balance, the note's own equation).
+- Era 2, filled: the 1980–1990 distribution era — core focus on managing decentralization, decentralization as a centralized team distributing outward, heterogeneous systems needing development protocols that are interoperability protocols.
+- Era 3, filled: the 2000 internet/web/cloud era — core focus on building hypergrowth (cut off at the page bottom, completed from the era's own heading, marked as filled).
+- The arc, filled: centralized (telegraph, one structure, one protocol set) → distribution (decentralized teams, heterogeneous systems, interoperability) → internet/web/cloud (hypergrowth) — the leadership arc that Note 217's six-era UI framework ladder details technically.
+
+---
+
+## Image Note 216 — Project Scheduler: tasks + resources; electricity / networking / finance / business schedulers; who schedules (handwritten, as is)
+
+### Project Scheduler
+
+- Tasks + Resources ⇒ scheduler project
+- Tasks + resources = electric flows
+- Scheduler = [partly unclear]
+- Electricity = generators → flows → ISO schedule → concern
+- Networking = routers → packets → ISP schedule bandwidth
+- Tasks = jobs, contracts, transactions
+- Resource = money, labor, raw material, compute
+- Schedulers = entity → allocates these resources fairly / efficiently
+
+### Who schedules
+
+- Electricity — ISO / RTO (ISO independent / semi / public)
+- Networking — BGP + ISP route (IANA / ICANN, ISP carriers)
+- Financial business — (VISA, SWIFT) private / central group
+- Business projects — scheduler allocate resources, govt agency / company
+- Megaprojects by govt
+- Corporate / ERP projects
+- Semi (PPP / consortia)
+- Govt projects [annotation]
+
+### [Filled — added, not in the original image]
+- The model, filled: a project scheduler takes tasks plus resources and produces a scheduled project; tasks plus resources are like electric flows — electricity is generators → flows → ISO schedule, networking is routers → packets → ISP schedule of bandwidth — the same scheduling shape in two domains.
+- Tasks and resources, filled: tasks are jobs, contracts, transactions; resources are money, labor, raw material, compute; a scheduler is the entity that allocates these resources fairly and efficiently.
+- Who schedules, filled: electricity is scheduled by ISO/RTO (independent system operators, independent/semi/public); networking is scheduled by BGP plus ISP routes (IANA/ICANN, ISP carriers); financial business is scheduled by private/central groups (VISA, SWIFT); business projects are scheduled by a scheduler allocating resources for a government agency or company — megaprojects by government, corporate/ERP projects, semi (PPP/consortia), government projects.
+- The frame, filled: this is the scheduler concept of Note 5's universal product/scheduler page, here generalized — every domain (electricity, networking, finance, business) has a scheduler entity allocating scarce resources fairly and efficiently.
+
+---
+
+## Image Note 217 — Eras: UI frameworks + hardware controlled / SW driven; business controller per era (handwritten, as is)
+
+### Eras — UI frameworks + hardware controlled / SW driven
+
+- ① Telegraph → Govt PTT, circuit switching
+- ② OEM mainframes → Batch processing, corporate IT Dept, sched
+- ③ Client server → N/WOS, IT manager / LAN Admin
+- ④ Web 1.0 / 2.0 browsers + data centers (infra) → web servers, ICANN / IETF bodies, Apache, MySQL, W3C, signals [partly unclear]
+- ⑤ Mobile & cloud → App stores, cloud IAM, API + microservices + smart [cut off], cloud arch (K8s + Terra)
+- ⑥ 5G & AI → AI models (GPT-4, Claude), GPU + IoT sensors + edge nodes, AI pipeline, MEC orchestration, (PyTorch, TensorFlow) service mesh
+
+### Business controller (private) (company rules)
+
+- Circuit switching ① Telegraph → usage duration
+- Batches ② Mainframes → accounting chargeback
+- NOS ③ Client-server software license → contracts
+- Apache MySQL ④ Web servers → Ad N/W / subscription
+- ⑤ Mobile / cloud / IoT → SaaS + usage
+- ⑥ AI → API token
+
+### [Filled — added, not in the original image]
+- Six eras, filled: telegraph (government PTT, circuit switching); OEM mainframes (batch processing, corporate IT department, schedulers); client-server (network operating systems, IT manager/LAN admin); web 1.0/2.0 browsers plus data centers as infrastructure (web servers, ICANN/IETF bodies, Apache, MySQL, W3C); mobile & cloud (app stores, cloud IAM, API + microservices, cloud architecture with Kubernetes + Terraform); 5G & AI (AI models like GPT-4 and Claude, GPU + IoT sensors + edge nodes, AI pipelines, MEC orchestration, PyTorch/TensorFlow, service mesh).
+- Business controller, filled: each era has a private business controller (company rules) — telegraph billed by usage duration (circuit switching), mainframes by accounting chargeback (batches), client-server by software license contracts (NOS), web servers by ad networks/subscriptions (Apache/MySQL), mobile/cloud/IoT by SaaS + usage, AI by API token — the monetization model that follows the technology model, era by era.
+- The frame, filled: this page is the era ladder that Notes 218–220 detail era by era (mobile/cloud, PC/client-server, telegraph/mainframe) — filed here as the overview, with the business-controller half as its new content.
+
+---
+
+## Image Note 218 — ④ Mobile & cloud; ⑤ 5G & modern (2020s – now): UI, frameworks, arch, attributes (handwritten, as is)
+
+### ④ Mobile & cloud
+
+- ① UI mediums — mobile apps, SaaS
+- ② Frameworks: public = Bootstrap, AngularJS; private = iOS UIKit, Android SDK, Salesforce
+- ③ Arch — frontend frameworks (component based), REST / GraphQL / gRPC, cloud native backend
+- ④ Attributes — responsive design, component reusability, app store distribution
+
+### ⑤ 5G & modern (2020s – now)
+
+- ① UI — real-time dashboards, XR, AI UIs
+- ② Frameworks: public web — React, Next.js, Carbon Design (IBM); mobile — Flutter, Jetpack, React Native; XR — WebXR, Three.js; private — Apple SwiftUI, Google, MS Fluent UI
+- Arch — micro frontend apps, cloud + edge + AI, real-time (websockets, gRPC)
+- Attributes — low latency UI, AI / ML, multi-device
+
+### [Filled — added, not in the original image]
+- Mobile & cloud, filled: UI mediums are mobile apps and SaaS; frameworks are public (Bootstrap, AngularJS) and private (iOS UIKit, Android SDK, Salesforce); architecture is component-based frontend frameworks with REST/GraphQL/gRPC and a cloud-native backend; attributes are responsive design, component reusability, and app-store distribution.
+- 5G & modern, filled: UI is real-time dashboards, XR, and AI UIs; frameworks are public web (React, Next.js, Carbon Design from IBM), mobile (Flutter, Jetpack, React Native), XR (WebXR, Three.js), and private (Apple SwiftUI, Google, Microsoft Fluent UI); architecture is micro-frontend apps, cloud + edge + AI, and real-time (websockets, gRPC); attributes are low-latency UI, AI/ML, and multi-device.
+- The frame, filled: eras ④ and ⑤ of Note 217's ladder, detailed in the same four-part pattern (UI mediums, frameworks public/private, architecture, attributes) that Notes 219–220 use for the earlier eras.
+
+---
+
+## Image Note 219 — PC & client server era; Internet & web era (1990–2000): UI, frameworks, arch, attributes (handwritten, as is)
+
+### PC & client server era
+
+- ① UI mediums — GUI desktops (Mac, Windows)
+- ② Frameworks: public → X11 (Linux GUI), Motif; private → MS Win32, Apple toolbox
+- ③ Arch — monolithic UI → client ↔ server
+- ④ Attributes — event driven (mouse, keyboard), multitasking, vendor lock-in (Win only + Mac only)
+
+### Internet & web era (1990–2000)
+
+- ① UI mediums → web browsers, interactive sites
+- ② Frameworks: public (W3C → HTML / CSS / JS), jQuery, Dojo; private (Adobe, MS)
+- ③ Arch (client-server) (Chrome → HTTP)
+- ④ Attributes — HTML, cross platform, scripting (interactive)
+
+### [Filled — added, not in the original image]
+- PC & client-server, filled: UI mediums are GUI desktops (Mac, Windows); frameworks are public (X11 for Linux GUI, Motif) and private (Microsoft Win32, Apple toolbox); architecture is monolithic UI to client ↔ server; attributes are event-driven (mouse, keyboard), multitasking, and vendor lock-in (Windows-only + Mac-only).
+- Internet & web, filled: UI mediums are web browsers and interactive sites; frameworks are public (W3C → HTML/CSS/JS, jQuery, Dojo) and private (Adobe, Microsoft); architecture is client-server (Chrome → HTTP); attributes are HTML, cross-platform, and scripting (interactive) — the vendor lock-in of the PC era breaking into cross-platform.
+- The frame, filled: eras ③ (PC/client-server) and the internet/web era of Note 217's ladder, in the same four-part pattern as Note 218 — the attributes tell the story (lock-in → cross-platform).
+
+---
+
+## Image Note 220 — UI Frameworks Evaluation (Virtualization): Telegraph Networks (1850–1940); Mainframe & early computing (handwritten, as is)
+
+### UI Frameworks Evaluation (Virtualization)
+
+### ① Telegraph Networks (1850–1940)
+
+- ① UI mediums — Morse key, teletype, rotary; keys, switches, dials
+- Public — IMC, WU schemes, Bell switchboard; private [blank in image]
+- Arch — hardware only
+
+### ② Mainframe & early computing
+
+- ① UI mediums → punch cards, CLI
+- ② Frameworks: public — ASCII, TTYUI; private → IBM, UI, terminal — H/W
+- ③ Arch → client → terminal — H/W
+- ④ Attributes → text only, cards, interactive, API → sys calls
+
+### [Filled — added, not in the original image]
+- Telegraph, filled: UI mediums are Morse key, teletype, rotary (keys, switches, dials); public schemes are IMC, Western Union schemes, Bell switchboard (the private cell is blank in the image, left blank above, not invented); architecture is hardware only — no software layer yet, the UI is the hardware.
+- Mainframe, filled: UI mediums are punch cards and CLI; frameworks are public (ASCII, TTYUI) and private (IBM UI, terminal hardware); architecture is client → terminal, hardware-bound; attributes are text only, cards, interactive, API → system calls — the first software API appearing as system calls.
+- The frame, filled: eras ① and ② of Note 217's ladder, in the same four-part pattern (the telegraph entry lacks the frameworks/arch/attributes split because its architecture is hardware only — the pattern's starting point); the header's "(Virtualization)" is kept as written and read as the evaluation lens (each era's UI as a virtualization layer over the hardware below it), flagged as a reading.
+
+---
+
+## Image Note 221 — Global Oversight: world → frameworks → international standard bodies → regional regulation → national enforcement → industry standards → market flow (handwritten, as is)
+
+### Drawn flow
+
+```
+World → frameworks
+  ① regulates trading: ISO, IEC, IEEE, IETF, IAPP, ICANN / RIR
+  ② International standard bodies
+  ③ Regional Regulation → countries: GDPR / CCPA, FCC / CC, FERPA
+  National enforcement & certification
+    ① CBP, national bodies + labs
+    ② [partly unclear]
+    ③ cybersecurity
+  Industry & sector standards
+    ① Automotive
+    ② Electronics / IT (UL, RoHS)
+    ③ Health / pharma (PCI DSS)
+    ④ Cloud / data (ISO, SOC2)
+    ⑤ Food / agriculture
+  Market flow → actors: work, C-suite,
+    suppliers & vendors, manufacturers,
+    distributors & logistics, retailers / platform, consumers
+```
+
+### Side annotations
+
+- UN agencies: ① UN agencies, ② FAO, ③ WTO / UNCTAD [partly unclear], ④ Codex
+- EU — CE, GDPR, REACH, ETS
+- FCC, FDA, NH [partly unclear] — national bodies
+- States [annotation under national enforcement]
+- Idea [annotation under industry standards]
+
+### [Filled — added, not in the original image]
+- The flow, filled: world frameworks (regulating trading — ISO, IEC, IEEE, IETF, IAPP, ICANN/RIR) → international standard bodies → regional regulation (countries: GDPR/CCPA, FCC/CC, FERPA) → national enforcement & certification (CBP, national bodies + labs, cybersecurity) → industry & sector standards (automotive; electronics/IT with UL and RoHS; health/pharma with PCI DSS; cloud/data with ISO and SOC2; food/agriculture) → market flow with actors (work, C-suite, suppliers & vendors, manufacturers, distributors & logistics, retailers/platform, consumers).
+- Side annotations, filled: UN agencies (FAO, WTO/UNCTAD, Codex) sit above the world frameworks; EU rules (CE, GDPR, REACH, ETS) and national bodies (FCC, FDA) sit at the regional/national steps; states sit under national enforcement; "idea" sits under industry standards — the governance stack from global to market, top to bottom.
+- The frame, filled: this is the global oversight diagram of Note 2's government-networks page, here as the full stack — world → international → regional → national → industry → market — filed as its own note because the market-flow actors and the sector list are new.
+- Partly unclear, flagged: the WTO/UNCTAD line, the national-enforcement item ②, and the "NH" national-body annotation are partly unclear in the image — kept as written above and flagged.
+
+---
+
+# INbatch31 — Image Notes 222–231 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 222 — Those components / building blocks come from: default with Java (JDK/JVM); default with frameworks (Spring Boot, Jakarta EE) (handwritten, as is)
+
+### Those components / building blocks come from
+
+### ① Comes by default with Java (JDK / JVM)
+
+- Built in or part of standard Java ecosystem
+- Domain model (POJO, OOP)
+- Persistence layer (JDBC)
+- Security basics
+- Scheduling
+- Logging
+- Testing
+- Concurrency
+
+### ② Comes by default with frameworks (Spring Boot, Jakarta EE, etc)
+
+- Frameworks abstract & provide ready made implementations
+- Presentation
+- Controllers / Endpoints
+- Business logic / services
+- Persistence layer (JPA / Hibernate)
+- Integration
+- Messaging
+- Security
+- Config
+- Caching
+- Scheduling
+- Monitoring
+- Deployment
+
+### [Filled — added, not in the original image]
+- Two sources, filled: some building blocks come by default with Java itself (JDK/JVM, built into or part of the standard Java ecosystem — domain model as POJO/OOP, persistence via JDBC, security basics, scheduling, logging, testing, concurrency); the rest come by default with frameworks (Spring Boot, Jakarta EE, etc), which abstract and provide ready-made implementations (presentation, controllers/endpoints, business logic/services, persistence via JPA/Hibernate, integration, messaging, security, config, caching, scheduling, monitoring, deployment).
+- The overlap, filled: scheduling appears in both lists — Java gives the scheduling primitives (timers, executors, concurrency), frameworks give the scheduling implementations (Quartz, @Scheduled) — the same block at two levels, not a duplication error.
+- The frame, filled: this page answers "where do the components come from" for Note 223's business-application component list — platform vs framework, two sources for one list.
+
+---
+
+## Image Note 223 — Java Enterprise App components / blocks: Business Application full component list + four learning steps (handwritten, as is)
+
+### Business Application
+
+- UI / clients (web UI, CLI, mobile app, desktop app, third party)
+- API (REST, GraphQL, SOAP, websockets, gRPC)
+- Business logic (services, domain logic, workflow, validation)
+- Domain model (entities, DTO, value objects, enums)
+- Persistence (Repo / DAO, ORM, JDBC)
+- Databases (SQL, NoSQL, cache stores)
+- Messaging (Kafka, RMQ, AMQP, JMS, event bus)
+- Integrations (external API, payments, identity, email)
+- Security (auth, authz, encryption, JWT, audit)
+- Scheduling (cron jobs, batch jobs, Quartz)
+- File storage (local, cloud S3, doc repos)
+- Search (full text, text indexes)
+- Configuration (properties / yaml, profiles, secrets mgmt)
+- Logging & monitoring
+- Error handling (exception, retry mech, fallbacks)
+- Testing (unit, integration, end-to-end)
+- Build (Maven / Gradle)
+- Deployment (Docker, K8s, app servers, cloud)
+- DevOps (Git, Jenkins, GitHub Actions, [cut off])
+- Document (OpenAPI, Swagger, API / user docs)
+- Infrastructure services (service discovery, config server, API gateway, LB)
+
+### Four steps (footer)
+
+- ① Java → JDK → learn & use
+- ② Framework → Spring Boot, J2EE, Hibernate → configure & use
+- ③ Third party lib → Maven / Gradle dependencies → choose & integrate
+- ④ Business code → team → design & implement
+
+### [Filled — added, not in the original image]
+- The list, filled: the full component list of a Java enterprise business application, from UI/clients and API through business logic, domain model, persistence, databases, messaging, integrations, security, scheduling, file storage, search, configuration, logging & monitoring, error handling, testing, build, deployment, DevOps, documentation, down to infrastructure services (service discovery, config server, API gateway, load balancer) — the same list Note 222 splits by source (platform vs framework).
+- The steps, filled: learning and using in four steps — Java via the JDK (learn & use), framework via Spring Boot/J2EE/Hibernate (configure & use), third-party libraries via Maven/Gradle dependencies (choose & integrate), business code via the team (design & implement) — the order a developer meets the list, from platform to own code.
+- The frame, filled: this page is the master component list that Notes 224–228 detail block by block (security/configuration/logging/testing/deployment, business logic/domain/persistence/integration/messaging, presentation/controllers, standards) — filed as the overview, with the four-step footer as its new content.
+
+---
+
+## Image Note 224 — Security; Configuration; Logging & monitoring; Testing; Deployment (handwritten, as is)
+
+### Security
+
+- Authentication & auth with JWT, OAuth2, Spring Security
+
+### Configuration
+
+- Env variables, secrets & application.yml files
+
+### Logging & monitoring
+
+- Observability with Logback, Prometheus, Grafana
+
+### Testing
+
+- JUnit, Mockito & integration tests to ensure reliability
+
+### Deployment
+
+- Containerization, orchestration with Docker, K8s & cloud
+
+### [Filled — added, not in the original image]
+- Five cross-cutting blocks, filled: security is authentication & authorization with JWT, OAuth2, and Spring Security; configuration is environment variables, secrets, and application.yml files; logging & monitoring is observability with Logback, Prometheus, and Grafana; testing is JUnit, Mockito, and integration tests to ensure reliability; deployment is containerization and orchestration with Docker, Kubernetes, and cloud.
+- The frame, filled: the cross-cutting blocks of Note 223's list, detailed here one line each — the blocks that wrap every other block rather than belonging to one layer.
+
+---
+
+## Image Note 225 — ③ Business logic (services); ④ Domain model; ⑤ Persistence layer (PL); ⑥ Integration layer; ⑧ Messaging / Event layer (handwritten, as is)
+
+### ③ Business logic (services)
+
+- The brains of the application — rules like calculating interest or processing orders
+- Implements the application logic
+- Examples: calculate interest (banking), place an order (e-commerce), approve a leave request (HRMS)
+
+### ④ Domain model
+
+- Java classes representing business entities
+- Examples: customer, account, order, product, employee
+
+### ⑤ Persistence layer (PL)
+
+- Repositories / DAOs that handle DB operations via JPA / Hibernate / JDBC
+- PL reads & writes data
+- DB: relational (PostgreSQL, MySQL, Oracle), NoSQL (Mongo, Cassandra)
+
+### ⑥ Integration layer [numbered ⑥ in the image's sequence, heading circled as a layer]
+
+- Bridges to external systems / calls external systems
+- Examples: payment gateway, SMS service, email service, identity service, ERP integration
+
+### ⑧ Messaging / Event layer
+
+- Async communication with Kafka / RabbitMQ, JMS, ActiveMQ
+
+### [Filled — added, not in the original image]
+- Business logic, filled: the brains of the application — the rules like calculating interest or processing orders, implementing the application logic (banking interest, e-commerce order placement, HRMS leave approval as the three examples).
+- Domain model, filled: Java classes representing business entities (customer, account, order, product, employee) — the nouns the business logic acts on.
+- Persistence, filled: repositories/DAOs handling database operations via JPA/Hibernate/JDBC, reading and writing data, against relational databases (PostgreSQL, MySQL, Oracle) or NoSQL (Mongo, Cassandra).
+- Integration, filled: bridges to external systems, calling external systems (payment gateway, SMS service, email service, identity service, ERP integration) — the outward-facing layer.
+- Messaging, filled: asynchronous communication with Kafka/RabbitMQ, JMS, ActiveMQ — the event layer that lets blocks talk without waiting.
+- Numbering, filled: the page numbers business logic ③, domain model ④, persistence ⑤, integration (unnumbered in the heading but sequenced here), messaging/event ⑧ — presentation ① and controllers ② are Note 226, and the gap (⑦) is the layer the image skips, kept missing here, not invented.
+
+---
+
+## Image Note 226 — Business Applications (built using Java): end-user apps; same building blocks, difference is business logic; presentation layer; controllers / endpoints (handwritten, as is)
+
+### Business Applications (built using Java)
+
+- Here Java used to build complete end-user apps: bank systems, insurance systems, healthcare systems, payment gateways
+- EDI, SCM, WMS, MES, CMS, ERP, BPM, IAM, POS, CRM
+- Microservices, monolithic apps, REST API, GraphQL API, SOAP web services, batch jobs
+- Every business application is fundamentally assembled from same kind of building blocks, whether banking or ecommerce or ERP, CRM etc
+- Components are largely same, the difference is business logic
+- These apps / systems are modular backends
+
+### Java Business Application consists of
+
+### ① Presentation layer
+
+- REST API, GraphQL API, SOAP services, web pages, desktop UI (Swing / JavaFX), mobile backends
+- UI endpoints → entry points for clients
+
+### ② Controllers / Endpoints
+
+- Gatekeeper that validates input, orchestrates services, returns responses
+- Receive request, validate input, call business logic, return response
+
+### [Filled — added, not in the original image]
+- The thesis, filled: Java builds complete end-user applications (bank systems, insurance systems, healthcare systems, payment gateways; EDI, SCM, WMS, MES, CMS, ERP, BPM, IAM, POS, CRM) as microservices, monolithic apps, REST APIs, GraphQL APIs, SOAP web services, and batch jobs — and every business application is fundamentally assembled from the same kind of building blocks, whether banking, e-commerce, ERP, or CRM; the components are largely the same, the difference is business logic; these apps/systems are modular backends.
+- Presentation, filled: REST API, GraphQL API, SOAP services, web pages, desktop UI (Swing/JavaFX), mobile backends — UI endpoints as the entry points for clients.
+- Controllers, filled: the gatekeeper that validates input, orchestrates services, and returns responses — receive request, validate input, call business logic, return response — the four-step controller cycle.
+- The frame, filled: layers ① and ② of Note 223's list, with the thesis that unifies the whole Java run — same blocks, different business logic.
+
+---
+
+## Image Note 227 — Regulations: ④ Industry standards; ⑤ Company standards; ⑥ Team standards; ⑦ Developer implementation (handwritten, as is)
+
+### Regulations — ④ Industry standards
+
+- Define how systems communicate & what data formats they use
+- Many industries have their own regulations & technical standards
+- Examples: banking (ISO 20022, PCI DSS), healthcare (HL7, FHIR, DICOM), identity (OAuth 2.0, OpenID Connect, SAML), web API (REST, GraphQL, SOAP, OpenAPI)
+
+### ⑤ Company standards
+
+- Every company has its own engineering standards, documented in internal engineering guides
+- Examples: coding conventions, package naming, error codes, API versioning, security rules, testing env, CI/CD pipelines, code review process
+
+### ⑥ Team standards
+
+- Each project typically has additional conventions such as naming, folder structures, common company orders: service, repository, entity
+- Design decisions are agreed upon by the team
+
+### ⑦ Developer implementation
+
+- Finally devs write the actual business logic
+- Example: TransferController, TransferService, AccountService, TransactionRepository — the logic inside classes
+
+### [Filled — added, not in the original image]
+- Industry standards, filled: defining how systems communicate and what data formats they use — many industries have their own regulations and technical standards (banking: ISO 20022, PCI DSS; healthcare: HL7, FHIR, DICOM; identity: OAuth 2.0, OpenID Connect, SAML; web API: REST, GraphQL, SOAP, OpenAPI).
+- Company standards, filled: every company has its own engineering standards, documented in internal engineering guides (coding conventions, package naming, error codes, API versioning, security rules, testing environment, CI/CD pipelines, code review process).
+- Team standards, filled: each project typically has additional conventions such as naming and folder structures, with common company orders (service, repository, entity), and design decisions agreed upon by the team.
+- Developer implementation, filled: finally developers write the actual business logic — TransferController, TransferService, AccountService, TransactionRepository, the logic inside classes — the bottom of the standards stack, where the rules become code.
+- The frame, filled: standards ④–⑦ of a flow whose ①–③ are Note 228 (language, framework, architectural standards) — the standards ladder from industry down to the developer's own classes.
+
+---
+
+## Image Note 228 — Flow | Business logic: ① Java (language); ② Framework standards; ③ Architectural standards (handwritten, as is)
+
+### Flow | Business logic
+
+### ① Java (language) (controlled by Oracle + Java community)
+
+- Defines how Java code is written
+- Examples: classes, interfaces, generics, lambdas, packages
+
+### ② Framework standards (Spring Boot, Jakarta EE)
+
+- They define how applications are structured
+- Example — Spring Boot encourages: src/main/java: controller / service / repository / entity / config / security / exception; src/main/resources: application.yml, schema.sql, data.sql, static, templates; prewritten infra; pom.xml, Dockerfile, README.md
+
+### ③ Architectural standards
+
+- Companies choose architectures: ① layered, ② MVC, ③ microservices, ④ domain driven
+- These define how components interact
+
+### [Filled — added, not in the original image]
+- Language, filled: Java, controlled by Oracle plus the Java community, defines how Java code is written (classes, interfaces, generics, lambdas, packages).
+- Framework standards, filled: Spring Boot and Jakarta EE define how applications are structured — Spring Boot encourages src/main/java (controller/service/repository/entity/config/security/exception) and src/main/resources (application.yml, schema.sql, data.sql, static, templates), plus prewritten infrastructure (pom.xml, Dockerfile, README.md).
+- Architectural standards, filled: companies choose architectures (layered, MVC, microservices, domain-driven) — these define how components interact.
+- The frame, filled: standards ①–③ of the flow that Note 227 continues (④ industry, ⑤ company, ⑥ team, ⑦ developer implementation) — the full standards ladder from language to developer, in two pages.
+
+---
+
+## Image Note 229 — 0. Hardware layer; Java ecosystem layers (top to bottom): business apps → frameworks → libraries → Java platform → JVM → OS → kernel → H/W (handwritten, as is)
+
+### 0. Hardware layer (diagram)
+
+```
+(Packages, framework, lib) Java Application / Platform
+    ↓ (GC, runtime lib)
+JVM
+    ↓ (glibc, drivers)
+OS
+    ↓
+Hardware
+```
+
+```
+Business Apps → frameworks → libraries → Java platform → JVM
+```
+
+### Java ecosystem layers (top to bottom)
+
+- ① Business apps: banking, e-commerce, REST API etc
+- ② Frameworks: web — Spring Boot, Spring MVC, J2EE, Quarkus; data — Spring Data JPA, Hibernate ORM; security — Spring Security, Auth2, JWT, LDAP, SAML; cloud — Spring Cloud, K8s Java client; batch — Spring Batch, Quartz; messaging / event — Spring Kafka, Spring AMQP, JMS
+- ③ Libraries: logging (SLF4J, Logback, Log4j2), JSON (Jackson, Gson), utilities (Apache Commons, Guava), HTTP clients (Apache HttpClient, OkHttp), testing (JUnit, Mockito), serialization (Kryo, Avro)
+- ④ Java platform: packages, collections, concurrency
+- ⑤ JVM: class loader, byte verifier, interpreter, JIT compiler, garbage collector; GC types: G1, ZGC, Shenandoah, serial, parallel; memory: heap, stack, metaspace, code cache; native bridge: JNI, JNA
+- ⑥ OS → ⑦ kernel → ⑧ H/W
+
+### [Filled — added, not in the original image]
+- The stack, filled: business apps sit on frameworks, which sit on libraries, which sit on the Java platform, which sits on the JVM, which sits on the OS, which sits on the kernel, which sits on hardware — eight layers top to bottom (the page numbers hardware as 0 and the stack as ①–⑧, kept as written).
+- Frameworks by concern, filled: web (Spring Boot, Spring MVC, J2EE, Quarkus), data (Spring Data JPA, Hibernate ORM), security (Spring Security, OAuth2, JWT, LDAP, SAML), cloud (Spring Cloud, Kubernetes Java client), batch (Spring Batch, Quartz), messaging/event (Spring Kafka, Spring AMQP, JMS).
+- Libraries by concern, filled: logging (SLF4J, Logback, Log4j2), JSON (Jackson, Gson), utilities (Apache Commons, Guava), HTTP clients (Apache HttpClient, OkHttp), testing (JUnit, Mockito), serialization (Kryo, Avro).
+- JVM, filled: class loader, byte verifier, interpreter, JIT compiler, garbage collector; GC types G1, ZGC, Shenandoah, serial, parallel; memory as heap, stack, metaspace, code cache; native bridge as JNI and JNA — the runtime that makes the whole stack portable.
+- The frame, filled: the Java ecosystem stack that Note 230 walks in both directions (downward app → hardware, upward hardware → app) — filed here as the layer map.
+
+---
+
+## Image Note 230 — A1 Java Application Ecosystem: hardware; downward flow (app → hardware); upward flow (hardware → app) (handwritten, as is)
+
+### A1 Java Application Ecosystem
+
+### ① Hardware
+
+- CPU, RAM, Disk, NIC, other peripherals
+- JVM requests memory, CPU time & network from the OS
+
+### Diagram
+
+```
+Hardware (CPU, RAM, Disk, Network)
+    ↑
+Operating system
+    ↑
+JVM
+    ↑
+Java application
+```
+
+### Downward flow (Java app → hardware)
+
+- ① App code
+- ② Business logic
+- ③ Java packages: java.lang, java.util, java.io, java.net, java.sql, java.security, etc
+- ④ Java platform modules: java.base, java.sql, java.xml, etc
+- ⑤ JVM runtime: class loader, byte code, interpreter, JIT compiler (C1 / C2), GC (G1, ZGC)
+- ⑥ JNI, ⑦ OS, ⑧ kernel, ⑨ H/W
+
+### Upward flow (H/W → app)
+
+- ① H/W events
+- ② Device drivers
+- ③ Kernel
+- ④ OS
+- ⑤ JNI / Panama
+- ⑥ JVM runtime: execution engine, GC, class loader
+- ⑦ Java platform modules
+- ⑧ Java packages
+- ⑨ Business logic
+- ⑩ App / API
+
+### [Filled — added, not in the original image]
+- Hardware, filled: CPU, RAM, disk, NIC, other peripherals — the JVM requests memory, CPU time, and network from the OS, which sits between the JVM and the hardware (hardware ↑ OS ↑ JVM ↑ Java application, the diagram's upward reading).
+- Downward, filled: app code → business logic → Java packages (java.lang, java.util, java.io, java.net, java.sql, java.security) → Java platform modules (java.base, java.sql, java.xml) → JVM runtime (class loader, byte code, interpreter, JIT compiler C1/C2, GC G1/ZGC) → JNI → OS → kernel → hardware — the request path from code to silicon.
+- Upward, filled: hardware events → device drivers → kernel → OS → JNI/Panama → JVM runtime (execution engine, GC, class loader) → Java platform modules → Java packages → business logic → app/API — the event path from silicon back to code, the mirror of the downward flow.
+- The frame, filled: the same stack as Note 229, walked in both directions — downward is what the app asks for, upward is what the hardware answers with.
+
+---
+
+## Image Note 231 — OOPs concepts [crossed out]: Data types — primitive, derived, reference, collection (handwritten, as is)
+
+### OOPs concepts [word "concepts" crossed out in the image]
+
+### Data types (diagram)
+
+```
+Data types
+  → Primitive (stores single value)
+  → Derived (stores multiple values with same type)
+  → Reference (stores multiple values with different [type])
+  → Collection (stores multiple objects)
+```
+
+### [Filled — added, not in the original image]
+- Four kinds, filled: primitive stores a single value; derived stores multiple values with the same type (arrays); reference stores multiple values with different types (objects, the cut-off word filled as "type" from the derived line's parallel structure, marked as filled); collection stores multiple objects.
+- The frame, filled: the data-type taxonomy that Note 222's domain model (POJO, OOP) is built from — the smallest unit of the Java run, filed here as its own note because the four-way split (primitive/derived/reference/collection) is new.
+
+---
+
+# INbatch32 — Image Notes 232–240 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 1 duplicate in this set, skipped entirely with no content copied and no note number consumed — file 294 is the same "Core SDLC servers" page filed as Note 238 in this same batch. 9 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 232 — Cloud service domains table: compute, storage, DB, N/W, identity, security, DB processing, app platform, workflow, observability, operations, collaboration, AI/ML, IoT, migration, FinOps (AWS / Azure / GCP) (handwritten, as is)
+
+### Table (as written; GCP column partly cut off at the right edge)
+
+| # | Service domain | Definition | AWS | Azure | GCP |
+|---|---|---|---|---|---|
+| ① | Compute | where workloads run / hosting | EC2, ECS, EKS | VM, AKS, Azure Functions | CE, GKE, Cloud Run [partly cut off] |
+| ② | Storage | where files, objects & persistent data kept | S3, EFS, EBS | Blob, Disk, Files | Cloud Storage, Filestore |
+| ③ | DB | — | | | |
+| ④ | DB & Processing | — | | | |
+| ⑤ | N/W | — | | | |
+| ⑥ | Identity | — | | | |
+| ⑦ | Compute | where workloads run / hosting occurs | | | |
+| ⑧ | Storage | where files, objects & data are kept | | | |
+| ⑨ | N/W | where isolated N/W, firewall & routing occur | VPC, Route, ELB | VNet, DNS, NSG | VPC [partly cut off] |
+| ⑩ | Security | keys, secrets, threat detection monitored | KMS, WAF | KV, Defender | KMS |
+| ⑪ | Identity | user accounts, roles, access per are controlled | IAM | Entra | Cloud IAM |
+| ⑫ | DB | SQL & NoSQL tables data are stored | RDS, Dynamo | SQL, Cosmos | SQL [partly cut off] |
+| ⑬ | DB processing | data transformations run (ETL) | EMR, Athena | Synapse, HDInsight | DataProc [partly cut off] |
+| ⑭ | App platform | web apps hosted directly (runtimes) | Beanstalk, App Runner | App Service | App Engine, Cloud Run |
+| ⑮ | App workflow | microservices communicate via queues | SQS, SNS | Service Bus, Event Grid | Pub/Sub [partly cut off] |
+| ⑯ | Observability | logs, metrics, errors are tracked | CloudWatch | Azure Monitor | Logging [partly cut off] |
+| ⑰ | Operations | configurations run | CF | ARM Templates | Deployment Manager |
+| ⑱ | Collaboration | enterprise email & office docs hosted | WorkMail | 365 | Workspace |
+| ⑲ | AI / ML | ML models & GenAI engines run | SageMaker, Bedrock | AI, OpenAI | Vertex |
+| ⑳ | IoT | fleet mgmt & msg ingestion | IoT Core | IoT Hub | IoT Core |
+| ㉑ | Migration & DT | workloads, data moved into cloud | Snowball, MGN | Migrate | DMS |
+| ㉒ | FinOps | cloud spending & budget optimized | Cost Explorer | Cost Management | Cost [partly cut off] |
+
+### [Filled — added, not in the original image]
+- Two passes, filled: the table's top rows (①–⑥) are a first pass naming the core domains (compute, storage, DB, DB & processing, N/W, identity) without definitions or services, and the lower rows (⑦–㉒) are the second pass with definitions and the AWS/Azure/GCP service for each — the same domains restated with detail, plus the extended domains (security, app platform, app workflow, observability, operations, collaboration, AI/ML, IoT, migration, FinOps).
+- The domains, filled: compute is where workloads run/hosting occurs; storage is where files, objects, and data are kept; N/W is where isolated networks, firewall, and routing occur; security is keys, secrets, and threat detection monitored; identity is user accounts, roles, and access permissions controlled; DB is SQL & NoSQL tables where data is stored; DB processing is data transformations (ETL); app platform is web apps hosted directly (runtimes); app workflow is microservices communicating via queues; observability is logs, metrics, and errors tracked; operations is configurations run; collaboration is enterprise email & office docs hosted; AI/ML is ML models & GenAI engines run; IoT is fleet management & message ingestion; migration & DT is workloads and data moved into cloud; FinOps is cloud spending & budget optimized.
+- Partly cut off, flagged: the GCP column is partly cut off at the right edge for several rows — those cells are marked partly cut off above and not reconstructed, since the GCP service for those rows is not legible in the image.
+
+---
+
+## Image Note 233 — SDLC: planning, requirements, design & arch, development, testing & validation, deployment & infra, maintenance & monitoring; methodologies & principles; design patterns; arch design (handwritten, as is)
+
+### SDLC
+
+- ① Planning & Analysis → arch planning, scaling strategies
+- ② Requirements → API contract design, payload sizing
+- ③ Design & Arch → microservices & monolithic choice, design patterns
+- ④ Development → core: Java; frameworks: Spring Boot, Spring MVC, Spring Security; data access: Spring Data JPA, Hibernate; DB mgmt: connection pooling, query optimization
+- ⑤ Testing & validation → unit / integration: JUnit, Mockito; API validation: Postman, RestAssured; quality & sec: SonarQube, Checkstyle
+- ⑥ Deployment & infra → build: Maven, Gradle; containerization & pipe: Docker, K8s, Jenkins
+- ⑦ Maintenance & monitoring [no detail in the image]
+
+### Methodologies & principles for backend & AI Java
+
+- Agile Scrum / Kanban
+- Domain Driven Design
+- SOLID principles
+- Test Driven Design
+- Design patterns: creational, structural, behavioral
+- Arch design: microservices, hexagonal, EDA, RAG, MCP
+- Iterative / data model
+- Contract-first AI services
+
+### [Filled — added, not in the original image]
+- Seven stages, filled: planning & analysis (architecture planning, scaling strategies); requirements (API contract design, payload sizing); design & architecture (microservices vs monolithic choice, design patterns); development (core Java; frameworks Spring Boot, Spring MVC, Spring Security; data access Spring Data JPA, Hibernate; database management as connection pooling and query optimization); testing & validation (unit/integration with JUnit and Mockito; API validation with Postman and RestAssured; quality & security with SonarQube and Checkstyle); deployment & infrastructure (build with Maven and Gradle; containerization & pipeline with Docker, Kubernetes, Jenkins); maintenance & monitoring (no detail in the image, left without detail above, not invented).
+- Methodologies, filled: agile Scrum/Kanban, domain-driven design, SOLID principles, test-driven design; design patterns as creational, structural, behavioral; architecture designs as microservices, hexagonal, EDA (event-driven architecture), RAG, MCP; iterative/data model and contract-first AI services as the backend & AI Java principles.
+- The frame, filled: the SDLC that Notes 234 and 238–240's server lists serve — the lifecycle whose stages own no servers but use servers across environments (Note 238's thesis).
+
+---
+
+## Image Note 234 — SDLC goal; DevOps goal; SRE goal (SLI, SLO, error budgets); DevOps 8 stages; CI / CD / IaC / DevSecOps (handwritten, as is)
+
+### Goals
+
+- ① SDLC goal is to produce high quality S/W predictably & efficiently
+- ② DevOps goal is to maximize developer productivity, improve deployment speed, automate infra provisioning
+- ③ SRE goal is to balance rapid feature release with rigid system reliability, availability & uptime targets (measured by SLI, SLO, & error budgets)
+
+### DevOps
+
+- ① Plan & design (core eng concepts)
+- ② Code & version control
+- ③ Build & package
+- ④ Test (security & quality)
+- ⑤ Release (CI / CD pipelines)
+- ⑥ Deploy (storage & content delivery)
+- ⑦ Operate (runtime, cloud platforms & systems) — managing app post deployment
+- ⑧ Monitor & observe
+
+### Common methodologies & principles
+
+- ① CI → automating code compilation
+- ② CD → packaging compiled apps into containers
+- ③ IaC → for infra deployment
+- ④ DevSecOps — [cut off at page edge]
+
+### [Filled — added, not in the original image]
+- Three goals, filled: SDLC's goal is to produce high-quality software predictably and efficiently; DevOps' goal is to maximize developer productivity, improve deployment speed, and automate infrastructure provisioning; SRE's goal is to balance rapid feature release with rigid system reliability, availability, and uptime targets, measured by SLI, SLO, and error budgets.
+- Eight stages, filled: plan & design (core engineering concepts), code & version control, build & package, test (security & quality), release (CI/CD pipelines), deploy (storage & content delivery), operate (runtime, cloud platforms & systems — managing the app post-deployment), monitor & observe — the DevOps loop that Note 233's SDLC stages feed.
+- Methodologies, filled: CI automates code compilation, CD packages compiled apps into containers, IaC is for infrastructure deployment, DevSecOps (cut off at the page edge, completed from the heading's own term as the security-in-DevOps practice, marked as filled).
+
+---
+
+## Image Note 235 — ④ SRE servers (Reliability & observability): monitoring, logging, tracing, HA production (handwritten, as is)
+
+### ④ SRE servers (Reliability & observability)
+
+- SRE owns monitoring, logging, tracing & HA production
+- ① Prometheus
+- ② Alert manager
+- ③ Grafana
+- ④ Logging
+- ⑤ Tracing
+- ⑥ Failover
+- ⑦ HA prod cluster
+- ⑧ LB clusters
+- ⑨ Reverse proxy clusters
+- ⑩ Storage clusters
+- ⑪ Multi-region clusters
+
+### [Filled — added, not in the original image]
+- The ownership, filled: SRE owns monitoring, logging, tracing, and highly available production — the reliability & observability half of the server ownership split (DevOps owns automation & infra, Note 237; platform owns the internal platform, Note 236; SDLC owns none, Note 238).
+- The list, filled: Prometheus, alert manager, Grafana, logging, tracing, failover, HA production clusters, load-balancer clusters, reverse-proxy clusters, storage clusters, multi-region clusters — the observability stack (Prometheus/alerting/Grafana/logging/tracing) plus the availability stack (failover, HA prod, LB, reverse proxy, storage, multi-region).
+- The frame, filled: item ④ of a numbered ownership series whose other items are Notes 236 (③ platform) and 237 (② DevOps) — filed here as its own note because the SRE server list is new, with the fuller SRE-owned list in Note 240.
+
+---
+
+## Image Note 236 — ③ Platform Engineering servers (S/W defined infra): owns the internal platform (handwritten, as is)
+
+### ③ Platform Engineering servers (S/W defined infra)
+
+- It owns the internal platform
+- ① IDP servers
+- ② Backstage
+- ③ Crossplane
+- ④ ArgoCD
+- ⑤ K8s API
+- ⑥ Operator controllers
+- ⑦ Secrets mgmt servers
+- ⑧ Policy servers
+- ⑨ SDN controllers cluster
+- ⑩ Metadata catalog cluster
+
+### [Filled — added, not in the original image]
+- The ownership, filled: platform engineering owns the internal platform, as software-defined infrastructure — the platform half of the ownership split (SRE owns reliability, Note 235; DevOps owns automation, Note 237).
+- The list, filled: IDP (internal developer platform) servers, Backstage, Crossplane, ArgoCD, Kubernetes API, operator controllers, secrets-management servers, policy servers, SDN controllers cluster, metadata catalog cluster — the platform stack from developer portal (Backstage) through GitOps (ArgoCD) and control planes (Crossplane, K8s API, operators) to governance (secrets, policy, SDN, metadata).
+- The frame, filled: item ③ of the ownership series — the platform team's servers, distinct from the DevOps automation servers (Note 237) and the SRE reliability servers (Note 235), because each team owns a different layer of the same infrastructure.
+
+---
+
+## Image Note 237 — ② DevOps: owns automation & infra servers (handwritten, as is)
+
+### ② DevOps: owns automation & infra servers
+
+- ① CI / CD servers
+- ② Build servers
+- ③ Artifact servers
+- ④ Config servers
+- ⑤ VCS servers
+- ⑥ Infra provisioning
+- ⑦ Container registry servers
+- ⑧ Orchestration
+- ⑨ Terraform runners
+- ⑩ Auto scaling clusters
+- ⑪ Monitoring servers
+- ⑫ SSH
+
+### [Filled — added, not in the original image]
+- The ownership, filled: DevOps owns automation & infrastructure servers — the automation half of the ownership split (SRE owns reliability, Note 235; platform owns the internal platform, Note 236).
+- The list, filled: CI/CD servers, build servers, artifact servers, config servers, VCS servers, infrastructure provisioning, container registry servers, orchestration, Terraform runners, auto-scaling clusters, monitoring servers, SSH — the delivery pipeline as servers, from version control and build through artifact and registry to provisioning, orchestration, scaling, and access.
+- The frame, filled: item ② of the ownership series — the DevOps team's servers, distinct from the SRE reliability servers (Note 235) and the platform internal-platform servers (Note 236), because each team owns a different layer of the same infrastructure.
+
+---
+
+## Image Note 238 — Core SDLC servers: used across the lifecycle; SDLC specific envs; SDLC env contains, not owns (handwritten, as is)
+
+### Core SDLC servers: used across the lifecycle
+
+- ① Web — nginx or apache
+- ② App — JVM on Tomcat / Jetty
+- ③ DB — PostgreSQL, MySQL
+- ④ File — NFS, Samba
+- ⑤ Mail — [blank in image]
+- ⑥ API — [blank in image]
+- ⑦ Cache — Redis, Memcached
+- ⑧ Queue — Kafka, RabbitMQ
+- ⑨ Search — [blank in image]
+- ⑩ Storage — Ceph, NetApp
+- ⑪ Reverse proxy — nginx, HAProxy
+- ⑫ LB — nginx
+- ⑬ Proxy — [blank in image]
+- ⑭ DNS — [blank in image]
+- ⑮ Auth — [blank in image]
+- ⑯ Storage — [blank in image, second storage entry as written]
+- ⑰ Backup — [blank in image]
+- ⑱ Syslog — [blank in image]
+- ⑲ CA — [blank in image]
+- ⑳ Secrets — [blank in image]
+- ㉑ Virtual servers — KVM, VMware
+- ㉒ Containerized — Docker
+- ㉓ Cloud — EC2, VM
+- ㉔ Edge — Cloudflare
+- ㉕ Vector DB — Milvus
+- ㉖ Service registry — Consul
+
+### SDLC specific
+
+- ① Dev servers, ② Test / QA servers, ③ Staging servers, ④ Production servers
+- SDLC uses env, not owns; these env contain those servers
+
+### SDLC Env (dev / prod / etc) contain
+
+- General purpose, specific purpose servers & clusters but not own them
+
+### [Filled — added, not in the original image]
+- Core servers, filled: the servers used across the lifecycle — web (nginx or Apache), app (JVM on Tomcat/Jetty), DB (PostgreSQL, MySQL), file (NFS, Samba), mail, API, cache (Redis, Memcached), queue (Kafka, RabbitMQ), search, storage (Ceph, NetApp), reverse proxy (nginx, HAProxy), load balancer (nginx), proxy, DNS, auth, storage (second entry as written), backup, syslog, CA, secrets, virtual servers (KVM, VMware), containerized (Docker), cloud (EC2, VM), edge (Cloudflare), vector DB (Milvus), service registry (Consul) — blank cells left blank above, not invented, since the image leaves them without tool examples.
+- The thesis, filled: SDLC uses environments, not owns them — dev, test/QA, staging, and production servers are SDLC-specific environments, and each environment contains general-purpose and specific-purpose servers & clusters but does not own them — the ownership distinction that Notes 235–237's team-owned lists depend on (teams own servers; the lifecycle only uses them).
+- The frame, filled: the server inventory that Note 233's SDLC stages run on — the same list the duplicate page (file 294) repeats, skipped per the duplicate rule.
+
+---
+
+## Image Note 239 — SRE owns reliability servers (SRE owns & operates servers): monitoring, visualization, log aggregation, incident mgmt, HA production (handwritten, as is)
+
+### SRE owns reliability servers (SRE owns & operates servers)
+
+- SRE owned servers:
+  - ① Prometheus servers — monitoring servers
+  - ② Alert manager servers
+  - ③ Grafana servers — visualization servers
+  - ④ Logging (ELK, Loki) → log aggregation
+  - ⑤ Incident mgmt servers →
+  - ⑥ HA production clusters → app servers
+- SRE servers are dedicated & highly available
+
+### [Filled — added, not in the original image]
+- The ownership, filled: SRE owns reliability servers — SRE owns and operates servers, dedicated and highly available — the fuller version of Note 235's SRE server list, here with the server kinds named (Prometheus as monitoring, Grafana as visualization, ELK/Loki as log aggregation, incident management, HA production clusters as app servers).
+- The list, filled: Prometheus servers (monitoring), alert manager servers, Grafana servers (visualization), logging (ELK, Loki) for log aggregation, incident management servers, HA production clusters (app servers) — the reliability stack with each server's role named, where Note 235 listed the tools without roles.
+- The frame, filled: this page and Note 235 are two versions of the same SRE-owned list — filed as separate notes because the role annotations (monitoring/visualization/log aggregation) and the "dedicated & highly available" thesis are new, not copied from Note 235.
+
+---
+
+# INbatch33 — Image Notes 241–247 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 7 images are new pages, none skipped. 7 new notes filed (partial set, 7 images, not 10).
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 241 — ③ Platform Eng = IDP + Golden paths + abstractions + self service; ④ SRE = reliability + automation + incident response + chaos (handwritten, as is)
+
+### ③ Platform Eng = IDP + Golden paths + abstractions + self service
+
+- ① IDPs: Backstage, Humanitec, Port, Cortex
+- ② Infrastructure abstractions: Crossplane, K8s operators, Terraform modules, GitOps (ArgoCD, FluxCD)
+- ③ Golden path components: microservice templates, logging / metrics sidecars, CI / CD blueprints, deployment manifests, security baselines
+- ④ Platform services: Istio, Linkerd; Vault, AWS Secrets Manager; OPA, Kyverno; RBAC
+
+### ④ SRE = reliability + automation + incident response + chaos
+
+- ① Framework: SLI, SLO, error budgets, burn rate
+- ② Observability (SRE grade): Prometheus, Grafana, OpenTelemetry, Datadog, New Relic, Splunk
+
+### [Filled — added, not in the original image]
+- Platform engineering, filled: platform engineering = IDP + golden paths + abstractions + self-service — IDPs (Backstage, Humanitec, Port, Cortex), infrastructure abstractions (Crossplane, Kubernetes operators, Terraform modules, GitOps via ArgoCD and FluxCD), golden-path components (microservice templates, logging/metrics sidecars, CI/CD blueprints, deployment manifests, security baselines), platform services (Istio, Linkerd for service mesh; Vault, AWS Secrets Manager for secrets; OPA, Kyverno for policy; RBAC for access).
+- SRE, filled: SRE = reliability + automation + incident response + chaos — the framework (SLI, SLO, error budgets, burn rate) and SRE-grade observability (Prometheus, Grafana, OpenTelemetry, Datadog, New Relic, Splunk).
+- The frame, filled: items ③ and ④ of the engineering-discipline series whose ① (DevOps) is Note 242 and whose definitions are Note 244 — the platform and SRE halves of the same four-discipline map, filed here as the tool-level detail for both.
+
+---
+
+## Image Note 242 — ① DevOps = automation + collaboration + speed + shared ownership; CI/CD, IaC, container orch, observability, DevSecOps, release eng, artifact mgmt tools (handwritten, as is)
+
+### ① DevOps = automation + collaboration + speed + shared ownership
+
+- ① CI / CD: GitHub Actions → cloud native CI / CD tool built into GitHub; GitLab CI → cloud native CI / CD tool built into GitLab; Jenkins → standalone, self-hosted automation server; Azure DevOps → suite; Argo Workflows → specialized automation engine built natively for K8s clusters
+- ② IaC: Terraform → infra provision tool (cloud & on-prem infra) using HCL; Ansible → IT automation engine using YAML; Pulumi → IaC tool using general programming languages (Java, Python, Go); CF / Bicep → [no definition in image]; Chef → IT automation engine using Ruby; Puppet → IT automation engine using own declarative language
+- ③ Container orch: Docker → automates deployment; K8s → automates deployment at scale; Helm → package manager for K8s; Kustomize → manifest modifier; Nomad → workload orchestrator like K8s
+- ④ Observability: Prometheus, Grafana, Loki, ELK, Jaeger, OpenTelemetry
+- ⑤ DevSecOps: Snyk, Trivy, Vault, SonarQube, OPA
+- ⑥ Release Eng: Argo CD, Flux CD, Spinnaker, Harness
+- ⑦ Artifact mgmt: JFrog, Nexus, Docker reg, ACR, ECR
+
+### [Filled — added, not in the original image]
+- The formula, filled: DevOps = automation + collaboration + speed + shared ownership — the definition that Note 244's "how fast" section restates as culture + automation.
+- CI/CD, filled: GitHub Actions as the cloud-native CI/CD tool built into GitHub, GitLab CI as the cloud-native CI/CD tool built into GitLab, Jenkins as the standalone self-hosted automation server, Azure DevOps as a suite, Argo Workflows as the specialized automation engine built natively for Kubernetes clusters.
+- IaC, filled: Terraform as the infrastructure-provisioning tool (cloud & on-prem infrastructure) using HCL, Ansible as the IT automation engine using YAML, Pulumi as the IaC tool using general programming languages (Java, Python, Go), CloudFormation/Bicep (no definition in the image, left without one above, not invented), Chef as the IT automation engine using Ruby, Puppet as the IT automation engine using its own declarative language.
+- Container orchestration, filled: Docker automates deployment, Kubernetes automates deployment at scale, Helm is the package manager for Kubernetes, Kustomize is the manifest modifier, Nomad is the workload orchestrator like Kubernetes.
+- The rest, filled: observability (Prometheus, Grafana, Loki, ELK, Jaeger, OpenTelemetry), DevSecOps (Snyk, Trivy, Vault, SonarQube, OPA), release engineering (Argo CD, Flux CD, Spinnaker, Harness), artifact management (JFrog, Nexus, Docker registry, ACR, ECR) — the seven tool families of the DevOps half of the discipline map.
+
+---
+
+## Image Note 243 — # Engineering Ecosystem: ① SDLC — methodologies, modeling & documentation, planning & req, dev ecosystem, testing ecosystem (handwritten, as is)
+
+### # Engineering Ecosystem
+
+### ① SDLC
+
+- Methodologies: Agile → iterative project management & S/W development approach; Scrum → a structured, iterative agile framework; Kanban → a visual workflow mgmt framework; Waterfall → traditional sequential project mgmt methodology; Lean → a project mgmt & operational philosophy; XP → an agile S/W dev framework
+- Modeling & documentation: UML, BPMN, C4 model, ADR, Swagger / OpenAPI
+- Planning & req: Jira, Azure Boards, Confluence, Miro, Notion
+- Dev ecosystem: IntelliJ, VS Code; Java, Go, Python, Rust; Maven, Gradle, Bazel; SonarQube, PMD, ESLint
+- Testing ecosystem: JUnit, PyTest, TestNG; Rest Assured, Postman
+
+### [Filled — added, not in the original image]
+- Methodologies, filled: Agile as iterative project management & software development approach, Scrum as a structured iterative agile framework, Kanban as a visual workflow-management framework, Waterfall as the traditional sequential project-management methodology, Lean as a project-management & operational philosophy, XP as an agile software-development framework.
+- Modeling & documentation, filled: UML, BPMN, C4 model, ADR (architecture decision records), Swagger/OpenAPI — the modeling and documentation half of the SDLC ecosystem.
+- Planning & requirements, filled: Jira, Azure Boards, Confluence, Miro, Notion — the planning & requirements tools.
+- Dev ecosystem, filled: IntelliJ and VS Code as IDEs; Java, Go, Python, Rust as languages; Maven, Gradle, Bazel as builds; SonarQube, PMD, ESLint as quality — the development toolchain.
+- Testing ecosystem, filled: JUnit, PyTest, TestNG as test frameworks; Rest Assured and Postman as API testing — the testing toolchain that Note 233's testing stage uses.
+- The frame, filled: the engineering ecosystem's SDLC half, item ① of a series whose DevOps/Platform/SRE halves are Notes 241–242 and 244 — filed here as the ecosystem map, not the lifecycle stages (those are Notes 233, 246, 247).
+
+---
+
+## Image Note 244 — SDLC defines process/stages; DevOps defines culture; Platform Eng defines tooling; SRE defines reliability; what & when, how fast, how consistently, how reliably (handwritten, as is)
+
+### Four definitions
+
+- ① SDLC → defines the process / stages of delivery
+- ② DevOps → defines the culture, improves speed & collab across those stages
+- ③ Platform Eng → defines the tooling, builds internal products that use DevOps
+- ④ SRE → defines the reliability
+
+### What & when — SDLC
+
+- Sets the sequence & quality expectations for S/W delivery (answers: what are we building & is it ready?)
+
+### How fast — DevOps
+
+- It accelerates SDLC by automating builds, tests, deployments
+- It is primarily a culture + automation movement
+- Output: faster deployments (how do we build it & ship it automatically?)
+
+### How consistently — Platform Eng
+
+- It operationalizes DevOps by building internal dev platforms (IDP), golden paths for microservices, reusable infra modules, self-service deployment workflows
+- It is about "DevOps at scale"
+- Platform team acts as vendor & developers are the customers
+- Output: self-service infra
+
+### How reliably — SRE
+
+- Ensures uptime, performance, incident response, error budget enforcement, production automation
+- Output: stable systems (how do we keep running it reliably under heavy traffic?)
+
+### [Filled — added, not in the original image]
+- Four definitions, filled: SDLC defines the process/stages of delivery; DevOps defines the culture, improving speed & collaboration across those stages; platform engineering defines the tooling, building internal products that use DevOps; SRE defines the reliability.
+- Four questions, filled: what & when is SDLC (sets the sequence & quality expectations for software delivery — what are we building, and is it ready?); how fast is DevOps (accelerates SDLC by automating builds, tests, and deployments — primarily a culture + automation movement, output faster deployments, answering how do we build it and ship it automatically?); how consistently is platform engineering (operationalizes DevOps by building internal developer platforms, golden paths for microservices, reusable infrastructure modules, self-service deployment workflows — "DevOps at scale", the platform team acting as vendor and developers as customers, output self-service infrastructure); how reliably is SRE (ensures uptime, performance, incident response, error-budget enforcement, production automation — output stable systems, answering how do we keep running it reliably under heavy traffic?).
+- The frame, filled: the four-discipline map that Notes 241–243 detail tool by tool — filed here as the definitions page, with each discipline reduced to one question it answers.
+
+---
+
+## Image Note 245 — DevOps / Platform Eng continuous loop: plan → code → build → test → release → deploy → operate → monitor; infra as version-controlled code (handwritten, as is)
+
+### DevOps / Platform Eng — continuous loop
+
+- "It answers: how do we automate the link b/w code generation & live operations to deploy changes instantly"
+
+### The loop
+
+| Step | Stage | Output | Tools (as written) |
+|---|---|---|---|
+| ① | Plan (agile / PM) | Blueprint | Jira, Confluence, Backstage, Port |
+| ② | Code (SCM / VCS) | Version control | Git, GitHub / GitLab / Bitbucket, SCore [as written, unclear] |
+| ③ | Build (CI) | Artifact generation | Docker, Packer, Podman, Buildah |
+| ④ | Test (QA) | Compliance scan | Ansible-lint, tflint, Trivy, Snyk |
+| ⑤ | Release (CD) | Registry mgmt | JFrog, Sonatype, ECR, ACR |
+| ⑥ | Deploy (CD) | Orchestrate | Terraform, OpenTofu, Pulumi, CF, Az Bicep, AWS / Azure |
+| ⑦ | Operate (IaC / SRE) | Enforce | Ansible core, ArgoCD, FluxCD, K8s + Vault, AWS Secrets, Azure Key Vault |
+| ⑧ | Monitor (O11y / APM) | Feedback loop | Kubecost, Vantage, CloudHealth, AWS Compute Opt |
+
+### Closing line
+
+- "This track defines the continuous workflow of treating infra entirely as version-controlled code, automating delivery pipelines"
+
+### [Filled — added, not in the original image]
+- The question, filled: the DevOps/platform-engineering loop answers how do we automate the link between code generation and live operations to deploy changes instantly — the continuous loop, not a one-way pipeline.
+- The eight steps, filled: plan (agile/PM) → blueprint (Jira, Confluence, Backstage, Port); code (SCM/VCS) → version control (Git, GitHub/GitLab/Bitbucket, plus "SCore" as written, kept as written and flagged as unclear — most likely a tool name misread, not reconstructed); build (CI) → artifact generation (Docker, Packer, Podman, Buildah); test (QA) → compliance scan (Ansible-lint, tflint, Trivy, Snyk); release (CD) → registry management (JFrog, Sonatype, ECR, ACR); deploy (CD) → orchestration (Terraform, OpenTofu, Pulumi, CloudFormation, Azure Bicep, AWS/Azure); operate (IaC/SRE) → enforcement (Ansible core, ArgoCD, FluxCD, Kubernetes + Vault, AWS Secrets, Azure Key Vault); monitor (observability/APM) → feedback loop (Kubecost, Vantage, CloudHealth, AWS Compute Optimizer).
+- The thesis, filled: this track defines the continuous workflow of treating infrastructure entirely as version-controlled code, automating delivery pipelines — the loop that Note 234's eight DevOps stages describe in stage form, here in tool form.
+
+---
+
+## Image Note 246 — SDLC: typically sequential or iterative; plan → analysis → design → development → test → deployment → maintain; common methodologies (handwritten, as is)
+
+### SDLC
+
+- It is typically sequential or iterative
+- It answers: "what are the logical steps required to build S/W"
+
+### SDLC stages
+
+- ① Plan →
+- ② Analysis →
+- ③ Design →
+- ④ Development →
+- ⑤ Test →
+- ⑥ Deployment →
+- ⑦ Maintain →
+
+### Common SDLC methodologies
+
+- ① Waterfall → linear
+- ② Agile → iterative focusing on CD
+- ③ DevOps → integration of Dev & Operations
+
+### [Filled — added, not in the original image]
+- The nature, filled: SDLC is typically sequential or iterative — it answers what are the logical steps required to build software.
+- The stages, filled: plan, analysis, design, development, test, deployment, maintain — the seven stages, each left with an open arrow in the image (the arrow points to the next stage, not to a missing detail, so nothing is filled after it).
+- The methodologies, filled: Waterfall as linear, Agile as iterative focusing on continuous delivery, DevOps as the integration of development & operations — the three common SDLC methodologies, filed here as the short version of Note 243's six-methodology list (Agile, Scrum, Kanban, Waterfall, Lean, XP).
+- The frame, filled: the bare SDLC skeleton that Notes 233 and 247 flesh out with tools per stage — filed here as its own note because the sequential-or-iterative framing and the three-methodology summary are new.
+
+---
+
+## Image Note 247 — Aravind: topic list (DevOps, SRE, Linux, AWS, Azure); SDLC stages with tools; DevOps stages with tools; SRE stages with tools (handwritten, as is)
+
+### Topic list (heading "Aravind")
+
+- ① DevOps, ② SRE, ③ Linux, ④ AWS, ⑤ Azure
+
+### SDLC (stages with tools)
+
+- ① Plan → Jira, Confluence
+- ② Analysis → Confluence
+- ③ Design → Figma / Adobe XD, Swagger / OpenAPI
+- ④ Dev → VSCode / IntelliJ, GitHub / GitLab, Docker
+- ⑤ Test → Postman, Selenium / Playwright, JUnit / PyTest
+- ⑥ Deployment → Jenkins / GitHub Actions, Az / GCP / AWS, K8s
+- ⑦ Maintain → ServiceNow, Datadog / New Relic
+
+### DevOps (stages with tools)
+
+- ① Plan → Jira, Trello, Slack / Teams
+- ② Code → GitHub / GitLab / Bitbucket
+- ③ Build → Maven / Gradle, npm / yarn, Docker
+- ④ Test → SonarQube, Postman, JUnit
+- ⑤ Release → CI / CD (Jenkins, GitLab, Argo, GitHub Actions)
+- ⑥ Deploy → VM, container, K8s, etc, AWS / GCP / Azure
+- ⑦ Operate → TF / ARM / CF, Ansible
+- ⑧ Monitor → ELK, Prometheus / Grafana, Datadog / Dynatrace
+
+### SRE (stages with tools)
+
+- ① Define & design (SLO / SLA) → Jira
+- ② Deploy / Release → Argo CD
+- ③ Monitor / Alert (observability) → Dynatrace, Grafana, Datadog [partly unclear]
+- ④ Incident response (on-call) → PagerDuty
+- ⑤ Remediation & automation
+- ⑥ Chaos eng
+- ⑦ Postmortem
+
+### [Filled — added, not in the original image]
+- The topic list, filled: the heading "Aravind" with five topics (DevOps, SRE, Linux, AWS, Azure) — the study plan this page belongs to, with Linux, AWS, and Azure as the topics whose pages have not yet appeared in this run (only DevOps and SRE are detailed here).
+- SDLC with tools, filled: plan (Jira, Confluence), analysis (Confluence), design (Figma/Adobe XD, Swagger/OpenAPI), dev (VSCode/IntelliJ, GitHub/GitLab, Docker), test (Postman, Selenium/Playwright, JUnit/PyTest), deployment (Jenkins/GitHub Actions, Azure/GCP/AWS, Kubernetes), maintain (ServiceNow, Datadog/New Relic) — the same seven stages as Note 246, here with a tool per stage.
+- DevOps with tools, filled: plan (Jira, Trello, Slack/Teams), code (GitHub/GitLab/Bitbucket), build (Maven/Gradle, npm/yarn, Docker), test (SonarQube, Postman, JUnit), release via CI/CD (Jenkins, GitLab, Argo, GitHub Actions), deploy (VM, container, Kubernetes, etc, AWS/GCP/Azure), operate (Terraform/ARM/CloudFormation, Ansible), monitor (ELK, Prometheus/Grafana, Datadog/Dynatrace) — the same eight stages as Note 234, here with a tool per stage.
+- SRE with tools, filled: define & design (SLO/SLA, Jira), deploy/release (Argo CD), monitor/alert for observability (Dynatrace, Grafana, Datadog — the third tool partly unclear, flagged), incident response on-call (PagerDuty), remediation & automation, chaos engineering, postmortem — the SRE lifecycle in seven steps, the fullest SRE stage list in this run (Notes 235/239/241 list SRE servers and frameworks, not stages).
+
+---
+
+# INbatch34 — Image Notes 248–257 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 248 — Arch paradigms / sys structure; program paradigms / logic & exec; emerging computing (handwritten, as is)
+
+### Arch paradigms / sys structure
+
+- Defines how physical or virtual machines connected & managed
+- ① Centralized (mainframe) computing → processing done at 1 [place, cut off]
+- ② Parallel computing → homo processors solve parts of a single problem simultaneously to save time
+- ③ Distributed computing → homo or hetero computers linked via N/W systems
+- ④ Cluster computing: identical / similar computers connected via a dedicated N/W to function as a one resource
+- ⑤ Grid computing: a N/W of diverse, shared unused processing power & storage
+- ⑥ Cloud computing: deliver on demand over the internet
+- ⑦ Edge / fog computing: processing data near its source (edge) to reduce latency rather than sending to cloud
+
+### Program paradigms / logic & exec
+
+- Defines style & structure how S/W code is written & executed
+- How: ① Imperative (procedural) → sequence of commands / functions, change program state; ② OOP → objects
+- What: ③ Declarative → describing the desired result (SQL); ④ Functional; ⑤ Logical program
+
+### Emerging (biological principle)
+
+- ① Autonomic computing → self-healing compute
+- ② Quantum computing
+- ③ Bio computing
+- ④ Optical computing
+- ⑤ Mobile computing
+
+### [Filled — added, not in the original image]
+- Architecture paradigms, filled: the seven paradigms as the answer to how physical or virtual machines are connected and managed — centralized (mainframe, processing done at one place), parallel (homogeneous processors solving parts of a single problem simultaneously to save time), distributed (homogeneous or heterogeneous computers linked via network systems), cluster (identical/similar computers connected via a dedicated network to function as one resource), grid (a network of diverse, shared, unused processing power & storage), cloud (delivered on demand over the internet), edge/fog (processing data near its source to reduce latency rather than sending it to the cloud).
+- Program paradigms, filled: the style & structure of how software code is written & executed, split into how (imperative/procedural as a sequence of commands/functions that change program state; OOP as objects) and what (declarative as describing the desired result, SQL as the example; functional; logical programming) — the how/what split that mirrors Note 244's question framing.
+- Emerging, filled: autonomic computing as self-healing compute, quantum computing, bio computing, optical computing, mobile computing — the emerging list, headed "biological principle" in the image, kept as written (the heading's meaning is unclear, flagged, not reinterpreted).
+- The frame, filled: the paradigm map that Notes 249–254 detail era by era (virtualization, grid, cluster, distributed, cloud evolution) — filed here as the overview.
+
+---
+
+## Image Note 249 — ⑥ Virtualization (1980–present); cloud computing as service; ⑦ Web 2.0 interface (handwritten, as is)
+
+### ⑥ Virtualization (1980–present)
+
+- Introduced 40 years back
+- Process of creating virtual layer over the H/W
+- Fundamental tech powers cloud computing
+
+### Core
+
+- ① Physical hardware (host) → actual S/W
+- ② Hypervisor → lightweight S/W layer
+- ③ VM (guest) → S/W based computer
+
+### Types
+
+- App — Citrix
+- N/W — VPC / SDN virtualization
+- Desktop
+- Storage — SAN / S3
+- Server
+- Data
+
+### Cloud computing
+
+- Service that delivers shared computing resource via internet
+- Service — it is the result of built using virtualization
+
+### ⑦ Web 2.0
+
+- Interface through cloud computing
+- Services interact with clients
+
+### [Filled — added, not in the original image]
+- Virtualization, filled: introduced 40 years back (1980–present in the heading), the process of creating a virtual layer over the hardware, the fundamental technology that powers cloud computing — the core stack as physical hardware (host, the actual software) → hypervisor (lightweight software layer) → VM (guest, a software-based computer).
+- Types, filled: application virtualization (Citrix), network virtualization (VPC/SDN), desktop virtualization, storage virtualization (SAN/S3), server virtualization, data virtualization — the six types, with the tool examples the image gives for app, network, and storage.
+- Cloud & Web 2.0, filled: cloud computing as a service that delivers shared computing resources via the internet — a service that is the result of being built using virtualization; Web 2.0 as the interface through cloud computing, where services interact with clients.
+- The frame, filled: items ⑥ and ⑦ of the numbered era series whose ③ (cluster) is Note 251, ④/⑤ (grid/utility) are Notes 250/253, and ①–② (mainframe/distributed) are Note 252 — the era chain in one numbered sequence.
+
+---
+
+## Image Note 250 — Grid computing (1970–2000); utility computing (late 1990–2000) (handwritten, as is)
+
+### Grid computing (1970–2000)
+
+- Combines resources from diff locations to achieve a common goal
+- Breaks down tasks / jobs / process into smaller subtasks, allowing concurrent processing
+- Defined as a N/W of computers working together to perform a task / process that would be difficult for single machine
+- All machines work under same protocol to act as virtual supercomputer
+- Subset of distributed computing
+- Consists of: control node — keeps account of the resources in the N/W; provider → contributes its resources to N/W pool; user → uses resources in the N/W
+- Systems were placed entirely diff geo locations, connected via internet
+- Systems belong different org, considered hetero nodes
+- It solved geo problem but new problem emerged as distance b/w nodes increased
+- Then cloud came
+
+### ⑤ Utility computing (late 1990–2000)
+
+- Computing model defines service provisioning techniques for services such as compute, storage, infra provisioned on pay per use
+
+### [Filled — added, not in the original image]
+- Grid, filled: grid computing (1970–2000) combines resources from different locations to achieve a common goal, breaking tasks/jobs/processes into smaller subtasks for concurrent processing — defined as a network of computers working together to perform a task/process that would be difficult for a single machine, all machines working under the same protocol to act as a virtual supercomputer, a subset of distributed computing.
+- Grid roles, filled: control node keeps account of the resources in the network, provider contributes its resources to the network pool, user uses resources in the network — the three roles of a grid.
+- Grid limits, filled: systems were placed in entirely different geographical locations connected via the internet, belonging to different organizations and considered heterogeneous nodes — it solved the geographical problem but a new problem emerged as distance between nodes increased, and then cloud came.
+- Utility, filled: utility computing (late 1990–2000) as the computing model defining service-provisioning techniques for services such as compute, storage, and infrastructure, provisioned on a pay-per-use basis — the pricing model that Note 253's grid-as-utility line (computational power, storage, data as utility, similar to electricity) restates.
+- The frame, filled: the grid and utility pages of the era chain — the bridge from distributed/cluster (Notes 251–252) to cloud (Notes 249, 252).
+
+---
+
+## Image Note 251 — Middleware transfer (centralized ↔ autonomous); ③ Cluster computing (1980–90); reduced cost, but geo restrictions (handwritten, as is)
+
+### To transfer data b/w centralized system (master server) and autonomous systems (worker nodes)
+
+- Collection of IPs
+- A middleware is used (S/W layer) glue
+- Middleware services act as an interface, enabling comm & services not present in local systems or centralized systems
+- Data divided into segments & sent to autonomous sys for processing
+- Autonomous sys process data locally & processed data sent back to centralized systems
+
+### ③ Cluster computing (1980–90)
+
+- Collection of tightly or loosely connected computers that work together
+- Came as alternative to mainframe computing
+- Each machine connected to other by a N/W with high bandwidth
+- Problem of cost was solved but problem related to geographical restrictions
+- To solve this, grid computing introduced
+
+### Side annotations
+
+- Reduced cost
+- But geo restrictions
+
+### [Filled — added, not in the original image]
+- Middleware, filled: to transfer data between a centralized system (master server) and autonomous systems (worker nodes, a collection of IPs), a middleware is used — a software-layer glue whose services act as an interface, enabling communication & services not present in local systems or centralized systems; data is divided into segments and sent to autonomous systems for processing, which process data locally and send the processed data back to the centralized system — the distributed-processing pattern that Note 252's diagram (distributed app → middleware → compute nodes over a network) draws.
+- Cluster, filled: cluster computing (1980–90) as a collection of tightly or loosely connected computers that work together, coming as an alternative to mainframe computing, each machine connected to the other by a network with high bandwidth — the problem of cost was solved, but the problem related to geographical restrictions remained, and to solve this grid computing was introduced.
+- The side annotations, filled: "reduced cost" and "but geo restrictions" as the cluster verdict — the two-word summary of the cluster era, filed here as the margin note it is.
+- The frame, filled: item ③ of the era series — the cluster page, with its middleware preface explaining how the centralized-to-autonomous transfer it depends on actually works.
+
+---
+
+## Image Note 252 — Cloud computing evolution: ① Mainframes (1950–70); ② Distributed sys (1970–80) with diagram (handwritten, as is)
+
+### Cloud computing evolution
+
+### ① Mainframes (1950–70)
+
+- Powerful & reliable computing machines
+- Responsible for handling large data (massive I/O operations)
+- No downtime, high fault tolerance
+- Very expensive — to reduce this cost, cluster computing came as alternative mainframe tech
+
+### ② Distributed sys (1970–80)
+
+- Composition of multiple independent systems but all of them represent as a single entity to user
+- Purpose is to share resources
+- Consists of multiple independent computers (nodes)
+- Nodes comm & shared the data through a N/W
+- It appears as single sys to end user
+- DB used to store the processed data (that are processed by each node / sys of distributed systems)
+- Distributed systems / nodes are connected to centralized N/W
+- Each autonomous system / node runs its own app and maintains local data
+- The central DB (distributed app) stores common data for all AS
+
+### Diagram (drawn)
+
+```
+Distributed app
+    ↓
+Compute ← Middleware → Compute ← Middleware → Compute
+    ↑___________ N/W ___________↑
+```
+
+### [Filled — added, not in the original image]
+- Mainframes, filled: mainframes (1950–70) as powerful & reliable computing machines, responsible for handling large data (massive I/O operations), with no downtime and high fault tolerance — very expensive, and to reduce this cost cluster computing came as alternative mainframe technology.
+- Distributed systems, filled: distributed systems (1970–80) as a composition of multiple independent systems that all represent as a single entity to the user, whose purpose is to share resources — consisting of multiple independent computers (nodes) that communicate & share data through a network, appearing as a single system to the end user, with a database storing the processed data from each node/system, distributed systems/nodes connected to a centralized network, each autonomous system/node running its own app and maintaining local data, and the central database (distributed app) storing common data for all autonomous systems.
+- The diagram, filled: the distributed app over middleware over compute nodes over a network — the same middleware pattern as Note 251, drawn here as the distributed-system shape.
+- The frame, filled: the evolution's first two eras (mainframe → distributed), with cluster (Note 251), grid (Notes 250/253), virtualization (Note 249), and cloud as the following eras — the era chain's opening page.
+
+---
+
+## Image Note 253 — Grid computing provides blueprint for delivering power, storage, data as utility; homo vs hetero systems (handwritten, as is)
+
+### Grid computing
+
+- Provides blueprint for delivering computational power, storage, data as utility — similar to electricity
+- It allows users to run complex apps & access data across geographically dispersed heterogeneous systems
+- Grid computing = heterogeneous systems
+- Homogeneous systems vs heterogeneous systems define how components interact
+- ① Homo → same type, vendor, configuration (uniformed), used for parallel computing
+- ② Hetero → combines diff types, preferred for complex workloads (diversity)
+- It pools idle or underutilized power, memory, storage from different administration domains into a single virtual supercomputer
+
+### [Filled — added, not in the original image]
+- Grid as utility, filled: grid computing provides the blueprint for delivering computational power, storage, and data as a utility, similar to electricity — allowing users to run complex applications & access data across geographically dispersed heterogeneous systems.
+- Homo vs hetero, filled: homogeneous vs heterogeneous systems define how components interact — homogeneous as the same type, vendor, and configuration (uniform), used for parallel computing; heterogeneous as combining different types, preferred for complex workloads (diversity) — the grid = heterogeneous systems equation, with homogeneous as its contrast.
+- Pooling, filled: it pools idle or underutilized power, memory, and storage from different administration domains into a single virtual supercomputer — the grid's mechanism, restating Note 250's "act as virtual supercomputer" line with the pooling detail.
+- The frame, filled: the grid page's second half (Note 250 is its first half) — the utility analogy and the homo/hetero distinction that Note 254's grid-tech list (distributed hetero systems, resource-sharing tech, grid middleware, Globus toolkit) depends on.
+
+---
+
+## Image Note 254 — Computers by processing power/scale/workload; telephone N/W, early computing, ARPANet, arch paradigms with tech & protocols (handwritten, as is)
+
+### Computers categorized by their processing power, scale & the specific types of workloads they are designed to handle
+
+- ① Supercomputers → raw speed (FLOPS) → scientific research
+- ② Mainframe → throughput & reliability → banking, airlines, ERP
+- ③ Servers → resource sharing → web, file sharing, email
+- ④ User devices (micro computer) → individual task → personal, browsing, games
+
+### Timeline / paradigms
+
+- ① Telephone N/W → real time communication
+- ② Early computing (mainframe) centralized computing, time sharing technology, batch OS
+- ③ ARPANet
+- ④ Arch paradigms:
+  - Centralized computing (mainframe): vertical scaling technology; SSH / Telnet protocols; DB / enterprise apps
+  - Parallel computing (same machine or tightly coupled): multicore CPU, GPU, supercomputer division; SIMD, MIMD, shared memory techno; memory bus protocol; MPI, OpenMP, CUDA S/W
+  - Distributed computing (nodes work together on a common goal): multiple servers, data centers, devices; horizontal scaling, CAP theorem tech; HTTP, gRPC, REST protocols; Hadoop, Spark, K8s S/W
+  - Cluster computing: identical nodes, high speed LAN devices; tight coupling & load balancing tech; MPI protocol
+  - Grid comp: distributed hetero systems; resource sharing tech; grid middleware; Globus toolkit
+  - Cloud comp: datacenters; VM, container; virtualization tech; API, HTTP, IAM protocols
+  - Edge computing: IoT, edge servers, gateways, devices; local process, low latency tech; MQTT, CoAP protocols; edge runtimes S/W
+
+### Side note
+
+- Decentralized [written vertically in the margin]
+
+### [Filled — added, not in the original image]
+- Four computer kinds, filled: computers categorized by processing power, scale, and the specific types of workloads they are designed to handle — supercomputers as raw speed (FLOPS) for scientific research, mainframes as throughput & reliability for banking, airlines, and ERP, servers as resource sharing for web, file sharing, and email, user devices (microcomputers) as individual tasks for personal use, browsing, and games.
+- Timeline, filled: telephone network as real-time communication, early computing (mainframe) as centralized computing with time-sharing technology and batch OS, ARPANet, then the architecture paradigms — the timeline that Note 252's evolution (mainframe → distributed → cluster → grid → cloud) sits inside.
+- Paradigms with tech, filled: centralized computing (mainframe) with vertical scaling, SSH/Telnet protocols, DB/enterprise apps; parallel computing (same machine or tightly coupled) with multicore CPU, GPU, supercomputer division, SIMD, MIMD, shared-memory technology, memory-bus protocol, MPI/OpenMP/CUDA software; distributed computing (nodes working together on a common goal) with multiple servers, data centers, devices, horizontal scaling, CAP-theorem technology, HTTP/gRPC/REST protocols, Hadoop/Spark/Kubernetes software; cluster computing with identical nodes, high-speed LAN devices, tight coupling & load-balancing technology, MPI protocol; grid computing with distributed heterogeneous systems, resource-sharing technology, grid middleware, Globus toolkit; cloud computing with datacenters, VM/container, virtualization technology, API/HTTP/IAM protocols; edge computing with IoT, edge servers, gateways, devices, local processing, low-latency technology, MQTT/CoAP protocols, edge runtimes.
+- The margin note, filled: "decentralized" written vertically in the margin, kept as written and flagged as a margin note, not expanded — its referent (which paradigm it qualifies) is unclear in the image.
+
+---
+
+## Image Note 255 — HPC (High performance computing): HPC center, components, deployment models; mainframes line cut off (handwritten, as is)
+
+### HPC (High performance computing)
+
+### HPC center
+
+- Is a facility housing clustered supercomputers, servers, high speed N/W
+- HPC center designed to solve complex computational problems
+
+### Components
+
+- ① Compute nodes: multiple servers
+- ② High speed interconnects: high bandwidth / low latency
+- ③ Scalable storage: parallel file systems (advanced storage)
+- ④ Infrastructure: specialized cooling & power systems
+
+### Deployment models
+
+- On premise, cloud, hybrid
+
+### Cut off
+
+- "Mainframes — genera…" [cut off at page edge]
+
+### Green bleed-through (other side of the page, partly legible, not main content)
+
+- Pragma image, PCM, IBM PCM from IBM Portal; Docker, PCM, PEM; App, YAML, pods, services, deployment, pod, service, route, log, public — flagged as bleed-through from the reverse side, not transcribed as main content
+
+### [Filled — added, not in the original image]
+- HPC center, filled: an HPC center is a facility housing clustered supercomputers, servers, and high-speed networks, designed to solve complex computational problems.
+- Components, filled: compute nodes (multiple servers), high-speed interconnects (high bandwidth / low latency), scalable storage (parallel file systems, advanced storage), infrastructure (specialized cooling & power systems) — the four components of an HPC center.
+- Deployment, filled: on-premise, cloud, hybrid — the three deployment models.
+- Cut off, flagged: the "Mainframes — genera…" line is cut off at the page edge and left unfilled, since its continuation is not legible.
+- Bleed-through, flagged: the green writing is bleed-through from the reverse side of the page (pragma image, PCM, IBM PCM from IBM Portal, Docker/PCM/PEM, app/YAML/pods/services/deployment/route/log/public) — recorded as bleed-through only, not as main content, because it belongs to another page's reverse side.
+
+---
+
+## Image Note 256 — ① Minikube: utility to run Kubernetes locally; ② Why; ③ How to install (Ubuntu 18, Docker, Minikube binary, kubectl) (handwritten, as is)
+
+### ① Minikube
+
+- A utility used to run Kubernetes (K8s) on your local machine
+- It is a tool that makes it easy to run Kubernetes locally
+- It deploys a single node Kubernetes cluster locally
+
+### ② Why
+
+- To test your Kubernetes deployment scripts
+
+### ③ How to install
+
+- To run Minikube we need container runtime (Docker); Minikube binary & kubectl
+- These steps for Ubuntu 18 (steps may change depending on OS)
+- S1: Install Docker — `sudo apt install -y docker.io`
+- S2: Install Minikube — `curl -LO …` [cut off at page edge]
+
+### Side notes (partly unclear, crossed lines)
+
+- Virtualization; H/W — OS — container; storage; App vis — [partly unclear, crossed lines in the image, flagged, not reconstructed]
+
+### [Filled — added, not in the original image]
+- Minikube, filled: a utility used to run Kubernetes on your local machine — a tool that makes it easy to run Kubernetes locally, deploying a single-node Kubernetes cluster locally.
+- Why, filled: to test your Kubernetes deployment scripts — the local-testing purpose, before pushing to a shared or production cluster.
+- Install, filled: to run Minikube you need a container runtime (Docker), the Minikube binary, and kubectl; the steps given are for Ubuntu 18 and may change depending on OS — S1 installs Docker (`sudo apt install -y docker.io`), S2 installs Minikube starting with `curl -LO` (cut off at the page edge, left cut off above, not completed from outside knowledge, since the exact URL is not legible).
+- Side notes, flagged: the side notes (virtualization; hardware — OS — container; storage; app visibility) are partly unclear with crossed lines in the image, flagged and not reconstructed.
+
+---
+
+## Image Note 257 — Transition: brain switches kernel mode to execute the user's request; OS level kernel/user mode; mechanisms (CPU rings, MMU, sys calls); virtualization & containerization side notes (handwritten, as is)
+
+### Transition
+
+- Brain switches kernel mode to execute the user's request [heading as written]
+
+### OS level
+
+| Mode | Privilege | UID |
+|---|---|---|
+| Kernel mode | Privileged mode | UID 0 (root) |
+| User mode | Restricted | UID 1–999 |
+
+### These ensure OS
+
+- 1. Security, 2. Stability, 3. Controlled access to H/W resources
+- CPU switches to kernel mode & executes user request
+- OS switches back to user mode, returning control to the user (apps)
+
+### How works
+
+- ① User → kernel transition
+- ② Kernel → user transition
+
+### Mechanisms to achieve
+
+- a) CPU features (rings): 0 — for kernel, 1–999 — user [isolation]
+- b) Memory mgmt unit (MMU): MMU enforced virtual memory for user processes; they can't access kernel memory
+- c) Sys calls (way to access kernel)
+
+### Side notes (heavily scribbled, partly unclear, flagged)
+
+- Virtualization — creating logical object; H/W virtualization — creating VM; containerization — [unclear]; container orchestration — runs & manages multiple containers & establishes communication b/w them; micro… [unclear]
+- Boxes: AKS, OpenShift, Docker Swarm, K8s, LXC [as written, partly unclear]
+- Virtual memory for user (running process); these processes can't access kernel memory
+- Kernel mode handles the team request [as written, unclear]; work schedule
+- "Aravind" box at top
+
+### [Filled — added, not in the original image]
+- The transition, filled: the brain (kernel) switches to kernel mode to execute the user's request — the mode transition that the OS level enforces: kernel mode as privileged (UID 0, root) and user mode as restricted (UID 1–999), ensuring security, stability, and controlled access to hardware resources; the CPU switches to kernel mode and executes the user request, then the OS switches back to user mode, returning control to the user (apps).
+- The transitions, filled: user → kernel transition and kernel → user transition — the two directions of the mode switch.
+- The mechanisms, filled: CPU features (rings) with ring 0 for the kernel and rings 1–999 for the user (isolation); the memory management unit (MMU) enforcing virtual memory for user processes so they can't access kernel memory; system calls as the way to access the kernel — the three mechanisms that make the mode separation hold.
+- Side notes, flagged: the side notes are heavily scribbled and partly unclear (virtualization as creating a logical object, hardware virtualization as creating a VM, containerization, container orchestration as running & managing multiple containers and establishing communication between them, and a "micro…" line) — flagged as partly unclear, not reconstructed; the "kernel mode handles the team request" line is kept as written and flagged as unclear (most likely "the user request", not silently corrected).
+- The frame, filled: the kernel/user-mode page that Note 104's user/kernel-space note (INbatch18) and Note 230's JVM/OS/kernel/hardware stack (INbatch31) lead into — filed here as the transition mechanism, not the stack itself.
+
+---
+
+# INbatch35 — Image Notes 258–266 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 9 images are new pages, none skipped. 9 new notes filed (partial set, 9 images, not 10).
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 258 — Storage evolution: early machines, firmware as glue, why storage, without storage (handwritten, as is)
+
+### Storage evolution
+
+### Early machines
+
+- Encoded logic in wiring & switches
+- Changing program meant rewiring circuits
+
+### Firmware
+
+- Firmware initializes H/W & exposes a stable interface to OS (UE… [cut off at page edge])
+- This is glue
+
+### Why storage
+
+- CPU RAM fast but volatile
+- Storage exists to provide:
+  - Persistence
+  - Capacity (larger than RAM)
+  - Durability (protect against failure)
+  - Sharing (across process / machines)
+
+### Without [storage]
+
+- No OS boots
+- DB, logs, files [line ends at page edge]
+
+### [Filled — added, not in the original image]
+- Early machines, filled: encoded logic in wiring & switches — changing a program meant rewiring circuits, the pre-storage era where the program was the wiring.
+- Firmware, filled: firmware initializes hardware & exposes a stable interface to the OS (the cut-off word is most likely UEFI/BIOS, flagged as a reading, not stated as fact) — "this is glue", the firmware as the glue layer between hardware and OS, the same glue role Note 251 gives middleware between centralized and autonomous systems.
+- Why storage, filled: CPU RAM is fast but volatile, so storage exists to provide persistence, capacity (larger than RAM), durability (protection against failure), and sharing (across processes/machines) — the four reasons storage exists at all.
+- Without storage, filled: no OS boots, and databases, logs, and files would not survive — the "without" column's consequence, completed from the column's own two lines (no OS boot; DB, logs, files) as the things lost without persistent storage, marked as filled.
+- The frame, filled: the storage-evolution opening page — the why of storage before the what, filed here as the foundation for the Docker storage and volume notes that follow in this run.
+
+---
+
+## Image Note 259 — Docker swarm workflow: service + swarm manager → tasks on nodes; 3 replicas; swarm task states (handwritten, as is)
+
+### Docker swarm workflow (diagram)
+
+```
+┌─────────────────────────────────┐
+│ Service (replicas)   Swarm      │
+│                      manager    │
+└───┬───────────┬───────────┬─────┘
+    ↓           ↓           ↓
+  task1       task2       task3
+  node1       node2       node3
+```
+
+### Scheduling tasks
+
+- 3 replicas of redis service running in 3 containers
+- You want to load balance b/w 3 instances
+- Each is a task in docker swarm
+- Each task invokes one container
+
+### Swarm tasks (states)
+
+- NEW: task is initiated
+- PENDING: resources allocated for task
+- ASSIGNED: swarm assigns the task node
+- ACCEPTED: [blank in image]
+
+### [Filled — added, not in the original image]
+- The workflow, filled: a service with replicas under a swarm manager schedules tasks — task1 on node1, task2 on node2, task3 on node3 — the swarm manager as the scheduler, the tasks as the scheduled units.
+- The example, filled: 3 replicas of a redis service running in 3 containers, load-balanced between the 3 instances — each replica is a task in Docker Swarm, and each task invokes one container (one task = one container, the swarm task rule).
+- The states, filled: NEW as the task initiated, PENDING as resources allocated for the task, ASSIGNED as the swarm assigning the task to a node, ACCEPTED left blank in the image (not filled, since the accepted-state definition is not legible — the swarm task lifecycle continues past accepted to running, but that continuation is not written here).
+- The frame, filled: the swarm workflow page that Note 260's architecture (managers, workers, swarm API, RAFT) and Note 261's features (scaling, service discovery, load balancing) explain — filed here as the task-level view.
+
+---
+
+## Image Note 260 — Swarm architecture: managers, workers, internal state store, swarm API, RAFT (handwritten, as is)
+
+### Swarm architecture (diagram)
+
+```
+Internal state distributed store
+┌──────────┬──────────┬──────────┐
+│ Docker   │ Docker   │ Docker   │
+│ manager  │ manager  │ manager  │
+└───┬──────┴───┬──────┴───┬──────┘
+    ↓          ↓          ↓
+┌──────────┬──────────┬──────────┬──────────┬──────────┐
+│ Docker   │ Docker   │ Docker   │ Docker   │ Docker   │
+│ worker   │ worker   │ worker   │ worker   │ worker   │
+└──────────┴──────────┴──────────┴──────────┴──────────┘
+```
+
+### Notes
+
+- Node is the key member of docker swarm
+- Swarm can have more than one manager node
+- Manager nodes can also act as worker nodes
+- Docker swarm API is another important component of docker swarm arch
+- Swarm has list of remote APIs:
+  - ① Swarm API provides the cluster info as well
+  - ② Swarm API has info about 1 single docker engine
+  - ③ Docker API has info of cluster of docker engines
+  - ④ Docker swarm API has info of cluster, like no of nodes in a cluster, node details
+- Manager nodes use RAFT algorithm to manage nodes
+- Docker swarm → docker node (host) [bottom diagram]
+
+### [Filled — added, not in the original image]
+- The architecture, filled: an internal state distributed store over three Docker managers over five Docker workers — managers holding the distributed state, workers running the tasks, the manager layer as the control plane and the worker layer as the execution plane.
+- The nodes, filled: a node is the key member of Docker Swarm; a swarm can have more than one manager node; manager nodes can also act as worker nodes — the node roles that Note 264 details (manager as orchestrator, worker as task executor).
+- The APIs, filled: the Docker Swarm API as another important component of the swarm architecture, with the swarm's list of remote APIs — swarm API providing cluster info as well, swarm API having info about one single Docker engine, Docker API having info of a cluster of Docker engines, Docker Swarm API having info of a cluster such as the number of nodes in a cluster and node details (the four API lines as written, kept as written even where they overlap, since the image lists them as four separate lines).
+- RAFT, filled: manager nodes use the RAFT algorithm to manage nodes — the consensus algorithm that keeps the managers' distributed state consistent.
+- The frame, filled: the swarm architecture page that Note 259's workflow (manager → tasks → nodes) and Note 261's introduction (swarm as a cluster of Docker engines) sit inside — filed here as the architecture view.
+
+---
+
+## Image Note 261 — Introduction: Docker swarm as cluster manager & orchestration tool; swarm cluster diagram; features; swarm key concepts (handwritten, as is)
+
+### Introduction
+
+- Docker swarm is a cluster manager & orchestration tool which is available in docker engine (default)
+- Swarm is a cluster of docker engines or nodes where you deploy services / containers
+- You can build this by using swarm kit (orch tool kit)
+
+### Diagram
+
+```
+Docker manager
+      ↓
+Docker swarm cluster (managed by docker managers)
+      ↓
+Set of docker engines → docker nodes (node1, node2, node3)
+```
+
+### Features
+
+- ① Manage the nodes in swarm cluster through swarm commands; gives single point of access to build entire swarm; can specify no of tasks for every service
+- ② Scaling
+- ③ Multihost N/W
+- ④ Service discovery
+- ⑤ Load balancing
+- ⑥ Rolling updates
+- ⑦ Secure by default
+
+### Swarm key concepts
+
+- ① Docker node: Docker engine object [cut off]
+- ② Docker service: [cut off]
+- ③ Docker tasks: [cut off]
+
+### [Filled — added, not in the original image]
+- The introduction, filled: Docker Swarm is a cluster manager & orchestration tool available in the Docker engine by default; a swarm is a cluster of Docker engines or nodes where you deploy services/containers, built using SwarmKit (the orchestration toolkit) — the diagram as Docker manager → Docker swarm cluster (managed by Docker managers) → a set of Docker engines as Docker nodes (node1, node2, node3).
+- The features, filled: managing the nodes in a swarm cluster through swarm commands, giving a single point of access to build the entire swarm and letting you specify the number of tasks for every service; scaling; multihost networking; service discovery; load balancing; rolling updates; secure by default — the seven features, the first as the management feature and the rest as the single-word features the image lists.
+- The key concepts, filled: Docker node as a Docker engine object, Docker service, Docker tasks — all three cut off at the page edge and left cut off above, not completed here, since Notes 264 (node, service) and 259 (tasks) carry the full definitions and this page's own lines are not legible past their headings.
+- The frame, filled: the swarm introduction page that Notes 259–260 (workflow, architecture) and 262 (prerequisites, clustering tool, why orchestration) surround — filed here as the entry page of the swarm run.
+
+---
+
+## Image Note 262 — Docker swarm: ① Prerequisites; ② Clustering tool; ③ Why container orchestration system? (handwritten, as is)
+
+### ① Prerequisites
+
+- Docker swarm, cluster concepts
+- Cluster management is a technique to manage one or more cluster nodes
+- This is done using cluster manager & agent
+- Cluster manager is nothing but GUI or CLI S/W
+
+### ② Clustering tool
+
+- Is a S/W that manages set of resources through single point of command
+- Here set of resources nothing but containers
+- Docker swarm one of the example of clustering tool for containers
+
+### ③ Why container orchestration system?
+
+- Large scale distributed system which involves 100s of containers, so container management becomes very tough
+- Few activities: scaling no of containers based on peak load; perform rolling updates for containers; perform health check on containers
+
+### [Filled — added, not in the original image]
+- Prerequisites, filled: Docker Swarm and cluster concepts as the prerequisites — cluster management as the technique to manage one or more cluster nodes, done using a cluster manager & agent, where the cluster manager is nothing but GUI or CLI software.
+- Clustering tool, filled: a software that manages a set of resources through a single point of command — here the set of resources is nothing but containers, and Docker Swarm is one example of a clustering tool for containers.
+- Why orchestration, filled: a large-scale distributed system involving hundreds of containers makes container management very tough, so orchestration exists for activities like scaling the number of containers based on peak load, performing rolling updates for containers, and performing health checks on containers — the three activities the image names, matching Note 261's features (scaling, rolling updates) plus health checks.
+- The frame, filled: the swarm prerequisites page — the why before the how, filed here as the motivation for Notes 259–261's workflow, architecture, and features.
+
+---
+
+## Image Note 263 — Docker registry hosts; Docker Hub; Docker workflow (image, container, registry, file, compose); Part 1 & Part 2 flow (handwritten, as is)
+
+### Docker registry can be hosted in
+
+- ① Docker Hub
+- ② AWS container registry
+- ③ Google container registry
+- Many more
+
+### Docker Hub
+
+- One of the docker registry of images
+- Can be accessed at index.docker.io
+
+### Docker workflow
+
+- Docker image: read only template stores app & env
+- Docker container: run time instance of image
+- Docker registry: to store images
+- Docker file: automated image construction
+- Docker file compose: is a tool to manage multiple containers containing diff apps
+
+### Part 1
+
+- Create a docker file that includes base & child images to build
+- `docker build`
+- Tag a name to image
+- Verify — `docker images`, `docker inspect`
+- Push image to repository — `docker push`
+
+### Part 2
+
+- Pull the newly created image from repo — `docker pull`
+- Run image — `docker run`
+- Verify running container — `docker ps`
+
+### [Filled — added, not in the original image]
+- Registry hosts, filled: a Docker registry can be hosted in Docker Hub, AWS container registry, Google container registry, and many more — Docker Hub as one of the Docker registries of images, accessible at index.docker.io.
+- The workflow objects, filled: Docker image as a read-only template storing the app & environment, Docker container as the runtime instance of an image, Docker registry as the store for images, Dockerfile as automated image construction, Docker Compose as the tool to manage multiple containers containing different apps.
+- Part 1, filled: create a Dockerfile that includes base & child images to build, `docker build`, tag a name to the image, verify with `docker images` and `docker inspect`, push the image to the repository with `docker push` — the build-and-publish half.
+- Part 2, filled: pull the newly created image from the repository with `docker pull`, run the image with `docker run`, verify the running container with `docker ps` — the pull-and-run half.
+- The frame, filled: the Docker workflow page that Note 265's components-and-flow page restates in seven steps (create, build, verify, push, pull, run, verify running) — filed here as the registry-and-workflow version, with the commands named per step.
+
+---
+
+## Image Note 264 — ① Docker node (manager vs worker); ② Docker service (task definition, image for a microservice) (handwritten, as is)
+
+### ① Docker node
+
+- Is a docker engine instance
+- It is included in docker swarm
+- In real time these nodes are distributed across multiple cloud as well as physical machines
+
+### Nodes are 2 types
+
+- ① Manager node: responsible for all orchestration & container mgmt activities required to keep up the desired system state
+- ② Worker node: executes tasks assigned by manager node
+
+### ② Docker service
+
+- Nothing but a task definition that has to be executed
+- You have to create a service specifying the image & other additional parameters
+- It is an image for a microservice
+- Eg: HTTP server or DB; any kind of executable program
+
+### [Filled — added, not in the original image]
+- Docker node, filled: a Docker node is a Docker engine instance included in Docker Swarm — in real time these nodes are distributed across multiple clouds as well as physical machines.
+- Two node types, filled: manager node as responsible for all orchestration & container-management activities required to keep up the desired system state; worker node as executing tasks assigned by the manager node — the two roles that Note 260's architecture (managers over workers, RAFT among managers) depends on.
+- Docker service, filled: nothing but a task definition that has to be executed — you create a service specifying the image & other additional parameters; it is an image for a microservice, for example an HTTP server or a database, or any kind of executable program — the service as the desired-state declaration that Note 259's tasks execute (one task = one container per service replica).
+- The frame, filled: the node-and-service definitions that Note 261's cut-off key concepts point to — filed here as the full definitions page.
+
+---
+
+## Image Note 265 — Docker components (daemon, client, image, container, file, registry); Docker workflow 7 steps (handwritten, as is)
+
+### Docker components
+
+- ① Docker daemon: process responsible for managing docker objects
+- ② Docker client: communicates with docker daemon
+- Docker image: "read only template" stores app & environment
+- Docker container: "run time instance" image
+- Docker file: "automates" image construction
+- Docker registry: "to store images" publicly & privately
+
+### Docker workflow / steps involved in Docker flow
+
+- ① Create a docker file → builds image file
+- ② Build a docker image → push to hub
+- ③ Verify image
+- ④ Push to registry
+- ⑤ Pull from registry
+- ⑥ Run image
+- ⑦ Verify running service / container
+
+### [Filled — added, not in the original image]
+- Components, filled: Docker daemon as the process responsible for managing Docker objects, Docker client as communicating with the Docker daemon, Docker image as a read-only template storing the app & environment, Docker container as the runtime instance of an image, Dockerfile as automating image construction, Docker registry as storing images publicly & privately — the six components, with daemon and client numbered ①–② and the rest listed as the image lists them.
+- The workflow, filled: create a Dockerfile (builds the image file), build a Docker image (push to hub), verify the image, push to the registry, pull from the registry, run the image, verify the running service/container — the seven steps, matching Note 263's Part 1/Part 2 flow with the verify steps made explicit.
+- The frame, filled: the components-and-flow page that Note 263's registry-and-workflow page and Note 266's network/Dockerfile/registry page bracket — filed here as the seven-step flow version.
+
+---
+
+## Image Note 266 — Docker network (1:N host–containers, modes); Docker file (script, text file); Docker registry (storage house, push/pull) (handwritten, as is)
+
+### Docker network
+
+- Docker N/W helps us to share data across various containers
+- Host & containers in docker are tied with 1:N relationship means a host can command multiple containers
+
+### Modes of N/W
+
+- Is all about how we manage connections b/w containers
+- ① Bridge mode
+- ② Host mode
+- ③ Container mode
+- ④ No N/W
+
+### Docker file
+
+- Is a script formed of diff arguments & commands
+- Is a simple text file with instructions on how to build your images
+
+### Docker registry
+
+- Is a storage house for docker images
+- It can be accessed publicly or privately by developers
+- Docker images sent to registry by `docker push`
+- Downloaded by `docker pull` command
+
+### [Filled — added, not in the original image]
+- Docker network, filled: Docker networking helps us share data across various containers — host & containers in Docker are tied with a 1:N relationship, meaning a host can command multiple containers.
+- Modes, filled: modes of networking are all about how we manage connections between containers — bridge mode, host mode, container mode, no network — the four modes, listed here without per-mode definitions since the image names them without defining them (not filled from outside knowledge, to keep this note's fill rule honest to the page).
+- Dockerfile, filled: a script formed of different arguments & commands — a simple text file with instructions on how to build your images.
+- Registry, filled: a storage house for Docker images, accessible publicly or privately by developers — Docker images sent to the registry by `docker push`, downloaded by the `docker pull` command.
+- The frame, filled: the network/Dockerfile/registry page that closes the Docker run in this batch — network modes, the build script, and the image store as the three remaining Docker pieces after Notes 263/265's workflow and components.
+
+---
+
+# INbatch36 — Image Notes 267–275 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 9 images are new pages, none skipped. 9 new notes filed (partial set, 9 images, not 10).
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 267 — Docker image points (inert, immutable, read-only, layers, parent/child); Docker service/containers (class/object, 1 image → many containers, lifecycle) (handwritten, as is)
+
+### Docker image points
+
+- An image is an inert, immutable file
+- ① Image is read only — can't modify, can't be altered
+- ② Although alteration is not allowed in Docker, we are allowed to add new layer with the changes
+- ③ Parent & child images: original image is termed base image; child images are added upon [base]
+
+### Docker service / containers
+
+- Image — class; container — object
+- Containers are run time instance of docker images
+- Fundamental purpose of docker is to run containers
+- 1 image → many containers
+
+### Create docker image → container life cycle
+
+- Docker service — running, pause, running, stop, kill
+
+### [Filled — added, not in the original image]
+- Image points, filled: an image is an inert, immutable file — read-only, can't be modified, can't be altered; although alteration is not allowed in Docker, you are allowed to add a new layer with the changes; parent & child images as the original image termed the base image, with child images added upon it — the layering model that Note 263's Dockerfile build (base & child images) produces.
+- Class/object, filled: image as class, container as object — containers as the runtime instances of Docker images, the fundamental purpose of Docker being to run containers, one image → many containers.
+- Life cycle, filled: create a Docker image → the container life cycle as running, pause, running, stop, kill — the service states the image lists, kept in the image's own order (running → pause → running → stop → kill).
+- The frame, filled: the image-and-container page that Notes 263/265's workflow (image → container) and 268's image definition (collection of files, libraries, binaries, dependencies) bracket — filed here as the immutability-and-layers version.
+
+---
+
+## Image Note 268 — CLI / Engine / Cloud diagram (client → host → registry); Docker components (daemon, client, objects, registry); client via REST API; daemon; image (handwritten, as is)
+
+### Diagram (CLI → Engine → Cloud)
+
+```
+Client (CLI)                Docker host (Engine)           Cloud (Registry)
+┌──────────────────┐        ┌──────────────────┐          ┌──────────────────┐
+│ Docker cmds:     │        │ Docker daemon    │          │ Registry         │
+│ build, publish,  │───────→│ containers,      │─────────→│ image            │
+│ push, run        │        │ images,          │          │                  │
+│                  │        │ app1, app2, app3 │          │                  │
+└──────────────────┘        └──────────────────┘          └──────────────────┘
+```
+
+### Docker components include
+
+- ① Docker daemon
+- ② Docker client
+- ③ Docker objects: images, containers / services, N/W, volumes
+- ④ Docker registry
+
+### Docker client
+
+- Communicate with docker daemon through REST API calls
+- Client can send [to] many daemons [as written, partly unclear]
+
+### Docker daemon
+
+- Is docker process
+- It receives req from docker client & responsible for managing docker objects
+
+### Docker image
+
+- Collection of files: all files, libraries, binaries, other dependencies forming the S/W app which can run anywhere
+
+### [Filled — added, not in the original image]
+- The diagram, filled: client (CLI) with Docker commands (build, publish, push, run) → Docker host (engine) with Docker daemon, containers, images, and apps (app1, app2, app3) → cloud registry with the image — the three-tier Docker flow, CLI → engine → cloud.
+- Components, filled: Docker daemon, Docker client, Docker objects (images, containers/services, networks, volumes), Docker registry — the four components, with objects expanded into the four object types the image lists.
+- Client, filled: the Docker client communicates with the Docker daemon through REST API calls, and a client can send to many daemons (kept as written, flagged as partly unclear — the image's wording is "client can send many daemon", read as one client talking to many daemons).
+- Daemon, filled: the Docker daemon is a Docker process that receives requests from the Docker client and is responsible for managing Docker objects.
+- Image, filled: a Docker image as a collection of files — all files, libraries, binaries, and other dependencies forming the software app, which can run anywhere — the portability definition that Note 270's "improved portability" benefit rests on.
+- The frame, filled: the CLI/engine/cloud page that Note 269's engine page (daemon, REST API, client as core components) details — filed here as the flow version.
+
+---
+
+## Image Note 269 — Docker (open source container technology, separate app from infra); Docker engine (core component, class → runtime → object); daemon, REST API, client; Linux vs non-Linux (handwritten, as is)
+
+### Docker
+
+- It's an open source container technology
+- It enables you to separate your app from your infra, so you can deliver software quickly
+- With docker you can manage your infra in same way you manage your app
+
+### Docker engine
+
+- Core component
+- Responsible for creating docker images & running them as services
+- Class: images → runtime: services → object: containers
+
+### Core components of Docker engine
+
+- Docker daemon, REST API, docker client
+
+### Daemon
+
+- Continuous running program that manages the services & other docker objects tied with [it]
+
+### REST API
+
+- Special interfaces [that] programs can utilize to speak to daemon
+
+### Docker client
+
+- To interact with docker daemon
+- Docker Linux requires docker client & docker daemon
+- Non-Linux: HyperKit, Hyper-V [boxed]
+
+### [Filled — added, not in the original image]
+- Docker, filled: an open-source container technology that enables you to separate your app from your infrastructure, so you can deliver software quickly — with Docker you can manage your infrastructure in the same way you manage your app.
+- Engine, filled: the Docker engine as the core component, responsible for creating Docker images & running them as services — class as images → runtime as services → object as containers, the same class/object frame as Note 267.
+- Engine components, filled: Docker daemon, REST API, Docker client as the core components of the Docker engine — daemon as the continuous running program managing services & other Docker objects, REST API as the special interfaces programs can utilize to speak to the daemon, Docker client as the way to interact with the Docker daemon.
+- Linux vs non-Linux, filled: Docker on Linux requires the Docker client & Docker daemon; non-Linux uses HyperKit and Hyper-V (boxed in the image) — the platform split, kept as written and flagged as the image's own shorthand (HyperKit for macOS, Hyper-V for Windows, not expanded beyond the image's two names).
+- The frame, filled: the Docker-and-engine page that Note 268's CLI/engine/cloud flow and Note 265's components page surround — filed here as the engine-definition version.
+
+---
+
+## Image Note 270 — Container benefits; benefits from container orchestration tools; Docker as tool; containerization (kernel on host OS, multiple guest instances) (handwritten, as is)
+
+### Container benefits
+
+- Improved portability
+- Better performance
+- Optimum RAM, HDD, cloud virt [as written, partly unclear]
+- Suited agile env
+- Facilitates approaches: micro services, CI, CD
+
+### Benefits from container orchestration tools
+
+- Docker swarm, Amazon ECS, Azure container service [crossed "cost like" line above, not transcribed as content]
+- ① Facilitate auto deployment
+- ② Scale app easily
+- ③ Enable automatic rollback & backups
+- ④ Support load balancer & health [checks]
+
+### Docker
+
+- It's a tool that makes the process of creating, deploying, running apps easier by using container virtualization technology / containerization
+- Uses kernel on host OS to run multiple guest instances
+
+### Eg (orchestration examples)
+
+- Docker; AWS Fargate, Google Kubernetes, Amazon ECS, MS Azure
+
+### [Filled — added, not in the original image]
+- Container benefits, filled: improved portability, better performance, optimum RAM/HDD/cloud virtualization (kept as written, flagged as partly unclear — the "cloud virt" line's exact referent is unclear), suited to agile environments, facilitating approaches like microservices, CI, and CD.
+- Orchestration benefits, filled: from container orchestration tools (Docker Swarm, Amazon ECS, Azure Container Service) — facilitating auto deployment, scaling apps easily, enabling automatic rollback & backups, supporting load balancing & health checks (the fourth item's final word completed as "checks", marked as filled, since the image cuts off at "health").
+- Docker as tool, filled: a tool making the process of creating, deploying, and running apps easier by using container virtualization technology/containerization, using the kernel on the host OS to run multiple guest instances — the kernel-sharing definition that Note 271's containers-vs-VMs comparison (single kernel, no guest OS per app) depends on.
+- Examples, filled: Docker, AWS Fargate, Google Kubernetes, Amazon ECS, MS Azure as the orchestration examples the image lists (kept as written, including Amazon ECS appearing in both the tools list and the examples list).
+- The frame, filled: the benefits page that Note 271's VM-vs-containers comparison (size, startup) and Note 262's why-orchestration page (scaling, rolling updates, health checks) echo — filed here as the benefits version.
+
+---
+
+## Image Note 271 — Containers (isolated services, single kernel, OS-level virtualization); VM vs containers diagram; size & startup comparison (handwritten, as is)
+
+### Containers
+
+- Are multiple isolated services run on a single control host & they access kernel
+- Container based virtualization is an OS level virtualization for deploying & running distributed apps without launching an entire VM for each app
+- They isolate apps from one another
+
+### Diagram (drawn)
+
+```
+VMs:                          Containers:
+app | app | app               app | app | app
+bin | bin | bin               bin | bin | bin
+guest OS | guest OS | guest OS   ───────────────
+─────────────────────────      Docker
+Host OS (win/mac/linux)        Host OS (win/mac/linux)
+─────────────────────────      ─────────────────
+Server                         Server
+```
+
+### VM vs containers
+
+- ① Size: VMs resource wastage is high; containers no wastage; VM complex, containers simple (integration with DevOps tools)
+- ② Start up: VMs start slow; containers start really quick
+
+### [Filled — added, not in the original image]
+- Containers, filled: multiple isolated services run on a single control host & accessing the kernel — container-based virtualization as OS-level virtualization for deploying & running distributed apps without launching an entire VM for each app, isolating apps from one another.
+- The diagram, filled: VMs as app + binaries + guest OS per app over a host OS over a server, versus containers as app + binaries over Docker over a host OS over a server — the per-app guest OS as the VM's extra layer, Docker as the containers' shared layer, both over the same host OS and server.
+- The comparison, filled: size as VMs having high resource wastage versus containers having no wastage, VM as complex versus containers as simple (with integration with DevOps tools); startup as VMs starting slow versus containers starting really quick.
+- The frame, filled: the containers-vs-VMs page that Note 272's need-of-VM/problems-with-VM page (isolation and maintenance versus wastage, inconsistent env, hardware-failure blast radius) pairs with — filed here as the comparison version.
+
+---
+
+## Image Note 272 — Need of VM; problems with VM (wastage, inconsistent env, hardware failure blast radius) (handwritten, as is)
+
+### Need of VM
+
+- ① Multiple OS can be hosted on same machine with complete isolation
+- ② Multiple VMs can be deployed on same physical box; it reduces total no of physical machines
+- ③ Easy maintenance
+
+### Problems with VM
+
+- ① A lot of wastage of resources like (RAM, processor, disk space) due to fixed space slicing for every app deployed
+- ② Inconsistent computing env
+- ③ Hardware failures will stop all working servers because many servers run on a single machine
+
+### [Filled — added, not in the original image]
+- Need of VM, filled: multiple operating systems hosted on the same machine with complete isolation; multiple VMs deployed on the same physical box, reducing the total number of physical machines; easy maintenance — the three needs, with isolation as the first and consolidation as the second.
+- Problems with VM, filled: a lot of wastage of resources (RAM, processor, disk space) due to fixed space slicing for every app deployed; inconsistent computing environments; hardware failures stopping all working servers because many servers run on a single machine — the three problems, with fixed slicing as the wastage mechanism and the single machine as the blast radius.
+- The frame, filled: the need-and-problems page that Note 271's VM-vs-containers comparison answers (containers keeping the isolation without the per-app guest OS and fixed slicing) — filed here as the VM's own case, for and against.
+
+---
+
+## Image Note 273 — Docker home directory (/var/lib/docker); docker volume create; volume structure (containers → host folders); mapping volume to container (two ways) (handwritten, as is)
+
+### Docker home directory
+
+- Docker home directory is `/var/lib/docker`
+- `docker volume create [name]` [example name in image, kept as the example]
+- In docker home → `ls`: images, volumes, …
+- `cd volumes` → `ls -la [name]`
+
+### Volume structure (diagram)
+
+```
+Containers (c1, c2, c3) with logs
+        ↓ (synced if container terminated)
+Underlying host OS folders:
+  /etc, /usr, /var, /lib, /bin + volume folder
+```
+
+### To achieve this structure
+
+- ① Creating a volume (name)
+- ② Creating container demo; mapping [name] volume to demo container
+- ③ Mapping can be done in two ways / commands:
+  - ① `--mount type volume, source volume name, target container name`
+  - ② `-v`
+
+### [Filled — added, not in the original image]
+- Home directory, filled: the Docker home directory as `/var/lib/docker`, with `docker volume create` (example name in the image, kept as the example), `ls` in the Docker home showing images, volumes, and more, and `cd volumes` then `ls -la` showing the named volume — the volume's on-disk location.
+- Structure, filled: containers (c1, c2, c3) with logs syncing to the underlying host OS folders (/etc, /usr, /var, /lib, /bin plus the volume folder) if a container is terminated — the volume as the host-side survival of container logs, the same persistence pattern Note 275 draws (logs copied to a volume on the underlying host).
+- Mapping, filled: creating a volume, creating a demo container and mapping the volume to it, with mapping done in two ways/commands — `--mount` with type volume, source volume name, and target container name, and `-v` — the two mapping forms, with `--mount` as the explicit form and `-v` as the shorthand the image lists without expanding.
+- The frame, filled: the Docker volumes how-to page that Note 275's storage theory (persistent vs non-persistent, volumes vs binding) explains — filed here as the commands version.
+
+---
+
+## Image Note 274 — Docker installation (rotated page): installed path, background service, dockerd, default config files (handwritten, as is)
+
+### Docker (rotated page, partly legible)
+
+- When you install it: Docker installed on your system
+- The Docker installation path: `/usr/local/bin/docker` or `/usr/bin/docker` (Linux)
+- The installed services runs in bg
+- The installed [daemon] runs as a service (dockerd)
+- Default config files: CLI tools, Docker daemon [as written, partly unclear, cut off at page edge]
+
+### Side fragments (partly legible)
+
+- Development … apps using containers [fragment, flagged, not reconstructed]
+
+### [Filled — added, not in the original image]
+- Installation, filled: when you install Docker, it is installed on your system at `/usr/local/bin/docker` or `/usr/bin/docker` (Linux); the installed services run in the background; the installed daemon runs as a service (dockerd); default config files for the CLI tools and the Docker daemon (kept as written, flagged as partly unclear and cut off at the page edge, not expanded beyond the image's own words).
+- Side fragments, flagged: the side fragments (development, apps using containers) are partly legible and flagged, not reconstructed.
+- The frame, filled: the Docker installation page — the rotated, partly legible page in this set, filed here as the install-path version of Note 269's engine page (daemon as a continuous running program, now as a background service).
+
+---
+
+## Image Note 275 — Docker storage: persistence (permanent) vs non-persistence (ephemeral, short life); non-persistent loss; persistent via volumes & binding (handwritten, as is)
+
+### Docker storage
+
+- Persistence — permanent
+- Non-persistence — ephemeral, short life span
+
+### Non-persistence (diagram)
+
+```
+Container-1 with logs (data)
+  → when container restarted or terminated, data may be lost
+  → data is available when container alive
+```
+
+### Persistent (diagram)
+
+```
+Logs (data) copied to volume on underlying host (root)
+  → volume attached to cont-3 logs
+```
+
+### Notes
+
+- Containers has non-persistent data
+- Data gets created inside containers only
+- Data is read-write
+- Persistent data achieved in 2 ways: ① volumes, ② binding
+- Volume: its data alive outside container
+
+### Bottom diagram
+
+```
+Containers c4, c3 with logs
+  → data synced with host folder
+Underlying host: /lib, /root, /bin, /etc, /usr + volume folder
+```
+
+### [Filled — added, not in the original image]
+- Storage split, filled: Docker storage as persistence (permanent) versus non-persistence (ephemeral, short life span).
+- Non-persistent, filled: logs (data) in container-1 — when the container is restarted or terminated, data may be lost; data is available only when the container is alive.
+- Persistent, filled: logs (data) copied to a volume on the underlying host (root), with the volume attached to container-3's logs — the volume as the survival mechanism.
+- Notes, filled: containers have non-persistent data; data gets created inside containers only; data is read-write; persistent data is achieved in two ways (volumes, binding); a volume's data stays alive outside the container.
+- Bottom diagram, filled: containers c4 and c3 with logs, data synced with the host folder, on the underlying host (/lib, /root, /bin, /etc, /usr plus the volume folder) — the same host-folder survival Note 273 draws for c1/c2/c3.
+- The frame, filled: the Docker storage theory page that Note 273's volume commands implement and Note 258's why-storage page (persistence, capacity, durability, sharing) motivates — filed here as the persistence version.
+
+---
+
+# INbatch37 — Image Notes 276–285 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: the delivery-analogy example on the K8s overview page carries a personal name and locality as its example address; per the standing sanitize rule, the analogy is transcribed generically (courier packet → courier → delivery address) without the example name/locality.
+
+## Image Note 276 — K8s overview: host an app in containers in an automated way; courier analogy; cluster (master, workers, Nginx/MySQL); manifest; desired vs actual (handwritten, as is)
+
+### K8s overview
+
+- K8s: used to host an application in form of containers in a automated way
+- App → container → docker run, image path
+
+### Eg (courier analogy)
+
+- Courier packet → handed over to courier → delivered to address [example name/locality omitted per sanitize rule]
+
+### Cluster (diagram)
+
+```
+Master node ──→ Worker nodes (Nginx, MySQL)
+Orchestration / management of cluster
+Collection of nodes: 1 or more master, worker
+Scheduler / controller will auto scale up containers
+```
+
+### Application top
+
+- Manifest file (YAML / CLI)
+- Applic: Nginx, deploy MySQL
+
+### Desired vs actual
+
+| Desired | Actual |
+|---|---|
+| 2 Nginx | 2 |
+| 3 MySQL | 3 |
+
+### [Filled — added, not in the original image]
+- Overview, filled: Kubernetes used to host an application in the form of containers in an automated way — app → container → docker run with an image path, the containerization chain that Notes 282 (containerization definition) and 283 (prerequisites: containerization, Docker, Docker swarm) name as the K8s prerequisites.
+- Analogy, filled: the courier analogy as a courier packet handed over to a courier and delivered to an address — the analogy for handing an application to Kubernetes and having it delivered to the cluster, transcribed generically per the sanitize rule (the example name and locality on the page are omitted, not copied).
+- Cluster, filled: the cluster as a master node and worker nodes running Nginx and MySQL, with orchestration/management of the cluster, a collection of nodes with one or more masters and workers, and the scheduler/controller auto-scaling containers up — the cluster shape that Note 277's architecture diagram details.
+- Manifest & desired/actual, filled: the application top as a manifest file (YAML/CLI) declaring the desired state — 2 Nginx desired and 2 actual, 3 MySQL desired and 3 actual — the desired-vs-actual reconciliation that Note 281's controller-manager (maintaining the desired state of the cluster) enforces.
+- The frame, filled: the K8s overview page that Notes 277–284 (architecture, master components, API server, etcd, orchestration, cluster, minikube) unpack — filed here as the entry page of the K8s run.
+
+---
+
+## Image Note 277 — K8s arch: master node (API server, controller manager, scheduler, etcd) → worker nodes (kubelet, kube-proxy, pod, container runtime, CNI); 11-step flow; master (API server, etcd, scheduler) (handwritten, as is)
+
+### K8s arch
+
+- 1 Arch, 2 components, 3 ex-deploy-components [as written]
+
+### Diagram
+
+```
+kubectl (admin/dev)
+        ↓
+Master node: API server, controller manager, scheduler, etcd
+        ↓
+Worker nodes: kubelet, kube-proxy, pod, container runtime (docker), CNI plugins
+```
+
+### Flow (numbered, as written)
+
+- ① API → etcd
+- ② etcd → API
+- ③ API → scheduler
+- ④ Scheduler algo
+- ⑤ Scheduler → API
+- ⑥ API → kubelet
+- ⑦ Kubelet → container runtime
+- ⑧ Docker run
+- ⑨ Kubelet wrapper pod
+- ⑩ Kubelet → API
+- ⑪ API → etcd
+
+### Master
+
+- ① API server: to explore API cluster (K8s cluster API exposure); first we communicate to API server to access admin cluster; to access cluster
+- ② etcd: store all its data; contains cluster complete details like no of nodes, no of secrets, pods, nodes, configurations; key value data store pods
+- ③ Scheduler: a node esp a object; scheduler decides [cut off]; objects are created by manifest file, image [cut off]; pods → nodes, obj → [cut off]
+
+### [Filled — added, not in the original image]
+- Architecture, filled: kubectl (admin/dev) → master node (API server, controller manager, scheduler, etcd) → worker nodes (kubelet, kube-proxy, pod, container runtime as Docker, CNI plugins) — the master/worker split that Note 278's master components and Note 283's basic components (master node, several worker nodes, key-value store) restate.
+- Flow, filled: the eleven-step flow as written — API → etcd, etcd → API, API → scheduler, scheduler algorithm, scheduler → API, API → kubelet, kubelet → container runtime, docker run, kubelet wrapper pod, kubelet → API, API → etcd — the request loop from kubectl through the master to the worker and back to etcd, kept in the image's own numbering.
+- Master, filled: API server as the way to explore the API cluster (Kubernetes cluster API exposure), with the first communication going to the API server to access the admin cluster; etcd as storing all its data, containing cluster complete details such as the number of nodes, number of secrets, pods, nodes, and configurations, as a key-value data store; scheduler as deciding placement (cut off in the image — the scheduler's decision is completed in Note 281 as checking newly created pods and assigning them to worker nodes, but this page's own scheduler lines are left cut off above, not completed here).
+- The frame, filled: the K8s architecture diagram page that Notes 278–279 (master components, API server, etcd) and 281 (scheduler, controller-manager) detail component by component — filed here as the diagram version.
+
+---
+
+## Image Note 278 — Master components: at least one master node; master manages/controls/decides; kubectl or API server; 4 components; master placement note (handwritten, as is)
+
+### Master components
+
+- Every K8s cluster contains at least one master node
+- Master node manages the cluster
+- Master node controls the worker nodes in the cluster & makes decisions regarding scheduling, scaling, & updating the app
+- You can communicate with master node via kubectl CLI or the API server
+
+### Diff components of master node
+
+- ① Kube-apiserver
+- ② etcd key-value store
+- ③ Kube-scheduler
+- ④ Kube-controller-mngr
+
+### Note
+
+- K8s master can run on any machine but all master components must run on the same machine & no nodes should run in that machine [as written]
+
+### [Filled — added, not in the original image]
+- Master, filled: every Kubernetes cluster contains at least one master node; the master node manages the cluster, controls the worker nodes in the cluster, and makes decisions regarding scheduling, scaling, and updating the app; you communicate with the master node via the kubectl CLI or the API server.
+- Four components, filled: kube-apiserver, etcd key-value store, kube-scheduler, kube-controller-manager — the four master components, each detailed in Notes 279 (API server, etcd) and 281 (scheduler, controller-manager).
+- Placement note, filled: the Kubernetes master can run on any machine, but all master components must run on the same machine and no (worker) nodes should run on that machine — kept as written, flagged as the image's own placement rule (the "no nodes" line is read as no worker nodes on the master machine, not silently corrected).
+- The frame, filled: the master-components list page that Note 277's architecture diagram (master node box) and Note 283's basic components (master node, workers, etcd) bracket — filed here as the list version.
+
+---
+
+## Image Note 279 — Kube-apiserver (connects to K8s API, admin tasks, etcd state, front-end, horizontal scaling); etcd (reliable distributed key-value store, cluster state, part of master or external) (handwritten, as is)
+
+### Kube-apiserver
+
+- Connects to the K8s API
+- Helps to perform all the administrative tasks given by the user
+- Stores cluster state in etcd key-value store
+- After all the executions are done [as written, partly unclear]
+- It is front-end on kube control plane
+- Scaled horizontally by increasing no of instances
+
+### etcd
+
+- Highly reliable & distributed key value store which is used to store the data regarding cluster state
+- Can be part of master node
+- Can be external, in which master node connects to it
+
+### [Filled — added, not in the original image]
+- API server, filled: connects to the Kubernetes API and helps perform all the administrative tasks given by the user; stores cluster state in the etcd key-value store; is the front-end on the Kubernetes control plane; scaled horizontally by increasing the number of instances — the API server as the cluster's front door, with the "after all the executions are done" line kept as written and flagged as partly unclear (its referent is not legible in the image).
+- etcd, filled: a highly reliable & distributed key-value store used to store the data regarding cluster state; it can be part of the master node, or it can be external, in which case the master node connects to it — the two etcd placements.
+- The frame, filled: the API-server-and-etcd page that Note 277's master section (API server as cluster API exposure, etcd as cluster complete details) and Note 278's four components (apiserver, etcd) point to — filed here as the two-component detail page.
+
+---
+
+## Image Note 280 — Container orchestration (runs & manages multiple containers, communication, robust production platform); examples; Kubernetes; K8s vs Docker swarm comparison table (handwritten, as is)
+
+### Container orchestration
+
+- It runs & manages multiple containers containing diff apps or diff functionalities of single application
+- Establishes communication b/w them
+- Focus on building robust platform for running tools of containers in production
+
+### Examples
+
+- ① K8s, ② Docker swarm, ③ OpenShift, ④ AKS
+
+### Kubernetes (K8s)
+
+- It's an open source container orchestration
+- Used for deploying, scaling, updating & managing containerized apps
+
+### K8s vs Docker swarm
+
+| # | Aspect | K8s | Docker swarm |
+|---|---|---|---|
+| ① | Installation | Complicated & time consuming | Easy & fast |
+| ② | GUI | Available | Not available |
+| ③ | Scaling up | Slow but cluster strength strong | Faster than K8s but cluster strength weak |
+| ④ | Load balance | Requires manual service config | Provides built-in load balance feature |
+| ⑤ | Data sharing | Data values only shared with containers in same pod | Can be shared with any other |
+| ⑥ | Monitoring | Inbuilt monitoring tools | 3rd party monitoring tools |
+
+### [Filled — added, not in the original image]
+- Orchestration, filled: container orchestration runs & manages multiple containers containing different apps or different functionalities of a single application, establishes communication between them, and focuses on building a robust platform for running container tools in production — the definition that Note 262's why-orchestration page (hundreds of containers, scaling, rolling updates, health checks) motivates.
+- Examples, filled: Kubernetes, Docker Swarm, OpenShift, AKS as the four orchestration examples, with Kubernetes as open-source container orchestration used for deploying, scaling, updating, and managing containerized apps.
+- Comparison, filled: installation as complicated & time-consuming for K8s versus easy & fast for Swarm; GUI as available for K8s versus not available for Swarm; scaling up as slow but cluster-strength strong for K8s versus faster than K8s but cluster-strength weak for Swarm; load balancing as requiring manual service config for K8s versus providing a built-in load-balance feature for Swarm; data sharing as data values only shared with containers in the same pod for K8s versus shareable with any other for Swarm; monitoring as inbuilt tools for K8s versus third-party tools for Swarm — the six-row comparison, kept as written (the image's own verdicts, not re-judged here).
+- The frame, filled: the orchestration-and-comparison page that Notes 259–262 (Swarm workflow, architecture, features, prerequisites) and 276–279 (K8s overview, architecture, master, API server) set up — filed here as the head-to-head version.
+
+---
+
+## Image Note 281 — Docker swarm (inbuilt tool, node cluster, scaling, rolling changes); MASTER COMPONENTS (kube scheduler, kube controller manager with 5 controllers) — header/component mismatch flagged (handwritten, as is)
+
+### Docker swarm
+
+- Is an inbuilt docker container orchestration and mgmt tool
+- Used for creating the node cluster, scaling up the app, rolling changes & updates
+
+### MASTER COMPONENTS
+
+- ① Kube scheduler: checks newly created pods that haven't been assigned to any worker nodes & assigns them to worker nodes; it schedules work to worker nodes; it considers many factors for scheduling: resource req & availability, data locality, deadlines, n/w & s/w policy constraints
+- ② Kube schedule control [controller manager]: manages K8s clusters & helps maintain the desired state of cluster; it's not single component, it's made with control managers:
+  - ① Node controller
+  - ② Replication controller
+  - ③ End-point controller
+  - ④ Service account
+  - ⑤ Token controller
+
+### [Filled — added, not in the original image]
+- Swarm, filled: Docker Swarm as an inbuilt Docker container orchestration and management tool, used for creating the node cluster, scaling up the app, and rolling changes & updates — the Swarm definition that Notes 259–262 carry.
+- Scheduler, filled: the kube scheduler checks newly created pods that haven't been assigned to any worker nodes & assigns them to worker nodes, scheduling work to worker nodes, considering many factors for scheduling — resource requirements & availability, data locality, deadlines, network & software policy constraints — the scheduler factors that complete Note 277's cut-off scheduler lines.
+- Controller manager, filled: the kube controller manager manages Kubernetes clusters & helps maintain the desired state of the cluster; it is not a single component but made of control managers — node controller, replication controller, end-point controller, service account, token controller — the five controllers as written (service account and token controller kept as written, flagged as the image's own list).
+- Header mismatch, flagged: the page is headed "Docker swarm" and "MASTER COMPONENTS" but the components listed are Kubernetes master components (kube scheduler, kube controller manager) — flagged as a header/component mismatch in the image itself, not silently retitled, since the image's own heading and content disagree.
+- The frame, filled: the scheduler-and-controller page that Note 277's flow (API → scheduler → API → kubelet) and Note 276's desired-vs-actual table (the desired state the controller maintains) depend on — filed here as the scheduling-and-control version.
+
+---
+
+## Image Note 282 — A cluster in K8s (group of computers, masters control workers); app mgmt commands (autoscale, create, delete, edit, get); containerization; container systems (handwritten, as is)
+
+### A cluster in K8s
+
+- Is a group of computers (physical or virtual) connected together to perform tasks
+- Cluster consists of one or more master nodes that control the … worker nodes [word partly unclear]
+
+### App mgmt commands
+
+- ① Autoscale: creates autoscaler, it decides no of pods that run K8s cluster
+- ② Create: creates K8s objects from YAML or JSON file
+- ③ Delete: deletes object by file name
+- ④ Edit: edit resource
+- ⑤ Get: gets specific resource or objects
+
+### Containerization
+
+- A virtualization technique in which the application & all its dependencies packed into a single isolated package called container
+- Container can run on host OS, VM, or cloud
+- Why to run container is OS platform [as written]
+
+### Container systems
+
+- Docker, RKT, LXC
+
+### [Filled — added, not in the original image]
+- Cluster, filled: a cluster in Kubernetes as a group of computers (physical or virtual) connected together to perform tasks, consisting of one or more master nodes that control the worker nodes — the cluster definition that Note 276's overview (collection of nodes, masters and workers) and Note 283's basic components restate.
+- App management commands, filled: autoscale as creating an autoscaler that decides the number of pods running in the Kubernetes cluster; create as creating Kubernetes objects from a YAML or JSON file; delete as deleting an object by file name; edit as editing a resource; get as getting a specific resource or objects — the five management commands.
+- Containerization, filled: a virtualization technique in which the application & all its dependencies are packed into a single isolated package called a container; a container can run on a host OS, VM, or cloud; "why to run container is OS platform" kept as written (the line's meaning is unclear in the image, flagged, not reinterpreted).
+- Container systems, filled: Docker, RKT, LXC as the three container systems the image lists.
+- The frame, filled: the cluster-and-commands page that Note 283's prerequisites (containerization, Docker, Docker swarm) and Note 270's Docker-as-tool page (container virtualization technology) bracket — filed here as the cluster-definition version.
+
+---
+
+## Image Note 283 — Kubernetes K8s: prerequisites (containerization, Docker, Docker swarm); Minikube (lightweight, local, learning/eval/dev only, one master & worker); arch of K8s; basic components (handwritten, as is)
+
+### Kubernetes K8s
+
+### Prerequisites concepts like
+
+- ① Containerization
+- ② Docker
+- ③ Docker swarm
+
+### Minikube
+
+- Is a light weight version of K8s that can run on a local machine or local VM
+- It is used for learning, evaluation, & dev purpose only
+- Minikube cluster has only one master & worker node
+
+### Arch of K8s (diagram)
+
+```
+Master: etcd, API server, scheduler, control manager
+        ↓
+Workers: docker, kubelet, k8s proxy
+```
+
+### Basic components of K8s arch
+
+- ① Master node
+- ② Several worker nodes
+- ③ Key value store (etcd)
+
+### [Filled — added, not in the original image]
+- Prerequisites, filled: containerization, Docker, and Docker Swarm as the prerequisite concepts for Kubernetes — the learning order that Notes 267–275 (Docker) and 259–262 (Swarm) followed before this K8s run.
+- Minikube, filled: a lightweight version of Kubernetes that can run on a local machine or local VM, used for learning, evaluation, and development purposes only, with a minikube cluster having only one master & worker node — the single-node cluster that Note 256's minikube utility page (single-node Kubernetes locally, to test deployment scripts) describes from the install side.
+- Architecture, filled: master (etcd, API server, scheduler, control manager) over workers (docker, kubelet, Kubernetes proxy) — the simplified architecture diagram, with basic components as the master node, several worker nodes, and the key-value store (etcd).
+- The frame, filled: the K8s prerequisites-and-minikube page that Note 256's minikube install page and Note 277's full architecture diagram bracket — filed here as the lightweight-and-basic version.
+
+---
+
+## Image Note 284 — Container ④ (isolated context, managed & connected to external world); Volume ⑤ (location, local file system appearance, pods mount); Namespace ⑥ (functional grouping, collaboration, isolation) (handwritten, as is)
+
+### Container ④
+
+- Provides isolated context in which app & env can run but containers needs to be managed & connected to the external world
+- Needs: shared file systems, networking, scheduling, load balancing & distribution challenges
+
+### Volume ⑤
+
+- Represents location with containers can access & store information
+- For the app, volume appears as part of the local file system
+- Pods can mount volumes like file system
+
+### Namespace ⑥
+
+- Functional grouping mechanism inside of K8s
+- Groups: services, volumes, pods, replication controllers within a namespace easily collaborate [with each other, as written "easily collaborated"]
+- Provides a degree of isolation of other parts of cluster
+
+### [Filled — added, not in the original image]
+- Container, filled: a container provides an isolated context in which an app & environment can run, but containers need to be managed & connected to the external world — with needs of shared file systems, networking, scheduling, load balancing, and distribution challenges — the management needs that Note 262's why-orchestration page (scaling, rolling updates, health checks) and Note 280's orchestration definition answer.
+- Volume, filled: a volume represents a location which containers can access & store information in; for the app, the volume appears as part of the local file system; pods can mount volumes like a file system — the Kubernetes volume definition, matching Note 275's Docker volume (data alive outside the container) at the K8s level.
+- Namespace, filled: a namespace as a functional grouping mechanism inside Kubernetes — services, volumes, pods, and replication controllers within a namespace easily collaborate, providing a degree of isolation from other parts of the cluster — the grouping-and-isolation mechanism that Note 285's labels (nametags for querying) complement.
+- Numbering, filled: the items are numbered ④, ⑤, ⑥ on the page, continuing a numbering whose ①–③ are on the companion page (Note 285's name tag ①, pod ②, replication controller ③, service ④) — filed here with the page's own numbers kept, not renumbered.
+- The frame, filled: the container/volume/namespace page that Note 285's name-tag/pod/replication-controller/service page continues — filed here as the second half of the K8s objects run.
+
+---
+
+## Image Note 285 — Name tag ① (labels, query); Pod ② (runnable unit, single container usually, overlay N/W); Replication controller ③ (manage pods, template, scaling, rolling deploys); K8s service ④ (set of pods, stable IP, service discovery) (handwritten, as is)
+
+### Name tag ①
+
+- K8s uses labels as "nametags" to identify things
+- It can query based on these labels
+
+### Pod ②
+
+- Represents runnable unit of work
+- Usually you run a single container inside a pod
+- It can hold no of containers but usually it only holds two [as written]
+- Pod is connected via an overlay N/W to the rest of environment
+
+### Replication controller ③
+
+- Provides method for managing arbitrary no of pods
+- Contains a pod template which can be replicated any no of times
+- Provides logic for scaling up & down
+- Can be used for rolling deploys
+
+### K8s service ④
+
+- Tells rest of K8s environment: set of pods & replication controllers including other pods; what services your app provides
+- Pods may come & go, the IP address of your service remains same
+- Other apps can find through K8s service discovery
+
+### Volume ⑤ [heading at foot of page, content on next page]
+
+### [Filled — added, not in the original image]
+- Name tag, filled: Kubernetes uses labels as "nametags" to identify things, and it can query based on these labels — the label mechanism that lets selectors find pods, services, and other objects.
+- Pod, filled: a pod represents a runnable unit of work; usually you run a single container inside a pod; it can hold a number of containers but usually it only holds two (kept as written, flagged — the "usually only two" line is the image's own wording, not corrected to the usual single-container pattern); a pod is connected via an overlay network to the rest of the environment.
+- Replication controller, filled: provides a method for managing an arbitrary number of pods; contains a pod template which can be replicated any number of times; provides logic for scaling up & down; can be used for rolling deploys — the controller that Note 281's controller-manager list (replication controller as one of five) names.
+- Service, filled: a Kubernetes service tells the rest of the Kubernetes environment the set of pods & replication controllers (including other pods) and what services your app provides; pods may come & go, but the IP address of your service remains the same; other apps can find it through Kubernetes service discovery — the stable-front-door definition that Note 280's load-balancing row and Note 261's service-discovery feature depend on.
+- Volume heading, filled: the "Volume ⑤" heading at the foot of this page has its content on the next page (Note 284) — recorded here so the ④/⑤ numbering across the two pages reads correctly.
+- The frame, filled: the K8s objects page (labels, pod, replication controller, service) that Note 284's container/volume/namespace page continues — filed here as the first half of the K8s objects run.
+
+---
+
+# INbatch38 — Image Notes 286–295 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 10 images are new pages, none skipped. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 286 — /usr: user programs, system-wide libraries, documentation; /usr/bin, /usr/sbin, /usr/lib, /usr/include, /usr/local, /usr/src; key features (handwritten, as is)
+
+### /usr
+
+- Used for user related programs, system wide libraries, documentation
+- It is often mounted separated from root FS
+
+### /usr/bin ①
+
+- User executable binaries
+
+### /usr/sbin ②
+
+- System admin executable binaries
+
+### /usr/lib ③
+
+- Contains libraries & modules for the binaries in /usr/bin & /usr/sbin
+- Includes shared libraries, arch, static lib
+- /usr/lib/libc.so (C library)
+- /usr/lib/modules (kernel modules)
+
+### /usr/include ④
+
+- Contains header files for compiling programs
+
+### /usr/local ⑤
+
+- Contains S/W & files installed by sys admin
+
+### /usr/src ⑥
+
+- Contains source code for sys S/W & other packages installed from source or compiled
+- It holds kernel source code
+
+### /usr key features
+
+- Separation of user & sys files
+- Files in /usr generally shared all users on system
+- Efficiency mgmt by keeping /usr from root to avoid cluttering
+
+### [Filled — added, not in the original image]
+- /usr, filled: /usr as used for user-related programs, system-wide libraries, and documentation, often mounted separated from the root filesystem — the user-space half of the Linux filesystem layout that Note 202's physical terms + virtual terms + drivers/modules/devices box and Note 153's process runtime object (ELF VM layout, owned resources) depend on.
+- Six subdirs, filled: /usr/bin as user executable binaries; /usr/sbin as system-admin executable binaries; /usr/lib as libraries & modules for the binaries in /usr/bin & /usr/sbin, including shared libraries, architecture libraries, and static libraries, with /usr/lib/libc.so (C library) and /usr/lib/modules (kernel modules) as the named examples; /usr/include as header files for compiling programs; /usr/local as software & files installed by the system administrator; /usr/src as source code for system software & other packages installed from source or compiled, holding the kernel source code — the six /usr children, kept in the image's numbering.
+- Key features, filled: separation of user & system files; files in /usr generally shared by all users on the system; efficiency of management by keeping /usr separate from the root to avoid cluttering — the three key features as written.
+- The frame, filled: the /usr page that Note 287's kernel-tree paths (drivers, arch, fs, block) and Note 292's process-management files (/proc, /kernel) sit alongside in the same kernel/filesystem run — filed here as the user-space layout version.
+
+---
+
+## Image Note 287 — Kernel tree paths: H/W virtualization, storage, N/W virt, memory, container & lightweight virt, device (handwritten, as is)
+
+### ① H/W virtualization
+
+- /drivers/kvm, /arch/x86/kvm, /drivers/iommu
+
+### ② Storage
+
+- /drivers/md, /fs/, /block
+
+### ③ N/W virt
+
+- net/bridge/, /drivers/vhost
+
+### ④ Memory
+
+- /mm/, /drivers/virtio
+
+### ⑤ Container & lightweight virt
+
+- kernel/ns, fs/overlays
+
+### ⑥ Device
+
+- drivers/virtio, drivers/pci
+
+### [Filled — added, not in the original image]
+- Hardware virtualization, filled: /drivers/kvm, /arch/x86/kvm, /drivers/iommu as the hardware-virtualization paths — the KVM and IOMMU drivers that Note 102's hypervisor stack and Note 121's virtual interfaces (SR-IOV) depend on.
+- Storage, filled: /drivers/md, /fs/, /block as the storage paths — the MD RAID, filesystem, and block-layer paths that Note 291's filesystem management (/fs/ext4, /fs/xfs, /fs/vfs) and Note 130's storage classification build on.
+- Network virtualization, filled: net/bridge/, /drivers/vhost as the network-virtualization paths — the bridge and vhost drivers that Note 121's virtual interfaces (vnet0/br0/veth) and Note 154's interface-layer page (tun-tap/veth) use.
+- Memory, filled: /mm/, /drivers/virtio as the memory paths — the memory-management tree and virtio drivers that Note 291's memory management (/mm/memory.c, page_alloc.c, swap.c, mmap.c) details.
+- Container & lightweight virtualization, filled: kernel/ns, fs/overlays as the container paths — the namespace and overlay-filesystem paths that Note 259's swarm workflow and Note 271's container-vs-VM page (single kernel, OS-level virtualization) rest on.
+- Device, filled: drivers/virtio, drivers/pci as the device paths — the virtio and PCI drivers that Note 290's device drivers (/drivers/block, /drivers/net, /drivers/gpu, /drivers/char) list alongside.
+- The frame, filled: the kernel-tree-by-virtualization-type page that Notes 288–295 (kernel config, IPC, boot, modules, drivers, networking, memory, filesystem, process, security) unpack by subsystem — filed here as the virtualization-paths version.
+
+---
+
+## Image Note 288 — Kernel config files (boot config, build-time .config, arch defaults); ⑩ kernel virtualization (virt, cgroup, kvm, runtime cgroup); ⑪ kernel log mgmt (printk, kmsg, kern.log, dmesg/journalctl); ⑫ core kernel libraries (lib, kernel.h, proc, sys) (handwritten, as is)
+
+### Kernel config files
+
+- /boot/config-$(uname -r) → current kernel config file
+- /usr/src/linux/.config → active kernel config file during build time
+- /usr/src/linux/arch/ARCH/configs → arch specific default files
+
+### ⑩ Kernel virtualization
+
+- Supports VM & containers
+- /virt → core virtualization logic
+- /kernel/cgroup → implements cgroups for resource allocation
+- /drivers/kvm → kernel based VM drivers
+- /sys/fs/cgroup → runtime cgroup info
+
+### ⑪ Kernel log mgmt
+
+- Store logs for kernel events
+- /kernel/printk → kernel log buffer
+- /proc/kmsg → access kernel logs in real time
+- /var/log/kern.log → kernel msg logged by sys
+- View kernel logs using dmesg or journalctl
+
+### ⑫ Core kernel libraries
+
+- /lib → kernel specific library fun
+- /usr/src/include/linux/kernel.h → core kernel macros & functions
+- /proc → kernel runtime info
+- /sys → kernel tunable & attributes
+
+### [Filled — added, not in the original image]
+- Config files, filled: /boot/config-$(uname -r) as the current kernel config file; /usr/src/linux/.config as the active kernel config file during build time; /usr/src/linux/arch/ARCH/configs as architecture-specific default files — the three config locations.
+- Kernel virtualization, filled: supporting VMs & containers, with /virt as core virtualization logic, /kernel/cgroup as implementing cgroups for resource allocation, /drivers/kvm as kernel-based VM drivers, and /sys/fs/cgroup as runtime cgroup info — the virtualization paths that Note 287's hardware-virtualization and container paths point to.
+- Kernel log management, filled: storing logs for kernel events, with /kernel/printk as the kernel log buffer, /proc/kmsg as accessing kernel logs in real time, /var/log/kern.log as kernel messages logged by the system, and viewing kernel logs using dmesg or journalctl.
+- Core kernel libraries, filled: /lib as kernel-specific library functions; /usr/src/include/linux/kernel.h as core kernel macros & functions; /proc as kernel runtime info; /sys as kernel tunables & attributes — the four library/runtime paths.
+- The frame, filled: the config/virtualization/log/library page that Notes 289–295 (IPC, boot, modules, drivers, networking, memory, filesystem, process, security) continue in the same numbered run — filed here as the config-and-support version.
+
+---
+
+## Image Note 289 — IPC (source: shm.c, msg.c, sem.c; runtime: sysvipc, /dev/shm); ⑧ boot & initialization (init/main.c, do_mounts.c, /boot, grub.d); ⑨ kernel modules (module.c, /lib/modules, /proc/modules, /sys/modules) (handwritten, as is)
+
+### IPC
+
+### Source code
+
+- /ipc/ → core IPC mechanisms: shm.c → shared memory, msg.c → msg queue, sem.c → semaphores
+
+### Runtime files
+
+- /proc/sysvipc/ → IPC statistics (shm, msg, sem)
+- /dev/shm → temporary storage for shared memory
+
+### ⑧ Boot & initialization
+
+### Source code dirs
+
+- init/ → initialization code: main.c → kernel entry point; do_mounts.c → handles initial FS mounting
+
+### Runtime files
+
+- /boot/ → kernel image & bootloader files (vmlinuz, initrd.img)
+- /etc/grub.d → bootloader config for GRUB
+
+### ⑨ Kernel modules
+
+### Source code
+
+- /kernel/module.c → kernel module loader/unloader
+
+### Runtime files
+
+- /lib/modules/$(uname -r)/ → kernel module files (.ko files)
+- /proc/modules → loaded modules
+- /sys/modules → runtime module details
+
+### [Filled — added, not in the original image]
+- IPC, filled: /ipc/ as the core IPC mechanisms — shm.c for shared memory, msg.c for message queues, sem.c for semaphores — with runtime files /proc/sysvipc/ for IPC statistics (shm, msg, sem) and /dev/shm as temporary storage for shared memory — the IPC source/runtime pair that Note 294's IPC implementation (shared memory, pipes, message queues, sockets; pipe, shget, msgget) restates.
+- Boot & initialization, filled: init/ as initialization code, with main.c as the kernel entry point and do_mounts.c handling initial filesystem mounting; runtime files /boot/ for kernel image & bootloader files (vmlinuz, initrd.img) and /etc/grub.d as bootloader config for GRUB — the boot source/runtime pair that Note 288's config files and Note 292's process-management entry point bracket.
+- Kernel modules, filled: /kernel/module.c as the kernel module loader/unloader; runtime files /lib/modules/$(uname -r)/ for kernel module files (.ko files), /proc/modules for loaded modules, and /sys/modules for runtime module details — the module source/runtime pair that Note 294's driver modules (/lib/modules/$(uname -r)/kernel/drivers) use.
+- The frame, filled: the IPC/boot/modules page that Notes 288 (config, virtualization, logs, libraries) and 290–295 (drivers, networking, memory, filesystem, process, security) sit between in the same numbered run — filed here as the communication-and-boot version.
+
+---
+
+## Image Note 290 — ④ Device drivers (block, net, gpu, char; /dev, /sys/class); ⑤ Networking (core, ipv4, ipv6, socket.c; /proc/net, /sys/class/net) (handwritten, as is)
+
+### ④ Device drivers
+
+### Source code dirs
+
+- /drivers/ → all device drivers: block/ → device drivers (hdd, ssd); net/ → N/W device; gpu/ → graphic drivers; char/ → char device drivers (serial ports)
+
+### Runtime files
+
+- /dev → device nodes for H/W devices: /sda, /null eg
+- /sys/class → info about devices: /class/net → for N/W interfaces
+
+### ⑤ Networking
+
+### Source code dirs
+
+- /net/: networking code: core → core N/W logic; ipv4 → IPv4 code; ipv6 → IPv6 code; socket.c → implements socket-related syscalls
+
+### Runtime files
+
+- /proc/net → N/W info (tcp, udp, dev for interfaces)
+- /sys/class/net → N/W interface details
+
+### [Filled — added, not in the original image]
+- Device drivers, filled: /drivers/ as all device drivers — block/ for device drivers (hdd, ssd), net/ for network devices, gpu/ for graphic drivers, char/ for character device drivers (serial ports) — with runtime files /dev for device nodes for hardware devices (/sda, /null as examples) and /sys/class for info about devices (/class/net for network interfaces) — the driver source/runtime pair that Note 294's driver modules and device files restate.
+- Networking, filled: /net/ as networking code — core for core network logic, ipv4 for IPv4 code, ipv6 for IPv6 code, socket.c implementing socket-related syscalls — with runtime files /proc/net for network info (tcp, udp, dev for interfaces) and /sys/class/net for network interface details — the networking source/runtime pair that Note 154's interface-layer page (switch/router/tun-tap/veth) and Note 161's common-interfaces flow build on.
+- The frame, filled: the drivers-and-networking page that Notes 289 (IPC, boot, modules) and 291–295 (memory, filesystem, process, security) sit between in the same numbered run — filed here as the hardware-and-network version.
+
+---
+
+## Image Note 291 — ② Memory mgmt (memory.c, page_alloc.c, swap.c, mmap.c, mm.h; meminfo, vmstat, sys/kernel/mm); ③ FS mgmt (ext4, xfs, vfs; mounts, sys/block, block/sda) (handwritten, as is)
+
+### ② Memory mgmt
+
+### Source code dirs
+
+- /mm → core memory mgmt code: memory.c → general memory allocation logic; page_alloc.c → page allocation; swap.c → swap mgmt; mmap.c → mapping logic for mmap() sys call; usr/src/include/linux/mm.h → def for memory mgmt structures
+
+### Runtime files
+
+- /proc/meminfo → memory usage
+- /proc/vmstat → virtual mem statistics
+- /sys/kernel/mm/ → memory relatable tunables
+
+### ③ FS mgmt
+
+### Source code dirs
+
+- /fs/: FS implementations: ext4/ → code for ext4; xfs/ → for xfs; vfs/ → for virtual file system (VFS) layer
+
+### Runtime files
+
+- /proc/mounts → mounted file sys
+- /sys/block → block device info
+- block/sda/ → for disk partition
+
+### [Filled — added, not in the original image]
+- Memory management, filled: /mm as core memory-management code — memory.c for general memory-allocation logic, page_alloc.c for page allocation, swap.c for swap management, mmap.c for mapping logic for the mmap() system call, usr/src/include/linux/mm.h for definitions of memory-management structures — with runtime files /proc/meminfo for memory usage, /proc/vmstat for virtual-memory statistics, and /sys/kernel/mm/ for memory-related tunables — the memory source/runtime pair that Note 295's memory management (mmap, brk, paging, swapping, segmentation; /mm/memory.c, swap.c) restates.
+- Filesystem management, filled: /fs/ as filesystem implementations — ext4/ for ext4 code, xfs/ for xfs code, vfs/ for the virtual file system (VFS) layer — with runtime files /proc/mounts for mounted filesystems, /sys/block for block-device info, and block/sda/ for disk partitions — the filesystem source/runtime pair that Note 295's filesystem management (/fs/ext4, xfs; mounted filesystem /mnt/ or /media) restates.
+- The frame, filled: the memory-and-filesystem page that Notes 290 (drivers, networking) and 292–295 (process, security, driver/IPC summaries) sit between in the same numbered run — filed here as the memory-and-storage version.
+
+---
+
+## Image Note 292 — Important files & dirs of core components of kernel: ① process mgmt (/proc/cpuinfo, /proc/meminfo; /kernel/sched, fork.c, exit.c, sched header; /proc/[PID], /proc/stat) (handwritten, as is)
+
+### Important files & dirs of core components of kernel
+
+### ① Process mgmt
+
+- ① /proc/: pseudo file system providing real time info about processes & kernel: /proc/cpuinfo → cpu details; /proc/meminfo → memory usage
+- ② Source code directories: /kernel/ → core kernel code: sched/ → [blank in image]; fork.c; exit.c; /include/linux/sched.c [as written]
+- ① or ② same runtime files: /proc/ → virtual fs for process info: /proc/[PID] → files for each process; /proc/stat → process CPU statistics
+
+### [Filled — added, not in the original image]
+- Process management, filled: /proc/ as a pseudo filesystem providing real-time info about processes & the kernel — /proc/cpuinfo for CPU details, /proc/meminfo for memory usage — with source-code directories /kernel/ as core kernel code — sched/ (blank in the image, left blank, not reconstructed), fork.c, exit.c, /include/linux/sched.c as written (kept as written, flagged — the .c extension on a sched header path is the image's own wording, not silently corrected to sched.h).
+- Runtime files, filled: /proc/ as a virtual filesystem for process info — /proc/[PID] for files for each process, /proc/stat for process CPU statistics — the runtime side that Note 295's process management (kernel/sched/, proc/[PID]/) restates.
+- The frame, filled: the process-management files page that Notes 291 (memory, filesystem) and 293–295 (security, driver/IPC summaries, core components) sit between in the same numbered run — filed here as the process-files version.
+
+---
+
+## Image Note 293 — ⑥ Security & access control (permissions, user IDs, kernel firewalls, authentication, encryption; /security, /etc/passwd, /etc/shadow) (handwritten, as is)
+
+### ⑥ Security & access control
+
+- Ensures users & processes have appropriate permissions
+- Implements authentication & encryption
+- Security enforced via user IDs: permissions
+- Kernel level firewalls (iptables)
+- Authentication mechanisms ensure proper user & process access
+- Security code → /security
+- Permissions → /etc/passwd, /etc/shadow
+
+### [Filled — added, not in the original image]
+- Security & access control, filled: ensuring users & processes have appropriate permissions; implementing authentication & encryption; security enforced via user IDs and permissions; kernel-level firewalls (iptables); authentication mechanisms ensuring proper user & process access — with security code at /security and permissions at /etc/passwd, /etc/shadow — the security subsystem that Note 294's IPC page (permissions, authentication & encryption) echoes.
+- The frame, filled: the security page that Notes 292 (process files) and 294–295 (driver/IPC summaries, core components) sit between in the same numbered run — filed here as the security-and-access version.
+
+---
+
+## Image Note 294 — Important kernel directories: /proc; ④ device drivers (modules, device files, windows drivers); ⑤ IPC (shared memory, pipes, message queues, sockets; pipe, shget, msgget; ipc/msg.c, shm.c; /proc/sysvipc) (handwritten, as is)
+
+### Important kernel directories
+
+- /proc: pseudo-file system, kernel core components
+
+### ④ Device drivers
+
+- Act as interface b/w H/W & OS
+- Ensures proper comm with input/output devices
+- These drivers implemented as modules or kernel entries allowing communication b/w H/W & kernel
+- Linux uses udev for dynamic driver mgmt
+- ① Driver modules → /lib/modules/$(uname -r)/kernel/drivers
+- ② Device files → /dev/
+- Windows: /system32/drivers/ → driver files
+
+### ⑤ IPC
+
+- Manages comm b/w processes, have appropriate permissions
+- Implements authentication & Encryption [line partly crossed in image, kept as written, flagged]
+- IPC implemented using: shared memory, pipes, message queues, sockets
+- Sys calls: pipe, shget, msgget used
+- ① IPC code: ipc/msg.c, shm.c
+- ② IPC info: /proc/sysvipc/
+
+### [Filled — added, not in the original image]
+- /proc, filled: /proc as a pseudo-filesystem for kernel core components — the entry that Note 292's process-management page (/proc/cpuinfo, /proc/meminfo, /proc/[PID], /proc/stat) details.
+- Device drivers, filled: acting as the interface between hardware & OS, ensuring proper communication with input/output devices, implemented as modules or kernel entries allowing communication between hardware & kernel, with Linux using udev for dynamic driver management — driver modules at /lib/modules/$(uname -r)/kernel/drivers, device files at /dev/, and Windows driver files at /system32/drivers/ as the cross-platform contrast — the driver summary that Note 290's driver source/runtime pair (/drivers/block, net, gpu, char; /dev, /sys/class) details.
+- IPC, filled: managing communication between processes, with appropriate permissions, and implementing authentication & encryption (the line is partly crossed in the image, kept as written and flagged, not removed) — IPC implemented using shared memory, pipes, message queues, and sockets, with system calls pipe, shget, and msgget used — IPC code at ipc/msg.c, shm.c, and IPC info at /proc/sysvipc/ — the IPC summary that Note 289's IPC source/runtime pair (/ipc/shm.c, msg.c, sem.c; /proc/sysvipc/, /dev/shm) details.
+- The frame, filled: the driver-and-IPC summary page that Notes 293 (security) and 295 (core components) sit between in the same numbered run — filed here as the summary version of the driver and IPC subsystems.
+
+---
+
+## Image Note 295 — Core kernel components: ① process mgmt (creation, execution, termination; multitasking & CPU scheduling; sched/, proc/[PID]); ② memory mgmt (mmap, brk; paging, swapping, segmentation; /mm/memory.c, swap.c); ③ file system mgmt (ext4, NTFS, APFS; open, read, write; /fs/ext4, xfs; /mnt/, /media) (handwritten, as is)
+
+### Core kernel components
+
+### ① Process mgmt
+
+- Handles creation, execution & termination of processes
+- Manages multitasking & CPU scheduling
+- ① Kernel/sched/ → contains scheduler implementations
+- ② Proc/[PID]/ → process files
+
+### ② Memory management
+
+- Allocates & deallocates memory to processes
+- Memory allocated dynamically through kernel sys calls like mmap and brk
+- Virtual memory managed using paging, swapping & segmentation techniques
+- Memory manager code: /mm/memory.c, swap.c
+
+### ③ File system management
+
+- Kernel provides mechanism to store, retrieve and organize data on storage devices
+- Supports file perm & storage/dir structures
+- File systems ext4, NTFS, APFS are implemented in kernel
+- System calls open, read, write interact with files & dirs
+- ① Filesystem code: /fs/ext4, xfs
+- ② Mounted filesystem: /mnt/ or /media
+
+### [Filled — added, not in the original image]
+- Process management, filled: handling creation, execution & termination of processes, and managing multitasking & CPU scheduling — with kernel/sched/ containing scheduler implementations and proc/[PID]/ holding process files — the core-component summary that Note 292's process-management files page details.
+- Memory management, filled: allocating & deallocating memory to processes, with memory allocated dynamically through kernel system calls like mmap and brk, and virtual memory managed using paging, swapping & segmentation techniques — with memory-manager code at /mm/memory.c and swap.c — the core-component summary that Note 291's memory-management source/runtime pair details.
+- Filesystem management, filled: the kernel providing a mechanism to store, retrieve, and organize data on storage devices, supporting file permissions & storage/directory structures, with filesystems ext4, NTFS, and APFS implemented in the kernel, and system calls open, read, and write interacting with files & directories — with filesystem code at /fs/ext4, xfs, and mounted filesystems at /mnt/ or /media — the core-component summary that Note 291's filesystem-management source/runtime pair details.
+- The frame, filled: the core-components summary page that closes the kernel run opened by Note 292's files page and Notes 293–294 (security, driver/IPC summaries) — filed here as the three-component summary version.
+
+---
+
+# INbatch39 — Image Notes 296–298 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — all 3 images are new pages, none skipped. 3 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 296 — Env vars = process memory (VAS); kernel symbols = runtime kernel RAM; memory pages = RAM-volatile; firmware vars = NVRAM; cold = NVRAM = data at rest & power backup; L1/L2 CPU cache = SRAM (boot, async); system RAM = DRAM (runtime, sync); SPI flash (BIOS chip) → NVRAM stores firmware; firmware = binary + data (code + vars); NVRAM: PE → PEI → DXE → NVRAM → SRAM → DRAM; BIOS/UEFI → SPI flash → data at rest (NVRAM), off/cold; CPU cache → SRAM → boot; sys RAM → DRAM → runtime; memory table (NVRAM/SRAM/DRAM/SSD-HDD with controllers) (handwritten, as is)
+
+### Memory map (as written)
+
+- Env vars = process memory (VAS) [crossed word in image, kept as written]
+- Kernel symbols = runtime kernel RAM
+- Memory pages = RAM-volatile
+- Firmware vars = NVRAM
+- Cold = NVRAM = data at rest & has power backup
+- L1/L2 CPU cache = SRAM — boot → asynchronous
+- System RAM = DRAM — runtime
+- Synchronous ← system RAM
+
+### SPI flash chip (BIOS chip)
+
+- SPI-flash chip (BIOS chip) — NVRAM → stores firmware
+- Firmware = binary + data (code + vars)
+
+### NVRAM boot chain
+
+- NVRAM: PE → PEI → DXE → NVRAM → SRAM → DRAM
+- BIOS/UEFI → SPI flash chip → data at rest (NVRAM), off/cold
+- CPU cache → SRAM → boot
+- Sys RAM → DRAM → runtime
+
+### Memory table (as written)
+
+| Memory | Unit / access | Controller |
+|---|---|---|
+| NVRAM | [circled, no unit given] | — |
+| SRAM | Cache lines | Cache controller (L1, L2, L3) |
+| DRAM | Row / column | IMC (row bank, etc.) |
+| SSD / HDD | NVMe / SATA | Storage controller |
+
+### [Filled — added, not in the original image]
+- Memory map, filled: environment variables as process memory (VAS); kernel symbols as runtime kernel RAM; memory pages as RAM-volatile; firmware variables as NVRAM; cold as NVRAM, data at rest with power backup; L1/L2 CPU cache as SRAM for boot, asynchronous; system RAM as DRAM for runtime, synchronous — the volatile-vs-nonvolatile map that Note 297's non-storage (volatile) = workbenches page (CPU registers & memory pages, kernel symbols & OS env live in RAM, network packets) restates.
+- SPI flash, filled: the SPI-flash chip (BIOS chip) with NVRAM storing firmware, and firmware as binary + data (code + variables) — the firmware storage that Note 258's firmware-as-glue page (logic in wiring, rewiring = changing program, firmware as glue) motivates.
+- Boot chain, filled: NVRAM as PE → PEI → DXE → NVRAM → SRAM → DRAM; BIOS/UEFI → SPI flash chip → data at rest (NVRAM), off/cold; CPU cache → SRAM → boot; system RAM → DRAM → runtime — the cold-to-runtime chain, kept in the image's order (the NVRAM entry appearing twice in the chain is the image's own wording, not deduplicated).
+- Memory table, filled: NVRAM (circled, no unit given in the image, left without one); SRAM with cache lines under the cache controller (L1, L2, L3); DRAM with row/column access under the IMC (row bank, etc.); SSD/HDD with NVMe/SATA under the storage controller — the four-row controller table, kept as written.
+- The frame, filled: the memory-map-and-boot-chain page that Note 297's blob/packet/non-storage/tree-storage page continues — filed here as the volatile-vs-nonvolatile version.
+
+---
+
+## Image Note 297 — ⑯ Docker [crossed] 12/08/2024: high-level blob, packets; blob = collection of binary data stored as a single entity; unstructured, no specific format, data at rest (hot or cold), storage/shipping container for transport; non-storage (volatile) = workbenches (CPU registers & memory pages, kernel symbols & OS env, network packets); tree storage (files, blobs) (handwritten, as is)
+
+### ⑯ Docker [heading crossed in image, kept as written]
+
+- Date: 12/08/2024
+- High level: blob, packets
+
+### Blob
+
+- Blob represents object
+- Packet represents [binary data stored as a single entity in a db or cloud, as written in the margin line]
+- [Blob] collection of binary data stored as a single entity
+- Represents entire object (store or send)
+- Unstructured
+- Doesn't have specific format for storage sys
+- Used for data at rest (hot or cold)
+- Blob is a storage or shipping container used for transport its contents
+
+### Non storage (volatile) = workbenches
+
+- Data here is moving lightning speed to keep CPU busy
+- ① CPU registers & memory pages = for IOPS
+- ② Kernel symbols & OS env = live in the RAM allocated for OS
+- ③ Network packets
+
+### Tree storage
+
+- ① Files (block/file storage)
+- ② Blobs (object storage)
+
+### [Filled — added, not in the original image]
+- Blob, filled: a blob represents an object; a packet represents binary data stored as a single entity in a database or cloud (the margin line, kept as written, flagged — its referent is partly unclear, since the blob line and the packet line run together in the image); a blob as a collection of binary data stored as a single entity, representing the entire object (store or send), unstructured, without a specific format for the storage system, used for data at rest (hot or cold), and as a storage or shipping container used for transport of its contents — the blob definition that Note 296's data-at-rest (NVRAM) line and Note 130's storage classification (topology/arch/media) bracket.
+- Non-storage (volatile), filled: non-storage (volatile) as workbenches, with data here moving at lightning speed to keep the CPU busy — CPU registers & memory pages for IOPS; kernel symbols & OS environment live in the RAM allocated for the OS; network packets — the volatile trio that Note 296's memory map (process memory, runtime kernel RAM, RAM-volatile pages) restates.
+- Tree storage, filled: files as block/file storage, and blobs as object storage — the two tree-storage branches.
+- Heading, filled: the "⑯ Docker" heading is crossed in the image, kept as written and flagged — the page's content is about blobs, packets, and storage, not Docker, so the crossed heading is recorded, not retitled.
+- The frame, filled: the blob-and-storage page dated 12/08/2024 that Note 296's memory map precedes — filed here as the data-at-rest-vs-volatile version.
+
+---
+
+## Image Note 298 — CPU x64 arch: buses are hard-coded copper tracks on motherboard; hard-coded buses dedicated/point-to-point; ① internal sys buses (CPU local buses) connect CPU directly to memory & chipset (PCH) (handwritten, as is)
+
+### CPU x64 arch
+
+- Buses are hard coded copper tracks on motherboard
+- Hard coded buses are dedicated / point-to-point between components
+
+### ① Internal sys buses (CPU local buses)
+
+- These buses connect CPU directly to its critical partners: memory & chipset (PCH)
+
+### [Filled — added, not in the original image]
+- Buses, filled: buses as hard-coded copper tracks on the motherboard, with hard-coded buses dedicated / point-to-point between components — the physical-bus definition that Note 171's SoC/motherboard placements and Note 169's physical network-device chip recipes sit on.
+- Internal system buses, filled: internal system buses (CPU local buses) connecting the CPU directly to its critical partners — memory & chipset (PCH) — the first bus family, with further families (external/expansion buses) not on this page, left absent, not invented.
+- The frame, filled: the CPU x64 architecture buses page that opens a bus run — filed here as the internal-buses version.
+
+---
+
+# INbatch40 — Image Notes 299–308 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 1 duplicate skipped in this set — upload 364 is an exact duplicate of Note 300 (blob → scale, packet → layer, data at rest / data in motion, blob vs packet list), skipped entirely with no content copied and no note number consumed. 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+
+## Image Note 299 — Firmware (microcode): low-level S/W in H/W (ROM), runs before OS, embedded in ROM; key roles (boot, init H/W, HAL); UEFI motherboard firmware; ROM container; how they work together (startup, execution, reset vector); firmware reads FAT32 for bootloader; save-file process (driver → kernel → NVMe → signals → physical write); firmware permanently/semi-permanently stored, non-volatile (BIOS/UEFI chip, embedded controller, device microcontrollers); detect H/W, configure registers, FAT32 (UEFI), init H/W, runtime services, train, load bootloader (handwritten, as is)
+
+### Firmware (microcode)
+
+- Low level S/W stored inside H/W (ROM)
+- Runs before OS
+- Embedded in ROM
+
+### Key roles
+
+- Starts the boot (system)
+- Initializes H/W
+- Provides HAL
+
+### UEFI
+
+- UEFI is motherboard firmware
+- Used to boot a computer
+- ROM is storage chip where firmware is kept
+- UEFI firmware stored on ROM chip
+- Firmware takes (blob.4x) electric pulses & groups them into binary words:
+  - 1 Instruction sets
+  - 2 Registers (storage) for physical address
+- Protocols / Dev specific cmds: ensure the binary is understood correctly (dialects) — USB, NVMe, SATA
+
+### ROM
+
+- A container
+- Holds the UEFI code
+- NV memory, keeps the BIOS instructions even power off
+
+### How work together
+
+- Startup: CPU preprogrammed to look at a specific address in ROM
+- Execution: CPU finds BIOS instructions at that address & begins rest of H/W
+- ROM chip is mapped to that exact address where CPU is looking (reset vec)
+
+### Firmware reads
+
+- Firmware reads FAT32 FS for bootloader files
+
+### Process (save a file)
+
+- ① Driver (on harddrive) on tells the kernel [as written, partly unclear] — user wants to save a file
+- ② Kernel sends a command using a protocol (NVMe)
+- ③ NVMe sends binary data as electrical signals over motherboard wires
+- ④ Hardware firm receives those signals & physical writes data
+
+### Firmware (bottom section)
+
+- Firmware: permanently or semi permanently stored on H/W to control its basic functions, provide immutable instructions for H/W
+- Stored in non volatile memory: BIOS/UEFI chip, embedded controller or device microcontrollers
+- Detecting H/W
+- Configuring registers
+- It has FAT32 filesystem (UEFI)
+- Initialize H/W
+- Provide run time services:
+  - ① Initialize H/W
+  - ② Train (memory, PCI)
+  - ③ Load bootloader (OS handoff)
+
+### [Filled — added, not in the original image]
+- Firmware, filled: low-level software stored inside hardware (ROM), running before the OS, embedded in ROM — with key roles of starting the boot (system), initializing hardware, and providing the HAL — the firmware definition that Notes 302, 305, 306, and 307 restate.
+- UEFI/ROM, filled: UEFI as motherboard firmware used to boot a computer; ROM as the storage chip where firmware is kept, with UEFI firmware stored on the ROM chip; firmware taking electric pulses and grouping them into binary words — instruction sets, registers (storage) for physical addresses — with protocols/device-specific commands ensuring the binary is understood correctly (dialects: USB, NVMe, SATA); ROM as a container holding the UEFI code, non-volatile memory keeping the BIOS instructions even when powered off.
+- Working together, filled: startup as the CPU preprogrammed to look at a specific address in ROM; execution as the CPU finding BIOS instructions at that address & beginning the rest of the hardware; the ROM chip mapped to that exact address where the CPU is looking (reset vector) — the reset-vector mechanism that Note 296's PE → PEI → DXE boot chain continues.
+- Save-file process, filled: driver (on harddrive) telling the kernel the user wants to save a file (the "on tells" wording kept as written and flagged as partly unclear); kernel sending a command using a protocol (NVMe); NVMe sending binary data as electrical signals over motherboard wires; hardware firmware receiving those signals & physically writing data — the four-step save path.
+- Bottom firmware, filled: firmware permanently or semi-permanently stored on hardware to control its basic functions and provide immutable instructions for hardware, stored in non-volatile memory (BIOS/UEFI chip, embedded controller, or device microcontrollers); detecting hardware, configuring registers, having a FAT32 filesystem (UEFI), initializing hardware, and providing runtime services — initialize hardware, train (memory, PCI), load bootloader (OS handoff) — the three runtime services.
+- The frame, filled: the firmware-and-ROM page that Note 296's SPI-flash/BIOS-chip page (NVRAM stores firmware) and Notes 302–307 (firmware control, configuration, categories, standards) bracket — filed here as the firmware-first version.
+
+---
+
+## Image Note 300 — Blob → scale (capacity); packet → layer (organizing protocols); data at rest = blob (entire obj, store or send); data in motion = packet (structured unit, move across NW); blob vs packet list (shipping container vs box/envelopes, unstructured, no format, data at rest, chunk of data, collection of binary data in DB/cloud S3) (handwritten, as is)
+
+### Scale vs layer
+
+- ① Blob → scale (capacity)
+- ② Packet → layer (organizing protocols)
+
+### Data at rest / data in motion
+
+- Data at rest: ① Blob = entire obj (store or send) at rest area
+- Data in motion: ② Packet = structured unit (move across NW) in motion
+
+### Blob vs packet
+
+| # | Blob | Packet |
+|---|---|---|
+| ① | Shipping container | Box or envelopes |
+| — | Both used to transport its contents | — |
+| ② | Unstructured, doesn't have a format | — |
+| ③ | Data at rest | — |
+| ④ | Treated as chunk of data (kbs – pbs) | — |
+| ⑤ | Collection of binary data stored as a single entity in DB or cloud S3 | — |
+
+### [Filled — added, not in the original image]
+- Scale vs layer, filled: blob → scale (capacity), packet → layer (organizing protocols) — the two axes that Note 297's blob definition (collection of binary data stored as a single entity) and Note 300's own data-at-rest/data-in-motion split rest on.
+- At rest / in motion, filled: data at rest as blob = entire object (store or send) at rest area; data in motion as packet = structured unit (move across network) in motion — the rest/motion split that Note 297's data-at-rest (hot or cold) line and Note 296's volatile workbenches (data moving at lightning speed) contrast.
+- Blob vs packet, filled: blob as shipping container versus packet as box or envelopes, both used to transport its contents; blob as unstructured, without a format; blob as data at rest; blob treated as a chunk of data (kbs – pbs); blob as a collection of binary data stored as a single entity in a database or cloud S3 — the five blob points, kept as written (the packet column is mostly blank in the image, left blank, not reconstructed).
+- The frame, filled: the blob-vs-packet page that Note 297's blob/packet/non-storage/tree-storage page sets up — filed here as the scale-and-layer version. (Upload 364 in this same delivery repeats this page exactly and was skipped as a duplicate of this note.)
+
+---
+
+## Image Note 301 — Firmware treats H/W storage registers as variables in RAM; MMIO (memory mapped IO), PMIO (port mapped IO); kernel loaded by boot loader (during boot process), runs after device firmware BIOS/UEFI; boot loader small specialized program; OS starts from boot loader; user-space APIs launched by OS kernel, not boot loader; kernel is blob of code managing H/W, memory, security (handwritten, as is, rotated text partly unclear)
+
+### Firmware & registers
+
+- Firmware treats H/W storage registers as variables in RAM
+- MMIO (memory mapped IO)
+- PMIO (port mapped IO)
+
+### Boot order
+
+- Kernel must loaded by a boot loader (during boot process), runs after device firmware BIOS/UEFI
+- Boot loader: small specialized program
+- OS itself starts from a boot loader
+- User space APIs don't go through boot loader; they launched by OS kernel not boot loader
+- Kernel is blob of code manages H/W, memory, security
+
+### [Filled — added, not in the original image]
+- Registers, filled: firmware treating hardware storage registers as variables in RAM, with MMIO (memory-mapped IO) and PMIO (port-mapped IO) as the two access methods — the register-access model that Note 302's "by writing & reading memory addresses (registers)" and Note 296's memory map (process memory, runtime kernel RAM) use.
+- Boot order, filled: the kernel must be loaded by a boot loader (during the boot process), running after device firmware BIOS/UEFI; the boot loader as a small specialized program; the OS itself starting from a boot loader; user-space APIs not going through the boot loader but launched by the OS kernel, not the boot loader; the kernel as a blob of code managing hardware, memory, and security — the boot-order chain, kept as written (the rotated text is partly unclear in the image, flagged, not reconstructed beyond the legible lines).
+- The frame, filled: the firmware-registers-and-boot-order page that Note 299's load-bootloader (OS handoff) service and Note 308's system-call interface (primary entry point for user-space apps) bracket — filed here as the registers-and-boot-order version.
+
+---
+
+## Image Note 302 — Firmware: software for hardware stored in ROM, software for motherboard, permanent/semi-permanent code; H/W controller (ROM/Flash, dialects, controls devices); firmware permanent code in ROM; OS replaceable/upgradable; firmware deals with all H/W needing init/processing; H/W (sys level, interface & peripherals, embedded); how it controls H/W (memory addresses/registers, fastest memory, PC/IR/MAR/MBR/AC); flip flop → register → reg file → CPU; peripherals written via data registers; firmware drivers for chipset, signals to buses (PCIe, USB, SATA); every H/W category its own language (protocol): storage → SATA/NVMe over PCIe lanes, peripherals → USB, chip-to-chip → I2C/SPI, wifi/Ethernet → IEEE 802.11/802.3 (handwritten, as is)
+
+### Firmware
+
+- Software for hardware stored in ROM
+- Software for motherboard, permanent / semi permanent code
+
+### H/W controller
+
+- Stored in ROM / Flash (Mboard)
+- Provides H/W communication (dialects)
+- Controls the H/W devices
+
+### Firmware vs OS
+
+- Firmware permanent code stored in ROM that controls H/W (start)
+- OS can be replaced or upgraded (Mngr)
+
+### Firmware scope
+
+- Firmware deals with all H/W that needs initialization or processing (CPU)
+
+### H/W
+
+- Sys level ⇒ CPU, RAM, power mgmt units (PMU), clocks
+- Interface & peripherals ⇒ HDD, keyboard, mouse, display, NIC, USB
+- Embedded compo ⇒ sensors (temp, accelerometer), motors, actuators, micro controller
+
+### How it controls H/W
+
+- By writing & reading memory addresses (registers)
+- H/W storage: high speed storage (registers: built in memory locations in the CPU), fastest memory: can hold data, instructions, mem addr (PC, IR, MAR, MBR, AC)
+
+### Ladder
+
+- ① Flip flop → stores 0 or 1
+- ② Register → group of flipflops
+- ③ Reg file / register array → group of reg
+- ④ CPU → group of reg files
+
+### Peripherals & drivers
+
+- Peripherals devices written to using data registers
+- Firmware S/W contains 'drivers' for the motherboard chipset
+- Firmware sends signals to motherboard buses (PCIe, USB, SATA) to wake up the H/W components
+
+### Every H/W category its own language (protocol)
+
+- Firmware speaks that language
+- Storage devices (SSD, HDD) → SATA, NVMe travel over PCIe lanes
+- Peripherals (mouse, keyboard) → USB
+- Chip to chip (temperature sensor, motor) → I2C or SPI
+- Wifi / Ethernet (N/W) → IEEE 802.11 / 802.3
+
+### [Filled — added, not in the original image]
+- Firmware, filled: software for hardware stored in ROM, software for the motherboard, permanent/semi-permanent code — with the hardware controller stored in ROM/Flash on the motherboard, providing hardware communication (dialects) and controlling the hardware devices — the controller definition that Note 299's UEFI/ROM page and Note 305's direct-controller line restate.
+- Firmware vs OS, filled: firmware as permanent code stored in ROM that controls hardware (start), versus the OS as replaceable or upgradable — the permanence contrast that Note 306's tightly-coupled-vs-easily-modified lines and Note 307's read-only/executable line carry.
+- Scope, filled: firmware dealing with all hardware that needs initialization or processing (CPU), across system level (CPU, RAM, power-management units, clocks), interface & peripherals (HDD, keyboard, mouse, display, NIC, USB), and embedded components (sensors for temperature and accelerometer, motors, actuators, microcontroller).
+- Control, filled: controlling hardware by writing & reading memory addresses (registers); hardware storage as high-speed storage (registers as built-in memory locations in the CPU), the fastest memory, able to hold data, instructions, and memory addresses (PC, IR, MAR, MBR, AC) — with the ladder of flip flop storing 0 or 1, register as a group of flip flops, register file/register array as a group of registers, and CPU as a group of register files.
+- Drivers & languages, filled: peripheral devices written to using data registers; firmware software containing 'drivers' for the motherboard chipset; firmware sending signals to motherboard buses (PCIe, USB, SATA) to wake up the hardware components; every hardware category having its own language (protocol) that firmware speaks — storage devices (SSD, HDD) via SATA and NVMe travelling over PCIe lanes, peripherals (mouse, keyboard) via USB, chip-to-chip (temperature sensor, motor) via I2C or SPI, wifi/Ethernet (network) via IEEE 802.11/802.3 — the protocol map that Note 299's dialects (USB, NVMe, SATA) and Note 306's standards (PCIe, IEEE 802) extend.
+- The frame, filled: the firmware-control-and-protocols page that Notes 299 (firmware/ROM) and 303–307 (configuration, functions, categories, standards) bracket — filed here as the control-and-language version.
+
+---
+
+## Image Note 303 — Firmware configuration: control how H/W interacts with OS; instruction manual/rules for motherboard before Windows/Linux; ① boot order config (boot priority: SSD/HDD, USB/optical, PXE network boot); ② CPU virtual (VT-x/AMD-V, single CPU as multiple, performance); ③ RAM timings & XMP/DOCP (speed, latencies, CAS latency, XMP Intel/DOCP AMD); ④ secure boot (security standard trusted by OEM); ⑤ power mgmt (ACPI, power states & sleep modes); ⑥ RAID settings (combine drives into 1 logical unit; RAID 0 striping, RAID 1 mirroring, AHCI cut off) (handwritten, as is)
+
+### Firmware configuration
+
+- Allows you to control how your H/W interacts with OS
+- These settings are "instruction manual or rules" for your motherboard before Windows or Linux starts
+
+### ① Boot order config
+
+- Boot priority: tells motherboard which storage dev to check first for an OS
+  - SSD / HDD
+  - USB / optical drive
+  - (PXE) Network boot → to boot from central server
+
+### ② CPU virtual (VT-x / AMD-V)
+
+- This setting allows single CPU to act as multiple
+- Essential for performance
+
+### ③ RAM timings & XMP / DOCP
+
+- RAM doesn't just have speed (like 3200Hz) [as written, flagged — the unit reads Hz in the image]
+- It has latencies → delays b/w various commands
+- ① CAS latency timing: time takes memory to respond a data req
+- ② XMP (Intel) / DOCP (AMD): speed
+
+### ④ Secure boot
+
+- Security standard trusted by OEM
+
+### ⑤ Power mgmt (ACPI)
+
+- How the motherboard handles power states & sleep modes
+
+### ⑥ RAID settings
+
+- Allows you to combine multiple hard drives into 1 logical unit
+- RAID 0 – striping → combines
+- RAID 1 – mirroring → backup
+- AHCI – [cut off at page edge, left cut off]
+
+### [Filled — added, not in the original image]
+- Configuration, filled: firmware configuration allowing you to control how your hardware interacts with the OS, with these settings as the "instruction manual or rules" for your motherboard before Windows or Linux starts — the configuration definition that Note 304's configuration & parameters page (firmware menu, IPMI, key parameters) restates.
+- Boot order, filled: boot priority telling the motherboard which storage device to check first for an OS — SSD/HDD, USB/optical drive, and PXE network boot to boot from a central server.
+- CPU virtual, filled: CPU virtualization (VT-x/AMD-V) allowing a single CPU to act as multiple, essential for performance — the virtualization setting that Note 287's hardware-virtualization paths (KVM, IOMMU) depend on.
+- RAM timings, filled: RAM not just having speed (like 3200Hz as written, flagged — the unit reads Hz in the image, not silently corrected to MHz), but having latencies as delays between various commands — CAS latency timing as the time memory takes to respond to a data request, and XMP (Intel)/DOCP (AMD) as speed.
+- Secure boot, power, RAID, filled: secure boot as a security standard trusted by OEM; power management (ACPI) as how the motherboard handles power states & sleep modes; RAID settings allowing you to combine multiple hard drives into one logical unit — RAID 0 striping combining, RAID 1 mirroring as backup, and AHCI cut off at the page edge and left cut off, not completed.
+- The frame, filled: the firmware-configuration page that Note 304's key-parameters page (boot order, secure boot digital-sign checks, hardware enabling/disabling) continues — filed here as the settings version.
+
+---
+
+## Image Note 304 — Configuration & parameters: firmware menu (BIOS/UEFI) or remote tools (IPMI); key parameters (boot order, secure boot digital-sign checks, H/W enabling/disabling); functions ① initialization (POST, check H/W before OS loads); S/W code on top of OS vs firmware code on bare metal; firmware as app program or simple OS (more expensive, more memory/CPU/power); microprocessor pipeline (fetch, decode, exec); you can't change it; factory = PC (firmware = switch on machines, kernel = factory mgr, PID 0 = idle worker, PID 1 = supervisor) (handwritten, as is)
+
+### Configuration & parameters
+
+- Interact with a firmware menu (BIOS/UEFI) or use remote management tools (IPMI) servers
+- Key parameters:
+  - Boot order
+  - Secure boot: digital sign checks enable & disable
+  - H/W setting: enabling / disabling H/W
+
+### Functions
+
+- ① Initialization (POST): goal is to check H/W before OS loads
+
+### S/W vs firmware code
+
+- Generally S/W code is code that is to be run on top of an OS
+- Firmware code is the information that is run on the bare metal of the chip
+- Firmware can be either actual app program or can be a simple OS (data that is interpreted by firmware) — it makes product more expensive, more memory, CPU power is needed
+- Micro processor pipeline (fetch, decode, exec)
+- You can't change it
+
+### In a factory = PC
+
+- ① Firmware = switch on machines
+- ② Kernel = factory mgr
+- ③ PID 0 = idle worker
+- ④ PID 1 = supervisor
+
+### [Filled — added, not in the original image]
+- Configuration & parameters, filled: interacting with a firmware menu (BIOS/UEFI) or using remote management tools (IPMI) on servers; key parameters as boot order, secure boot with digital-sign checks enabled & disabled, and hardware settings enabling/disabling hardware — the parameter set that Note 303's configuration page (boot order, CPU virtual, RAM timings, secure boot, ACPI, RAID) details.
+- Functions, filled: initialization (POST) with the goal of checking hardware before the OS loads — the first function, with further functions (the "Data flow & processing" heading is crossed in the image and replaced by "functions", flagged, not restored).
+- Software vs firmware, filled: generally software code as code run on top of an OS, versus firmware code as the information run on the bare metal of the chip; firmware able to be either an actual application program or a simple OS (data interpreted by firmware), making the product more expensive, with more memory and CPU power needed; the microprocessor pipeline (fetch, decode, execute); "you can't change it" kept as written (the image's own claim about the pipeline, flagged, not softened).
+- Factory analogy, filled: in a factory = PC — firmware as switching on machines, kernel as factory manager, PID 0 as idle worker, PID 1 as supervisor — the factory analogy for the boot-to-runtime chain that Note 299's load-bootloader (OS handoff) and Note 301's kernel-after-firmware order carry.
+- The frame, filled: the configuration-and-functions page that Note 303's settings page precedes and Note 305's categories page follows — filed here as the parameters-and-analogy version.
+
+---
+
+## Image Note 305 — Firmware (stable/unshakable/entry) (wakeups CPU): direct controller of H/W, S/W in H/W tied to H/W (ROM), first executed at power on then CPU runs, standard S/W on hdd easily modified/replaced, S/W for H/W in permanent memory, tells H/W how to operate & communicate with S/W, boot/runtime/control services, position/handoff b/w S/W & H/W, without it H/W can't communicate or wake up, initial power before OS loading; categorized by ① architecture spec (BIOS 16-bit text MBR no secure boot; UEFI 32/64-bit GUI secure boot GPT NVRAM), ② function (boot, mgmt BMC/EC/SMC, device SSD/USB/GPU, security TPM), ③ update method (field upgradable flashable; mask ROM factory programmed); HAL foundational layer, unified interface for kernel/drivers; firmware S/W compiled into .bin/.hex; functions (initialization, H/W abstraction); UEFI = PCs/servers = CPU, CMOS = chips/microcontrollers, mathw = Apps (partly unclear) (handwritten, as is)
+
+### Firmware (stable / unshakable / entry) (wakeups CPU)
+
+- Acts as direct controller of H/W components
+- S/W code stored in hardware component, tied to H/W (ROM)
+- First executed when power on of a device, then CPU runs
+- Standard S/W stored in hdd, easily modified / replaced
+- Software for hardware stored in permanent memory
+- Firmware tells H/W how to operate & communicate with S/W
+- Firmware provides boot, runtime, control services to a dev
+- Position b/w S/W & H/W
+- Handoff b/w S/W & H/W
+- Without it H/W components can't communicate or wake up
+- It handles initial power before OS loading
+
+### Categorized by
+
+- ① Architecture specification (motherboard):
+  - BIOS ⇒ 16 bit, text based UI, no secure boot, MBR
+  - UEFI ⇒ 32/64 bit, GUI based, secure boot, GPT, NVRAM
+- ② By its function (embedded):
+  - Boot → initializes system loads OS
+  - Mgmt → BMC, EC, SMC
+  - Device → for peripherals (SSD, USB, GPU)
+  - Security → TPM
+- ③ By update method:
+  - Field upgradable – flashable
+  - Mask ROM – factory programmed
+
+### HAL
+
+- Firmware serves as the foundational S/W layer that abstracts H/W complexities (H/W abstraction layer) HAL
+- HAL provides a unified interface for kernel to communicate with drivers (H/W)
+
+### Firmware S/W
+
+- Firmware S/W compiled into .bin / .hex for a different processor
+
+### Functions
+
+- ① Initialization
+- ② H/W abstraction
+
+### Tail lines (partly unclear)
+
+- UEFI = PCs / servers = CPU
+- CMOS = chips / microcontrollers [as written]
+- Mathw = Apps [as written, partly unclear, flagged — the word reads "mathw" in the image, not reconstructed]
+
+### [Filled — added, not in the original image]
+- Firmware, filled: acting as a direct controller of hardware components; software code stored in a hardware component, tied to hardware (ROM); first executed when a device powers on, then the CPU runs; standard software stored on the hard drive, easily modified/replaced, versus software for hardware stored in permanent memory; firmware telling hardware how to operate & communicate with software; firmware providing boot, runtime, and control services to a device; position and handoff between software & hardware; without it hardware components can't communicate or wake up; handling initial power before OS loading — the stable/entry definition that Notes 306 and 307 restate.
+- Categories, filled: by architecture specification (motherboard) — BIOS as 16-bit, text-based UI, no secure boot, MBR, versus UEFI as 32/64-bit, GUI-based, secure boot, GPT, NVRAM; by function (embedded) — boot initializing the system and loading the OS, management as BMC/EC/SMC, device for peripherals (SSD, USB, GPU), security as TPM; by update method — field-upgradable (flashable) versus mask ROM (factory-programmed) — the three categorizations that Note 306's types-categorized page repeats.
+- HAL, filled: firmware serving as the foundational software layer abstracting hardware complexities (hardware abstraction layer, HAL), with HAL providing a unified interface for the kernel to communicate with drivers (hardware); firmware software compiled into .bin/.hex for a different processor; functions as initialization and hardware abstraction — the HAL frame that Note 299's key roles (provides HAL) name.
+- Tail lines, filled: UEFI = PCs/servers = CPU, CMOS = chips/microcontrollers, and "mathw = Apps" kept as written and flagged as partly unclear (the word reads "mathw" in the image, not reconstructed into a guessed term).
+- The frame, filled: the firmware-categories page that Note 306's ROM/EPROM/Flash page repeats with standards added — filed here as the categorized version.
+
+---
+
+## Image Note 306 — H/W [ROM, EPROM, Flash] = Firmware ⇒ code for H/W; first code at power on; firmware S/W in H/W (ROM, EPROM, Flash); tightly coupled with H/W; standard S/W on harddrive easily modified/replaced; firmware stable = position/handoff b/w S/W & H/Ware and firmware & kernel; types categorized ① by arch (BIOS 16-bit limited MBR text no secure boot; UEFI 32/64-bit GUI secure boot H/W boot NVRAM boot GPT FAT32), ② by functions (boot, mgmt BMC/EC/SMC, device SSD/GPU/NIC/HDD, security TPM/secure enclave), ③ by update method (field upgradable modern flashable; mask ROM factory programmed); standards (UEFI, ACPI, SMBIOS, PCIe, TPM, DMTF, IPMI, SMB/12c, IEEE 802); security standards (NIST SP 800, UEFI secure boot, FIPS 140/23) (handwritten, as is)
+
+### H/W [ROM, EPROM, Flash] = Firmware
+
+- ⇒ Code for H/W
+- First code executed when power on a device
+- Firmware S/W stored in ⇒ H/W (ROM, EPROM, Flash) device
+- Tightly coupled with H/W
+- Standard S/W stored on harddrive, easily modified or replaced
+
+### Firmware stable
+
+- Position b/w S/W & H/Ware
+- Handoff b/w firmware & kernel
+
+### Functions / types categorized
+
+- ① By arch specification:
+  - BIOS ⇒ 16 bit, limited MBR, text based UI, no secure boot
+  - UEFI ⇒ 32/64 bit, GUI & secure boot, H/W boot, NVRAM boot, GPT, FAT32
+- ② By functions:
+  - Boot firmware: initialize system & loads OS
+  - Mgmt firmware: BMC, EC, SMC
+  - Device firmware: for peripherals (SSD, GPU, NIC, HDD)
+  - Security firmware: TPM, secure enclave
+- ③ By update method:
+  - Field upgradable: modern (flashable)
+  - Mask ROM: factory programmed
+
+### Standards to follow
+
+- UEFI → defines interface b/w kernel & device drivers
+- ACPI → power mgmt
+- SMBIOS → sys mgmt (DMI tables)
+- PCIe → controlling PCIe
+- TPM → trusted platform
+- DMTF → RESTful API
+- IPMI → out of band mgmt
+- SMB / 12c → comm [as written]
+- IEEE 802 → N/W
+
+### Security standards
+
+- NIST SP 800 (BIOS / UEFI)
+- UEFI secure boot
+- FIPS 140 / 23 [as written]
+
+### [Filled — added, not in the original image]
+- ROM/EPROM/Flash, filled: hardware (ROM, EPROM, Flash) = firmware as code for hardware; first code executed when a device powers on; firmware software stored in hardware (ROM, EPROM, Flash) devices; tightly coupled with hardware; standard software stored on the hard drive, easily modified or replaced — the storage contrast that Note 305's permanent-memory line and Note 307's ROM permanent-storage line carry.
+- Stable, filled: firmware stable as position between software & hardware, and handoff between firmware & kernel — the position/handoff frame that Note 305's position/handoff lines name.
+- Types, filled: by architecture specification — BIOS as 16-bit, limited MBR, text-based UI, no secure boot, versus UEFI as 32/64-bit, GUI & secure boot, hardware boot, NVRAM boot, GPT, FAT32; by functions — boot firmware initializing the system & loading the OS, management firmware as BMC/EC/SMC, device firmware for peripherals (SSD, GPU, NIC, HDD), security firmware as TPM and secure enclave; by update method — field-upgradable as modern (flashable) versus mask ROM as factory-programmed — the three categorizations that Note 305's categorized-by page repeats with the FAT32 and secure-enclave additions.
+- Standards, filled: UEFI defining the interface between kernel & device drivers; ACPI for power management; SMBIOS for system management (DMI tables); PCIe for controlling PCIe; TPM for trusted platform; DMTF for RESTful API; IPMI for out-of-band management; SMB/12c for communication as written; IEEE 802 for networking — the nine standards, kept as written.
+- Security standards, filled: NIST SP 800 (BIOS/UEFI), UEFI secure boot, and FIPS 140/23 as written (kept as written, flagged — the FIPS number reads 140/23 in the image, not silently corrected).
+- The frame, filled: the firmware-types-and-standards page that Note 305's categories page precedes — filed here as the standards version.
+
+---
+
+## Image Note 307 — Firmware = stable: machine code instructions, processor runs immediately upon power on; software code tells H/W how to behave; software for H/W stored in non-vol memory (ROM, flash, EEPROM); software in (ROM) permanent storage; controls H/W devices with low-level instructions; tells H/W how to operate & communicate with software; sits b/w physical H/W (drivers) & kernel & application; provides boot, runtime, control services; read only / exec; Eg (BIOS/UEFI, router, camera, peripherals); updates critical for security & stability; bridge b/w physical H/W components & OS or apps; firmware S/W for H/W; S/W initialization called booting; wakes up CPU, RAM, I/O (handwritten, as is)
+
+### Firmware = stable
+
+- Firmware ⇒ machine code instructions → processor runs immediately upon power on
+- Software code (instructions) tells hardware how to behave
+- Software for hardware (devices) stored in non vol memory (ROM, flash, EEPROM)
+- Software stored in (ROM) permanent storage
+- Controls H/W devices providing low level instructions
+- Firmware tells H/W how to operate & communicate with software
+- Sits b/w physical H/W (drivers) & kernel & application
+- Provides boot, runtime, control services to a device
+- Read only / exec
+
+### Eg
+
+- BIOS / UEFI
+- Router
+- Camera
+- Peripherals
+
+### Updates
+
+- Firmware S/W updates are critical for security & stability
+
+### Bridge
+
+- Bridge b/w physical H/W components & OS or apps
+- Firmware S/W for H/W
+- That S/W initialization called booting
+- Wakes up CPU, RAM, I/O
+
+### [Filled — added, not in the original image]
+- Firmware, filled: machine-code instructions that the processor runs immediately upon power on; software code (instructions) telling hardware how to behave; software for hardware (devices) stored in non-volatile memory (ROM, flash, EEPROM); software stored in (ROM) permanent storage; controlling hardware devices by providing low-level instructions; firmware telling hardware how to operate & communicate with software; sitting between physical hardware (drivers) & kernel & application; providing boot, runtime, and control services to a device; read-only / executable — the stable definition that Notes 305 and 306 restate.
+- Examples, filled: BIOS/UEFI, router, camera, and peripherals as firmware examples.
+- Updates & bridge, filled: firmware software updates critical for security & stability; firmware as a bridge between physical hardware components & OS or apps; firmware software for hardware; that software initialization called booting; waking up CPU, RAM, and I/O — the bridge-and-booting frame that Note 299's startup/execution lines and Note 304's factory analogy carry.
+- The frame, filled: the firmware-stable page that Notes 305 (stable/unshakable/entry) and 306 (ROM/EPROM/Flash = firmware) precede — filed here as the stable-and-bridge version.
+
+---
+
+## Image Note 308 — Core parts of kernel: ① sys call interface (managed through sys tables, registers, H/W instructions; SCI primary entry point to request kernel services; primary entry point for user-space apps); ② categories (process control, file mgmt, device mgmt, info maintenance, communication); provide way to interact with low-level sys functions; bridge b/w user space & kernel; SCI primary entry point to request kernel services (handwritten, as is)
+
+### Core parts of kernel
+
+### ① Sys call interface
+
+- Managed through sys tables, registers, H/W instructions
+- SCI is primary entry point to request kernel services (browsers or terminal) [as written]
+- Primary entry point for user space apps
+
+### ② Categories
+
+- ① Process control → managing processes
+- ② File mgmt → operations on files
+- ③ Device mgmt → interacting with H/W
+- ④ Info maintenance → sys data
+- ⑤ Communication → IPC & N/Wing
+
+### SCI role
+
+- Provide way to interact with low level sys functions
+- Bridge b/w user space & kernel
+- SCI is primary entry point to request kernel services
+
+### [Filled — added, not in the original image]
+- System-call interface, filled: managed through system tables, registers, and hardware instructions; the SCI as the primary entry point to request kernel services (browsers or terminal as written — the parenthetical is kept as written, flagged as the image's own examples); the primary entry point for user-space apps — the interface definition that Note 289's socket.c (socket-related syscalls) and Note 291's mmap() syscall mapping use.
+- Categories, filled: process control managing processes; file management for operations on files; device management for interacting with hardware; info maintenance for system data; communication for IPC & networking — the five syscall categories, kept in the image's numbering.
+- SCI role, filled: providing a way to interact with low-level system functions; bridging user space & kernel; the SCI as the primary entry point to request kernel services — the bridge role that Note 301's user-space-APIs-launched-by-kernel line and Note 292's /proc process-info files bracket.
+- The frame, filled: the kernel-core-parts page (syscall interface + categories) that closes the kernel run opened by Notes 286–295 (/usr, kernel tree, config, IPC, boot, modules, drivers, networking, memory, filesystem, process, security) — filed here as the syscall-interface version.
+
+---
+
+# INbatch41 — Image Notes 309–322 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 1 duplicate skipped in this set — upload 367 repeats the upload 366 mail-servers/cluster page exactly, skipped entirely with no content copied and no note number consumed. 14 new notes filed from 15 images.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: the numeric string scribbled on the process page (Note 319) is omitted per the standing sanitize rule (identifier-shaped value, mechanism only).
+
+## Image Note 309 — ③ HPC clusters (thousands of servers, complex math & science; parallel computing, distributed computing; supercomputers Fugaku/Frontier, Linux slurm/MPI over infiniband, IBM LSF); ④ storage clusters (redundant pool of storage; combines physical servers into one massive redundant pool; OSS Ceph/GlusterFS/HDFS/MinIO/k8s-rook; NetApp ONTAP, Dell PowerScale, IBM scale storage) (handwritten, as is)
+
+### ③ HPC clusters
+
+- Thousands of servers linked to solve complex math & science
+- HPC parallel computing
+- HA distributed computing [as written]
+- Ex:
+  - Supercomputer machines (Fugaku / Frontier)
+  - Linux slurm / MPI over infiniband
+  - IBM lsfadmin [as written]
+
+### ④ Storage clusters → redundant pool of storage
+
+- Combines physical servers held into one massive redundant pool of storage
+- OSS:
+  - Ceph
+  - GlusterFS
+  - HDFS
+  - MinIO
+  - k8s – rook
+- Vendor:
+  - NetApp ONTAP
+  - Dell PowerScale
+  - IBM scale storage
+
+### [Filled — added, not in the original image]
+- HPC, filled: thousands of servers linked to solve complex math & science, with HPC parallel computing and distributed computing as written; examples as supercomputer machines (Fugaku/Frontier), Linux Slurm/MPI over InfiniBand, and IBM LSF admin as written (kept as written, flagged — the "lsfadmin" line reads as the LSF admin tooling, not expanded).
+- Storage, filled: storage clusters as a redundant pool of storage, combining physical servers held into one massive redundant pool of storage — with open-source systems (Ceph, GlusterFS, HDFS, MinIO, Kubernetes Rook) and vendor systems (NetApp ONTAP, Dell PowerScale, IBM scale storage) — the storage-cluster pair that Note 316's cluster-type list (storage clusters as type ④) and Note 254's computers-by-power page bracket.
+- The frame, filled: the HPC-and-storage cluster page (types ③ and ④ of the cluster run) that Note 316's nine-type cluster list summarizes — filed here as the HPC-and-storage version.
+
+---
+
+## Image Note 310 — ⑤ mail servers (MTA Postfix, Exim, MS Exchange); ⑥ dir/identity servers (AD, OpenLDAP, FreeIPA); ⑦ N/W servers (DNS Bind9/PowerDNS, DHCP, VPN); ⑧ proxy/rev servers (nginx, HAProxy, squid, Traefik, envoy); cluster mixed uses (root/sys/reg); ① HA clusters (24/7, DB online; pacemaker/corosync, MSFC, k8s = etcd; hacluster → ha-client, keepalived-script, wsfc); ② load balancer cluster (distributes massive traffic evenly across backends; Layer 4 TCP/UDP, Layer 7 HTTP/HTTPS; haproxy, nginx, IPVS/LVS, F5 BIG IP, ELB; Linux → iptables, k8s → kube proxy) (handwritten, as is)
+
+### ⑤ Mail servers
+
+- MTA: Postfix, Exim, MS Exchange
+
+### ⑥ Dir / identity servers
+
+- AD, OpenLDAP, FreeIPA
+
+### ⑦ N/W servers
+
+- DNS (Bind9, PowerDNS), DHCP, VPN
+
+### ⑧ Proxy / rev servers
+
+- nginx, HAProxy, squid, Traefik, envoy
+
+### Cluster (mixed uses, root / sys / reg)
+
+### ① HA clusters
+
+- Keeps services running 24/7
+- Keeps DB online
+- Ex:
+  - pacemaker / corosync
+  - MSFC
+  - k8s = etcd
+- hacluster → ha-client, keepalived-script, wsfc [as written]
+
+### ② Load balancer cluster
+
+- Distributes massive incoming traffic evenly across multiple backend servers (DB / app)
+- Uses:
+  - Layer 4 → TCP / UDP
+  - Layer 7 → HTTP / HTTPS
+- Ex:
+  - haproxy, nginx, native IPVS / LVS
+  - F5 BIG IP, ELB
+- Linux → iptables
+- k8s → kube proxy
+
+### [Filled — added, not in the original image]
+- Server types, filled: mail servers as MTA (Postfix, Exim, MS Exchange); directory/identity servers (AD, OpenLDAP, FreeIPA); network servers (DNS as Bind9/PowerDNS, DHCP, VPN); proxy/reverse-proxy servers (nginx, HAProxy, squid, Traefik, envoy) — types ⑤–⑧ of the single-server run that Note 311's types page (web, DB, file, app) opens and Note 316's single-server list closes.
+- HA clusters, filled: keeping services running 24/7 and keeping the database online, with examples pacemaker/corosync, MSFC, and Kubernetes = etcd, plus the hacluster line (ha-client, keepalived-script, wsfc) kept as written.
+- Load-balancer clusters, filled: distributing massive incoming traffic evenly across multiple backend servers (database/app), using Layer 4 (TCP/UDP) and Layer 7 (HTTP/HTTPS), with examples haproxy, nginx, native IPVS/LVS, F5 BIG IP, and ELB, and Linux → iptables, Kubernetes → kube proxy — the load-balancing pair that Note 280's K8s-vs-Swarm load-balance row and Note 285's service (stable IP, service discovery) use.
+- The frame, filled: the mail/identity/network/proxy + HA/load-balancer page that Note 316's two type lists (eight single-server types, nine cluster types) summarize — filed here as the mixed-uses version. (Upload 367 repeats this page exactly and was skipped as its duplicate.)
+
+---
+
+## Image Note 311 — Types: individual servers categorized by specific role/service, handled by system users; ① web servers = ingress controller (Apache, Nginx, IIS, Envoy; www-data, httpd, lighttpd, Linux user, k8s ingress); ② DB servers = stateful sets (MySQL, PostgreSQL, Oracle, DB2, MongoDB; root → system accounts, Linux memory settings, k8s statefulset/PV); ③ file servers (NFS, Samba, TrueNAS; smb user/nobody, administrator/guest, Linux etc/fstab, k8s RWM); ④ app servers = deployment (Tomcat, WildFly, WebLogic, WebSphere, JBoss, NodeJS, Gunicorn, JVM; admin, WAS admin, Tomcat, Linux systemd/runtimes, k8s deployment/HPA) (handwritten, as is)
+
+### Types
+
+- Individual servers categorized by specific role or service they perform and handled by system users
+
+### ① Web servers = ingress controller
+
+- Ex: Apache, Nginx, IIS, Envoy
+- Binds to default users / accounts: www-data (Deb), httpd (CentOS), lighttpd, Linux user, k8s ingress
+
+### ② DB servers = stateful sets
+
+- Stateful sets; starts as root then becomes system accounts / users
+- MySQL, PostgreSQL, Oracle, DB2, MongoDB
+- Linux = memory settings; k8s = statefulset / PV
+
+### ③ File servers
+
+- NFS, Samba, TrueNAS
+- Smb user / nobody; administrator / guest
+- Linux: etc / fstab; k8s: RWM
+
+### ④ App servers = deployment
+
+- Host backend code / business logic
+- Apache Tomcat, WildFly, Oracle WebLogic, IBM WebSphere, RedHat JBoss, NodeJS, Gunicorn, JVM
+- Admin, WAS admin, Tomcat
+- Linux: systemd / runtimes; k8s: deployment / HPA
+
+### [Filled — added, not in the original image]
+- Types, filled: individual servers categorized by the specific role or service they perform and handled by system users — the framing that Note 316's single-server list (eight types by role/service) and Note 310's mail/identity/network/proxy types (⑤–⑧) complete.
+- Web servers, filled: web servers as ingress controllers, with examples Apache, Nginx, IIS, and Envoy, binding to default users/accounts (www-data on Debian, httpd on CentOS, lighttpd, Linux user, Kubernetes ingress).
+- DB servers, filled: database servers as stateful sets, starting as root then becoming system accounts/users, with examples MySQL, PostgreSQL, Oracle, DB2, and MongoDB, and Linux memory settings versus Kubernetes statefulset/PV.
+- File servers, filled: NFS, Samba, and TrueNAS, with smb user/nobody and administrator/guest accounts, and Linux etc/fstab versus Kubernetes RWM.
+- App servers, filled: application servers as deployments hosting backend code/business logic, with examples Apache Tomcat, WildFly, Oracle WebLogic, IBM WebSphere, RedHat JBoss, NodeJS, Gunicorn, and JVM, with admin/WAS-admin/Tomcat roles, and Linux systemd/runtimes versus Kubernetes deployment/HPA.
+- The frame, filled: the four-type server page (web, DB, file, app) that Note 310's types ⑤–⑧ and Note 316's eight-type list bracket — filed here as the role-and-system-user version.
+
+---
+
+## Image Note 312 — OS for them: server (node) Linux/Windows; cluster k8s for app clusters, VMware for VM cluster; resource management (single server = OS kernel with direct physical control over N/W, process scheduling, memory mgmt; cluster = scheduler with bin packing, quotas & limits, eviction) (handwritten, as is)
+
+### OS for them
+
+- Server (node): Linux, Windows
+- Cluster: k8s for app clusters, VMware for VM cluster
+
+### Resource management
+
+- Single servers: the resource manager is the OS kernel; it has direct physical control over N/W, process scheduling, memory mgmt
+- For the cluster: the resource manager is the scheduler:
+  - Bin packing
+  - Quotas & limits
+  - Eviction
+
+### [Filled — added, not in the original image]
+- OS for them, filled: server (node) operating systems as Linux and Windows; cluster platforms as Kubernetes for application clusters and VMware for VM clusters — the platform split that Note 314's major providers (physical servers, virtual servers, clusters) and Note 316's cluster-vs-server definitions use.
+- Resource management, filled: for single servers, the resource manager as the OS kernel with direct physical control over networking, process scheduling, and memory management; for the cluster, the resource manager as the scheduler, with bin packing, quotas & limits, and eviction — the kernel-vs-scheduler contrast that Note 277's scheduler (assigning pods to nodes) and Note 281's scheduler factors (resource requirements & availability) detail at the Kubernetes level.
+- The frame, filled: the OS-and-resource-management page that Note 314's server-vs-cluster architecture page (centralized vs distributed) precedes — filed here as the kernel-vs-scheduler version.
+
+---
+
+## Image Note 313 — N/W: single server on physical cables vs clusters on "virtual" S/W networks; centralized vs distributed model; single server (post office model: physical NIC to switch, one IP, apps on specific ports, can't run 2 services on same port, physical networking); cluster (overlay model: virtual networking, vNIC not physical NIC, virtual mesh of tunnels VXLAN/Geneve over physical H/W, N/W within N/W, CNI plugins, IP per pod cluster-wide, internal core DNS, pods communicate across nodes without NAT, nodes reach pods without NAT, limitation complexity/IP management) (handwritten, as is)
+
+### N/W
+
+- Single server relies on physical cables
+- Clusters rely on "virtual" S/W networks
+- Centralized model vs distributed model
+
+### Single server (post office model)
+
+- Mechanism: server has physical NIC connected to switch
+- Identity: server has one IP address
+- Commun: apps listen on specific ports
+- Limitations: you can't run 2 services on same port
+- It uses physical networking
+
+### Cluster (overlay model)
+
+- It uses virtual networking, vNIC not physical NIC
+- Mechanism: cluster creates a virtual mesh of tunnels (VXLAN, Geneve) over physical H/W; this is N/W within a N/W; relies on CNI plugins to manage N/W
+- Identity: IP per pod — every app instance (pod) gets own IP addr, which is cluster-wide IP addr for (pod to pod com)
+- Communication: cluster runs its own internal core DNS instead of hard coded IP addr; k8s services: pods can communicate directly with any other pods across different nodes without NAT; nodes can reach pod, pod can reach node without NAT
+- Limitation: complexity / IP management
+
+### [Filled — added, not in the original image]
+- Network models, filled: single servers relying on physical cables versus clusters relying on "virtual" software networks, as centralized versus distributed models — the model split that Note 314's server-vs-cluster architecture page (centralized setup vs distributed setup) states at the system level.
+- Single server, filled: the post-office model — mechanism as a server with a physical NIC connected to a switch; identity as the server having one IP address; communication as apps listening on specific ports; limitation as not being able to run two services on the same port; using physical networking.
+- Cluster, filled: the overlay model — virtual networking with a vNIC, not a physical NIC; mechanism as the cluster creating a virtual mesh of tunnels (VXLAN, Geneve) over physical hardware, a network within a network, relying on CNI plugins to manage networking; identity as IP per pod, with every app instance (pod) getting its own IP address, cluster-wide, for pod-to-pod communication; communication as the cluster running its own internal CoreDNS instead of hard-coded IP addresses, with Kubernetes services letting pods communicate directly with any other pods across different nodes without NAT, and nodes reaching pods and pods reaching nodes without NAT; limitation as complexity and IP management.
+- The frame, filled: the single-vs-cluster networking page that Note 285's pod overlay-network line and Note 277's worker-node CNI plugins bracket — filed here as the post-office-vs-overlay version.
+
+---
+
+## Image Note 314 — Characteristics: defines nature & arch of each system; ① server arch (centralized setup, single OS/kernel, clients connect directly, traffic binds to H/W, dependent components H/W/config, failure brings down whole sys); ② cluster arch (distributed setup, multiple OS instances one per node, independent nodes, nodes can fail/reboot/cycle without downtime, middleware/hypervisor); major providers (physical/virtual): physical servers Dell/HPE/Lenovo, clusters Supermicro/HPE Cray; virtual servers EC2/VM/droplets on hypervisor VMs, clusters GKE/EKS/AKE/OKE, provider handles control plane, manages; systems defined by specific M (root/sys/reg), user-level permissions to manage N/W services & data (handwritten, as is)
+
+### Characteristics
+
+- Defines the nature & arch of each system
+
+### ① Server arch
+
+- Centralized setup, single OS / kernel
+- Clients connect directly → traffic binds to H/W
+- Server has dependent components = H/W / config
+- Failure brings down whole sys
+
+### ② Cluster arch
+
+- Distributed setup, multiple OS instances (one per node)
+- Cluster has independent nodes
+- Nodes can fail, reboot or cycle without downtime
+- Middleware / hypervisor
+
+### Major providers (physical / virtual)
+
+- Physical:
+  - Servers = Dell, HPE, Lenovo
+  - Clusters = Supermicro, HPE Cray
+- Virtual:
+  - Servers = EC2, VM, droplets on hypervisor VMs
+  - Clusters = GKE, EKS, AKE, OKE
+  - Provider handles, control plane for us, manages
+
+### Systems defined
+
+- These systems are defined by their specific M [partly unclear] (root / sys / reg), user level permissions designed to manage N/W services & data
+
+### [Filled — added, not in the original image]
+- Characteristics, filled: characteristics defining the nature & architecture of each system — server architecture as a centralized setup with a single OS/kernel, clients connecting directly with traffic binding to hardware, the server having dependent components (hardware/config), and failure bringing down the whole system; cluster architecture as a distributed setup with multiple OS instances (one per node), independent nodes, nodes able to fail, reboot, or cycle without downtime, with middleware/hypervisor — the architecture contrast that Note 316's cluster-vs-server definitions (single computer vs coordinated group) restate.
+- Providers, filled: physical servers (Dell, HPE, Lenovo) and clusters (Supermicro, HPE Cray); virtual servers (EC2, VM, droplets on hypervisor VMs) and clusters (GKE, EKS, AKE, OKE), with the provider handling and managing the control plane for us.
+- Systems defined, filled: these systems defined by their specific M (partly unclear in the image, flagged, not expanded) with root/sys/reg and user-level permissions designed to manage network services & data.
+- The frame, filled: the characteristics-and-providers page that Note 312's OS-and-resource page and Note 316's type lists bracket — filed here as the architecture-and-provider version.
+
+---
+
+## Image Note 315 — Server really is: resources – services – data; specialized computer providing services/resources to other computers (clients); servers differ mainly by what they serve (web pages, DBases, files, apps); cluster is a coordinated group of servers behaving like one unified system; app/SaaS/microservices → containers/pods managed by k8s → VM (IaaS) → clusters → datacenter; data plane = worker nodes, control plane = master nodes (handwritten, as is)
+
+### Server really is
+
+- Resources – services – data
+- It is a specialized computer that provides services or resources to other computer (clients)
+- Servers differ mainly by what they serve: web pages, DBases, files, apps, etc.
+
+### Cluster
+
+- Is a coordinated group of servers that behave like one unified system
+
+### Stack
+
+```
+app / SaaS / microservices
+        ↓
+containers / pods → managed by k8s
+        ↓
+VM — IaaS
+        ↓
+clusters → datacenter
+```
+
+### Planes
+
+- Data plane = worker nodes
+- Control plane = master nodes
+
+### [Filled — added, not in the original image]
+- Server, filled: a server as resources, services, and data — a specialized computer that provides services or resources to other computers (clients), with servers differing mainly by what they serve (web pages, databases, files, apps, etc.) — the definition that Note 316's server definition (single computer/VM providing services, data, or resources) repeats.
+- Cluster, filled: a cluster as a coordinated group of servers behaving like one unified system — the definition that Note 316's cluster definition (coordinated group of two or more servers working together as a single unified system) repeats.
+- Stack, filled: app/SaaS/microservices → containers/pods managed by Kubernetes → VM (IaaS) → clusters → datacenter, with the data plane as worker nodes and the control plane as master nodes — the stack that Note 277's master/worker architecture and Note 283's basic components (master node, workers, etcd) detail.
+- The frame, filled: the server-and-cluster definition page that Note 316's k8s/Linux cluster-vs-server page restates — filed here as the definition-and-stack version.
+
+---
+
+## Image Note 316 — k8s / Linux: message passing model, horizontal, via autoscaler API; cluster: scale out (expanded by adding more servers), coordinated group of 2+ servers (nodes) working together as single unified system to handle heavy workloads & prevent downtime; shared memory model, vertical; server: scale up (upgraded by adding more CPU/RAM), single computer/VM providing services, data, resources to other computers; types: single servers by role/service (web, DB, file/NAS, application, mail, N/W, dir/identity, proxy & rev proxy); server clusters by primary goal (preventing downtime, handling traffic, processing massive data 24/7): HA, load balancer, HPC, storage, container orch, distributed DB, bigdata, HCI, compute (handwritten, as is)
+
+### k8s / Linux
+
+- Message passing model, horizontal, via autoscaler API
+
+### Cluster
+
+- Scale out: expanded by adding more servers
+- It is a coordinated group of 2 or more servers (nodes) connected to work together as a single unified system to handle heavy workloads & prevent downtime
+
+### Server
+
+- Shared memory model, vertical
+- Scale up: upgraded by adding more CPU / RAM
+- It is a single computer / VM that provides services, data or resources to other computers
+
+### Types
+
+- Single servers categorized by the specific role or service they perform for users / N/Ws:
+  - ① Web servers – hosts web content, handles layer7 traffic
+  - ② DB servers – manages SQL / NoSQL
+  - ③ File / NAS servers – handles NAS
+  - ④ Application servers
+  - ⑤ Mail servers
+  - ⑥ N/W servers
+  - ⑦ Dir / identity servers
+  - ⑧ Proxy & rev proxy servers
+- Server clusters are categorized by their primary goal such as preventing downtime, handling traffic or processing massive data 24/7:
+  - ① HA clusters – uptime
+  - ② Load balancer clusters
+  - ③ HPC clusters
+  - ④ Storage clusters
+  - ⑤ Container orch clusters
+  - ⑥ Distributed DB clusters
+  - ⑦ Bigdata clusters
+  - ⑧ HCI clusters
+  - ⑨ Compute clusters
+
+### [Filled — added, not in the original image]
+- Cluster vs server, filled: Kubernetes/Linux with a message-passing model, horizontal, via the autoscaler API; cluster scale-out as expanded by adding more servers, a coordinated group of two or more servers (nodes) connected to work together as a single unified system to handle heavy workloads & prevent downtime; server with a shared-memory model, vertical, scale-up as upgraded by adding more CPU/RAM, a single computer/VM providing services, data, or resources to other computers — the scale-out-vs-scale-up contrast that Note 315's definition page and Note 314's architecture page state.
+- Types, filled: single servers by role/service (web servers hosting web content and handling Layer 7 traffic, DB servers managing SQL/NoSQL, file/NAS servers handling NAS, application servers, mail servers, network servers, directory/identity servers, proxy & reverse-proxy servers); server clusters by primary goal (preventing downtime, handling traffic, processing massive data 24/7) as HA clusters for uptime, load-balancer clusters, HPC clusters, storage clusters, container-orchestration clusters, distributed-DB clusters, bigdata clusters, HCI clusters, and compute clusters — the two type lists that Notes 309–311 detail.
+- The frame, filled: the k8s/Linux cluster-vs-server summary page that Notes 309–315 detail — filed here as the scale-and-types summary version.
+
+---
+
+## Image Note 317 — Connection protocol (eg) can be: H22 [as written] / SSH can be connected or Telnet (handwritten, as is)
+
+### Connection protocol (eg) can be
+
+- H22 [as written, flagged — reads as a port-22/SSH shorthand in the image, not silently expanded]
+- SSH can be connected, or Telnet
+
+### [Filled — added, not in the original image]
+- Protocol, filled: the connection protocol as H22 as written (flagged — the image's own shorthand, read as pointing at SSH's port 22 but not silently expanded into a claim), with SSH able to be connected, or Telnet as the alternative — the protocol pair that Note 318's getting-access page (SSH for Linux, RDP for Windows, SSH/Telnet as connection protocols) details.
+- The frame, filled: the connection-protocol diagram page that Note 318's access page follows — filed here as the protocol-shorthand version.
+
+---
+
+## Image Note 318 — Getting access: Linux system user account (username, password); authenticate by providing creds; getting connected: provided following (username, password, ssh key, server name/IP address, port no, connection protocol SSH/Telnet); ① SSH: way to connect a server over a N/W (internet); ② RDP: for Windows; 2 protocols use client-server applications to establish connection remotely; ssh username@host ip/server name format syntax; ssh localhost to run local host (handwritten, as is)
+
+### Getting access
+
+- You need Linux system user account, contains:
+  - Username
+  - Password
+- You need to authenticate by providing these creds
+
+### Getting connected
+
+- To connect, you may be provided following:
+  - 1. Username
+  - 2. Password
+  - 3. SSH key
+  - 4. Server name / IP address
+  - 5. Port no
+  - 6. Connection protocol (SSH / Telnet)
+
+### Protocols
+
+- ① SSH: way to connect a server over a N/W (internet)
+- ② RDP: for Windows
+- These are the 2 protocols use the client server applications to establish connection remotely
+
+### Syntax
+
+```
+ssh username@host ip / server name   (format syntax)
+ssh localhost                        (to run local host)
+```
+
+### [Filled — added, not in the original image]
+- Access, filled: needing a Linux system user account containing a username and password, and authenticating by providing these credentials — the account-and-authentication frame that Note 311's system-user accounts (www-data, httpd, system accounts) use.
+- Connection details, filled: to connect, you may be provided a username, password, SSH key, server name/IP address, port number, and connection protocol (SSH/Telnet) — the six connection details.
+- Protocols, filled: SSH as a way to connect to a server over a network (internet), RDP for Windows, with these two protocols using client-server applications to establish a connection remotely.
+- Syntax, filled: `ssh username@host ip / server name` as the format syntax, and `ssh localhost` to run the local host — the two command forms, kept as generic syntax with no real username, host, or credential values (none appear on the page).
+- The frame, filled: the getting-access page that Note 317's connection-protocol diagram precedes — filed here as the access-and-syntax version.
+
+---
+
+## Image Note 319 — Process: program (ls cmnd) to perform some job; in Linux when you start [program] it gives a num called PID; PID starts from 0–65535 (ports) [as written, flagged]; why PID: Linux multi-user/multi-tasking OS, runs more than 1 process simultaneously; ① process can be independent / cooperating-IPC; ② process scheduling: tells which process gets to run next; primitive can move process state, non-primitive can't move; ③ process mgmt: stack, heap, unk, data; ④ CPU scheduling: determining which process will own CPU; scheduler selects another process from ready queue to run next; dispatcher (switch process) gives control of CPU to selected process; ⑤ scheduling algo: FCFS, SJF, SRTF (handwritten, as is)
+
+### Process
+
+- It's a program (ls cmnd) to perform some job
+- In Linux when you start [program] it gives a num called PID
+- PID starts from 0 – 65535 (ports) [as written, flagged — the image conflates the PID range with the port range, not silently corrected]
+
+### Why PID
+
+- Linux is multi user / multi tasking OS means it can run more than 1 process simultaneously
+
+### ① Process can be
+
+- ① Independent
+- ② Cooperating – IPC
+
+### ② Process scheduling
+
+- It tells which process gets to run next
+- ① Primitive: can move process state
+- ② Non-primitive: can't move
+
+### ③ Process mgmt
+
+- 1 Stack
+- 2 Heap
+- 3 Unk [as written, partly unclear — the third item reads "unic/unk" in the image, not reconstructed]
+- 4 Data
+
+### ④ CPU scheduling
+
+- Determining which process will own CPU to run
+- ① Scheduler: to select another process from ready queue to run next (select process)
+- ② Dispatcher: (switch process) gives control of CPU to process selected by scheduler
+
+### ⑤ Scheduling algo
+
+- FCFS, SJF, SRTF
+
+### [Filled — added, not in the original image]
+- Process, filled: a process as a program (ls command as the example) to perform some job; in Linux, when you start a program it gives a number called PID; PID starting from 0–65535 (ports) as written, flagged — the image conflates the PID range with the port range, and the conflation is recorded, not silently corrected.
+- Why PID, filled: Linux as a multi-user/multi-tasking OS meaning it can run more than one process simultaneously — the reason PIDs exist.
+- Process types & scheduling, filled: a process able to be independent or cooperating (IPC); process scheduling telling which process gets to run next, with primitive scheduling able to move process state and non-primitive unable to move it; process management as stack, heap, an unclear third item, and data; CPU scheduling determining which process will own the CPU to run, with the scheduler selecting another process from the ready queue to run next and the dispatcher (switch process) giving control of the CPU to the process selected by the scheduler; scheduling algorithms as FCFS, SJF, and SRTF.
+- Sanitize, filled: the numeric string scribbled on this page is omitted per the standing sanitize rule (identifier-shaped value, mechanism only, not copied).
+- The frame, filled: the process-and-scheduling page that Note 292's process-management files page (/proc/[PID], /proc/stat, sched/) and Note 153's process runtime object bracket — filed here as the PID-and-scheduling version.
+
+---
+
+## Image Note 320 — Kernel (set of commands): interacts with H/W to allocate resources to user apps; accessed through system calls (cmds); only one kernel on system; system calls = communicate with kernel; all Linux commands are system calls, built into kernel; kernel = set of system calls; interface b/w H/W resources and shell; kernel file stored in boot/vmlinuz; shell: interacts with user, accepts cmds converts them to binary, many shells (many users), each user – one shell, environment for user interactions, shell is CLI executing system calls or cmds, reads cmds from keyboard or file, interface b/w kernel and user applications; file system: Windows uses drives to store folders, GUI, printers/CDROM/everything is a drive; Linux file system is CLI, tree structure, everything in Linux are files; types: regular file (user), root file (super user), service file (blank) (handwritten, as is)
+
+### Kernel (set of commands)
+
+- Interacts with H/W to allocate resources to user apps
+- Accessed through system calls (cmds)
+- Only one kernel on system
+- System calls = communicate with kernel
+- All Linux commands are system calls, built into the kernel
+- Kernel = set of system calls
+- Interface b/w H/W resources and shell
+- Kernel file stored in boot / vmlinuz
+
+### Shell
+
+- Interacts with user
+- It accepts the cmds, converts them to binary
+- Many shells in action (many users); each user – one shell
+- Environment provided for user interactions
+- Shell is a CLI, executes system calls or cmds
+- Reads cmds from keyboard or file
+- Interface b/w kernel and user applications
+
+### File system
+
+- Windows:
+  - Uses drives to store folders
+  - It is a GUI
+  - Printers, CDROM, everything is a drive
+- Linux:
+  - Linux file system is CLI
+  - It uses tree structure
+  - Everything in Linux are files
+  - Types:
+    - ① Regular file: user
+    - ② Root file: super user
+    - ③ Service file: [blank in image, left blank]
+
+### [Filled — added, not in the original image]
+- Kernel, filled: interacting with hardware to allocate resources to user applications, accessed through system calls (commands), with only one kernel on a system; system calls as communicating with the kernel; all Linux commands as system calls built into the kernel; kernel as a set of system calls; interface between hardware resources and the shell; kernel file stored in boot/vmlinuz — the kernel definition that Note 308's syscall-interface page (SCI as primary entry point) and Note 321's kernel (manages resources, system call as interface) restate.
+- Shell, filled: interacting with the user, accepting commands and converting them to binary, with many shells in action (many users) and each user having one shell, providing the environment for user interactions, as a CLI executing system calls or commands, reading commands from keyboard or file, as the interface between kernel and user applications.
+- Filesystem, filled: Windows using drives to store folders, as a GUI, with printers, CDROM, and everything as a drive; Linux filesystem as CLI, using a tree structure, with everything in Linux as files, and types as regular file (user), root file (super user), and service file (blank in the image, left blank, not completed).
+- The frame, filled: the kernel-shell-filesystem page that Note 321's OS/kernel/resources/services page continues — filed here as the kernel-vs-shell version.
+
+---
+
+## Image Note 321 — OS: S/W managing H/W, controlling allocation of resources/services; multi programs (single CPU, many programs can run); multi task (multiple users can run, 1 CPU, many users can use); file/process/device/memory/I/O mgmt; interacts with H/W to allocate resources to user apps; kernel manages resources (H/W, CPU, RAM, I/O); process req to kernel = system call (interface b/w process → OS); resources = facilities (store data, print data, memory, file mgmt); kernel decides who uses resources for how long, when; kernel runs programs (apps) & performs tasks/functionalities provided by OS for efficient use of resources (process, memory, device, file sys, security & protection, N/W, error handling); shell: S/W H/W (files & dir, virtual mem, process & threads); resources physical or logical (CPU, RAM, I/O devices, N/W interfaces, storage); OS uses services to manage/allocate resources (handwritten, as is)
+
+### OS
+
+- It's a S/W which manages H/W, controls allocation of resources, services
+- Multi programs: single CPU, many programs (multiple programs can run)
+- Multi task: multiple users can run, 1 CPU, many users can use
+
+### Management
+
+- File mgmt, process mgmt, device mgmt, memory, I/O mgmt
+- Interacts with H/W to allocate resources to user apps
+
+### Kernel
+
+- Manages resources (H/W, CPU, RAM, I/O) of OS
+- When process makes req of kernel, req is called system call (interface b/w process → OS)
+- Resources means facilities available in a [system] like (to store data, print data, memory, file mgmt)
+- Kernel decides who will use this resources for how long, when
+- Kernel runs your programs (apps) & performs following tasks (tasks or features) functionalities provided by OS to ensure efficient use of resources:
+  - ① Process mgmt
+  - ② Memory mgmt
+  - ③ Device mgmt
+  - ④ File sys mgmt
+  - ⑤ Security & protection
+  - ⑥ N/W
+  - ⑦ Error handling
+
+### Shell / resources
+
+- Shell: S/W H/W — files & dir, virtual mem, process & threads
+- Resources can be physical or logical components of computer sys:
+  - ① CPU
+  - ② RAM
+  - ③ I/O devices
+  - ④ N/W interfaces
+  - ⑤ Storage
+- OS uses services to manage, allocate resources
+
+### [Filled — added, not in the original image]
+- OS, filled: software managing hardware and controlling allocation of resources and services; multi-program as a single CPU with many programs (multiple programs can run); multi-task as multiple users able to run on one CPU with many users able to use it — the OS definition that Note 320's kernel/shell/filesystem page and Note 322's Unix OS page (set of programs as link between computer & user) bracket.
+- Kernel, filled: managing resources (hardware, CPU, RAM, I/O) of the OS; when a process makes a request of the kernel, the request is called a system call (interface between process → OS); resources as facilities available in a system (to store data, print data, memory, file management); the kernel deciding who will use these resources, for how long, and when; the kernel running your programs (apps) and performing the tasks/functionalities provided by the OS to ensure efficient use of resources — process, memory, device, file-system, security & protection, network, and error handling.
+- Resources, filled: resources as physical or logical components of a computer system — CPU, RAM, I/O devices, network interfaces, storage — with the shell's software/hardware view as files & directories, virtual memory, and processes & threads; the OS using services to manage and allocate resources.
+- The frame, filled: the OS-kernel-resources-services page that Note 320's kernel-vs-shell page precedes — filed here as the OS-definition version.
+
+---
+
+## Image Note 322 — Linux [UNIX] 1969, developed by Unix, Dennis Ritchie; written in C instead of assembly language; able to recycle code; code recycling features very important; until then all OS are commercial for one system (H/W); Unix capabilities of handling [multiple] users at the same time; Unix OS = set of programs (cmds) acting as link b/w computer & user; diagram: H/W ↔ cmds (sys calls) ↔ user; Unix OS diagram: application programs (shell: mk, more, shell, cp, cut; kernel: H/W MM/CPU/peripherals; shell: rm, bash, shell, ls, cd, mv; app programs: smtp, sftp, app programs, DB, compiler) (handwritten, as is)
+
+### Linux [UNIX] 1969 [heading as written, flagged — see Filled]
+
+- Developed by Unix, Dennis Ritchie [circled]
+- Written in C instead of assembly language
+- Able to recycle code
+- Code recycling features are very important
+- Until then all OS are commercial for one system (H/W)
+- Unix have capabilities of handling [multiple] users at the same time
+- Unix OS = set of programs (cmds) that act as link b/w computer & user
+
+### Diagram
+
+```
+H/W ↔ cmds (sys calls) ↔ user
+```
+
+### Unix OS diagram (as drawn)
+
+```
+application programs
+  shell: mk, more, shell, cp, cut
+  kernel: H/W (MM, CPU, peripherals)
+  shell: rm, bash, shell, ls, cd, mv
+  app programs: smtp, sftp, app programs, DB, compiler
+```
+
+### [Filled — added, not in the original image]
+- Unix, filled: developed by Unix with Dennis Ritchie circled; written in C instead of assembly language; able to recycle code, with code-recycling features very important; until then all operating systems commercial for one system (hardware); Unix having capabilities of handling multiple users at the same time; Unix OS as a set of programs (commands) acting as a link between computer & user — with the diagram of hardware ↔ commands (system calls) ↔ user.
+- Heading, flagged: the heading reads "LINUX 1969 developed by unix" in the image, kept as written and flagged — the 1969 date and Dennis Ritchie belong to Unix, not Linux, and the heading's conflation is recorded, not silently corrected.
+- Diagram, filled: the Unix OS diagram as drawn — application programs containing shells (mk, more, shell, cp, cut), the kernel (hardware: memory management, CPU, peripherals), shells (rm, bash, shell, ls, cd, mv), and application programs (smtp, sftp, app programs, database, compiler) — the layered diagram, kept as drawn (the shell/kernel/shell nesting is the image's own layout, not redrawn into a textbook stack).
+- The frame, filled: the Unix-history page that Note 320's kernel/shell page and Note 321's OS-definition page precede — filed here as the Unix-origin version.
+
+---
+
+# INbatch42 — Image Notes 323–333 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — 11 images, 11 new notes filed. Upload 390 (the Ports page) restates the port tables of Note 331 with added explanations, but it is a distinct page, not a duplicate image, so it is filed as a new note (Note 333) rather than skipped.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: the example private-range address in the netcat command on the audit page (Note 332) is generalized to `<host>` per the standing sanitize rule (identifier-shaped value, mechanism only).
+
+## Image Note 323 — To make a cluster work as a single system you need 4 types of infra resources: ① compute (these process data); ② N/W; ③ storage; ④ control; muscle / brain annotations (partly crossed); resource stack: compute (physical servers, VM, nodes) — stack continues on a later page, only compute shown (handwritten, as is)
+
+### 4 types of infra resources
+
+- ① Compute → these process data
+- ② N/W
+- ③ Storage
+- ④ Control
+
+### Muscle / brain annotations (partly crossed, as read)
+
+- Compute = muscle / execution power
+- N/W = nervous system / communication path
+- Storage = memory / persistent data
+- Control plane = brain / decision maker
+
+### Resource stack (as shown — compute only)
+
+- Compute: physical servers, VM, nodes
+
+### [Filled — added, not in the original image]
+- The four resources, filled: to make a cluster work as a single system you need four types of infrastructure resources — compute (these process data), network, storage, and control — with the margin analogy of compute as muscle/execution power, network as nervous system/communication path, storage as memory/persistent data, and the control plane as brain/decision maker (margin words partly crossed, read as written).
+- The stack, filled: the resource stack as shown begins with compute (physical servers, virtual machines, nodes) and continues on a later page — only compute is shown here, the remaining stack entries are not invented.
+- The frame, filled: the four-resource cluster page that Note 324's cluster-definition page and Note 315's server-vs-cluster page bracket — filed here as the cluster-resources version.
+
+---
+
+## Image Note 324 — Cluster: group of servers working as a unified system to provide higher availability, scalability & fault tolerance than any single machine; core components (nodes, control plane → management, data plane → execution, N/W, storage, cluster manager, shared N/W, shared storage, coordination layer); how cluster works (5 steps); deployment models (on-prem bare metal, virtualized, cloud, hybrid); coordination layer — via control plane (unified behavior, fault tolerance, scalability) (handwritten, as is)
+
+### Cluster
+
+- Group of servers working as a unified system
+- To provide higher availability, scalability & fault tolerance than any single machine
+
+### Core components
+
+- Nodes
+- Control plane → management
+- Data plane → execution
+- N/W
+- Storage
+- Cluster manager
+- Shared N/W, shared storage, coordination layer
+
+### How cluster works
+
+- ① Client request hits the cluster entry point → load balancer or API server
+- ② Control plane decides schedule, picks a node based on resources
+- ③ Workload runs on a node → container, VM, process
+- ④ Cluster monitors health → replaces failed nodes or reschedules
+- ⑤ State replicated across nodes → ensures consistency & durability
+
+### Deployment models
+
+- ① On-prem bare metal cluster → raw server clusters
+- ② Virtualized cluster → KVM, Proxmox, VMware
+- ③ Cloud cluster → EKS, AKS, GKE, EC2 auto scaling
+- ④ Hybrid cluster → mix of on-prem + cloud
+
+### Coordination layer — via control plane
+
+- Unified behavior → workloads automatically distributed
+- Fault tolerance → nodes can fail without downtime
+- Scalability → add/remove nodes
+
+### [Filled — added, not in the original image]
+- Cluster, filled: a group of servers working as a unified system, to provide higher availability, scalability, and fault tolerance than any single machine — with core components of nodes, a control plane (management), a data plane (execution), network, storage, a cluster manager, and shared network, shared storage, and a coordination layer.
+- How it works, filled: a client request hits the cluster entry point (load balancer or API server); the control plane decides the schedule and picks a node based on resources; the workload runs on a node (container, virtual machine, process); the cluster monitors health and replaces failed nodes or reschedules; state is replicated across nodes to ensure consistency and durability.
+- Deployment models, filled: on-prem bare-metal clusters (raw server clusters), virtualized clusters (KVM, Proxmox, VMware), cloud clusters (EKS, AKS, GKE, EC2 auto scaling), and hybrid clusters (a mix of on-prem and cloud) — with the coordination layer, via the control plane, giving unified behavior (workloads automatically distributed), fault tolerance (nodes can fail without downtime), and scalability (add/remove nodes).
+- The frame, filled: the cluster-definition page that Note 323's four-resource page and Note 315's server-vs-cluster page bracket — filed here as the cluster-definition version.
+
+---
+
+## Image Note 325 — Server: simply a computer system that provides resources, services or data to other systems (computers or clients) over a network; a machine (physical or virtual) running specialized software (server S/W) that listens for incoming req & responds with data or performs actions; core compo (H/W, OS, server S/W, N/W stack, storage); how server works (5 steps); server deployment models (bare metal, VM, containers, cloud, serverless) (handwritten, as is)
+
+### Server
+
+- Simply a computer system that provides resources, services or data to other systems (computers or clients) over a network
+- A machine (physical or virtual) running specialized software (server software) that listens for incoming requests & responds with data or performs actions
+
+### Core components
+
+- H/W: CPU, RAM, storage, NIC
+- OS: Linux, Windows
+- Server S/W: Nginx, Apache, MySQL, Redis, NodeJS, JVM
+- N/W stack: TCP/IP, ports, firewalls, routing, load balancer
+- Storage: local disk, SAN, NAS, object
+
+### How server works
+
+- ① Client sends request → HTTP, SSH, SQL, RPC
+- ② It listens on a port → 80/443 HTTP, 22 SSH
+- ③ It processes the request → app logic, DB query, cache
+- ④ It responds → HTML, JSON, binary, file
+- ⑤ Logs + metrics recorded → observability stack (Prometheus, Grafana, ELK)
+
+### Server deployment models
+
+- Bare metal, VM, containers, cloud, serverless
+
+### [Filled — added, not in the original image]
+- Server, filled: simply a computer system that provides resources, services, or data to other systems (computers or clients) over a network — a machine, physical or virtual, running specialized software (server software) that listens for incoming requests and responds with data or performs actions.
+- Core components, filled: hardware (CPU, RAM, storage, NIC), operating system (Linux, Windows), server software (Nginx, Apache, MySQL, Redis, NodeJS, JVM), network stack (TCP/IP, ports, firewalls, routing, load balancer), and storage (local disk, SAN, NAS, object).
+- How it works, filled: the client sends a request (HTTP, SSH, SQL, RPC); the server listens on a port (80/443 HTTP, 22 SSH); it processes the request (application logic, database query, cache); it responds (HTML, JSON, binary, file); logs and metrics are recorded into the observability stack (Prometheus, Grafana, ELK) — with deployment models of bare metal, virtual machine, containers, cloud, and serverless.
+- The frame, filled: the server-definition page that Note 324's cluster-definition page and Note 315's server-vs-cluster page bracket — filed here as the server-definition version.
+
+---
+
+## Image Note 326 — ② Operators (Admins / Eng / DevOps): people who run & manage these clusters; operators manage the platform. ③ Consumers (Developers / Apps / Users): these are the people or systems that use the cluster; consumers use the platform. (Items ②③ — ① providers is on Note 327's page) (handwritten, as is)
+
+### ② Operators (Admins / Eng / DevOps)
+
+- People who run & manage these clusters
+- Operators manage the platform
+
+### ③ Consumers (Developers / Apps / Users)
+
+- These are the people or systems that use the cluster
+- Consumers use the platform
+
+### [Filled — added, not in the original image]
+- Operators, filled: admins, engineers, and DevOps people who run and manage these clusters — operators manage the platform.
+- Consumers, filled: developers, applications, and users — the people or systems that use the cluster — consumers use the platform.
+- The frame, filled: the operators-and-consumers page (items ② and ③ of the three responsibility layers; item ①, providers, is on Note 327's page) — filed here as the operators-consumers version.
+
+---
+
+## Image Note 327 — Every cluster type (server, compute, container) has 3 layers of responsibility: ① providers (who builds & delivers the tech); ② operators (who runs & manages that); ③ consumers (who uses the workloads running on the cluster). ① Providers (vendors / cloud platforms): the companies that create the cluster tech — server clusters (Red Hat, Oracle, Apache, NetApp); compute (VMware, Nutanix, Hyper-V, OpenStack, HPE Cray); container (CNCF (K8s), AWS (EKS), Azure (AKS), GCP (GKE), Red Hat OC, Oracle (OKE)). Providers build the platform. (handwritten, as is)
+
+### 3 layers of responsibility
+
+- ① Providers: who builds & delivers the tech
+- ② Operators: who runs & manages that
+- ③ Consumers: who uses the workloads running on the cluster
+
+### ① Providers (vendors / cloud platforms)
+
+- The companies that create the cluster tech
+- For server clusters: Red Hat, Oracle, Apache, NetApp
+- For compute: VMware, Nutanix, Hyper-V, OpenStack, HPE Cray
+- For container: CNCF (K8s), AWS (EKS), Azure (AKS), GCP (GKE), Red Hat OC, Oracle (OKE)
+- Providers build the platform
+
+### [Filled — added, not in the original image]
+- The three layers, filled: every cluster type (server, compute, container) has three layers of responsibility — providers (who builds and delivers the technology), operators (who runs and manages that), and consumers (who uses the workloads running on the cluster).
+- Providers, filled: vendors and cloud platforms, the companies that create the cluster technology — for server clusters Red Hat, Oracle, Apache, NetApp; for compute VMware, Nutanix, Hyper-V, OpenStack, HPE Cray; for container CNCF (Kubernetes), AWS (EKS), Azure (AKS), GCP (GKE), Red Hat OpenShift, Oracle (OKE) — providers build the platform.
+- The frame, filled: the providers page (item ① of the three layers; items ② and ③ are on Note 326's page) — filed here as the providers version.
+
+---
+
+## Image Note 328 — The only 3 types of clusters: every cluster (HA, HPC, DB, storage, big data, K8s etc) belongs to these three. ① Server clusters (OS level, peer 2 peer) distributed systems: HA, LB, distributed storage, replicated DB, big data, streaming, search/index. ② Compute clusters (hypervisor, virtualization, HPC): VM, HCI, HPC clusters. ③ Container clusters (K8s, Docker Swarm, Nomad, service mesh): K8s, managed K8s, service mesh, Istio/Linkerd, Podman, Docker, CRI-O. Detail columns — server clusters (HA, LB, storage, distributed DB, big data, search/index, streaming); compute clusters (VM, HCI, HPC, Slurm; hypervisor is provider); container clusters (K8s, managed K8s, mesh, container without nodes; providers CNCF, AWS, AZ, GCP) (handwritten, as is)
+
+### The only 3 types of clusters
+
+- Every cluster (HA, HPC, DB, storage, big data, K8s etc) belongs to these three
+- ① Server clusters (OS level, peer to peer) — distributed systems
+- ② Compute clusters (hypervisor, virtualization, HPC)
+- ③ Container clusters (K8s, Docker Swarm, Nomad, service mesh)
+
+### Server clusters — detail
+
+- ① HA: uptime — pacemaker/corosync
+- ② LB: distributed traffic — HAProxy, Nginx, F5
+- ③ Storage: distributed storage — Ceph, GlusterFS, HDFS, MinIO
+- ④ Distributed DB: replicated DB — engines: Cassandra, Galera
+- ⑤ Big data: ETL, analytics — engines: Hadoop, Spark, Flink
+- ⑥ Search/index: logs — Elasticsearch, OpenSearch
+- ⑦ Streaming: events — Kafka, RabbitMQ
+
+### Compute clusters — detail
+
+- VM, HCI, HPC, Slurm
+- Hypervisor is provider
+
+### Container clusters — detail
+
+- ① K8s: container orchestration — engine: K8s control plane (CP)
+- ② Managed K8s: cloud control plane — providers: GKE, OKE, AKS
+- ③ Mesh: traffic governance — engine: Istio, Linkerd
+- ④ Container: run container without nodes — engine: Fargate (AWS), Container Apps (Azure)
+- Providers: CNCF, AWS, Azure, GCP
+
+### [Filled — added, not in the original image]
+- The three types, filled: the only three types of clusters — every cluster (high availability, high-performance computing, database, storage, big data, Kubernetes, etc.) belongs to these three: server clusters (OS level, peer to peer) as distributed systems, compute clusters (hypervisor, virtualization, HPC), and container clusters (Kubernetes, Docker Swarm, Nomad, service mesh).
+- Server detail, filled: high availability (uptime — Pacemaker/Corosync), load balancing (distributed traffic — HAProxy, Nginx, F5), storage (distributed storage — Ceph, GlusterFS, HDFS, MinIO), distributed database (replicated database — Cassandra, Galera), big data (ETL, analytics — Hadoop, Spark, Flink), search/index (logs — Elasticsearch, OpenSearch), streaming (events — Kafka, RabbitMQ).
+- Compute and container detail, filled: compute clusters as VM, HCI, and HPC clusters with Slurm, where the hypervisor is the provider; container clusters as Kubernetes (container orchestration, engine: Kubernetes control plane), managed Kubernetes (cloud control plane — GKE, OKE, AKS), mesh (traffic governance — Istio, Linkerd), and container without nodes (Fargate on AWS, Container Apps on Azure), with providers CNCF, AWS, Azure, GCP.
+- The frame, filled: the three-cluster-types page that Note 316's nine-type cluster list and Note 327's three-layers page bracket — filed here as the three-types version.
+
+---
+
+## Image Note 329 — Continuation list (sparse page, mostly headings only, bodies blank — left blank, not invented): ④ Distributed storage clusters (ports, protocols, service daemons); ⑤ Container orch clusters (K8s, Docker Swarm, Nomad); ⑥ DB/stateful distributed cluster; ⑦ HCI clusters; ⑧ Big data/analytics cluster; ⑨ App/session cluster (handwritten, as is)
+
+### ④ Distributed storage clusters
+
+- Ports = 6789, 3300, 6800–7300, 24007
+- Protocols = msgr2, RADOS
+- Service daemons = ceph-mon, ceph-osd
+
+### ⑤ Container orch clusters
+
+- K8s, Docker Swarm, Nomad
+
+### ⑥ DB / stateful distributed cluster
+
+- [blank in image]
+
+### ⑦ HCI clusters
+
+- [blank in image]
+
+### ⑧ Big data / analytics cluster
+
+- [blank in image]
+
+### ⑨ App / session cluster
+
+- [blank in image]
+
+### [Filled — added, not in the original image]
+- Storage detail, filled: distributed storage clusters with ports 6789, 3300, 6800–7300, 24007; protocols msgr2 and RADOS; service daemons ceph-mon and ceph-osd — the Ceph storage-cluster port set.
+- The remaining headings, filled: container orchestration clusters (Kubernetes, Docker Swarm, Nomad), database/stateful distributed clusters, HCI clusters, big-data/analytics clusters, and application/session clusters are headings only on this page, with bodies blank — left blank, not invented, as the continuation list that Note 316's nine-type cluster list and Note 328's three-types page bracket.
+- The frame, filled: the cluster-continuation page (types ④–⑨) — filed here as the continuation-list version.
+
+---
+
+## Image Note 330 — Standard production ports for cluster types (header chain: node comm → cluster N/W → port/protocol → daemon/process). ① HA clusters: ports 5404, 5405, 2379, 2380; protocols UDP, RAFT (TCP crossed); service daemons corosync, pacemaker, etcd; 5404/5405 = UDP N/W protocols carrying keep-alive heartbeats; 2379/2380 = managed by etcd daemon to sync DB. ② Load balancers: ports 443, 80, 9000; protocols HTTP, HTTPS, VRRP; service daemons haproxy, nginx, keepalived; 80/443 = routing traffic to frontend daemon; VRRP = a core N/W protocol layer used by the keepalived daemon to share a virtual IP. ③ HPC clusters: ports 6817, 6818, dynamic ports; protocols MPI, InfiniBand; process slurmctld, slurmd (handwritten, as is)
+
+### Header chain
+
+```
+node comm → cluster N/W → port/protocol → daemon/process
+```
+
+### ① HA clusters
+
+- Ports = 5404, 5405, 2379, 2380
+- Protocols = UDP, RAFT (TCP crossed)
+- Service daemons = corosync, pacemaker, etcd
+- 5404/5405 = UDP network protocols carrying keep-alive heartbeats
+- 2379/2380 = managed by etcd daemon to sync DB
+
+### ② Load balancers
+
+- Ports = 443, 80, 9000
+- Protocols = HTTP, HTTPS, VRRP
+- Service daemons = haproxy, nginx, keepalived
+- 80/443 = routing traffic to frontend daemon
+- VRRP = a core network protocol layer used by the keepalived daemon to share a virtual IP
+
+### ③ HPC clusters
+
+- Ports = 6817, 6818, dynamic ports
+- Protocols = MPI, InfiniBand
+- Process = slurmctld, slurmd
+
+### [Filled — added, not in the original image]
+- HA, filled: high-availability clusters with ports 5404, 5405, 2379, 2380; protocols UDP and RAFT (TCP crossed in the image); service daemons Corosync, Pacemaker, etcd — where 5404/5405 are UDP network protocols carrying keep-alive heartbeats, and 2379/2380 are managed by the etcd daemon to sync the database.
+- Load balancers, filled: ports 443, 80, 9000; protocols HTTP, HTTPS, VRRP; service daemons HAProxy, Nginx, keepalived — where 80/443 route traffic to the frontend daemon, and VRRP is a core network protocol layer used by the keepalived daemon to share a virtual IP.
+- HPC, filled: high-performance-computing clusters with ports 6817, 6818, and dynamic ports; protocols MPI and InfiniBand; processes slurmctld and slurmd.
+- The frame, filled: the cluster-ports page that Note 331's single-server ports page and Note 332's port-audit page bracket — filed here as the cluster-ports version.
+
+---
+
+## Image Note 331 — Standard prod ports for single servers: ① Web servers (/etc/httpd, /nginx): ports 80, 443; protocols HTTP, HTTPS; service daemons nginx, httpd; /var/www/, /var/log/. ② DB servers (/etc/postgresql, /var/lib/): ports 3306, 5432, 27017; process directory mysqld, postgres, mongod. ③ File servers (/etc/exports, /etc/fstab): ports 20/21, 22, 445, 2049; protocols FTP, SFTP, SMB, NFS; serv daemons vsftpd, sshd, smbd, nfsd. ④ App servers (/etc/systemd/system/): ports 8080, 3000, 5000; protocols HTTP, AJP; cgroups noted. ⑤ Mail servers (/etc/postfix/): ports 25, 587, 993, 995; protocols SMTP, IMAP, POP3; service daemons postfix, dovecot; 25/587 = outbound SMTP; 993/995 = inbound IMAP/POP3. ⑥ Identity servers, ⑦ intra/network servers, ⑧ proxy & reverse proxy servers — headings only on this page, details on Note 332's page / blank (handwritten, as is)
+
+### ① Web servers (/etc/httpd, /nginx)
+
+- Ports = 80, 443
+- Protocols = HTTP, HTTPS
+- Service daemons = nginx, httpd
+- /var/www/, /var/log/
+
+### ② DB servers (/etc/postgresql, /var/lib/)
+
+- Ports = 3306, 5432, 27017
+- Process directory = mysqld, postgres, mongod
+
+### ③ File servers (/etc/exports, /etc/fstab)
+
+- Ports = 20/21, 22, 445, 2049
+- Protocols = FTP, SFTP, SMB, NFS
+- Service daemons = vsftpd, sshd, smbd, nfsd
+
+### ④ App servers (/etc/systemd/system/)
+
+- Ports = 8080, 3000, 5000
+- Protocols = HTTP, AJP
+- cgroups noted
+
+### ⑤ Mail servers (/etc/postfix/)
+
+- Ports = 25, 587, 993, 995
+- Protocols = SMTP, IMAP, POP3
+- Service daemons = postfix, dovecot
+- 25/587 = outbound SMTP
+- 993/995 = inbound IMAP/POP3
+
+### ⑥ Identity servers
+
+- [heading only — details on Note 332's page]
+
+### ⑦ Intra / network servers
+
+- [heading only — details on Note 332's page]
+
+### ⑧ Proxy & reverse proxy servers
+
+- [heading only — details on Note 332's page]
+
+### [Filled — added, not in the original image]
+- Web and database, filled: web servers (config /etc/httpd, /nginx; ports 80, 443; protocols HTTP, HTTPS; service daemons Nginx, httpd; paths /var/www/, /var/log/) and database servers (config /etc/postgresql, /var/lib/; ports 3306, 5432, 27017; processes mysqld, postgres, mongod).
+- File, app, and mail, filled: file servers (config /etc/exports, /etc/fstab; ports 20/21, 22, 445, 2049; protocols FTP, SFTP, SMB, NFS; service daemons vsftpd, sshd, smbd, nfsd), application servers (config /etc/systemd/system/; ports 8080, 3000, 5000; protocols HTTP, AJP; cgroups noted), and mail servers (config /etc/postfix/; ports 25, 587, 993, 995; protocols SMTP, IMAP, POP3; service daemons Postfix, Dovecot — 25/587 outbound SMTP, 993/995 inbound IMAP/POP3).
+- The frame, filled: the single-server ports page (items ①–⑤ in full; items ⑥–⑧ as headings, with their details on Note 332's page) that Note 330's cluster-ports page and Note 333's restated ports page bracket — filed here as the single-server-ports version.
+
+---
+
+## Image Note 332 — Linux commands to audit ports: to check how these ports behave on live Linux server. ① sudo ss -tulpn — to view all active listening ports; ② sudo netstat -an | grep :443 — to check a specific web port; ③ nc -zv <host> 3306 — test a connection to a DB server on a remote port (example address generalized per sanitize rule). ⑥ Dir & identity servers: ports / daemons / protocols fields blank in image; tech: AD, OpenLDAP, FreeIPA. ⑦ N/W servers: BIND9, kea, chrony (handwritten, as is)
+
+### Linux commands to audit ports
+
+- To check how these ports behave on live Linux server
+- ① `sudo ss -tulpn` — to view all active listening ports
+- ② `sudo netstat -an | grep :443` — to check a specific web port
+- ③ `nc -zv <host> 3306` — test a connection to a DB server on a remote port
+
+### ⑥ Dir & identity servers
+
+- Ports / daemons / protocols fields: blank in image
+- Tech: AD, OpenLDAP, FreeIPA
+
+### ⑦ N/W servers
+
+- BIND9, kea, chrony
+
+### [Filled — added, not in the original image]
+- Audit commands, filled: to check how these ports behave on a live Linux server — `sudo ss -tulpn` to view all active listening ports; `sudo netstat -an | grep :443` to check a specific web port; `nc -zv <host> 3306` to test a connection to a database server on a remote port (the example address written in the image is generalized here per the standing sanitize rule).
+- Identity and network servers, filled: directory & identity servers (ports, daemons, and protocols fields blank in the image; technology: Active Directory, OpenLDAP, FreeIPA) and network servers (BIND9, kea, chrony) — the details that Note 331's page left as headings ⑥ and ⑦.
+- The frame, filled: the port-audit page that Note 331's single-server ports page and Note 330's cluster-ports page bracket — filed here as the port-audit version.
+
+---
+
+## Image Note 333 — Ports: Standard production ports for single servers. Client req → IP Address → specific port → Demon service. ① web servers: ports 80, 443; protocols HTTP, HTTPS; HTTP = 80 = web traffic; HTTPS = 443 = Encrypted prod traffic using SSL. ② DB servers: ports 3306, 5432, 27017; service demons MySQL, PostgreSQL, MongoDB. ③ File servers: ports 20/21, 22, 445, 2049; protocols FTP, SFTP, SMB, NFS; 22 = for remote file transfers; 445/2049 = mount remote disk into a local storage. ④ App servers: ports 8080, 3000, 5000; demons/runtimes Java, Tomcat. ⑤ mail servers: 25, 587, 993, 995; SMTP, IMAP, POP3 (handwritten, as is)
+
+### Chain
+
+```
+Client req → IP Address → specific port → Demon service
+```
+
+### ① Web servers
+
+- Ports = 80, 443
+- Protocols = HTTP, HTTPS
+- HTTP = 80 = web traffic
+- HTTPS = 443 = Encrypted prod traffic using SSL
+
+### ② DB servers
+
+- Ports = 3306, 5432, 27017
+- Service demons = MySQL, PostgreSQL, MongoDB
+
+### ③ File servers
+
+- Ports = 20/21, 22, 445, 2049
+- Protocols = FTP, SFTP, SMB, NFS
+- 22 = for remote file transfers
+- 445/2049 = mount remote disk into a local storage
+
+### ④ App servers
+
+- Ports = 8080, 3000, 5000
+- Demons / runtimes = Java, Tomcat
+
+### ⑤ Mail servers
+
+- 25, 587, 993, 995
+- SMTP, IMAP, POP3
+
+### [Filled — added, not in the original image]
+- The chain, filled: client request → IP address → specific port → daemon service — the resolution chain that turns a request into a running service.
+- The port tables, filled: web servers (80, 443; HTTP, HTTPS — HTTP = 80 = web traffic, HTTPS = 443 = encrypted production traffic using SSL), database servers (3306, 5432, 27017; MySQL, PostgreSQL, MongoDB), file servers (20/21, 22, 445, 2049; FTP, SFTP, SMB, NFS — 22 for remote file transfers, 445/2049 to mount a remote disk into local storage), application servers (8080, 3000, 5000; Java, Tomcat), and mail servers (25, 587, 993, 995; SMTP, IMAP, POP3).
+- The frame, filled: the restated ports page — a distinct page that restates Note 331's single-server port tables with added explanations (the chain, the HTTP/HTTPS traffic notes, the 22 and 445/2049 notes), filed as a new note rather than skipped, since it is a different image, not a duplicate.
+
+---
+
+# INbatch43 — Image Notes 334–340 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — 7 images, 7 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 334 — ⑥ API Universe: RPC lineage (action oriented) — philosophy: execute a command or function on a remote / network machine as if it were running locally; AI & Agentic Architectures (LLM Integration) — philosophy: standardize API specifically for LLMs, context execution engines; multi-vendor ① MCP (MCP server → hosts tools; MCP client — AI model connects to [cut off]); single vendor ② OpenAI; frameworks map tools, docs, memory to LLM endpoints; MCP frameworks → @modelcontextprotocol/sdk, official → JS/TS & Python SDKs to build MCP server; AI agent orchestrator frameworks: LangChain/LangGraph ⇒ converts Python/JS functions into tools; LlamaIndex → for RAG (handwritten, as is)
+
+### RPC lineage (action oriented)
+
+- Philosophy: execute a command or function on a remote / network machine as if it were running locally
+
+### AI & Agentic Architectures (LLM Integration)
+
+- Philosophy: standardize API specifically for LLMs
+- Context execution engines
+
+### Multi-vendor ① MCP
+
+- MCP server → hosts tools
+- MCP client — AI model connects to [cut off in image]
+
+### Single vendor ② OpenAI
+
+### Frameworks
+
+- Map tools, docs, memory to LLM endpoints
+- MCP frameworks → @modelcontextprotocol/sdk
+- Official → JS/TS & Python SDKs to build MCP server
+
+### AI agent orchestrator frameworks
+
+- LangChain / LangGraph ⇒ converts Python / JS functions into tools
+- LlamaIndex → for RAG
+
+### [Filled — added, not in the original image]
+- RPC lineage, filled: the action-oriented lineage, whose philosophy is to execute a command or function on a remote/network machine as if it were running locally — the RPC page that Note 338's three-pillars page and Note 335's hybrids page bracket.
+- AI & agentic, filled: AI and agentic architectures (LLM integration), whose philosophy is to standardize APIs specifically for LLMs, as context execution engines — with multi-vendor MCP (MCP server hosting tools, MCP client as the AI model connecting to [cut off in the image]) and single-vendor OpenAI; frameworks mapping tools, docs, and memory to LLM endpoints; MCP frameworks via @modelcontextprotocol/sdk with official JS/TS and Python SDKs to build an MCP server; and AI agent orchestrator frameworks — LangChain/LangGraph converting Python/JS functions into tools, and LlamaIndex for RAG.
+- The frame, filled: the API-Universe page (item ⑥) that Note 338's pillars page precedes — filed here as the RPC-plus-agentic version.
+
+---
+
+## Image Note 335 — ④ Hybrids: philosophy: break down silos (tower), merge features from RPC, REST, SOAP to address scaling, typing, efficiency bottlenecks. ① GraphQL (fb) operates over HTTP; operation types: Query → data retrieval (read), Mutation → data modification (write), Subscription → real-time data stream; graph-based (word crossed); ② Falcor (Netflix) — failed (margin). GraphQL: operates over HTTP (REST); process actions via Query/mut (RPC); validates operations (SOAP). Event driven & messaging: Kafka + AsyncAPI (blueprint of OpenAPI) — (Event driven); operations: Publish/Subscribe patterns; servers: message broker endpoints; channels: Topics/Queues where msg published. Protocols: Apache Kafka, RabbitMQ (AMQP), MQTT (IoT), websockets, P2P, some [as written, flagged], WebRTC, NATS, Redis. Websockets = for real time; webhooks = for events. Frameworks: collapse multiple endpoints into a single hub; allow dynamic client Query streaming. GraphQL frameworks: JS → Apollo server prod server for JS/TS; GraphQL-go → go framework; Strawberry → Python libraries; best lang: TypeScript/JS. ② Websockets & streaming: Socket.io (NodeJS) (handwritten, as is)
+
+### Hybrids
+
+- Philosophy: break down silos (tower), merge features from RPC, REST, SOAP to address scaling, typing, efficiency bottlenecks
+
+### ① GraphQL (fb) — operates over HTTP
+
+- Operation types:
+  - Query → data retrieval (read)
+  - Mutation → data modification (write)
+  - Subscription → real-time data stream
+- Graph-based [crossed word beside it, flagged]
+
+### ② Falcor (Netflix)
+
+- Failed [margin note]
+
+### GraphQL — the hybrid reading
+
+- It operates over HTTP (REST)
+- Process actions via Query/mut (RPC)
+- Validates operations (SOAP)
+
+### Event driven & messaging
+
+- Kafka + AsyncAPI (blueprint of OpenAPI) — (Event driven)
+- Operations: Publish / Subscribe patterns
+- Servers: message broker endpoints
+- Channels: Topics / Queues where msg published
+
+### Protocols
+
+- Apache Kafka, RabbitMQ (AMQP), MQTT (IoT), websockets, P2P, some [as written, flagged], WebRTC, NATS, Redis
+- Websockets = for real time
+- Webhooks = for events
+
+### Frameworks
+
+- Collapse multiple endpoints into a single hub
+- Allow dynamic client Query streaming
+
+### GraphQL frameworks
+
+- JS → Apollo server, prod server for JS/TS
+- GraphQL-go → go framework
+- Strawberry → Python libraries
+- Best lang: TypeScript / JS
+
+### ② Websockets & streaming
+
+- Socket.io (NodeJS)
+
+### [Filled — added, not in the original image]
+- Hybrids, filled: the hybrid philosophy of breaking down silos (towers) and merging features from RPC, REST, and SOAP to address scaling, typing, and efficiency bottlenecks — with GraphQL (Facebook) operating over HTTP, its operation types of Query (data retrieval, read), Mutation (data modification, write), and Subscription (real-time data stream), and Falcor (Netflix) marked failed in the margin.
+- The hybrid reading, filled: GraphQL as the hybrid — operating over HTTP (REST), processing actions via Query/mutation (RPC), and validating operations (SOAP).
+- Event-driven & messaging, filled: Kafka plus AsyncAPI (the blueprint of OpenAPI) as the event-driven pair; operations as Publish/Subscribe patterns; servers as message broker endpoints; channels as Topics/Queues where messages are published; protocols Apache Kafka, RabbitMQ (AMQP), MQTT (IoT), websockets, P2P, "some" as written and flagged, WebRTC, NATS, Redis — with websockets for real time and webhooks for events.
+- Frameworks, filled: collapsing multiple endpoints into a single hub and allowing dynamic client Query streaming — with GraphQL frameworks Apollo Server (JS, production server for JS/TS), GraphQL-go (Go framework), and Strawberry (Python libraries), best language TypeScript/JS; and websockets & streaming via Socket.io (NodeJS).
+- The frame, filled: the hybrids page (item ④) that Note 334's RPC lineage page and Note 336's SOAP lineage page bracket — filed here as the hybrids version.
+
+---
+
+## Image Note 336 — SOAP lineage (contract oriented) (contract enforcement): ③ philosophy: enforce a rigid, programmatically compiled code contract backed by schemas & native enterprise extensions. SOAP 1/2 binding: SOAP over HTTP, SOAP over SMTP, SOAP over JMS, MQ etc. Contract WSDL. Operation types: one way — no response [word crossed, flagged]; req-response — standard sync; solicit-response — server initiates; notification — server sends without req. Frameworks → interpret massive incoming XML payloads, parse complex SOAP headers & validate transactions strictly. Java → Apache CXF; Spring-WS → SOAP data driven XML mapping [cut off]; Python → Zeep; .NET → WCF. Best lang for SOAP: Java (servers) ✓, C# (handwritten, as is)
+
+### SOAP lineage (contract oriented) (contract enforcement)
+
+- ③ Philosophy: enforce a rigid, programmatically compiled code contract backed by schemas & native enterprise extensions
+
+### SOAP 1/2 binding
+
+- SOAP over HTTP
+- SOAP over SMTP
+- SOAP over JMS, MQ etc.
+
+### Contract
+
+- WSDL
+
+### Operation types
+
+- One way — no response [a word crossed in the image, flagged]
+- Req-response — standard sync
+- Solicit-response — server initiates
+- Notification — server sends without req
+
+### Frameworks
+
+- Interpret massive incoming XML payloads
+- Parse complex SOAP headers & validate transactions strictly
+- Java → Apache CXF
+- Spring-WS → SOAP data driven XML mapping [cut off at page edge]
+- Python → Zeep
+- .NET → WCF
+
+### Best lang for SOAP
+
+- Java (servers) ✓
+- C#
+
+### [Filled — added, not in the original image]
+- SOAP lineage, filled: the contract-oriented lineage (contract enforcement), whose philosophy is to enforce a rigid, programmatically compiled code contract backed by schemas and native enterprise extensions — with SOAP 1/2 bindings over HTTP, SMTP, JMS, MQ, and others, and the contract as WSDL.
+- Operation types, filled: one way (no response, with a crossed word in the image, flagged), request-response (standard sync), solicit-response (server initiates), and notification (server sends without request).
+- Frameworks, filled: frameworks interpreting massive incoming XML payloads, parsing complex SOAP headers, and validating transactions strictly — Java via Apache CXF, Spring-WS for SOAP data-driven XML mapping (cut off at the page edge), Python via Zeep, .NET via WCF — with best languages for SOAP as Java (servers) and C#.
+- The frame, filled: the SOAP-lineage page (item ③) that Note 335's hybrids page and Note 337's REST lineage page bracket — filed here as the SOAP version.
+
+---
+
+## Image Note 337 — ② REST lineage (Resource oriented): philosophy: treat every piece of data as a unique resource / entity object identified by a URL, manipulated via HTTP actions / methods. 1 JSON-LD, XML; 2 reversed REST (webhooks) for events [as read, flagged]; SSE; 3 Pragmatic REST (CRUD over HTTP) (industry). Frameworks: map incoming HTTP URL to controller methods & automate JSON serialization. ① NodeJS/JS: ExpressJS — minimalist for REST API (NodeJS); NestJS — heavy enterprise for OpenAPI (TypeScript). ② Java → Spring Boot (RESTful); Go: Gin/Fiber; Python: FastAPI → OpenAPI, Django → REST. Best lang for REST: 1. TypeScript/NodeJS (web native lang) bcz they run in browsers; 2. Python → data & AI; 3. Java — Enterp.; 4. Go/Ruby/PHP. Local running env: NodeJS/run → REST/Graph; Unicorn/Gunicorn [as read, flagged] → ; Docker → db s/w or lang runtimes; modern REST/GraphQL API run directly on lightweight high speed runtimes (handwritten, as is)
+
+### REST lineage (Resource oriented)
+
+- Philosophy: treat every piece of data as a unique resource / entity object identified by a URL, manipulated via HTTP actions / methods
+- 1 JSON-LD, XML
+- 2 reversed REST (webhooks) for events [as read, flagged]
+- SSE
+- 3 Pragmatic REST (CRUD over HTTP) (industry)
+
+### Frameworks
+
+- Map incoming HTTP URL to controller methods & automate JSON serialization
+- ① NodeJS / JS:
+  - ExpressJS — minimalist for REST API (NodeJS)
+  - NestJS — heavy enterprise for OpenAPI (TypeScript)
+- ② Java → Spring Boot (RESTful)
+- Go: Gin / Fiber
+- Python: FastAPI → OpenAPI, Django → REST
+
+### Best lang for REST
+
+- 1. TypeScript / NodeJS (web native lang) bcz they run in browsers
+- 2. Python → data & AI
+- 3. Java — Enterp.
+- 4. Go / Ruby / PHP
+
+### Local running env
+
+- NodeJS / run → REST / Graph
+- Unicorn / Gunicorn [as read, flagged] →
+- Docker → db s/w or lang runtimes
+- Modern REST / GraphQL API run directly on lightweight high speed runtimes
+
+### [Filled — added, not in the original image]
+- REST lineage, filled: the resource-oriented lineage, whose philosophy is to treat every piece of data as a unique resource/entity object identified by a URL, manipulated via HTTP actions/methods — with JSON-LD and XML, "reversed REST (webhooks)" for events as read and flagged, SSE, and pragmatic REST (CRUD over HTTP) as the industry form.
+- Frameworks, filled: frameworks mapping incoming HTTP URLs to controller methods and automating JSON serialization — NodeJS/JS via ExpressJS (minimalist for REST APIs) and NestJS (heavy enterprise for OpenAPI in TypeScript); Java via Spring Boot (RESTful); Go via Gin/Fiber; Python via FastAPI (OpenAPI) and Django (REST).
+- Best languages and running env, filled: best languages for REST as TypeScript/NodeJS (web-native language, because they run in browsers), Python (data & AI), Java (enterprise), and Go/Ruby/PHP — with the local running environment as NodeJS/run for REST/Graph, Unicorn/Gunicorn as read and flagged, Docker for database software or language runtimes, and modern REST/GraphQL APIs running directly on lightweight high-speed runtimes.
+- The frame, filled: the REST-lineage page (item ②) that Note 336's SOAP lineage page and Note 338's pillars page bracket — filed here as the REST version.
+
+---
+
+## Image Note 338 — API Universe — 3 primary Design Pillars. ① The RPC lineage (action oriented / function oriented): philosophy: execute command / function on a Remote (N/W) machine as if it were running locally; to call a function / perform an action. → Early low level (1970s–1980s): ONC RPC → bedrock for NFS; DCE RPC → [blank]. → Object-oriented remote invocation (1990s): CORBA, DCOM, Java RMI. → Early web based (1990s–2000s): XML RPC → XML envelopes over HTTP; JSON RPC → JSON payloads; JSON WSP → [blank]. → Modern high performance binaries (2010s–present): gRPC → protobufs over HTTP/2 for serialization; Avro RPC → [margin, blank]; for: AFT [as written, flagged]. → Modern type safe web RPC: tRPC — modern framework for BFF. Frameworks: compile schemas into binary streaming server & client; google official lang specific runtime for executing gRPC service: gRPC-go, gRPC-Java, gRPC-node, tonic — rust native; tRPC — TypeScript (React/NextJS). Best lang: 1. Golang → gRPC native lang; 2. Rust; 3. Java/C++; 4. TypeScript. Local service meshes: Bcz RPC microservices are designed to talk other services rather than talk to direct human users; these local running env req N/W proxies & discovery system to operate (handwritten, as is)
+
+### API Universe — 3 primary Design Pillars
+
+### ① The RPC lineage (action oriented / function oriented)
+
+- Philosophy: execute command / function on a Remote (N/W) machine as if it were running locally
+- To call a function / perform an action
+
+### RPC history
+
+- → Early low level (1970s–1980s):
+  - ONC RPC → bedrock for NFS
+  - DCE RPC → [blank]
+- → Object-oriented remote invocation (1990s):
+  - CORBA, DCOM, Java RMI
+- → Early web based (1990s–2000s):
+  - XML RPC → XML envelopes over HTTP
+  - JSON RPC → JSON payloads
+  - JSON WSP → [blank]
+- → Modern high performance binaries (2010s–present):
+  - gRPC → protobufs over HTTP/2 for serialization
+  - Avro RPC → [margin, blank]
+  - For: AFT [as written, flagged]
+- → Modern type safe web RPC:
+  - tRPC — modern framework for BFF
+
+### Frameworks
+
+- Compile schemas into binary streaming server & client
+- Google official lang specific runtime for executing gRPC service:
+  - gRPC-go, gRPC-Java, gRPC-node
+  - Tonic — rust native
+- tRPC — TypeScript (React / NextJS)
+
+### Best lang
+
+- 1. Golang → gRPC native lang
+- 2. Rust
+- 3. Java / C++
+- 4. TypeScript
+
+### Local service meshes
+
+- Bcz RPC microservices are designed to talk other services rather than talk to direct human users
+- These local running env req N/W proxies & discovery system to operate
+
+### [Filled — added, not in the original image]
+- The pillars, filled: the API Universe with three primary design pillars, opening with the RPC lineage (action-oriented/function-oriented) — to call a function, to perform an action, executing a command/function on a remote/network machine as if it were running locally.
+- RPC history, filled: early low-level RPC (1970s–1980s) with ONC RPC as the bedrock for NFS and DCE RPC (blank in the image); object-oriented remote invocation (1990s) with CORBA, DCOM, and Java RMI; early web-based RPC (1990s–2000s) with XML RPC (XML envelopes over HTTP), JSON RPC (JSON payloads), and JSON WSP (blank in the image); modern high-performance binaries (2010s–present) with gRPC (protobufs over HTTP/2 for serialization) and Avro RPC (margin, blank), plus "for: AFT" as written and flagged; and modern type-safe web RPC with tRPC as the modern framework for BFF.
+- Frameworks and languages, filled: frameworks compiling schemas into binary streaming servers and clients, with Google's official language-specific runtimes for executing gRPC services (gRPC-go, gRPC-Java, gRPC-node, Tonic as Rust-native) and tRPC in TypeScript (React/NextJS) — with best languages Golang (gRPC-native language), Rust, Java/C++, and TypeScript.
+- Service meshes, filled: local service meshes, because RPC microservices are designed to talk to other services rather than to direct human users, so these local running environments require network proxies and a discovery system to operate.
+- The frame, filled: the pillars-overview page that Note 337's REST lineage page and Note 334's RPC-plus-agentic page bracket — filed here as the pillars version.
+
+---
+
+## Image Note 339 — Local Deploy Env / Network deploy. Local deploy env: these are final testing setups on your local machines that mirror the prod env; "local deployment env packages your code & simulate prod on laptop". → Local Build: to compile, prepare your API source code for running locally; you must execute the dedicated build tool for chosen lang; local build checks your source code syntax errors, handles compilation & packages your app files into a runnable format (binary/JAR). → Local automated deployment: called local CI/CD simulation or GitOps on laptop; is an automated system that handles entire pipeline on your PC/lap; "instead of manually build a file, containerizing it, restarting local server every time, you make a change, system instantly automates the loop". Skaffold → RPC; Docker compose → REST/GraphQL. Network deploy: when moving local to live env, APIs are deployed across distinct global N/W topologies; these env manage HA, H/W scaling & caching. → N/W build: commonly called CI/CD build pipeline; automated process of N/W build, that takes your API source code from a cloud repo (GitHub/lab), compiles it on remote servers, packages it into prod binary. → N/W automated deploy: called GitOps pattern; is final stage of cloud delivery pipeline; once N/W build completes — the automation deploy system takes over without human; the system updates live prod infra (handwritten, as is)
+
+### Local Deploy Env
+
+- These are final testing setups on your local machines that mirror the prod env
+- "Local deployment env packages your code & simulate prod on laptop"
+
+### → Local Build
+
+- To compile, prepare your API source code for running locally
+- You must execute the dedicated build tool for chosen lang
+- Local build checks your source code syntax errors, handles compilation & packages your app files into a runnable format (binary / JAR)
+
+### → Local automated deployment
+
+- Called local CI/CD simulation or GitOps on laptop
+- Is an automated system that handles entire pipeline on your PC / lap
+- "Instead of manually build a file, containerizing it, restarting local server every time, you make a change, system instantly automates the loop"
+- Skaffold → RPC
+- Docker compose → REST / GraphQL
+
+### Network deploy
+
+- When moving local to live env, APIs are deployed across distinct global N/W topologies
+- These env manage HA, H/W scaling & caching
+
+### → N/W build
+
+- Commonly called CI/CD build pipeline
+- Automated process of N/W build, that takes your API source code from a cloud repo (GitHub / lab), compiles it on remote servers, packages it into prod binary
+
+### → N/W automated deploy
+
+- Called GitOps pattern
+- Is final stage of cloud delivery pipeline
+- Once N/W build completes — the automation deploy system takes over without human
+- The system updates live prod infra
+
+### [Filled — added, not in the original image]
+- Local deploy env, filled: final testing setups on your local machines that mirror the production environment — the local deployment environment packages your code and simulates production on a laptop.
+- Local build and automated deployment, filled: the local build compiles and prepares your API source code for running locally, executing the dedicated build tool for the chosen language, checking source-code syntax errors, handling compilation, and packaging application files into a runnable format (binary/JAR); the local automated deployment, called local CI/CD simulation or GitOps on a laptop, is an automated system handling the entire pipeline on your PC/laptop — instead of manually building a file, containerizing it, and restarting the local server every time you make a change, the system instantly automates the loop — with Skaffold for RPC and Docker Compose for REST/GraphQL.
+- Network deploy, filled: when moving from local to live environments, APIs are deployed across distinct global network topologies, and these environments manage high availability, hardware scaling, and caching — with the network build (commonly called the CI/CD build pipeline) taking your API source code from a cloud repository (GitHub/lab), compiling it on remote servers, and packaging it into a production binary; and the network automated deploy (called the GitOps pattern) as the final stage of the cloud delivery pipeline, where once the network build completes, the automation deploy system takes over without a human and the system updates live production infrastructure.
+- The frame, filled: the local-vs-network deploy page that Note 340's libraries-and-testing page and Note 337's REST running-env section bracket — filed here as the deploy-env version.
+
+---
+
+## Image Note 340 — Libraries / packages: used to implement every major API across the five dominant programming langs. Installation tools: to download, install & manage these libraries/frameworks you must use the official package manager/build tool dedicated to chosen programming lang. Local testing env: to test these different API arch on your local comp you need specialized dev tools bcz they process data differently: REST uses text; gRPC uses binary streams; SOAP req XML structures. Local running: for run these API on your dev machine you need runtime engines & container setups; "local process config depending on needs — a fast web compiler, a heavy app servers, or distributed mesh". Inter N/W testing: when you move your API from local PC out into the world, you encounter N/W issues like packet loss, latency, bandwidth, bottlenecks, security, volume [right edge cut off]. "N/W testing evaluates how API handles actual data transmission across internet routing pipeline bcz arch uses different N/W methods: REST → short lived HTTP connections; gRPC → relies on multiplexed HTTP/2 or 3 streams; SOAP → handles envelopes". N/W running: when you deploy these API to prod you transition from local running env into prod N/W [cut off at foot] (handwritten, as is)
+
+### Libraries / packages
+
+- Used to implement every major API across the five dominant programming langs
+
+### Installation tools
+
+- To download, install & manage these libraries / frameworks you must use the official package manager / build tool dedicated to chosen programming lang
+
+### Local testing env
+
+- To test these different API arch on your local comp you need specialized dev tools bcz they process data differently:
+  - REST uses text
+  - gRPC uses binary streams
+  - SOAP req XML structures
+
+### Local running
+
+- For run these API on your dev machine you need runtime engines & container setups
+- "Local process config depending on needs — a fast web compiler, a heavy app servers, or distributed mesh"
+
+### Inter N/W testing
+
+- When you move your API from local PC out into the world, you encounter N/W issues like packet loss, latency, bandwidth, bottlenecks, security, volume [right edge cut off]
+- "N/W testing evaluates how API handles actual data transmission across internet routing pipeline bcz arch uses different N/W methods:
+  - REST → short lived HTTP connections
+  - gRPC → relies on multiplexed HTTP/2 or 3 streams
+  - SOAP → handles envelopes"
+
+### N/W running
+
+- When you deploy these API to prod you transition from local running env into prod N/W [cut off at foot]
+
+### [Filled — added, not in the original image]
+- Libraries and installation, filled: libraries/packages used to implement every major API across the five dominant programming languages, with installation tools to download, install, and manage these libraries/frameworks via the official package manager/build tool dedicated to the chosen programming language.
+- Local testing and running, filled: the local testing environment needs specialized development tools to test these different API architectures on your local computer, because they process data differently — REST uses text, gRPC uses binary streams, SOAP requires XML structures; and local running needs runtime engines and container setups, with local process configuration depending on needs — a fast web compiler, heavy application servers, or a distributed mesh.
+- Inter-network testing and running, filled: when you move your API from a local PC out into the world, you encounter network issues like packet loss, latency, bandwidth, bottlenecks, security, and volume (right edge cut off in the image) — network testing evaluates how an API handles actual data transmission across the internet routing pipeline, because architectures use different network methods: REST with short-lived HTTP connections, gRPC relying on multiplexed HTTP/2 or HTTP/3 streams, SOAP handling envelopes; and network running, when you deploy these APIs to production, transitions from the local running environment into the production network (cut off at the foot of the page).
+- The frame, filled: the libraries-and-testing page that Note 339's deploy-env page brackets — filed here as the libraries-testing version.
+
+---
+
+# INbatch44 — Image Notes 341–349 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — 9 images, 9 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 341 — Coupling & Topology: Tightly coupled → Synchronous & Direct Access: SOAP, gRPC, RPC, REST & GraphQL. Loosely coupled → Async & Indirect Access: message queues & brokers (MQTT, Kafka, RabbitMQ), webhooks. Bounded & Discrete vs Unbounded Streaming: describes structure & boundaries of the data payload. Bounded & Discrete: data has defined start & end: 1 REST, 2 GraphQL, 3 SOAP, 4 webhooks. Unbounded & streaming: data has no defined end: 1 websockets, 2 SSE, 3 gRPC, 4 IoT & event stream (MQTT, Kafka). Margin: memory shared sockets, message (handwritten, as is)
+
+### Coupling & Topology
+
+### Tightly coupled → Synchronous & Direct Access
+
+- SOAP, gRPC, RPC, REST & GraphQL
+
+### Loosely coupled → Async & Indirect Access
+
+- Message queues & brokers (MQTT, Kafka, RabbitMQ)
+- Webhooks
+
+### Bounded & Discrete vs Unbounded Streaming
+
+- Describes structure & boundaries of the data payload
+
+### Bounded & Discrete
+
+- Data has defined start & end:
+  - 1 REST
+  - 2 GraphQL
+  - 3 SOAP
+  - 4 Webhooks
+
+### Unbounded & streaming
+
+- Data has no defined end:
+  - 1 Websockets
+  - 2 SSE
+  - 3 gRPC
+  - 4 IoT & event stream (MQTT, Kafka)
+
+### [Filled — added, not in the original image]
+- Coupling, filled: tightly coupled as synchronous and direct access (SOAP, gRPC, RPC, REST, and GraphQL), versus loosely coupled as asynchronous and indirect access (message queues and brokers — MQTT, Kafka, RabbitMQ — and webhooks), with the margin notes of memory, shared sockets, and message.
+- Bounded vs unbounded, filled: bounded and discrete versus unbounded streaming describes the structure and boundaries of the data payload — bounded and discrete data has a defined start and end (REST, GraphQL, SOAP, webhooks), while unbounded and streaming data has no defined end (websockets, SSE, gRPC, IoT and event streams via MQTT and Kafka).
+- The frame, filled: the coupling-and-topology page that Note 342's arch-styles page and Note 343's access-mapping page bracket — filed here as the coupling-topology version.
+
+---
+
+## Image Note 342 — REST, GraphQL, SOAP, RPC: Arch styles & patterns: microservices arch, monolithic arch, event driven arch, serverless arch, N-tier arch, pipe & filter arch. Event driven comms models: websockets protocol, SSE spec, webhook callback. ① REST API → running web service endpoint/resource. ② gRPC service → a compiled server/client app generated from a proto [cut off]. ③ GraphQL server → a running backend instance or running resolver at a /graphql endpoint. ④ SOAP web service → deployed enterprise service parsing WSDL [cut off]. Connection & lifecycle state b/w client & server: ① Ephemeral (short lived): REST → req-resp cycles; SOAP → XML envelopes; GraphQL (queries & mutations) → single POST; RPC (JSON RPC/XML RPC) — function call; webhooks. ② Persistent (long lived connections): websockets, SSE, gRPC (streaming), MQTT/Kafka (handwritten, as is)
+
+### Arch styles & patterns
+
+- Microservices arch
+- Monolithic arch
+- Event driven arch
+- Serverless arch
+- N-tier arch
+- Pipe & filter arch
+
+### Event driven comms models
+
+- Websockets protocol
+- SSE spec
+- Webhook callback
+
+### What each service is
+
+- ① REST API → running web service endpoint / resource
+- ② gRPC service → a compiled server / client app generated from a proto [cut off]
+- ③ GraphQL server → a running backend instance or running resolver at a /graphql endpoint
+- ④ SOAP web service → deployed enterprise service parsing WSDL [cut off]
+
+### Connection & lifecycle state b/w client & server
+
+- ① Ephemeral (short lived):
+  - REST → req-resp cycles
+  - SOAP → XML envelopes
+  - GraphQL (queries & mutations) → single POST
+  - RPC (JSON RPC / XML RPC) — function call
+  - Webhooks
+- ② Persistent (long lived connections):
+  - Websockets, SSE, gRPC (streaming), MQTT / Kafka
+
+### [Filled — added, not in the original image]
+- Arch styles, filled: architecture styles and patterns as microservices, monolithic, event-driven, serverless, N-tier, and pipe & filter architectures — with event-driven communication models as the websockets protocol, the SSE spec, and webhook callbacks.
+- What each service is, filled: a REST API as a running web service endpoint/resource; a gRPC service as a compiled server/client application generated from a proto (cut off in the image); a GraphQL server as a running backend instance or a running resolver at a /graphql endpoint; a SOAP web service as a deployed enterprise service parsing WSDL (cut off in the image).
+- Connection lifecycle, filled: ephemeral (short-lived) connections — REST request-response cycles, SOAP XML envelopes, GraphQL queries and mutations over a single POST, RPC (JSON RPC/XML RPC) function calls, and webhooks — versus persistent (long-lived) connections — websockets, SSE, gRPC streaming, and MQTT/Kafka.
+- The frame, filled: the arch-styles-and-lifecycle page that Note 341's coupling page and Note 343's access-mapping page bracket — filed here as the arch-styles version.
+
+---
+
+## Image Note 343 — How API arch styles (REST, GraphQL, gRPC, SOAP, webhook, websockets) commonly mapped to public, private, partner & composite APIs. ① Public API access (open web services) or (external APIs): primary: REST, GraphQL, webhooks & websockets; rare: gRPC, SOAP; API keys. ② Private API access (internal microservices) or (private backend services): org network isolated from public internet (VPC); main: gRPC & event driven (MQ, Kafka); secondary: REST, GraphQL, websockets/SSE; mTLS. ③ Partner API (B2B integration) → connects 2 business systems over secure N/W (b/w channels): REST — modern cloud; SOAP — legacy on-prem; webhook — [blank]; OAuth/OIDC. ④ Composite API → combine data from multiple microservices into single: GraphQL, REST via batch. Their deployment environments: ① REST → web API/SaaS/mobile apps; ② gRPC → native OS/internal microservices; ③ GraphQL → web API, native OS (BFF, composite); ④ SOAP → native OS (B2B, banking, healthcare); ⑤ Event driven → (chat/dashboards/IoT/AI). Margin: public internet, client driven (handwritten, as is)
+
+### How API arch styles commonly mapped
+
+### ① Public API access (open web services) or (external APIs)
+
+- Primary: REST, GraphQL, webhooks & websockets
+- Rare: gRPC, SOAP
+- API keys
+
+### ② Private API access (internal microservices) or (private backend services)
+
+- Org network isolated from public internet (VPC)
+- Main: gRPC & event driven (MQ, Kafka)
+- Secondary: REST, GraphQL, websockets / SSE
+- mTLS
+
+### ③ Partner API (B2B integration) → connects 2 business systems over secure N/W (b/w channels)
+
+- REST — modern cloud
+- SOAP — legacy on-prem
+- Webhook — [blank]
+- OAuth / OIDC
+
+### ④ Composite API → combine data from multiple microservices into single
+
+- GraphQL
+- REST via batch
+
+### Their deployment environments
+
+- ① REST → web API / SaaS / mobile apps
+- ② gRPC → native OS / internal microservices
+- ③ GraphQL → web API, native OS (BFF, composite)
+- ④ SOAP → native OS (B2B, banking, healthcare)
+- ⑤ Event driven → (chat / dashboards / IoT / AI)
+
+### [Filled — added, not in the original image]
+- Public and private, filled: public API access (open web services, or external APIs) with REST, GraphQL, webhooks, and websockets as primary, gRPC and SOAP as rare, secured by API keys; private API access (internal microservices, or private backend services) on an organization network isolated from the public internet (VPC), with gRPC and event-driven (message queues, Kafka) as main, REST, GraphQL, and websockets/SSE as secondary, secured by mTLS.
+- Partner and composite, filled: partner APIs (B2B integration) connecting two business systems over a secure network (between channels) — REST for modern cloud, SOAP for legacy on-premises, webhook blank in the image, secured by OAuth/OIDC; composite APIs combining data from multiple microservices into a single call — GraphQL and REST via batch.
+- Deployment environments, filled: REST to web APIs/SaaS/mobile apps; gRPC to native OS/internal microservices; GraphQL to web APIs and native OS (BFF, composite); SOAP to native OS (B2B, banking, healthcare); event-driven to chat, dashboards, IoT, and AI — with the margins of public internet and client-driven.
+- The frame, filled: the access-mapping page that Note 342's arch-styles page and Note 344's pull/push page bracket — filed here as the access-mapping version.
+
+---
+
+## Image Note 344 — REST API → web native; gRPC service → Remote (b/w microservices); GraphQL server → web layer; SOAP web service → Remote (b/w networks); Event driven → [blank]. Frameworks (top right): J2EE (Spring Boot, FastAPI, ExpressJS), Django, Flask, NestJS. Frontend — calling the API; backend — building the API (exposing backend endpoint). SOAP / REST / RPC → server driven; GraphQL → client driven. Box: Web → Internet; Remote → Network/distributed (S2S); Local → in-process/server. Pull based: REST, gRPC, GraphQL → rely primarily on traditional (req-response pattern) (where client asks server ans). Both (full duplex): websockets; push (S2C): SSE; push (S2S): webhooks → rely on modern event driven (server pushes data to the client when event occurs). Pull based — SOAP → fits in both (req-resp) & (event driven). (REST, SOAP, RPC): pull based — consumer/client decides when to get data; push based — producer/server decides when to send data. Margin: WSDL, WS, IBM MQ, AMQP (handwritten, as is)
+
+### Where each service lives
+
+- REST API → web native
+- gRPC service → Remote (b/w microservices)
+- GraphQL server → web layer
+- SOAP web service → Remote (b/w networks)
+- Event driven → [blank]
+
+### Frameworks (top right)
+
+- J2EE (Spring Boot, FastAPI, ExpressJS), Django, Flask, NestJS
+
+### Frontend / backend
+
+- Frontend — calling the API
+- Backend — building the API (exposing backend endpoint)
+- SOAP / REST / RPC → server driven
+- GraphQL → client driven
+
+### The box
+
+```
+Web → Internet
+Remote → Network/distributed (S2S)
+Local → in-process/server
+```
+
+### Pull vs push
+
+- Pull based: REST, gRPC, GraphQL → rely primarily on traditional (req-response pattern) (where client asks, server answers)
+- Both (full duplex): websockets
+- Push (S2C): SSE
+- Push (S2S): webhooks
+- → rely on modern event driven (server pushes data to the client when event occurs)
+- Pull based — SOAP → fits in both (req-resp) & (event driven)
+
+### Pull vs push — who decides
+
+- (REST, SOAP, RPC): pull based — consumer / client decides when to get data
+- Push based — producer / server decides when to send data
+
+### [Filled — added, not in the original image]
+- Where each service lives, filled: REST APIs as web-native, gRPC services as remote (between microservices), GraphQL servers as the web layer, SOAP web services as remote (between networks), event-driven blank in the image — with frameworks J2EE (Spring Boot, FastAPI, ExpressJS), Django, Flask, and NestJS at the top right.
+- Frontend/backend and driven-by, filled: the frontend calls the API while the backend builds the API (exposing the backend endpoint); SOAP, REST, and RPC are server-driven while GraphQL is client-driven — with the box of Web → Internet, Remote → Network/distributed (server-to-server), Local → in-process/server.
+- Pull vs push, filled: pull-based REST, gRPC, and GraphQL relying primarily on the traditional request-response pattern (where the client asks and the server answers); websockets as both (full duplex), SSE as push (server-to-client), webhooks as push (server-to-server), relying on modern event-driven delivery (the server pushes data to the client when an event occurs); SOAP as pull-based but fitting in both (request-response and event-driven) — with the rule that pull-based means the consumer/client decides when to get data, and push-based means the producer/server decides when to send data (margin: WSDL, WS, IBM MQ, AMQP).
+- The frame, filled: the pull-push page that Note 343's access-mapping page and Note 345's nouns-verbs page bracket — filed here as the pull-push version.
+
+---
+
+## Image Note 345 — (Resources) nouns ← REST — web building HTTP server (backend); GraphQL — web queries over HTTP server for data fetching (frontend); SOAP — web integration with other web XML over web HTTP (B2B); (actions) verbs ← RPC — web calling & action oriented calls, function calls; Event driven — web messaging (RabbitMQ, Kafka); Lambda — web compute server; AWS Direct — web compute mainframe. REST API → Amazon API Gateway / ALB; GraphQL → AWS AppSync / ECS, EKS (self hosted); gRPC/RPC → Amazon EKS/ECS / AWS App Mesh; Event driven → Amazon EventBridge + SQS/SNS/MSK; SOAP → EC2. REST → standard for building web backends around resources; in REST everything is a resource (business entity [crossed]); designing for networked apps around resources; a resource is any piece of data or object; each resource gets its own web address (URI/URL); resource identified by URI. Uniform interface (HTTP verbs): REST actions dictated by HTTP verbs: ① GET → read/retrieve resource; ② POST → create resource; ③ PUT → replace resource; ④ PATCH → update resource; ⑤ DELETE → remove resource. Representation: format in which resource is delivered to the client (JSON, XML/HTML). Entity → controller-service-repo: exposing REST endpoint / business logic / DB (handwritten, as is)
+
+### Nouns (resources) / verbs (actions)
+
+- Nouns ← REST — web building HTTP server (backend)
+- GraphQL — web queries over HTTP server for data fetching (frontend)
+- SOAP — web integration with other web XML over web HTTP (B2B)
+- Verbs ← RPC — web calling & action oriented calls, function calls
+- Event driven — web messaging (RabbitMQ, Kafka)
+- Lambda — web compute server
+- AWS Direct — web compute mainframe
+
+### AWS mapping
+
+- REST API → Amazon API Gateway / ALB
+- GraphQL → AWS AppSync / ECS, EKS (self hosted)
+- gRPC / RPC → Amazon EKS / ECS / AWS App Mesh
+- Event driven → Amazon EventBridge + SQS / SNS / MSK
+- SOAP → EC2
+
+### REST — standard for building web backends around resources
+
+- In REST everything is a resource (business entity [crossed])
+- Designing for networked apps around resources
+- A resource is any piece of data or object
+- Each resource gets its own web address (URI / URL)
+- Resource identified by URI
+
+### Uniform interface (HTTP verbs)
+
+- REST actions dictated by HTTP verbs:
+  - ① GET → read / retrieve resource
+  - ② POST → create resource
+  - ③ PUT → replace resource
+  - ④ PATCH → update resource
+  - ⑤ DELETE → remove resource
+
+### Representation
+
+- Format in which resource is delivered to the client (JSON, XML / HTML)
+
+### Entity → controller-service-repo
+
+- Exposing REST endpoint / business logic / DB
+
+### [Filled — added, not in the original image]
+- Nouns and verbs, filled: nouns (resources) with REST as the web-building HTTP server (backend), GraphQL as web queries over an HTTP server for data fetching (frontend), and SOAP as web integration with other web XML over web HTTP (B2B); verbs (actions) with RPC as web calling and action-oriented calls (function calls), event-driven as web messaging (RabbitMQ, Kafka), Lambda as a web compute server, and AWS Direct as a web compute mainframe.
+- AWS mapping, filled: REST APIs to Amazon API Gateway/ALB; GraphQL to AWS AppSync, or ECS/EKS self-hosted; gRPC/RPC to Amazon EKS/ECS and AWS App Mesh; event-driven to Amazon EventBridge plus SQS/SNS/MSK; SOAP to EC2.
+- REST around resources, filled: REST as the standard for building web backends around resources — in REST everything is a resource (business entity crossed in the image), designing for networked applications around resources, a resource as any piece of data or object, each resource getting its own web address (URI/URL) and identified by URI — with the uniform interface of HTTP verbs (GET read/retrieve, POST create, PUT replace, PATCH update, DELETE remove), representation as the format in which a resource is delivered to the client (JSON, XML/HTML), and the entity flow of controller-service-repo (exposing REST endpoint, business logic, database).
+- The frame, filled: the nouns-verbs-and-REST page that Note 344's pull-push page and Note 346's communication page bracket — filed here as the nouns-verbs version.
+
+---
+
+## Image Note 346 — ① API/Network communication — app layer protocols: defines how different apps or components communicate each other over a N/W. How 2 apps communicate (margin). ① REST — resource oriented → external com (URL & HTTP verbs); ② RPC — action oriented → internal commun (fun/methods); ③ GraphQL — query oriented; ④ SOAP — contract/security oriented (XML); ⑤ Event driven — push based. Built on top of network sockets (TCP); built on top of message patterns. ② System/Software arch styles: these define an entire application's internal components, DBs, services are structured. How we structure our apps (margin, vertical). Scalable: ① microservices arch → structures an app as collection of independent services; hard to scale: ② monolithic arch → built as a single unified unit → EC2/EBS; ③ SOA → focus on reusable → EKS/ECS → SNS/SQS, EventBridge; ④ EDA → [blank]; ⑤ serverless/FaaS → code executed in stateless containers → Lambda; ⑥ layered (N-tier) → ALB (presentation)/EKS; ⑦ microkernel (plugin) → Lambda; ⑧ pipe & filter; ⑨ P2P → shared nodes → IoT/VPC/Dev [cut off]. Choose layered or monolithic for simple apps; microservices or event driven for large distributed; serverless for event triggered; choose REST for CRUD web services (handwritten, as is)
+
+### ① API / Network communication — app layer protocols
+
+- Defines how different apps or components communicate each other over a N/W
+- ① REST — resource oriented → external com (URL & HTTP verbs)
+- ② RPC — action oriented → internal commun (fun / methods)
+- ③ GraphQL — query oriented
+- ④ SOAP — contract / security oriented (XML)
+- ⑤ Event driven — push based
+- Built on top of network sockets (TCP)
+- Built on top of message patterns
+
+### ② System / Software arch styles
+
+- These define an entire application's internal components, DBs, services are structured
+- Scalable:
+  - ① Microservices arch → structures an app as collection of independent services
+- Hard to scale:
+  - ② Monolithic arch → built as a single unified unit → EC2 / EBS
+- ③ SOA → focus on reusable → EKS / ECS → SNS / SQS, EventBridge
+- ④ EDA → [blank]
+- ⑤ Serverless / FaaS → code executed in stateless containers → Lambda
+- ⑥ Layered (N-tier) → ALB (presentation) / EKS
+- ⑦ Microkernel (plugin) → Lambda
+- ⑧ Pipe & filter
+- ⑨ P2P → shared nodes → IoT / VPC / Dev [cut off]
+
+### Choosing
+
+- Choose layered or monolithic for simple apps
+- Microservices or event driven for large distributed
+- Serverless for event triggered
+- Choose REST for CRUD web services
+
+### [Filled — added, not in the original image]
+- API/network communication, filled: application-layer protocols defining how different applications or components communicate with each other over a network — REST as resource-oriented for external communication (URL & HTTP verbs), RPC as action-oriented for internal communication (functions/methods), GraphQL as query-oriented, SOAP as contract/security-oriented (XML), and event-driven as push-based — built on top of network sockets (TCP) and on top of message patterns.
+- System/software arch styles, filled: styles defining how an entire application's internal components, databases, and services are structured — microservices architecture (scalable) structuring an application as a collection of independent services; monolithic architecture (hard to scale) built as a single unified unit (EC2/EBS); SOA focused on reusable services (EKS/ECS, SNS/SQS, EventBridge); EDA blank in the image; serverless/FaaS as code executed in stateless containers (Lambda); layered (N-tier) architecture (ALB presentation/EKS); microkernel (plugin) architecture (Lambda); pipe & filter; and P2P with shared nodes (IoT/VPC/Dev, cut off).
+- Choosing, filled: choose layered or monolithic for simple applications, microservices or event-driven for large distributed systems, serverless for event-triggered workloads, and REST for CRUD web services.
+- The frame, filled: the communication-and-arch-styles page that Note 345's nouns-verbs page and Note 347's async-streaming page bracket — filed here as the communication-styles version.
+
+---
+
+## Image Note 347 — ③ Asynchronous & streaming: How does real-time push work; event driven; push based communication. ① websockets (persistent comm channel) client ↔ server (2way); ② server sent events (streaming channel) client ← server (1way); ③ webhooks (reverse API); ④ IoT streaming (MQTT & AMQP). ④ Operating env & execution: where API run; third party cloud infra tools called remotely; execute adv/big tasks (web API); where does it execute. ① SaaS web APIs; ② local/OS APIs; ③ lib/lang APIs; ④ DB driver/ORM. Perimeter security/auth (margin). ⑤ Access security & auth frameworks: ① API keys → static token strings generated via consoles; ② OAuth 2.0/JWT → industry standard token framework; ③ mTLS → zero trust sec standard; ④ SAML & WS → traditional XML based security designed for SOAP API (handwritten, as is)
+
+### ③ Asynchronous & streaming
+
+- How does real-time push work
+- Event driven
+- Push based communication
+- ① Websockets (persistent comm channel) client ↔ server (2way)
+- ② Server sent events (streaming channel) client ← server (1way)
+- ③ Webhooks (reverse API)
+- ④ IoT streaming (MQTT & AMQP)
+
+### ④ Operating env & execution
+
+- Where API run
+- Third party cloud infra tools called remotely
+- Execute adv / big tasks (web API)
+- Where does it execute
+- ① SaaS web APIs
+- ② Local / OS APIs
+- ③ Lib / lang APIs
+- ④ DB driver / ORM
+
+### ⑤ Access security & auth frameworks
+
+- ① API keys → static token strings generated via consoles
+- ② OAuth 2.0 / JWT → industry standard token framework
+- ③ mTLS → zero trust sec standard
+- ④ SAML & WS → traditional XML based security designed for SOAP API
+
+### [Filled — added, not in the original image]
+- Asynchronous & streaming, filled: how real-time push works — event-driven, push-based communication — with websockets as a persistent communication channel (client ↔ server, two-way), server-sent events as a streaming channel (client ← server, one-way), webhooks as a reverse API, and IoT streaming via MQTT and AMQP.
+- Operating env & execution, filled: where APIs run — third-party cloud infrastructure tools called remotely, executing advanced/big tasks (web APIs), and where it executes — SaaS web APIs, local/OS APIs, library/language APIs, and database driver/ORM — with the margin note of perimeter security/auth.
+- Access security & auth, filled: API keys as static token strings generated via consoles; OAuth 2.0/JWT as the industry-standard token framework; mTLS as the zero-trust security standard; SAML & WS-Security as traditional XML-based security designed for SOAP APIs.
+- The frame, filled: the async-streaming-and-security page (items ③–⑤) that Note 346's communication-styles page and Note 348's access-control page bracket — filed here as the async-security version.
+
+---
+
+## Image Note 348 — ① Access control & scope provisioning: who has permission; who can reach these APIs; who can access them, use them. ① public (no-auth) → unrestricted, open to all, no credentials; ② public (auth req) → restricted, open to public but tracks [cut off]; ③ private (internal) → hidden from the open internet, within N/W; ④ partner (B2B) → supply-chain commu [cut off]; ⑤ composite (batch) → groups multiple distinct systems into a single N/W call. ② By arch type (req-response margin): how API/data is designed or structured; req-response architectures; how is it API designed; how they are designed. ① REST (stateless) standard mapping data actions to HTTP [cut off]; ② GraphQL → query framework; ③ SOAP (XML); ④ RPC/gRPC (binary). ⑥ The operational & infra layer: ① enterprise API gateways (north-south traffic); ② cloud platform service mesh (east-west traffic); ③ full lifecycle of API mgmt platform (handwritten, as is)
+
+### ① Access control & scope provisioning
+
+- Who has permission
+- Who can reach these APIs
+- Who can access them, use them
+- ① Public (no-auth) → unrestricted, open to all, no credentials
+- ② Public (auth req) → restricted, open to public but tracks [cut off]
+- ③ Private (internal) → hidden from the open internet, within N/W
+- ④ Partner (B2B) → supply-chain commu [cut off]
+- ⑤ Composite (batch) → groups multiple distinct systems into a single N/W call
+
+### ② By arch type (req-response margin)
+
+- How API / data is designed or structured
+- Req-response architectures
+- How is it API designed
+- How they are designed
+- ① REST (stateless) standard mapping data actions to HTTP [cut off]
+- ② GraphQL → query framework
+- ③ SOAP (XML)
+- ④ RPC / gRPC (binary)
+
+### ⑥ The operational & infra layer
+
+- ① Enterprise API gateways (north-south traffic)
+- ② Cloud platform service mesh (east-west traffic)
+- ③ Full lifecycle of API mgmt platform
+
+### [Filled — added, not in the original image]
+- Access control & scope, filled: who has permission, who can reach these APIs, who can access them and use them — public (no-auth) as unrestricted, open to all, no credentials; public (auth required) as restricted, open to the public but tracking (cut off); private (internal) as hidden from the open internet, within the network; partner (B2B) as supply-chain communication (cut off); composite (batch) as grouping multiple distinct systems into a single network call.
+- By arch type, filled: how API/data is designed or structured — request-response architectures, how an API is designed, how they are designed — with REST (stateless) as the standard mapping of data actions to HTTP (cut off), GraphQL as a query framework, SOAP as XML, and RPC/gRPC as binary.
+- Operational & infra layer, filled: enterprise API gateways (north-south traffic), cloud platform service meshes (east-west traffic), and the full lifecycle of an API management platform.
+- The frame, filled: the access-control-and-infra page (items ①, ②, ⑥) that Note 347's async-security page and Note 349's universe-tree page bracket — filed here as the access-control version.
+
+---
+
+## Image Note 349 — API Universe tree diagram (rotated page): Customer (the client) → make a choice → waiter (the API) brings order from kitchen (the server), then waiter returns with meal (order) [left margin, vertical]. Tree: API Universe → Protocols (REST (JSON), GraphQL, SOAP (XML), RPC/gRPC); Env (web apps, SaaS/cloud, native OS, language [as read], DB/ORM); Streaming (websockets, SSE, webhooks, IoT); Security (API key, OAuth/OIDC [as read], mTLS, SAML); Access & scope (public, private, partner, composite); Infrastructure (external apps ← API gateways (edge proxy); internal microservices ← service meshes (cluster control); management platforms (API mgmt) (business new)) (handwritten, as is)
+
+### The restaurant analogy (left margin, vertical)
+
+- Customer (the client) → make a choice
+- Waiter (the API) brings order from kitchen (the server)
+- Then waiter returns with meal (order)
+
+### API Universe tree (as drawn)
+
+```
+API Universe
+├── Protocols
+│   ├── REST (JSON)
+│   ├── GraphQL
+│   ├── SOAP (XML)
+│   └── RPC / gRPC
+├── Env
+│   ├── Web apps
+│   ├── SaaS / cloud
+│   ├── Native OS
+│   ├── Language [as read]
+│   └── DB / ORM
+├── Streaming
+│   ├── Websockets
+│   ├── SSE
+│   ├── Webhooks
+│   └── IoT
+├── Security
+│   ├── API key
+│   ├── OAuth / OIDC [as read]
+│   ├── mTLS
+│   └── SAML
+├── Access & scope
+│   ├── Public
+│   ├── Private
+│   ├── Partner
+│   └── Composite
+└── Infrastructure
+    ├── External apps ← API gateways (edge proxy)
+    ├── Internal microservices ← service meshes (cluster control)
+    └── Management platforms (API mgmt) (business new)
+```
+
+### [Filled — added, not in the original image]
+- The analogy, filled: the customer (the client) makes a choice, the waiter (the API) brings the order from the kitchen (the server), then the waiter returns with the meal (the order) — the restaurant analogy framing the whole API Universe tree.
+- The tree, filled: the API Universe branching into protocols (REST/JSON, GraphQL, SOAP/XML, RPC/gRPC), environments (web apps, SaaS/cloud, native OS, language as read, DB/ORM), streaming (websockets, SSE, webhooks, IoT), security (API key, OAuth/OIDC as read, mTLS, SAML), access & scope (public, private, partner, composite), and infrastructure (external applications via API gateways as edge proxies, internal microservices via service meshes as cluster control, and management platforms for API management, marked business new).
+- The frame, filled: the universe-tree page that Note 348's access-control page brackets — filed here as the universe-tree version.
+
+---
+
+# INbatch45 — Image Notes 350–355 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 4 duplicates skipped in this set — uploads 413, 414, 415, 416 repeat the INbatch43 pages exactly (Note 334 RPC lineage + AI agentic, Note 335 Hybrids, Note 336 SOAP lineage, Note 337 REST lineage), skipped entirely with no content copied and no note numbers consumed. 6 new notes filed from 10 images.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 350 — Arch styles (rotated page): ① REST (JSON/XML) stateless: CRUD operations → map explicitly to HTTP; JSON REST → deliver data as JS objects (model); XML REST → deliver data as XML tags (older); best for public APIs, web/mobile apps. ② GraphQL: stateless: HTTP/1/HTTP/2; queries → frontend client to read data; mutations → server side data (create, delete); subscriptions → persistent websocket stream. ③ SOAP (XML): can be both (HTTP, SMTP, TCP); WSDL documents → declare API rules; WS security; ACID. ④ RPC (binary): can be stateless/stateful (HTTP/1, HTTP/2/modern); gRPC → HTTP/2; JSON-RPC/XML-RPC (older) best for internal API. ⑤ Async/streaming (event driven): websockets (TCP) full duplex; server sent events (SSE, HTTP); webhooks (HTTP). ① Web native / public internet: REST → built for HTTP; GraphQL → built on top of HTTP. ③ Local (in-process) + traditional req-response vs server-push event-driven column [right edge partly unclear, flagged] (handwritten, as is)
+
+### ① REST (JSON / XML) — stateless
+
+- CRUD operations → map explicitly to HTTP
+- JSON REST → deliver data as JS objects (model)
+- XML REST → deliver data as XML tags (older)
+- Best for public APIs, web / mobile apps
+
+### ② GraphQL — stateless
+
+- HTTP / 1 / HTTP / 2
+- Queries → frontend client to read data
+- Mutations → server side data (create, delete)
+- Subscriptions → persistent websocket stream
+
+### ③ SOAP (XML)
+
+- Can be both (HTTP, SMTP, TCP)
+- WSDL documents → declare API rules
+- WS security
+- ACID
+
+### ④ RPC (binary)
+
+- Can be stateless / stateful (HTTP / 1, HTTP / 2 / modern)
+- gRPC → HTTP / 2
+- JSON-RPC / XML-RPC (older) best for internal API
+
+### ⑤ Async / streaming (event driven)
+
+- Websockets (TCP) full duplex
+- Server sent events (SSE, HTTP)
+- Webhooks (HTTP)
+
+### Web native / public internet
+
+- ① REST → built for HTTP
+- ② GraphQL → built on top of HTTP
+
+### Local + req-response vs server-push [right edge, partly unclear, flagged]
+
+- ③ Local (in-process) [as read]
+- REST, gRPC, GraphQL rely on traditional req-response
+- Websockets / SSE / webhooks: server pushes data to the client on events
+
+### [Filled — added, not in the original image]
+- REST and GraphQL, filled: REST (JSON/XML) as stateless, with CRUD operations mapping explicitly to HTTP — JSON REST delivering data as JavaScript objects (model), XML REST delivering data as XML tags (older) — best for public APIs and web/mobile applications; GraphQL as stateless over HTTP/1 and HTTP/2, with queries for the frontend client to read data, mutations for server-side data (create, delete), and subscriptions as a persistent websocket stream.
+- SOAP and RPC, filled: SOAP (XML) as able to be both (HTTP, SMTP, TCP), with WSDL documents declaring API rules, WS-Security, and ACID; RPC (binary) as able to be stateless or stateful (HTTP/1, HTTP/2/modern), with gRPC over HTTP/2 and JSON-RPC/XML-RPC (older) best for internal APIs.
+- Async and placement, filled: async/streaming (event-driven) as websockets (TCP, full duplex), server-sent events (SSE, HTTP), and webhooks (HTTP); web-native/public-internet placement with REST built for HTTP and GraphQL built on top of HTTP; and the right-edge column (partly unclear, flagged) contrasting local (in-process) placement and traditional request-response (REST, gRPC, GraphQL) with server-push event delivery (websockets, SSE, webhooks).
+- The frame, filled: the arch-styles comparison page (rotated) that Note 345's nouns-verbs page and Note 351's access-and-scope page bracket — filed here as the arch-styles-comparison version.
+
+---
+
+## Image Note 351 — Access & scope: ① Public APIs: no auth → one registration or signup; auth req → req registration or account to get API key; ex: PokéAPI, Google Maps, etc. ② Private API: microservice API. ③ Partner API: B2B integrations — supply-chain system; market place extensions — third party. ④ Composite API: Returning endpoints (handwritten, as is)
+
+### Access & scope
+
+### ① Public APIs
+
+- No auth → one registration or signup
+- Auth req → req registration or account to get API key
+- Ex: PokéAPI, Google Maps, etc.
+
+### ② Private API
+
+- Microservice API
+
+### ③ Partner API
+
+- B2B integrations — supply-chain system
+- Market place extensions — third party
+
+### ④ Composite API
+
+- Returning endpoints
+
+### [Filled — added, not in the original image]
+- Access & scope, filled: public APIs with no-auth access (one registration or signup) and auth-required access (registration or account needed to get an API key), with examples PokéAPI and Google Maps; private APIs as microservice APIs; partner APIs as B2B integrations (supply-chain systems) and marketplace extensions (third party); and composite APIs as returning endpoints.
+- The frame, filled: the access-and-scope page that Note 350's arch-styles page and Note 352's categories page bracket — filed here as the access-scope version.
+
+---
+
+## Image Note 352 — API → rules & protocols for b/w apps communication & data exchange. Categories: ① By access control & scope (who can use them): ① Public API (open API) → req signup or API key; ② Private API (internal) within an org — they connect microservices; ③ Partner API (business partners) — req onboarding & strict auth; ④ Composite API (multiple API data points into single) — developer fetch related data at once. ② By arch style (how APIs are designed): ① REST: most popular web API; uses standard HTTP methods (GET, POST, PUT, PATCH, DELETE); relies on stateless comm, transfers data via JSON, XML; ② GraphQL: modern query lang by meta; can request exactly specific data fields; preventing over/under fetching; ③ SOAP: highly structured, uses XML, built in [cut off]; ④ RPC: executes block of code on remote server as local running, gRPC uses HTTP/2 (handwritten, as is)
+
+### API → rules & protocols
+
+- For b/w apps communication & data exchange
+
+### Categories
+
+### ① By access control & scope (who can use them)
+
+- ① Public API (open API) → req signup or API key
+- ② Private API (internal) within an org — they connect microservices
+- ③ Partner API (business partners) — req onboarding & strict auth
+- ④ Composite API (multiple API data points into single) — developer fetch related data at once
+
+### ② By arch style (how APIs are designed)
+
+- ① REST: most popular web API; uses standard HTTP methods (GET, POST, PUT, PATCH, DELETE); relies on stateless comm, transfers data via JSON, XML
+- ② GraphQL: modern query lang by meta; can request exactly specific data fields; preventing over/under fetching
+- ③ SOAP: highly structured, uses XML, built in [cut off]
+- ④ RPC: executes block of code on remote server as local running, gRPC uses HTTP/2
+
+### [Filled — added, not in the original image]
+- The frame, filled: APIs as rules and protocols for between-application communication and data exchange, categorized two ways.
+- By access control & scope, filled: who can use them — public APIs (open APIs) requiring signup or an API key; private APIs (internal) within an organization, connecting microservices; partner APIs (business partners) requiring onboarding and strict authentication; composite APIs (multiple API data points into a single call) letting a developer fetch related data at once.
+- By arch style, filled: how APIs are designed — REST as the most popular web API, using standard HTTP methods (GET, POST, PUT, PATCH, DELETE), relying on stateless communication and transferring data via JSON and XML; GraphQL as the modern query language by Meta, requesting exactly specific data fields and preventing over/under fetching; SOAP as highly structured, using XML, built in (cut off in the image); RPC as executing a block of code on a remote server as local running, with gRPC using HTTP/2.
+- The frame, filled: the categories page that Note 351's access-scope page and Note 353's operating-env page bracket — filed here as the categories version.
+
+---
+
+## Image Note 353 — By operating env (where they are): ① Web APIs: accessed over internet via HTTP client or remote API — these include REST, SOAP, GraphQL. ② OS APIs: built into OS to let apps interact with N/W. ③ Library / language APIs: included in programming frameworks to give developers ready-made tools; ex: Java API, Python stand [cut off]. ④ DB APIs: let apps communicate directly with DB through system, JDBC, ORM systems (handwritten, as is)
+
+### By operating env (where they are)
+
+- ① Web APIs: accessed over internet via HTTP client or remote API — these include REST, SOAP, GraphQL
+- ② OS APIs: built into OS to let apps interact with N/W
+- ③ Library / language APIs: included in programming frameworks to give developers ready-made tools; ex: Java API, Python stand [cut off]
+- ④ DB APIs: let apps communicate directly with DB through system, JDBC, ORM systems
+
+### [Filled — added, not in the original image]
+- Operating env, filled: by operating environment, where APIs are — web APIs accessed over the internet via an HTTP client or remote API, including REST, SOAP, and GraphQL; OS APIs built into the operating system to let applications interact with the network; library/language APIs included in programming frameworks to give developers ready-made tools, with examples Java API and Python standard (cut off in the image); and database APIs letting applications communicate directly with databases through systems, JDBC, and ORM systems.
+- The frame, filled: the operating-env page that Note 352's categories page and Note 354's governing-authorities page bracket — filed here as the operating-env version.
+
+---
+
+## Image Note 354 — ⑥ The governing authorities of API styles (who writes the rules): they maintain official blueprints for every API lineage. ① W3C — they govern SOAP & browser hardware like websockets, WebRTC, web bluetooth; authority of web. ② IETF — engineer backbone of web (internet); they define underlying protocols like HTTP/1/2/3 which (REST, RPC, GraphQL) rely on to travel across N/Ws. ③ OpenAPI (OAI) — for documenting & contracting styles; govern OpenAPI spec (OAS). ④ CNCF — governs gRPC for cloud native infra & microservices [cut off]. ④ ASWF — governs GraphQL [two ④s as written]. → Frameworks of them: to turn theory arch lineage into actual code, dev use frameworks; framework: provides the pre-built libraries, server engines, routing systems, tooling needed to run an API; it used to build each API across major languages (handwritten, as is)
+
+### ⑥ The governing authorities of API styles (who writes the rules)
+
+- They maintain official blueprints for every API lineage
+- ① W3C — they govern SOAP & browser hardware like websockets, WebRTC, web bluetooth; authority of web
+- ② IETF — engineer backbone of web (internet); they define underlying protocols like HTTP / 1 / 2 / 3 which (REST, RPC, GraphQL) rely on to travel across N/Ws
+- ③ OpenAPI (OAI) — for documenting & contracting styles; govern OpenAPI spec (OAS)
+- ④ CNCF — governs gRPC for cloud native infra & microservices [cut off]
+- ④ ASWF — governs GraphQL [two ④s as written]
+
+### Frameworks of them
+
+- To turn theory arch lineage into actual code, dev use frameworks
+- Framework: provides the pre-built libraries, server engines, routing systems, tooling needed to run an API
+- It used to build each API across major languages
+
+### [Filled — added, not in the original image]
+- Governing authorities, filled: the authorities maintaining official blueprints for every API lineage — W3C governing SOAP and browser hardware like websockets, WebRTC, and web bluetooth, as the authority of the web; IETF engineering the backbone of the web (internet) and defining underlying protocols like HTTP/1/2/3 on which REST, RPC, and GraphQL rely to travel across networks; OpenAPI (OAI) for documenting and contracting styles, governing the OpenAPI Specification (OAS); CNCF governing gRPC for cloud-native infrastructure and microservices (cut off); and ASWF governing GraphQL (numbered ④ a second time, as written).
+- Frameworks, filled: to turn theory architecture lineages into actual code, developers use frameworks — a framework providing the pre-built libraries, server engines, routing systems, and tooling needed to run an API, used to build each API across major languages.
+- The frame, filled: the governing-authorities page (item ⑥) that Note 353's operating-env page and Note 355's server-cluster table bracket — filed here as the governing-authorities version.
+
+---
+
+## Image Note 355 — Table: monolithic server REST / microservices cluster / mainframe. Monolithic: PostgreSQL; Oracle/J2EE: Spring Boot, Django, Python; Packing: Docker, Docker [cut off], Podman, Build [cut off]; registries: JFrog, Nexus, ECR, Docker Hub, GitHub packages; hypervisors: KVM, Proxmox, Nitro; cloud: AWS, GCP, AZ. Microservices: Cassandra; Spring Cloud; FastAPI Python; build engines: Webpack, Bazel, Vite, Make; CI runners: GitHub Actions, GitLab CI, Jenkins, Circle CI; IaC: TF, OpenTofu, Pulumi, AWS CF, AZ Bicep. Mainframe: IBM DB2, IBM MQ, IBM Connect. Bottom: API depends on server form: local/OS API, library/lang API, DB/ORM API, public API, API keys, REST, GraphQL. API depends on cluster form [cut off]: private, partner, composite API, RPC/gRPC, websockets & IoT, webhooks, OAuth 2.0, mTLS (handwritten, as is)
+
+### The table (as drawn)
+
+```
+Monolithic server (REST)    | Microservices cluster      | Mainframe
+PostgreSQL                  | Cassandra                  | IBM DB2
+Oracle / J2EE:              | Spring Cloud               | IBM MQ
+  Spring Boot, Django,      | FastAPI (Python)           | IBM Connect
+  Python                    | Build engines: Webpack,    |
+Packing: Docker, Docker..., |   Bazel, Vite, Make        |
+  Podman, Build...          | CI runners: GitHub         |
+Registries: JFrog, Nexus,   |   Actions, GitLab CI,      |
+  ECR, Docker Hub, GitHub   |   Jenkins, Circle CI       |
+  packages                  | IaC: TF, OpenTofu,         |
+Hypervisors: KVM, Proxmox,  |   Pulumi, AWS CF, AZ Bicep  |
+  Nitro                     |                            |
+Cloud: AWS, GCP, AZ         |                            |
+```
+
+### API depends on server form
+
+- Local / OS API, library / lang API, DB / ORM API, public API, API keys, REST, GraphQL
+
+### API depends on cluster form [cut off]
+
+- Private, partner, composite API, RPC / gRPC, websockets & IoT, webhooks, OAuth 2.0, mTLS
+
+### [Filled — added, not in the original image]
+- The table, filled: monolithic server (REST) with PostgreSQL, Oracle/J2EE (Spring Boot, Django, Python), packing (Docker, Podman, build tools, cut off), registries (JFrog, Nexus, ECR, Docker Hub, GitHub packages), hypervisors (KVM, Proxmox, Nitro), and cloud (AWS, GCP, Azure); microservices cluster with Cassandra, Spring Cloud, FastAPI (Python), build engines (Webpack, Bazel, Vite, Make), CI runners (GitHub Actions, GitLab CI, Jenkins, Circle CI), and infrastructure as code (Terraform, OpenTofu, Pulumi, AWS CloudFormation, Azure Bicep); mainframe with IBM DB2, IBM MQ, and IBM Connect.
+- API dependencies, filled: APIs depending on server form (local/OS APIs, library/language APIs, DB/ORM APIs, public APIs, API keys, REST, GraphQL) versus APIs depending on cluster form (cut off in the image — private, partner, and composite APIs, RPC/gRPC, websockets & IoT, webhooks, OAuth 2.0, mTLS).
+- The frame, filled: the server-vs-cluster table page that Note 354's governing-authorities page brackets — filed here as the server-cluster-table version.
+
+---
+
+# INbatch46 — Image Notes 356–360 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — 5 images, 5 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 356 — DevOps Ecosystem tools: ① User pipelines (workflows) — Apps/platforms = GitHub Actions (workflows), GitLab CI/CD, Azure Pipelines, Circle CI; Tools = gh cli, az cli; Utilities = [blank]. ② System pipelines (Governance & compliance) — intra level hooks managed by SecOps teams; they inject required tasks into user pipelines without Dev interven [cut off]; Apps/platforms: Jenkins, Azure DevOps; Tools: SonarQube, Mend.io; Utilities: OPA. ③ Root pipelines (overreaching controller) — apps: version control systems; Templates: [blank / cut off] (handwritten, as is)
+
+### DevOps Ecosystem tools
+
+### ① User pipelines (workflows)
+
+- Apps / platforms = GitHub Actions (workflows), GitLab CI/CD, Azure Pipelines, Circle CI
+- Tools = gh cli, az cli
+- Utilities = [blank]
+
+### ② System pipelines (Governance & compliance)
+
+- Intra level hooks managed by SecOps teams
+- They inject required tasks into user pipelines without Dev interven [cut off]
+- Apps / platforms: Jenkins, Azure DevOps
+- Tools: SonarQube, Mend.io
+- Utilities: OPA
+
+### ③ Root pipelines (overreaching controller)
+
+- Apps: version control systems
+- Templates: [blank / cut off]
+
+### [Filled — added, not in the original image]
+- User pipelines, filled: workflows with apps/platforms GitHub Actions, GitLab CI/CD, Azure Pipelines, and Circle CI; tools gh cli and az cli; utilities blank in the image.
+- System pipelines, filled: governance and compliance pipelines as intra-level hooks managed by SecOps teams, injecting required tasks into user pipelines without developer intervention (cut off); apps/platforms Jenkins and Azure DevOps; tools SonarQube and Mend.io; utilities OPA.
+- Root pipelines, filled: overreaching-controller pipelines with apps as version control systems and templates blank/cut off in the image.
+- The frame, filled: the DevOps-ecosystem-tools page that Note 357's CI/CD-env page brackets — filed here as the ecosystem-tools version.
+
+---
+
+## Image Note 357 — CI/CD Env called Pipelines: ① User pipelines: custom workflows created, managed & maintained by developers; these define specific applications build, test & deployment stages. ② System pipelines: predefined, infra level templates executed automatically by the platform to enforce security, governance or platform wide compliance. ③ Root pipelines: top level YAML definition files acting as single source of truth for the repo (handwritten, as is)
+
+### CI/CD Env called Pipelines
+
+### ① User pipelines
+
+- Custom workflows created, managed & maintained by developers
+- These define specific applications build, test & deployment stages
+
+### ② System pipelines
+
+- Predefined, infra level templates executed automatically by the platform to enforce security, governance or platform wide compliance
+
+### ③ Root pipelines
+
+- Top level YAML definition files acting as single source of truth for the repo
+
+### [Filled — added, not in the original image]
+- The three pipelines, filled: user pipelines as custom workflows created, managed, and maintained by developers, defining specific applications' build, test, and deployment stages; system pipelines as predefined, infrastructure-level templates executed automatically by the platform to enforce security, governance, or platform-wide compliance; root pipelines as top-level YAML definition files acting as the single source of truth for the repository.
+- The frame, filled: the CI/CD-env page that Note 356's ecosystem-tools page brackets — filed here as the pipelines-definition version.
+
+---
+
+## Image Note 358 — Well known ports (0–1023) → predefined system ports, used for internet; Registered ports (1024–4951) [as written, flagged] → default assigned, used by vendor apps when installed; Dynamic/private ports (49152–65535): ephemeral/temporary ports, unreserved ports; User defined ports. Who uses these ports: ① Human users (by role): sys admins & SRE 22, 3389; web dev 3000, 5000, 8080, 443; DB admin 1433, 5432; N/W engineers 161, 179; internet users 443, 53. ② S/W users (by app type): web servers, mail, identity servers. ③ Hardware users (by infra device): routers & modems 67, 68; NAS 445; IoT 123 (handwritten, as is)
+
+### Port ranges
+
+- Well known ports (0–1023) → predefined system ports, used for internet
+- Registered ports (1024–4951) [as written, flagged] → default assigned, used by vendor apps when installed
+- Dynamic / private ports (49152–65535): ephemeral / temporary ports, unreserved ports
+- User defined ports
+
+### Who uses these ports
+
+- ① Human users (by role):
+  - Sys admins & SRE: 22, 3389
+  - Web dev: 3000, 5000, 8080, 443
+  - DB admin: 1433, 5432
+  - N/W engineers: 161, 179
+  - Internet users: 443, 53
+- ② S/W users (by app type):
+  - Web servers, mail, identity servers
+- ③ Hardware users (by infra device):
+  - Routers & modems: 67, 68
+  - NAS: 445
+  - IoT: 123
+
+### [Filled — added, not in the original image]
+- Port ranges, filled: well-known ports (0–1023) as predefined system ports used for the internet; registered ports written as 1024–4951 and flagged — the dynamic range starting at 49152 implies the registered range ends at 49151, with the missing digit recorded, not silently corrected; dynamic/private ports (49152–65535) as ephemeral/temporary, unreserved ports; plus user-defined ports.
+- Who uses them, filled: human users by role (system admins & SRE on 22 and 3389; web developers on 3000, 5000, 8080, and 443; database admins on 1433 and 5432; network engineers on 161 and 179; internet users on 443 and 53); software users by application type (web servers, mail, identity servers); hardware users by infrastructure device (routers & modems on 67 and 68; NAS on 445; IoT on 123).
+- The frame, filled: the port-ranges-and-users page that Note 330's cluster-ports page, Note 331's single-server ports page, and Note 333's restated ports page bracket — filed here as the port-ranges version.
+
+---
+
+## Image Note 359 — ③ Testing & mocking & doc: to test API endpoints/resources, generate mock servers during dev. ① API clients & manual testing: Postman (REST, GraphQL, websocket, gRPC), SoapUI (SOAP & REST). ② Automated & contract testing: Pact; k6/JMeter → performance, load, stress testing of API. ④ Build & CI/CD & automation: automation s/w used to compile code, run test. Build tools & SDK compilers: Java — Maven, Gradle; Python — pip, Poetry; NodeJS — npm, Yarn. CI/CD pipelines: GitHub Actions, GitLab CI/CD, Jenkins, Circle CI. Containerization: Docker → packaging API services into server containers; Buildpacks → turning source code into container images. ⑤ Deployments, gateways & traffic control: once APIs are built, API gateways sit in front of backend server to handle rate limiting, auth, traffic & LB (handwritten, as is)
+
+### ③ Testing & mocking & doc
+
+- To test API endpoints / resources, generate mock servers during dev
+- ① API clients & manual testing: Postman (REST, GraphQL, websocket, gRPC), SoapUI (SOAP & REST)
+- ② Automated & contract testing: Pact; k6 / JMeter → performance, load, stress testing of API
+
+### ④ Build & CI/CD & automation
+
+- Automation s/w used to compile code, run test
+- Build tools & SDK compilers:
+  - Java — Maven, Gradle
+  - Python — pip, Poetry
+  - NodeJS — npm, Yarn
+- CI/CD pipelines: GitHub Actions, GitLab CI/CD, Jenkins, Circle CI
+- Containerization:
+  - Docker → packaging API services into server containers
+  - Buildpacks → turning source code into container images
+
+### ⑤ Deployments, gateways & traffic control
+
+- Once APIs are built, API gateways sit in front of backend server to handle rate limiting, auth, traffic & LB
+
+### [Filled — added, not in the original image]
+- Testing & mocking & docs, filled: testing API endpoints/resources and generating mock servers during development — API clients and manual testing via Postman (REST, GraphQL, websocket, gRPC) and SoapUI (SOAP & REST); automated and contract testing via Pact, and k6/JMeter for performance, load, and stress testing of APIs.
+- Build & CI/CD & automation, filled: automation software used to compile code and run tests — build tools and SDK compilers (Java: Maven, Gradle; Python: pip, Poetry; NodeJS: npm, Yarn); CI/CD pipelines (GitHub Actions, GitLab CI/CD, Jenkins, Circle CI); containerization (Docker packaging API services into server containers; Buildpacks turning source code into container images).
+- Deployments, gateways & traffic control, filled: once APIs are built, API gateways sit in front of backend servers to handle rate limiting, authentication, traffic, and load balancing.
+- The frame, filled: the testing-build-deploy page (items ③–⑤) that Note 360's lifecycle page brackets — filed here as the testing-build-deploy version.
+
+---
+
+## Image Note 360 — End-to-end life cycle of API from design to operation: ① API design & specific: REST → OpenAPI spec (Swagger, Postman API builder); GraphQL → GraphQL SDL spec (Apollo Studio, GraphiQL); gRPC → protocol buffers; SOAP → WSDL specs (SoapUI); Event driven → AsyncAPI specs (AsyncAPI Studio). ② To code & serve API endpoints/resources: SDKs, web servers, development frameworks. Lang specific frameworks: Java → Spring Boot, J2EE, Quarkus; Python → FastAPI; JS/NodeJS → Express.js, Nest.js. Web & app servers: web HTTP/reverse proxies → NGINX, Apache HTTP server; app servers → Tomcat/Jetty (Java), Gunicorn/Uvicorn (Python), Node.js (JS) (handwritten, as is)
+
+### End-to-end life cycle of API from design to operation
+
+### ① API design & specific
+
+- REST → OpenAPI spec (Swagger, Postman API builder)
+- GraphQL → GraphQL SDL spec (Apollo Studio, GraphiQL)
+- gRPC → protocol buffers
+- SOAP → WSDL specs (SoapUI)
+- Event driven → AsyncAPI specs (AsyncAPI Studio)
+
+### ② To code & serve API endpoints / resources
+
+- SDKs, web servers, development frameworks
+- Lang specific frameworks:
+  - Java → Spring Boot, J2EE, Quarkus
+  - Python → FastAPI
+  - JS / NodeJS → Express.js, Nest.js
+- Web & app servers:
+  - Web HTTP / reverse proxies → NGINX, Apache HTTP server
+  - App servers → Tomcat / Jetty (Java), Gunicorn / Uvicorn (Python), Node.js (JS)
+
+### [Filled — added, not in the original image]
+- Design & spec, filled: the end-to-end lifecycle of an API from design to operation, starting with API design and specification — REST via OpenAPI specs (Swagger, Postman API builder), GraphQL via GraphQL SDL specs (Apollo Studio, GraphiQL), gRPC via protocol buffers, SOAP via WSDL specs (SoapUI), and event-driven via AsyncAPI specs (AsyncAPI Studio).
+- Code & serve, filled: coding and serving API endpoints/resources via SDKs, web servers, and development frameworks — language-specific frameworks (Java: Spring Boot, J2EE, Quarkus; Python: FastAPI; JS/NodeJS: Express.js, Nest.js) and web & app servers (web HTTP/reverse proxies: NGINX, Apache HTTP Server; app servers: Tomcat/Jetty for Java, Gunicorn/Uvicorn for Python, Node.js for JS).
+- The frame, filled: the lifecycle page that Note 359's testing-build-deploy page brackets — filed here as the lifecycle version.
+
+---
+
+# INbatch47 — Image Notes 361–370 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — 10 images, 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: example personal names on the IAM pages generalized to roles, and the example EC2 instance ID on the building-blocks page omitted (mechanism only), per the sanitize rule.
+
+## Image Note 361 — AWS service categories: AWS 240+ services but they are grouped into logical categories; think them as departments of company & understand what each department does. ① Compute → run applications; ② Storage → stores files & data; ③ DB → stores structured & unstructured data; ④ N/W → connect everything securely; ⑤ Security → protect AWS resources/instances/objects; ⑥ Containers → run containerized apps; ⑦ Serverless → run apps without managing servers; ⑧ AI & ML → build & integrate AI; ⑨ Analytics → process & analyze data; ⑩ Integration → connect apps & services; ⑪ DevTools → build & deploy S/W; ⑫ Mngt & gov → operate AWS env (handwritten, as is)
+
+### AWS service categories
+
+- AWS 240+ services but they are grouped into logical categories
+- Think them as departments of company & understand what each department does
+- ① Compute → run applications
+- ② Storage → stores files & data
+- ③ DB → stores structured & unstructured data
+- ④ N/W → connect everything securely
+- ⑤ Security → protect AWS resources / instances / objects
+- ⑥ Containers → run containerized apps
+- ⑦ Serverless → run apps without managing servers
+- ⑧ AI & ML → build & integrate AI
+- ⑨ Analytics → process & analyze data
+- ⑩ Integration → connect apps & services
+- ⑪ DevTools → build & deploy S/W
+- ⑫ Mngt & gov → operate AWS env
+
+### [Filled — added, not in the original image]
+- Categories, filled: AWS's 240+ services grouped into logical categories, to be thought of as departments of a company, understanding what each department does — compute running applications, storage storing files and data, databases storing structured and unstructured data, networking connecting everything securely, security protecting AWS resources/instances/objects, containers running containerized apps, serverless running apps without managing servers, AI & ML building and integrating AI, analytics processing and analyzing data, integration connecting apps and services, DevTools building and deploying software, and management & governance operating the AWS environment.
+- The frame, filled: the service-categories page that Note 370's category-to-service mapping page brackets — filed here as the categories version.
+
+---
+
+## Image Note 362 — How you communicate with AWS: AWS console doesn't create anything by itself; (web) console sends API req to AWS. Same for: AWS CLI, Terraform, CloudForm, AWS SDK, Jenkins, GitHub Action, k8s controllers — they all eventually call AWS API. Flow: You → console/CLI/SDK/TF/CF → AWS API → AWS service → resource created. Every AWS service exposes APIs (handwritten, as is)
+
+### How you communicate with AWS
+
+- AWS console doesn't create anything by itself
+- (Web) console sends API req to AWS
+- Same for:
+  - AWS CLI
+  - Terraform
+  - CloudForm
+  - AWS SDK
+  - Jenkins
+  - GitHub Action
+  - k8s controllers
+- They all eventually call AWS API
+
+### The flow (as drawn)
+
+```
+You
+  ↓
+console / CLI / SDK / TF / CF
+  ↓
+AWS API
+  ↓
+AWS service
+  ↓
+Resource created
+```
+
+- Every AWS service exposes APIs
+
+### [Filled — added, not in the original image]
+- Communication, filled: the AWS console creates nothing by itself — the (web) console sends an API request to AWS, and the same holds for the AWS CLI, Terraform, CloudFormation, AWS SDKs, Jenkins, GitHub Actions, and Kubernetes controllers, all of which eventually call the AWS API; the flow runs from you through console/CLI/SDK/Terraform/CloudFormation to the AWS API, then the AWS service, then the resource created; every AWS service exposes APIs.
+- The frame, filled: the communicate-with-AWS page that Note 367's interfaces page restates — filed here as the communication version.
+
+---
+
+## Image Note 363 — AWS shared responsibility model: important security concept in AWS; understand this for who is responsible for what in every AWS service. AWS secures the cloud; customer secure what you put in the cloud. AWS divides security responsible into 2 cats: ① Security of the cloud → AWS: AWS responsible protecting the infra that runs all AWS services. ② Security in the cloud → customer: you responsible for configuration & using. AWS Billing, pricing, free tier & cost optim: every AWS engineer is responsible for cost mngt. ① Pay as you go → AWS doesn't charge monthly for most of services, it's pay as you go. Billing tools → help monitor costs: ① Billing dashboard → view current charges; ② Cost Explorer → analyze spending; ③ Budgets → set spending thresholds; ④ CUR → detailed cost data; ⑤ AWS pricing calc → estimates costs before deploying resources (handwritten, as is)
+
+### AWS shared responsibility model
+
+- Important security concept in AWS
+- Understand this for who is responsible for what in every AWS service
+- AWS secures the cloud; customer secure what you put in the cloud
+- AWS divides security responsible into 2 cats:
+  - ① Security of the cloud → AWS: AWS responsible protecting the infra that runs all AWS services
+  - ② Security in the cloud → customer: you responsible for configuration & using
+
+### AWS Billing, pricing, free tier & cost optim
+
+- Every AWS engineer is responsible for cost mngt
+- ① Pay as you go → AWS doesn't charge monthly for most of services, it's pay as you go
+- Billing tools → help monitor costs:
+  - ① Billing dashboard → view current charges
+  - ② Cost Explorer → analyze spending
+  - ③ Budgets → set spending thresholds
+  - ④ CUR → detailed cost data
+  - ⑤ AWS pricing calc → estimates costs before deploying resources
+
+### [Filled — added, not in the original image]
+- Shared responsibility, filled: the important security concept in AWS — understanding who is responsible for what in every AWS service: AWS secures the cloud, the customer secures what they put in the cloud, with security responsibility divided into security of the cloud (AWS, protecting the infrastructure that runs all AWS services) and security in the cloud (the customer, responsible for configuration and use).
+- Billing & cost, filled: every AWS engineer is responsible for cost management — pay-as-you-go, with AWS not charging monthly for most services, and billing tools to monitor costs (billing dashboard for current charges, Cost Explorer for spending analysis, Budgets for spending thresholds, CUR for detailed cost data, AWS Pricing Calculator for cost estimates before deploying resources).
+- The frame, filled: the shared-responsibility-plus-billing page that Note 364's IAM page follows — filed here as the shared-responsibility version.
+
+---
+
+## Image Note 364 — Root user: IAM users → individual policy for user; IAM groups → one policy for group; IAM roles → what permissions you hold tempor [cut off]; IAM policies → what actions allowed or denied. Eg Allow: Start-EC2, Stop-EC2, Read-S3; Deny: Delete S3. Root user → IAM user [tree]. AWS Account tree: devgroup, devops gr, secur gr, finance gr, read only, IAM users, IAM roles, AWS resource (handwritten, as is)
+
+### Root user
+
+- IAM users → individual policy for user
+- IAM groups → one policy for group
+- IAM roles → what permissions you hold tempor [cut off]
+- IAM policies → what actions allowed or denied
+- Eg:
+  - Allow: Start-EC2, Stop-EC2, Read-S3
+  - Deny: Delete S3
+
+### The trees (as drawn)
+
+```
+Root user
+  └─ IAM user
+
+AWS Account
+  ├─ devgroup
+  ├─ devops gr
+  ├─ secur gr
+  ├─ finance gr
+  ├─ read only
+  ├─ IAM users
+  ├─ IAM roles
+  └─ AWS resource
+```
+
+### [Filled — added, not in the original image]
+- IAM building blocks, filled: IAM users with an individual policy per user, IAM groups with one policy per group, IAM roles with the permissions held temporarily (cut off), and IAM policies stating what actions are allowed or denied — example Allow: Start-EC2, Stop-EC2, Read-S3; Deny: Delete S3.
+- Account tree, filled: the AWS account tree with dev, DevOps, security, and finance groups, read-only access, IAM users, IAM roles, and AWS resources, under the root user.
+- The frame, filled: the root-user/IAM page that Note 365's account-structure page continues — filed here as the IAM version.
+
+---
+
+## Image Note 365 — AWS Account structure: AWS account is isolated container in AWS. AWS cloud tree: account A (Gradespot), account B (Netflix), account C (BofA) — AWS isolates customers from each other. Root user: only one root user exists per AWS account. IAM users: represents person or application. Root user → IAM users (example names omitted per sanitize rule — admin, dev, dev roles). Each IAM user has its own: ① username; ② password (optional, console use); ③ access keys (…, for CLI/SDK use); ④ permissions (through policies). IAM groups [heading at foot, content continues] (handwritten, as is)
+
+### AWS Account structure
+
+- AWS account is isolated container in AWS
+
+### The cloud tree (as drawn)
+
+```
+AWS cloud
+  ├─ account A (Gradespot)
+  ├─ account B (Netflix)
+  └─ account C (BofA)
+```
+
+- AWS isolates customers from each other
+
+### Root user
+
+- Only one root user exists per AWS account
+
+### IAM users
+
+- Represents person or application
+
+```
+Root user
+  └─ IAM users (admin, dev, dev roles)
+```
+
+- Each IAM user has its own:
+  - ① Username
+  - ② Password (optional, console use)
+  - ③ Access keys (…, for CLI / SDK use)
+  - ④ Permissions (through policies)
+
+### IAM groups [heading at foot, content continues]
+
+### [Filled — added, not in the original image]
+- Account structure, filled: the AWS account as an isolated container in AWS, with the cloud tree showing separate accounts (Gradespot, Netflix, BofA as examples) and AWS isolating customers from each other; only one root user exists per AWS account; IAM users represent a person or an application, each with its own username, password (optional, console use), access keys (for CLI/SDK use), and permissions (through policies); IAM groups headed at the foot, content continuing.
+- The frame, filled: the account-structure page that Note 364's IAM page precedes — filed here as the account-structure version.
+
+---
+
+## Image Note 366 — Why multiple regions / org choose regions based on: latency, legal/regulatory compliance, DR, cost. HA: AZ — region contains multiple AZ; each AZ is one or more physical data centers; if AZ one fails, apps in other AZ can continue running. Edge locations: smaller sites distributed globally; edge locations used for services. Local zones: they extend a region to specific a city. Summary: Region → geographic location; AZ → data center within region; Edge location → delivers content closer to [user, cut off]; Local zone → extends a region. Resources belongs to specific region (handwritten, as is)
+
+### Why multiple regions / org choose regions based on
+
+- Latency
+- Legal / regulatory compliance
+- DR
+- Cost
+
+### HA: AZ
+
+- Region contains multiple AZ
+- Each AZ is one or more physical data centers
+- If AZ one fails, apps in other AZ can continue running
+
+### Edge locations
+
+- Smaller sites distributed globally
+- Edge locations used for services
+
+### Local zones
+
+- They extend a region to specific a city
+
+### Summary
+
+- Region → geographic location
+- AZ → data center within region
+- Edge location → delivers content closer to [user, cut off]
+- Local zone → extends a region
+- Resources belongs to specific region
+
+### [Filled — added, not in the original image]
+- Region choice, filled: organizations choose regions based on latency, legal/regulatory compliance, disaster recovery, and cost.
+- HA & footprint, filled: high availability via availability zones — a region contains multiple AZs, each AZ one or more physical data centers, so if one AZ fails, apps in other AZs can continue running; edge locations as smaller sites distributed globally, used for services; local zones extending a region to a specific city; and the summary mapping (region = geographic location, AZ = data center within a region, edge location = delivering content closer to the user, local zone = extending a region), with resources belonging to a specific region.
+- The frame, filled: the regions/AZ/edge/local-zones page that Note 367's global-infra page continues — filed here as the regions version.
+
+---
+
+## Image Note 367 — How do you talk to AWS = interfaces: ① AWS management console (web UI); ② AWS CLI (terminal); ③ AWS SDKs (Java, Python, Go etc); ④ AWS APIs; all of them invoke AWS API finally. AWS global infra: AWS tree: Global N/W → regions → AZ A, AZ B; Edge locations; Local zones. Global N/W: AWS connects all its regions using private global fiber N/W, not public internet; global N/W owned & managed by AWS to provide low latency, high bandwidth, HA. Ex: Mumbai ↔ Singapore, Virginia ↔ Oregon. Regions: a separate geographic area where AWS operate, each region is independent. AP Mumbai, AP Hyd [as written]. Resources/objects/instances in one region NOT automatically available in other (handwritten, as is)
+
+### How do you talk to AWS = interfaces
+
+- ① AWS management console (web UI)
+- ② AWS CLI (terminal)
+- ③ AWS SDKs (Java, Python, Go etc)
+- ④ AWS APIs
+- All of them invoke AWS API finally
+
+### AWS global infra (as drawn)
+
+```
+AWS
+  ├─ Global N/W
+  ├─ Regions
+  │    ├─ AZ A
+  │    └─ AZ B
+  ├─ Edge locations
+  └─ Local zones
+```
+
+### Global N/W
+
+- AWS connects all its regions using private global fiber N/W, not public internet
+- Global N/W owned & managed by AWS to provide low latency, high bandwidth, HA
+- Ex: Mumbai ↔ Singapore, Virginia ↔ Oregon
+
+### Regions
+
+- A separate geographic area where AWS operate, each region is independent
+- AP Mumbai, AP Hyd [as written]
+- Resources / objects / instances in one region NOT automatically available in other
+
+### [Filled — added, not in the original image]
+- Interfaces, filled: talking to AWS via four interfaces — the AWS Management Console (web UI), the AWS CLI (terminal), AWS SDKs (Java, Python, Go, etc.), and AWS APIs — all of which finally invoke the AWS API.
+- Global infra, filled: the AWS global infrastructure tree (global network, regions with AZ A and AZ B, edge locations, local zones); the global network connecting all regions over a private global fiber network, not the public internet, owned and managed by AWS for low latency, high bandwidth, and high availability (examples Mumbai ↔ Singapore, Virginia ↔ Oregon); regions as separate geographic areas, each independent (AP Mumbai, AP Hyderabad as written), with resources/objects/instances in one region not automatically available in another.
+- The frame, filled: the interfaces-plus-global-infra page that Note 366's regions page precedes — filed here as the global-infra version.
+
+---
+
+## Image Note 368 — AWS Building blocks: stack: App ← your code ← AWS resource ← AWS service ← AWS global infra ← AWS physical data center. ① Physical infra: owned by AWS (buildings, N/W, servers, storage etc). ② Global infra: made up of (regions, AZ, edge locations, local zones). ③ AWS service (class): managed IT capability developed by AWS. ④ AWS resource (object): is an instance of service created in your account. Service ≠ resource. EC2 = AWS service owned & operated by AWS; your EC2 instance (example instance ID omitted per sanitize rule) = your EC2 instance owned by [you, cut off] (handwritten, as is)
+
+### AWS Building blocks (stack, as drawn)
+
+```
+AWS physical data center
+  ↑
+AWS global infra
+  ↑
+AWS service
+  ↑
+AWS resource
+  ↑
+Your code
+  ↑
+App
+```
+
+- ① Physical infra: owned by AWS (buildings, N/W, servers, storage etc)
+- ② Global infra: made up of (regions, AZ, edge locations, local zones)
+- ③ AWS service (class): managed IT capability developed by AWS
+- ④ AWS resource (object): is an instance of service created in your account
+- Service ≠ resource
+- EC2 = AWS service owned & operated by AWS
+- Your EC2 instance (example instance ID omitted per sanitize rule) = your EC2 instance owned by [you, cut off]
+
+### [Filled — added, not in the original image]
+- Building blocks, filled: the stack from the AWS physical data center up through global infrastructure, AWS service, AWS resource, your code, to the app — physical infrastructure owned by AWS (buildings, networks, servers, storage, etc.); global infrastructure made up of regions, AZs, edge locations, and local zones; an AWS service as a managed IT capability developed by AWS (the class); an AWS resource as an instance of a service created in your account (the object); service ≠ resource, with EC2 as the AWS service owned and operated by AWS and your EC2 instance as the resource owned by you (cut off).
+- The frame, filled: the building-blocks page that Note 369's services/components page restates — filed here as the building-blocks version.
+
+---
+
+## Image Note 369 — ① AWS provides managed IT capabilities (services) over internet. ② AWS services: service is managed capability provided by AWS (Ex: EC2, IAM, VPC, CloudWatch); services are built, owned & operated by AWS; customer consume them through AWS console (web), AWS CLI (terminal), AWS SDK, AWS API. ③ AWS components: at high level AWS consists of these major components: ① Global infra component: regions, AZ, edge locations, local zones. ② Cloud service component: compute, storage, N/W, security, DB, analytics, AI/ML, DevOps/DevTools, containers, mngt, IoT, end user computing, integration. ③ Customer resources component: EC2 instances, S3 buckets, VPCs, IAM roles. ④ Management interface comp: console (web), CLI, SDK, API. ⑤ Function: the purpose of service — S3 → stores objects, EC2 → runs VM. ④ AWS Resource [second ④ as written]: it's an individual object created inside AWS account — EC2 instance, S3 bucket, VPC (handwritten, as is)
+
+### ① AWS provides managed IT capabilities (services) over internet
+
+### ② AWS services
+
+- Service is managed capability provided by AWS (Ex: EC2, IAM, VPC, CloudWatch)
+- Services are built, owned & operated by AWS
+- Customer consume them through:
+  - AWS console (web)
+  - AWS CLI (terminal)
+  - AWS SDK
+  - AWS API
+
+### ③ AWS components
+
+- At high level AWS consists of these major components:
+  - ① Global infra component: regions, AZ, edge locations, local zones
+  - ② Cloud service component: compute, storage, N/W, security, DB, analytics, AI/ML, DevOps/DevTools, containers, mngt, IoT, end user computing, integration
+  - ③ Customer resources component: EC2 instances, S3 buckets, VPCs, IAM roles
+  - ④ Management interface comp: console (web), CLI, SDK, API
+  - ⑤ Function: the purpose of service — S3 → stores objects, EC2 → runs VM
+
+### ④ AWS Resource [second ④ as written]
+
+- It's an individual object created inside AWS account
+- Ex: EC2 instance, S3 bucket, VPC
+
+### [Filled — added, not in the original image]
+- Services & components, filled: AWS providing managed IT capabilities (services) over the internet; an AWS service as a managed capability provided by AWS (examples EC2, IAM, VPC, CloudWatch), built, owned, and operated by AWS, consumed by customers through the console, CLI, SDK, and API; the high-level components (global infrastructure, cloud services, customer resources, management interface, function as the purpose of a service — S3 storing objects, EC2 running VMs); and an AWS resource as an individual object created inside an AWS account (EC2 instance, S3 bucket, VPC), numbered ④ a second time as written.
+- The frame, filled: the services-and-components page that Note 368's building-blocks page precedes — filed here as the components version.
+
+---
+
+## Image Note 370 — 1 Compute → EC2, ECS, EKS, Lambda; 2 Storage → S3, EBS, EFS; 3 DB → RDS, DynamoDB; 4 N/W → VPC, ELB, Route 53; 5 Security → IAM, KMS, Secrets; 6 Monitoring → CloudWatch, CloudTrail; 7 DevOps → CodePipeline, CF; 8 Containers → EKS, ECS, ECR; 9 Serverless → Lambda, API; 10 Messaging → SQS, SNS. Cloud/AWS service models: ① IAAS → AWS provides infra, you manage OS & apps; ② PAAS → AWS manages infra, OS, runtime, you manage [data/apps, cut off]; ③ SAAS → [blank] (handwritten, as is)
+
+### Category → services
+
+- 1 Compute → EC2, ECS, EKS, Lambda
+- 2 Storage → S3, EBS, EFS
+- 3 DB → RDS, DynamoDB
+- 4 N/W → VPC, ELB, Route 53
+- 5 Security → IAM, KMS, Secrets
+- 6 Monitoring → CloudWatch, CloudTrail
+- 7 DevOps → CodePipeline, CF
+- 8 Containers → EKS, ECS, ECR
+- 9 Serverless → Lambda, API
+- 10 Messaging → SQS, SNS
+
+### Cloud / AWS service models
+
+- ① IAAS → AWS provides infra, you manage OS & apps
+- ② PAAS → AWS manages infra, OS, runtime, you manage [data/apps, cut off]
+- ③ SAAS → [blank]
+
+### [Filled — added, not in the original image]
+- Category mapping, filled: compute (EC2, ECS, EKS, Lambda), storage (S3, EBS, EFS), databases (RDS, DynamoDB), networking (VPC, ELB, Route 53), security (IAM, KMS, Secrets), monitoring (CloudWatch, CloudTrail), DevOps (CodePipeline, CloudFormation), containers (EKS, ECS, ECR), serverless (Lambda, API), and messaging (SQS, SNS).
+- Service models, filled: IaaS with AWS providing infrastructure while you manage the OS and applications; PaaS with AWS managing infrastructure, OS, and runtime while you manage (cut off); SaaS blank in the image.
+- The frame, filled: the category-to-service mapping plus service-models page that Note 361's categories page precedes — filed here as the mapping version.
+
+---
+
+# INbatch48 — Image Notes 371–372 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 5 duplicates skipped in this set — uploads 437, 438, 439, 440, 441 repeat the INbatch46 pages exactly (Note 356 DevOps ecosystem tools, Note 357 CI/CD env pipelines, Note 358 port ranges & users, Note 359 testing/build/deploy, Note 360 API lifecycle), skipped entirely with no content copied and no note numbers consumed. 2 new notes filed from 7 images.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 371 — Security & Identity → controls access & protect resources; function: authentication, authorization, encryption, threat protection. IAM, AWS Org, KMS, Secret Mngr, Cognito, Shield; WAF, GuardDuty, Inspector, Security Hub. Monitoring & Management: function → monitoring, logging, auditing, automation & compliance: CloudWatch, CloudTrail, AWS Config, Sys Mngr, Trusted Advisor, Health Dashboard. DevOps/Dev Tools: function CI/CD, IaC, deployment automation: CodeCommit, CodeBuild, CodeDeploy, CodePipeline, CloudFormation, CDK. Containers: function deploy & mngt containerized apps: ECS, EKS, ECR, App Runner. Analytics & BigData: process & analyze datasets: Athena, EMR, Glue, Kinesis, OpenSearch, QuickSight. Integration & migration: SQS, SNS, EventBridge, Step Functions, API Gateway, MQ [as read]. AI & ML: build & use AI/ML: SageMaker, Bedrock, Rekognition (handwritten, as is)
+
+### Security & Identity
+
+- Controls access & protect resources
+- Function: authentication, authorization, encryption, threat protection
+- IAM, AWS Org, KMS, Secret Mngr, Cognito, Shield
+- WAF, GuardDuty, Inspector, Security Hub
+
+### Monitoring & Management
+
+- Function → monitoring, logging, auditing, automation & compliance
+- CloudWatch, CloudTrail, AWS Config, Sys Mngr, Trusted Advisor, Health Dashboard
+
+### DevOps / Dev Tools
+
+- Function: CI/CD, IaC, deployment automation
+- CodeCommit, CodeBuild, CodeDeploy, CodePipeline, CloudFormation, CDK
+
+### Containers
+
+- Function: deploy & mngt containerized apps
+- ECS, EKS, ECR, App Runner
+
+### Analytics & BigData
+
+- Process & analyze datasets
+- Athena, EMR, Glue, Kinesis, OpenSearch, QuickSight
+
+### Integration & migration
+
+- SQS, SNS, EventBridge, Step Functions, API Gateway, MQ [as read]
+
+### AI & ML
+
+- Build & use AI/ML
+- SageMaker, Bedrock, Rekognition
+
+### [Filled — added, not in the original image]
+- Category functions & services, filled: security & identity controlling access and protecting resources, with authentication, authorization, encryption, and threat protection (IAM, AWS Organizations, KMS, Secrets Manager, Cognito, Shield, WAF, GuardDuty, Inspector, Security Hub); monitoring & management with monitoring, logging, auditing, automation, and compliance (CloudWatch, CloudTrail, AWS Config, Systems Manager, Trusted Advisor, Health Dashboard); DevOps/DevTools with CI/CD, infrastructure as code, and deployment automation (CodeCommit, CodeBuild, CodeDeploy, CodePipeline, CloudFormation, CDK); containers deploying and managing containerized apps (ECS, EKS, ECR, App Runner); analytics & big data processing and analyzing datasets (Athena, EMR, Glue, Kinesis, OpenSearch, QuickSight); integration & migration (SQS, SNS, EventBridge, Step Functions, API Gateway, MQ as read); AI & ML building and using AI/ML (SageMaker, Bedrock, Rekognition).
+- The frame, filled: the AWS-category-services detail page that Note 370's category mapping and Note 372's core-components page bracket — filed here as the category-services version.
+
+---
+
+## Image Note 372 — AWS: cloud computing platform from Amazon; individuals & org can rent IT resources over internet instead of buying & managing their own physical servers; think it as a global virtual data center; you can use on demand by pay as you go; provides managed IT capabilities (services) over internet. Core components: ① Compute → runs your apps: EC2 (VMs), Lambda, ECS (docker containers), EKS (K8s cluster), EB, Batch; compute function is to execute code & host apps. ② Storage → stores files, disks, backups, archives; its function is to store & protect data; S3, EBS, EFS, FSx, Glacier. ③ DB → managed DBs, function is to store structured & unstructured data; RDS, Aurora, DynamoDB, Redshift, ElastiCache, Neptune. ④ N/W → connect resource securely; function = N/W, routing, DNS & connectivity; VPC, Route 53, ELB, NAT Gateway, Internet Gateway, Transit Gateway, VPN, Direct Connect (handwritten, as is)
+
+### AWS
+
+- Cloud computing platform from Amazon
+- Individuals & org can rent IT resources over internet instead of buying & managing their own physical servers
+- Think it as a global virtual data center
+- You can use on demand by pay as you go
+- Provides managed IT capabilities (services) over internet
+
+### Core components
+
+- ① Compute → runs your apps
+  - EC2 (VMs), Lambda, ECS (docker containers), EKS (K8s cluster), EB, Batch
+  - Compute function is to execute code & host apps
+- ② Storage → stores files, disks, backups, archives
+  - Its function is to store & protect data
+  - S3, EBS, EFS, FSx, Glacier
+- ③ DB → managed DBs
+  - Function is to store structured & unstructured data
+  - RDS, Aurora, DynamoDB, Redshift, ElastiCache, Neptune
+- ④ N/W → connect resource securely
+  - Function = N/W, routing, DNS & connectivity
+  - VPC, Route 53, ELB, NAT Gateway, Internet Gateway, Transit Gateway, VPN, Direct Connect
+
+### [Filled — added, not in the original image]
+- AWS defined, filled: the cloud computing platform from Amazon, letting individuals and organizations rent IT resources over the internet instead of buying and managing their own physical servers — a global virtual data center, used on demand by pay-as-you-go, providing managed IT capabilities (services) over the internet.
+- Core components, filled: compute running your apps (EC2 VMs, Lambda, ECS docker containers, EKS Kubernetes clusters, Elastic Beanstalk, Batch — function: execute code and host apps); storage storing files, disks, backups, and archives (S3, EBS, EFS, FSx, Glacier — function: store and protect data); databases as managed databases (RDS, Aurora, DynamoDB, Redshift, ElastiCache, Neptune — function: store structured and unstructured data); networking connecting resources securely (VPC, Route 53, ELB, NAT Gateway, Internet Gateway, Transit Gateway, VPN, Direct Connect — function: networking, routing, DNS, and connectivity).
+- The frame, filled: the AWS-intro-plus-core-components page that Note 371's category-services page brackets — filed here as the intro version.
+
+---
+
+# INbatch49 — Image Notes 373–382 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — 10 images, 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 373 — ③ Decentralized models: topology based; data movement relies on N/W topology rather than client-server; P2P, mesh. → Systems categorized by: who controls the timing of transfer (initiation); how long the connection stays on (lifecycle); the direction of the payload (direction). The core split: ① Pull (client); ② Push (server). The persistent hybrid tier: SSE, webhooks. The scale tier: Streaming, MQ [as written] (handwritten, as is)
+
+### ③ Decentralized models
+
+- Topology based
+- Data movement relies on N/W topology rather than client-server
+- P2P, mesh
+
+### Systems categorized by
+
+- Who controls the timing of transfer (initiation)
+- How long the connection stays on (lifecycle)
+- The direction of the payload (direction)
+
+### The core split
+
+- ① Pull (client)
+- ② Push (server)
+
+### The persistent hybrid tier
+
+- SSE, webhooks
+
+### The scale tier
+
+- Streaming, MQ [as written]
+
+### [Filled — added, not in the original image]
+- Decentralized models, filled: topology-based models where data movement relies on network topology rather than client-server — peer-to-peer and mesh; systems categorized by who controls the timing of transfer (initiation), how long the connection stays on (lifecycle), and the direction of the payload; the core split of pull (client) versus push (server); the persistent hybrid tier (SSE, webhooks); and the scale tier (streaming, MQ as written).
+- The frame, filled: the decentralized-models page that Note 374's data-initiation page and Note 375's foundations page bracket — filed here as the decentralized version.
+
+---
+
+## Image Note 374 — Data initiation & Dir: ① Pull model → request data from server when needed; client driven data models; synchronous pull; Req/Resp — FaaS/PaaS; polling/long polling — PaaS; REST API, gRPC, GraphQL; batch process — PaaS/IaaS. ② Push model: server automatically send data to client as soon as event occurs (server driven events driven); async push; EDA; webhooks — SaaS/FaaS; MQ — PaaS; pub/sub — PaaS. ③ Hybrid (bidirectional & persistent): both can initiate data transfer over N/W; websockets — PaaS/SaaS; SSE — SaaS/PaaS; HTTP/2/3 push. ④ Streaming data models (continuous flow): data flows as unbounded records; event stream; data pipelines (ETL/ELT) [cut off at foot] (handwritten, as is)
+
+### Data initiation & Dir
+
+### ① Pull model
+
+- Request data from server when needed
+- Client driven data models
+- Synchronous pull
+- Req / Resp — FaaS / PaaS
+- Polling / long polling — PaaS
+- REST API, gRPC, GraphQL
+- Batch process — PaaS / IaaS
+
+### ② Push model
+
+- Server automatically send data to client as soon as event occurs (server driven events driven)
+- Async push
+- EDA
+- Webhooks — SaaS / FaaS
+- MQ — PaaS
+- Pub / sub — PaaS
+
+### ③ Hybrid (bidirectional & persistent)
+
+- Both can initiate data transfer over N/W
+- Websockets — PaaS / SaaS
+- SSE — SaaS / PaaS
+- HTTP / 2 / 3 push
+
+### ④ Streaming data models (continuous flow)
+
+- Data flows as unbounded records
+- Event stream
+- Data pipelines (ETL / ELT) [cut off at foot]
+
+### [Filled — added, not in the original image]
+- Initiation models, filled: the pull model requesting data from the server when needed (client-driven, synchronous pull — request/response on FaaS/PaaS, polling/long polling on PaaS, REST APIs, gRPC, GraphQL, batch processing on PaaS/IaaS); the push model with the server automatically sending data to the client as soon as an event occurs (server-driven, event-driven — async push, EDA, webhooks on SaaS/FaaS, MQ on PaaS, pub/sub on PaaS); the hybrid model, bidirectional and persistent, where both sides can initiate data transfer over the network (websockets on PaaS/SaaS, SSE on SaaS/PaaS, HTTP/2/3 push); and streaming data models as continuous flow, data flowing as unbounded records (event streams, data pipelines ETL/ELT, cut off at the foot).
+- The frame, filled: the data-initiation page that Note 373's decentralized page and Note 375's foundations page bracket — filed here as the initiation version.
+
+---
+
+## Image Note 375 — Foundation of communication & data flow models are built on: ① Connection initiator (who starts it): before data moves, one machine must open door; receiver = client initiated (pull models); producer = server initiated (push models). ② Connection lifecycle (how long does the door open): ① Ephemeral (short lived); ② persistent (long lived). ③ Coupling & topology (how are they wired): defines how dependent the machines are; ① tight coupling (synchronous/direct); ② loosely coupled (asynchronous/indirect). ④ Data slicing (how data organized): data can't move across the internet as one giant blob, must chopped: ① discrete (bounded); ② streaming (unbounded). (CAP Theorem) [at foot] (handwritten, as is)
+
+### Foundation of communication & data flow models are built on
+
+### ① Connection initiator (who starts it)
+
+- Before data moves, one machine must open door
+- Receiver = client initiated (pull models)
+- Producer = server initiated (push models)
+
+### ② Connection lifecycle (how long does the door open)
+
+- ① Ephemeral (short lived)
+- ② Persistent (long lived)
+
+### ③ Coupling & topology (how are they wired)
+
+- Defines how dependent the machines are
+- ① Tight coupling (synchronous / direct)
+- ② Loosely coupled (asynchronous / indirect)
+
+### ④ Data slicing (how data organized)
+
+- Data can't move across the internet as one giant blob, must chopped
+- ① Discrete (bounded)
+- ② Streaming (unbounded)
+
+### (CAP Theorem) [at foot]
+
+### [Filled — added, not in the original image]
+- Foundations, filled: communication and data-flow models built on four foundations — connection initiator (who starts it: before data moves, one machine must open the door; receiver = client-initiated pull models, producer = server-initiated push models); connection lifecycle (how long the door stays open: ephemeral short-lived versus persistent long-lived); coupling & topology (how they are wired: how dependent the machines are — tight coupling synchronous/direct versus loosely coupled asynchronous/indirect); and data slicing (how data is organized: data can't move across the internet as one giant blob and must be chopped — discrete bounded versus streaming unbounded); with CAP Theorem noted at the foot.
+- The frame, filled: the foundations page that Note 374's initiation page and Note 376's message-passing page bracket — filed here as the foundations version.
+
+---
+
+## Image Note 376 — ③ Message passing & queues (inter system): infra → N/W (storage optional). Core concepts: asynchronous timeline, MQ, EDA, pub/sub, pull/push flow hybrid; reactive streams, streaming, batching. Prod systems: Kafka, RabbitMQ — enterprise; AWS SQS — cloud; data pipelines — Spark/Airflow. ④ RPC (inter system): infra → N/W only, bypass disk storage. Core concepts: client-server. Ex prod systems: gRPC orchestration, K8s control plane. ⑤ File/DB comm (hybrid within single machine or b/w cloud): infra → storage req (HDD/SDD/cloud buckets) + N/W optional. Core concepts: batch processing — core, pull model. Prod systems: Spark, Snowflake, Big data, S3, ETL pipelines, payroll sys (handwritten, as is)
+
+### ③ Message passing & queues (inter system)
+
+- Infra → N/W (storage optional)
+- Core concepts: asynchronous timeline, MQ, EDA, pub/sub, pull/push flow hybrid; reactive streams, streaming, batching
+- Prod systems: Kafka, RabbitMQ — enterprise; AWS SQS — cloud; data pipelines — Spark/Airflow
+
+### ④ RPC (inter system)
+
+- Infra → N/W only, bypass disk storage
+- Core concepts: client-server
+- Ex prod systems: gRPC orchestration, K8s control plane
+
+### ⑤ File / DB comm (hybrid within single machine or b/w cloud)
+
+- Infra → storage req (HDD / SDD / cloud buckets) + N/W optional
+- Core concepts: batch processing — core, pull model
+- Prod systems: Spark, Snowflake, Big data, S3, ETL pipelines, payroll sys
+
+### [Filled — added, not in the original image]
+- Three methods, filled: message passing & queues (inter-system, infrastructure → network with storage optional — asynchronous timeline, MQ, EDA, pub/sub, pull/push flow hybrid, reactive streams, streaming, batching; production systems Kafka, RabbitMQ for enterprise, AWS SQS for cloud, Spark/Airflow data pipelines); RPC (inter-system, infrastructure → network only, bypassing disk storage — client-server; production systems gRPC orchestration, Kubernetes control plane); and file/DB communication (hybrid within a single machine or between clouds, infrastructure → storage required — HDD/SDD/cloud buckets — plus network optional — batch processing core, pull model; production systems Spark, Snowflake, big data, S3, ETL pipelines, payroll systems).
+- The frame, filled: the message-passing/RPC/file-DB page that Note 375's foundations page and Note 377's IPC-methods page bracket — filed here as the methods-detail version.
+
+---
+
+## Image Note 377 — IPC core methods of data transfer / systems communication: Mapping ① Shared memory (intra system): infra → RAM only, bypass N/W & hard drive; CPU caches, SRAM; binary based; core concepts: concurrency control (mutex/semaphore). ② Sockets/N/W sockets (TCP/UDP): stream based / packet-datagram based; infra [blank]. ⑥ Pipes/named pipes (intra system) [numbering jumps ② → ⑥ as written]: infra — RAM only; core concepts: streaming, push model, SSE, long polling, websockets; prod systems: Unix CLI, Docker/docker daemon (handwritten, as is)
+
+### IPC core methods of data transfer / systems communication
+
+### Mapping
+
+### ① Shared memory (intra system)
+
+- Infra → RAM only, bypass N/W & hard drive
+- CPU caches, SRAM
+- Binary based
+- Core concepts: concurrency control (mutex / semaphore)
+
+### ② Sockets / N/W sockets (TCP / UDP)
+
+- Stream based / packet-datagram based
+- Infra [blank]
+
+### ⑥ Pipes / named pipes (intra system) [numbering jumps ② → ⑥ as written]
+
+- Infra — RAM only
+- Core concepts: streaming, push model, SSE, long polling, websockets
+- Prod systems: Unix CLI, Docker / docker daemon
+
+### [Filled — added, not in the original image]
+- IPC mapping, filled: shared memory (intra-system, infrastructure → RAM only, bypassing network and hard drive — CPU caches, SRAM, binary based, concurrency control via mutex/semaphore); sockets/network sockets (TCP/UDP — stream based / packet-datagram based, infrastructure blank); and pipes/named pipes (intra-system, numbered ⑥ with the numbering jumping from ② as written — infrastructure RAM only, core concepts streaming, push model, SSE, long polling, websockets; production systems Unix CLI, Docker/docker daemon).
+- The frame, filled: the IPC-core-methods mapping page that Note 376's methods-detail page and Note 378's boundaries page bracket — filed here as the IPC-mapping version.
+
+---
+
+## Image Note 378 — Every communication method operates within one of 2 physical boundaries: ① Intra system → bypass N/W / use local H/W; no scaling; central. ② Inter system → traverse N/W / scales through (data processing delay) ← latency; distributed. ⑤ Core comm methods [numbering as written]: ① Shared memory (intra system) → binary based; ② Message passing & queues (inter system): text based (JSON), binary based (mailbox); ③ RPC (inter system) → packet based; ④ File/DB comm (hybrid) → disk based; ⑤ Pipes/named pipes (intra sys) → text/binary streams. Margins: Postgres, MQ Kafka, K8s, S3/Spark, terminal/Docker. Timing model: synchronous, asynchronous. Structure arch type: client-server (handwritten, as is)
+
+### Every communication method operates within one of 2 physical boundaries
+
+- ① Intra system → bypass N/W / use local H/W; no scaling; central
+- ② Inter system → traverse N/W / scales through (data processing delay) ← latency; distributed
+
+### ⑤ Core comm methods [numbering as written]
+
+- ① Shared memory (intra system) → binary based
+- ② Message passing & queues (inter system): text based (JSON), binary based (mailbox)
+- ③ RPC (inter system) → packet based
+- ④ File / DB comm (hybrid) → disk based
+- ⑤ Pipes / named pipes (intra sys) → text / binary streams
+
+### Margins
+
+- Postgres, MQ Kafka, K8s, S3/Spark, terminal/Docker
+
+### Timing model
+
+- Synchronous, asynchronous
+
+### Structure arch type
+
+- Client-server
+
+### [Filled — added, not in the original image]
+- Boundaries & methods, filled: every communication method operating within one of two physical boundaries — intra-system (bypassing the network, using local hardware, no scaling, central) versus inter-system (traversing the network, scaling through data-processing delay and latency, distributed); the five core communication methods (numbered ⑤ as written — shared memory intra-system binary based; message passing & queues inter-system text based JSON / binary based mailbox; RPC inter-system packet based; file/DB communication hybrid disk based; pipes/named pipes intra-system text/binary streams); margin production systems (Postgres, MQ Kafka, K8s, S3/Spark, terminal/Docker); timing models (synchronous, asynchronous); and structure architecture type (client-server).
+- The frame, filled: the boundaries page that Note 377's IPC-mapping page and Note 379's where-methods-operate page bracket — filed here as the boundaries version.
+
+---
+
+## Image Note 379 — Where these comm methods operate: ① Intra system (within server, OS/S/W): shared mem, pipes/named pipes, signals; these methods req physical — a shared physical env; they can't cross a N/W cable to different machine. Text/binary streams [margin]. ② Inter system (B/W diff servers, S/W or devices): RPC/gRPC, message passing (MQ), file based/DB; comm — these methods are designed to bridge physical distance over N/W. ③ Hybrid (works within, between): N/W sockets (TCP/IP, Unix domain sockets), file based/DB (handwritten, as is)
+
+### Where these comm methods operate
+
+### ① Intra system (within server, OS / S/W)
+
+- Shared mem, pipes / named pipes, signals
+- These methods req physical — a shared physical env
+- They can't cross a N/W cable to different machine
+- Text / binary streams [margin]
+
+### ② Inter system (B/W diff servers, S/W or devices)
+
+- RPC / gRPC, message passing (MQ), file based / DB
+- Comm — these methods are designed to bridge physical distance over N/W
+
+### ③ Hybrid (works within, between)
+
+- N/W sockets (TCP / IP, Unix domain sockets), file based / DB
+
+### [Filled — added, not in the original image]
+- Operating scopes, filled: intra-system methods (within a server, OS/software — shared memory, pipes/named pipes, signals) requiring a shared physical environment and unable to cross a network cable to a different machine (text/binary streams in the margin); inter-system methods (between different servers, software, or devices — RPC/gRPC, message passing via MQ, file based/DB) designed to bridge physical distance over the network; and hybrid methods working both within and between (network sockets — TCP/IP, Unix domain sockets — and file based/DB).
+- The frame, filled: the where-methods-operate page that Note 378's boundaries page and Note 380's per-method page bracket — filed here as the scopes version.
+
+---
+
+## Image Note 380 — Shared memory (NO N/W req) → HPC, multithreaded; binary based, direct RAM access; RAM only; DB engines: MySQL, Postgres — use shared memo; AI/ML nodes: GPU; OS kernels (Linux, Windows). Message passing (MQ) (N/W): distributed computing, EDA, microservices, cloud native; text/binary, mailbox/buffer; MQ servers (Kafka, Rabbit); cloud servers use it, backends. RPC/gRPC (N/W): inter service comm, cluster coordination; N/W, no storage req; K8s clusters uses, microservices, API servers. File & DB based comm: batch processing, data warehouses, analytics pipelines; storage, optional N/W; text/binary; data pipelines (Spark/Airflow), CMS, web servers. Pipe & named pipe: text/binary streams (handwritten, as is)
+
+### Shared memory (NO N/W req) → HPC, multithreaded
+
+- Binary based, direct RAM access
+- RAM only
+- DB engines: MySQL, Postgres — use shared memo
+- AI/ML nodes: GPU
+- OS kernels (Linux, Windows)
+
+### Message passing (MQ) (N/W)
+
+- Distributed computing, EDA, microservices, cloud native
+- Text / binary, mailbox / buffer
+- MQ servers (Kafka, Rabbit)
+- Cloud servers use it, backends
+
+### RPC / gRPC (N/W)
+
+- Inter service comm, cluster coordination
+- N/W, no storage req
+- K8s clusters uses, microservices, API servers
+
+### File & DB based comm
+
+- Batch processing, data warehouses, analytics pipelines
+- Storage, optional N/W
+- Text / binary
+- Data pipelines (Spark / Airflow), CMS, web servers
+
+### Pipe & named pipe
+
+- Text / binary streams
+
+### [Filled — added, not in the original image]
+- Per-method profiles, filled: shared memory (no network required — HPC, multithreaded; binary based, direct RAM access, RAM only; database engines MySQL and Postgres using shared memory, AI/ML nodes with GPUs, OS kernels Linux and Windows); message passing via MQ (network — distributed computing, EDA, microservices, cloud native; text/binary, mailbox/buffer; MQ servers Kafka and Rabbit, used by cloud servers and backends); RPC/gRPC (network — inter-service communication, cluster coordination; network with no storage required; Kubernetes clusters, microservices, API servers); file & DB based communication (batch processing, data warehouses, analytics pipelines; storage with optional network; text/binary; Spark/Airflow data pipelines, CMS, web servers); and pipes & named pipes (text/binary streams).
+- The frame, filled: the per-method profile page that Note 379's scopes page and Note 381's data-format page bracket — filed here as the profiles version.
+
+---
+
+## Image Note 381 — Data format (text based, binary based): ① Text based → data as readable chars (JSON, XML, plain text [cut off]); MQ (JSON/REST) → microservices communication payload; pipes → streams chars; file (CSV, JSON, XML) → readable text files. ② Binary based → data as raw, unreadable 0s/1s: shared memory → memory pointers; RPC/gRPC → binary streams; N/W sockets → streaming raw bytes over internet; signals → simplest binary communication. Access/storage style (file based, block based): ① File based → data boundary: shared files/DB, named pipes. ② Block based & stream based → data broken into chunks: block based (storage level), stream/packet based (handwritten, as is)
+
+### Data format (text based, binary based)
+
+### ① Text based
+
+- Data as readable chars (JSON, XML, plain text [cut off])
+- MQ (JSON / REST) → microservices communication payload
+- Pipes → streams chars
+- File (CSV, JSON, XML) → readable text files
+
+### ② Binary based
+
+- Data as raw, unreadable 0s / 1s
+- Shared memory → memory pointers
+- RPC / gRPC → binary streams
+- N/W sockets → streaming raw bytes over internet
+- Signals → simplest binary communication
+
+### Access / storage style (file based, block based)
+
+### ① File based
+
+- Data boundary
+- Shared files / DB, named pipes
+
+### ② Block based & stream based
+
+- Data broken into chunks
+- Block based (storage level)
+- Stream / packet based
+
+### [Filled — added, not in the original image]
+- Formats & styles, filled: data formats split into text based (data as readable characters — JSON, XML, plain text cut off; MQ with JSON/REST as microservices communication payloads; pipes as character streams; files CSV/JSON/XML as readable text files) and binary based (data as raw, unreadable 0s/1s — shared memory as memory pointers, RPC/gRPC as binary streams, network sockets as streaming raw bytes over the internet, signals as the simplest binary communication); and access/storage styles split into file based (data boundary — shared files/DB, named pipes) and block based & stream based (data broken into chunks — block based at storage level, stream/packet based).
+- The frame, filled: the data-format page that Note 380's profiles page and Note 382's defining-communication page bracket — filed here as the formats version.
+
+---
+
+## Image Note 382 — Depending on how you define communication: 5 comm methods: pipes & named pipes → unidirectional highway; signals → notifications sent by OS or process to other; RPC → looks like local functional call, masking underlying N/W; file based/DB based → persistent, shared storage; network sockets → endpoint plumbing, for sending data. Pipes/text sockets; TCP/UDP network sockets. Two core IPC models: monolithic arch is native; inside path ① shared memory (memory based); outside path ② message passing (message based IPC); microservice is native [as written] (handwritten, as is)
+
+### Depending on how you define communication
+
+### 5 comm methods
+
+- Pipes & named pipes → unidirectional highway
+- Signals → notifications sent by OS or process to other
+- RPC → looks like local functional call, masking underlying N/W
+- File based / DB based → persistent, shared storage
+- Network sockets → endpoint plumbing, for sending data
+
+### Pipes / text sockets
+
+### TCP / UDP network sockets
+
+### Two core IPC models
+
+- Monolithic arch is native
+- Inside path: ① Shared memory (memory based)
+- Outside path: ② Message passing (message based IPC)
+- Microservice is native [as written]
+
+### [Filled — added, not in the original image]
+- Defining communication, filled: five communication methods defined by how communication is framed — pipes & named pipes as a unidirectional highway; signals as notifications sent by the OS or a process to another; RPC looking like a local functional call, masking the underlying network; file based/DB based as persistent, shared storage; network sockets as endpoint plumbing for sending data — with pipes/text sockets and TCP/UDP network sockets; and two core IPC models — monolithic architecture as native with the inside path as shared memory (memory based), and the outside path as message passing (message based IPC), with microservice as native as written.
+- The frame, filled: the defining-communication page that Note 381's data-format page brackets — filed here as the definitions version.
+
+---
+
+# INbatch50 — Image Notes 383–385 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 7 duplicates skipped in this set — upload 453 repeats upload 452's PoLP page (same page re-photographed, right edge cut), and uploads 456, 457, 458, 459, 460, 461 repeat INbatch49 exactly (Note 373 decentralized models, Note 374 data initiation & direction, Note 375 foundations, Note 376 message passing/RPC/file-DB, Note 377 IPC core methods mapping, Note 378 physical boundaries), skipped entirely with no content copied and no note numbers consumed. 3 new notes filed from 10 images.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 383 — ⇒ Principles of least privilege (PoLP); * PoLP = showing separating duties [as written]. 0 ① Root/Administrator (the gatekeeper) — Authority: full system control. 1-999 ② System Accounts/Services (Isolated workers) — Authority: highly restricted, non interactive, Readonly. 1000+ ③ Regular users (End consumers) — Authority: user scoped capabilities: [tail ends at "capabilities:"] (handwritten, as is)
+
+### ⇒ Principles of least privilege (PoLP)
+
+- * PoLP = showing separating duties [as written]
+
+### 0 ① Root / Administrator (the gatekeeper)
+
+- Authority: full system control
+
+### 1-999 ② System Accounts / Services (Isolated workers)
+
+- Authority: highly restricted
+- Non interactive
+- Readonly
+
+### 1000+ ③ Regular users (End consumers)
+
+- Authority: user scoped
+- Capabilities: [tail ends at "capabilities:"]
+
+### [Filled — added, not in the original image]
+- PoLP frame, filled: the principle of least privilege as showing separation of duties — every identity given only the minimum authority its duty needs; root/administrator (the gatekeeper) holding full system control at UID 0; system accounts/services as isolated workers at UIDs 1–999, highly restricted, non-interactive, and read-only; and regular users as end consumers at UIDs 1000+, with user-scoped authority and capabilities (the tail ending at "capabilities:" in the image).
+- The frame, filled: the PoLP page that Note 384's cloud-mapping page and Note 385's Kubernetes-mapping page bracket — filed here as the PoLP version.
+
+---
+
+## Image Note 384 — Cloud: ① Root/Administrator: AWS = root user; Azure = global admin; GCP = owner. ② System accounts: GCP/AZ = cloud service accounts; AWS = IAM roles for services/EC2 instances. ③ Regular users: IAM users; federated identities (rotated page, handwritten, as is)
+
+### Cloud
+
+### ① Root / Administrator
+
+- AWS = root user
+- Azure = global admin
+- GCP = owner
+
+### ② System accounts
+
+- GCP / AZ = cloud service accounts
+- AWS = IAM roles for services / EC2 instances
+
+### ③ Regular users
+
+- IAM users
+- Federated identities
+
+### [Filled — added, not in the original image]
+- Cloud identity mapping, filled: the same three PoLP tiers mapped onto the clouds — root/administrator as the AWS root user, the Azure global admin, and the GCP owner; system accounts as GCP/Azure cloud service accounts and AWS IAM roles for services and EC2 instances; and regular users as IAM users and federated identities.
+- The frame, filled: the cloud-mapping page that Note 383's PoLP page and Note 385's Kubernetes-mapping page bracket — filed here as the cloud version.
+
+---
+
+## Image Note 385 — K8s: ① root: cluster admin: clusterRole via RBAC to manage nodes, namespaces & controllers. ② system accounts: serviceAccounts assigned to pods directly. ③ regular users: normal/human users; K8s doesn't manage them internally; delegates them to external identity providers by RoleBindings. ① web servers = system accounts; ② DB servers = system accounts (systemctl crossed); ③ file servers = Root/Administrators; ④ app servers = Regular users or privileged system (systemd); ⑤ mail servers = system accounts; ⑥ identity servers = system accounts; ⑦ network servers = Root/Administrator; ⑧ proxy/reverse servers = system accounts. Bracket linking ③–⑦ [as drawn] (handwritten, as is)
+
+### K8s
+
+### ① Root
+
+- Cluster admin
+- ClusterRole via RBAC to manage nodes, namespaces & controllers
+
+### ② System accounts
+
+- ServiceAccounts assigned to pods directly
+
+### ③ Regular users
+
+- Normal / human users
+- K8s doesn't manage them internally
+- Delegates them to external identity providers by RoleBindings
+
+### Server → account mapping
+
+- ① Web servers = system accounts
+- ② DB servers = system accounts (systemctl crossed)
+- ③ File servers = Root / Administrators
+- ④ App servers = Regular users or privileged system (systemd)
+- ⑤ Mail servers = system accounts
+- ⑥ Identity servers = system accounts
+- ⑦ Network servers = Root / Administrator
+- ⑧ Proxy / reverse servers = system accounts
+
+### Bracket linking ③–⑦ [as drawn]
+
+### [Filled — added, not in the original image]
+- Kubernetes identity mapping, filled: the same three PoLP tiers mapped onto Kubernetes — root as the cluster admin holding a ClusterRole via RBAC to manage nodes, namespaces, and controllers; system accounts as ServiceAccounts assigned to pods directly; and regular users as normal/human users that Kubernetes does not manage internally, delegating them to external identity providers by RoleBindings; with the server-to-account mapping (web, DB, mail, identity, and proxy/reverse servers as system accounts; file and network servers as root/administrators; app servers as regular users or privileged system via systemd; systemctl crossed against the DB-server entry; and a bracket linking ③–⑦ as drawn).
+- The frame, filled: the Kubernetes-mapping page that Note 384's cloud-mapping page brackets — filed here as the Kubernetes version.
+
+---
+
+# INbatch51 — Image Note 386 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 4 duplicates skipped in this set — uploads 462, 463, 464, 465 repeat INbatch49 exactly (Note 379 where methods operate, Note 380 per-method profiles, Note 381 data formats, Note 382 defining communication), skipped entirely with no content copied and no note numbers consumed. 1 new note filed from 5 images.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): the note keeps its word description AND its drawn table together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 386 — Systems & N/W Comm: Data stays at one ram location: Sharing memory — Exact one physical ram/blot [as read]. Data is deep copied across RAM locations multiple ram [cut]: message passing. Sharing memory: faster than message passing; it avoids data copying & N/Wing; faster; processes read & write to the exact same ram chips; speed is limited by H/W bus only; process is not isolated here — if process A crashes, eventually process B & C also crashes; one crash all crashes. Message passing: sys arch choose message passing [cut]; memory access hits massive eng bottlenecks as system grows; slower; system must copy data out of process A memory into an OS buffer & then copy it again into process B memory; speed is limited [cut]; process is isolated here, crash happens only that process [crossed word]; one crash, other keep working. Footer: Shared memory / message passing } foundational models for IPC at OS level (handwritten, as is)
+
+### Systems & N/W Comm
+
+### Data stays at one ram location: Sharing memory
+
+- Exact one physical ram/blot [as read]
+
+### Data is deep copied across RAM locations multiple ram [cut]: message passing
+
+### Sharing memory
+
+- Faster than message passing
+- It avoids data copying & N/Wing
+- Faster
+- Processes read & write to the exact same ram chips
+- Speed is limited by H/W bus only
+- Process is not isolated here
+- If process A crashes, eventually process B & C also crashes
+- One crash all crashes
+
+### Message passing
+
+- Sys arch choose message passing [cut]
+- Memory access hits massive eng bottlenecks as system grows
+- Slower
+- System must copy data out of process A memory into an OS buffer & then copy it again into process B memory
+- Speed is limited [cut]
+- Process is isolated here
+- Crash happens only that process [crossed word]
+- One crash, other keep working
+
+### Footer
+
+- Shared memory / message passing } foundational models for IPC at OS level
+
+### Drawn table version
+
+| Sharing memory (data stays at one RAM location) | Message passing (data deep-copied across RAM locations) |
+|---|---|
+| Faster than message passing; avoids data copying & networking | Sys arch choose message passing [cut]; memory access hits massive engineering bottlenecks as system grows |
+| Processes read & write to the exact same RAM chips | Slower; system must copy data out of process A memory into an OS buffer, then copy it again into process B memory |
+| Speed limited by H/W bus only | Speed is limited [cut] |
+| Process not isolated: if process A crashes, eventually B & C also crash — one crash, all crashes | Process isolated: crash happens only that process — one crash, others keep working |
+
+### [Filled — added, not in the original image]
+- Shared vs message passing, filled: the systems & network communication comparison of the two foundational IPC models at OS level — shared memory keeping data at one RAM location (exact one physical RAM block as read), faster than message passing because it avoids data copying and networking, with processes reading and writing the exact same RAM chips, speed limited by the hardware bus only, but processes not isolated so one crash eventually crashes all; versus message passing deep-copying data across multiple RAM locations, chosen by system architecture despite massive engineering bottlenecks as systems grow, slower because the system must copy data out of process A memory into an OS buffer and then copy it again into process B memory, speed limited (cut off), but processes isolated so a crash affects only that process and the others keep working.
+- The frame, filled: the shared-vs-message-passing comparison page that Note 382's defining-communication page brackets — filed here as the comparison version.
+
+---
+
+# INbatch52 — Image Notes 387–396 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: no duplicates in this set — 10 images, 10 new notes filed.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn diagram/table together in the same note.
+Sanitize note: the private-range addresses in Notes 394–396 are the notes' own lab/class teaching examples (generic RFC 1918 ranges and his lab scheme), not identifiers of real hosts, and are kept as written.
+
+## Image Note 387 — RAID (Technology): Combines multiple physical drives or SSD into a single logical unit to enhance data redundancy, performance. It works by distributing data across drives (striping), duplicating (mirroring), allowing faster I/O & protection against drive failure. RAID tech used inside other systems (DAS, NAS, SAN) to prevent data loss if a hard drive fails (handwritten, as is)
+
+### RAID (Technology)
+
+- Combines multiple physical drives or SSD into a single logical unit to enhance data redundancy, performance
+- It works by distributing data across drives (striping), duplicating (mirroring), allowing faster I/O & protection against drive failure
+- RAID tech used inside other systems (DAS, NAS, SAN) to prevent data loss if a hard drive fails
+
+### [Filled — added, not in the original image]
+- RAID, filled: redundant array of independent disks combining multiple physical drives or SSDs into a single logical unit to enhance data redundancy and performance — working by distributing data across drives (striping) and duplicating it (mirroring), allowing faster I/O and protection against drive failure — used inside other systems (DAS, NAS, SAN) to prevent data loss if a hard drive fails.
+- The frame, filled: the RAID page that Note 388's storage-architectures page brackets — filed here as the RAID version.
+
+---
+
+## Image Note 388 — Storage Architectures = How they connect to servers; how they manage data (blocks/files). Physical connection Arch: DAS: connected directly to a single server via SAS, SATA, USB. High performance. Lacks sharing capability b/w serv [cut]. NAS: A file level storage arch; dedicated device shares files over a standard ethernet using protocols like SMB, NFS. SAN: Dedicated high speed n/w; provides block level access to a combined/unified storage appearing to the server as local drive. IP SAN [heading at foot] (handwritten, as is)
+
+### Storage Architectures
+
+- How they connect to servers
+- How they manage data (blocks / files)
+
+### Physical connection Arch
+
+### DAS
+
+- Connected directly to a single server via SAS, SATA, USB
+- High performance
+- Lacks sharing capability b/w serv [cut]
+
+### NAS
+
+- A file level storage arch
+- Dedicated device shares files over a standard ethernet using protocols like SMB, NFS
+
+### SAN
+
+- Dedicated high speed n/w
+- Provides block level access to a combined / unified storage appearing to the server as local drive
+
+### IP SAN [heading at foot]
+
+### [Filled — added, not in the original image]
+- Physical storage architectures, filled: storage architectures defined by how they connect to servers and how they manage data (blocks/files) — DAS connected directly to a single server via SAS, SATA, or USB, high performance but lacking sharing capability between servers (cut off); NAS as a file-level storage architecture where a dedicated device shares files over standard Ethernet using protocols like SMB and NFS; SAN as a dedicated high-speed network providing block-level access to combined/unified storage that appears to the server as a local drive; with IP SAN as the heading at the foot.
+- The frame, filled: the physical-architectures page that Note 387's RAID page and Note 389's logical-architectures page bracket — filed here as the physical version.
+
+---
+
+## Image Note 389 — Logical & modern Arch: ① Object storage manages data as objects. ② SDS → decouples storage from underlying H/W [cut]. ③ HCI → bundles compute, networking, storage into a single software defined tier on servers. ④ Unified storage (multiprotocol): single platform SAN + NAS + object from same H/W. ⑤ Cloud & hybrid: on premises to cloud [tail] (handwritten, as is)
+
+### Logical & modern Arch
+
+- ① Object storage manages data as objects
+- ② SDS → decouples storage from underlying H/W [cut]
+- ③ HCI → bundles compute, networking, storage into a single software defined tier on servers
+- ④ Unified storage (multiprotocol): single platform SAN + NAS + object from same H/W
+- ⑤ Cloud & hybrid: on premises to cloud [tail]
+
+### [Filled — added, not in the original image]
+- Logical & modern architectures, filled: object storage managing data as objects; SDS (software-defined storage) decoupling storage from the underlying hardware (cut off); HCI (hyperconverged infrastructure) bundling compute, networking, and storage into a single software-defined tier on servers; unified storage (multiprotocol) as a single platform serving SAN + NAS + object from the same hardware; and cloud & hybrid spanning on-premises to cloud (tail).
+- The frame, filled: the logical-architectures page that Note 388's physical-architectures page brackets — filed here as the logical version.
+
+---
+
+## Image Note 390 — class = blueprint; Executable (/bin, /usr/bin) ELF = blueprint [as written]. class = Executable file [crossed word]. Class defin = binary format ELF; methods = machine instruct; var (DM) = initialized data sech [as written]. Object = process (handwritten, as is)
+
+### class = blueprint
+
+### Executable (/bin, /usr/bin) ELF = blueprint [as written]
+
+### class = Executable file [crossed word]
+
+### Class defin = binary format ELF
+
+### Methods = machine instruct
+
+### var (DM) = initialized data sech [as written]
+
+### Object = process
+
+### [Filled — added, not in the original image]
+- Class-to-executable mapping, filled: class as blueprint; the executable in /bin and /usr/bin in ELF format as blueprint as written; class equated to the executable file with a crossed word; class definition as the binary format ELF; methods as machine instructions; variables (data members) as initialized data sections as written; and object as process.
+- The frame, filled: the class-mapping page that Note 391's function-level-isolation page brackets — filed here as the class version.
+
+---
+
+## Image Note 391 — (Action) Function level isolation: C++ function: set of instructions for a task; Linux executable: a binary file /bin/cd [as written]. C++ namespace scope used for function isolation [crossed word]: math::add(), physics::add(). Linux Dir structure used for file isolation: /bin/bash, /usr/local/bin/bash [different]. Access: C++ :: used to tell the compiler; $path Linux function accessed by absolute paths to tell shell /usr/bin/python. ③ class/process level (Entity): C++ class → blueprint for object (Data+fun); Linux process → running instance of program (mem+fun(Exe)); Isolation: C++ Encapsulation (var+fun); Linux kernel namespaces: a process in PID can't see others; Access: Public methods → object pointer [namespace written above]; sys calls/IPC → signals/pipe to talk to a process (handwritten, as is)
+
+### (Action) Function level isolation
+
+- C++ function: set of instructions for a task
+- Linux executable: a binary file /bin/cd [as written]
+
+### C++ namespace scope used for function isolation [crossed word]
+
+- math::add(), physics::add()
+
+### Linux Dir structure used for file isolation
+
+- /bin/bash, /usr/local/bin/bash [different]
+
+### Access
+
+- C++ :: used to tell the compiler
+- $path Linux function accessed by absolute paths to tell shell /usr/bin/python
+
+### ③ class / process level (Entity)
+
+- C++ class → blueprint for object (Data + fun)
+- Linux process → running instance of program (mem + fun(Exe))
+
+### Isolation
+
+- C++ Encapsulation (var + fun)
+- Linux kernel namespaces: a process in PID can't see others
+
+### Access
+
+- Public methods → object pointer [namespace written above]
+- Sys calls / IPC → signals / pipe to talk to a process
+
+### [Filled — added, not in the original image]
+- Isolation levels, filled: function-level isolation contrasting the C++ function (a set of instructions for a task) with the Linux executable (a binary file, /bin/cd as written) — C++ namespace scope used for function isolation (math::add(), physics::add(), with a crossed word) versus the Linux directory structure used for file isolation (/bin/bash versus /usr/local/bin/bash, marked different) — with access via C++ :: telling the compiler and via $path absolute paths telling the shell (/usr/bin/python); and class/process level (entity) contrasting the C++ class (blueprint for an object, data + functions) with the Linux process (running instance of a program, memory + functions/executable) — isolation via C++ encapsulation (variables + functions) versus Linux kernel namespaces (a process in a PID namespace can't see others) — and access via public methods through an object pointer (namespace written above) versus syscalls/IPC through signals/pipes to talk to a process.
+- The frame, filled: the isolation-levels page that Note 390's class-mapping page and Note 392's namespace page bracket — filed here as the isolation version.
+
+---
+
+## Image Note 392 — C++ namespace is a directory for your code. * namespace groups related variables, functions, classes under one name or one directory. * How isolation & access across both. Isolation: ① variable level (Data): Variable: piece of data stored in memory [margin]; file: piece of data stored on disk. C++ uses keywords (private, static); compiler hides the var from other parts of the code. Linux: uses permissions (rwx) to kernel hides the file from other users [as written]. Access: var accessed by name or pointer; file accessed via path or file descriptor (handwritten, as is)
+
+### C++ namespace is a directory for your code
+
+- * Namespace groups related variables, functions, classes under one name or one directory
+- * How isolation & access across both
+
+### Isolation: ① variable level (Data)
+
+- Variable: piece of data stored in memory [margin]
+- File: piece of data stored on disk
+- C++ uses keywords (private, static); compiler hides the var from other parts of the code
+- Linux: uses permissions (rwx) to kernel hides the file from other users [as written]
+
+### Access
+
+- Var accessed by name or pointer
+- File accessed via path or file descriptor
+
+### [Filled — added, not in the original image]
+- Namespace & variable-level isolation, filled: the C++ namespace as a directory for your code, grouping related variables, functions, and classes under one name or one directory, with isolation & access compared across both — at variable level (data), the variable as a piece of data stored in memory (margin) versus the file as a piece of data stored on disk; C++ using keywords (private, static) with the compiler hiding the variable from other parts of the code, versus Linux using permissions (rwx) with the kernel hiding the file from other users as written; and access via variable by name or pointer versus file via path or file descriptor.
+- The frame, filled: the namespace page that Note 391's isolation-levels page brackets — filed here as the namespace version.
+
+---
+
+## Image Note 393 — Uses / For table: ① Remote access | sshd, cockpit | N/W security, firewall rules. web/app server | nginx, apache (httpd), php-fpm | I/O process mngt [as written], handling connections. Database | mariadb (mysql), postgres | storage mgmt, memory tuning. Firewall security | ufw, fail2ban | packet filtering. Scheduling | cronie (cron) | process mngt, resource limits, automating tasks. N/W DHCP | NetworkManager, dhcpcd, networkd | N/W mngt, IP, routing, DNS (handwritten, as is)
+
+### Uses / For table
+
+| Use | Tools | For |
+|---|---|---|
+| ① Remote access | sshd, cockpit | N/W security, firewall rules |
+| Web / app server | nginx, apache (httpd), php-fpm | I/O process mngt [as written], handling connections |
+| Database | mariadb (mysql), postgres | Storage mgmt, memory tuning |
+| Firewall security | ufw, fail2ban | Packet filtering |
+| Scheduling | cronie (cron) | Process mngt, resource limits, automating tasks |
+| N/W DHCP | NetworkManager, dhcpcd, networkd | N/W mngt, IP, routing, DNS |
+
+### [Filled — added, not in the original image]
+- Uses table, filled: the uses/for table mapping server roles to their tools and purposes — remote access via sshd and cockpit for network security and firewall rules; web/app servers via nginx, apache (httpd), and php-fpm for I/O process management as written and handling connections; databases via mariadb (mysql) and postgres for storage management and memory tuning; firewall security via ufw and fail2ban for packet filtering; scheduling via cronie (cron) for process management, resource limits, and automating tasks; and network/DHCP via NetworkManager, dhcpcd, and networkd for network management, IP, routing, and DNS.
+- The frame, filled: the uses table that Note 394's subnet-mask page brackets — filed here as the uses version.
+
+---
+
+## Image Note 394 — Subnet mask defines what is IP address is [as written]. ⇒ 10.14.18.0/24; 255.255.255.0/24; 32 (11111111 11111111 1111 0000)/24 [as written]. From /24 we can create 255 IP address [as written]; bec 2^(32-24) = 2^8 = 256; we can't assign 0 to 255 any host [as written]. If /23: 255 [as written]; 2^9 [as written]; 1×2^7 + 1×2^6 + 0×1100,000 [as written, partly unclear]; 64 32 16 8 4 2 1 [place values] (handwritten, as is)
+
+### Subnet mask defines what is IP address is [as written]
+
+- ⇒ 10.14.18.0 / 24
+- 255.255.255.0 / 24
+- 32 (11111111 11111111 1111 0000) / 24 [as written]
+
+### From /24 we can create 255 IP address [as written]
+
+- Bec 2^(32-24) = 2^8 = 256
+- We can't assign 0 to 255 any host [as written]
+
+### If /23
+
+- 255 [as written]
+- 2^9 [as written]
+- 1×2^7 + 1×2^6 + 0×1100,000 [as written, partly unclear]
+- 64 32 16 8 4 2 1 [place values]
+
+### [Filled — added, not in the original image]
+- Subnet mask arithmetic, filled: the subnet mask defining what an IP address is as written — the 10.14.18.0/24 example with mask 255.255.255.0/24 and the 32-bit binary form as written (11111111 11111111 1111 0000)/24; the /24 host count written as 255 IP addresses with the working 2^(32-24) = 2^8 = 256, and 0 to 255 not assignable to any host as written — clarified here as added, not original: a /24 holds 256 addresses in total, with the .0 network address and the .255 broadcast address reserved, leaving 254 usable host addresses; and the /23 case written as 255 and 2^9 as written, with the binary expansion 1×2^7 + 1×2^6 + 0×1100,000 as written and partly unclear, against the place values 64 32 16 8 4 2 1.
+- The frame, filled: the subnet-mask page that Note 393's uses table and Note 395's IP-ranges page bracket — filed here as the subnet version.
+
+---
+
+## Image Note 395 — ⑫ loopback purposes [top]. N/W (Internet) public IP address range: Class A — 1.x.x.x – 126.x.x.x; Class B — 128.xx – 192.x.x.x [as written]; Class C — 192.x.x – 223.x.x.x [as written]. WLAN/Subnet private address range: 10.0.0.0 – 255.255.255.255 [as written]; 172.10.0.0 – [crossed first octet]; 198.168.0.0 – [as written]. DNS: ⇒ to lookup IP address or domain: $ nslookup; 10.14.20.0/24 [boxed, 20 circled]; 255.255.0.0 [margin, partly]; ⑧ [circled 8 with arrow] (handwritten, as is)
+
+### ⑫ loopback purposes [top]
+
+### N/W (Internet) public IP address range
+
+- Class A — 1.x.x.x – 126.x.x.x
+- Class B — 128.xx – 192.x.x.x [as written]
+- Class C — 192.x.x – 223.x.x.x [as written]
+
+### WLAN / Subnet private address range
+
+- 10.0.0.0 – 255.255.255.255 [as written]
+- 172.10.0.0 – [crossed first octet]
+- 198.168.0.0 – [as written]
+
+### DNS
+
+- ⇒ To lookup IP address or domain: $ nslookup
+- 10.14.20.0 / 24 [boxed, 20 circled]
+- 255.255.0.0 [margin, partly]
+- ⑧ [circled 8 with arrow]
+
+### [Filled — added, not in the original image]
+- IP ranges & DNS, filled: the loopback purposes heading (⑫) at the top; the public IP address ranges for the internet as written — Class A 1.x.x.x–126.x.x.x, Class B 128.xx–192.x.x.x as written, Class C 192.x.x–223.x.x.x as written (the Class B/Class C boundary overlap kept as written, flagged); the WLAN/subnet private address ranges as written — 10.0.0.0–255.255.255.255 as written, 172.10.0.0– with the first octet crossed, and 198.168.0.0– as written (all three kept as written, flagged); and DNS for looking up an IP address or domain via $ nslookup, with the boxed 10.14.20.0/24 (20 circled), the margin 255.255.0.0 partly shown, and the circled ⑧ with its arrow.
+- The frame, filled: the IP-ranges page that Note 394's subnet-mask page and Note 396's DHCP page bracket — filed here as the ranges version.
+
+---
+
+## Image Note 396 — DHCP: to assign & manage IP address & other N/W configuration automatically. * gateway can't assign to any host. * Static IP: manually enter the: ① IP address; ② gateway addr. * Lab N/W: 10.14.0.0/24 N/W addr; 10.14.0.1 → Gateway; 10.14.0.2 → DHCP; 10.14.0.3 → DNS; 10.14.0.4 → web server; 10.14.0.5 → mail server; ↓ 0 will be host address [as written] (handwritten, as is)
+
+### DHCP
+
+- To assign & manage IP address & other N/W configuration automatically
+- * Gateway can't assign to any host
+
+### Static IP
+
+- Manually enter the: ① IP address; ② gateway addr
+
+### Lab N/W
+
+- 10.14.0.0 / 24 N/W addr
+- 10.14.0.1 → Gateway
+- 10.14.0.2 → DHCP
+- 10.14.0.3 → DNS
+- 10.14.0.4 → web server
+- 10.14.0.5 → mail server
+- ↓ 0 will be host address [as written]
+
+### [Filled — added, not in the original image]
+- DHCP & lab network, filled: DHCP assigning and managing IP addresses and other network configuration automatically, with the gateway unable to assign to any host; static IP entered manually as the IP address and the gateway address; and the lab network 10.14.0.0/24 with .1 as gateway, .2 as DHCP, .3 as DNS, .4 as web server, and .5 as mail server, with the closing line "0 will be host address" as written (flagged: .0 is the network address in the /24, not a host address).
+- The frame, filled: the DHCP page that Note 395's IP-ranges page brackets — filed here as the DHCP version.
+
+---
+
+# INbatch53 — Image Notes 397–398 (handwritten, as is)
+
+Staging only. Not yet appended to comprehensive.md or elaborated.md. Headings and headlines as written.
+Fill rule applied (set 2026-10-31 09:46 IST): unclear, cut-off, or missing content is filled by understanding the subject, marked [Filled], never presented as original.
+Duplicate rule applied: 8 duplicates skipped in this set — uploads 478, 479, 480, 481, 483, 484, 485, 486 repeat INbatch52 exactly (Note 387 RAID, Note 388 storage architectures, Note 389 logical & modern arch, Note 390 class mapping, Note 391 function-level isolation, Note 392 namespace, Note 393 uses table, Note 394 subnet mask), skipped entirely with no content copied and no note numbers consumed. 2 new notes filed from 10 images.
+Keep-both rule applied (refined 2026-10-31 10:12 IST): each note keeps its word description AND its drawn version together in the same note.
+Sanitize note: no identifier-shaped values in this set.
+
+## Image Note 397 — Sys types in IT: ① Distributed systems: multiple independent systems appearing as one (super comput [cut]). ② Centralized systems: processing happens at one single power mainframe/server [cut]. ③ Client-server (1-many): service providers - service consumers [cut]. ④ Peer to peer. ⑤ Grid computing - hetero systems. ⑥ [blank] (handwritten, as is)
+
+### Sys types in IT
+
+- ① Distributed systems: multiple independent systems appearing as one (super comput [cut])
+- ② Centralized systems: processing happens at one single power mainframe / server [cut]
+- ③ Client-server (1-many): service providers - service consumers [cut]
+- ④ Peer to peer
+- ⑤ Grid computing - hetero systems
+- ⑥ [blank]
+
+### [Filled — added, not in the original image]
+- System types, filled: system types in IT — distributed systems as multiple independent systems appearing as one (supercomputer, cut off); centralized systems with processing happening at one single powerful mainframe/server (cut off); client-server (1-to-many) as service providers versus service consumers (cut off); peer-to-peer; grid computing over heterogeneous systems; and a blank sixth entry left blank.
+- The frame, filled: the system-types page that Note 398's file-abstraction page brackets — filed here as the system-types version.
+
+---
+
+## Image Note 398 — Linux (File Abstraction): Everything is a file. All files implemented through common interface called system calls. Same API for all files. → Different files → same interface. ① open(), read(), write(). ② (File sys Abstraction) VFS: VFS common interface for all file systems ext4, NTFS, XFS etc. ③ (Driver Abstraction): Driver hides h/w implementation; H/W differences hidden. ④ (process Abstraction): isolated env; own memory + own files + own exec [cut] (handwritten, as is)
+
+### Linux (File Abstraction)
+
+- Everything is a file
+- All files implemented through common interface called system calls
+- Same API for all files
+- → Different files → same interface
+- ① open(), read(), write()
+
+### ② (File sys Abstraction) VFS
+
+- VFS common interface for all file systems ext4, NTFS, XFS etc
+
+### ③ (Driver Abstraction)
+
+- Driver hides h/w implementation
+- H/W differences hidden
+
+### ④ (process Abstraction)
+
+- Isolated env
+- Own memory + own files + own exec [cut]
+
+### [Filled — added, not in the original image]
+- Linux abstractions, filled: the Linux file abstraction — everything is a file, all files implemented through a common interface called system calls, the same API for all files, so different files share the same interface (open(), read(), write()); the filesystem abstraction via VFS as the common interface for all filesystems (ext4, NTFS, XFS, etc.); the driver abstraction where the driver hides the hardware implementation and hardware differences stay hidden; and the process abstraction as an isolated environment with its own memory, own files, and own execution (cut off).
+- The frame, filled: the file-abstraction page that Note 397's system-types page brackets — filed here as the abstraction version.
